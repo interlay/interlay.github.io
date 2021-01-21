@@ -34,6 +34,15 @@ docsify serve ./docs
 
 You can browse the documentation locally or directly on [docs.polkabtc.io](docs.polkabtc.io).
 
+
+### Adding content
+
+All pages are written using [docsify](https://docsify.js.org). Follow their guide to add new pages: [https://docsify.js.org/#/more-pages](https://docsify.js.org/#/more-pages)
+
+### Themes
+
+The theme is based on [docsify-themable](https://jhildenbiddle.github.io/docsify-themeable/) and is very simple to customize: [https://jhildenbiddle.github.io/docsify-themeable/#/customization](https://jhildenbiddle.github.io/docsify-themeable/#/customization)
+
 ## Contributions
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
