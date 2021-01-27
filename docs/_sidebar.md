@@ -7,9 +7,15 @@
 
 * Vaults
 
-  * [Becoming a vault](vault/overview.md)
-  * [Running a vault](vault/running.md)
+  * [Overview](vault/overview.md)
+  * [Running a vault](vault/guide.md)
   * [Developers](vault/dev.md)
+
+* Relayers
+
+  * [Overview](relay/overview.md)
+  * [Running a relayer](relay/guide.md)
+  * [Developers](relay/dev.md)
 
 * About PolkaBTC
 

@@ -6,7 +6,7 @@ To get you started, follow this guide.
 At the end of this document you will have:
 
 - [x] Installed the polkdot-js browser extension and a Bitcoin wallet
-- [x] Receive testnet BTC and testnet DOT
+- [x] Received testnet BTC and testnet DOT
 - [x] Issued your first PolkaBTC
 - [x] Redeemed your first PolkaBTC
 - [x] Observed the system using the dashboard
@@ -100,14 +100,14 @@ The Dashboard shows the current status of the PolkaBTC bridge / the BTC-Parachai
 At the top of the page, you can see the total amount of locked DOT collateral across all vaults, the amount of minted PolkaBTC, as well as the current overall collateralization rate.
 
 
-##### Bitcoin Relay Status
+### Bitcoin Relay Status
 
 This table shows the state of the Bitcoin mainchain, as tracked by the BTC-Parachain and the [Blockstream testnet explorer](https://blockstream.info/testnet/) (“Bitcoin Core”).
 
 You can safely use the bridge as long as the table shows "Online".
 
 
-##### Vaults
+### Vaults
 
 This table displays all vaults registered with the bridge. For each vault, you can see:
 
@@ -119,14 +119,14 @@ This table displays all vaults registered with the bridge. For each vault, you c
 *   whether the vault is currently active.
 
 
-##### Oracle Status
+### Oracle Status
 
 This table shows the status of all exchange rate oracles connected to the BTC-Parachain, serving the latest BTC/DOT price.
 
 You can safely use the bridge as long as the table shows "Online".
 
 
-##### Staked Relayer
+### Staked Relayer
 
 This table displays all Staked Relayers registered with the bridge. For each Staked Relayer, you can see:
 
