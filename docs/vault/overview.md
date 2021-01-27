@@ -75,7 +75,7 @@ This means, the amount of BTC a Vault can accept for safekeeping is calculated b
 
 ### Collateral Re-balancing
 
-To protect against short and long term exchange rate fluctuations, Vaults are **instructed to keep their collaterlization rate up to date**.
+To protect against short and long term exchange rate fluctuations, Vaults are **instructed to keep their collateralization rate up to date**.
 This can be achieved in 2 ways:
 
 - **PolkaBTC Redeem**: if users redeem with the Vault, the collateralization ration increases. The Vault can also maintain a PolkaBTC reserve and execute self-redeems for quick rebalancing
@@ -84,14 +84,36 @@ This can be achieved in 2 ways:
 #### Thresholds and Balancing Mechanisms
 The PolkaBTC bridge introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
 
-- **Secure Collateral**: ``150%``
-- **Premium Redeem**: ``135%``
-- **Vault Auction**: ``120%``
-- **Vault Liquidation**: ``110%`` 
+- **Secure Collateral**: 
+    - *Threshold*: ``150%`` 
+    - *Actions*: None necessary. The Vault can freely redeem any "unused" collateral above the ``150%`` threshold.
+- **Premium Redeem**: 
+    - *Threshold*: ``135%`` 
+    - *Actions*: Users can execute redeem with this Vault and receive a premium of ``5%`` in DOT in addition to the redeemed BTC.
+- **Vault Auction**: 
+    - *Threshold*: ``120%``
+    - *Actions*: Other Vaults can forcefully replace this Vault ([Replace protocol](https://interlay.gitlab.io/polkabtc-spec/spec/replace.html)), adding DOT collateral and taking over the BTC holdings of the undercollateralized Vault - earning a ``5%`` premium fee on the replaced BTC volume.
+- **Vault Liquidation**: 
+    - *Threshold*: ``110%``
+    - *Action*: The undercollateralized Vault is liquidated. 
+        1. The Vaults entire DOT collateral is slashed
+        2. The PolkaBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn PolkaBTC** in return for DOT collateral at a premium rate. The user's payout is calculated as follows:
+
+
+    user_dot_payout = 
+        (total_liquidated_dot_collateral / total_liquidated_polkabtc) 
+        * user_burned_polkabtc
+
+
+As long as the economic value of ``user_dot_payout`` is higher than that of ``user_burned_polkabtc``, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn PolkaBTC in return for DOT and to re-balance the system.
 
 
 ### Punishment and Service Level Agreements
 
+If a Vault fails to execute a redeem on time or steals BTC, they are punished and their collateral is slashed as follows:
+
+- **Theft**: Entire collateral slashed. 
+- **Failed Redeem (offline, no theft)**: Collateral slashed based 
 
 
 ## FAQ
