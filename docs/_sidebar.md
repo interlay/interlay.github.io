@@ -2,8 +2,9 @@
 
 * Getting started
 
-  * [Overview](overview.md)
-  * [User guide](guide.md)
+  * [Overview](start/overview.md)
+  * [User guide](start/guide.md)
+  * [FAQ](start/faq.md)
 
 * Vaults
 
