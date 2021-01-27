@@ -6,17 +6,17 @@
   * [User guide](start/guide.md)
   * [FAQ](start/faq.md)
 
+* Developers
+
 * Vaults
 
   * [Overview](vault/overview.md)
   * [Running a vault](vault/guide.md)
-  * [Developers](vault/dev.md)
 
 * Relayers
 
-  * [Overview](relay/overview.md)
-  * [Running a relayer](relay/guide.md)
-  * [Developers](relay/dev.md)
+  * [Overview](relayer/overview.md)
+  * [Running a relayer](relayer/guide.md)
 
 * About PolkaBTC
 
