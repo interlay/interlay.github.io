@@ -9,6 +9,7 @@
 * Vaults
 
   * [Overview](vault/overview.md)
+  * [FAQ](vault/faq.md)
   * [Running a vault](vault/guide.md)
   * [Developers](vault/dev.md)
 

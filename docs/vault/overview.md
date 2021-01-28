@@ -32,7 +32,7 @@ Vaults earn fees on issue and redeem, based on the PolkaBTC volume.
 
 In addition, in the first year (and subject to extension) , Vaults will receive a subsidy from the Polkadot Treasury for correctly operating the PolkaBTC bridge and providing DOT collateral (Note: this is still subject to final confirmation!).
 ### Pool-based Fee Distribution
-Vaults earn fees based on the issues and redeemed PolkaBTC volume. To reduce variance of payouts, the PolkaBTC bride implements a **pooled fee model**. 
+Vaults earn fees based on the issued and redeemed PolkaBTC volume. To reduce variance of payouts, the PolkaBTC bride implements a **pooled fee model**. 
 
 Each time a user issues or redeems PolkaBTC, they pay the following fees to a **global fee pool**:
 
@@ -61,7 +61,7 @@ The exact size of the subsidy is to be determined by the Polkadot Council when p
 The aim is to offer Vaults an APY similar to that of the Relay Chain staking rewards.
 
 
-## Collateral and Punishment
+## Collateral 
 
 To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in DOT to the PolkaBTC bridge. 
 To mitigate exchange rate fluctuations, the PolkaBTC bridge employs *over-collateralization* and a *multi-level collateral balancing* scheme.
@@ -84,47 +84,124 @@ This can be achieved in 2 ways:
 #### Thresholds and Balancing Mechanisms
 The PolkaBTC bridge introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
 
-- **Secure Collateral**: 
-    - *Threshold*: ``150%`` 
-    - *Actions*: None necessary. The Vault can freely redeem any "unused" collateral above the ``150%`` threshold.
-- **Premium Redeem**: 
-    - *Threshold*: ``135%`` 
-    - *Actions*: Users can execute redeem with this Vault and receive a premium of ``5%`` in DOT in addition to the redeemed BTC.
-- **Vault Auction**: 
-    - *Threshold*: ``120%``
-    - *Actions*: Other Vaults can forcefully replace this Vault ([Replace protocol](https://interlay.gitlab.io/polkabtc-spec/spec/replace.html)), adding DOT collateral and taking over the BTC holdings of the undercollateralized Vault - earning a ``5%`` premium fee on the replaced BTC volume.
-- **Vault Liquidation**: 
-    - *Threshold*: ``110%``
-    - *Action*: The undercollateralized Vault is liquidated. 
-        1. The Vaults entire DOT collateral is slashed
-        2. The PolkaBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn PolkaBTC** in return for DOT collateral at a premium rate. The user's payout is calculated as follows:
+**Secure Collateral**: 
+
+- *Threshold*: ``150%`` 
+- *Actions*: None necessary. The Vault can freely redeem any "unused" collateral above the ``150%`` threshold.
+
+**Premium Redeem**: 
+
+- *Threshold*: ``135%`` 
+- *Actions*: Users can execute redeem with this Vault and receive a premium of ``5%`` in DOT in addition to the redeemed BTC.
+
+**Vault Auction**: 
+
+- *Threshold*: ``120%``
+- *Actions*: Other Vaults can forcefully replace this Vault ([Replace protocol](https://interlay.gitlab.io/polkabtc-spec/spec/replace.html)), adding DOT collateral and taking over the BTC holdings of the undercollateralized Vault - earning a ``5%`` premium fee on the replaced BTC volume.
+    
+**Vault Liquidation**: 
+
+- *Threshold*: ``110%``
+- *Action*: The undercollateralized Vault is liquidated. 
+    1. The Vaults entire DOT collateral is slashed
+    2. The PolkaBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn PolkaBTC** in return for DOT collateral at a premium rate. See [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) below.
+
+## Slashing 
+
+If Vaults fail to behave according to protocol rules, they face punishment through slashing of collateral. 
+There are 2 types of failures: **safety failures** and **crash failures**.
+
+If a Vault fails to execute a redeem on time, steals BTC or falls below the liquidation collateral threshold, a slashing event is initiated.
+
+### Safety Failures
+
+A safety failure occurs in two cases: 
+- **Theft**: if a Vault steals BTC, i.e., spends BTC from the deposit addresses registered with the PolkaBTC bridge outside without authorization by the bridge.
+- **Severe Undercollteralization**: a Vaults drops below the ``110%`` liquidation collateral threshold.
 
 
-    user_dot_payout = 
+In both cases, the **Vault's DOT collateral is slashed, up to ``150%`` (secure collateral threshold) of the liquidated BTC value** and the PolkaBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg).
+
+
+#### Burn Event: Restoring a 1:1 Physical Peg
+
+When a Vault is liquidated, its DOT collateral is slashed up to``150%`` of the liquidated BTC value, given the exchange rate at the time of liquidation. 
+
+The PolkaBTC bridge now has less BTC locked than PolkaBTC minted - but more than enough DOT collateral to maintain economic security. 
+To re-establish the physical 1:1 peg between BTC and PolkaBTC, the PolkaBTC bridge allows users to **burn PolkaBTC in return for DOT at a premium rate**. 
+
+
+Specifically, the user's payout is calculated as follows:
+
+
+    burn_dot_payout = 
         (total_liquidated_dot_collateral / total_liquidated_polkabtc) 
         * user_burned_polkabtc
 
+As long as the economic value of ``burn_dot_payout`` is higher than that of ``user_burned_polkabtc``, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn PolkaBTC in return for DOT and to re-balance the system.
 
-As long as the economic value of ``user_dot_payout`` is higher than that of ``user_burned_polkabtc``, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn PolkaBTC in return for DOT and to re-balance the system.
+This Burn Event continues until the 1:1 ration of BTC to PolkaBTC is restored.
+
+### Crash Failures (Failed Redeem)
+
+If Vaults go offline and fail to execute redeem, they are:
+
+- **Penalized** (**punishment fee** slashed) and 
+- **Temporarily banned** for ``24 hours`` from accepting further redeem requests.
+
+The **punishment fee** is calculated based on the Vault's SLA ([Service Level Agreement](/vault/overview?id=service-level-agreements)) level, which is a value between ``0`` and ``100``. 
+The higher the Vault's SLA, the lower the punishment for a failed redeem. 
+
+In detail, the punishment fee is calculated as follows:
+- **Minimum Punishment Fee**: ``10%`` of the failed redeem value. 
+- **Maximum Punishment Fee**: ``30%`` of the failed redeem value.
+- **Punishment Fee**: calculated based on the Vaults SLA value as follows. Note: the maximum SLA (``max_sla``) value is ``100`` (see [here](/vault/overview?id=service-level-agreements)). 
+ 
+
+    punishment_fee = 
+        min_punishment_fee + 
+        ((max_punishment_fee - min_punishment_fee) / max_sla * vault_sla)
 
 
-### Punishment and Service Level Agreements
+**Note**: the SLA of a Vault is **reset to 0 after a single failed redeem request** and the Vault must behave correctly / be online for prolonged periods to build up a high SLA level again.
 
-If a Vault fails to execute a redeem on time or steals BTC, they are punished and their collateral is slashed as follows:
+## Service Level Agreements
 
-- **Theft**: Entire collateral slashed. 
-- **Failed Redeem (offline, no theft)**: Collateral slashed based 
+Vaults provide collateral to secure BTC held in custody and have clearly defined tasks they must execute - and face punishment in case of misbehavior. 
+However, slashing collateral for each minor protocol deviation would result in too high risk profiles for Vaults, yielding these roles unattractive to users.
+
+To reduce the risk for Vaults, especially to protect Vaults against network/latency issues, the PolkaBTC bridge makes use of Service Level Agreements.
+By being online and behaving correctly, Vaults increase their SLA value, one correct action at a time. Higher SLAs result in higher rewards and preferred treatment where applicable in the Issue and Redeem protocols. As mentioned above, SLAs are also used to reduce punishment fees for one-time failures of otherwise honest / reliable Vaults. 
+
+### SLA Value
+
+The SLA value is a number between ``0 and 100``. 
+When a Vaults joins the PolkaBTC bridge, it starts with an SLA of ``0``. 
+
+### SLA Actions
+
+When Vaults execute desirable actions, their SLA increases - and decreases in case of deviation from the protocol rules.
 
 
-## FAQ
-### Who can become a Vault?
-The PolkaBTC bridge is fully decentralized: anyone can run a Vault. 
+#### Desirable Actions (Increase SLA)
 
-- How often must Vaults come online?
-- What are collateral requirements?
-- What happens if a Vault fails to redeem BTC?
-- What happens if a vault steals?
-- What happens if a vault is undercollateralized?
-- How do Vaults manage Bitcoin keys?
-- How are deposit addresses generated?
+- **Execute Issue**: accept an issue request, receiving BTC and locking DOT collateral. 
+    - *Value*: The SLA increase is calculated based on the issue request volume compared to the average volume of the last ``N`` issue requests. The maximum increase is thereby given by ``max_sla_increase = 4``. 
+    
 
+    sla_increase_issue = 
+        max(
+            issue_request_size / average_issue_request_size_last_N * max_sla_increase, 
+            max_sla_increase
+            )
+
+- **Submit Issue Proof**: the Vault submits the SPV proof for the issue request Bitcoin payment on behalf of the user.
+    - *Value*: ``+1``
+
+
+#### Undesirable Actions (Decrease SLA)
+
+- **Failed Redeem**: Vault fails to execute redeem on time.
+    - *Value*: resets the SLA to ``0``
+- **Theft**: Vault steals. Note: in this case, the Vault is also banned from the PolkaBTC bridge.
+    - *Value*: resets the SLA to ``0``
