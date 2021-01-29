@@ -5,6 +5,7 @@ To get started, follow this guide.
 
 At the end of this document you will have:
 
+- [x] Received testnet DOT
 - [x] Started the Vault client locally
 - [x] Registered your Vault on the Rococo PolkaBTC testnet
 - [x] Inspected the status and activities of your Vault
@@ -12,6 +13,27 @@ At the end of this document you will have:
 The completion of this guide will take you approximately one to two hours.
 
 ## Quickstart
+
+Start your Bitcoin node:
+
+```sh
+bitcoind -testnet -server -rpcuser=rpcuser -rpcpassword=rpcpassword
+```
+
+Start the vault:
+
+```sh
+./vault \
+  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-pass rpcpass \
+  --keyfile keyfile.json \
+  --keyname myvault \
+  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
+```
+
+
+## Detailed Instructions
 
 ### Bitcoin
 
@@ -29,15 +51,13 @@ If you want to reduce the hardware requirements, you can also start Bitcoin with
 bitcoind -testnet -server -prune=550 -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 
-Add the following to your environment variables:
+### Vault
+
+Create a folder for your vault and enter it:
 
 ```sh
-export BITCOIN_RPC_URL=http://localhost:18443
-export BITCOIN_RPC_USER=rpcuser
-export BITCOIN_RPC_PASS=rpcpassword
+mkdir vault && cd vault
 ```
-
-### Vault
 
 Download the vault binary: [INSERT LINK]
 
@@ -51,10 +71,25 @@ Make the binary executable:
 chmod +x vault
 ```
 
-Start the vault:
+Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the vault, e.g.:
+
+```json
+{
+    "myvault": "car timber smoke zone west involve board success norm inherit door road"
+}
+```
+
+
+Start the vault keeping in mind that you have set the Bitcoin environment variables:
 
 ```sh
-./vault --keyfile --keyname vault
+./vault \
+  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-pass rpcpass \
+  --keyfile keyfile.json \
+  --keyname myvault \
+  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
 ```
 
 

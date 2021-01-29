@@ -8,11 +8,14 @@
 
 * Developers
 
+  * [Interacting with PolkaBTC](developers/integration.md)
+  * [Documentation](developers/documentation.md)
+
 * Vaults
 
   * [Overview](vault/overview.md)
-  * [FAQ](vault/faq.md)
   * [Running a vault](vault/guide.md)
+  * [FAQ](vault/faq.md)
 
 * Relayers
 
