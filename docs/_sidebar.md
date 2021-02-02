@@ -6,11 +6,6 @@
   * [User guide](start/guide.md)
   * [FAQ](start/faq.md)
 
-* Developers
-
-  * [Interacting with PolkaBTC](developers/integration.md)
-  * [Documentation](developers/documentation.md)
-
 * Vaults
 
   * [Overview](vault/overview.md)
@@ -21,6 +16,11 @@
 
   * [Overview](relayer/overview.md)
   * [Running a relayer](relayer/guide.md)
+
+* Developers
+
+  * [Interacting with PolkaBTC](developers/integration.md)
+  * [Documentation](developers/documentation.md)
 
 * About PolkaBTC
 
