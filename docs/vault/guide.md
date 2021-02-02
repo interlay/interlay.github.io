@@ -14,44 +14,29 @@ The completion of this guide will take you approximately one to two hours.
 
 ## Quickstart
 
-Start your Bitcoin node:
+?> _TODO_ Add a single command to start everything the vault needs.
+
+You can run the entire Vault client and the Bitcoin node with the following command:
 
 ```sh
-bitcoind -testnet -server -rpcuser=rpcuser -rpcpassword=rpcpassword
+docker-compose up
 ```
-
-Start the vault:
-
-```sh
-./vault \
-  --bitcoin-rpc-url http://localhost:18332 \
-  --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpass \
-  --keyfile keyfile.json \
-  --keyname myvault \
-  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
-```
-
 
 ## Detailed Instructions
 
-### Bitcoin
+### 1. Install a local Bitcoin node
 
-Download the Bitcoin Core full-node: [https://bitcoin.org/en/full-node](https://bitcoin.org/en/full-node#what-is-a-full-node)
+Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-node](https://bitcoin.org/en/full-node#what-is-a-full-node)
 
-Start the Bitcoin Core node in testnet mode, keeping in mind the [hardware requirements](https://bitcoin.org/en/full-node#minimum-requirements).
+### 2. Start the Bitcoin testnet node
 
-```sh
-bitcoind -testnet -server -rpcuser=rpcuser -rpcpassword=rpcpassword
-```
-
-If you want to reduce the hardware requirements, you can also start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
+Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```sh
 bitcoind -testnet -server -prune=550 -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 
-### Vault
+### 3. Install the Vault client
 
 Create a folder for your vault and enter it:
 
@@ -71,6 +56,8 @@ Make the binary executable:
 chmod +x vault
 ```
 
+### 4. Add your Polkadot account to use with your Vault
+
 Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the vault, e.g.:
 
 ```json
@@ -79,8 +66,9 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
+### 5. Start the Vault client
 
-Start the vault keeping in mind that you have set the Bitcoin environment variables:
+Start the Vault:
 
 ```sh
 ./vault \
