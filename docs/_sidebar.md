@@ -3,7 +3,9 @@
 * Getting started
 
   * [Overview](start/overview.md)
-  * [User guide](start/guide.md)
+  * [Issue PolkaBTC](start/issue.md)
+  * [Redeem PolkaBTC](start/redeem.md)
+  * [Prerequisites](start/prereq.md)
   * [FAQ](start/faq.md)
 
 * Vaults
