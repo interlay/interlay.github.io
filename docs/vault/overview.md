@@ -111,39 +111,6 @@ The PolkaBTC bridge introduces multiple thresholds with different actions to ens
     2. The PolkaBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn PolkaBTC** in return for DOT collateral at a premium rate. See [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) below.
 
 
-### System-Level Collateral Re-balancing
-    TODO.
-
-- Same thresholds but global actions?
-
-Challenge: the entire system may be in a different collateralization state than individual Vaults. 
-We need to define system-wide actions. 
-
-**Secure Collateral**:
-
-- *Threshold*: `150%`
-- *Actions*: None necessary.
-
-**Premium Redeem**:
-
-- *Threshold*: `135%`
-- *Actions*: 
-  - *Simple*: None. Assume that Vault-level actions will re-balance.
-  - *Advanced*: Maintain a PolkaBTC system "insurance" pool and redeem PolkaBTC + pay premium to pool LPs
-
-**Vault Auction**:
-
-- *Threshold*: `120%`
-- *Actions*: 
-  - *Simple*: None. Assume that Vault-level actions will re-balance.
-  - *Advanced*: Maintain a PolkaBTC system "insurance" pool and redeem PolkaBTC + pay premium to pool LPs
-
-**Vault Liquidation**:
-
-- *Threshold*: `110%`
-- *Action*: The PolkaBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn PolkaBTC** in return for DOT collateral at a premium rate. See [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) below.
-
-
 
 ## Slashing
 
