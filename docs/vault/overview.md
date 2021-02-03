@@ -122,31 +122,13 @@ If a Vault fails to execute a redeem on time, steals BTC or falls below the liqu
 ### Safety Failures
 
 A safety failure occurs in two cases:
-- **Theft**: if a Vault steals BTC, i.e., spends BTC from the deposit addresses registered with the PolkaBTC bridge outside without authorization by the bridge.
+- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the PolkaBTC bridge. Theft is detected and reported by [Relayers](/relayer/overview) via an SPV proof. 
+
 - **Severe Undercollteralization**: a Vaults drops below the `110%` liquidation collateral threshold.
 
+In both cases, the **the Vault's entire BTC holdings are liquidated and its DOT collateral is slashed - up to `150%` (secure collateral threshold) of the liquidated BTC value**. 
 
-In both cases, the **Vault's DOT collateral is slashed, up to `150%` (secure collateral threshold) of the liquidated BTC value** and the PolkaBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg).
-
-
-#### Burn Event: Restoring a 1:1 Physical Peg
-
-When a Vault is liquidated, its DOT collateral is slashed up to`150%` of the liquidated BTC value, given the exchange rate at the time of liquidation.
-
-The PolkaBTC bridge now has less BTC locked than PolkaBTC minted - but more than enough DOT collateral to maintain economic security.
-To re-establish the physical 1:1 peg between BTC and PolkaBTC, the PolkaBTC bridge allows users to **burn PolkaBTC in return for DOT at a premium rate**.
-
-
-Specifically, the user's payout is calculated as follows:
-
-
-    burn_dot_payout =
-        (total_liquidated_dot_collateral / total_liquidated_polkabtc)
-        * user_burned_polkabtc
-
-As long as the economic value of `burn_dot_payout` is higher than that of `user_burned_polkabtc`, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn PolkaBTC in return for DOT and to re-balance the system.
-
-This Burn Event continues until the 1:1 ration of BTC to PolkaBTC is restored.
+Consequently, the PolkaBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) to restore the 1:1 balance between BTC and PolkaBTC.
 
 ### Crash Failures (Failed Redeem)
 
@@ -211,3 +193,23 @@ When Vaults execute desirable actions, their SLA increases - and decreases in ca
     - *Value*: resets the SLA to `0`
 - **Theft**: Vault steals. Note: in this case, the Vault is also banned from the PolkaBTC bridge.
     - *Value*: resets the SLA to `0`
+
+
+## Burn Event: Restoring a 1:1 Physical Peg
+
+When a Vault is liquidated, its DOT collateral is slashed up to`150%` of the liquidated BTC value, given the exchange rate at the time of liquidation.
+
+The PolkaBTC bridge now has less BTC locked than PolkaBTC minted - but more than enough DOT collateral to maintain economic security.
+To re-establish the physical 1:1 peg between BTC and PolkaBTC, the PolkaBTC bridge allows users to **burn PolkaBTC in return for DOT at a premium rate**.
+
+
+Specifically, the user's payout is calculated as follows:
+
+
+    burn_dot_payout =
+        (total_liquidated_dot_collateral / total_liquidated_polkabtc)
+        * user_burned_polkabtc
+
+As long as the economic value of `burn_dot_payout` is higher than that of `user_burned_polkabtc`, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn PolkaBTC in return for DOT and to re-balance the system.
+
+This Burn Event continues until the 1:1 ration of BTC to PolkaBTC is restored.
