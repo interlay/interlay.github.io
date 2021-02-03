@@ -77,7 +77,7 @@ This means, the amount of BTC a Vault can accept for safekeeping is calculated b
 
     max_vault_btc = vault_dot_collateral / (1.5 * btc_dot_exchange_rate)
 
-### Collateral Re-balancing
+### Vault-Level Collateral Re-balancing
 
 To protect against short and long term exchange rate fluctuations, Vaults are **instructed to keep their collateralization rate up to date**.
 This can be achieved in 2 ways:
@@ -109,6 +109,41 @@ The PolkaBTC bridge introduces multiple thresholds with different actions to ens
 - *Action*: The undercollateralized Vault is liquidated.
     1. The Vaults entire DOT collateral is slashed
     2. The PolkaBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn PolkaBTC** in return for DOT collateral at a premium rate. See [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) below.
+
+
+### System-Level Collateral Re-balancing
+    TODO.
+
+- Same thresholds but global actions?
+
+Challenge: the entire system may be in a different collateralization state than individual Vaults. 
+We need to define system-wide actions. 
+
+**Secure Collateral**:
+
+- *Threshold*: `150%`
+- *Actions*: None necessary.
+
+**Premium Redeem**:
+
+- *Threshold*: `135%`
+- *Actions*: 
+  - *Simple*: None. Assume that Vault-level actions will re-balance.
+  - *Advanced*: Maintain a PolkaBTC system "insurance" pool and redeem PolkaBTC + pay premium to pool LPs
+
+**Vault Auction**:
+
+- *Threshold*: `120%`
+- *Actions*: 
+  - *Simple*: None. Assume that Vault-level actions will re-balance.
+  - *Advanced*: Maintain a PolkaBTC system "insurance" pool and redeem PolkaBTC + pay premium to pool LPs
+
+**Vault Liquidation**:
+
+- *Threshold*: `110%`
+- *Action*: The PolkaBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn PolkaBTC** in return for DOT collateral at a premium rate. See [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) below.
+
+
 
 ## Slashing
 
