@@ -3,13 +3,10 @@
 * Getting started
 
   * [Overview](start/overview.md)
-  * [User guide](start/guide.md)
+  * [Issue PolkaBTC](start/issue.md)
+  * [Redeem PolkaBTC](start/redeem.md)
+  * [Prerequisites](start/prereq.md)
   * [FAQ](start/faq.md)
-
-* Developers
-
-  * [Interacting with PolkaBTC](developers/integration.md)
-  * [Documentation](developers/documentation.md)
 
 * Vaults
 
@@ -21,6 +18,11 @@
 
   * [Overview](relayer/overview.md)
   * [Running a relayer](relayer/guide.md)
+
+* Developers
+
+  * [Interacting with PolkaBTC](developers/integration.md)
+  * [Documentation](developers/documentation.md)
 
 * About PolkaBTC
 

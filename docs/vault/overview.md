@@ -12,10 +12,14 @@ The correct behavior of Vaults is enforced by the PolkaBTC bridge parachain. Spe
 
 1. **Provide DOT Collateral** and upload their Bitcoin public key to the PolkaBTC bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping / how many PolkaBTC this Vault can secure.
 2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's DOT collateral until BTC is redeemed again.
-2. **Redeem**: Vaults monitor the PolkaBTC bridge for redeem requests. When a user requests to redeem PolkaBTC, Vaults release BTC to the user and prove that they behaved correctly to the PolkaBTC bridge (via the BTC-Relay). Only if this proof is correct, the Vault's collateral is unlocked again.
+3. **Redeem**: Vaults monitor the PolkaBTC bridge for redeem requests. When a user requests to redeem PolkaBTC, Vaults release BTC to the user and prove that they behaved correctly to the PolkaBTC bridge (via the BTC-Relay). Only if this proof is correct, the Vault's collateral is unlocked again.
 
+### Why would I want to become a Vault?
 
+?> _TODO_ Flesh this out.
 
+1. **Yield farming:** Vaults earn fees for providing their services. They will get approximately X% APY.
+2. **Self-custody:** Vaults hold BTC of users in custody. If you do not want to give up custody of your BTC, you can be your own vault.
 
 ### What do I need to become a Vault?
 
