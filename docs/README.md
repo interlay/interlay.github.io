@@ -1,5 +1,7 @@
 # PolkaBTC
 
+![PolkaBTC Logo](/_assets/img/PolkaBTC_color.png)
+
 ## Financially Trustless Bitcoin on Polkadot
 
 At the core, PolkaBTC leverages the concept of cryptocurrency-back assets introduced in the XCLAIM protocol. Assets are locked on Bitcoin and unlocked on Polkadot in form of 1:1 BTC backed-assets (PolkaBTC). PolkaBTC can be used just like any native asset within the Polkadot ecosystem, meaning: they can be easily transferred and integrated into other Parachains and applications.
