@@ -11,13 +11,13 @@
 * Vaults
 
   * [Overview](vault/overview.md)
-  * [Running a vault](vault/guide.md)
+  * [Running a Vault](vault/guide.md)
   * [FAQ](vault/faq.md)
 
 * Relayers
 
   * [Overview](relayer/overview.md)
-  * [Running a relayer](relayer/guide.md)
+  * [Running a Relayer](relayer/guide.md)
 
 * Developers
 
