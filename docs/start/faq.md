@@ -34,7 +34,7 @@ PolkaBTC guarantees that users (1) can redeem PolkaBTC for BTC, or (2) are reimb
 <details open>
 <summary><b>Has PolkaBTC been audited?</b></summary>
 
-PolkaBTC will undergo an audit before launch.
+PolkaBTC is being audited by [NCC](https://www.nccgroup.com/), a top-tier security and cryptography auditor. 
 </details>
 
 <details open>
@@ -45,4 +45,4 @@ PolkaBTC is based on XCLAIM - a top-tier, peer-reviewed research paper. PolkaBTC
 
 ## More questions?
 
-Reach out do us on [Discord](https://discord.gg/FUbExrmv) or [open an issue](https://github.com/interlay/polkabtc-docs/issues).
+Reach out on [Discord](https://discord.gg/FUbExrmv) or [open an issue](https://github.com/interlay/polkabtc-docs/issues).
