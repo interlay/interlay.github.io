@@ -14,7 +14,7 @@ Note: BTC-Relay is self healing and automatically detects and recovers from Bitc
 
 ### Why would I want to become a Relayer?
 
-?> Todo
+- **Yield farming:** Relayers earn fees in PolkaBTC and receive a subsidy in DOT. As such, Relayers earn yield on their staked DOT and have **exposure to both DOT and (Polka)BTC**.  
 
 ### What do I need to become a Relayer?
 
@@ -52,7 +52,7 @@ To this end, Relayers will receive a subsidy from the Polkadot Treasury.
 
 The exact size of the subsidy is to be determined by the Polkadot Council when parachains launch.
 
-## Collateral
+## Stake
 
 To ensure Relayers have no incentive to submit invalid Bitcoin block headers to BTC-Relay or make incorrect status updates, Relayers provide stake in DOT to the PolkaBTC bridge.
 
@@ -67,7 +67,8 @@ There are 2 types of failures:
 - **Incorrect Vote on Invalid Bitcoin Block**
 
 Currently, slashing of Relayers is executed via an out-of-band Governance vote and sudo call. 
-In the future, automated stake slashing based on Relayer majority vote will be implemented. 
+
+?> In the future, automated stake slashing based on Relayer majority vote will be implemented. 
 
 ## Service Level Agreements
 

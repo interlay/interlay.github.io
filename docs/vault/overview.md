@@ -16,10 +16,8 @@ The correct behavior of Vaults is enforced by the PolkaBTC bridge parachain. Spe
 
 ### Why would I want to become a Vault?
 
-?> _TODO_ Flesh this out.
-
-1. **Yield farming:** Vaults earn fees for providing their services. They will get approximately X% APY.
-2. **Self-custody:** Vaults hold BTC of users in custody. If you do not want to give up custody of your BTC, you can be your own vault.
+1. **Yield farming:** Vaults earn fees in PolkaBTC and receive a subsidy in DOT. As such, Vaults earn yield on their DOT collateral and have **exposure to both DOT and (Polka)BTC**.  
+2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you sell PolkaBTC.
 
 ### What do I need to become a Vault?
 
