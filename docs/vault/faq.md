@@ -3,6 +3,16 @@
 ### Who can become a Vault?
 The PolkaBTC bridge is fully decentralized: anyone can run a Vault. 
 
+### How many Vaults can there be?
+As many as want to participate. 
+
+### What is the minimum number of required Vaults?
+
+One honest and online Vault is enough to allow users to move BTC to Polkadot. A user can even be his/her own Vault. The more Vaults, however, the better. 
+### Do Vaults earn fees?
+
+Yes! Vaults earn fees in PolkaBTC and DOT. 
+
 ### How often must Vaults come online?
 Vaults **should remain online** to check for issue and, most importantly, redeem requests. 
 Currently, Vaults have ``24 hours`` to execute a redeem request.
