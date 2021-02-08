@@ -18,6 +18,7 @@
 
   * [Overview](relayer/overview.md)
   * [Running a Relayer](relayer/guide.md)
+  * [FAQ](relayer/faq.md)
 
 * Developers
 
