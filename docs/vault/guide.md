@@ -122,6 +122,7 @@ Start the Vault:
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
   --keyname myvault \
+  --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet' \
   --polka-btc-url 'ws://0.0.0.0:9948'
 ```
 
@@ -136,6 +137,7 @@ Start the Vault:
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
   --keyname myvault \
+  --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet' \
   --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
 ```
 
@@ -148,7 +150,7 @@ Build the Vault client from source. Best if you have experience compiling rust c
 </summary>
 </details>
 
-## Follow the instructions in the README
+### Follow the instructions in the README
 
 Go to the Vault client [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
 
@@ -167,11 +169,12 @@ Run the vault
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
   --keyname myvault \
+  --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet' \
   --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
 ```
 
 ### Registering your Vault
-To automatically register the vault when starting it, use the `auto-register-with-collateral` or `auto-register-with-faucet-url` flags, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
+The default behaviour on Rococo is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
 
 You can also register your vault through our web UI, going to the "Vault" tab, clicking the `Register` button and completing the steps.
 
@@ -224,7 +227,11 @@ See the Fee Model described in the Overview section.
 Issue and Redeem requests are processed automatically at the moment, signing transactions on the Bitcoin and Polkadot networks using the mnemonic/account credentials you provide to the client when running it.
 
 ### Leaving PolkaBTC
-Even if a vault can withdraw all of its collateral and go offline, it cannot call a function to deregister from PolkaBTC.
+The process to leave PolkaBTC depends on whether or not your Vault client holds BTC in custody.
+
+If you Vault has *no BTC in custody*, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client woithout risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
+
+If your Vault clients holds at least *some BTC in custody*, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through *replace*, requires you to request being replaced by another vault. You can request to be replaced through the [Vault dashboard](https://rococo.polkabtc.io/vault). Option B, leaving through *redeem* requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
 
 ## Advanced
 

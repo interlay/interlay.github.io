@@ -25,7 +25,6 @@ At the end of this document you will have:
 <summary>
 Setup the Relayer client using docker-compose. Best if you want to quickly try out running the client.
 </summary>
-</details>
 
 ### 1. Download the docker-compose file to start the Relayer client and the Bitcoin node.
 
@@ -52,6 +51,7 @@ You can run the entire Relayer client and the Bitcoin node with the following co
 docker-compose up
 ```
 
+</details>
 
 ## Standard Installation
 
@@ -59,7 +59,6 @@ docker-compose up
 <summary>
 Run Bitcoin and the Relayer binary as a service on your computer or server. Best for if you are mostly interested in operating a Relayer for earning PolkaBTC and participating in the protocol.
 </summary>
-</details>
 
 ### 1. Install a local Bitcoin node
 
@@ -104,29 +103,18 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-### 5. Start the Relayer client
+### 5. (Optional) Run your own PolkaBTC node
 
-To start the client, you can connect to our parachain full node or run your own.
-
-**Run your own PolkaBTC node**
 ```ssh
 docker run --network host registry.gitlab.com/interlay/btc-parachain:dev-rococo-c33ca08b btc-parachain-parachain --wasm-execution compiled --parachain-id 21 --chain staging --port 40337 --ws-port 9948 --bootnodes /ip4/64.225.82.241/tcp/30335/p2p/12D3KooWGMxvH5Bnmzq2LQFpdYSwe1GkqvwfrnLjhjwxmyEG1Fuk --unsafe-rpc-external --unsafe-ws-external -- --execution wasm --chain rococo --port 30337
 ```
 
-Start the Relayer:
-```sh
-./relayer \
-  --bitcoin-rpc-url http://localhost:18332 \
-  --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpass \
-  --keyfile keyfile.json \
-  --keyname myrelayer \
-  --polka-btc-url 'ws://0.0.0.0:9948'
-```
 
-**Connect to our PolkaBTC node**
 
-Start the Relayer:
+### 6. Start the Relayer client
+
+To start the client, you can connect to our parachain full node or run your own. The flag that specifies which PolkaBTC node the client connect to is `polka-btc-url`.
+
 
 ```sh
 ./relayer \
@@ -137,7 +125,7 @@ Start the Relayer:
   --keyname myrelayer \
   --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
 ```
-
+</details>
 
 
 ## Install from Source
@@ -146,18 +134,18 @@ Start the Relayer:
 <summary>
 Build the Relayer client from source. Best if you have experience compiling rust code, interested in making contributions, and see how the Relayer client works under the hood.
 </summary>
-</details>
 
 ### Follow the instructions in the README
 
 Go to the Relayer client [README](https://github.com/interlay/polkabtc-clients/tree/master/staked-relayer).
 
+</details>
 
 ## Usage
 
 ### Connecting the Relayer to Rococo
 
-Connect to our PolkaBTC node or run your own, as descriebd [above](#_5-start-the-relayer-client).
+Connect to our PolkaBTC node or run your own, as described [above](#_5-optional-run-your-own-polkabtc-node).
 
 Run the vault
 
@@ -168,11 +156,12 @@ Run the vault
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
   --keyname myvault \
-  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
+  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain' \
+  --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet'
 ```
 
 ### Registering your Relayer
-To automatically register the relayer when starting it, use the `auto-register-with-faucet-url` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault). This feature is only available on the Rococo network.
+The default behaviour on Rococo is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault). This feature is only available on the Rococo network.
 
 You can also register your relayer through the web UI. Go to the "Relayer" tab and click on the "Register (Lock DOT)" button, following the instructions.
 
@@ -185,6 +174,7 @@ const stakedRelayerClient = new StakedRelayerClient(VAULT_CLIENT_URL);
 const stakeInPlanck = 1000000000000;
 await stakedRelayerClient.registerStakedRelayer(stakeInPlanck);
 ```
+
 
 ### Submitting Bitcoin Blockheaders
 
