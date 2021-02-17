@@ -18,20 +18,24 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](sta
 
 ## Redeem PolkaBTC
 
-### Redeem page
+### 1. Go to [ rococo.polkabtc.io](https://rococo.polkabtc.io/app)
 
-The Redeem page displays your current PolkaBTC and DOT balances.
+The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Redeem tab.
 
-In addition, the table shows all of your ongoing Redeem requests.
+?> If you have any historic or pending Redeem requests, they are displayed in a table below the modal. Clicking on a row of this table will open a pop-up with more details about the request.
 
+### 2. Fill in the details of your Redeem request
 
-### Redeem Process
+Enter the amount of PolkaBTC you want to redeem, and the Bitcoin address where you want to receive the redeemed Bitcoin amount. Supported address types: P2WPKH, P2WSH **currently in bech32 format only!**.
 
-To redeem PolkaBTC, follow the “Redeem PolkaBTC” button on the Redeem page. In the shown modal:
+?> Ensure you have some testnet DOT before making a redeem request. If you haven't already, you can request some via the faucet ("Request DOT" button, right-hand side of top bar). You will need this to pay for parachain transaction fees.
 
-1. Enter the amount of PolkaBTC that you want to redeem.
-    1. A vault will be assigned to you for this request.
-    2. The maximum amount of PolkaBTC that you can redeem at in a single request depends on the maximum amount of BTC a vault has locked (high-volume Redeem requests, executed with multiple vaults simultaneously, will be added as a feature before mainnet launch).
-2. Enter your Bitcoin address. Supported address types: P2WPKH, P2WSH **currently in bech32 format only!**.
-3. Review and confirm the Redeem request.
-4. The Redeem request is now being processed by the vault. Updates will appear in the table on the Redeem page.
+Check the bridge fee that will be subtracted from your redeemed amount and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
+
+The Polkadot address of the vault assigned to fulfill this request will be displayed. 
+
+?> The maximum amount of PolkaBTC that you can redeem in a single request is limited by the maximum amount of BTC locked in a single vault. High-value Redeem requests, executed with multiple vaults simultaneously, will be added as a feature before mainnet launch.
+
+### 3. Confirm your request was successful
+
+The Redeem request is now being processed by the vault. Wait for a few minutes and you will receive your Bitcoin at the address you specified. You can see more details about your redeem request by clicking on it in the  **"Redeem Requests"** table below the app modal.
