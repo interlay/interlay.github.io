@@ -45,8 +45,6 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 
 ### 3. Start the Relayer client
 
-?> _TODO_ Add a single command to start everything the relayer needs.
-
 You can run the entire Relayer client and the Bitcoin node with the following command:
 
 ```sh
@@ -105,9 +103,18 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-### 5. Start the Relayer client
+### 5. (Optional) Run your own PolkaBTC node
 
-Start the Relayer:
+```ssh
+docker run --network host registry.gitlab.com/interlay/btc-parachain:dev-rococo-c33ca08b btc-parachain-parachain --wasm-execution compiled --parachain-id 21 --chain staging --port 40337 --ws-port 9948 --bootnodes /ip4/64.225.82.241/tcp/30335/p2p/12D3KooWGMxvH5Bnmzq2LQFpdYSwe1GkqvwfrnLjhjwxmyEG1Fuk --unsafe-rpc-external --unsafe-ws-external -- --execution wasm --chain rococo --port 30337
+```
+
+
+
+### 6. Start the Relayer client
+
+To start the client, you can connect to our parachain full node or run your own. The flag that specifies which PolkaBTC node the client connect to is `polka-btc-url`.
+
 
 ```sh
 ./relayer \
@@ -118,8 +125,8 @@ Start the Relayer:
   --keyname myrelayer \
   --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
 ```
-
 </details>
+
 
 ## Install from Source
 
@@ -138,17 +145,77 @@ Go to the Relayer client [README](https://github.com/interlay/polkabtc-clients/t
 
 ### Connecting the Relayer to Rococo
 
+Connect to our PolkaBTC node or run your own, as described [above](#_5-optional-run-your-own-polkabtc-node).
+
+Run the vault
+
+```sh
+./relayer \
+  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-pass rpcpass \
+  --keyfile keyfile.json \
+  --keyname myvault \
+  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain' \
+  --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet'
+```
+
 ### Registering your Relayer
+The default behaviour on Rococo is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault). This feature is only available on the Rococo network.
+
+You can also register your relayer through the web UI. Go to the "Relayer" tab and click on the "Register (Lock DOT)" button, following the instructions.
+
+Moreover, you can interact with the Staked Relayer client directly using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+```js
+import { StakedRelayerClient } from "@interlay/polkabtc";
+const stakedRelayerClient = new StakedRelayerClient(VAULT_CLIENT_URL);
+
+// 100 DOT denominated in Planck
+const stakeInPlanck = 1000000000000;
+await stakedRelayerClient.registerStakedRelayer(stakeInPlanck);
+```
+
 
 ### Submitting Bitcoin Blockheaders
 
 ### Earning Fees
+See the Fee Model described in the Overview section.
 
 ### Monitoring the PolkaBTC System
 
 ### Voting on the System Status
 
+**Web UI**
+
+Go to the Relayer tab and click on the "Vote" button. Follow the instructions.
+
+**Polkabtc-js library**
+
+You can interact with the Vault directly client using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+```js
+import { VaultClient } from "@interlay/polkabtc";
+const vaultClient = new VaultClient(VAULT_CLIENT_URL);
+
+const statusUpdateId = 21;
+const approve = true;
+await vaultClient.voteOnStatusUpdate(statusUpdateId, approve);
+```
+
 ### Leaving PolkaBTC
+
+**Web UI**
+
+Go to the Relayer tab and click on the "Deregister" button.
+
+**Polkabtc-js library**
+
+You can interact with the Vault directly client using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+```js
+import { VaultClient } from "@interlay/polkabtc";
+const vaultClient = new VaultClient(VAULT_CLIENT_URL);
+
+await vaultClient.deregisterStakedRelayer();
+```
 
 ## Advanced
 
