@@ -21,7 +21,7 @@ Create an API instance to the PolkaBTC chain with:
 ```js
 import { createPolkabtcAPI } from "@interlay/polkabtc";
 
-const defaultParachainEndpoint = "wss://rococo.polkabtc.io/api/parachain";
+const defaultParachainEndpoint = "wss://beta.polkabtc.io/api/parachain";
 const isMainnet = false;
 const polkaBTC = await createPolkabtcAPI(defaultParachainEndpoint, isMainnet);
 ```

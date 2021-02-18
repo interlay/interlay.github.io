@@ -121,7 +121,7 @@ Start the Vault:
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
   --keyname myvault \
-  --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet' \
+  --auto-register-with-faucet-url 'http://beta.polkabtc.io/api/faucet' \
   --polka-btc-url 'ws://0.0.0.0:9948'
 ```
 
@@ -136,8 +136,8 @@ Start the Vault:
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
   --keyname myvault \
-  --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet' \
-  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
+  --auto-register-with-faucet-url 'http://beta.polkabtc.io/api/faucet' \
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
 ```
 </details>
 
@@ -167,8 +167,8 @@ Run the vault
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
   --keyname myvault \
-  --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet' \
-  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
+  --auto-register-with-faucet-url 'http://beta.polkabtc.io/api/faucet' \
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
 ```
 
 ### Registering your Vault
@@ -229,7 +229,7 @@ The process to leave PolkaBTC depends on whether or not your Vault client holds 
 
 If you Vault has *no BTC in custody*, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client woithout risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
 
-If your Vault clients holds at least *some BTC in custody*, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through *replace*, requires you to request being replaced by another vault. You can request to be replaced through the [Vault dashboard](https://rococo.polkabtc.io/vault). Option B, leaving through *redeem* requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
+If your Vault clients holds at least *some BTC in custody*, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through *replace*, requires you to request being replaced by another vault. You can request to be replaced through the [Vault dashboard](https://beta.polkabtc.io/vault). Option B, leaving through *redeem* requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
 
 ## Advanced
 

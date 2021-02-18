@@ -18,7 +18,7 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](sta
 
 ## Redeem PolkaBTC
 
-### 1. Go to [ rococo.polkabtc.io](https://rococo.polkabtc.io/app)
+### 1. Go to [ beta.polkabtc.io](https://beta.polkabtc.io/app)
 
 The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Redeem tab.
 
@@ -32,7 +32,7 @@ Enter the amount of PolkaBTC you want to redeem, and the Bitcoin address where y
 
 Check the bridge fee that will be subtracted from your redeemed amount and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
-The Polkadot address of the vault assigned to fulfill this request will be displayed. 
+The Polkadot address of the vault assigned to fulfill this request will be displayed.
 
 ?> The maximum amount of PolkaBTC that you can redeem in a single request is limited by the maximum amount of BTC locked in a single vault. High-value Redeem requests, executed with multiple vaults simultaneously, will be added as a feature before mainnet launch.
 
