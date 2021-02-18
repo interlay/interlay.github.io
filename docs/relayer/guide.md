@@ -28,20 +28,21 @@ Setup the Relayer client using docker-compose. Best if you want to quickly try o
 
 ### 1. Download the docker-compose file to start the Relayer client and the Bitcoin node.
 
-?> _TODO_ Add link to docker file.
+```
+mkdir relayer && cd relayer && wget https://github.com/interlay/polkabtc-clients/tree/master/relayer/docker-compose.yml
+```
 
-```
-mkdir relayer && cd relayer && wget https://github.com/interlay/polkabtc-clients/tree/master/relayer
-```
 ### 2. Add your Polkadot account to use with your Relayer
 
 Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the relayer, e.g.:
 
 ```json
 {
-    "myrelayer": "car timber smoke zone west involve board success norm inherit door road"
+  "polkabtcrelayer": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
 }
 ```
+
+!> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
 
 ### 3. Start the Relayer client
 
@@ -99,9 +100,11 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 
 ```json
 {
-    "myrelayer": "car timber smoke zone west involve board success norm inherit door road"
+  "polkabtcrelayer": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
 }
 ```
+
+!> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
 
 ### 5. (Optional) Run your own PolkaBTC node
 
@@ -109,12 +112,9 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 docker run --network host registry.gitlab.com/interlay/btc-parachain:dev-rococo-c33ca08b btc-parachain-parachain --wasm-execution compiled --parachain-id 21 --chain staging --port 40337 --ws-port 9948 --bootnodes /ip4/64.225.82.241/tcp/30335/p2p/12D3KooWGMxvH5Bnmzq2LQFpdYSwe1GkqvwfrnLjhjwxmyEG1Fuk --unsafe-rpc-external --unsafe-ws-external -- --execution wasm --chain rococo --port 30337
 ```
 
-
-
 ### 6. Start the Relayer client
 
 To start the client, you can connect to our parachain full node or run your own. The flag that specifies which PolkaBTC node the client connect to is `polka-btc-url`.
-
 
 ```sh
 ./relayer \
@@ -122,11 +122,11 @@ To start the client, you can connect to our parachain full node or run your own.
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
-  --keyname myrelayer \
+  --keyname polkabtcrelayer \
   --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
 ```
-</details>
 
+</details>
 
 ## Install from Source
 
@@ -155,17 +155,19 @@ Run the vault
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
-  --keyname myvault \
+  --keyname polkabtcrelayer \
   --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
   --auto-register-with-faucet-url 'http://beta.polkabtc.io/api/faucet'
 ```
 
 ### Registering your Relayer
+
 The default behaviour on Rococo is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault). This feature is only available on the Rococo network.
 
 You can also register your relayer through the web UI. Go to the "Relayer" tab and click on the "Register (Lock DOT)" button, following the instructions.
 
 Moreover, you can interact with the Staked Relayer client directly using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+
 ```js
 import { StakedRelayerClient } from "@interlay/polkabtc";
 const stakedRelayerClient = new StakedRelayerClient(VAULT_CLIENT_URL);
@@ -175,10 +177,10 @@ const stakeInPlanck = 1000000000000;
 await stakedRelayerClient.registerStakedRelayer(stakeInPlanck);
 ```
 
-
 ### Submitting Bitcoin Blockheaders
 
 ### Earning Fees
+
 See the Fee Model described in the Overview section.
 
 ### Monitoring the PolkaBTC System
@@ -192,6 +194,7 @@ Go to the Relayer tab and click on the "Vote" button. Follow the instructions.
 **Polkabtc-js library**
 
 You can interact with the Vault directly client using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+
 ```js
 import { VaultClient } from "@interlay/polkabtc";
 const vaultClient = new VaultClient(VAULT_CLIENT_URL);
@@ -210,6 +213,7 @@ Go to the Relayer tab and click on the "Deregister" button.
 **Polkabtc-js library**
 
 You can interact with the Vault directly client using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+
 ```js
 import { VaultClient } from "@interlay/polkabtc";
 const vaultClient = new VaultClient(VAULT_CLIENT_URL);
