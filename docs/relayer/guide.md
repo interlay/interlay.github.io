@@ -123,7 +123,7 @@ To start the client, you can connect to our parachain full node or run your own.
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
   --keyname myrelayer \
-  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
 ```
 </details>
 
@@ -156,8 +156,8 @@ Run the vault
   --bitcoin-rpc-pass rpcpass \
   --keyfile keyfile.json \
   --keyname myvault \
-  --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain' \
-  --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet'
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
+  --auto-register-with-faucet-url 'http://beta.polkabtc.io/api/faucet'
 ```
 
 ### Registering your Relayer
