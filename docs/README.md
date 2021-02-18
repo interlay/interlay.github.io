@@ -33,7 +33,7 @@ XCLAIM guarantees users can redeem PolkaBTC tokens for the corresponding amount 
 
 <!-- TODO: needs proper styling similar to https://compound.finance/docs -->
 
-### [1. Get a thorough overview of PolkaBTC](start/overview.md)
+### [1. Get a detailed overview of PolkaBTC](start/overview.md)
 
 ### [2. Issue your first PolkaBTC](start/issue.md)
 

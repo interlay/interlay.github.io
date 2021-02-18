@@ -22,14 +22,11 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](sta
 
 The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Issue tab.
 
-?> If you have any historic or pending Issue requests, they are displayed in a table below the modal. Click on items in this table for more details about individual requests.
-
-
 ### 2. Enter the amount of PolkaBTC you want to issue in the app
 
-?> Don't forget to get some testnet DOT via the faucet ("Request DOT" button, right-hand side of top bar) before making an issue request. You will need this to pay for parachain transaction fees.
+?> Don't forget to get some testnet DOT via the faucet ("Request DOT" button, right-hand side of top bar) before making an issue request. You will need this to pay for the bridge transaction fees.
 
-Enter the amount of PolkaBTC you want to issue and click **"Next"**. The app will automatically select a vault for you.
+Enter the amount of PolkaBTC you want to issue. The app will automatically select a vault for you.
 
 Check the details of your issue request and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
@@ -44,7 +41,8 @@ Use your Bitcoin wallet to transfer the specified `amount` to the given `address
 
 <details>
 <summary>
-Send BTC with the Ledger wallet
+<b>Send BTC with the Ledger wallet</b>
+
 </summary>
 
 To configure [Ledger Live](https://www.ledger.com/ledger-live) to work with Bitcoin testnet, go to `Setting` > `Experimental features` and enable `Developer mode`. Using the `Manager`, install the `Bitcoin testnet` app onto your device.
@@ -73,7 +71,7 @@ The receipt will show the transaction ID, click **"View in explorer"** to check 
 
 <details>
 <summary>
-Send BTC with the Trezor wallet
+<b>Send BTC with the Trezor wallet</b>
 </summary>
 
 
@@ -103,3 +101,7 @@ If configured, you may also check the status of the transaction in a block explo
 Once the payment has been sent, the app will automatically locate your transaction on the Bitcoin blockchain. If this transaction is correct, you can just wait for a few minutes and you will receive your PolkaBTC. This is because a vault will eventually execute your request if your transaction has sufficient confirmations.
 
 You can check the status of your issue request in the **"Issue Requests"** table below the app modal. If your Bitcoin transaction has enough confirmations but has not been executed by a vault yet, an **"Execute"** button will be displayed in the table. To finalize the Issue process and claim your PolkaBTC, either wait for a vault to auto-execute your request, or click **"Execute"** yourself.
+
+### 5. Check your historical requests
+
+If you have any historic or pending Issue requests, they are displayed in a table below the modal. Click on items in this table for more details about individual requests.
