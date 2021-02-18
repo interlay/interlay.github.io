@@ -24,7 +24,7 @@ At the end of this document you will have:
 <summary>
 Setup the Vault client using docker-compose. Best if you want to quickly try out running the client.
 </summary>
-</details>
+
 
 ### 1. Download the docker-compose file to start the Vault client and the Bitcoin node.
 
@@ -51,7 +51,7 @@ You can run the entire Vault client and the Bitcoin node with the following comm
 ```sh
 docker-compose up
 ```
-
+</details>
 
 ## Standard Installation
 
@@ -59,7 +59,6 @@ docker-compose up
 <summary>
 Run Bitcoin and the Vault binary as a service on your computer or server. Best for if you are mostly interested in operating a Vault for earning PolkaBTC and participating in the protocol.
 </summary>
-</details>
 
 ### 1. Install a local Bitcoin node
 
@@ -140,7 +139,7 @@ Start the Vault:
   --auto-register-with-faucet-url 'http://rococo.polkabtc.io/api/faucet' \
   --polka-btc-url 'wss://rococo.polkabtc.io/api/parachain'
 ```
-
+</details>
 
 ## Install from Source
 
@@ -148,12 +147,11 @@ Start the Vault:
 <summary>
 Build the Vault client from source. Best if you have experience compiling rust code, interested in making contributions, and see how the Vault client works under the hood.
 </summary>
-</details>
 
 ### Follow the instructions in the README
 
 Go to the Vault client [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
-
+</details>
 
 ## Usage
 
