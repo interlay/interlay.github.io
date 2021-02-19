@@ -1,8 +1,9 @@
 :root {
   --theme-color: darkred;
 }
-
-.markdown-section h3 {
+/* use this for the guide links */
+.markdown-section h6 {
+  font-size: var(--heading-h3-font-size);
   border-bottom: 1px solid #d1d6db;
   cursor: pointer;
   display: flex;
@@ -17,13 +18,13 @@
   text-transform: none;
 }
 
-.markdown-section h3 > a {
+.markdown-section h6 > a {
   border-bottom: 0;
   color: inherit;
   text-decoration: none;
 }
 
-.markdown-section h3 > a:hover {
+.markdown-section h6 > a:hover {
   border-bottom: 0;
   color: darkred;
   text-decoration: none;
