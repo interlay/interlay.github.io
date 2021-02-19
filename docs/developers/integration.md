@@ -4,7 +4,9 @@
 
 The PolkaBTC system consists of a range of different components.
 
-![Components Overview](../_assets/img/developers/components.)
+![Components Overview](../_assets/img/developers/components.svg)
+
+*Overview of PolkaBTC bridge components.*
 
 ## JavaScript
 
