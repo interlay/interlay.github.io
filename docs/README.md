@@ -31,21 +31,22 @@ XCLAIM guarantees users can redeem PolkaBTC tokens for the corresponding amount 
 
 ## Guides
 
-<!-- TODO: needs proper styling similar to https://compound.finance/docs -->
+###### [1. Get a detailed overview of PolkaBTC](start/overview.md)
 
-### [1. Get a detailed overview of PolkaBTC](start/overview.md)
+###### [2. Issue your first PolkaBTC](start/issue.md)
 
-### [2. Issue your first PolkaBTC](start/issue.md)
+###### [3. Redeem PolkaBTC for BTC](start/redeem.md)
 
-### [3. Redeem PolkaBTC for BTC](start/redeem.md)
+###### [4. Understand how a Vault works](vault/overview.md)
 
-### [4. Understand how a Vault works](vault/overview.md)
+###### [5. Operate your own Vault](vault/guide.md)
 
-### [5. Operate your own Vault](vault/guide.md)
+###### [6. Understand how a Relayer works](relayer/overview.md)
 
-### [6. Understand how a Relayer works](relayer/overview.md)
+###### [7. Operate your own Relayer](relayer/guide.md)
 
-### [7. Operate your own Relayer](relayer/guide.md)
+###### [8. Build your own Dapps with PolkaBTC](developers/integration.md)
 
-### [8. Build your own Dapps with PolkaBTC](developers/integration.md)
+## Contributions
 
+PolkaBTC is an open-source project. We welcome contributions to the code and documentation. Feel free to checkout our [GitHub](https://github.com/interlay) or [Discord](https://discord.gg/FUbExrmv).
