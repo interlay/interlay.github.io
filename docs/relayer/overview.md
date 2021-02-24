@@ -30,6 +30,7 @@ Head over to ["Running a Relayer"](/relayer/guide) for a detailed setup guide.
 Relayers receive a share of the bridge fees, earned from the PolkaBTC issue and redeem volume. 
 
 In addition, in the first year (and subject to extension), Relayers will receive a subsidy from the Polkadot Treasury for correctly operating the PolkaBTC bridge (Note: this is still subject to final confirmation!).
+
 ### Pool-based Fee Distribution
 Relayers earn fees based on the issued and redeemed PolkaBTC volume. To reduce variance of payouts, the PolkaBTC bride implements a **pooled fee model**.
 From this fee pool, `3%` is distributed among all active Relayers based on their SLA (Service Level Agreement) and locked DOT stake. 

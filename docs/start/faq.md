@@ -17,7 +17,7 @@ PolkaBTC might trade at a slight premium, driven by supply/demand for Bitcoin on
 
 ### Does PolkaBTC require a price oracle?
 
-PolkaBTC guarantees that users (1) can redeem PolkaBTC for BTC, or (2) are reimbursed in DOT at a beneficial rate in case of failure. A price oracle is needed to maintain a secure BTC/DOT collateralization rate."
+PolkaBTC guarantees that users (1) can redeem PolkaBTC for BTC, or (2) are reimbursed in DOT at a beneficial rate in case of failure. A price oracle is needed to maintain a secure BTC/DOT collateralization rate.
 
 ### Has PolkaBTC been audited?
 

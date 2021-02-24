@@ -26,7 +26,7 @@ The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Redeem ta
 
 ### 2. Fill in the details of your Redeem request
 
-Enter the amount of PolkaBTC you want to redeem, and the Bitcoin address where you want to receive the redeemed Bitcoin amount. Supported address types: P2WPKH, P2WSH **currently in bech32 format only!**.
+Enter the amount of PolkaBTC you want to redeem, and the Bitcoin address where you want to receive the redeemed Bitcoin amount. Supported address types: [P2SH](https://en.bitcoin.it/wiki/P2SH), [P2PKH](https://en.bitcoin.it/wiki/P2PKH) and [P2WPKH](https://wiki.trezor.io/P2WPKH).
 
 ?> Ensure you have some testnet DOT before making a redeem request. If you haven't already, you can request some via the faucet ("Request DOT" button, right-hand side of top bar). You will need this to pay for parachain transaction fees.
 

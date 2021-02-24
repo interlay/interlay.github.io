@@ -2,9 +2,11 @@
 # FAQ
 
 ### Who can become a Relayer?
+
 Anyone, without restrictions. 
 
 ### How many Relayers can there be?
+
 As many as want to participate. 
 
 ### What is the minimum number of required Relayers?
@@ -12,6 +14,7 @@ As many as want to participate.
 One honest and online Relayer is enough.  The more Vaults, however, the more robust the bridge becomes. 
 
 ### How often must a Relayer come online?
+
 Relayers are expected to be online 24/7 but at least every 10 minutes (average block interval).
 
 ### Do Relayers earn fees?

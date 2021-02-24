@@ -7,7 +7,7 @@ To get started, follow this guide.
 At the end of this document you will have:
 
 - [x] Started the Relayer client locally
-- [x] Registered your Relayer on the Rococo PolkaBTC testnet
+- [x] Registered your Relayer on the Beta PolkaBTC testnet
 - [x] Submitted BTC block headers to the PolkaBTC testnet
 - [x] Inspected the status and activities of your Relayer
 
@@ -29,7 +29,8 @@ Setup the Relayer client using docker-compose. Best if you want to quickly try o
 ### 1. Download the docker-compose file to start the Relayer client and the Bitcoin node.
 
 ```
-mkdir relayer && cd relayer && wget https://github.com/interlay/polkabtc-clients/tree/master/relayer/docker-compose.yml
+mkdir relayer && cd relayer
+wget https://raw.githubusercontent.com/interlay/polkabtc-clients/master/staked-relayer/docker-compose.yml
 ```
 
 ### 2. Add your Polkadot account to use with your Relayer
@@ -44,11 +45,17 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 
 !> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
 
+You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
+
+```shell
+subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > keyfile.json
+```
+
 ### 3. Start the Relayer client
 
 You can run the entire Relayer client and the Bitcoin node with the following command:
 
-```sh
+```shell
 docker-compose up
 ```
 
@@ -77,20 +84,20 @@ bitcoind -testnet -server -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpc
 
 Create a folder for your relayer and enter it:
 
-```sh
+```shell
 mkdir relayer && cd relayer
 ```
 
 ?> _TODO_ Add the link to the binary
 Download the relayer binary:
 
-```sh
+```shell
 wget https://gitlab.com/interlay/polkabtc-clients/-/jobs/976061249/artifacts/raw/binaries/relayer
 ```
 
 Make the binary executable:
 
-```sh
+```shell
 chmod +x relayer
 ```
 
@@ -106,21 +113,21 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 
 !> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
 
-### 5. (Optional) Run your own PolkaBTC node
+You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
-```ssh
-docker run --network host registry.gitlab.com/interlay/btc-parachain:dev-rococo-c33ca08b btc-parachain-parachain --wasm-execution compiled --parachain-id 21 --chain staging --port 40337 --ws-port 9948 --bootnodes /ip4/64.225.82.241/tcp/30335/p2p/12D3KooWGMxvH5Bnmzq2LQFpdYSwe1GkqvwfrnLjhjwxmyEG1Fuk --unsafe-rpc-external --unsafe-ws-external -- --execution wasm --chain rococo --port 30337
+```shell
+subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > keyfile.json
 ```
 
-### 6. Start the Relayer client
+### 5. Start the Relayer client
 
-To start the client, you can connect to our parachain full node or run your own. The flag that specifies which PolkaBTC node the client connect to is `polka-btc-url`.
+To start the client, you can connect to our parachain full node:
 
-```sh
-./relayer \
+```shell
+./staked-relayer \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpass \
+  --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname polkabtcrelayer \
   --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
@@ -143,14 +150,14 @@ Go to the Relayer client [README](https://github.com/interlay/polkabtc-clients/t
 
 ## Usage
 
-### Connecting the Relayer to Rococo
+### Connecting the Relayer to Beta
 
 Connect to our PolkaBTC node or run your own, as described [above](#_5-optional-run-your-own-polkabtc-node).
 
 Run the vault
 
-```sh
-./relayer \
+```shell
+./staked-relayer \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpass \
@@ -162,7 +169,7 @@ Run the vault
 
 ### Registering your Relayer
 
-The default behaviour on Rococo is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault). This feature is only available on the Rococo network.
+The default behaviour on Beta is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
 
 You can also register your relayer through the web UI. Go to the "Relayer" tab and click on the "Register (Lock DOT)" button, following the instructions.
 

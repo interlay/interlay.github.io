@@ -32,7 +32,8 @@ Head over to ["Running a Vault"](/vault/guide) for a detailed setup guide.
 
 Vaults earn fees on issue and redeem, based on the PolkaBTC volume.
 
-In addition, in the first year (and subject to extension) , Vaults will receive a subsidy from the Polkadot Treasury for correctly operating the PolkaBTC bridge and providing DOT collateral (Note: this is still subject to final confirmation!).
+In addition, in the first year (and subject to extension), Vaults will receive a subsidy from the Polkadot Treasury for correctly operating the PolkaBTC bridge and providing DOT collateral (Note: this is still subject to final confirmation!).
+
 ### Pool-based Fee Distribution
 Vaults earn fees based on the issued and redeemed PolkaBTC volume. To reduce variance of payouts, the PolkaBTC bride implements a **pooled fee model**.
 
