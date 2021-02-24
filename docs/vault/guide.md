@@ -7,7 +7,7 @@ At the end of this document you will have:
 
 - [x] Received testnet DOT
 - [x] Started the Vault client locally
-- [x] Registered your Vault on the Rococo PolkaBTC testnet
+- [x] Registered your Vault on the Beta PolkaBTC testnet
 - [x] Inspected the status and activities of your Vault
 
 ## Prerequisites
@@ -27,7 +27,8 @@ Setup the Vault client using docker-compose. Best if you want to quickly try out
 ### 1. Download the docker-compose file to start the Vault client and the Bitcoin node.
 
 ```
-mkdir vault && cd vault && wget https://github.com/interlay/polkabtc-clients/tree/master/vault/docker-compose.yml
+mkdir vault && cd vault
+wget https://raw.githubusercontent.com/interlay/polkabtc-clients/master/vault/docker-compose.yml
 ```
 
 ### 2. Add your Polkadot account to use with your Vault
@@ -41,6 +42,12 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 ```
 
 !> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+
+You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
+
+```shell
+subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
+```
 
 ### 3. Start the Vault client
 
@@ -67,7 +74,7 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 
 Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
-```sh
+```shell
 bitcoind -testnet -server -prune=550 -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 
@@ -75,20 +82,20 @@ bitcoind -testnet -server -prune=550 -par=1 -maxuploadtarget=200 -blocksonly -rp
 
 Create a folder for your vault and enter it:
 
-```sh
+```shell
 mkdir vault && cd vault
 ```
 
 ?> _TODO_ Add the link to the binary
 Download the vault binary:
 
-```sh
+```shell
 wget https://gitlab.com/interlay/polkabtc-clients/-/jobs/976061249/artifacts/raw/binaries/vault
 ```
 
 Make the binary executable:
 
-```sh
+```shell
 chmod +x vault
 ```
 
@@ -104,38 +111,21 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 
 !> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
 
+You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
+
+```shell
+subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
+```
+
 ### 5. Start the Vault client
 
-To start the client, you can connect to our parachain full node or run your own.
+To start the client, you can connect to our parachain full node:
 
-**Run your own PolkaBTC node**
-
-```ssh
-docker run --network host registry.gitlab.com/interlay/btc-parachain:dev-rococo-c33ca08b btc-parachain-parachain --wasm-execution compiled --parachain-id 21 --chain staging --port 40337 --ws-port 9948 --bootnodes /ip4/64.225.82.241/tcp/30335/p2p/12D3KooWGMxvH5Bnmzq2LQFpdYSwe1GkqvwfrnLjhjwxmyEG1Fuk --unsafe-rpc-external --unsafe-ws-external -- --execution wasm --chain rococo --port 30337
-```
-
-Start the Vault:
-
-```sh
+```shell
 ./vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpass \
-  --keyfile keyfile.json \
-  --keyname polkabtcvault \
-  --auto-register-with-faucet-url 'http://beta.polkabtc.io/api/faucet' \
-  --polka-btc-url 'ws://0.0.0.0:9948'
-```
-
-**Connect to our PolkaBTC node**
-
-Start the Vault:
-
-```sh
-./vault \
-  --bitcoin-rpc-url http://localhost:18332 \
-  --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpass \
+  --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname polkabtcvault \
   --auto-register-with-faucet-url 'http://beta.polkabtc.io/api/faucet' \
@@ -159,7 +149,7 @@ Go to the Vault client [README](https://github.com/interlay/polkabtc-clients/tre
 
 ## Usage
 
-### Connecting the Vault to Rococo
+### Connecting the Vault to Beta
 
 Connect to our PolkaBTC node or run your own, as descriebd [above](#_5-start-the-vault-client).
 
@@ -178,7 +168,7 @@ Run the vault
 
 ### Registering your Vault
 
-The default behaviour on Rococo is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
+The default behaviour on Beta is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
 
 You can also register your vault through our web UI, going to the "Vault" tab, clicking the `Register` button and completing the steps.
 
@@ -243,7 +233,7 @@ Issue and Redeem requests are processed automatically at the moment, signing tra
 
 The process to leave PolkaBTC depends on whether or not your Vault client holds BTC in custody.
 
-If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client woithout risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
+If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client without risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
 
 If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another vault. You can request to be replaced through the [Vault dashboard](https://beta.polkabtc.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
 
