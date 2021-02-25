@@ -161,11 +161,11 @@ Run the vault
 ./vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpass \
+  --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname polkabtcvault \
-  --auto-register-with-faucet-url 'http://beta.polkabtc.io/api/faucet' \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
+  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
 ```
 
 ### Registering your Vault

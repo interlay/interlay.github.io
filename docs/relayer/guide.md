@@ -100,7 +100,7 @@ wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.1/staked
 Make the binary executable:
 
 ```shell
-chmod +x relayer
+chmod +x staked-relayer
 ```
 
 ### 4. Add your Polkadot account to use with your Relayer
@@ -133,6 +133,7 @@ To start the client, you can connect to our parachain full node:
   --keyfile keyfile.json \
   --keyname polkabtcrelayer \
   --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
+  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
 ```
 
 </details>
@@ -162,7 +163,7 @@ Run the vault
 ./staked-relayer \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpass \
+  --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname polkabtcrelayer \
   --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
