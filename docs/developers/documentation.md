@@ -18,18 +18,18 @@ If you want to get started working on PolkaBTC, understand how the system works,
 ### Vaults
 
 - [Documentation]()
-- [Source]()
+- [Source](https://github.com/interlay/polkabtc-clients/tree/dev/vault)
 
 ### Relayers
 
 - [Documentation]()
-- [Source]()
+- [Source](https://github.com/interlay/polkabtc-clients/tree/dev/staked-relayer)
 
 ### polkabtc-js
 
 - [Documentation]()
-- [Source]()
+- [Source](https://github.com/interlay/polkabtc-js)
 
 ### polkabtc-ui
 
-- [Source]()
+- [Source](https://github.com/interlay/polkabtc-ui)
