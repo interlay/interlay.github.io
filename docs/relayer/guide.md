@@ -68,6 +68,8 @@ docker-compose up
 Run Bitcoin and the Relayer binary as a service on your computer or server. Best for if you are mostly interested in operating a Relayer for earning PolkaBTC and participating in the protocol.
 </summary>
 
+!> This method is currently only supported for Linux.
+
 ### 1. Install a local Bitcoin node
 
 Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-node](https://bitcoin.org/en/full-node#what-is-a-full-node)
@@ -92,7 +94,7 @@ mkdir relayer && cd relayer
 Download the relayer binary:
 
 ```shell
-wget https://gitlab.com/interlay/polkabtc-clients/-/jobs/976061249/artifacts/raw/binaries/relayer
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.1/staked-relayer
 ```
 
 Make the binary executable:
