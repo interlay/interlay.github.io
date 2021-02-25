@@ -66,6 +66,8 @@ docker-compose up
 Run Bitcoin and the Vault binary as a service on your computer or server. Best for if you are mostly interested in operating a Vault for earning PolkaBTC and participating in the protocol.
 </summary>
 
+!> This method is currently only supported for Linux.
+
 ### 1. Install a local Bitcoin node
 
 Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-node](https://bitcoin.org/en/full-node#what-is-a-full-node)
