@@ -90,7 +90,7 @@ mkdir vault && cd vault
 Download the vault binary:
 
 ```shell
-wget https://gitlab.com/interlay/polkabtc-clients/-/jobs/976061249/artifacts/raw/binaries/vault
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.1/vault
 ```
 
 Make the binary executable:
