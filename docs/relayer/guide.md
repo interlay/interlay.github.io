@@ -166,7 +166,7 @@ Run the vault
   --keyfile keyfile.json \
   --keyname polkabtcrelayer \
   --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
-  --auto-register-with-faucet-url 'http://beta.polkabtc.io/api/faucet'
+  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
 ```
 
 ### Registering your Relayer
