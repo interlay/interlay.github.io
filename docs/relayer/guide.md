@@ -96,7 +96,7 @@ mkdir relayer && cd relayer
 Download the relayer binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.2/staked-relayer
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.3/staked-relayer
 ```
 
 Make the binary executable:
