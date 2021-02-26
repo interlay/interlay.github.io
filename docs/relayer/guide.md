@@ -76,6 +76,8 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 
 ### 2. Start the Bitcoin testnet node
 
+?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
+
 The Relayer requires a Bitcoin node with only part of the data. You can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```sh
@@ -145,7 +147,75 @@ To start the client, you can connect to our parachain full node:
 Build the Relayer client from source. Best if you have experience compiling rust code, interested in making contributions, and see how the Relayer client works under the hood.
 </summary>
 
-### Follow the instructions in the README
+### 1. Install Rust
+
+```shell
+curl https://sh.rustup.rs -sSf | sh
+rustup toolchain install nightly-2021-01-25
+rustup default nightly-2021-01-25
+```
+
+### 2. Install a local Bitcoin node
+
+Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-node](https://bitcoin.org/en/full-node#what-is-a-full-node)
+
+### 3. Start the Bitcoin testnet node
+
+?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
+
+The Relayer requires a Bitcoin node with only part of the data. You can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
+
+```sh
+bitcoind -testnet -server -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
+```
+
+### 4. Build the Relayer client
+
+?> This step will take about 45 minutes depending on your CPU.
+
+Clone the Relayer code, checkout release `0.5.3`, and build the client:
+
+```shell
+git clone git@github.com:interlay/polkabtc-clients.git
+cd polkabtc-clients
+git checkout 0.5.3
+cargo build -p staked-relayer
+```
+
+### 5. Add your Polkadot account to use with your Relayer
+
+Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the relayer, e.g.:
+
+```json
+{
+  "polkabtcrelayer": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
+}
+```
+
+!> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+
+You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
+
+```shell
+subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > keyfile.json
+```
+
+### 6. Start the Relayer client
+
+To start the client, you can connect to our parachain full node:
+
+```shell
+cargo run -p staked-relayer -- \
+  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-pass rpcpassword \
+  --keyfile keyfile.json \
+  --keyname polkabtcrelayer \
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
+  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
+```
+
+### For a local development setup, check the README
 
 Go to the Relayer client [README](https://github.com/interlay/polkabtc-clients/tree/master/staked-relayer).
 
