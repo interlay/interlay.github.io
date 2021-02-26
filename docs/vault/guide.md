@@ -14,6 +14,7 @@ At the end of this document you will have:
 
 - Make sure that you have a recent version of Linux or MacOS running. Windows support is not tested.
 - Make sure that you have at least 2GB of RAM.
+- Make sure you have at least 50 GB of free disk space (ideally SSD).
 - You should have a stable Internet connection.
 - Make sure that your Vault client is running for at least 8 hours per day (you can do other things on the side).
 
