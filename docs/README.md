@@ -48,4 +48,4 @@ XCLAIM guarantees users can redeem PolkaBTC tokens for the corresponding amount 
 
 ## Contributions
 
-PolkaBTC is an open-source project. We welcome contributions to the code and documentation. Feel free to checkout our [GitHub](https://github.com/interlay) or [Discord](https://discord.gg/FUbExrmv).
+PolkaBTC is an open-source project. We welcome contributions to the code and documentation. Feel free to checkout our [GitHub](https://github.com/interlay) or [Discord](https://discord.gg/KgCYK3MKSf).
