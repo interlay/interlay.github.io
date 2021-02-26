@@ -16,7 +16,7 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](sta
 
 ## Issue PolkaBTC
 
-### 1. Go to [ beta.polkabtc.io](https://beta.polkabtc.io/app)
+### 1. Go to [ beta.polkabtc.io](https://beta.polkabtc.io)
 
 The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Issue tab.
 
