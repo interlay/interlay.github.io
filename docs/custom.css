@@ -1,6 +1,7 @@
 :root {
-  --theme-color: darkred;
+  --theme-color: #f7931a;
 }
+
 /* use this for the guide links */
 .markdown-section h6 {
   font-size: var(--heading-h3-font-size);
@@ -26,6 +27,6 @@
 
 .markdown-section h6 > a:hover {
   border-bottom: 0;
-  color: darkred;
+  color: #e6007a;
   text-decoration: none;
 }
