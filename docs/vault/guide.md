@@ -28,7 +28,7 @@ Setup the Vault client using docker-compose. Best if you want to quickly try out
 
 ```shell
 mkdir vault && cd vault
-wget https://raw.githubusercontent.com/interlay/polkabtc-clients/0.5.1/vault/docker-compose.yml
+wget https://raw.githubusercontent.com/interlay/polkabtc-clients/master/scripts/vault/docker-compose.yml
 ```
 
 ### 2. Add your Polkadot account to use with your Vault
@@ -92,7 +92,7 @@ mkdir vault && cd vault
 Download the vault binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.1/vault
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.2/vault
 ```
 
 Make the binary executable:
