@@ -30,7 +30,7 @@ Setup the Relayer client using docker-compose. Best if you want to quickly try o
 
 ```
 mkdir relayer && cd relayer
-wget https://raw.githubusercontent.com/interlay/polkabtc-clients/0.5.1/staked-relayer/docker-compose.yml
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/docker-compose.yml
 ```
 
 ### 2. Add your Polkadot account to use with your Relayer
@@ -94,7 +94,7 @@ mkdir relayer && cd relayer
 Download the relayer binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.1/staked-relayer
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.2/staked-relayer
 ```
 
 Make the binary executable:
