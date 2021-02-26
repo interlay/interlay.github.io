@@ -8,7 +8,6 @@ At the core, PolkaBTC leverages the concept of cryptocurrency-back assets introd
 
 ### Issue, Trade, and Redeem
 
-
 The life-cycle of PolkaBTC follows the three main protocols:
 
 - **Issue:** Users create PolkaBTC on the BTC-Parachain by locking BTC with Vaults — non-trusted and collateralized intermediaries on Bitcoin.
