@@ -1,5 +1,5 @@
 <!-- _navbar.md -->
 
-* [Go to app](https://alpha.polkabtc.io)
+* [Go to App](https://beta.polkabtc.io)
 * [:uk:](/)
 <!-- * [:cn:](/zh-cn/) -->
