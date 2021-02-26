@@ -98,19 +98,19 @@ All roles are coordinated through the **Parachain Execution Environment**, which
 
 XCLAIM exhibits two core protocols, Issue and Redeem, outlined below.
 
-### Issue/Mint PolkaBTC
+### Issue PolkaBTC
 
 A user (liquidity provider) mints new PolkaBTC.
 
-1. A user registers an *issue request* with a collateralized Vault of his choosing. This reserves the Vault’s DOT collateral (to prevent race conditions).
+1. A Vault locks DOT as collateral with the PolkaBTC bridge (the Interlay BTC Parachain).
 
-1. The user then sends BTC to the Vault,
+1. A user creates an issue request with a collateralized Vault of his choosing. This reserves the Vault’s DOT collateral.
 
-1. And submits a transaction inclusion proof to the BTC-Relay.
+1. The user then sends BTC to the Vault.
 
-1. The BTC-Relay verifies the Bitcoin transaction.
+1. The user proofs to the PolkaBTC bridge that it send the BTC to the vault (using a transaction inclusion proof against the BTC Relay).
 
-1. The user is allocated the equivalent amount of newly minted PolkaBTC
+1. Upon successful verification of the proof, the user mints PolkaBTC and receives the tokens to his or her account balance.
 
 ![High-level PolkaBTC Issue process](https://cdn-images-1.medium.com/max/3200/0*3OIDfIffZskXZmi7)*High-level PolkaBTC Issue process*
 
@@ -118,11 +118,11 @@ A user (liquidity provider) mints new PolkaBTC.
 
 A user redeems PolkaBTC for the equivalent amount of BTC or receives DOT as reimbursement.
 
-1. To request a redeem, a user locks PolkaBTC with the BTC Parachain.
+1. To request a redeem, a user locks PolkaBTC with the PolkaBTC bridge (Interlay BTC Parachain).
 
 1. The Parachain instructs a Vault to execute the redeem.
 
-1. The Vault releases the correct amount of BTC to the user.
+1. The Vault transfers the correct amount of BTC to the user.
 
 1. To unlock the DOT collateral, the Vault submits a transaction inclusion proof to BTC-Relay.
 

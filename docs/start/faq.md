@@ -30,4 +30,4 @@ PolkaBTC is based on XCLAIM - a top-tier, peer-reviewed research paper. PolkaBTC
 
 ## More questions?
 
-Reach out on [Discord](https://discord.gg/FUbExrmv) or [open an issue](https://github.com/interlay/polkabtc-docs/issues).
+Reach out on [Discord](https://discord.gg/KgCYK3MKSf) or [open an issue](https://github.com/interlay/polkabtc-docs/issues).

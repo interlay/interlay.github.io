@@ -14,6 +14,7 @@ At the end of this document you will have:
 
 - Make sure that you have a recent version of Linux or MacOS running. Windows support is not tested.
 - Make sure that you have at least 2GB of RAM.
+- Make sure you have at least 50 GB of free disk space (ideally SSD).
 - You should have a stable Internet connection.
 - Make sure that your Vault client is running for at least 8 hours per day (you can do other things on the side).
 
@@ -74,6 +75,8 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 
 ### 2. Start the Bitcoin testnet node
 
+?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
+
 Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```shell
@@ -88,11 +91,10 @@ Create a folder for your vault and enter it:
 mkdir vault && cd vault
 ```
 
-?> _TODO_ Add the link to the binary
 Download the vault binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.2/vault
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.3/vault
 ```
 
 Make the binary executable:
@@ -144,7 +146,79 @@ To start the client, you can connect to our parachain full node:
 Build the Vault client from source. Best if you have experience compiling rust code, interested in making contributions, and see how the Vault client works under the hood.
 </summary>
 
-### Follow the instructions in the README
+
+### 1. Install Rust
+
+```shell
+curl https://sh.rustup.rs -sSf | sh
+rustup toolchain install nightly-2021-01-25
+rustup default nightly-2021-01-25
+```
+
+### 2. Install a local Bitcoin node
+
+Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-node](https://bitcoin.org/en/full-node#what-is-a-full-node)
+
+### 3. Start the Bitcoin testnet node
+
+?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
+
+Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
+
+```shell
+bitcoind -testnet -server -prune=550 -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
+```
+
+### 4. Build the Vault client
+
+?> This step will take about 45 minutes depending on your CPU.
+
+Clone the Vault code, checkout release `0.5.3`, and build the client:
+
+```shell
+git clone git@github.com:interlay/polkabtc-clients.git
+cd polkabtc-clients
+git checkout 0.5.3
+cargo build -p vault
+```
+
+### 5. Add your Polkadot account to use with your Vault
+
+?> You can execute this step in parallel to step 4.
+
+Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the vault, e.g.:
+
+```json
+{
+  "polkabtcvault": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
+}
+```
+
+!> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+
+You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
+
+```shell
+subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
+```
+
+### 6. Start the Vault client
+
+To start the client, you can connect to our parachain full node:
+
+```shell
+cargo run -p vault -- \
+  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-pass rpcpassword \
+  --keyfile keyfile.json \
+  --keyname polkabtcvault \
+  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
+  --network=testnet
+```
+
+### For a local development setup, check the README
 
 Go to the Vault client [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
 

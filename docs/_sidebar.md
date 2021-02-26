@@ -28,5 +28,3 @@
 * About PolkaBTC
 
   * [Roadmap](about/roadmap.md)
-  * [Security](about/security.md)
-  * [Design](about/design.md)
