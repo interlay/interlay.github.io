@@ -26,7 +26,7 @@ Setup the Vault client using docker-compose. Best if you want to quickly try out
 
 ### 1. Download the docker-compose file to start the Vault client and the Bitcoin node.
 
-```
+```shell
 mkdir vault && cd vault
 wget https://raw.githubusercontent.com/interlay/polkabtc-clients/0.5.1/vault/docker-compose.yml
 ```
@@ -241,7 +241,7 @@ If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral a
 
 If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another vault. You can request to be replaced through the [Vault dashboard](https://beta.polkabtc.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
 
-## Advanced
+<!-- ## Advanced
 
 ### Key Management
 
@@ -249,4 +249,4 @@ If your Vault clients holds at least _some BTC in custody_, you have two options
 
 ### Restarting the Vault
 
-### Making Changes to the Vault
+### Making Changes to the Vault -->

@@ -14,9 +14,7 @@ At the end of this guide you will have:
 
 Make sure you have the required [polkadot-js extension and a Bitcoin wallet](start/prereq.md).
 
-
 ## Issue PolkaBTC
-
 
 ### 1. Go to [ beta.polkabtc.io](https://beta.polkabtc.io/app)
 

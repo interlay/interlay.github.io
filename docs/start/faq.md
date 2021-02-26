@@ -1,4 +1,5 @@
-#  FAQ
+# FAQ
+
 ### How does PolkaBTC maintain its peg?
 
 The BTC-Parachain ensures that for each minted PolkaBTC: (1) there is an equivalent amount of BTC physically locked on Bitcoin, and (2) there is sufficient DOT collateral locked to economically back minted PolkaBTC in case vaults attempt theft. As such, PolkaBTC is a hybrid peg, with supply determined by both locked BTC and DOT.
