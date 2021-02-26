@@ -134,7 +134,7 @@ To start the client, you can connect to our parachain full node:
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname polkabtcrelayer \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
 ```
 
@@ -211,7 +211,7 @@ cargo run -p staked-relayer -- \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname polkabtcrelayer \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
 ```
 

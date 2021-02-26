@@ -228,7 +228,7 @@ Go to the Vault client [README](https://github.com/interlay/polkabtc-clients/tre
 
 ### Connecting the Vault to Beta
 
-Connect to our PolkaBTC node or run your own, as descriebd [above](#_5-start-the-vault-client).
+Connect to our PolkaBTC node or run your own, as described [above](#_5-start-the-vault-client).
 
 Run the vault
 
