@@ -131,7 +131,7 @@ To start the client, you can connect to our parachain full node:
   --keyfile keyfile.json \
   --keyname polkabtcvault \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
   --network=testnet
 ```
 
@@ -166,7 +166,7 @@ Run the vault
   --keyfile keyfile.json \
   --keyname polkabtcvault \
   --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
-  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
+  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
   --network=testnet
 ```
 
