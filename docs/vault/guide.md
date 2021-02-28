@@ -127,7 +127,15 @@ You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subke
 subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
 ```
 
-### 5. Start the Vault client
+### 5. Start the Vault client as a systemd service
+
+?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
+
+!> TODO: add this.
+
+### 6. OPTIONAL: Start the Vault client directly
+
+?> The client will not restart on network outages or after rebooting the system using this approach.
 
 To start the client, you can connect to our parachain full node:
 

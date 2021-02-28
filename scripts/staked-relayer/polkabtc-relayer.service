@@ -1,0 +1,8 @@
+[Unit]
+Description=Staked Relayer submitting BTC blocks to the PolkaBTC system
+Type=simple
+ExecStart=/opt/scripts/run-backup.sh --full --to-external
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

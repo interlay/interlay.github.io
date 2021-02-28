@@ -1,0 +1,8 @@
+[Unit]
+Description=Vault servicing issue and redeem requests for PolkaBTC
+Type=simple
+ExecStart=/opt/scripts/run-backup.sh --full --to-external
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
