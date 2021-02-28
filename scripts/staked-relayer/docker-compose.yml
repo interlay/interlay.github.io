@@ -16,6 +16,8 @@ services:
       - '18332:18332'
     volumes:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
+    restart:
+     unless-stopped
   staked_relayer:
     image: 'registry.gitlab.com/interlay/polkabtc-clients/staked-relayer:0.5.3'
     command:
@@ -41,3 +43,5 @@ services:
       - type: bind
         source: ./keyfile.json
         target: /keyfile.json
+    restart:
+     unless-stopped
