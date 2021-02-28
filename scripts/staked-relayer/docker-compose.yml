@@ -16,8 +16,7 @@ services:
       - '18332:18332'
     volumes:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
-    restart:
-     unless-stopped
+    restart: unless-stopped
   staked_relayer:
     image: 'registry.gitlab.com/interlay/polkabtc-clients/staked-relayer:0.5.3'
     command:
@@ -28,7 +27,7 @@ services:
         sleep 10
         staked-relayer \
             --http-addr '[::0]:3030' \
-            --bitcoin-rpc-url http://bitcoind:18332 \
+            --bitcoin-rpc-url http://localhost:18332 \
             --bitcoin-rpc-user rpcuser \
             --bitcoin-rpc-pass rpcpassword \
             --keyfile /keyfile.json \
@@ -43,5 +42,4 @@ services:
       - type: bind
         source: ./keyfile.json
         target: /keyfile.json
-    restart:
-     unless-stopped
+    restart: unless-stopped

@@ -12,7 +12,7 @@ This is the central place for user guides and links to developer documentation i
 
 Make sure you have `yarn` installed. Install docsify globally:
 
-```sh
+```shell
 yarn global add docsify-cli
 ```
 
@@ -20,13 +20,13 @@ yarn global add docsify-cli
 
 Clone the repository:
 
-```sh
+```shell
 git clone git@github.com:interlay/polkabtc-docs.git
 ```
 
 Build the documentation:
 
-```sh
+```shell
 docsify serve ./docs
 ```
 

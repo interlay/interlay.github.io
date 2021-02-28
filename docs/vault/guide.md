@@ -25,7 +25,7 @@ At the end of this document you will have:
 Setup the Vault client using docker-compose. Best if you want to quickly try out running the client.
 </summary>
 
-### 1. Download the docker-compose file to start the Vault client and the Bitcoin node.
+### 1. Download the docker-compose file to start the Vault client and the Bitcoin node
 
 ```shell
 mkdir vault && cd vault
@@ -52,9 +52,15 @@ subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > key
 
 ### 3. Start the Vault client
 
-You can run the entire Vault client and the Bitcoin node with the following command:
+?> If you already have a locally running Bitcoin testnet node, only start the vault client:
 
-```sh
+```shell
+docker-compose up vault
+```
+
+Otherwise, you can run the entire Vault client and the Bitcoin node with the following command:
+
+```shell
 docker-compose up
 ```
 
@@ -80,7 +86,7 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```shell
-bitcoind -testnet -server -prune=550 -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
+bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 
 ### 3. Install the Vault client
@@ -166,7 +172,7 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```shell
-bitcoind -testnet -server -prune=550 -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
+bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 
 ### 4. Build the Vault client
@@ -232,7 +238,7 @@ Connect to our PolkaBTC node or run your own, as described [above](#_5-start-the
 
 Run the vault
 
-```sh
+```shell
 ./vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \

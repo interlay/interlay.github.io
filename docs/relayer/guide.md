@@ -53,6 +53,12 @@ subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > k
 
 ### 3. Start the Relayer client
 
+?> If you already have a locally running Bitcoin testnet node, only start the vault client:
+
+```shell
+docker-compose up staked_relayer
+```
+
 You can run the entire Relayer client and the Bitcoin node with the following command:
 
 ```shell
@@ -80,7 +86,7 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 
 The Relayer requires a Bitcoin node with only part of the data. You can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
-```sh
+```shell
 bitcoind -testnet -server -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 
@@ -165,7 +171,7 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 
 The Relayer requires a Bitcoin node with only part of the data. You can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
-```sh
+```shell
 bitcoind -testnet -server -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 

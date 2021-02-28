@@ -5,7 +5,6 @@ services:
     command:
       - -testnet
       - -server
-      - -prune=550
       - -par=1
       - -maxuploadtarget=200
       - -blocksonly
@@ -18,8 +17,7 @@ services:
       - '18332:18332'
     volumes:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
-    restart:
-     unless-stopped
+    restart: unless-stopped
   vault:
     image: 'registry.gitlab.com/interlay/polkabtc-clients/vault:0.5.3'
     command:
@@ -30,7 +28,7 @@ services:
         sleep 10
         vault \
             --http-addr '[::0]:3032' \
-            --bitcoin-rpc-url http://bitcoind:18332 \
+            --bitcoin-rpc-url http://localhost:18332 \
             --bitcoin-rpc-user rpcuser \
             --bitcoin-rpc-pass rpcpassword \
             --network=testnet \
@@ -46,5 +44,4 @@ services:
       - type: bind
         source: ./keyfile.json
         target: /keyfile.json
-    restart:
-     unless-stopped
+    restart: unless-stopped
