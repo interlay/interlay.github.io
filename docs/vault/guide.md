@@ -127,7 +127,7 @@ You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subke
 subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
 ```
 
-### 5. Start the Vault client as a systemd service
+### 5.A. Start the Vault client as a systemd service
 
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
 
@@ -150,14 +150,14 @@ To stop the service, run:
 systemctl stop polkabtc-relayer.service
 ```
 
-### 6. OPTIONAL: Start the Vault client directly
+### 5.B. OPTIONAL: Start the Vault client directly
 
 ?> The client will not restart on network outages or after rebooting the system using this approach.
 
 To start the client, you can connect to our parachain full node:
 
 ```shell
-./vault \
+RUST_LOG=info ./vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
@@ -237,7 +237,7 @@ subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > key
 To start the client, you can connect to our parachain full node:
 
 ```shell
-cargo run -p vault -- \
+RUST_LOG=info cargo run -p vault -- \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
@@ -263,7 +263,7 @@ Connect to our PolkaBTC node or run your own, as described [above](#_5-start-the
 Run the vault
 
 ```shell
-./vault \
+RUST_LOG=info ./vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \

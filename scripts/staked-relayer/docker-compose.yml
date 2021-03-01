@@ -36,6 +36,8 @@ services:
             --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
     ports:
       - "3030:3030"
+    environment:
+      RUST_LOG: info
     volumes:
       - type: bind
         source: ./keyfile.json

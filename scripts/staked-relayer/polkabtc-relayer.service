@@ -3,6 +3,7 @@ Description=Staked Relayer submitting BTC blocks to the PolkaBTC system
 After=network.target
 
 [Service]
+Environment="RUST_LOG=info"
 Type=simple
 ExecStart=/opt/polkabtc/relayer/staked-relayer \
   --bitcoin-rpc-url http://localhost:18332 \
