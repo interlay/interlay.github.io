@@ -1,7 +1,7 @@
-version: '3.8'
+version: "3.8"
 services:
   bitcoind:
-    image: 'ruimarinho/bitcoin-core:0.20'
+    image: "ruimarinho/bitcoin-core:0.20"
     command:
       - -testnet
       - -server
@@ -13,13 +13,12 @@ services:
       - -rpcpassword=rpcpassword
       - -fallbackfee=0.0002
     ports:
-      - '18332:18332'
+      - "18332:18332"
     volumes:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
-    restart:
-     unless-stopped
+    restart: unless-stopped
   staked_relayer:
-    image: 'registry.gitlab.com/interlay/polkabtc-clients/staked-relayer:0.5.3'
+    image: "registry.gitlab.com/interlay/polkabtc-clients/staked-relayer:0.5.3"
     command:
       - /bin/sh
       - -c
@@ -28,7 +27,7 @@ services:
         sleep 10
         staked-relayer \
             --http-addr '[::0]:3030' \
-            --bitcoin-rpc-url http://bitcoind:18332 \
+            --bitcoin-rpc-url http://localhost:18332 \
             --bitcoin-rpc-user rpcuser \
             --bitcoin-rpc-pass rpcpassword \
             --keyfile /keyfile.json \
@@ -36,12 +35,11 @@ services:
             --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
             --polka-btc-url 'wss://beta.polkabtc.io/api/parachain'
     ports:
-      - '3030:3030'
+      - "3030:3030"
     environment:
       RUST_LOG: info
     volumes:
       - type: bind
         source: ./keyfile.json
         target: /keyfile.json
-    restart:
-     unless-stopped
+    restart: unless-stopped

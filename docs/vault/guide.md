@@ -25,7 +25,7 @@ At the end of this document you will have:
 Setup the Vault client using docker-compose. Best if you want to quickly try out running the client.
 </summary>
 
-### 1. Download the docker-compose file to start the Vault client and the Bitcoin node.
+### 1. Download the docker-compose file to start the Vault client and the Bitcoin node
 
 ```shell
 mkdir vault && cd vault
@@ -52,9 +52,15 @@ subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > key
 
 ### 3. Start the Vault client
 
-You can run the entire Vault client and the Bitcoin node with the following command:
+?> If you already have a locally running Bitcoin testnet node, only start the vault client:
 
-```sh
+```shell
+docker-compose up vault
+```
+
+Otherwise, you can run the entire Vault client and the Bitcoin node with the following command:
+
+```shell
 docker-compose up
 ```
 
@@ -80,7 +86,7 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```shell
-bitcoind -testnet -server -prune=550 -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
+bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 
 ### 3. Install the Vault client
@@ -121,12 +127,37 @@ You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subke
 subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
 ```
 
-### 5. Start the Vault client
+### 5.A. Start the Vault client as a systemd service
+
+?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
+
+```shell
+git clone git@github.com:interlay/polkabtc-docs.git && cp polkabtc-docs/scripts/vault/setup . && cp polkabtc-docs/scripts/vault/polkabtc-vault.service . && rm -rf polkabtc-docs
+chmod +x ./setup && sudo ./setup
+systemctl daemon-reload
+systemctl start polkabtc-vault.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+systemctl status polkabtc-vault.service
+```
+
+To stop the service, run:
+
+```shell
+systemctl stop polkabtc-relayer.service
+```
+
+### 5.B. OPTIONAL: Start the Vault client directly
+
+?> The client will not restart on network outages or after rebooting the system using this approach.
 
 To start the client, you can connect to our parachain full node:
 
 ```shell
-./vault \
+RUST_LOG=info ./vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
@@ -145,7 +176,6 @@ To start the client, you can connect to our parachain full node:
 <summary>
 Build the Vault client from source. Best if you have experience compiling rust code, interested in making contributions, and see how the Vault client works under the hood.
 </summary>
-
 
 ### 1. Install Rust
 
@@ -166,7 +196,7 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```shell
-bitcoind -testnet -server -prune=550 -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
+bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 
 ### 4. Build the Vault client
@@ -207,7 +237,7 @@ subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > key
 To start the client, you can connect to our parachain full node:
 
 ```shell
-cargo run -p vault -- \
+RUST_LOG=info cargo run -p vault -- \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
@@ -232,8 +262,8 @@ Connect to our PolkaBTC node or run your own, as described [above](#_5-start-the
 
 Run the vault
 
-```sh
-./vault \
+```shell
+RUST_LOG=info ./vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
