@@ -17,7 +17,7 @@ You can also pick one of the following Bitcoin testnet wallets below:
 - **Bitpay**: https://bitpay.com/wallet/ (Linux; Guide here: https://support.bitpay.com/hc/en-us/articles/360015463612-How-to-Create-a-Testnet-Wallet)
 
 #### Hardware Wallets
-You can also use your hardware wallet if it has Bitcoin testnet support.
+You can also use your hardware wallet. The following are tested and have Bitcoin testnet support:
 
 - **Ledger**: https://www.ledger.com/ (Guide: https://coinguides.org/ledger-testnet/)
 - **Trezor**: https://trezor.io/ (Guide: https://wiki.trezor.io/Bitcoin_testnet)
