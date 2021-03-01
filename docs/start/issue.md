@@ -8,7 +8,9 @@ At the end of this guide you will have:
 - [x] Locked BTC with a collateralized Vault
 - [x] Issued your first PolkaBTC on the PolkaBTC app
 
-?> _TODO_ Add the video here.
+## Video Guide
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hMZTj6ctGQE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Prerequisites
 
@@ -29,7 +31,6 @@ Enter the amount of PolkaBTC you want to issue. The app will automatically selec
 Check the details of your issue request and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
 You should be able to see your request in the **"Issue Requests"** table below the app modal. Clicking on a row of this table will open a pop-up with more details about the request.
-
 
 ### 3. Transfer BTC from your Bitcoin wallet to the given address
 
@@ -64,14 +65,13 @@ Confirm the recipient address, amount and fees on the device.
 The receipt will show the transaction ID, click **"View in explorer"** to check whether your transaction is included in the Bitcoin network.
 
 ![Receipt](../_assets/img/ledger/5-receipt.png)
-</details>
 
+</details>
 
 <details>
 <summary>
 <b>Send BTC with the Trezor wallet</b>
 </summary>
-
 
 To configure the [Trezor Wallet](https://wallet.trezor.io/#/) to work with Bitcoin testnet, go to the `Wallet Settings` and set `Backend Server URL` to `https://tbtc2.trezor.io`.
 
