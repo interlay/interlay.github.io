@@ -131,7 +131,24 @@ subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > key
 
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
 
-!> TODO: add this.
+```shell
+git clone git@github.com:interlay/polkabtc-docs.git && cp polkabtc-docs/scripts/vault/setup . && cp polkabtc-docs/scripts/vault/polkabtc-vault.service . && rm -rf polkabtc-docs
+chmod +x ./setup && sudo ./setup
+systemctl daemon-reload
+systemctl start polkabtc-vault.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+systemctl status polkabtc-vault.service
+```
+
+To stop the service, run:
+
+```shell
+systemctl stop polkabtc-relayer.service
+```
 
 ### 6. OPTIONAL: Start the Vault client directly
 
@@ -159,7 +176,6 @@ To start the client, you can connect to our parachain full node:
 <summary>
 Build the Vault client from source. Best if you have experience compiling rust code, interested in making contributions, and see how the Vault client works under the hood.
 </summary>
-
 
 ### 1. Install Rust
 

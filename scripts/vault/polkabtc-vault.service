@@ -1,8 +1,20 @@
 [Unit]
 Description=Vault servicing issue and redeem requests for PolkaBTC
+After=network.target
+
+[Service]
 Type=simple
-ExecStart=/opt/scripts/run-backup.sh --full --to-external
+ExecStart=/opt/polkabtc/vault/vault \
+  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-pass rpcpassword \
+  --keyfile /opt/polkabtc/vault/keyfile.json \
+  --keyname polkabtcvault \
+  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
+  --network=testnet
 Restart=on-failure
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target

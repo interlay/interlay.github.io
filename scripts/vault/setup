@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ -f ./vault ] || wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.3/vault
+chmod +x vault
+[ -d /opt/polkabtc ] || mkdir /opt/polkabtc
+[ -d /opt/polkabtc/vault ] || mkdir /opt/polkabtc/vault
+cp ./vault /opt/polkabtc/vault/
+cp ./keyfile.json /opt/polkabtc/vault/
+[ -d /usr/lib/systemd/system/ ] || mkdir /usr/lib/systemd/system/
+cp polkabtc-vault.service /usr/lib/systemd/system/

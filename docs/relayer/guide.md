@@ -206,7 +206,32 @@ You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subke
 subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > keyfile.json
 ```
 
-### 6. Start the Relayer client
+### 6. Start the Relayer client as a systemd service
+
+?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
+
+Run the following from the `polkabtc-docs/scripts/staked-relayer` directory.
+
+```shell
+git clone git@github.com:interlay/polkabtc-docs.git && cp polkabtc-docs/scripts/staked-relayer/setup . && cp polkabtc-docs/scripts/staked-relayer/polkabtc-vault.service . && rm -rf polkabtc-docs
+chmod +x ./setup && sudo ./setup
+systemctl daemon-reload
+systemctl start polkabtc-relayer.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+systemctl status polkabtc-relayer.service
+```
+
+To stop the service, run:
+
+```shell
+systemctl stop polkabtc-relayer.service
+```
+
+### 7. OPTIONAL: Start the Relayer client
 
 To start the client, you can connect to our parachain full node:
 

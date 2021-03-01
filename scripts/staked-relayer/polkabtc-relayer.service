@@ -1,8 +1,19 @@
 [Unit]
 Description=Staked Relayer submitting BTC blocks to the PolkaBTC system
+After=network.target
+
+[Service]
 Type=simple
-ExecStart=/opt/scripts/run-backup.sh --full --to-external
+ExecStart=/opt/polkabtc/relayer/staked-relayer \
+  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-pass rpcpassword \
+  --keyfile /opt/polkabtc/relayer/keyfile.json \
+  --keyname polkabtcrelayer \
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
+  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
 Restart=on-failure
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
