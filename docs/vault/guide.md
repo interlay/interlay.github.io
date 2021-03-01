@@ -132,7 +132,7 @@ subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > key
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
 
 ```shell
-git clone git@github.com:interlay/polkabtc-docs.git && cp polkabtc-docs/scripts/vault/setup . && cp polkabtc-docs/scripts/vault/polkabtc-vault.service . && rm -rf polkabtc-docs
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/setup && wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/polkabtc-vault.service
 chmod +x ./setup && sudo ./setup
 systemctl daemon-reload
 systemctl start polkabtc-vault.service
@@ -142,6 +142,12 @@ You can then check the status of your service by running:
 
 ```shell
 systemctl status polkabtc-vault.service
+```
+
+Or by streaming the logs to the `vault.log` file in the current directory:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=polkabtc-vault.service &> vault.log
 ```
 
 To stop the service, run:
