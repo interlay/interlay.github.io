@@ -7,7 +7,9 @@ At the end of this guide you will have:
 - [x] Redeemed your first PolkaBTC from the PolkaBTC app
 - [X] Received BTC for the redeemed PolkaBTC in your Bitcoin wallet
 
-?> _TODO_ Add the video here.
+## Video Guide
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-TZ2XUmXh9I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Prerequisites
 
