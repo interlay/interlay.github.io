@@ -134,7 +134,7 @@ subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > k
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
 
 ```shell
-git clone git@github.com:interlay/polkabtc-docs.git && cp polkabtc-docs/scripts/staked-relayer/setup . && cp polkabtc-docs/scripts/staked-relayer/polkabtc-relayer.service . && rm -rf polkabtc-docs
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup && wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/polkabtc-relayer.service
 chmod +x ./setup && sudo ./setup
 systemctl daemon-reload
 systemctl start polkabtc-relayer.service
@@ -144,6 +144,12 @@ You can then check the status of your service by running:
 
 ```shell
 systemctl status polkabtc-relayer.service
+```
+
+Or by streaming the logs to the `relayer.log` file in the current directory:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=polkabtc-relayer.service &> relayer.log
 ```
 
 To stop the service, run:
