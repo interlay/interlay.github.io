@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ -f ./vault ] || wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.3/vault
+[ -f ./vault ] || wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.4/vault
 chmod +x vault
 [ -d /opt/polkabtc ] || mkdir /opt/polkabtc
 [ -d /opt/polkabtc/vault ] || mkdir /opt/polkabtc/vault
