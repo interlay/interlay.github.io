@@ -301,6 +301,7 @@ const vaultClient = new VaultClient(VAULT_CLIENT_URL);
 await vaultClient.deregisterStakedRelayer();
 ```
 
+<!--
 ## Advanced
 
 ### Key Management
@@ -310,3 +311,12 @@ await vaultClient.deregisterStakedRelayer();
 ### Restarting the Relayer
 
 ### Making Changes to the Relayer
+
+-->
+
+## Dashboard
+
+You can monitor the operation of your Relayer on the Relayer dashboard. 
+The Relayer will expose an API on the default port ``3031``. If you are running the Relayer on a remote server, you might need to port-forward. 
+
+Once the Relayer is up and running, a "Relayer" tab will appear in the topbar of the app at [beta.polkabtc.io](https://beta.polkabtc.io/) (or you can access directly at [beta.polkabtc.io/relayer](https://beta.polkabtc.io/relayer)).
