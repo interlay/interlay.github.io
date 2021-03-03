@@ -277,7 +277,7 @@ RUST_LOG=info ./staked-relayer \
 
 ### Registering your Relayer
 
-The default behaviour on Beta is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
+The default behaviour on Beta is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-stake` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
 
 You can also register your relayer through the web UI. Go to the "Relayer" tab and click on the "Register (Lock DOT)" button, following the instructions.
 
