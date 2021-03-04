@@ -25,7 +25,7 @@ You can also use your hardware wallet. The following are tested and have Bitcoin
 ### 2. Getting testnet BTC
 
 Make sure you have at least some tBTC in your wallet. 
-You can get testnet BTC by clicking on the faucet link in the top bar of polkabtc.io, or from one of the following faucets:
+You can get testnet BTC by clicking on the faucet link in the top bar of beta.polkabtc.io, or from one of the following faucets:
 
 - [https://testnet-faucet.mempool.co/](https://testnet-faucet.mempool.co/)
 - [https://bitcoinfaucet.uo1.net/](https://bitcoinfaucet.uo1.net/)
@@ -45,7 +45,7 @@ You will need the polkadot-js browser extension to test PolkaBTC.
 
 ### 4. Getting testnet DOT
 
-You can get testnet DOT by clicking on the faucet link in the top bar of polkabtc.io.
+You can get testnet DOT by clicking on the faucet link in the top bar of beta.polkabtc.io.
 
 !> **Note:** these testnet DOT are only usable on PolkaBTC. They are **not real DOT and have no economic value**!
 
