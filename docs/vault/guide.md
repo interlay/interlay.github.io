@@ -52,13 +52,15 @@ subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > key
 
 ### 3. Start the Vault client
 
-?> If you already have a locally running Bitcoin testnet node, only start the vault client:
+(Optional) If you already have a locally running Bitcoin testnet node, only start the vault client:
 
 ```shell
 docker-compose up vault
 ```
 
-Otherwise, you can run the entire Vault client and the Bitcoin node with the following command:
+?> You may need to edit the docker-compose to point `--bitcoin-rpc-url` to `http://localhost:18332`.
+
+You can run the entire Vault client and the Bitcoin node with the following command:
 
 ```shell
 docker-compose up
@@ -100,7 +102,7 @@ mkdir vault && cd vault
 Download the vault binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.4/vault
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.7/vault
 ```
 
 Make the binary executable:
@@ -211,12 +213,12 @@ bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcus
 
 ?> This step will take about 45 minutes depending on your CPU.
 
-Clone the Vault code, checkout release `0.5.4`, and build the client:
+Clone the Vault code, checkout release `0.5.7`, and build the client:
 
 ```shell
 git clone git@github.com:interlay/polkabtc-clients.git
 cd polkabtc-clients
-git checkout 0.5.4
+git checkout 0.5.7
 cargo build -p vault
 ```
 
