@@ -31,23 +31,13 @@ Users must perform a list of actions to receive a small amount of DOT. To claim 
 1. Redeem PolkaBTC
 1. Fill in the user feedback form provided at [https://beta.polkabtc.io/feedback](https://beta.polkabtc.io/feedback)
 
-#### Vault (award: 4 DOT for the first 50, 200 DOT in total)
+#### Vault
 
-1. Download, build and run the Vault client [based on the guide](https://docs.polkabtc.io/#/vault/guide)
-1. Register as a Vault and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Vault dashboard](https://beta.polkabtc.io/dashboard/vaults))
-1. Run the Vault
-1. Serve at least 5 issue and 5 redeem requests
-1. Maintain an SLA of 99% or higher for at least 24h
-1. Fill in the Vault feedback form provided at [https://beta.polkabtc.io/feedback](https://beta.polkabtc.io/feedback)
+**To be announced, stay tuned!**
 
-#### Staked Relayer (award: 4 DOT for the first 50, 200 DOT in total)
+#### Staked Relayer
 
-1. Download, build and run the Staked Relayer client [based on the guide](https://docs.polkabtc.io/#/relayer/guide)
-1. Register as a Staked Relayer and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Relayer dashboard](https://beta.polkabtc.io/dashboard/parachain))
-1. Run the Staked Relayer
-1. Submit at least 1 Bitcoin testnet block
-1. Maintain an SLA of 99% or higher for at least 24h
-1. Fill in the Staked Relayer feedback form
+**To be announced, stay tuned!**
 
 ### Best Vaults and Relayers (200 DOT)
 
