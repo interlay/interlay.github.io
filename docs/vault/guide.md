@@ -155,7 +155,7 @@ journalctl --follow _SYSTEMD_UNIT=polkabtc-vault.service &> vault.log
 To stop the service, run:
 
 ```shell
-systemctl stop polkabtc-relayer.service
+systemctl stop polkabtc-vault.service
 ```
 
 ### 5.B. OPTIONAL: Start the Vault client directly
@@ -365,10 +365,9 @@ If your Vault clients holds at least _some BTC in custody_, you have two options
 
 ### Making Changes to the Vault -->
 
-
 ## Dashboard
 
 You can monitor the operation of your Vault on the Vault dashboard.
-The Vault will expose an API on the default port ``3030``. If you are running the Vault on a remote server, you might need to port-forward.
+The Vault will expose an API on the default port `3030`. If you are running the Vault on a remote server, you might need to port-forward.
 
 Once the Vault is up and running, a "Vault" tab will appear in the topbar of the app at [beta.polkabtc.io](https://beta.polkabtc.io/) (or you can access directly at [beta.polkabtc.io/vault](https://beta.polkabtc.io/vault)).
