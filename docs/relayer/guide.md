@@ -175,6 +175,8 @@ RUST_LOG=info ./staked-relayer \
 
 </details>
 
+?> Building from source requires `clang 11`. Make sure to check this via `clang -v`.
+
 ## Install from Source
 
 <details>
@@ -351,7 +353,7 @@ await vaultClient.deregisterStakedRelayer();
 
 ## Dashboard
 
-You can monitor the operation of your Relayer on the Relayer dashboard. 
-The Relayer will expose an API on the default port ``3031``. If you are running the Relayer on a remote server, you might need to port-forward. 
+You can monitor the operation of your Relayer on the Relayer dashboard.
+The Relayer will expose an API on the default port ``3031``. If you are running the Relayer on a remote server, you might need to port-forward.
 
 Once the Relayer is up and running, a "Relayer" tab will appear in the topbar of the app at [beta.polkabtc.io](https://beta.polkabtc.io/) (or you can access directly at [beta.polkabtc.io/relayer](https://beta.polkabtc.io/relayer)).
