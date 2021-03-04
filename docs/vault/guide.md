@@ -183,6 +183,8 @@ RUST_LOG=info ./vault \
 Build the Vault client from source. Best if you have experience compiling rust code, interested in making contributions, and see how the Vault client works under the hood.
 </summary>
 
+?> Building from source requires `clang 11`. Make sure to check this via `clang -v`.
+
 ### 1. Install Rust
 
 ```shell
@@ -364,7 +366,7 @@ If your Vault clients holds at least _some BTC in custody_, you have two options
 
 ## Dashboard
 
-You can monitor the operation of your Vault on the Vault dashboard. 
-The Vault will expose an API on the default port ``3030``. If you are running the Vault on a remote server, you might need to port-forward. 
+You can monitor the operation of your Vault on the Vault dashboard.
+The Vault will expose an API on the default port ``3030``. If you are running the Vault on a remote server, you might need to port-forward.
 
 Once the Vault is up and running, a "Vault" tab will appear in the topbar of the app at [beta.polkabtc.io](https://beta.polkabtc.io/) (or you can access directly at [beta.polkabtc.io/vault](https://beta.polkabtc.io/vault)).
