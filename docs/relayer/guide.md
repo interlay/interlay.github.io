@@ -53,11 +53,13 @@ subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > k
 
 ### 3. Start the Relayer client
 
-?> If you already have a locally running Bitcoin testnet node, only start the vault client:
+(Optional) If you already have a locally running Bitcoin testnet node, only start the vault client:
 
 ```shell
 docker-compose up staked_relayer
 ```
+
+?> You may need to edit the docker-compose to point `--bitcoin-rpc-url` to `http://localhost:18332`.
 
 You can run the entire Relayer client and the Bitcoin node with the following command:
 
@@ -102,7 +104,7 @@ mkdir relayer && cd relayer
 Download the relayer binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.4/staked-relayer
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.5.7/staked-relayer
 ```
 
 Make the binary executable:
@@ -210,12 +212,12 @@ bitcoind -testnet -server -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpc
 
 ?> This step will take about 45 minutes depending on your CPU.
 
-Clone the Relayer code, checkout release `0.5.4`, and build the client:
+Clone the Relayer code, checkout release `0.5.7`, and build the client:
 
 ```shell
 git clone git@github.com:interlay/polkabtc-clients.git
 cd polkabtc-clients
-git checkout 0.5.4
+git checkout 0.5.7
 cargo build -p staked-relayer
 ```
 
