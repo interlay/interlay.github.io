@@ -19,7 +19,7 @@ Polkadot Council has approved **1300 DOT** treasury funding for the PolkaBTC tes
 
 
 
-### Treasure Hunt (500 DOT)
+### Treasure Hunt (900 DOT)
 
 Users must perform a list of actions to receive a small amount of DOT. To claim rewards, users must fill out the corresponding feedback form. Rewards are only paid out if the feedback form was filled out properly.
 
