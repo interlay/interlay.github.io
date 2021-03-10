@@ -35,7 +35,7 @@ In addition, in the first year (and subject to extension), Vaults will receive a
 
 ### Pool-based Fee Distribution
 
-Vaults earn fees based on the issued and redeemed PolkaBTC volume. To reduce variance of payouts, the PolkaBTC bride implements a **pooled fee model**.
+Vaults earn fees based on the issued and redeemed PolkaBTC volume. To reduce variance of payouts, the PolkaBTC bridge implements a **pooled fee model**.
 
 Each time a user issues or redeems PolkaBTC, they pay the following fees to a **global fee pool**:
 
@@ -50,8 +50,8 @@ From this fee pool, `77%` is distributed among all active Vaults based on the fo
 Specifically, each Vault's fee is calculated according to the following formula:
 
     vault_fee =
-    pool * 0.9 (vault_locked_btc / total_locked_btc)
-    + pool * 0.1 * (vault_locked_dot / total_locked_dot)_
+    pool * 0.9 * (vault_locked_btc / total_locked_btc)
+    + pool * 0.1 * (vault_locked_dot / total_locked_dot)
 
 The Vault fee is paid each time an Issue or Redeem request is executed.
 
