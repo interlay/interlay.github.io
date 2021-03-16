@@ -19,7 +19,7 @@ services:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   vault:
-    image: "registry.gitlab.com/interlay/polkabtc-clients/vault:0.5.9"
+    image: "registry.gitlab.com/interlay/polkabtc-clients/vault:0.5.11"
     command:
       - vault
       - --http-addr
