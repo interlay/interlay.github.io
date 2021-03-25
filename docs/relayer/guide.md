@@ -231,7 +231,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your relayer. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -355,7 +355,6 @@ await vaultClient.deregisterStakedRelayer();
 
 ## Dashboard
 
-You can monitor the operation of your Relayer on the Relayer dashboard.
-The Relayer will expose an API on the default port ``3031``. If you are running the Relayer on a remote server, you might need to port-forward.
+You can monitor the operation of your Relayer on the Relayer dashboard by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).
 
 Once the Relayer is up and running, a "Relayer" tab will appear in the topbar of the app at [beta.polkabtc.io](https://beta.polkabtc.io/) (or you can access directly at [beta.polkabtc.io/relayer](https://beta.polkabtc.io/relayer)).
