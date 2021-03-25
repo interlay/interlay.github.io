@@ -91,6 +91,8 @@ Since the vault does not require a Bitcoin node with all the data and to reduce 
 bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword
 ```
 
+!> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault.
+
 ### 3. Install the Vault client
 
 Create a folder for your vault and enter it:
@@ -199,6 +201,8 @@ rustup default nightly-2021-01-25
 
 Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-node](https://bitcoin.org/en/full-node#what-is-a-full-node)
 
+!> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault.
+
 ### 3. Start the Bitcoin testnet node
 
 ?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
@@ -234,7 +238,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -367,7 +371,6 @@ If your Vault clients holds at least _some BTC in custody_, you have two options
 
 ## Dashboard
 
-You can monitor the operation of your Vault on the Vault dashboard.
-The Vault will expose an API on the default port `3030`. If you are running the Vault on a remote server, you might need to port-forward.
+You can monitor the operation of your Vault on the Vault dashboard by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).
 
 Once the Vault is up and running, a "Vault" tab will appear in the topbar of the app at [beta.polkabtc.io](https://beta.polkabtc.io/) (or you can access directly at [beta.polkabtc.io/vault](https://beta.polkabtc.io/vault)).
