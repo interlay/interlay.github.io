@@ -12,6 +12,14 @@ As many as want to participate.
 
 One honest and online Vault is enough to allow users to move BTC to Polkadot. A user can even be his/her own Vault. The more Vaults, however, the better.
 
+### Can I run multiple Vaults?
+
+Definitely! Please only use one unique key per client to avoid race conditions on signing. Additionally, if a Vault is started using the same key name
+as another that was already running it will load the same Bitcoin wallet and may attempt to transfer "locked" funds. Please review the response to Vault
+theft below.
+
+?> Please note that only one Vault's SLA score will count toward the testnet challenges.
+
 ### Do Vaults earn fees?
 
 Yes! Vaults earn fees in PolkaBTC and DOT.
@@ -47,6 +55,8 @@ Vaults are responsible for managing their own Bitcoin private keys.
 Each Vault must submit a Bitcoin public key (the "master" key) when registering with the PolkaBTC bridge.
 
 The Vault client uses a separate wallet file, specified upon start-up, which is imported into the Vault's local Bitcoin full node (Bitcoin Core wallet).
+
+!> Never transfer funds manually from the Bitcoin wallet as it may be considered theft.
 
 ### How are deposit addresses generated?
 
