@@ -61,3 +61,15 @@ The Vault client uses a separate wallet file, specified upon start-up, which is 
 ### How are deposit addresses generated?
 
 Each time a user requests to issue new PolkaBTC, the PolkaBTC bridge uses the master key of the selected Vault to derive Bitcoin addresses (controlled by this Vault) via an on [on-chain key derivation scheme](https://interlay.gitlab.io/polkabtc-spec/security_performance/security-analysis.html). This address is used by the user for the BTC deposit.
+
+## Troubleshooting
+
+### Fee estimation failed. Fallbackfee is disabled.
+
+Sometimes it is not possible for Bitcoin to estimate the transaction fees for redeem requests.
+To avoid this happening, set a sensible default on startup such as `-fallbackfee=0.0002`.
+
+### No available targets are compatible with this triple.
+
+The secp256k1 elliptic-curve dependency used for generating Vault addresses requires a newer version of [Clang](https://clang.llvm.org/).
+Please download the latest available version for your distribution or check the minimum supported version in the build instructions.
