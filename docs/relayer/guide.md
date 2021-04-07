@@ -35,7 +35,7 @@ wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/sta
 
 ### 2. Add your Polkadot account to use with your Relayer
 
-Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the relayer, e.g.:
+Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the Relayer, e.g.:
 
 ```json
 {
@@ -43,7 +43,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your relayer. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> DO NOT use the mnemonic above when running your Relayer. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -53,7 +53,7 @@ subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > k
 
 ### 3. Start the Relayer client
 
-(Optional) If you already have a locally running Bitcoin testnet node, only start the vault client:
+(Optional) If you already have a locally running Bitcoin testnet node, only start the Relayer client:
 
 ```shell
 docker-compose up staked_relayer
@@ -94,14 +94,14 @@ bitcoind -testnet -server -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpc
 
 ### 3. Install the Relayer client
 
-Create a folder for your relayer and enter it:
+Create a folder for your Relayer and enter it:
 
 ```shell
 mkdir relayer && cd relayer
 ```
 
 ?> _TODO_ Add the link to the binary
-Download the relayer binary:
+Download the Relayer binary:
 
 ```shell
 wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.1/staked-relayer
@@ -115,7 +115,7 @@ chmod +x staked-relayer
 
 ### 4. Add your Polkadot account to use with your Relayer
 
-Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the relayer, e.g.:
+Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the Relayer, e.g.:
 
 ```json
 {
@@ -123,7 +123,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your relayer. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> DO NOT use the mnemonic above when running your Relayer. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -223,7 +223,7 @@ cargo build -p staked-relayer
 
 ### 5. Add your Polkadot account to use with your Relayer
 
-Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the relayer, e.g.:
+Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the Relayer, e.g.:
 
 ```json
 {
@@ -264,9 +264,7 @@ Go to the Relayer client [README](https://github.com/interlay/polkabtc-clients/t
 
 ### Connecting the Relayer to Beta
 
-Connect to our PolkaBTC node or run your own, as described [above](#_5-optional-run-your-own-polkabtc-node).
-
-Run the vault
+Connect to our PolkaBTC node or run your own then start the Relayer:
 
 ```shell
 RUST_LOG=info ./staked-relayer \
@@ -279,21 +277,26 @@ RUST_LOG=info ./staked-relayer \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
 ```
 
+Logging can be configured using the [`RUST_LOG`](https://docs.rs/env_logger/0.8.3/env_logger/#enabling-logging) environment variable.
+By default, the Relayer will log at `info` or above but you may, for example, configure `debug` logs for increased verbosity.
+
 ### Registering your Relayer
 
-The default behaviour on Beta is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-stake` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
+The default behaviour on Beta is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-stake` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/relayer).
 
-You can also register your relayer through the web UI. Go to the "Relayer" tab and click on the "Register (Lock DOT)" button, following the instructions.
+You can also register your Relayer through the web UI. Go to the "Relayer" tab and click on the "Register (Lock DOT)" button, following the instructions.
 
-Moreover, you can interact with the Staked Relayer client directly using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+Moreover, you can interact with the Relayer pallet directly using [polkabtc-js](https://github.com/interlay/polkabtc-js).
 
 ```js
-import { StakedRelayerClient } from "@interlay/polkabtc";
-const stakedRelayerClient = new StakedRelayerClient(VAULT_CLIENT_URL);
+import { createPolkabtcAPI } from "@interlay/polkabtc";
+
+const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
+polkaBTC.setAccount(KEYRING);
 
 // 100 DOT denominated in Planck
 const stakeInPlanck = 1000000000000;
-await stakedRelayerClient.registerStakedRelayer(stakeInPlanck);
+await polkaBTC.stakedRelayer.register(stakeInPlanck);
 ```
 
 ### Submitting Bitcoin Blockheaders
@@ -312,15 +315,17 @@ Go to the Relayer tab and click on the "Vote" button. Follow the instructions.
 
 **Polkabtc-js library**
 
-You can interact with the Vault directly client using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+You can use [polkabtc-js](https://github.com/interlay/polkabtc-js) to vote on a status update.
 
 ```js
-import { VaultClient } from "@interlay/polkabtc";
-const vaultClient = new VaultClient(VAULT_CLIENT_URL);
+import { createPolkabtcAPI } from "@interlay/polkabtc";
+
+const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
+polkaBTC.setAccount(KEYRING);
 
 const statusUpdateId = 21;
 const approve = true;
-await vaultClient.voteOnStatusUpdate(statusUpdateId, approve);
+await polkaBTC.stakedRelayer.voteOnStatusUpdate(statusUpdateId, approve);
 ```
 
 ### Leaving PolkaBTC
@@ -331,13 +336,15 @@ Go to the Relayer tab and click on the "Deregister" button.
 
 **Polkabtc-js library**
 
-You can interact with the Vault directly client using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+You can use [polkabtc-js](https://github.com/interlay/polkabtc-js) to deregister.
 
 ```js
-import { VaultClient } from "@interlay/polkabtc";
-const vaultClient = new VaultClient(VAULT_CLIENT_URL);
+import { createPolkabtcAPI } from "@interlay/polkabtc";
 
-await vaultClient.deregisterStakedRelayer();
+const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
+polkaBTC.setAccount(KEYRING);
+
+await polkaBTC.stakedRelayer.deregister();
 ```
 
 <!--
