@@ -35,4 +35,11 @@ No. Relayers have no access to users' BTC.
 
 ### What if all Relayers go offline?
 
-While unlikely, if all Relayers go offline the PolkaBTC bridge will pause operation 
+While unlikely, if all Relayers go offline the PolkaBTC bridge will pause operation.
+
+## Troubleshooting
+
+### No available targets are compatible with this triple.
+
+The secp256k1 elliptic-curve dependency used for generating Vault addresses requires a newer version of [Clang](https://clang.llvm.org/).
+Please download the latest available version for your distribution or check the minimum supported version in the build instructions.
