@@ -34,7 +34,7 @@ wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vau
 
 ### 2. Add your Polkadot account to use with your Vault
 
-Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the vault, e.g.:
+Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the Vault, e.g.:
 
 ```json
 {
@@ -42,7 +42,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> DO NOT use the mnemonic above when running your Vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -52,7 +52,7 @@ subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > key
 
 ### 3. Start the Vault client
 
-(Optional) If you already have a locally running Bitcoin testnet node, only start the vault client:
+(Optional) If you already have a locally running Bitcoin testnet node, only start the Vault client:
 
 ```shell
 docker-compose up vault
@@ -85,7 +85,7 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 
 ?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
 
-Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
+Since the Vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```shell
 bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
@@ -95,7 +95,7 @@ bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcus
 
 ### 3. Install the Vault client
 
-Create a folder for your vault and enter it:
+Create a folder for your Vault and enter it:
 
 ```shell
 mkdir vault && cd vault
@@ -115,7 +115,7 @@ chmod +x vault
 
 ### 4. Add your Polkadot account to use with your Vault
 
-Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the vault, e.g.:
+Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the Vault, e.g.:
 
 ```json
 {
@@ -123,7 +123,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> DO NOT use the mnemonic above when running your Vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -207,7 +207,7 @@ Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-no
 
 ?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
 
-Since the vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
+Since the Vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```shell
 bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
@@ -230,7 +230,7 @@ cargo build -p vault
 
 ?> You can execute this step in parallel to step 4.
 
-Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the vault, e.g.:
+Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the Vault, e.g.:
 
 ```json
 {
@@ -272,9 +272,7 @@ Go to the Vault client [README](https://github.com/interlay/polkabtc-clients/tre
 
 ### Connecting the Vault to Beta
 
-Connect to our PolkaBTC node or run your own, as described [above](#_5-start-the-vault-client).
-
-Run the vault
+Connect to our PolkaBTC node or run your own then start the Vault:
 
 ```shell
 RUST_LOG=info ./vault \
@@ -283,26 +281,31 @@ RUST_LOG=info ./vault \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname polkabtcvault \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
+  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
   --network=testnet
 ```
+
+Logging can be configured using the [`RUST_LOG`](https://docs.rs/env_logger/0.8.3/env_logger/#enabling-logging) environment variable.
+By default, the Vault will log at `info` or above but you may, for example, configure `debug` logs for increased verbosity.
 
 ### Registering your Vault
 
 The default behaviour on Beta is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
 
-You can also register your vault through our web UI, going to the "Vault" tab, clicking the `Register` button and completing the steps.
+You can also register your Vault through our web UI, going to the "Vault" tab, clicking the `Register` button and completing the steps.
 
-Moreover, you can interact with the Vault client directly using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+Moreover, you can interact with the Vault pallet directly using [polkabtc-js](https://github.com/interlay/polkabtc-js).
 
 ```js
-import { VaultClient } from "@interlay/polkabtc";
-const vaultClient = new VaultClient(VAULT_CLIENT_URL);
+import { createPolkabtcAPI } from "@interlay/polkabtc";
+
+const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
+polkaBTC.setAccount(KEYRING);
 
 // 100 DOT denominated in Planck
 const collateralInPlanck = "1000000000000";
-await vaultClient.registerVault(collateralInPlanck);
+await polkaBTC.vaults.register(collateralInPlanck, BTC_PUBLIC_KEY);
 ```
 
 ### Increasing Collateral
@@ -313,15 +316,17 @@ Go to the Vault tab and click on button next to the `Collateral: X DOT for Y BTC
 
 **Polkabtc-js library**
 
-You can interact with the Vault directly client using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+You can use [polkabtc-js](https://github.com/interlay/polkabtc-js) to lock additional collateral.
 
 ```js
-import { VaultClient } from "@interlay/polkabtc";
-const vaultClient = new VaultClient(VAULT_CLIENT_URL);
+import { createPolkabtcAPI } from "@interlay/polkabtc";
+
+const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
+polkaBTC.setAccount(KEYRING);
 
 // 100 DOT denominated in Planck
 const additionalCollateralInPlanck = "1000000000000";
-await vaultClient.lockAdditionalCollateral(additionalCollateralInPlanck);
+await polkaBTC.vaults.lockAdditionalCollateral(additionalCollateralInPlanck);
 ```
 
 ### Withdrawing Collateral
@@ -332,15 +337,17 @@ Go to the Vault tab and click on the button next to the `Collateral: X DOT for Y
 
 **Polkabtc-js library**
 
-You can interact with the Vault directly client using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+You can use [polkabtc-js](https://github.com/interlay/polkabtc-js) to withdraw collateral.
 
 ```js
-import { VaultClient } from "@interlay/polkabtc";
-const vaultClient = new VaultClient(VAULT_CLIENT_URL);
+import { createPolkabtcAPI } from "@interlay/polkabtc";
+
+const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
+polkaBTC.setAccount(KEYRING);
 
 // 100 DOT denominated in Planck
 const collateralToWithdrawInPlanck = "1000000000000";
-await vaultClient.withdrawCollateral(collateralToWithdrawInPlanck);
+await polkaBTC.vaults.withdrawCollateral(collateralToWithdrawInPlanck);
 ```
 
 ### Earning Fees
@@ -357,7 +364,7 @@ The process to leave PolkaBTC depends on whether or not your Vault client holds 
 
 If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client without risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
 
-If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another vault. You can request to be replaced through the [Vault dashboard](https://beta.polkabtc.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
+If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another Vault. You can request to be replaced through the [Vault dashboard](https://beta.polkabtc.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
 
 <!-- ## Advanced
 
