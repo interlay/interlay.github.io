@@ -20,10 +20,10 @@ The correct behavior of Vaults is enforced by the PolkaBTC bridge parachain. Spe
 
 ### What do I need to become a Vault?
 
-1. The open-source Vault client
-2. A Bitcoin account ([public/private keypair](https://en.bitcoin.it/wiki/Private_key))
-3. A Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
-4. Some DOTs to provide as collateral and pay for transaction fees.
+1. Vault client ([source](https://github.com/interlay/polkabtc-clients))
+2. Bitcoin full node ([instructions](https://bitcoin.org/en/full-node))
+3. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
+4. Some DOTs to provide as collateral and pay for transaction fees
 
 Head over to ["Running a Vault"](/vault/guide) for a detailed setup guide.
 
