@@ -42,13 +42,16 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your Vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
 ```shell
 subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
 ```
+
+Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
+If the Vault spends funds from another wallet this may be marked as theft.
 
 ### 3. Start the Vault client
 
@@ -123,7 +126,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your Vault. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -131,12 +134,16 @@ You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subke
 subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
 ```
 
+Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
+If the Vault spends funds from another wallet this may be marked as theft.
+
 ### 5.A. Start the Vault client as a systemd service
 
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
 
 ```shell
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/setup && wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/polkabtc-vault.service
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/setup
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/polkabtc-vault.service
 chmod +x ./setup && sudo ./setup
 systemctl daemon-reload
 systemctl start polkabtc-vault.service
@@ -162,21 +169,7 @@ systemctl stop polkabtc-vault.service
 
 ### 5.B. OPTIONAL: Start the Vault client directly
 
-?> The client will not restart on network outages or after rebooting the system using this approach.
-
-To start the client, you can connect to our parachain full node:
-
-```shell
-RUST_LOG=info ./vault \
-  --bitcoin-rpc-url http://localhost:18332 \
-  --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpassword \
-  --keyfile keyfile.json \
-  --keyname polkabtcvault \
-  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
-  --network=testnet
-```
+To start the client manually, follow the [instructions below](#usage).
 
 </details>
 
@@ -246,6 +239,9 @@ You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subke
 subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
 ```
 
+Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
+If the Vault spends funds from another wallet this may be marked as theft.
+
 ### 6. Start the Vault client
 
 To start the client, you can connect to our parachain full node:
@@ -289,9 +285,11 @@ RUST_LOG=info ./vault \
 Logging can be configured using the [`RUST_LOG`](https://docs.rs/env_logger/0.8.3/env_logger/#enabling-logging) environment variable.
 By default, the Vault will log at `info` or above but you may, for example, configure `debug` logs for increased verbosity.
 
+On startup, the Vault will automatically create or load the Bitcoin wallet using the keyname specified above and import additional keys generated from issue requests.
+
 ### Registering your Vault
 
-The default behaviour on Beta is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
+The default behaviour on Beta is **automatic registration** using Interlay's DOT faucet as set in the `auto-register-with-faucet-url` arg. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
 
 You can also register your Vault through our web UI, going to the "Vault" tab, clicking the `Register` button and completing the steps.
 

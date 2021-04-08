@@ -64,6 +64,16 @@ Each time a user requests to issue new PolkaBTC, the PolkaBTC bridge uses the ma
 
 ## Troubleshooting
 
+### Vault has stolen BTC
+
+Funds have unexpectedly been sent from an address registered to your Vault. This may happen if you have transferred
+BTC from your wallet manually or if you have started another Vault using the same keyname.
+
+### Failed to obtain public key
+
+On startup, the Vault will check that your Bitcoin full node still has access to the key it registered with.
+If this is not the case, something may have happened to your [wallet](https://en.bitcoin.it/wiki/Wallet) file.
+
 ### Fee estimation failed. Fallbackfee is disabled.
 
 Sometimes it is not possible for Bitcoin to estimate the transaction fees for redeem requests.

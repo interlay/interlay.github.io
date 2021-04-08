@@ -18,10 +18,10 @@ Note: BTC-Relay is self healing and automatically detects and recovers from Bitc
 
 ### What do I need to become a Relayer?
 
-1. The open-source Relayer client
-2. A Bitcoin full node
-2. A Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
-3. Some DOTs to provide as collateral and pay for transaction fees.
+1. Relayer client ([source](https://github.com/interlay/polkabtc-clients))
+2. Bitcoin full node ([instructions](https://bitcoin.org/en/full-node))
+2. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
+3. Some DOTs to provide as collateral and pay for transaction fees
 
 Head over to ["Running a Relayer"](/relayer/guide) for a detailed setup guide.
 

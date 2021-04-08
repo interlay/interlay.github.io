@@ -43,13 +43,15 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your Relayer. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
 ```shell
 subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > keyfile.json
 ```
+
+Please use a separate keyname and mnemonic for each client.
 
 ### 3. Start the Relayer client
 
@@ -123,7 +125,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> DO NOT use the mnemonic above when running your Relayer. This publicly available mnemonic can be used by anyone and represents the credentials of a Polkadot account. Any funds deposited at this address will in all likelihood be lost.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -131,12 +133,15 @@ You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subke
 subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > keyfile.json
 ```
 
+Please use a separate keyname and mnemonic for each client.
+
 ### 5.A. Start the Relayer client as a systemd service
 
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
 
 ```shell
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup && wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/polkabtc-relayer.service
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/polkabtc-relayer.service
 chmod +x ./setup && sudo ./setup
 systemctl daemon-reload
 systemctl start polkabtc-relayer.service
@@ -162,18 +167,7 @@ systemctl stop polkabtc-relayer.service
 
 ### 5.B. OPTIONAL: Start the Relayer client directly
 
-To start the client, you can connect to our parachain full node:
-
-```shell
-RUST_LOG=info ./staked-relayer \
-  --bitcoin-rpc-url http://localhost:18332 \
-  --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpassword \
-  --keyfile keyfile.json \
-  --keyname polkabtcrelayer \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
-  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
-```
+To start the client manually, follow the [instructions below](#usage).
 
 </details>
 
@@ -239,6 +233,8 @@ You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subke
 subkey generate --output-type json | jq '{"polkabtcrelayer": .secretPhrase}' > keyfile.json
 ```
 
+Please use a separate keyname and mnemonic for each client.
+
 ### 6. Start the Relayer client
 
 To start the client, you can connect to our parachain full node:
@@ -282,7 +278,7 @@ By default, the Relayer will log at `info` or above but you may, for example, co
 
 ### Registering your Relayer
 
-The default behaviour on Beta is automatic registration using Interlay's DOT faucet. This happens through the `auto-register-with-faucet-url`. Another option for registering is the `auto-register-with-stake` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/relayer).
+The default behaviour on Beta is **automatic registration** using Interlay's DOT faucet as set in the `auto-register-with-faucet-url` arg. Another option for registering is the `auto-register-with-stake` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/relayer).
 
 You can also register your Relayer through the web UI. Go to the "Relayer" tab and click on the "Register (Lock DOT)" button, following the instructions.
 
