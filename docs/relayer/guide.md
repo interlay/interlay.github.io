@@ -256,6 +256,67 @@ Go to the Relayer client [README](https://github.com/interlay/polkabtc-clients/t
 
 </details>
 
+## Upgrading
+
+We will announce on public channels when a new release is made available for the Relayer client. The changelog and binaries will be published on the [release page](https://github.com/interlay/polkabtc-clients/releases). Depending on the method of installation;
+
+<!-- QUICKSTART -->
+<details>
+<summary>
+Quickstart
+</summary>
+
+### 1. Stop the containers
+
+```shell
+docker-compose down
+```
+
+### 2. Re-download the script
+
+```shell
+rm docker-compose.yaml
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/docker-compose.yml
+docker-compose up
+```
+
+</details>
+
+<!-- STANDARD -->
+<details>
+<summary>
+Standard
+</summary>
+
+### 1. Stop the service
+
+```shell
+systemctl stop polkabtc-relayer.service
+```
+
+OR terminate the process with `Ctrl+C`.
+
+### 2. Re-download the binary and setup script
+
+```shell
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.1/staked-relayer
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup
+chmod +x ./setup && sudo ./setup
+systemctl start polkabtc-relayer.service
+```
+
+</details>
+
+<!-- SOURCE -->
+<details>
+<summary>
+Source
+</summary>
+
+Terminate the process using `Ctrl+C` and follow the instructions above to re-compile.
+
+</details>
+
 ## Usage
 
 ### Connecting the Relayer to Beta
