@@ -48,7 +48,7 @@ Users must perform a list of actions to receive a small amount of DOT. To claim 
 1. Run the Staked Relayer
 1. Submit at least 1 Bitcoin testnet block
 1. Maintain an SLA of 99% or higher for at least 24h
-1. Fill in the Staked Relayer feedback form
+1. Fill in the Staked Relayer feedback form provided at [https://beta.polkabtc.io/feedback](https://beta.polkabtc.io/feedback)
 
 ### Best Vaults and Relayers (200 DOT)
 
