@@ -1,6 +1,6 @@
 <!-- docs/_sidebar.md -->
 
-* Getting started
+* Getting Started
 
   * [Overview](start/overview.md)
   * [Getting Started](start/prereq.md)
@@ -20,6 +20,12 @@
   * [Overview](relayer/overview.md)
   * [Running a Relayer](relayer/guide.md)
   * [FAQ](relayer/faq.md)
+
+* Collators
+
+  * [Overview](collator/overview.md)
+  * [Running a Collator](collator/guide.md)
+  * [FAQ](collator/faq.md)
 
 * Developers
 
