@@ -107,7 +107,7 @@ mkdir vault && cd vault
 Download the vault binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.1/vault
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/vault
 ```
 
 Make the binary executable:
@@ -210,12 +210,12 @@ bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcus
 
 ?> This step will take about 45 minutes depending on your CPU.
 
-Clone the Vault code, checkout release `0.6.1`, and build the client:
+Clone the Vault code, checkout release `0.6.2`, and build the client:
 
 ```shell
 git clone git@github.com:interlay/polkabtc-clients.git
 cd polkabtc-clients
-git checkout 0.6.1
+git checkout 0.6.2
 cargo build -p vault
 ```
 
@@ -307,7 +307,7 @@ OR terminate the process with `Ctrl+C`.
 ### 2. Re-download the binary and setup script
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.1/vault
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/vault
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/setup
 chmod +x ./setup && sudo ./setup
 systemctl start polkabtc-vault.service
