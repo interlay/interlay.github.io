@@ -53,7 +53,7 @@ Users must perform a list of actions to receive a small amount of DOT. To claim 
 
 ## King of the Hill: Vaults and Relayers (200 DOT)
 
-!> Important: You will need to submit your Polkadot address (starting with "1..") before participating in the king of the hill contest. Otherwise, we cannot match your address on the PolkaBTC bridge with your Polkadot address.
+!> Important: You will need to submit your Polkadot address (starting with "1..") to participate in the king of the hill contest. Otherwise, we cannot match your address on the PolkaBTC bridge with your Polkadot address. If you already have submitted your DOT address via the form (https://forms.gle/V6LsUb3J9qR6oJCN8), you don't need to do it again.
 
 We compute a lifetime SLA score for Vaults and Staked Relayers (each desirable action adds to the score, a failure to Redeem reduces the score significantly).
 In the King of the Hill challenge, the top 10 Vaults and Relayers are rewarded with DOT at the end of each week for a period of 2 weeks (2 rounds). Scores are reset each week allowing new Vaults and Staked Relayers to join and have the chance to earn DOT rewards for participating.
@@ -62,21 +62,21 @@ In the King of the Hill challenge, the top 10 Vaults and Relayers are rewarded w
 
 1. Download, build and run the Vault client [based on the guide](https://docs.polkabtc.io/#/vault/guide)
 1. Register as a Vault and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Vault dashboard](https://beta.polkabtc.io/dashboard/vaults))
-1. Run the Vault
-1. Collect SLA score
+1. Run the Vault and automatically earn SLA points
+1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-2: The top 10 of Vaults will be selected and a total of 50 DOT is distributed to them
 
 ### Staked Relayer (award: 100 DOT for the top 5% according to their SLA score starting on April 26, 2021)
 
 1. Download, build and run the Staked Relayer client [based on the guide](https://docs.polkabtc.io/#/relayer/guide)
 1. Register as a Staked Relayer and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Relayer dashboard](https://beta.polkabtc.io/dashboard/parachain))
-1. Run the Staked Relayer
-1. Collect SLA score
+1. Run the Staked Relayer and automatically earn SLA points
+1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-2: The top 10 of Staked Relayers will be selected and a total of 50 DOT is distributed to them
 
 ## Lottery (200 DOT)
 
-!> Important: You will need to submit your Polkadot address (starting with "1..") before participating in the lottery. Otherwise we cannot match your address on the PolkaBTC bridge with your Polkadot address.
+!> Important: You will need to submit your Polkadot address (starting with "1..") to participate in the lottery. Otherwise we cannot match your address on the PolkaBTC bridge with your Polkadot address. If you already have submitted your DOT address via the form (https://forms.gle/V6LsUb3J9qR6oJCN8), you don't need to do it again.
 
 To provide more incentive for users to create numerous transactions and stress-test the system, we are running a lottery.
 The lottery will run for four weeks and each week a payout of 50 DOT is made.
@@ -84,19 +84,13 @@ The lottery will run for four weeks and each week a payout of 50 DOT is made.
 ### Users
 
 1. Create issue and redeem requests via the [PolkaBTC app](https://beta.polkabtc.io/app) or feel free to automate this process using the [polkabtc js library](https://github.com/interlay/polkabtc-js) (size doesn't matter - create as many as you like to increase your chance of winning)
+1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-4: Interlay will select one issue and one redeem request at random.
 1. For each randomly selected request, a reward of 20 DOT is made.
 
 ### Vaults
 
 1. Create replace requests via the [Vault dashboard](https://beta.polkabtc.io/vault) ("Replace my Vault" button)
+1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-4: Interlay will select one replace request at random.
 1. For each randomly selected request, a reward of 10 DOT is made.
-
-## Submitting your DOT address
-
-!> Ensure that all the information you entered is correct. Once we made the DOT transfer, we cannot revert it. It is your reponsibility to ensure that the data you entered is correct.
-
-1. You will need to fill in this form:
-1. (Optional): Enter your email address. If you would like to correct the information you entered, please provide an email address. Google Forms will then send you a confirmation with your details and you can change them afterwards. WE CANNOT CHANGE YOUR DETAILS AFTERWARDS.
-
