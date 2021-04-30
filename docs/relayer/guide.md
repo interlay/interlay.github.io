@@ -82,7 +82,7 @@ Run Bitcoin and the Relayer binary as a service on your computer or server. Best
 
 ### 1. Install a local Bitcoin node
 
-Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-node](https://bitcoin.org/en/full-node#what-is-a-full-node)
+Download and install a [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node) by following the [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions).
 
 ### 2. Start the Bitcoin testnet node
 
@@ -106,7 +106,8 @@ mkdir relayer && cd relayer
 Download the Relayer binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/staked-relayer
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/staked-relayer-0.6.2-x86_64-linux-gnu
+mv staked-relayer-0.6.2-x86_64-linux-gnu staked-relayer
 ```
 
 Make the binary executable:
@@ -190,7 +191,7 @@ rustup default nightly-2021-01-25
 
 ### 2. Install a local Bitcoin node
 
-Download and install the Bitcoin Core full-node: [https://bitcoin.org/en/full-node](https://bitcoin.org/en/full-node#what-is-a-full-node)
+Download and install a [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node) by following the [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions), [Windows instructions](https://bitcoin.org/en/full-node#windows-instructions) or [MAX OS X instructions](https://bitcoin.org/en/full-node#mac-os-x-instructions).
 
 ### 3. Start the Bitcoin testnet node
 
@@ -299,7 +300,8 @@ OR terminate the process with `Ctrl+C`.
 ### 2. Re-download the binary and setup script
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/staked-relayer
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/staked-relayer-0.6.2-x86_64-linux-gnu
+mv staked-relayer-0.6.2-x86_64-linux-gnu staked-relayer
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup
 chmod +x ./setup && sudo ./setup
 systemctl start polkabtc-relayer.service
