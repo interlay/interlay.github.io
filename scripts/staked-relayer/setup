@@ -1,6 +1,7 @@
 #!/bin/sh
 
-[ -f ./staked-relayer ] || wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/staked-relayer
+[ -f ./staked-relayer ] || wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/staked-relayer-0.6.2-x86_64-linux-gnu
+mv staked-relayer-0.6.2-x86_64-linux-gnu staked-relayer
 chmod +x staked-relayer
 [ -d /opt/polkabtc ] || mkdir /opt/polkabtc
 [ -d /opt/polkabtc/relayer ] || mkdir /opt/polkabtc/relayer
