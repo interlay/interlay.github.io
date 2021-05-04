@@ -84,6 +84,8 @@ Run Bitcoin and the Vault binary as a service on your computer or server. Best f
 
 Download and install a [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node) by following the [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions).
 
+!> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault.
+
 ### 2. Start the Bitcoin testnet node
 
 ?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
@@ -94,7 +96,7 @@ Since the Vault does not require a Bitcoin node with all the data and to reduce 
 bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
 ```
 
-!> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault.
+!> The fallback fee argument is crucial. Without it, your vault may fail to make payments in certain circumstances, which it will be punished for.
 
 ### 3. Install the Vault client
 
@@ -206,6 +208,8 @@ Since the Vault does not require a Bitcoin node with all the data and to reduce 
 ```shell
 bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
 ```
+
+!> The fallback fee argument is crucial. Without it, your vault may fail to make payments in certain circumstances, which it will be punished for.
 
 ### 4. Build the Vault client
 
