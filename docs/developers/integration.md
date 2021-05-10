@@ -14,7 +14,7 @@ Building new apps directly on PolkaBTC is enabled by using a dedicated TypeScrip
 
 ### Installation
 
-Follow the instructions at [polkabtc-js](git@github.com:interlay/btc-parachain-spec.git).
+Follow the instructions at [polkabtc-js](https://github.com/interlay/polkabtc-js).
 
 ### Usage
 
@@ -58,8 +58,6 @@ After you instantiated the PolkaBTC API as described above, you can request to i
 // denoted in satoshi
 const amount = api.createType("Balance", 100000) as PolkaBTC;
 const requestResult = await issueAPI.request(amount);
-// get the request form the parachain
-const issueRequest = await issueAPI.getRequestById(requestResult.id.toString());
 ```
 
 Next, you need to send BTC to the vault. You could use [bitcoinlib-js](https://github.com/bitcoinjs/bitcoinjs-lib) to achieve this programmatically or use the data from the `issueRequest` object to display the Vault's BTC address and the required amount.
@@ -68,15 +66,9 @@ After you have sent, the BTC you can execute the request by fetching the require
 
 ```js
 const btcTxId = await api.btcCore.getTxIdByRecipientAddress(issueRequest.vaultBTCAddress);
-const merkleProof = await api.btcCore.getMerkleProof(txData.txid);
-const parsedIssuedId = api.createType("H256", requestResult.id);
-// reverse endianness (expects little-endian)
-const parsedTxId = api.createType("H256", "0x" + Buffer.from(txData.txid, "hex").reverse().toString("hex"));
-const parsedMerkleProof = api.createType("Bytes", "0x" + merkleProof);
-const parsedRawTx = api.createType("Bytes", "0x" + txData.rawTx);
-await api.issue.execute(parsedIssuedId, parsedTxId, parsedMerkleProof, parsedRawTx);
+await api.issue.execute(requestResult.id, btcTxId);
 ```
 
 ### More Examples
 
-For fully working examples, head over to our [integration tests](https://github.com/interlay/polkabtc-js/tree/master/test/integration/apis). These are automated and fully integrated with Bitcoin test clients and the PolkaBTC bridge.
+For fully working examples, head over to our [integration tests](https://github.com/interlay/polkabtc-js/tree/master/test/integration). These are automated and fully integrated with Bitcoin test clients and the PolkaBTC bridge.
