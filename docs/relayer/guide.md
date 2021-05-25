@@ -151,7 +151,7 @@ systemctl start polkabtc-relayer.service
 You can then check the status of your service by running:
 
 ```shell
-systemctl status polkabtc-relayer.service
+journalctl --follow _SYSTEMD_UNIT=polkabtc-relayer.service
 ```
 
 Or by streaming the logs to the `relayer.log` file in the current directory:
