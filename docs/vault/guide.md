@@ -155,7 +155,7 @@ systemctl start polkabtc-vault.service
 You can then check the status of your service by running:
 
 ```shell
-systemctl status polkabtc-vault.service
+journalctl --follow _SYSTEMD_UNIT=polkabtc-vault.service
 ```
 
 Or by streaming the logs to the `vault.log` file in the current directory:
