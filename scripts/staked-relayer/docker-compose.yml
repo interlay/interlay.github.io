@@ -18,7 +18,7 @@ services:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   staked_relayer:
-    image: "registry.gitlab.com/interlay/polkabtc-clients/staked-relayer:0.6.2"
+    image: "registry.gitlab.com/interlay/polkabtc-clients/staked-relayer:0-7-2"
     command:
       - staked-relayer
       - --bitcoin-rpc-url
@@ -31,9 +31,9 @@ services:
       - /keyfile.json
       - --keyname
       - polkabtcrelayer
-      - --auto-register-with-faucet-url
+      - --auto-fund-with-faucet-url
       - "https://beta.polkabtc.io/api/faucet"
-      - --polka-btc-url
+      - --btc-parachain-url
       - "wss://beta.polkabtc.io/api/parachain"
     environment:
       RUST_LOG: info
