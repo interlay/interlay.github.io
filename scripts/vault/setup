@@ -1,7 +1,5 @@
 #!/bin/sh
 
-[ -f ./vault ] || wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/vault-0.6.2-x86_64-linux-gnu && mv vault-0.6.2-x86_64-linux-gnu vault
-chmod +x vault
 [ -d /opt/polkabtc ] || mkdir /opt/polkabtc
 [ -d /opt/polkabtc/vault ] || mkdir /opt/polkabtc/vault
 cp ./vault /opt/polkabtc/vault/

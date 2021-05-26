@@ -109,8 +109,7 @@ mkdir vault && cd vault
 Download the vault binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/vault-0.6.2-x86_64-linux-gnu
-mv vault-0.6.2-x86_64-linux-gnu vault
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.2/vault
 ```
 
 Make the binary executable:
@@ -215,12 +214,12 @@ bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcus
 
 ?> This step will take about 45 minutes depending on your CPU.
 
-Clone the Vault code, checkout release `0.6.2`, and build the client:
+Clone the Vault code, checkout release `0.7.2`, and build the client:
 
 ```shell
 git clone git@github.com:interlay/polkabtc-clients.git
 cd polkabtc-clients
-git checkout 0.6.2
+git checkout 0.7.2
 cargo build -p vault
 ```
 
@@ -259,7 +258,7 @@ RUST_LOG=info cargo run -p vault -- \
   --keyfile keyfile.json \
   --keyname polkabtcvault \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
+  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
   --network=testnet
 ```
 
@@ -312,8 +311,8 @@ OR terminate the process with `Ctrl+C`.
 ### 2. Re-download the binary and setup script
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.6.2/vault-0.6.2-x86_64-linux-gnu
-mv vault-0.6.2-x86_64-linux-gnu vault
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.2/vault-0.7.2-x86_64-linux-gnu
+mv vault-0.7.2-x86_64-linux-gnu vault
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/setup
 chmod +x ./setup && sudo ./setup
 systemctl start polkabtc-vault.service
@@ -345,7 +344,7 @@ RUST_LOG=info ./vault \
   --keyfile keyfile.json \
   --keyname polkabtcvault \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
+  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
   --network=testnet
 ```
 
