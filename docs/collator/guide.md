@@ -33,7 +33,7 @@ Map the directory into a local volume used by the docker container:
 docker run \
   --network host \
   --volume ${PWD}/btc-parachain:/btc-parachain \
-  registry.gitlab.com/interlay/btc-parachain/standalone:0.7.2 \
+  registry.gitlab.com/interlay/btc-parachain/standalone:0.7.4 \
   btc-parachain \
   --base-path=/btc-parachain \
   --chain=/btc-parachain/beta.json \
@@ -46,7 +46,7 @@ docker run \
 Download the pre-built binary and map the directory to the local `base-path`:
 
 ```shell
-wget https://github.com/interlay/btc-parachain/releases/download/0.7.2/btc-parachain-standalone
+wget https://github.com/interlay/btc-parachain/releases/download/0.7.4/btc-parachain-standalone
 chmod +x btc-parachain-standalone
 ./btc-parachain-standalone \
   --base-path=${PWD}/btc-parachain \
@@ -74,12 +74,12 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 ?> This step will take some time depending on your hardware.
 
-Clone the BTC-Parachain code, checkout release `0.7.2`, and build the node:
+Clone the BTC-Parachain code, checkout release `0.7.4`, and build the node:
 
 ```shell
 git clone git@github.com:interlay/btc-parachain.git
 cd btc-parachain
-git checkout 0.7.2
+git checkout 0.7.4
 cargo build --release
 ```
 
