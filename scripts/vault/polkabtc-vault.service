@@ -12,7 +12,7 @@ ExecStart=/opt/polkabtc/vault/vault \
   --keyfile /opt/polkabtc/vault/keyfile.json \
   --keyname polkabtcvault \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
+  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
   --network=testnet
 Restart=on-failure
 RestartSec=5

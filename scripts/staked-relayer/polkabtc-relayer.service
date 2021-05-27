@@ -11,8 +11,8 @@ ExecStart=/opt/polkabtc/relayer/staked-relayer \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile /opt/polkabtc/relayer/keyfile.json \
   --keyname polkabtcrelayer \
-  --polka-btc-url 'wss://beta.polkabtc.io/api/parachain' \
-  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
+  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
+  --auto-fund-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
 Restart=on-failure
 RestartSec=5
 
