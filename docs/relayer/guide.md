@@ -73,7 +73,7 @@ docker-compose up
 
 <details>
 <summary>
-Run Bitcoin and the Relayer binary as a service on your computer or server. Best for if you are mostly interested in operating a Relayer for earning PolkaBTC and participating in the protocol.
+Run Bitcoin and the Relayer binary as a service on your computer or server. Best if you are mostly interested in operating a Relayer for earning PolkaBTC and participating in the protocol.
 </summary>
 
 !> This method is currently only supported for Linux.
