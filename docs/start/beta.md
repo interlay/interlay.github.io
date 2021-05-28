@@ -44,7 +44,6 @@ Users must perform a list of actions to receive a small amount of DOT. To claim 
 #### Staked Relayer (award: 4 DOT for the first 50, 200 DOT in total)
 
 1. Download, build and run the Staked Relayer client [based on the guide](https://docs.polkabtc.io/#/relayer/guide)
-1. Register as a Staked Relayer and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Relayer dashboard](https://beta.polkabtc.io/dashboard/parachain))
 1. Run the Staked Relayer
 1. Submit at least 1 Bitcoin testnet block
 1. Maintain an SLA of 99% or higher for at least 24h
