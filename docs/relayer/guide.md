@@ -7,9 +7,7 @@ To get started, follow this guide.
 At the end of this document you will have:
 
 - [x] Started the Relayer client locally
-- [x] Registered your Relayer on the Beta PolkaBTC testnet
 - [x] Submitted BTC block headers to the PolkaBTC testnet
-- [x] Inspected the status and activities of your Relayer
 
 ## Prerequisites
 
@@ -337,72 +335,9 @@ RUST_LOG=info ./staked-relayer \
 Logging can be configured using the [`RUST_LOG`](https://docs.rs/env_logger/0.8.3/env_logger/#enabling-logging) environment variable.
 By default, the Relayer will log at `info` or above but you may, for example, configure `debug` logs for increased verbosity.
 
-### Registering your Relayer
-
-The default behaviour on Beta is **automatic registration** using Interlay's DOT faucet as set in the `auto-register-with-faucet-url` arg. Another option for registering is the `auto-register-with-stake` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/staked-relayer).
-
-You can also register your Relayer through the web UI. Go to the "Relayer" tab and click on the "Register (Lock DOT)" button, following the instructions.
-
-Moreover, you can interact with the Relayer pallet directly using [polkabtc-js](https://github.com/interlay/polkabtc-js).
-
-```js
-import { createPolkabtcAPI } from "@interlay/polkabtc";
-
-const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
-polkaBTC.setAccount(KEYRING);
-
-// 100 DOT denominated in Planck
-const stakeInPlanck = 1000000000000;
-await polkaBTC.stakedRelayer.register(stakeInPlanck);
-```
-
-### Submitting Bitcoin Blockheaders
-
 ### Earning Fees
 
 See the Fee Model described in the Overview section.
-
-### Monitoring the PolkaBTC System
-
-### Voting on the System Status
-
-**Web UI**
-
-Go to the Relayer tab and click on the "Vote" button. Follow the instructions.
-
-**Polkabtc-js library**
-
-You can use [polkabtc-js](https://github.com/interlay/polkabtc-js) to vote on a status update.
-
-```js
-import { createPolkabtcAPI } from "@interlay/polkabtc";
-
-const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
-polkaBTC.setAccount(KEYRING);
-
-const statusUpdateId = 21;
-const approve = true;
-await polkaBTC.stakedRelayer.voteOnStatusUpdate(statusUpdateId, approve);
-```
-
-### Leaving PolkaBTC
-
-**Web UI**
-
-Go to the Relayer tab and click on the "Deregister" button.
-
-**Polkabtc-js library**
-
-You can use [polkabtc-js](https://github.com/interlay/polkabtc-js) to deregister.
-
-```js
-import { createPolkabtcAPI } from "@interlay/polkabtc";
-
-const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
-polkaBTC.setAccount(KEYRING);
-
-await polkaBTC.stakedRelayer.deregister();
-```
 
 <!--
 ## Advanced
