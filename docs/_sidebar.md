@@ -27,6 +27,11 @@
   * [Running a Collator](collator/guide.md)
   * [FAQ](collator/faq.md)
 
+* Bot
+
+  * [Overview](bridge-bot/overview.md)
+  * [Running a Bot](bridge-bot/guide.md)
+
 * Developers
 
   * [Interacting with PolkaBTC](developers/integration.md)
