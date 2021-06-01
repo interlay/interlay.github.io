@@ -104,7 +104,7 @@ mkdir relayer && cd relayer
 Download the Relayer binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.6/staked-relayer
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.9/staked-relayer
 ```
 
 Make the binary executable:
@@ -204,12 +204,12 @@ bitcoind -testnet -server -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpc
 
 ?> This step will take about 45 minutes depending on your CPU.
 
-Clone the Relayer code, checkout release `0.7.6`, and build the client:
+Clone the Relayer code, checkout release `0.7.9`, and build the client:
 
 ```shell
 git clone git@github.com:interlay/polkabtc-clients.git
 cd polkabtc-clients
-git checkout 0.7.6
+git checkout 0.7.9
 cargo build -p staked-relayer
 ```
 
@@ -297,7 +297,7 @@ OR terminate the process with `Ctrl+C`.
 ### 2. Re-download the binary and setup script
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.6/staked-relayer
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.9/staked-relayer
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup
 chmod +x ./setup && sudo ./setup
 systemctl start polkabtc-relayer.service
