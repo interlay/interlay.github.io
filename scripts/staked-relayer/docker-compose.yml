@@ -18,7 +18,7 @@ services:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   staked_relayer:
-    image: "registry.gitlab.com/interlay/polkabtc-clients/staked-relayer:0-7-6"
+    image: "registry.gitlab.com/interlay/polkabtc-clients/staked-relayer:0.7.9"
     command:
       - staked-relayer
       - --bitcoin-rpc-url
