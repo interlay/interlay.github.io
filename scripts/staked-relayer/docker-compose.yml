@@ -33,6 +33,8 @@ services:
       - polkabtcrelayer
       - --auto-fund-with-faucet-url
       - "https://beta.polkabtc.io/api/faucet"
+      - --telemetry-url
+      - "https://beta.polkabtc.io/api/telemetry"
       - --btc-parachain-url
       - "wss://beta.polkabtc.io/api/parachain"
     environment:
