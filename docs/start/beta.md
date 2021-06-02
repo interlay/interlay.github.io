@@ -57,21 +57,21 @@ Users must perform a list of actions to receive a small amount of DOT. To claim 
 We compute a lifetime SLA score for Vaults and Staked Relayers (each desirable action adds to the score, a failure to Redeem reduces the score significantly).
 In the King of the Hill challenge, the top 10 Vaults and Relayers are rewarded with DOT at the end of each week for a period of 2 weeks (2 rounds). Scores are reset each week allowing new Vaults and Staked Relayers to join and have the chance to earn DOT rewards for participating.
 
-### Vaults (award: 100 DOT for the top 5% according to their SLA score starting on April 26, 2021)
+### Vaults (award: 100 DOT for the top 10 according to their SLA score starting on June 2, 2021)
 
 1. Download, build and run the Vault client [based on the guide](https://docs.polkabtc.io/#/vault/guide)
 1. Register as a Vault and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Vault dashboard](https://beta.polkabtc.io/dashboard/vaults))
 1. Run the Vault and automatically earn SLA points
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
-1. Week 1-2: The top 10 of Vaults will be selected and a total of 50 DOT is distributed to them
+1. Week 1-2: The top 10 Vaults will be selected and a total of 50 DOT is distributed to them
 
-### Staked Relayer (award: 100 DOT for the top 5% according to their SLA score starting on April 26, 2021)
+### Staked Relayer (award: 100 DOT for the top 10 according to their SLA score starting on June 2, 2021)
 
 1. Download, build and run the Staked Relayer client [based on the guide](https://docs.polkabtc.io/#/relayer/guide)
 1. Register as a Staked Relayer and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Relayer dashboard](https://beta.polkabtc.io/dashboard/parachain))
 1. Run the Staked Relayer and automatically earn SLA points
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
-1. Week 1-2: The top 10 of Staked Relayers will be selected and a total of 50 DOT is distributed to them
+1. Week 1-2: The top 10 Staked Relayers will be selected and a total of 50 DOT is distributed to them
 
 ## Lottery (200 DOT)
 
@@ -85,11 +85,11 @@ The lottery will run for four weeks and each week a payout of 50 DOT is made.
 1. Create issue and redeem requests via the [PolkaBTC app](https://beta.polkabtc.io/app) or feel free to automate this process using the [polkabtc js library](https://github.com/interlay/polkabtc-js) (size doesn't matter - create as many as you like to increase your chance of winning)
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-4: Interlay will select one issue and one redeem request at random.
-1. For each randomly selected request, a reward of 20 DOT is made.
+1. For each randomly selected request, a reward of 22.5 DOT is made.
 
 ### Vaults
 
 1. Create replace requests via the [Vault dashboard](https://beta.polkabtc.io/vault) ("Replace my Vault" button)
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-4: Interlay will select one replace request at random.
-1. For each randomly selected request, a reward of 10 DOT is made.
+1. For each randomly selected request, a reward of 5 DOT is made.
