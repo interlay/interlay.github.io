@@ -83,6 +83,7 @@ The lottery will run for four weeks and each week a payout of 50 DOT is made.
 ### Users
 
 1. Create issue and redeem requests via the [PolkaBTC app](https://beta.polkabtc.io/app) or feel free to automate this process using the [polkabtc js library](https://github.com/interlay/polkabtc-js) (size doesn't matter - create as many as you like to increase your chance of winning)
+1. Make sure that the requests are completed (issue and redeem requests executed). Only executed requests qualify for the lottery.
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-4: Interlay will select one issue and one redeem request at random.
 1. For each randomly selected request, a reward of 20 DOT is made.
@@ -90,6 +91,7 @@ The lottery will run for four weeks and each week a payout of 50 DOT is made.
 ### Vaults
 
 1. Create replace requests via the [Vault dashboard](https://beta.polkabtc.io/vault) ("Replace my Vault" button)
+1. Make sure that the requests are at least partially completed (one other vault has accepted your request). Only executed requests qualify for the lottery.
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-4: Interlay will select one replace request at random.
 1. For each randomly selected request, a reward of 10 DOT is made.
