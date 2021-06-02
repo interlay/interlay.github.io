@@ -258,6 +258,7 @@ RUST_LOG=info cargo run -p vault -- \
   --keyfile keyfile.json \
   --keyname polkabtcvault \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
+  --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
   --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
   --network=testnet
 ```
@@ -343,6 +344,7 @@ RUST_LOG=info ./vault \
   --keyfile keyfile.json \
   --keyname polkabtcvault \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
+  --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
   --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
   --network=testnet
 ```

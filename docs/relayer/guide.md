@@ -244,8 +244,9 @@ RUST_LOG=info cargo run -p staked-relayer -- \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname polkabtcrelayer \
-  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
-  --auto-fund-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
+  --auto-fund-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
+  --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
+  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain'
 ```
 
 ### For a local development setup, check the README
@@ -328,8 +329,9 @@ RUST_LOG=info ./staked-relayer \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname polkabtcrelayer \
-  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
-  --auto-fund-with-faucet-url 'https://beta.polkabtc.io/api/faucet'
+  --auto-fund-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
+  --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
+  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain'
 ```
 
 Logging can be configured using the [`RUST_LOG`](https://docs.rs/env_logger/0.8.3/env_logger/#enabling-logging) environment variable.
