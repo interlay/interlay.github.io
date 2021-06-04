@@ -4,8 +4,8 @@
 
   * [Overview](start/overview.md)
   * [Getting Started](start/prereq.md)
-  * [Issue PolkaBTC](start/issue.md)
-  * [Redeem PolkaBTC](start/redeem.md)
+  * [Issue interBTC](start/issue.md)
+  * [Redeem interBTC](start/redeem.md)
   * [FAQ](start/faq.md)
   * [Incentivized Beta](start/beta)
 
@@ -29,9 +29,9 @@
 
 * Developers
 
-  * [Interacting with PolkaBTC](developers/integration.md)
+  * [Interacting with interBTC](developers/integration.md)
   * [Documentation](developers/documentation.md)
 
-* About PolkaBTC
+* About interBTC
 
   * [Roadmap](about/roadmap.md)

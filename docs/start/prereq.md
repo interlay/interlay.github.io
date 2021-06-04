@@ -1,11 +1,11 @@
-# Getting started with PolkaBTC
+# Getting started with interBTC
 
 
-To start using PolkaBTC Beta, follow the steps below to set up a Bitcoin and Polkadot testnet wallet. 
+To start using interBTC Beta, follow the steps below to set up a Bitcoin and Polkadot testnet wallet.
 
 ### 1. Installing a Bitcoin testnet wallet
 
-You will need a Bitcoin testnet wallet to test PolkaBTC.
+You will need a Bitcoin testnet wallet to test interBTC.
 For a general overview of Bitcoin wallets you can consult [bitcoin.org's wallet selector](https://bitcoin.org/en/choose-your-wallet?step=5).
 
 
@@ -24,7 +24,7 @@ You can also use your hardware wallet. The following are tested and have Bitcoin
 
 ### 2. Getting testnet BTC
 
-Make sure you have at least some tBTC in your wallet. 
+Make sure you have at least some tBTC in your wallet.
 You can get testnet BTC by clicking on the faucet link in the top bar of beta.polkabtc.io, or from one of the following faucets:
 
 - [https://testnet-faucet.mempool.co/](https://testnet-faucet.mempool.co/)
@@ -35,7 +35,7 @@ You can get testnet BTC by clicking on the faucet link in the top bar of beta.po
 
 ### 3. Installing a Polkadot wallet (polkadot-js browser extension)
 
-You will need the polkadot-js browser extension to test PolkaBTC.
+You will need the polkadot-js browser extension to test interBTC.
 
 1. Install the polkadot-js extension in your browser: [https://github.com/polkadot-js/extension](https://github.com/polkadot-js/extension).
 2. Create a new account.
@@ -47,10 +47,10 @@ You will need the polkadot-js browser extension to test PolkaBTC.
 
 You can get testnet DOT by clicking on the faucet link in the top bar of beta.polkabtc.io.
 
-!> **Note:** these testnet DOT are only usable on PolkaBTC. They are **not real DOT and have no economic value**!
+!> **Note:** these testnet DOT are only usable on interBTC. They are **not real DOT and have no economic value**!
 
 
 
 
 
-**Great! You're now ready to  [issue your first PolkaBTC](/start/issue)!**
+**Great! You're now ready to  [issue your first interBTC](/start/issue)!**

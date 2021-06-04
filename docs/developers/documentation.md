@@ -1,10 +1,10 @@
 # References
 
-### PolkaBTC Specification
+### interBTC Specification
 
-At the heart of PolkaBTC lies the BTC Parachain.
+At the heart of interBTC lies the BTC Parachain.
 The functionality, protocols, and security aspects are all detailed in the specification.
-If you want to get started working on PolkaBTC, understand how the system works, and eventually contribute to it, this is the primary starting point.
+If you want to get started working on interBTC, understand how the system works, and eventually contribute to it, this is the primary starting point.
 
 - [Specification](https://interlay.gitlab.io/polkabtc-spec/)
 - [Specification as PDF](https://interlay.gitlab.io/polkabtc-spec/polkabtc-spec.pdf)
@@ -25,11 +25,11 @@ If you want to get started working on PolkaBTC, understand how the system works,
 - [Documentation]()
 - [Source](https://github.com/interlay/polkabtc-clients/tree/dev/staked-relayer)
 
-### polkabtc-js
+### interbtc-js
 
 - [Documentation]()
 - [Source](https://github.com/interlay/polkabtc-js)
 
-### polkabtc-ui
+### interbtc-ui
 
 - [Source](https://github.com/interlay/polkabtc-ui)

@@ -1,5 +1,5 @@
 [Unit]
-Description=Vault servicing issue and redeem requests for PolkaBTC
+Description=Vault servicing issue and redeem requests for interBTC
 After=network.target
 
 [Service]

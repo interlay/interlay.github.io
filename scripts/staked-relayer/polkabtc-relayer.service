@@ -1,5 +1,5 @@
 [Unit]
-Description=Staked Relayer submitting BTC blocks to the PolkaBTC system
+Description=Staked Relayer submitting BTC blocks to the interBTC system
 After=network.target
 
 [Service]
