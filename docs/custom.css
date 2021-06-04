@@ -1,5 +1,14 @@
+css
+
 :root {
-  --theme-color: #f7931a;
+  --primary-blue: #075ABC;
+  --secondary-teal: #1EE0D6;
+  --secondary-green: #A2E75E;
+  --secondary-blue: #3E96FF;
+  --secondary-purple: #A65AFF;
+  --secondary-pink: #DB5AAD;
+  --secondary-bitcoin: #FF9900;
+  --theme-color: var(--primary-blue);
 }
 
 /* use this for the guide links */
@@ -27,6 +36,6 @@
 
 .markdown-section h6 > a:hover {
   border-bottom: 0;
-  color: #e6007a;
+  color: var(--primary-blue);
   text-decoration: none;
 }
