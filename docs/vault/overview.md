@@ -1,22 +1,22 @@
 # Vaults
 
-Vaults are the heart of the PolkaBTC bridge. They are responsible for maintaining the physical 1:1 peg between BTC and PolkaBTC.
-Vaults receive BTC for safekeeping from users and ensure BTC remains locked while PolkaBTC exists
+Vaults are the heart of the interBTC bridge. They are responsible for maintaining the physical 1:1 peg between BTC and interBTC.
+Vaults receive BTC for safekeeping from users and ensure BTC remains locked while interBTC exists
 
 Vaults are **non-trusted** and **collateralized** and **any user can become a Vault** by providing DOT collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
 
-The correct behavior of Vaults is enforced by the PolkaBTC bridge parachain. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of Polkadot. If a Vault tries to steal BTC, this will be automatically detected and the Vault will lose its collateral - and users will be reimbursed using this collateral (at a beneficial rate).
+The correct behavior of Vaults is enforced by the interBTC bridge parachain. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of Polkadot. If a Vault tries to steal BTC, this will be automatically detected and the Vault will lose its collateral - and users will be reimbursed using this collateral (at a beneficial rate).
 
 ### What do Vaults do?
 
-1. **Provide DOT Collateral** and upload their Bitcoin public key to the PolkaBTC bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping / how many PolkaBTC this Vault can secure.
+1. **Provide DOT Collateral** and upload their Bitcoin public key to the interBTC bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping / how many interBTC this Vault can secure.
 2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's DOT collateral until BTC is redeemed again.
-3. **Redeem**: Vaults monitor the PolkaBTC bridge for redeem requests. When a user requests to redeem PolkaBTC, Vaults release BTC to the user and prove that they behaved correctly to the PolkaBTC bridge (via the BTC-Relay). Only if this proof is correct, the Vault's collateral is unlocked again.
+3. **Redeem**: Vaults monitor the interBTC bridge for redeem requests. When a user requests to redeem interBTC, Vaults release BTC to the user and prove that they behaved correctly to the interBTC bridge (via the BTC-Relay). Only if this proof is correct, the Vault's collateral is unlocked again.
 
 ### Why would I want to become a Vault?
 
-1. **Yield farming:** Vaults earn fees in PolkaBTC and receive a subsidy in DOT. As such, Vaults earn yield on their DOT collateral and have **exposure to both DOT and (Polka)BTC**.
-2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you sell PolkaBTC.
+1. **Yield farming:** Vaults earn fees in interBTC and receive a subsidy in DOT. As such, Vaults earn yield on their DOT collateral and have **exposure to both DOT and (Polka)BTC**.
+2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you sell interBTC.
 
 ### What do I need to become a Vault?
 
@@ -29,22 +29,22 @@ Head over to ["Running a Vault"](/vault/guide) for a detailed setup guide.
 
 ## Fee Model
 
-Vaults earn fees on issue and redeem, based on the PolkaBTC volume.
+Vaults earn fees on issue and redeem, based on the interBTC volume.
 
-In addition, in the first year (and subject to extension), Vaults will receive a subsidy from the Polkadot Treasury for correctly operating the PolkaBTC bridge and providing DOT collateral (Note: this is still subject to final confirmation!).
+In addition, in the first year (and subject to extension), Vaults will receive a subsidy from the Polkadot Treasury for correctly operating the interBTC bridge and providing DOT collateral (Note: this is still subject to final confirmation!).
 
 ### Pool-based Fee Distribution
 
-Vaults earn fees based on the issued and redeemed PolkaBTC volume. To reduce variance of payouts, the PolkaBTC bridge implements a **pooled fee model**.
+Vaults earn fees based on the issued and redeemed interBTC volume. To reduce variance of payouts, the interBTC bridge implements a **pooled fee model**.
 
-Each time a user issues or redeems PolkaBTC, they pay the following fees to a **global fee pool**:
+Each time a user issues or redeems interBTC, they pay the following fees to a **global fee pool**:
 
-- **Issue Fee**: `0.5%` of the Issue volume, paid in *PolkaBTC*
-- **Redeem**: `0.5%` of the redeem volume, paid in *PolkaBTC*
+- **Issue Fee**: `0.5%` of the Issue volume, paid in *interBTC*
+- **Redeem**: `0.5%` of the redeem volume, paid in *interBTC*
 
 From this fee pool, `77%` is distributed among all active Vaults based on the following two factors:
 
-- 90% based on the Vault's **BTC in custody** ( = issued PolkaBTC) in proportion to the total locked BTC ( = issued PolkaBtc) across all Vaults
+- 90% based on the Vault's **BTC in custody** ( = issued interBTC) in proportion to the total locked BTC ( = issued PolkaBtc) across all Vaults
 - 10% based on the Vault's **locked DOT collateral** in proportion to the total locked DOT collateral across all Vaults
 
 Specifically, each Vault's fee is calculated according to the following formula:
@@ -65,8 +65,8 @@ The aim is to offer Vaults an APY similar to that of the Relay Chain staking rew
 
 ## Collateral
 
-To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in DOT to the PolkaBTC bridge.
-To mitigate exchange rate fluctuations, the PolkaBTC bridge employs *over-collateralization* and a *multi-level collateral balancing* scheme.
+To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in DOT to the interBTC bridge.
+To mitigate exchange rate fluctuations, the interBTC bridge employs *over-collateralization* and a *multi-level collateral balancing* scheme.
 ### Over-collateralization
 
 Vaults must over-collateralize their BTC holdings by `150%` with DOT collateral.
@@ -80,12 +80,12 @@ This means, the amount of BTC a Vault can accept for safekeeping is calculated b
 To protect against short and long term exchange rate fluctuations, Vaults are **instructed to keep their collateralization rate up to date**.
 This can be achieved in 2 ways:
 
-- **PolkaBTC Redeem**: if users redeem with the Vault, the collateralization ration increases. The Vault can also maintain a PolkaBTC reserve and execute self-redeems for quick rebalancing
+- **interBTC Redeem**: if users redeem with the Vault, the collateralization ration increases. The Vault can also maintain a interBTC reserve and execute self-redeems for quick rebalancing
 - **Increase Collateral**: alternatively, the Vault can also add more collateral to the system.
 
 #### Thresholds and Balancing Mechanisms
 
-The PolkaBTC bridge introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
+The interBTC bridge introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
 
 **Secure Collateral**:
 
@@ -107,7 +107,7 @@ The PolkaBTC bridge introduces multiple thresholds with different actions to ens
 - *Threshold*: `110%`
 - *Action*: The undercollateralized Vault is liquidated.
     1. The Vaults entire DOT collateral is slashed
-    2. The PolkaBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn PolkaBTC** in return for DOT collateral at a premium rate. See [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) below.
+    2. The interBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn interBTC** in return for DOT collateral at a premium rate. See [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) below.
 
 ## Slashing
 
@@ -120,13 +120,13 @@ If a Vault fails to execute a redeem on time, steals BTC or falls below the liqu
 
 A safety failure occurs in two cases:
 
-- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the PolkaBTC bridge. Theft is detected and reported by [Relayers](/relayer/overview) via an SPV proof.
+- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge. Theft is detected and reported by [Relayers](/relayer/overview) via an SPV proof.
 
 - **Severe Undercollteralization**: a Vaults drops below the `110%` liquidation collateral threshold.
 
 In both cases, the **the Vault's entire BTC holdings are liquidated and its DOT collateral is slashed - up to `150%` (secure collateral threshold) of the liquidated BTC value**.
 
-Consequently, the PolkaBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) to restore the 1:1 balance between BTC and PolkaBTC.
+Consequently, the interBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg) to restore the 1:1 balance between BTC and interBTC.
 
 ### Crash Failures (Failed Redeem)
 
@@ -157,13 +157,13 @@ In detail, the punishment fee is calculated as follows:
 Vaults provide collateral to secure BTC held in custody and have clearly defined tasks they must execute - and face punishment in case of misbehavior.
 However, slashing collateral for each minor protocol deviation would result in too high risk profiles for Vaults, yielding these roles unattractive to users.
 
-To reduce the risk for Vaults, especially to protect Vaults against network/latency issues, the PolkaBTC bridge makes use of Service Level Agreements.
+To reduce the risk for Vaults, especially to protect Vaults against network/latency issues, the interBTC bridge makes use of Service Level Agreements.
 By being online and behaving correctly, Vaults increase their SLA value, one correct action at a time. Higher SLAs result in higher rewards and preferred treatment where applicable in the Issue and Redeem protocols. As mentioned above, SLAs are also used to reduce punishment fees for one-time failures of otherwise honest / reliable Vaults.
 
 ### SLA Value
 
 The SLA value is a number between `0` and `100`.
-When a Vaults joins the PolkaBTC bridge, it starts with an SLA of `0`.
+When a Vaults joins the interBTC bridge, it starts with an SLA of `0`.
 
 ### SLA Actions
 
@@ -188,15 +188,15 @@ When Vaults execute desirable actions, their SLA increases - and decreases in ca
 
 - **Failed Redeem**: Vault fails to execute redeem on time.
     - *Value*: resets the SLA to `0`
-- **Theft**: Vault steals. Note: in this case, the Vault is also banned from the PolkaBTC bridge.
+- **Theft**: Vault steals. Note: in this case, the Vault is also banned from the interBTC bridge.
     - *Value*: resets the SLA to `0`
 
 ## Burn Event: Restoring a 1:1 Physical Peg
 
 When a Vault is liquidated, its DOT collateral is slashed up to`150%` of the liquidated BTC value, given the exchange rate at the time of liquidation.
 
-The PolkaBTC bridge now has less BTC locked than PolkaBTC minted - but more than enough DOT collateral to maintain economic security.
-To re-establish the physical 1:1 peg between BTC and PolkaBTC, the PolkaBTC bridge allows users to **burn PolkaBTC in return for DOT at a premium rate**.
+The interBTC bridge now has less BTC locked than interBTC minted - but more than enough DOT collateral to maintain economic security.
+To re-establish the physical 1:1 peg between BTC and interBTC, the interBTC bridge allows users to **burn interBTC in return for DOT at a premium rate**.
 
 Specifically, the user's payout is calculated as follows:
 
@@ -205,6 +205,6 @@ Specifically, the user's payout is calculated as follows:
         (total_liquidated_dot_collateral / total_liquidated_polkabtc)
         * user_burned_polkabtc
 
-As long as the economic value of `burn_dot_payout` is higher than that of `user_burned_polkabtc`, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn PolkaBTC in return for DOT and to re-balance the system.
+As long as the economic value of `burn_dot_payout` is higher than that of `user_burned_polkabtc`, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn interBTC in return for DOT and to re-balance the system.
 
-This Burn Event continues until the 1:1 ration of BTC to PolkaBTC is restored.
+This Burn Event continues until the 1:1 ration of BTC to interBTC is restored.

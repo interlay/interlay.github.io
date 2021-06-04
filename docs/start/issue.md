@@ -1,12 +1,12 @@
-# Issue PolkaBTC
+# Issue interBTC
 
-PolkaBTC allows you to receive a representation of BTC to be used any way you see fit in the Polkadot ecosystem.
+interBTC allows you to receive a representation of BTC to be used any way you see fit in the Polkadot ecosystem.
 To get you started, follow this guide.
 
 At the end of this guide you will have:
 
 - [x] Locked BTC with a collateralized Vault
-- [x] Issued your first PolkaBTC on the PolkaBTC app
+- [x] Issued your first interBTC on the interBTC app
 
 ## Video Guide
 
@@ -16,17 +16,17 @@ At the end of this guide you will have:
 
 Make sure you have the required [polkadot-js extension and a Bitcoin wallet](start/prereq.md).
 
-## Issue PolkaBTC
+## Issue interBTC
 
 ### 1. Go to [ beta.polkabtc.io](https://beta.polkabtc.io)
 
 The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Issue tab.
 
-### 2. Enter the amount of PolkaBTC you want to issue in the app
+### 2. Enter the amount of interBTC you want to issue in the app
 
 ?> Don't forget to get some testnet DOT via the faucet ("Request DOT" button, right-hand side of top bar) before making an issue request. You will need this to pay for the bridge transaction fees.
 
-Enter the amount of PolkaBTC you want to issue. The app will automatically select a vault for you.
+Enter the amount of interBTC you want to issue. The app will automatically select a vault for you.
 
 Check the details of your issue request and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
@@ -96,9 +96,9 @@ If configured, you may also check the status of the transaction in a block explo
 
 ### 4. Confirm your BTC transaction
 
-Once the payment has been sent, the app will automatically locate your transaction on the Bitcoin blockchain. If this transaction is correct, you can just wait for a few minutes and you will receive your PolkaBTC. This is because a vault will eventually execute your request if your transaction has sufficient confirmations.
+Once the payment has been sent, the app will automatically locate your transaction on the Bitcoin blockchain. If this transaction is correct, you can just wait for a few minutes and you will receive your interBTC. This is because a vault will eventually execute your request if your transaction has sufficient confirmations.
 
-You can check the status of your issue request in the **"Issue Requests"** table below the app modal. If your Bitcoin transaction has enough confirmations but has not been executed by a vault yet, an **"Execute"** button will be displayed in the table. To finalize the Issue process and claim your PolkaBTC, either wait for a vault to auto-execute your request, or click **"Execute"** yourself.
+You can check the status of your issue request in the **"Issue Requests"** table below the app modal. If your Bitcoin transaction has enough confirmations but has not been executed by a vault yet, an **"Execute"** button will be displayed in the table. To finalize the Issue process and claim your interBTC, either wait for a vault to auto-execute your request, or click **"Execute"** yourself.
 
 ### 5. Check your historical requests
 

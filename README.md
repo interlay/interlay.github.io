@@ -1,10 +1,10 @@
-# polkabtc-docs
+# interbtc-docs
 
-PolkaBTC documentation for users, vaults, relayers, developers and anyone else.
+interBTC documentation for users, vaults, relayers, developers and anyone else.
 
 ## About
 
-This is the central place for user guides and links to developer documentation in the PolkaBTC universe.
+This is the central place for user guides and links to developer documentation in the interBTC universe.
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ yarn global add docsify-cli
 Clone the repository:
 
 ```shell
-git clone git@github.com:interlay/polkabtc-docs.git
+git clone git@github.com:interlay/interbtc-docs.git
 ```
 
 Build the documentation:

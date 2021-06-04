@@ -1,6 +1,6 @@
 # Incentivized Beta Testnet
 
-The PolkaBTC Beta testnet is the final testing phase of the PolkaBTC bridge prior to launch on Kusama and Polkadot.
+The interBTC Beta testnet is the final testing phase of the interBTC bridge prior to launch on Kusama and Polkadot.
 
 It is of utmost importance to achieve a high participation rate to:
 - Detect left-over bugs,
@@ -11,14 +11,14 @@ It is of utmost importance to achieve a high participation rate to:
 
 ## DOT Rewards
 
-To achieve higher participation during Beta testnet, Interlay is organizing a number of events, competitions, and challenges to actively test critical components of the PolkaBTC bridge.
+To achieve higher participation during Beta testnet, Interlay is organizing a number of events, competitions, and challenges to actively test critical components of the interBTC bridge.
 
-Polkadot Council has approved **1300 DOT** treasury funding for the PolkaBTC testnet campaign ([see approved Polkassembly proposal](https://polkadot.polkassembly.io/treasury/36)).
+Polkadot Council has approved **1300 DOT** treasury funding for the interBTC testnet campaign ([see approved Polkassembly proposal](https://polkadot.polkassembly.io/treasury/36)).
 
 ### Stay up-to-date with the Latest Updates
 
 - Join our [Discord](https://discord.gg/KgCYK3MKSf)
-- Follow [PolkaBTC](https://twitter.com/polkaBTC) on Twitter
+- Follow [interBTC](https://twitter.com/polkaBTC) on Twitter
 - Follow [Interlay](https://twitter.com/InterlayHQ) on Twitter
 
 ## Treasure Hunt (900 DOT)
@@ -28,9 +28,9 @@ Users must perform a list of actions to receive a small amount of DOT. To claim 
 ### End Users (award: 1 DOT per user for the first 500. 500 DOT in total)
 
 1. Get testnet Bitcoin from a BTC faucet
-1. Get testnet DOT from the PolkaBTC faucet
-1. Issue PolkaBTC
-1. Redeem PolkaBTC
+1. Get testnet DOT from the interBTC faucet
+1. Issue interBTC
+1. Redeem interBTC
 1. Fill in the user feedback form provided at [https://beta.polkabtc.io/feedback](https://beta.polkabtc.io/feedback)
 
 ### Vault (award: 4 DOT for the first 50, 200 DOT in total)
@@ -52,7 +52,7 @@ Users must perform a list of actions to receive a small amount of DOT. To claim 
 
 ## King of the Hill: Vaults and Relayers (200 DOT)
 
-!> Important: You will need to submit your Polkadot address (starting with "1..") to participate in the king of the hill contest. Otherwise, we cannot match your address on the PolkaBTC bridge with your Polkadot address. If you already have submitted your DOT address via the form (https://forms.gle/V6LsUb3J9qR6oJCN8), you don't need to do it again.
+!> Important: You will need to submit your Polkadot address (starting with "1..") to participate in the king of the hill contest. Otherwise, we cannot match your address on the interBTC bridge with your Polkadot address. If you already have submitted your DOT address via the form (https://forms.gle/V6LsUb3J9qR6oJCN8), you don't need to do it again.
 
 We compute a lifetime SLA score for Vaults and Staked Relayers (each desirable action adds to the score, a failure to Redeem reduces the score significantly).
 In the King of the Hill challenge, the top 10 Vaults and Relayers are rewarded with DOT at the end of each week for a period of 2 weeks (2 rounds). Scores are reset each week allowing new Vaults and Staked Relayers to join and have the chance to earn DOT rewards for participating.
@@ -75,14 +75,14 @@ In the King of the Hill challenge, the top 10 Vaults and Relayers are rewarded w
 
 ## Lottery (200 DOT)
 
-!> Important: You will need to submit your Polkadot address (starting with "1..") to participate in the lottery. Otherwise we cannot match your address on the PolkaBTC bridge with your Polkadot address. If you already have submitted your DOT address via the form (https://forms.gle/V6LsUb3J9qR6oJCN8), you don't need to do it again.
+!> Important: You will need to submit your Polkadot address (starting with "1..") to participate in the lottery. Otherwise we cannot match your address on the interBTC bridge with your Polkadot address. If you already have submitted your DOT address via the form (https://forms.gle/V6LsUb3J9qR6oJCN8), you don't need to do it again.
 
 To provide more incentive for users to create numerous transactions and stress-test the system, we are running a lottery.
 The lottery will run for four weeks and each week a payout of 50 DOT is made.
 
 ### Users
 
-1. Create issue and redeem requests via the [PolkaBTC app](https://beta.polkabtc.io/app) or feel free to automate this process using the [polkabtc js library](https://github.com/interlay/polkabtc-js) (size doesn't matter - create as many as you like to increase your chance of winning)
+1. Create issue and redeem requests via the [interBTC app](https://beta.polkabtc.io/app) or feel free to automate this process using the [polkabtc js library](https://github.com/interlay/polkabtc-js) (size doesn't matter - create as many as you like to increase your chance of winning)
 1. Make sure that the requests are completed (issue and redeem requests executed). Only executed requests qualify for the lottery.
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-4: Interlay will select one issue and one redeem request at random.

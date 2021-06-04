@@ -7,7 +7,7 @@ At the end of this document you will have:
 
 - [x] Received testnet DOT
 - [x] Started the Vault client locally
-- [x] Registered your Vault on the Beta PolkaBTC testnet
+- [x] Registered your Vault on the Beta interBTC testnet
 - [x] Inspected the status and activities of your Vault
 
 ## Prerequisites
@@ -75,7 +75,7 @@ docker-compose up
 
 <details>
 <summary>
-Run Bitcoin and the Vault binary as a service on your computer or server. Best for if you are mostly interested in operating a Vault for earning PolkaBTC and participating in the protocol.
+Run Bitcoin and the Vault binary as a service on your computer or server. Best for if you are mostly interested in operating a Vault for earning interBTC and participating in the protocol.
 </summary>
 
 !> This method is currently only supported for Linux.
@@ -334,7 +334,7 @@ Terminate the process using `Ctrl+C` and follow the instructions above to re-com
 
 ### Connecting the Vault to Beta
 
-Connect to our PolkaBTC node or run your own then start the Vault:
+Connect to our interBTC node or run your own then start the Vault:
 
 ```shell
 RUST_LOG=info ./vault \
@@ -423,9 +423,9 @@ See the Fee Model described in the Overview section.
 
 Issue and Redeem requests are processed automatically at the moment, signing transactions on the Bitcoin and Polkadot networks using the mnemonic/account credentials you provide to the client when running it.
 
-### Leaving PolkaBTC
+### Leaving interBTC
 
-The process to leave PolkaBTC depends on whether or not your Vault client holds BTC in custody.
+The process to leave interBTC depends on whether or not your Vault client holds BTC in custody.
 
 If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client without risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
 

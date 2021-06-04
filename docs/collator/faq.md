@@ -2,7 +2,7 @@
 
 ### Who can become a Collator?
 
-The PolkaBTC bridge is fully decentralized: anyone can run a Collator.
+The interBTC bridge is fully decentralized: anyone can run a Collator.
 
 ### Do Collators earn fees?
 

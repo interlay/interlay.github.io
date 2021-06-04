@@ -1,13 +1,13 @@
 # Setting up a Relayer
 
-Running a Relayer will allow you submit BTC block headers and monitor the safety of the PolkaBTC system.
+Running a Relayer will allow you submit BTC block headers and monitor the safety of the interBTC system.
 In return, you will earn a fee for your services.
 To get started, follow this guide.
 
 At the end of this document you will have:
 
 - [x] Started the Relayer client locally
-- [x] Submitted BTC block headers to the PolkaBTC testnet
+- [x] Submitted BTC block headers to the interBTC testnet
 
 ## Prerequisites
 
@@ -73,7 +73,7 @@ docker-compose up
 
 <details>
 <summary>
-Run Bitcoin and the Relayer binary as a service on your computer or server. Best for if you are mostly interested in operating a Relayer for earning PolkaBTC and participating in the protocol.
+Run Bitcoin and the Relayer binary as a service on your computer or server. Best for if you are mostly interested in operating a Relayer for earning interBTC and participating in the protocol.
 </summary>
 
 !> This method is currently only supported for Linux.
@@ -320,7 +320,7 @@ Terminate the process using `Ctrl+C` and follow the instructions above to re-com
 
 ### Connecting the Relayer to Beta
 
-Connect to our PolkaBTC node or run your own then start the Relayer:
+Connect to our interBTC node or run your own then start the Relayer:
 
 ```shell
 RUST_LOG=info ./staked-relayer \
