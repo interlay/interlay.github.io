@@ -1,4 +1,4 @@
-# interBTC
+# InterBTC
 
 ## Financially Trustless Bitcoin on Polkadot
 
