@@ -171,24 +171,51 @@ When Vaults execute desirable actions, their SLA increases - and decreases in ca
 
 #### Increasing the SLA
 
+- **Deposit Collateral**: the Vault deposits collateral to back issued tokens.
+    - *Value*: The SLA increase is calculated based on the average volume of locked collateral. The maximum increase is thereby given by `max_sla_increase = 4`.
+
+    ```
+    sla_increase_deposit =
+        min(
+            deposit_amount / average_deposit_amount * max_sla_increase,
+            max_sla_increase
+        )
+    ```
+
 - **Execute Issue**: accept an issue request, receiving BTC and locking DOT collateral.
     - *Value*: The SLA increase is calculated based on the issue request volume compared to the average volume of the last `N` issue requests. The maximum increase is thereby given by `max_sla_increase = 4`.
 
-
+    ```
     sla_increase_issue =
-        max(
+        min(
             issue_request_size / average_issue_request_size_last_N * max_sla_increase,
             max_sla_increase
-            )
+        )
+    ```
 
 - **Submit Issue Proof**: the Vault submits the SPV proof for the issue request Bitcoin payment on behalf of the user.
     - *Value*: `+1`
 
+- **Refund**: the Vault submits the SPV proof for the issue request Bitcoin payment on behalf of the user.
+    - *Value*: `+1`
+
 #### Decreasing the SLA
 
+- **Withdraw Collateral**: the Vault withdraws collateral that is not used to back tokens.
+    - *Value*: The SLA decrease is calculated based on the average volume of unlocked collateral. The maximum decrease is thereby given by `max_sla_decrease = -4`.
+
+    ```
+    sla_decrease_withdraw =
+        max(
+            withdraw_amount / average_withdraw_amount * max_sla_decrease,
+            max_sla_decrease
+        )
+    ```
+
 - **Failed Redeem**: Vault fails to execute redeem on time.
-    - *Value*: resets the SLA to `0`
-- **Theft**: Vault steals. Note: in this case, the Vault is also banned from the interBTC bridge.
+    - *Value*: `-100`
+
+- **Liquidation**: The Vault is liquidated due to undercollateralization or theft - the account is banned from the interBTC bridge.
     - *Value*: resets the SLA to `0`
 
 ## Burn Event: Restoring a 1:1 Physical Peg
