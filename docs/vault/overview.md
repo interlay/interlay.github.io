@@ -80,7 +80,7 @@ This means, the amount of BTC a Vault can accept for safekeeping is calculated b
 To protect against short and long term exchange rate fluctuations, Vaults are **instructed to keep their collateralization rate up to date**.
 This can be achieved in 2 ways:
 
-- **interBTC Redeem**: if users redeem with the Vault, the collateralization ration increases. The Vault can also maintain a interBTC reserve and execute self-redeems for quick rebalancing
+- **interBTC Redeem**: if users redeem with the Vault, the collateralization ratio increases. The Vault can also maintain a interBTC reserve and execute self-redeems for quick rebalancing
 - **Increase Collateral**: alternatively, the Vault can also add more collateral to the system.
 
 #### Thresholds and Balancing Mechanisms
@@ -207,4 +207,4 @@ Specifically, the user's payout is calculated as follows:
 
 As long as the economic value of `burn_dot_payout` is higher than that of `user_burned_polkabtc`, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn interBTC in return for DOT and to re-balance the system.
 
-This Burn Event continues until the 1:1 ration of BTC to interBTC is restored.
+This Burn Event continues until the 1:1 ratio of BTC to interBTC is restored.
