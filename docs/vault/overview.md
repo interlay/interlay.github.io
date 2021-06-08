@@ -97,11 +97,6 @@ The interBTC bridge introduces multiple thresholds with different actions to ens
 - *Threshold*: `135%`
 - *Actions*: Users can execute redeem with this Vault and receive a premium of `5%` in DOT in addition to the redeemed BTC.
 
-**Vault Auction**:
-
-- *Threshold*: `120%`
-- *Actions*: Other Vaults can forcefully replace this Vault ([Replace protocol](https://interlay.gitlab.io/polkabtc-spec/spec/replace.html)), adding DOT collateral and taking over the BTC holdings of the undercollateralized Vault - earning a `5%` premium fee on the replaced BTC volume.
-
 **Vault Liquidation**:
 
 - *Threshold*: `110%`
