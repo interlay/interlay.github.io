@@ -141,8 +141,8 @@ Please use a separate keyname and mnemonic for each client.
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/polkabtc-relayer.service
 chmod +x ./setup && sudo ./setup
-systemctl daemon-reload
-systemctl start polkabtc-relayer.service
+sudo systemctl daemon-reload
+sudo systemctl start polkabtc-relayer.service
 ```
 
 You can then check the status of your service by running:
@@ -160,7 +160,7 @@ journalctl --follow _SYSTEMD_UNIT=polkabtc-relayer.service &> relayer.log
 To stop the service, run:
 
 ```shell
-systemctl stop polkabtc-relayer.service
+sudo systemctl stop polkabtc-relayer.service
 ```
 
 ### 5.B. OPTIONAL: Start the Relayer client directly
@@ -290,7 +290,7 @@ Standard
 ### 1. Stop the service
 
 ```shell
-systemctl stop polkabtc-relayer.service
+sudo systemctl stop polkabtc-relayer.service
 ```
 
 OR terminate the process with `Ctrl+C`.
@@ -301,7 +301,7 @@ OR terminate the process with `Ctrl+C`.
 wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.11/staked-relayer -O staked-relayer
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup -O setup
 chmod +x ./setup && sudo ./setup
-systemctl start polkabtc-relayer.service
+sudo systemctl start polkabtc-relayer.service
 ```
 
 </details>
