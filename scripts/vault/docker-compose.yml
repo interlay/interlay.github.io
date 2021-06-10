@@ -19,7 +19,7 @@ services:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   vault:
-    image: "registry.gitlab.com/interlay/polkabtc-clients/vault:0.7.10"
+    image: "registry.gitlab.com/interlay/polkabtc-clients/vault:0.7.11"
     command:
       - vault
       - --bitcoin-rpc-url
