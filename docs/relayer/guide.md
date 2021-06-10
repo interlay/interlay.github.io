@@ -275,7 +275,7 @@ docker-compose down
 
 ```shell
 rm docker-compose.yaml
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/docker-compose.yml
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/docker-compose.yml -O docker-compose.yml
 docker-compose up
 ```
 
@@ -298,8 +298,8 @@ OR terminate the process with `Ctrl+C`.
 ### 2. Re-download the binary and setup script
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.11/staked-relayer
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup
+wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.11/staked-relayer -O staked-relayer
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/staked-relayer/setup -O setup
 chmod +x ./setup && sudo ./setup
 systemctl start polkabtc-relayer.service
 ```
