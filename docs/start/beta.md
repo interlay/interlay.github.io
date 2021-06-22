@@ -57,21 +57,21 @@ Users must perform a list of actions to receive a small amount of DOT. To claim 
 We compute a lifetime SLA score for Vaults and Staked Relayers (each desirable action adds to the score, a failure to Redeem reduces the score significantly).
 In the King of the Hill challenge, the top 10 Vaults and Relayers are rewarded with DOT at the end of each week for a period of 2 weeks (2 rounds). Scores are reset each week allowing new Vaults and Staked Relayers to join and have the chance to earn DOT rewards for participating.
 
-### Vaults (award: 150 DOT for the top 5% according to their SLA score starting on June 2, 2021)
+### Vaults (award: 150 DOT for the top 5 according to their SLA score starting on June 2, 2021)
 
 1. Download, build and run the Vault client [based on the guide](https://docs.polkabtc.io/#/vault/guide)
 1. Register as a Vault and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Vault dashboard](https://beta.polkabtc.io/dashboard/vaults))
 1. Run the Vault and automatically earn SLA points
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
-1. Week 1-2: The top 5% Vaults will be selected and a total of 75 DOT is distributed to them each week
+1. Week 1-2: The top 5 Vaults will be selected and a total of 75 DOT is distributed to them each week
 
-### Staked Relayer (award: 50 DOT for the top 5% according to their SLA score starting on June 2, 2021)
+### Staked Relayer (award: 50 DOT for the top 5 according to their SLA score starting on June 2, 2021)
 
 1. Download, build and run the Staked Relayer client [based on the guide](https://docs.polkabtc.io/#/relayer/guide)
 1. Register as a Staked Relayer and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Relayer dashboard](https://beta.polkabtc.io/dashboard/parachain))
 1. Run the Staked Relayer and automatically earn SLA points
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
-1. Week 1-2: The top 5% Staked Relayers will be selected and a total of 25 DOT is distributed to them each week
+1. Week 1-2: The top 5 Staked Relayers will be selected and a total of 25 DOT is distributed to them each week
 
 ## Lottery (200 DOT)
 
