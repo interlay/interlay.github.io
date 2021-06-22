@@ -147,8 +147,8 @@ If the Vault spends funds from another wallet this may be marked as theft.
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/setup
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/polkabtc-vault.service
 chmod +x ./setup && sudo ./setup
-systemctl daemon-reload
-systemctl start polkabtc-vault.service
+sudo systemctl daemon-reload
+sudo systemctl start polkabtc-vault.service
 ```
 
 You can then check the status of your service by running:
@@ -166,7 +166,7 @@ journalctl --follow _SYSTEMD_UNIT=polkabtc-vault.service &> vault.log
 To stop the service, run:
 
 ```shell
-systemctl stop polkabtc-vault.service
+sudo systemctl stop polkabtc-vault.service
 ```
 
 ### 5.B. OPTIONAL: Start the Vault client directly
@@ -304,7 +304,7 @@ Standard
 ### 1. Stop the service
 
 ```shell
-systemctl stop polkabtc-vault.service
+sudo systemctl stop polkabtc-vault.service
 ```
 
 OR terminate the process with `Ctrl+C`.
@@ -315,7 +315,7 @@ OR terminate the process with `Ctrl+C`.
 wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.11/vault -O vault
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup
-systemctl start polkabtc-vault.service
+sudo systemctl start polkabtc-vault.service
 ```
 
 </details>
