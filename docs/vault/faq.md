@@ -62,6 +62,10 @@ The Vault client uses a separate wallet file, specified upon start-up, which is 
 
 Each time a user requests to issue new interBTC, the interBTC bridge uses the master key of the selected Vault to derive Bitcoin addresses (controlled by this Vault) via an on [on-chain key derivation scheme](https://interlay.gitlab.io/polkabtc-spec/security_performance/security-analysis.html). This address is used by the user for the BTC deposit.
 
+### What if all Relayers go offline?
+
+While unlikely, if all Relayers go offline the interBTC bridge will pause operation.
+
 ## Troubleshooting
 
 ### Vault has stolen BTC

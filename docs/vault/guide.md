@@ -9,6 +9,7 @@ At the end of this document you will have:
 - [x] Started the Vault client locally
 - [x] Registered your Vault on the Beta interBTC testnet
 - [x] Inspected the status and activities of your Vault
+- [x] Submitted BTC block headers to the interBTC testnet
 
 ## Prerequisites
 
@@ -38,7 +39,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 
 ```json
 {
-  "polkabtcvault": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
+  "interbtcvault": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
 }
 ```
 
@@ -47,7 +48,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
 ```shell
-subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
+subkey generate --output-type json | jq '{"interbtcvault": .secretPhrase}' > keyfile.json
 ```
 
 Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
@@ -124,7 +125,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 
 ```json
 {
-  "polkabtcvault": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
+  "interbtcvault": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
 }
 ```
 
@@ -133,7 +134,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
 ```shell
-subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
+subkey generate --output-type json | jq '{"interbtcvault": .secretPhrase}' > keyfile.json
 ```
 
 Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
@@ -231,7 +232,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 
 ```json
 {
-  "polkabtcvault": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
+  "interbtcvault": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
 }
 ```
 
@@ -240,7 +241,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
 ```shell
-subkey generate --output-type json | jq '{"polkabtcvault": .secretPhrase}' > keyfile.json
+subkey generate --output-type json | jq '{"interbtcvault": .secretPhrase}' > keyfile.json
 ```
 
 Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
@@ -256,7 +257,7 @@ RUST_LOG=info cargo run -p vault -- \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
-  --keyname polkabtcvault \
+  --keyname interbtcvault \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
   --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
   --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
@@ -342,7 +343,7 @@ RUST_LOG=info ./vault \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
-  --keyname polkabtcvault \
+  --keyname interbtcvault \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
   --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
   --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
@@ -430,16 +431,6 @@ The process to leave interBTC depends on whether or not your Vault client holds 
 If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client without risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
 
 If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another Vault. You can request to be replaced through the [Vault dashboard](https://beta.polkabtc.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
-
-<!-- ## Advanced
-
-### Key Management
-
-### Running the Vault as a Service
-
-### Restarting the Vault
-
-### Making Changes to the Vault -->
 
 ## Dashboard
 

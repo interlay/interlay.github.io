@@ -82,9 +82,9 @@ Both can redeem owned interBTC for BTC at any time (requires BTC wallet).
 
 **Vaults:** collateralized intermediaries who hold BTC locked on Bitcoin. Any user can become a Vault by simply locking DOT collateral. The only requirements are (1) a Bitcoin wallet, (2) a Polkadot wallet and (3) some DOTs.
 
-**Staked Relayers** make sure the BTC Parachain is up to date with the state of Bitcoin by submitting block headers to BTC-Relay, the [Parachain’s Bitcoin SPV client](https://medium.com/interlay/interlay-releases-codebase-for-btc-relay-on-polkadot-b37502ce88e3). Staked Relayers also flag (potentially) invalid blocks. Requirements: (1) Bitcoin full node, (2) Polkadot wallet, (3) some DOTs.
+**Relayers** make sure the BTC Parachain is up to date with the state of Bitcoin by submitting block headers to BTC-Relay, the [Parachain’s Bitcoin SPV client](https://medium.com/interlay/interlay-releases-codebase-for-btc-relay-on-polkadot-b37502ce88e3). Requirements: (1) Bitcoin full node, (2) Polkadot wallet, (3) some DOTs.
 
-**Parachain Validators** participate in the BTC Parachain’s DPoS consensus, as per Polkadot consensus rules. Requirement: (1) Parachain full node and (2) DOTs.
+**Collators** participate in the BTC Parachain’s NPoS consensus, as per Polkadot consensus rules. Requirement: (1) Parachain full node and (2) DOTs.
 
 ### BTC Parachain Components
 

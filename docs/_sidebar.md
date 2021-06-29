@@ -15,12 +15,6 @@
   * [Running a Vault](vault/guide.md)
   * [FAQ](vault/faq.md)
 
-* Relayers
-
-  * [Overview](relayer/overview.md)
-  * [Running a Relayer](relayer/guide.md)
-  * [FAQ](relayer/faq.md)
-
 * Collators
 
   * [Overview](collator/overview.md)
