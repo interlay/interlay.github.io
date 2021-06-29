@@ -33,7 +33,7 @@ services:
       - --keyfile
       - /keyfile.json
       - --keyname
-      - polkabtcvault
+      - interbtcvault
       - --auto-register-with-faucet-url
       - "https://beta.polkabtc.io/api/faucet"
       - --telemetry-url

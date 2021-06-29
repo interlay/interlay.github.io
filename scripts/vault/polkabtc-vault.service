@@ -10,7 +10,7 @@ ExecStart=/opt/polkabtc/vault/vault \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile /opt/polkabtc/vault/keyfile.json \
-  --keyname polkabtcvault \
+  --keyname interbtcvault \
   --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
   --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
   --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \

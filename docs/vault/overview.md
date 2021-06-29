@@ -7,11 +7,20 @@ Vaults are **non-trusted** and **collateralized** and **any user can become a Va
 
 The correct behavior of Vaults is enforced by the interBTC bridge parachain. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of Polkadot. If a Vault tries to steal BTC, this will be automatically detected and the Vault will lose its collateral - and users will be reimbursed using this collateral (at a beneficial rate).
 
+The secondary responsibility of a Vault is to monitor both Bitcoin and the interBTC bridge to ensure that the BTC-Relay (Bitcoin light/SPV client deployed on Polkadot) stays up to date with the Bitcoin mainchain by relaying Bitcoin block headers.
+
+Note: BTC-Relay is self healing and automatically detects and recovers from Bitcoin forks.
+
 ### What do Vaults do?
 
 1. **Provide DOT Collateral** and upload their Bitcoin public key to the interBTC bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping / how many interBTC this Vault can secure.
 2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's DOT collateral until BTC is redeemed again.
 3. **Redeem**: Vaults monitor the interBTC bridge for redeem requests. When a user requests to redeem interBTC, Vaults release BTC to the user and prove that they behaved correctly to the interBTC bridge (via the BTC-Relay). Only if this proof is correct, the Vault's collateral is unlocked again.
+
+To support the integrity of the parachain, Vaults are also able to assume the role of a Relayer:
+
+1. **Maintain BTC-Relay**: submit Bitcoin block headers to interBTC's BTC-Relay and make sure the bridge stays up to date with the Bitcoin mainchain.
+2. **Report Vault Theft**: monitor Vault Bitcoin addresses and BTC holdings and report theft to the interBTC bridge (providing an SPV proof to BTC-Relay)
 
 ### Why would I want to become a Vault?
 
@@ -115,7 +124,7 @@ If a Vault fails to execute a redeem on time, steals BTC or falls below the liqu
 
 A safety failure occurs in two cases:
 
-- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge. Theft is detected and reported by [Relayers](/relayer/overview) via an SPV proof.
+- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge. Theft is detected and reported by [Vaults](/vault/overview) via an SPV proof.
 
 - **Severe Undercollteralization**: a Vaults drops below the `110%` liquidation collateral threshold.
 
@@ -192,6 +201,12 @@ When Vaults execute desirable actions, their SLA increases - and decreases in ca
     - *Value*: `+1`
 
 - **Refund**: the Vault submits the SPV proof for the issue request Bitcoin payment on behalf of the user.
+    - *Value*: `+1`
+
+- **Submit Bitcoin Valid Block Header**: Submit a correct Bitcoin block header to BTC-Relay. The block header must be accepted by BTC-Relay as a main-chain or fork-header.
+    - *Value*: `+1`
+
+- **Correct Theft Report**: Correctly report a Vault theft event by providing the necessary SPV proof to BTC-Relay. Validation of the report is performed on-chain by the BTC-Relay component.
     - *Value*: `+1`
 
 #### Decreasing the SLA

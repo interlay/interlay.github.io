@@ -20,11 +20,6 @@ If you want to get started working on interBTC, understand how the system works,
 - [Documentation]()
 - [Source](https://github.com/interlay/polkabtc-clients/tree/dev/vault)
 
-### Relayers
-
-- [Documentation]()
-- [Source](https://github.com/interlay/polkabtc-clients/tree/dev/staked-relayer)
-
 ### interbtc-js
 
 - [Documentation]()

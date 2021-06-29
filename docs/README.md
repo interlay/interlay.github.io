@@ -40,11 +40,7 @@ XCLAIM guarantees users can redeem interBTC tokens for the corresponding amount 
 
 ###### [5. Operate your own Vault](vault/guide.md)
 
-###### [6. Understand how a Relayer works](relayer/overview.md)
-
-###### [7. Operate your own Relayer](relayer/guide.md)
-
-###### [8. Build your own Dapps with interBTC](developers/integration.md)
+###### [6. Build your own Dapps with interBTC](developers/integration.md)
 
 ## Contributions
 
