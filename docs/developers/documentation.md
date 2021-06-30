@@ -12,17 +12,17 @@ If you want to get started working on interBTC, understand how the system works,
 
 ### BTC Parachain
 
-- [Documentation]()
+- [Documentation](https://www.interlay.io/interbtc/)
 - [Source](https://github.com/interlay/btc-parachain)
 
 ### Vaults
 
-- [Documentation]()
+- [Documentation](https://www.interlay.io/interbtc-clients/)
 - [Source](https://github.com/interlay/polkabtc-clients/tree/dev/vault)
 
 ### interbtc-js
 
-- [Documentation]()
+- [Documentation](https://www.interlay.io/interbtc-js/)
 - [Source](https://github.com/interlay/polkabtc-js)
 
 ### interbtc-ui
