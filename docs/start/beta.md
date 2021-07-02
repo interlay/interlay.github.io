@@ -18,7 +18,7 @@ Polkadot Council has approved **1300 DOT** treasury funding for the interBTC tes
 ### Stay up-to-date with the Latest Updates
 
 - Join our [Discord](https://discord.gg/KgCYK3MKSf)
-- Follow [interBTC](https://twitter.com/polkaBTC) on Twitter
+- Follow [interBTC](https://twitter.com/interbtc) on Twitter
 - Follow [Interlay](https://twitter.com/InterlayHQ) on Twitter
 
 ## Treasure Hunt (900 DOT)
@@ -31,24 +31,24 @@ Users must perform a list of actions to receive a small amount of DOT. To claim 
 1. Get testnet DOT from the interBTC faucet
 1. Issue interBTC
 1. Redeem interBTC
-1. Fill in the user feedback form provided at [https://beta.polkabtc.io/feedback](https://beta.polkabtc.io/feedback)
+1. Fill in the user feedback form provided at [https://bridge.interlay.io/feedback](https://bridge.interlay.io/feedback)
 
 ### Vault (award: 4 DOT for the first 50, 200 DOT in total)
 
-1. Download, build and run the Vault client [based on the guide](https://docs.polkabtc.io/#/vault/guide)
-1. Register as a Vault and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Vault dashboard](https://beta.polkabtc.io/dashboard/vaults))
+1. Download, build and run the Vault client [based on the guide](https://docs.interlay.io/#/vault/guide)
+1. Register as a Vault and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Vault dashboard](https://bridge.interlay.io/dashboard/vaults))
 1. Run the Vault
 1. Serve at least 5 issue and 5 redeem requests
 1. Maintain an SLA of 99% or higher for at least 24h
-1. Fill in the Vault feedback form provided at [https://beta.polkabtc.io/feedback](https://beta.polkabtc.io/feedback)
+1. Fill in the Vault feedback form provided at [https://bridge.interlay.io/feedback](https://bridge.interlay.io/feedback)
 
 ### Staked Relayer (award: 4 DOT for the first 50, 200 DOT in total)
 
-1. Download, build and run the Staked Relayer client [based on the guide](https://docs.polkabtc.io/#/relayer/guide)
+1. Download, build and run the Staked Relayer client [based on the guide](https://docs.interlay.io/#/relayer/guide)
 1. Run the Staked Relayer
 1. Submit at least 1 Bitcoin testnet block
 1. Maintain an SLA of 99% or higher for at least 24h
-1. Fill in the Staked Relayer feedback form provided at [https://beta.polkabtc.io/feedback](https://beta.polkabtc.io/feedback)
+1. Fill in the Staked Relayer feedback form provided at [https://bridge.interlay.io/feedback](https://bridge.interlay.io/feedback)
 
 ## King of the Hill: Vaults and Relayers (200 DOT)
 
@@ -59,16 +59,16 @@ In the King of the Hill challenge, the top 10 Vaults and Relayers are rewarded w
 
 ### Vaults (award: 150 DOT for the top 5 according to their SLA score starting on June 2, 2021)
 
-1. Download, build and run the Vault client [based on the guide](https://docs.polkabtc.io/#/vault/guide)
-1. Register as a Vault and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Vault dashboard](https://beta.polkabtc.io/dashboard/vaults))
+1. Download, build and run the Vault client [based on the guide](https://docs.interlay.io/#/vault/guide)
+1. Register as a Vault and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Vault dashboard](https://bridge.interlay.io/dashboard/vaults))
 1. Run the Vault and automatically earn SLA points
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-2: The top 5 Vaults will be selected and a total of 75 DOT is distributed to them each week
 
 ### Staked Relayer (award: 50 DOT for the top 5 according to their SLA score starting on June 2, 2021)
 
-1. Download, build and run the Staked Relayer client [based on the guide](https://docs.polkabtc.io/#/relayer/guide)
-1. Register as a Staked Relayer and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Relayer dashboard](https://beta.polkabtc.io/dashboard/parachain))
+1. Download, build and run the Staked Relayer client [based on the guide](https://docs.interlay.io/#/relayer/guide)
+1. Register as a Staked Relayer and provide testnet DOT as collateral (automatically done on starting the client - verify on the [Relayer dashboard](https://bridge.interlay.io/dashboard/parachain))
 1. Run the Staked Relayer and automatically earn SLA points
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-2: The top 5 Staked Relayers will be selected and a total of 25 DOT is distributed to them each week
@@ -82,7 +82,7 @@ The lottery will run for four weeks and each week a payout of 50 DOT is made.
 
 ### Users
 
-1. Create issue and redeem requests via the [interBTC app](https://beta.polkabtc.io/app) or feel free to automate this process using the [polkabtc js library](https://github.com/interlay/polkabtc-js) (size doesn't matter - create as many as you like to increase your chance of winning)
+1. Create issue and redeem requests via the [interBTC app](https://bridge.interlay.io/app) or feel free to automate this process using the [interbtc-js library](https://github.com/interlay/interbtc-js) (size doesn't matter - create as many as you like to increase your chance of winning)
 1. Make sure that the requests are completed (issue and redeem requests executed). Only executed requests qualify for the lottery.
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-4: Interlay will select one issue and one redeem request at random.
@@ -90,7 +90,7 @@ The lottery will run for four weeks and each week a payout of 50 DOT is made.
 
 ### Vaults
 
-1. Create replace requests via the [Vault dashboard](https://beta.polkabtc.io/vault) ("Replace my Vault" button)
+1. Create replace requests via the [Vault dashboard](https://bridge.interlay.io/vault) ("Replace my Vault" button)
 1. Make sure that the requests are at least partially completed (one other vault has accepted your request). Only executed requests qualify for the lottery.
 1. Fill in the form to receive DOT: [https://forms.gle/V6LsUb3J9qR6oJCN8](https://forms.gle/V6LsUb3J9qR6oJCN8)
 1. Week 1-4: Interlay will select one replace request at random.

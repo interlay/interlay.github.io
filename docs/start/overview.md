@@ -10,7 +10,7 @@ Funded by a [Web3 Foundation grant](https://web3.foundation/grants/), the BTC-Pa
 
 - [Polkadot's blog post explaining interBTC](https://polkadot.network/bitcoin-is-coming-to-polkadot/)
 
-- [BTC Parachain specification](https://interlay.gitlab.io/polkabtc-spec/)
+- [BTC Parachain specification](https://interlay.gitlab.io/interbtc-spec/)
 
 - [BTC Parachain open-source code](https://github.com/interlay/btc-parachain)
 

@@ -1,5 +1,5 @@
 <!-- _navbar.md -->
 
-* [Go to App](https://beta.polkabtc.io)
-* [:uk:](/)
+* [Go to App](https://bridge.interlay.io)
+<!-- * [:us:](/) -->
 <!-- * [:cn:](/zh-cn/) -->

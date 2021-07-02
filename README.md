@@ -32,7 +32,7 @@ docsify serve ./docs
 
 ## Usage
 
-You can browse the documentation locally or directly on [docs.polkabtc.io](docs.polkabtc.io).
+You can browse the documentation locally or directly on [docs.interlay.io](docs.interlay.io).
 
 
 ### Adding content

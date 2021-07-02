@@ -32,7 +32,7 @@ This will also be the case in production. Since the bridge is decentralized and 
 
 There can be two reasons for this:
 
-- **Reached maximum capacity**: If the capacity indicated on the [dashboard](https://beta.polkabtc.io/dashboard) shows that the number of issued interBTC is equal to the capacity, you cannot issue more interBTC. Each interBTC must be backed by 150% worth of DOT collateral and this represents the upper limit.
+- **Reached maximum capacity**: If the capacity indicated on the [dashboard](https://bridge.interlay.io/dashboard) shows that the number of issued interBTC is equal to the capacity, you cannot issue more interBTC. Each interBTC must be backed by 150% worth of DOT collateral and this represents the upper limit.
 - **Connection to interBTC bridge lost**: In case the connection to the bridge is lost, the UI will fallback to 0 interBTC being able to be issued.
 
 ?> Testnet Note: The number of concurrent connections to our chain instances is restricted to monitor the load. Best course of action is to retry after some time/reload the website. We are looking to increase the load.
@@ -66,4 +66,4 @@ interBTC is based on XCLAIM - a top-tier, peer-reviewed research paper. interBTC
 
 ## More questions?
 
-Reach out on [Discord](https://discord.gg/KgCYK3MKSf) or [open an issue](https://github.com/interlay/polkabtc-docs/issues).
+Reach out on [Discord](https://discord.gg/KgCYK3MKSf) or [open an issue](https://github.com/interlay/interbtc-docs/issues).

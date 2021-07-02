@@ -1,8 +1,8 @@
 #!/bin/sh
 
-[ -d /opt/polkabtc ] || mkdir /opt/polkabtc
-[ -d /opt/polkabtc/vault ] || mkdir /opt/polkabtc/vault
-cp ./vault /opt/polkabtc/vault/
-cp ./keyfile.json /opt/polkabtc/vault/
+[ -d /opt/interbtc ] || mkdir /opt/interbtc
+[ -d /opt/interbtc/vault ] || mkdir /opt/interbtc/vault
+cp ./vault /opt/interbtc/vault/
+cp ./keyfile.json /opt/interbtc/vault/
 [ -d /usr/lib/systemd/system/ ] || mkdir /usr/lib/systemd/system/
-cp polkabtc-vault.service /usr/lib/systemd/system/
+cp interbtc-vault.service /usr/lib/systemd/system/
