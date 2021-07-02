@@ -30,7 +30,7 @@ Setup the Vault client using docker-compose. Best if you want to quickly try out
 
 ```shell
 mkdir vault && cd vault
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/docker-compose.yml
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/docker-compose.yml
 ```
 
 ### 2. Add your Polkadot account to use with your Vault
@@ -110,7 +110,7 @@ mkdir vault && cd vault
 Download the vault binary:
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.11/vault
+wget https://github.com/interlay/interbtc-clients/releases/download/0.7.11/vault
 ```
 
 Make the binary executable:
@@ -145,29 +145,29 @@ If the Vault spends funds from another wallet this may be marked as theft.
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
 
 ```shell
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/setup
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/polkabtc-vault.service
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/interbtc-vault.service
 chmod +x ./setup && sudo ./setup
 sudo systemctl daemon-reload
-sudo systemctl start polkabtc-vault.service
+sudo systemctl start interbtc-vault.service
 ```
 
 You can then check the status of your service by running:
 
 ```shell
-journalctl --follow _SYSTEMD_UNIT=polkabtc-vault.service
+journalctl --follow _SYSTEMD_UNIT=interbtc-vault.service
 ```
 
 Or by streaming the logs to the `vault.log` file in the current directory:
 
 ```shell
-journalctl --follow _SYSTEMD_UNIT=polkabtc-vault.service &> vault.log
+journalctl --follow _SYSTEMD_UNIT=interbtc-vault.service &> vault.log
 ```
 
 To stop the service, run:
 
 ```shell
-sudo systemctl stop polkabtc-vault.service
+sudo systemctl stop interbtc-vault.service
 ```
 
 ### 5.B. OPTIONAL: Start the Vault client directly
@@ -218,8 +218,8 @@ bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcus
 Clone the Vault code, checkout release `0.7.11`, and build the client:
 
 ```shell
-git clone git@github.com:interlay/polkabtc-clients.git
-cd polkabtc-clients
+git clone git@github.com:interlay/interbtc-clients.git
+cd interbtc-clients
 git checkout 0.7.11
 cargo build -p vault
 ```
@@ -258,21 +258,21 @@ RUST_LOG=info cargo run -p vault -- \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname interbtcvault \
-  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
-  --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
-  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
+  --auto-register-with-faucet-url 'https://bridge.interlay.io/api/faucet' \
+  --telemetry-url 'https://bridge.interlay.io/api/telemetry' \
+  --btc-parachain-url 'wss://bridge.interlay.io/api/parachain' \
   --network=testnet
 ```
 
 ### For a local development setup, check the README
 
-Go to the Vault client [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
+Go to the Vault client [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
 
 </details>
 
 ## Upgrading
 
-We will announce on public channels when a new release is made available for the Vault client. The changelog and binaries will be published on the [release page](https://github.com/interlay/polkabtc-clients/releases). Depending on the method of installation;
+We will announce on public channels when a new release is made available for the Vault client. The changelog and binaries will be published on the [release page](https://github.com/interlay/interbtc-clients/releases). Depending on the method of installation;
 
 <!-- QUICKSTART -->
 <details>
@@ -290,7 +290,7 @@ docker-compose down
 
 ```shell
 rm docker-compose.yaml
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/docker-compose.yml -O docker-compose.yml
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/docker-compose.yml -O docker-compose.yml
 docker-compose up
 ```
 
@@ -305,7 +305,7 @@ Standard
 ### 1. Stop the service
 
 ```shell
-sudo systemctl stop polkabtc-vault.service
+sudo systemctl stop interbtc-vault.service
 ```
 
 OR terminate the process with `Ctrl+C`.
@@ -313,10 +313,10 @@ OR terminate the process with `Ctrl+C`.
 ### 2. Re-download the binary and setup script
 
 ```shell
-wget https://github.com/interlay/polkabtc-clients/releases/download/0.7.11/vault -O vault
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/vault/setup -O setup
+wget https://github.com/interlay/interbtc-clients/releases/download/0.7.11/vault -O vault
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup
-sudo systemctl start polkabtc-vault.service
+sudo systemctl start interbtc-vault.service
 ```
 
 </details>
@@ -344,9 +344,9 @@ RUST_LOG=info ./vault \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname interbtcvault \
-  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
-  --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
-  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
+  --auto-register-with-faucet-url 'https://bridge.interlay.io/api/faucet' \
+  --telemetry-url 'https://bridge.interlay.io/api/telemetry' \
+  --btc-parachain-url 'wss://bridge.interlay.io/api/parachain' \
   --network=testnet
 ```
 
@@ -357,21 +357,21 @@ On startup, the Vault will automatically create or load the Bitcoin wallet using
 
 ### Registering your Vault
 
-The default behaviour on Beta is **automatic registration** using Interlay's DOT faucet as set in the `auto-register-with-faucet-url` arg. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/polkabtc-clients/tree/master/vault).
+The default behaviour on Beta is **automatic registration** using Interlay's DOT faucet as set in the `auto-register-with-faucet-url` arg. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
 
 You can also register your Vault through our web UI, going to the "Vault" tab, clicking the `Register` button and completing the steps.
 
-Moreover, you can interact with the Vault pallet directly using [polkabtc-js](https://github.com/interlay/polkabtc-js).
+Moreover, you can interact with the Vault pallet directly using [interbtc-js](https://github.com/interlay/interbtc-js).
 
 ```js
-import { createPolkabtcAPI } from "@interlay/polkabtc";
+import { createinterbtcAPI } from "@interlay/interbtc";
 
-const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
-polkaBTC.setAccount(KEYRING);
+const interbtc = await createinterbtcAPI("ws://127.0.0.1:9944", "testnet");
+interbtc.setAccount(KEYRING);
 
 // 100 DOT denominated in Planck
 const collateralInPlanck = "1000000000000";
-await polkaBTC.vaults.register(collateralInPlanck, BTC_PUBLIC_KEY);
+await interbtc.vaults.register(collateralInPlanck, BTC_PUBLIC_KEY);
 ```
 
 ### Increasing Collateral
@@ -380,19 +380,19 @@ await polkaBTC.vaults.register(collateralInPlanck, BTC_PUBLIC_KEY);
 
 Go to the Vault tab and click on button next to the `Collateral: X DOT for Y BTC` text (above the Issue Requests table). Then, follow the isntructions.
 
-**Polkabtc-js library**
+**interbtc-js library**
 
-You can use [polkabtc-js](https://github.com/interlay/polkabtc-js) to lock additional collateral.
+You can use [interbtc-js](https://github.com/interlay/interbtc-js) to lock additional collateral.
 
 ```js
-import { createPolkabtcAPI } from "@interlay/polkabtc";
+import { createinterbtcAPI } from "@interlay/interbtc";
 
-const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
-polkaBTC.setAccount(KEYRING);
+const interbtc = await createinterbtcAPI("ws://127.0.0.1:9944", "testnet");
+interbtc.setAccount(KEYRING);
 
 // 100 DOT denominated in Planck
 const additionalCollateralInPlanck = "1000000000000";
-await polkaBTC.vaults.lockAdditionalCollateral(additionalCollateralInPlanck);
+await interbtc.vaults.lockAdditionalCollateral(additionalCollateralInPlanck);
 ```
 
 ### Withdrawing Collateral
@@ -401,19 +401,19 @@ await polkaBTC.vaults.lockAdditionalCollateral(additionalCollateralInPlanck);
 
 Go to the Vault tab and click on the button next to the `Collateral: X DOT for Y BTC` text (above the Issue Requests table). Then, follow the isntructions.
 
-**Polkabtc-js library**
+**interbtc-js library**
 
-You can use [polkabtc-js](https://github.com/interlay/polkabtc-js) to withdraw collateral.
+You can use [interbtc-js](https://github.com/interlay/interbtc-js) to withdraw collateral.
 
 ```js
-import { createPolkabtcAPI } from "@interlay/polkabtc";
+import { createinterbtcAPI } from "@interlay/interbtc";
 
-const polkaBTC = await createPolkabtcAPI("ws://127.0.0.1:9944", "testnet");
-polkaBTC.setAccount(KEYRING);
+const interbtc = await createinterbtcAPI("ws://127.0.0.1:9944", "testnet");
+interbtc.setAccount(KEYRING);
 
 // 100 DOT denominated in Planck
 const collateralToWithdrawInPlanck = "1000000000000";
-await polkaBTC.vaults.withdrawCollateral(collateralToWithdrawInPlanck);
+await interbtc.vaults.withdrawCollateral(collateralToWithdrawInPlanck);
 ```
 
 ### Earning Fees
@@ -430,10 +430,10 @@ The process to leave interBTC depends on whether or not your Vault client holds 
 
 If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client without risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
 
-If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another Vault. You can request to be replaced through the [Vault dashboard](https://beta.polkabtc.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
+If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another Vault. You can request to be replaced through the [Vault dashboard](https://bridge.interlay.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
 
 ## Dashboard
 
 You can monitor the operation of your Vault on the Vault dashboard by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).
 
-Once the Vault is up and running, a "Vault" tab will appear in the topbar of the app at [beta.polkabtc.io](https://beta.polkabtc.io/) (or you can access directly at [beta.polkabtc.io/vault](https://beta.polkabtc.io/vault)).
+Once the Vault is up and running, a "Vault" tab will appear in the topbar of the app at [bridge.interlay.io](https://bridge.interlay.io/) (or you can access directly at [bridge.interlay.io/vault](https://bridge.interlay.io/vault)).

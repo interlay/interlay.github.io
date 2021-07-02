@@ -1,11 +1,11 @@
 {
-  "name": "PolkaBTC",
+  "name": "interbtc",
   "id": "beta_testnet",
   "chainType": "Live",
   "bootNodes": [
-    "/dns4/lb-ams3.do.polkabtc.io/tcp/30337/p2p/12D3KooWQgh9z6TuD7H5ixMPsa2RR6FoKp35SToCD1c2DNJqyEjU",
-    "/dns4/lb-ams3.do.polkabtc.io/tcp/30338/p2p/12D3KooWFxfTef4uTR98jKrGueQkjth4RutuvrpB2hHUpHoYX6fd",
-    "/dns4/lb-ams3.do.polkabtc.io/tcp/30339/p2p/12D3KooWKNFAxB7b19JDfdyDnTKHMmTJqhDD5jqXUysWN27Nnz2R"
+    "/dns4/lb-ams3.do.interbtc.io/tcp/30337/p2p/12D3KooWQgh9z6TuD7H5ixMPsa2RR6FoKp35SToCD1c2DNJqyEjU",
+    "/dns4/lb-ams3.do.interbtc.io/tcp/30338/p2p/12D3KooWFxfTef4uTR98jKrGueQkjth4RutuvrpB2hHUpHoYX6fd",
+    "/dns4/lb-ams3.do.interbtc.io/tcp/30339/p2p/12D3KooWKNFAxB7b19JDfdyDnTKHMmTJqhDD5jqXUysWN27Nnz2R"
   ],
   "telemetryEndpoints": null,
   "protocolId": null,
@@ -17,7 +17,7 @@
     ],
     "tokenSymbol": [
       "DOT",
-      "PolkaBTC"
+      "interbtc"
     ]
   },
   "consensusEngine": null,

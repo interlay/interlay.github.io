@@ -5,15 +5,15 @@ After=network.target
 [Service]
 Environment="RUST_LOG=info"
 Type=simple
-ExecStart=/opt/polkabtc/vault/vault \
+ExecStart=/opt/interbtc/vault/vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
-  --keyfile /opt/polkabtc/vault/keyfile.json \
+  --keyfile /opt/interbtc/vault/keyfile.json \
   --keyname interbtcvault \
-  --auto-register-with-faucet-url 'https://beta.polkabtc.io/api/faucet' \
-  --telemetry-url 'https://beta.polkabtc.io/api/telemetry' \
-  --btc-parachain-url 'wss://beta.polkabtc.io/api/parachain' \
+  --auto-register-with-faucet-url 'https://bridge.interlay.io/api/faucet' \
+  --telemetry-url 'https://bridge.interlay.io/api/telemetry' \
+  --btc-parachain-url 'wss://bridge.interlay.io/api/parachain' \
   --network=testnet
 Restart=on-failure
 RestartSec=5

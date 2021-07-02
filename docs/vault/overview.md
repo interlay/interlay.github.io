@@ -29,7 +29,7 @@ To support the integrity of the parachain, Vaults are also able to assume the ro
 
 ### What do I need to become a Vault?
 
-1. Vault client ([source](https://github.com/interlay/polkabtc-clients))
+1. Vault client ([source](https://github.com/interlay/interbtc-clients))
 2. Bitcoin full node ([instructions](https://bitcoin.org/en/full-node))
 3. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
 4. Some DOTs to provide as collateral and pay for transaction fees
@@ -53,7 +53,7 @@ Each time a user issues or redeems interBTC, they pay the following fees to a **
 
 From this fee pool, `77%` is distributed among all active Vaults based on the following two factors:
 
-- 90% based on the Vault's **BTC in custody** ( = issued interBTC) in proportion to the total locked BTC ( = issued PolkaBtc) across all Vaults
+- 90% based on the Vault's **BTC in custody** ( = issued interBTC) in proportion to the total locked BTC ( = issued interbtc) across all Vaults
 - 10% based on the Vault's **locked DOT collateral** in proportion to the total locked DOT collateral across all Vaults
 
 Specifically, each Vault's fee is calculated according to the following formula:
@@ -239,9 +239,9 @@ Specifically, the user's payout is calculated as follows:
 
 
     burn_dot_payout =
-        (total_liquidated_dot_collateral / total_liquidated_polkabtc)
-        * user_burned_polkabtc
+        (total_liquidated_dot_collateral / total_liquidated_interbtc)
+        * user_burned_interbtc
 
-As long as the economic value of `burn_dot_payout` is higher than that of `user_burned_polkabtc`, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn interBTC in return for DOT and to re-balance the system.
+As long as the economic value of `burn_dot_payout` is higher than that of `user_burned_interbtc`, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn interBTC in return for DOT and to re-balance the system.
 
 This Burn Event continues until the 1:1 ratio of BTC to interBTC is restored.
