@@ -42,7 +42,7 @@ Summarizing, to trust the bridge, you only need to:
 
 At the core, XCLAIM - the framework underlying the BTC-Parachain - introduces the concept of cryptocurrency-back assets. Assets are locked on Bitcoin and unlocked on Polkadot in form of 1:1 BTC backed-assets (interBTC). interBTC can be used just like any native asset within the Polkadot ecosystem, meaning: they can be easily transferred and integrated into other Parachains and applications.
 
-![CbA](https://cdn-images-1.medium.com/max/3200/0*7K1rmj7j0Cya0eB_)
+![Cryptocurrency-backed Assets](../_assets/img/CbA.jpg)
 
 ### Issue, Trade, Redeem
 

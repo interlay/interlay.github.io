@@ -2,19 +2,19 @@
 
 ## Financially Trustless Bitcoin on Polkadot
 
-At the core, interBTC leverages the concept of cryptocurrency-back assets introduced in the XCLAIM protocol. Assets are locked on Bitcoin and unlocked on Polkadot in form of 1:1 BTC backed-assets (interBTC). interBTC can be used just like any native asset within the Polkadot ecosystem, meaning: they can be easily transferred and integrated into other Parachains and applications.
+At the core, interBTC leverages the concept of cryptocurrency-back assets introduced in the XCLAIM protocol. Assets are locked on Bitcoin and unlocked on Polkadot in form of 1:1 BTC backed-assets (interBTC). interBTC can be used just like any native asset within the Polkadot ecosystem, meaning: they can be easily transferred and integrated into other Parachains and applications. Moreover, interBTC can be transferred to other ecosystems like Cosmos and Ethereum making it a truly interoperable.
 
-![Cryptocurrency-backed Assets](_assets/img/CbA.png)
+![Cryptocurrency-backed Assets](_assets/img/CbA.jpg)
 
 ### Issue, Trade, and Redeem
 
 The life-cycle of interBTC follows the three main protocols:
 
-- **Issue:** Users create interBTC on the BTC-Parachain by locking BTC with Vaults — non-trusted and collateralized intermediaries on Bitcoin.
-- **Transfer:** Users transfer interBTC to other users or migrate to other Parachains within the Polkadot ecosystem, integrating with stablecoins, decentralized exchanges, lending protocols etc.
-- **Redeem:** Users burn interBTC on the BTC-Parachain to receive the equivalent amount of BTC from Vaults on Bitcoin.
+- **Issue:** Users create interBTC by locking BTC with Vaults — non-trusted and collateralized intermediaries on Bitcoin.
+- **Transfer:** Users transfer interBTC to other users or use their interBTC within the Polkadot, Ethereum, and Cosmos ecosystems, integrating with stablecoins, decentralized exchanges, and lending protocols.
+- **Redeem:** Users burn interBTC on the interBTC bridge to receive the equivalent amount of BTC from Vaults on Bitcoin.
 
-interBTC can remain on Polkadot indefinitely (no expiry date) and can be redeemed at any point in time. Users who obtain interBTC on Polkadot do not need a BTC wallet, until they decide to redeem the tokens for BTC (if at all).
+interBTC can remain on Polkadot and other networks indefinitely (no expiry date) and can be redeemed at any point in time. Users who obtain interBTC on Polkadot do not need a BTC wallet, until they decide to redeem the tokens for BTC (if at all).
 
 ### Secure, Open, Efficient.
 
