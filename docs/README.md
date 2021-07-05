@@ -4,7 +4,7 @@
 
 At the core, interBTC leverages the concept of cryptocurrency-back assets introduced in the XCLAIM protocol. Assets are locked on Bitcoin and unlocked on Polkadot in form of 1:1 BTC backed-assets (interBTC). interBTC can be used just like any native asset within the Polkadot ecosystem, meaning: they can be easily transferred and integrated into other Parachains and applications.
 
-![Cryptocurrency-backed Assets](_assets/img/CbA.png)
+![Cryptocurrency-backed Assets](_assets/img/CbA.jpg)
 
 ### Issue, Trade, and Redeem
 
