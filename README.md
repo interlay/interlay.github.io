@@ -1,6 +1,6 @@
 # interbtc-docs
 
-interBTC documentation for users, vaults, relayers, developers and anyone else.
+interBTC documentation for users, vaults, developers and anyone else.
 
 ## About
 
