@@ -21,8 +21,8 @@ Download the genesis chain spec into a separate directory to also store other ch
 
 ```shell
 wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/beta.json
-mkdir btc-parachain
-mv beta.json btc-parachain
+mkdir interbtc
+mv beta.json interbtc
 ```
 
 ## Quickstart
@@ -32,11 +32,11 @@ Map the directory into a local volume used by the docker container:
 ```shell
 docker run \
   --network host \
-  --volume ${PWD}/btc-parachain:/btc-parachain \
-  registry.gitlab.com/interlay/btc-parachain/standalone:0.7.5 \
-  btc-parachain \
-  --base-path=/btc-parachain \
-  --chain=/btc-parachain/beta.json \
+  --volume ${PWD}/interbtc:/interbtc \
+  interlayhq/interbtc:interbtc-standalone-0.8.5 \
+  interbtc-standalone \
+  --base-path=/interbtc \
+  --chain=/interbtc/beta.json \
   --unsafe-ws-external \
   --rpc-methods=Unsafe
 ```
@@ -46,11 +46,11 @@ docker run \
 Download the pre-built binary and map the directory to the local `base-path`:
 
 ```shell
-wget https://github.com/interlay/btc-parachain/releases/download/0.7.5/btc-parachain-standalone
-chmod +x btc-parachain-standalone
-./btc-parachain-standalone \
-  --base-path=${PWD}/btc-parachain \
-  --chain=${PWD}/btc-parachain/beta.json \
+wget https://github.com/interlay/interbtc/releases/download/0.8.5/interbtc-standalone
+chmod +x interbtc-standalone
+./interbtc-standalone \
+  --base-path=${PWD}/interbtc \
+  --chain=${PWD}/interbtc/beta.json \
   --unsafe-ws-external \
   --rpc-methods=Unsafe
 ```
@@ -74,21 +74,21 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 ?> This step will take some time depending on your hardware.
 
-Clone the BTC-Parachain code, checkout release `0.7.5`, and build the node:
+Clone the BTC-Parachain code, checkout release `0.8.5`, and build the node:
 
 ```shell
-git clone git@github.com:interlay/btc-parachain.git
-cd btc-parachain
-git checkout 0.7.5
+git clone git@github.com:interlay/interbtc.git
+cd interbtc
+git checkout 0.8.5
 cargo build --release
 ```
 
 ### 3. Run the node
 
 ```shell
-./target/release/btc-parachain \
-  --base-path=${PWD}/btc-parachain \
-  --chain=${PWD}/btc-parachain/beta.json \
+./target/release/interbtc \
+  --base-path=${PWD}/interbtc \
+  --chain=${PWD}/interbtc/beta.json \
   --unsafe-ws-external \
   --rpc-methods=Unsafe
 ```
