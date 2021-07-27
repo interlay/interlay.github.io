@@ -35,11 +35,11 @@ services:
       - --keyname
       - interbtcvault
       - --auto-register-with-faucet-url
-      - "https://bridge.interlay.io/api/faucet"
+      - "https://api.interlay.io/faucet"
       - --telemetry-url
-      - "https://bridge.interlay.io/api/telemetry"
+      - "https://api.interlay.io/telemetry"
       - --btc-parachain-url
-      - "wss://bridge.interlay.io/api/parachain"
+      - "wss://api.interlay.io/parachain"
     environment:
       RUST_LOG: info
     volumes:

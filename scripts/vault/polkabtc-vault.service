@@ -11,9 +11,9 @@ ExecStart=/opt/interbtc/vault/vault \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile /opt/interbtc/vault/keyfile.json \
   --keyname interbtcvault \
-  --auto-register-with-faucet-url 'https://bridge.interlay.io/api/faucet' \
-  --telemetry-url 'https://bridge.interlay.io/api/telemetry' \
-  --btc-parachain-url 'wss://bridge.interlay.io/api/parachain' \
+  --auto-register-with-faucet-url 'https://api.interlay.io/faucet' \
+  --telemetry-url 'https://api.interlay.io/telemetry' \
+  --btc-parachain-url 'wss://api.interlay.io/parachain' \
   --network=testnet
 Restart=on-failure
 RestartSec=5
