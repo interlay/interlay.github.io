@@ -258,9 +258,9 @@ RUST_LOG=info cargo run -p vault -- \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname interbtcvault \
-  --auto-register-with-faucet-url 'https://bridge.interlay.io/api/faucet' \
-  --telemetry-url 'https://bridge.interlay.io/api/telemetry' \
-  --btc-parachain-url 'wss://bridge.interlay.io/api/parachain' \
+  --auto-register-with-faucet-url 'https://api.interlay.io/faucet' \
+  --telemetry-url 'https://api.interlay.io/telemetry' \
+  --btc-parachain-url 'wss://api.interlay.io/parachain' \
   --network=testnet
 ```
 
@@ -344,9 +344,9 @@ RUST_LOG=info ./vault \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname interbtcvault \
-  --auto-register-with-faucet-url 'https://bridge.interlay.io/api/faucet' \
-  --telemetry-url 'https://bridge.interlay.io/api/telemetry' \
-  --btc-parachain-url 'wss://bridge.interlay.io/api/parachain' \
+  --auto-register-with-faucet-url 'https://api.interlay.io/faucet' \
+  --telemetry-url 'https://api.interlay.io/telemetry' \
+  --btc-parachain-url 'wss://api.interlay.io/parachain' \
   --network=testnet
 ```
 
