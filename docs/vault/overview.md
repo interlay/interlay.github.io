@@ -34,13 +34,11 @@ To support the integrity of the parachain, Vaults are also able to assume the ro
 3. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
 4. Some DOTs to provide as collateral and pay for transaction fees
 
-Head over to ["Running a Vault"](/vault/guide) for a detailed setup guide.
+Head over to ["Installation"](/vault/installation) for a detailed setup guide.
 
 ## Fee Model
 
 Vaults earn fees on issue and redeem, based on the interBTC volume.
-
-In addition, in the first year (and subject to extension), Vaults will receive a subsidy from the Polkadot Treasury for correctly operating the interBTC bridge and providing DOT collateral (Note: this is still subject to final confirmation!).
 
 ### Pool-based Fee Distribution
 
@@ -51,31 +49,22 @@ Each time a user issues or redeems interBTC, they pay the following fees to a **
 - **Issue Fee**: `0.5%` of the Issue volume, paid in *interBTC*
 - **Redeem**: `0.5%` of the redeem volume, paid in *interBTC*
 
-From this fee pool, `77%` is distributed among all active Vaults based on the following two factors:
+From this fee pool, `100%` is distributed among all active Vaults based on the following factor:
 
-- 90% based on the Vault's **BTC in custody** ( = issued interBTC) in proportion to the total locked BTC ( = issued interbtc) across all Vaults
-- 10% based on the Vault's **locked DOT collateral** in proportion to the total locked DOT collateral across all Vaults
+- 100% based on the Vault's **BTC in custody** ( = issued interBTC) in proportion to the total locked BTC (= issued interBTC) across all Vaults
 
 Specifically, each Vault's fee is calculated according to the following formula:
 
     vault_fee =
-    pool * 0.9 * (vault_locked_btc / total_locked_btc)
-    + pool * 0.1 * (vault_locked_dot / total_locked_dot)
+    pool * (vault_locked_btc / total_locked_btc)
 
 The Vault fee is paid each time an Issue or Redeem request is executed.
-
-### Collateral Subsidy
-
-Initially, the Issue and Redeem fees will likely not suffice to offer a competitive APY compared to most other DeFi protocols, including the staking rewards on the Polkadot Relay Chain.
-To this end, Vault will receive a subsidy from the Polkadot Treasury.
-
-The exact size of the subsidy is to be determined by the Polkadot Council when parachains launch.
-The aim is to offer Vaults an APY similar to that of the Relay Chain staking rewards.
 
 ## Collateral
 
 To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in DOT to the interBTC bridge.
 To mitigate exchange rate fluctuations, the interBTC bridge employs *over-collateralization* and a *multi-level collateral balancing* scheme.
+
 ### Over-collateralization
 
 Vaults must over-collateralize their BTC holdings by `150%` with DOT collateral.
@@ -155,78 +144,6 @@ In detail, the punishment fee is calculated as follows:
 
 
 **Note**: the SLA of a Vault is **reset to 0 after a single failed redeem request** and the Vault must behave correctly / be online for prolonged periods to build up a high SLA level again.
-
-## Service Level Agreements
-
-Vaults provide collateral to secure BTC held in custody and have clearly defined tasks they must execute - and face punishment in case of misbehavior.
-However, slashing collateral for each minor protocol deviation would result in too high risk profiles for Vaults, yielding these roles unattractive to users.
-
-To reduce the risk for Vaults, especially to protect Vaults against network/latency issues, the interBTC bridge makes use of Service Level Agreements.
-By being online and behaving correctly, Vaults increase their SLA value, one correct action at a time. Higher SLAs result in higher rewards and preferred treatment where applicable in the Issue and Redeem protocols. As mentioned above, SLAs are also used to reduce punishment fees for one-time failures of otherwise honest / reliable Vaults.
-
-### SLA Value
-
-The SLA value is a number between `0` and `100`.
-When a Vaults joins the interBTC bridge, it starts with an SLA of `0`.
-
-### SLA Actions
-
-When Vaults execute desirable actions, their SLA increases - and decreases in case of deviation from the protocol rules.
-
-#### Increasing the SLA
-
-- **Deposit Collateral**: the Vault deposits collateral to back issued tokens.
-    - *Value*: The SLA increase is calculated based on the average volume of locked collateral. The maximum increase is thereby given by `max_sla_increase = 4`.
-
-    ```
-    sla_increase_deposit =
-        min(
-            deposit_amount / average_deposit_amount * max_sla_increase,
-            max_sla_increase
-        )
-    ```
-
-- **Execute Issue**: accept an issue request, receiving BTC and locking DOT collateral.
-    - *Value*: The SLA increase is calculated based on the issue request volume compared to the average volume of the last `N` issue requests. The maximum increase is thereby given by `max_sla_increase = 4`.
-
-    ```
-    sla_increase_issue =
-        min(
-            issue_request_size / average_issue_request_size_last_N * max_sla_increase,
-            max_sla_increase
-        )
-    ```
-
-- **Submit Issue Proof**: the Vault submits the SPV proof for the issue request Bitcoin payment on behalf of the user.
-    - *Value*: `+1`
-
-- **Refund**: the Vault submits the SPV proof for the issue request Bitcoin payment on behalf of the user.
-    - *Value*: `+1`
-
-- **Submit Bitcoin Valid Block Header**: Submit a correct Bitcoin block header to BTC-Relay. The block header must be accepted by BTC-Relay as a main-chain or fork-header.
-    - *Value*: `+1`
-
-- **Correct Theft Report**: Correctly report a Vault theft event by providing the necessary SPV proof to BTC-Relay. Validation of the report is performed on-chain by the BTC-Relay component.
-    - *Value*: `+1`
-
-#### Decreasing the SLA
-
-- **Withdraw Collateral**: the Vault withdraws collateral that is not used to back tokens.
-    - *Value*: The SLA decrease is calculated based on the average volume of unlocked collateral. The maximum decrease is thereby given by `max_sla_decrease = -4`.
-
-    ```
-    sla_decrease_withdraw =
-        max(
-            withdraw_amount / average_withdraw_amount * max_sla_decrease,
-            max_sla_decrease
-        )
-    ```
-
-- **Failed Redeem**: Vault fails to execute redeem on time.
-    - *Value*: `-100`
-
-- **Liquidation**: The Vault is liquidated due to undercollateralization or theft - the account is banned from the interBTC bridge.
-    - *Value*: resets the SLA to `0`
 
 ## Burn Event: Restoring a 1:1 Physical Peg
 
