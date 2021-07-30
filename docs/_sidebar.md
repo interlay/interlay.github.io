@@ -12,13 +12,15 @@
 * Vaults
 
   * [Overview](vault/overview.md)
-  * [Running a Vault](vault/guide.md)
+  * [Installation](vault/installation.md)
+  * [Upgrading](vault/upgrading.md)
+  * [Operating Guide](vault/guide.md)
   * [FAQ](vault/faq.md)
 
 * Collators
 
   * [Overview](collator/overview.md)
-  * [Running a Collator](collator/guide.md)
+  * [Installation](collator/guide.md)
   * [FAQ](collator/faq.md)
 
 * Developers
