@@ -47,7 +47,7 @@ OR terminate the process with `Ctrl+C`.
 ### 2. Re-download the binary and setup script
 
 ```shell
-wget https://github.com/interlay/interbtc-clients/releases/download/0.8.2/vault -O vault
+wget https://github.com/interlay/interbtc-clients/releases/download/0.8.5/vault -O vault
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup
 ```

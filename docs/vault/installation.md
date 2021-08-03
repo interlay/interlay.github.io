@@ -107,7 +107,7 @@ mkdir vault && cd vault
 Download the vault binary:
 
 ```shell
-wget https://github.com/interlay/interbtc-clients/releases/download/0.8.2/vault
+wget https://github.com/interlay/interbtc-clients/releases/download/0.8.5/vault
 ```
 
 Make the binary executable:
@@ -210,12 +210,12 @@ bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcus
 
 ?> This step will take about 45 minutes depending on your CPU.
 
-Clone the Vault code, checkout release `0.8.2`, and build the client:
+Clone the Vault code, checkout release `0.8.5`, and build the client:
 
 ```shell
 git clone git@github.com:interlay/interbtc-clients.git
 cd interbtc-clients
-git checkout 0.8.2
+git checkout 0.8.5
 cargo build -p vault
 ```
 
