@@ -1,7 +1,7 @@
 # Getting started with interBTC
 
 
-To start using interBTC Beta, follow the steps below to set up a Bitcoin and Polkadot testnet wallet.
+To start using interBTC, follow the steps below to set up a Bitcoin and Polkadot testnet wallet.
 
 ### 1. Installing a Bitcoin testnet wallet
 
