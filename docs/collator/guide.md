@@ -5,7 +5,7 @@ To get started, follow this guide.
 
 At the end of this document you will have:
 
-- [x] Connected to the beta testnet
+- [x] Connected to the testnet
 - [x] Synced a local full-node
 
 ?> Please note that in this testnet phase, consensus validation is run via Aura.
@@ -20,9 +20,9 @@ Prior to Kusama, we will review the exact requirements for a Collator node.
 Download the genesis chain spec into a separate directory to also store other chain files:
 
 ```shell
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/beta.json
+wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/testnet.json
 mkdir interbtc
-mv beta.json interbtc
+mv testnet.json interbtc
 ```
 
 ## Quickstart
@@ -36,7 +36,7 @@ docker run \
   interlayhq/interbtc:interbtc-standalone-0.8.5 \
   interbtc-standalone \
   --base-path=/interbtc \
-  --chain=/interbtc/beta.json \
+  --chain=/interbtc/testnet.json \
   --unsafe-ws-external \
   --rpc-methods=Unsafe
 ```
@@ -50,7 +50,7 @@ wget https://github.com/interlay/interbtc/releases/download/0.8.5/interbtc-stand
 chmod +x interbtc-standalone
 ./interbtc-standalone \
   --base-path=${PWD}/interbtc \
-  --chain=${PWD}/interbtc/beta.json \
+  --chain=${PWD}/interbtc/testnet.json \
   --unsafe-ws-external \
   --rpc-methods=Unsafe
 ```
@@ -88,7 +88,7 @@ cargo build --release
 ```shell
 ./target/release/interbtc \
   --base-path=${PWD}/interbtc \
-  --chain=${PWD}/interbtc/beta.json \
+  --chain=${PWD}/interbtc/testnet.json \
   --unsafe-ws-external \
   --rpc-methods=Unsafe
 ```
