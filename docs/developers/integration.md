@@ -8,4 +8,4 @@ The interBTC system consists of a range of different components.
 
 *Overview of interBTC bridge components.*
 
-[interbtc-js](https://raw.githubusercontent.com/interlay/interbtc-js/master/README.md ':include')
+[interbtc-js](https://raw.githubusercontent.com/interlay/interbtc-api/master/README.md ':include')
