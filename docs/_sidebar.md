@@ -31,4 +31,3 @@
 * About interBTC
 
   * [Roadmap](about/roadmap.md)
-  * [Governance](about/governance.md)
