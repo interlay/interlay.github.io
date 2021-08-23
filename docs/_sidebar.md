@@ -7,7 +7,6 @@
   * [Issue interBTC](start/issue.md)
   * [Redeem interBTC](start/redeem.md)
   * [FAQ](start/faq.md)
-  * [Incentivized Beta](start/beta)
 
 * Vaults
 
