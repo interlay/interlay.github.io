@@ -39,11 +39,11 @@ What makes interBTC unique is the strict dedication to being trustless and decen
 
 ###### [4. Redeem interBTC for BTC](start/redeem.md)
 
-###### [6. Understand how a Vault works](vault/overview.md)
+###### [5. Understand how a Vault works](vault/overview.md)
 
-###### [7. Operate your own Vault](vault/guide.md)
+###### [6. Operate your own Vault](vault/guide.md)
 
-###### [8. Build your own Dapps with interBTC](developers/integration.md)
+###### [7. Build your own Dapps with interBTC](developers/integration.md)
 
 ## Contributions
 

@@ -12,7 +12,7 @@ To promote a more active governance process and avoid the “lazy voter” probl
 
 **Stake to Vote**
 
-To vote, users lock KINT with the Kintsugi parachain. The locking period thereby will impahct the voting power: the longer KINT are locked, the more voting power they have, since the voter has a long-term stake in the health of the system. 
+To vote, users lock KINT with the Kintsugi parachain. The locking period thereby will impact the voting power: the longer KINT are locked, the more voting power they have, since the voter has a long-term stake in the health of the system. 
 
 **Technical Committee**
 
