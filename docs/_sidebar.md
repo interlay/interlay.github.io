@@ -1,5 +1,16 @@
 <!-- docs/_sidebar.md -->
 
+
+* **Kintsugi (Kusama)**
+
+  * [Overview](kintsugi/overview.md)
+  * [Crowdloans](kintsugi/crowdloans.md)
+  * [Tokenomics](kintsugi/tokenomics.md)
+  * [Governance](kintsugi/governance.md)
+---
+
+* **interBTC (Testnet)**
+
 * Getting Started
 
   * [Overview](start/overview.md)
@@ -27,6 +38,7 @@
   * [Interacting with interBTC](developers/integration.md)
   * [Documentation](developers/documentation.md)
 
-* About interBTC
 
-  * [Roadmap](about/roadmap.md)
+* [Roadmap](about/roadmap.md)
+
+* [Glossary](glossary/glossary.md)

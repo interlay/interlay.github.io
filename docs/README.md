@@ -1,8 +1,11 @@
-# InterBTC
+# InterBTC & Kintsugi Documentation
 
-## Financially Trustless Bitcoin on Polkadot
+## Radically Open Bitcoin for Decentralized Finance 
 
-At the core, interBTC leverages the concept of cryptocurrency-back assets introduced in the XCLAIM protocol. Assets are locked on Bitcoin and unlocked on Polkadot in form of 1:1 BTC backed-assets (interBTC). interBTC can be used just like any native asset within the Polkadot ecosystem, meaning: they can be easily transferred and integrated into other Parachains and applications. Moreover, interBTC can be transferred to other ecosystems like Cosmos and Ethereum making it truly interoperable.
+
+**interBTC** is Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant. interBTC will be hosted as a Polkadot parachain and connected to Cosmos, Ethereum and other major DeFi networks. 
+
+**Kintsugi** is Interlay’s canary network for interBTC, a testnet with real economic value deployed on Kusama (Polkadot’s canary network). Kintsugi and interBTC share the same code base - with the difference that Kintsugi will be 2-3 releases ahead of interBTC with more experimental features. 
 
 ![Cryptocurrency-backed Assets](_assets/img/CbA.jpg)
 
@@ -10,37 +13,37 @@ At the core, interBTC leverages the concept of cryptocurrency-back assets introd
 
 The life-cycle of interBTC follows the three main protocols:
 
-- **Issue:** Users create interBTC by locking BTC with Vaults — non-trusted and collateralized intermediaries on Bitcoin.
-- **Transfer:** Users transfer interBTC to other users or use their interBTC within the Polkadot, Ethereum, and Cosmos ecosystems, integrating with stablecoins, decentralized exchanges, and lending protocols.
-- **Redeem:** Users burn interBTC on the interBTC bridge to receive the equivalent amount of BTC from Vaults on Bitcoin.
+- **Issue:** Lock your BTC with a Vault. Pick one, or run your own. Your BTC is always safe and insured by Vault collateral. 
+- **Mint:** Get interBTC at a 1:1 ration to your locked BTC.
+- **BTC DeFi:** Earn on your Bitcoin. Use interBTC as collateral, for lending, yield farming and more. On Polkadot, Kusama, Cosmos, Ethereum and other major DeFi platforms. 
+- **Redeem:** Redeem interBTC for actual BTC on Bitcoin - trustless and anytime you want.
 
-interBTC can remain on Polkadot and other networks indefinitely (no expiry date) and can be redeemed at any point in time. Users who obtain interBTC on Polkadot do not need a BTC wallet, until they decide to redeem the tokens for BTC (if at all).
+### Radically Open & Secured by Insurance
 
-### Secure, Open, Efficient.
+What makes interBTC unique is the strict dedication to being trustless and decentralized. Users
 
-XCLAIM guarantees users can redeem interBTC tokens for the corresponding amount of BTC or be reimbursed in the DOT at any point in time. To summarize, XCLAIM is:
+- **Secured by Insurance**. Vaults lock collateral on the interBTC parachain in various digital assets - in a MakerDAO-inspired multi-collateral system. If Vaults misbehave, their collateral is slashed and users reimbursed. As a user, you only trust that Bitcoin and the DeFi platform you use are secure. 
 
-- **Financially Secure:** Vaults (intermediaries) pledge collateral and cryptographically prove correct behavior. Any attempt of theft is automatically punished and users are reimbursed.
+- **Radically Open**. Anyone can become a Vault and help secure interBTC, anytime. Yes, you can run your own Vault!
 
-- **Dynamic and Permissionless:** any user can become a Vault — simply, anytime, and without asking for permission. No need to rely on someone else, or any special hardware. You can even run your own Vault for issuing interBTC.
 
-- **Censorship Resistant:** By design, Vaults have no influence over the Issue process. That is, no Vault can prevent a user from minting or obtaining interBTC.
-
-- **Fast and Efficient:** XCLAIM is on average 95% faster than using classic HTLC atomic swaps with Bitcoin.
 
 ## Guides
 
-###### [1. Get a detailed overview of interBTC](start/overview.md)
+###### [1 Learn about Kintsugi, the canary network on Kusama - going live NOW](kintsugi/overview.md)
 
-###### [2. Issue your first interBTC](start/issue.md)
 
-###### [3. Redeem interBTC for BTC](start/redeem.md)
+###### [2. Get a detailed overview of interBTC](start/overview.md)
 
-###### [4. Understand how a Vault works](vault/overview.md)
+###### [3. Issue your first interBTC](start/issue.md)
 
-###### [5. Operate your own Vault](vault/guide.md)
+###### [4. Redeem interBTC for BTC](start/redeem.md)
 
-###### [6. Build your own Dapps with interBTC](developers/integration.md)
+###### [6. Understand how a Vault works](vault/overview.md)
+
+###### [7. Operate your own Vault](vault/guide.md)
+
+###### [8. Build your own Dapps with interBTC](developers/integration.md)
 
 ## Contributions
 
