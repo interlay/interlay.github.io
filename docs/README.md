@@ -20,7 +20,11 @@ The life-cycle of interBTC follows the three main protocols:
 
 ### Radically Open & Secured by Insurance
 
+<<<<<<< HEAD
 What makes interBTC unique is the strict dedication to being trustless and decentralized.
+=======
+What makes interBTC unique is the strict dedication to being trustless and decentralized. Users
+>>>>>>> master
 
 - **Secured by Insurance**. Vaults lock collateral on the interBTC parachain in various digital assets - in a MakerDAO-inspired multi-collateral system. If Vaults misbehave, their collateral is slashed and users reimbursed. As a user, you only trust that Bitcoin and the DeFi platform you use are secure. 
 

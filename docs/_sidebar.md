@@ -43,5 +43,4 @@
 
 * [Formal specification](https://spec.interlay.io/)
 
-
 * [Glossary](glossary/glossary.md)
