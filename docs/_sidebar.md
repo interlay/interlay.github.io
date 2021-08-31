@@ -41,4 +41,6 @@
 
 * [Roadmap](about/roadmap.md)
 
+* [Formal specification](https://spec.interlay.io/)
+
 * [Glossary](glossary/glossary.md)

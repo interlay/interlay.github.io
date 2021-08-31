@@ -1,6 +1,8 @@
-css
 
 :root {
+  --base-font: 12px;
+  --theme-color   :#1A0A2D;
+  --sidebar-padding: 0 25px;
   --primary-blue: #075ABC;
   --secondary-teal: #1EE0D6;
   --secondary-green: #A2E75E;
@@ -11,31 +13,6 @@ css
   --theme-color: var(--primary-blue);
 }
 
-/* use this for the guide links */
-.markdown-section h6 {
-  font-size: var(--heading-h3-font-size);
-  border-bottom: 1px solid #d1d6db;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding: 2rem 0 !important;
-  font-weight: 800;
-  letter-spacing: 0;
-  padding-bottom: 0.02rem;
-  margin: 0px;
-  margin-top: 0px;
-  text-decoration: none;
-  text-transform: none;
-}
-
-.markdown-section h6 > a {
-  border-bottom: 0;
-  color: inherit;
-  text-decoration: none;
-}
-
-.markdown-section h6 > a:hover {
-  border-bottom: 0;
-  color: var(--primary-blue);
-  text-decoration: none;
+.app-name-link img {
+  width: 5em;
 }
