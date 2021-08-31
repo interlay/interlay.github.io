@@ -1,7 +1,7 @@
 # The Kintsugi Crowdloan
 
 Kintsugi participates in the Kusama parachain auctions and supports a crowdloan to enable the community to vote.
-To participate in the crowdloan, you need to lock your KSM and vote for Kintsugi to become a parachain. 
+To participate in the crowdloan, you need to lock your KSM and vote for Kintsugi to become a parachain.
 
 Below is a summary of the Kintsugi crowdloan details, as described in the [token economy whitepaper released by Kintsugi Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
 
@@ -26,19 +26,17 @@ The **main 10%** airdrop will feature the following **special allocations**, to 
 
 
 
-* **Early**: 5% for first 3 days of crowdloan 
-* **Referral**: 5% for the referrer and referred 
+* **Early**: 5% for first 3 days of crowdloan
+* **Referral**: 5% for the referrer and referred
 * **Success**: up to 100 000 additional KINT if specific KSM lockup targets are achieved. See table:
 
-
 ![Crowdloan Bonuses](../_assets/img/kintsugi/crowdloan_bonuses.png)
-
 
 Any KINT not used for the Core, Early, Referral and Success Airdrop will be distributed proportionally among all participants, further increasing the ratio of KINT per locked KSM.
 
 ### Participating in the Crowdloan 
 
-The crowdloan is a fully permissionless event - you make your own judgement on if and how you would like to participate. 
+The crowdloan is a fully permissionless event - you make your own judgement on if and how you would like to participate.
 
 We recommend the following ways to participate:
 
