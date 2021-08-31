@@ -6,7 +6,11 @@ To participate in the crowdloan, you need to lock your KSM and vote for Kintsugi
 Below is a summary of the Kintsugi crowdloan details, as described in the [token economy whitepaper released by Kintsugi Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
 
 
+<<<<<<< HEAD
 ##  Hard Facts
+=======
+###  Hard Facts
+>>>>>>> master
 
 * **Target slot: 6 - 10**
 * **Lease duration: 8 periods (maximum lease duration ~48 weeks)**
