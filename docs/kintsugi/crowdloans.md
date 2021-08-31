@@ -6,17 +6,12 @@ To participate in the crowdloan, you need to lock your KSM and vote for Kintsugi
 Below is a summary of the Kintsugi crowdloan details, as described in the [token economy whitepaper released by Kintsugi Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
 
 
-<<<<<<< HEAD
 ###  Hard Facts
-=======
-##  Hard Facts
->>>>>>> master
 
 * **Target slot: 6 - 10**
 * **Lease duration: 8 periods (maximum lease duration ~48 weeks)**
 * **Max. lockup target: 200 000 KSM**
 
-<<<<<<< HEAD
 ### Crowdloan Airdrop: 12% 
 
 * **Main: 10% (1 million KINT)** of the initial 4-year KINT supply, with the following vesting schedule:
@@ -28,16 +23,6 @@ Below is a summary of the Kintsugi crowdloan details, as described in the [token
 
 
 The **main 10%** airdrop will feature the following **special allocations**, to create a proactive crowdloan process:
-=======
-#### Crowdloan Airdrop: 12%
-
-
-
-* **Crowdloan: 10% (1 million KINT)** of the initial 4-year KINT supply 
-* **Extra 2%** in-protocol airdrops for crowdloan participants who run Vaults and mint kBTC.
-
-To create a proactive crowdloan process, Kintsugi features the following **special airdrops:**
->>>>>>> master
 
 
 
@@ -51,11 +36,7 @@ To create a proactive crowdloan process, Kintsugi features the following **speci
 
 Any KINT not used for the Core, Early, Referral and Success Airdrop will be distributed proportionally among all participants, further increasing the ratio of KINT per locked KSM.
 
-<<<<<<< HEAD
 ### Participating in the Crowdloan 
-=======
-## Participating in the Crowdloan 
->>>>>>> master
 
 The crowdloan is a fully permissionless event - you make your own judgement on if and how you would like to participate. 
 
@@ -65,9 +46,5 @@ We recommend the following ways to participate:
 2. Participate via partner exchanges.
 3. Participate via partner mobile wallets.
 
-<<<<<<< HEAD
 #### Guides
-=======
-### Guides
->>>>>>> master
 Step-by-step guides incl. screenshots will be posted here shortly.
