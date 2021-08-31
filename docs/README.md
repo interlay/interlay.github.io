@@ -20,7 +20,7 @@ The life-cycle of interBTC follows the three main protocols:
 
 ### Radically Open & Secured by Insurance
 
-What makes interBTC unique is the strict dedication to being trustless and decentralized. Users
+What makes interBTC unique is the strict dedication to being trustless and decentralized.
 
 - **Secured by Insurance**. Vaults lock collateral on the interBTC parachain in various digital assets - in a MakerDAO-inspired multi-collateral system. If Vaults misbehave, their collateral is slashed and users reimbursed. As a user, you only trust that Bitcoin and the DeFi platform you use are secure. 
 
@@ -30,20 +30,21 @@ What makes interBTC unique is the strict dedication to being trustless and decen
 
 ## Guides
 
-###### [1 Learn about Kintsugi, the canary network on Kusama - going live NOW](kintsugi/overview.md)
+
+**1.  [Learn about Kintsugi, the canary network on Kusama - going live NOW](kintsugi/overview.md)**
 
 
-###### [2. Get a detailed overview of interBTC](start/overview.md)
+**2.  [Get a detailed overview of interBTC](start/overview.md)**
 
-###### [3. Issue your first interBTC](start/issue.md)
+**3.  [Issue your first interBTC](start/issue.md)**
 
-###### [4. Redeem interBTC for BTC](start/redeem.md)
+**4.  [Redeem interBTC for BTC](start/redeem.md)**
 
-###### [5. Understand how a Vault works](vault/overview.md)
+**5.  [Understand how a Vault works](vault/overview.md)**
 
-###### [6. Operate your own Vault](vault/guide.md)
+**6.  [Operate your own Vault](vault/guide.md)**
 
-###### [7. Build your own Dapps with interBTC](developers/integration.md)
+**7.  [Build your own Dapps with interBTC](developers/integration.md)**
 
 ## Contributions
 

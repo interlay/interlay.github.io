@@ -1,6 +1,8 @@
-css
 
 :root {
+  --base-font: 12px;
+  --theme-color   :#1A0A2D;
+  --sidebar-padding: 0 25px;
   --primary-blue: #075ABC;
   --secondary-teal: #1EE0D6;
   --secondary-green: #A2E75E;
@@ -38,4 +40,8 @@ css
   border-bottom: 0;
   color: var(--primary-blue);
   text-decoration: none;
+}
+
+.app-name-link img {
+  width: 5em;
 }
