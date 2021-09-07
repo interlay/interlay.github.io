@@ -24,7 +24,7 @@ Thereby, this airdrop will feature the following **special allocations**, to cre
 
 * **Early**: 5% for first 3 days of crowdloan
 * **Referral**: 5% for the referrer and referred
-* **Strong supporter (new!)**: starting with 0.5% at 10 KSM, linearly increasing up to 5% if above 1000 KSM (min.: 10 KSM).
+* **Strong supporter (new!)**: starting with 0.5% at 10 KSM, linearly increasing up to 5% if above 1000 KSM (min.: 10 KSM). *Applied retrospecively, incl. KSM lock-ups before announcement*. 
 
 ![Strong supporter visualization](../_assets/img/kintsugi/strong-supporter-visual.png)
 
