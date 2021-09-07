@@ -2,9 +2,9 @@
 
 In 2016, the [Polkadot whitepaper](https://polkadot.network/PolkaDotPaper.pdf) identified secure interoperability with Bitcoin as a critical and also challenging feature. In January 2020, with the launch of Polkadot on the horizon, the [Web3 Foundation](https://web3.foundation/in) commissioned [Interlay](https://www.interlay.io/) to design a trustless bridge from Bitcoin to Polkadot based on [XCLAIM](https://www.xclaim.io/) — a carefully designed, open and trustless system that guarantees the security of user’s funds.
 
-The BTC-Parachain allows users to mint 1:1 Bitcoin-backed assets onto Polkadot - interBTC - and use these across a wide range of applications, including decentralized exchanges, stablecoins, and lending protocols.
+The interBTC bridge allows users to mint 1:1 Bitcoin-backed assets onto Polkadot - interBTC - and use these across a wide range of applications, including decentralized exchanges, stablecoins, and lending protocols.
 
-Funded by a [Web3 Foundation grant](https://web3.foundation/grants/), the BTC-Parachain is implemented in [Rust](https://www.rust-lang.org/) using [Parity](https://www.parity.io/)'s [Substrate framework](https://substrate.dev/).
+Funded by a [Web3 Foundation grant](https://web3.foundation/grants/), the interBTC bridge is implemented in [Rust](https://www.rust-lang.org/) using [Parity](https://www.parity.io/)'s [Substrate framework](https://substrate.dev/).
 
 ### Helpful Links
 
@@ -12,7 +12,7 @@ Funded by a [Web3 Foundation grant](https://web3.foundation/grants/), the BTC-Pa
 
 - [BTC Parachain specification](https://interlay.gitlab.io/interbtc-spec/)
 
-- [BTC Parachain open-source code](https://github.com/interlay/btc-parachain)
+- [BTC Parachain open-source code](https://github.com/interlay/interbtc)
 
 - [XCLAIM peer-reviewed paper](https://eprint.iacr.org/2018/643.pdf)
 
@@ -20,9 +20,9 @@ Funded by a [Web3 Foundation grant](https://web3.foundation/grants/), the BTC-Pa
 
 ## Security Guarantees: Trustless and Fully Decentralized
 
-What makes the BTC-Parachain unique is the strict dedication to being trustless and decentralized:
+What makes the interBTC bridge unique is the strict dedication to being trustless and decentralized:
 
-- **Trustless**. The bridge has no central authority. Right from the start, the BTC-Parachain will be run by a decentralized network of individuals, community members, and companies.
+- **Trustless**. The bridge has no central authority. Right from the start, the interBTC bridge will be run by a decentralized network of individuals, community members, and companies.
 - **Decentralized**. In the spirit of permissionless systems like Bitcoin, anyone can participate in operating the bridge: contrary to other approaches, you do not need permission or any additional token to become a maintainer and start earning fees.
 
 As a holder of interBTC, you have the following guarantee:
@@ -40,7 +40,7 @@ Summarizing, to trust the bridge, you only need to:
 
 ### Cryptocurrency-Backed Assets
 
-At the core, XCLAIM - the framework underlying the BTC-Parachain - introduces the concept of cryptocurrency-back assets. Assets are locked on Bitcoin and unlocked on Polkadot in form of 1:1 BTC backed-assets (interBTC). interBTC can be used just like any native asset within the Polkadot ecosystem, meaning: they can be easily transferred and integrated into other Parachains and applications.
+At the core, XCLAIM - the framework underlying the interBTC bridge - introduces the concept of cryptocurrency-back assets. Assets are locked on Bitcoin and unlocked on Polkadot in form of 1:1 BTC backed-assets (interBTC). interBTC can be used just like any native asset within the Polkadot ecosystem, meaning: they can be easily transferred and integrated into other Parachains and applications.
 
 ![Cryptocurrency-backed Assets](../_assets/img/CbA.jpg)
 
@@ -48,11 +48,11 @@ At the core, XCLAIM - the framework underlying the BTC-Parachain - introduces th
 
 [XCLAIM](https://xclaim.io) consists of three main protocols, which also resemble the life-cycle of interBTC:
 
-- **Issue**: Users create interBTC on the BTC-Parachain by locking BTC with Vaults — non-trusted and collateralized intermediaries on Bitcoin (see below).
+- **Issue**: Users create interBTC on the interBTC bridge by locking BTC with Vaults — non-trusted and collateralized intermediaries on Bitcoin (see below).
 
 - **Transfer**: Users transfer interBTC to other users or migrate to other Parachains within the Polkadot ecosystem, integrating with stablecoins, decentralized exchanges, lending protocols etc.
 
-- **Redeem**: Users burn interBTC on the BTC-Parachain to receive the *equivalent* amount of BTC from Vaults on Bitcoin.
+- **Redeem**: Users burn interBTC on the interBTC bridge to receive the *equivalent* amount of BTC from Vaults on Bitcoin.
 
 interBTC can remain on Polkadot indefinitely (no expiry date) and can be redeemed at any point in time. Users who obtain interBTC on Polkadot do not need a BTC wallet, until they decide to redeem the tokens for BTC (if at all).
 
@@ -90,7 +90,7 @@ Both can redeem owned interBTC for BTC at any time (requires BTC wallet).
 
 All roles are coordinated through the **Parachain Execution Environment**, which encodes the functionality to issue, transfer and redeem interBTC, and enforce correct behavior of Vaults. Thereby, the Parachain implements a multi-stage collateralization scheme, to protect against exchange rate fluctuations. The Parachain also verifies the correct execution of payments on Bitcoin via BTC-Relay, a Substrate Bitcoin SPV client. To transfer interBTC to other Parachains, an integration with Polkadot’s Cross-Chain Message Passing (XCMP) will be provided.
 
-![The BTC-Parachain is Polkadot’s trustless gateway for Bitcoin.](https://cdn-images-1.medium.com/max/3200/0*v1lfJ1ZK75luh16s)*The BTC-Parachain is Polkadot’s trustless gateway for Bitcoin.*
+![The interBTC bridge is Polkadot’s trustless gateway for Bitcoin.](https://cdn-images-1.medium.com/max/3200/0*v1lfJ1ZK75luh16s)*The interBTC bridge is Polkadot’s trustless gateway for Bitcoin.*
 
 <div id="step-by-step"></div>
 

@@ -1,30 +1,33 @@
 # Vaults
 
-Vaults are the heart of the interBTC bridge. They are responsible for maintaining the physical 1:1 peg between BTC and interBTC.
-Vaults receive BTC for safekeeping from users and ensure BTC remains locked while interBTC exists
+Vaults are the heart of the interBTC and Kintsugi bridge. They are responsible for maintaining the physical 1:1 peg between BTC and interBTC/kBTC.
+Vaults receive BTC for safekeeping from users and ensure BTC remains locked while interBTC/kBTC exists
 
-Vaults are **non-trusted** and **collateralized** and **any user can become a Vault** by providing DOT collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
+Vaults are **non-trusted** and **collateralized** and **any user can become a Vault** by providing collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
 
-The correct behavior of Vaults is enforced by the interBTC bridge parachain. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of Polkadot. If a Vault tries to steal BTC, this will be automatically detected and the Vault will lose its collateral - and users will be reimbursed using this collateral (at a beneficial rate).
+The correct behavior of Vaults is enforced by the bridge. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of the bridge. If a Vault tries to steal BTC, this will be automatically detected and the Vault will lose its collateral - and users will be reimbursed using this collateral (at a beneficial rate).
 
-The secondary responsibility of a Vault is to monitor both Bitcoin and the interBTC bridge to ensure that the BTC-Relay (Bitcoin light/SPV client deployed on Polkadot) stays up to date with the Bitcoin mainchain by relaying Bitcoin block headers.
-
-Note: BTC-Relay is self healing and automatically detects and recovers from Bitcoin forks.
+The secondary responsibility of a Vault is to monitor both Bitcoin and the bridge to ensure that the BTC-Relay stays up to date with the Bitcoin mainchain by relaying Bitcoin block headers. BTC-Relay is self-healing and automatically detects and recovers from Bitcoin forks.
 
 ### What do Vaults do?
 
-1. **Provide DOT Collateral** and upload their Bitcoin public key to the interBTC bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping / how many interBTC this Vault can secure.
-2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's DOT collateral until BTC is redeemed again.
-3. **Redeem**: Vaults monitor the interBTC bridge for redeem requests. When a user requests to redeem interBTC, Vaults release BTC to the user and prove that they behaved correctly to the interBTC bridge (via the BTC-Relay). Only if this proof is correct, the Vault's collateral is unlocked again.
+1. **Provide Collateral** and upload their Bitcoin public key to the bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping. Collateral can initially be provided in KSM (on Kintsugi) and DOT (on interBTC).
+2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's collateral until BTC is redeemed again.
+3. **Redeem**: Vaults monitor the interBTC/Kintsugi bridge for redeem requests. When a user requests to redeem interBTC/kBTC, Vaults release BTC to the user and prove that they behaved correctly via the BTC-Relay. Only if this proof is correct, the Vault's collateral is unlocked.
 
-To support the integrity of the parachain, Vaults are also able to assume the role of a Relayer:
+To support the integrity of the bridge, Vaults are also able to assume the role of a Relayer:
 
-1. **Maintain BTC-Relay**: submit Bitcoin block headers to interBTC's BTC-Relay and make sure the bridge stays up to date with the Bitcoin mainchain.
-2. **Report Vault Theft**: monitor Vault Bitcoin addresses and BTC holdings and report theft to the interBTC bridge (providing an SPV proof to BTC-Relay)
+1. **Maintain BTC-Relay**: submit Bitcoin block headers to BTC-Relay and make sure the bridge stays up to date with the Bitcoin mainchain.
+2. **Report Vault Theft**: monitor Vault Bitcoin addresses and BTC holdings and report theft to the bridge (providing an SPV proof to BTC-Relay)
 
-### Why would I want to become a Vault?
+### Why operating a Vault?
 
-1. **Yield farming:** Vaults earn fees in interBTC and receive a subsidy in DOT. As such, Vaults earn yield on their DOT collateral and have **exposure to both DOT and (Polka)BTC**.
+1. **Earning potential:**
+
+    - *interBTC/kBTC*: All Vaults are part of a fee pool and earn fees in interBTC/kBTC when any user issues or redeems interBTC/kBTC.
+    - *KINT* (Kintsugi-only): Vaults receive a KINT block reward.
+    - *KSM/DOT* (planned feature): Subject to governance, Vaults are able to provide collateral in liquid staked assets like LKSM or LDOT to receive both staking rewards from the relay chain and the rewards form the Kintsugi/interBTC bridge.
+
 2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you sell interBTC.
 
 ### What do I need to become a Vault?
@@ -32,26 +35,26 @@ To support the integrity of the parachain, Vaults are also able to assume the ro
 1. Vault client ([source](https://github.com/interlay/interbtc-clients))
 2. Bitcoin full node ([instructions](https://bitcoin.org/en/full-node))
 3. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
-4. Some DOTs to provide as collateral and pay for transaction fees
+4. Some KSM/DOT to provide as collateral and pay for transaction fees
 
 Head over to ["Installation"](/vault/installation) for a detailed setup guide.
 
 ## Fee Model
 
-Vaults earn fees on issue and redeem, based on the interBTC volume.
+Vaults earn fees on issue and redeem, based on the BTC volume.
 
 ### Pool-based Fee Distribution
 
-Vaults earn fees based on the issued and redeemed interBTC volume. To reduce variance of payouts, the interBTC bridge implements a **pooled fee model**.
+Vaults earn fees based on the issued and redeemed BTC volume. To reduce variance of payouts, the bridge implements a **pooled fee model**.
 
-Each time a user issues or redeems interBTC, they pay the following fees to a **global fee pool**:
+Each time a user issues or redeems interBTC/kBTC, they pay the following fees to a **global fee pool**:
 
-- **Issue Fee**: `0.5%` of the Issue volume, paid in *interBTC*
-- **Redeem**: `0.5%` of the redeem volume, paid in *interBTC*
+- **Issue Fee**: `0.5%` of the Issue volume, paid in *interBTC/kBTC*
+- **Redeem**: `0.5%` of the redeem volume, paid in *interBTC/kBTC*
 
 From this fee pool, `100%` is distributed among all active Vaults based on the following factor:
 
-- 100% based on the Vault's **BTC in custody** ( = issued interBTC) in proportion to the total locked BTC (= issued interBTC) across all Vaults
+- 100% based on the Vault's **BTC in custody** ( = issued interBTC/kBTC) in proportion to the total locked BTC (= issued interBTC/kBTC) across all Vaults
 
 Specifically, each Vault's fee is calculated according to the following formula:
 
@@ -60,10 +63,16 @@ Specifically, each Vault's fee is calculated according to the following formula:
 
 The Vault fee is paid each time an Issue or Redeem request is executed.
 
+### KINT Vault Block Rewards (Kintsugi-only)
+
+Vaults receive KINT as fees for keeping BTC locked and providing the required insurance collateral in KSM and other assets. Early Vaults receive more rewards as they take up higher risk in terms of protocol maturity.
+
+For the full details, see the [Kintsugi whitepaper](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
+
 ## Collateral
 
-To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in DOT to the interBTC bridge.
-To mitigate exchange rate fluctuations, the interBTC bridge employs *over-collateralization* and a *multi-level collateral balancing* scheme.
+To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in DOT to the interBTC bridge or KSM to the Kintsugi bridge.
+To mitigate exchange rate fluctuations, the bridge employs *over-collateralization* and a *multi-level collateral balancing* scheme.
 
 ### Over-collateralization
 
