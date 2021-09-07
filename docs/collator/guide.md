@@ -1,6 +1,6 @@
 # Setting up a Collator
 
-Running a Collator will allow you to sync and verify the integrity of the BTC-Parachain.
+Running a Collator will allow you to sync and verify the integrity of the interBTC bridge.
 To get started, follow this guide.
 
 At the end of this document you will have:
@@ -74,7 +74,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 ?> This step will take some time depending on your hardware.
 
-Clone the BTC-Parachain code, checkout release `0.8.5`, and build the node:
+Clone the interBTC bridge code, checkout release `0.8.5`, and build the node:
 
 ```shell
 git clone git@github.com:interlay/interbtc.git

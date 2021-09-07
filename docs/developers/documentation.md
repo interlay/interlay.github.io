@@ -8,12 +8,12 @@ If you want to get started working on interBTC, understand how the system works,
 
 - [Specification](https://interlay.gitlab.io/interbtc-spec/)
 - [Specification as PDF](https://interlay.gitlab.io/interbtc-spec/interbtc-spec.pdf)
-- [Source](https://github.com/interlay/btc-parachain-spec)
+- [Source](https://github.com/interlay/interbtc-spec)
 
 ### BTC Parachain
 
 - [Documentation](https://www.interlay.io/interbtc/)
-- [Source](https://github.com/interlay/btc-parachain)
+- [Source](https://github.com/interlay/interbtc)
 
 ### Vaults
 

@@ -2,7 +2,7 @@
 
 ### How does interBTC maintain its peg?
 
-The BTC-Parachain ensures that for each minted interBTC: (1) there is an equivalent amount of BTC physically locked on Bitcoin, and (2) there is sufficient DOT collateral locked to economically back minted interBTC in case vaults attempt theft. As such, interBTC is a hybrid peg, with supply determined by both locked BTC and DOT.
+The interBTC bridge ensures that for each minted interBTC: (1) there is an equivalent amount of BTC physically locked on Bitcoin, and (2) there is sufficient DOT collateral locked to economically back minted interBTC in case vaults attempt theft. As such, interBTC is a hybrid peg, with supply determined by both locked BTC and DOT.
 
 ### Who are the vaults? Can anyone become a vault?
 
