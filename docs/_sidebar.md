@@ -49,3 +49,7 @@
 * [Formal Specification](https://spec.interlay.io/)
 
 * [Glossary](glossary/glossary.md)
+
+* **Translations**
+  * [Translation guide](translation/guide.md)
+  * [English](/)
