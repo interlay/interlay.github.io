@@ -1,7 +1,8 @@
 version: "3.8"
 services:
   bitcoind:
-    image: "ruimarinho/bitcoin-core:0.20"
+    image: "ruimarinho/bitcoin-core:0.21"
+    network_mode: host
     command:
       - -testnet
       - -server
@@ -13,17 +14,17 @@ services:
       - -rpcuser=rpcuser
       - -rpcpassword=rpcpassword
       - -fallbackfee=0.0002
-    ports:
-      - "18332:18332"
     volumes:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   vault:
     image: "interlayhq/interbtc-clients:vault-0-8-2"
+    network_mode: host
     command:
       - vault
+      - --no-bitcoin-block-relay
       - --bitcoin-rpc-url
-      - "http://bitcoind:18332"
+      - "http://localhost:18332"
       - --bitcoin-rpc-user
       - rpcuser
       - --bitcoin-rpc-pass
@@ -39,11 +40,28 @@ services:
       - --telemetry-url
       - "https://api.interlay.io/telemetry"
       - --btc-parachain-url
-      - "wss://api.interlay.io/parachain"
+#     "--btc-parachain-url" can be set to '- "ws://localhost:9944"' to repoint vault for accessing parachain through collator service       
+      - "https://api.interlay.io/parachain"
+      - --no-api
     environment:
       RUST_LOG: info
     volumes:
       - type: bind
         source: ./keyfile.json
         target: /keyfile.json
+    restart: unless-stopped
+  collator:
+    image: "interlayhq/interbtc:interbtc-standalone-0.8.5"
+    network_mode: host
+    command:
+      - interbtc-standalone
+      - --base-path=/interbtc
+      - --chain=/interbtc/testnet.json
+      - --unsafe-ws-external
+      - --rpc-methods=Unsafe
+      - --rpc-cors=all
+    environment:
+      RUST_LOG: info
+    volumes:
+      - ./interbtc:/interbtc
     restart: unless-stopped
