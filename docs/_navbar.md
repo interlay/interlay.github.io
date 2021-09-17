@@ -1,5 +1,6 @@
 <!-- _navbar.md -->
 
-* [Go to App](https://bridge.interlay.io)
-<!-- * [:us:](/) -->
-<!-- * [:cn:](/zh-cn/) -->
+* [Try Testnet](https://bridge.interlay.io)
+* Language
+  * [:uk: English](/)
+  * [:cn: 中国](https://info.interlay.io/kintsugi/)
