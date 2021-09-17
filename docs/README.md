@@ -2,10 +2,9 @@
 
 ## Radically Open Bitcoin for Decentralized Finance
 
-
 **interBTC** is Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant. interBTC will be hosted as a Polkadot parachain and connected to Cosmos, Ethereum and other major DeFi networks.
 
-**Kintsugi** is Interlay’s canary network for interBTC, a testnet with real economic value deployed on Kusama (Polkadot’s canary network). Kintsugi and interBTC share the same code base - with the difference that Kintsugi will be 2-3 releases ahead of interBTC with more experimental features.
+**Kintsugi** is interBTC's canary network, an experiment with real economic value deployed on Kusama. Kintsugi and interBTC share the same code base - with the difference that Kintsugi focusses strictly on innovation and will always be ahead in terms of features.
 
 ![Cryptocurrency-backed Assets](_assets/img/CbA.jpg)
 
