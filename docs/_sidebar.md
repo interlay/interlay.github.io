@@ -46,8 +46,12 @@
 
 * [Roadmap](about/roadmap.md)
 
-* [Translation Guide](about/translation-guide.md)
-
 * [Glossary](about/glossary.md)
 
 * [Formal Specification :arrow_upper_right:](https://spec.interlay.io/)
+
+---
+
+* Adding Translations
+  * [Step-by-Step Guide](translation/guide.md)
+  * [Best Practices](translation/best-practices.md)

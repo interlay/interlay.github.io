@@ -1,21 +1,25 @@
-# Adding Translations
+# Translation Guide
 
-The Kintsugi and Interlay networks should be accessible to anyone. By adding new translations, anyone can contribute.
+The Kintsugi and Interlay networks should be accessible to anyone. By adding new translations, anyone can contribute to the success of the two networks.
 
 At the end of this guide, you will have:
 
 - [x] Added a translation of the documentation in any language.
 - [x] Made a request with your new translation to be reviewed by the Interlay team.
 
+?> We accept partial translations as we understand that translating every document is time consuming and are thankful for all contributions --- big and small.
+
 ## Prerequisites
 
 - Make sure you have a GitHub account. If you don't already have one, create one on [GitHub](https://github.com/)
 
-## Web-based Translation
+## Adding new translations
 
 This guide will walk you through the process of editing the documentation if you are not a developer. This is best if you have never heard about git before and you have not worked with any code before.
 
 ?> This guide is best for non-technical people. You only need a GitHub account.
+
+?> If you are familiar with git, please follow the [technical guide](#adding-new-translations-for-developers)
 
 ### 1. Open the documentation in the web editor
 
@@ -58,7 +62,8 @@ If you copied the `translation-template` that is already taken care of.
 
 ?> Tip: It's easy to open the English version of the document right next to the current one as shown in the video.
 
-Add the translations file by file. We accept partial translations as we understand that translating every document is time consuming and are thankful for all contributions --- big and small.
+Add the translations file by file.
+We accept partial translations as we understand that translating every document is time consuming and are thankful for all contributions --- big and small.
 
 Documents should be translated with the following priority:
 
@@ -109,7 +114,7 @@ In the drop-down on the top right, you can select the language.
 
 [step3a](../_assets/vid/translation-step3a.mp4 ':include :type=video controls width=100%')
 
-## Local Translation
+## Adding new translations for developers
 
 If you have used git before and have a locally installed text editor, then this guide is for you.
 
@@ -181,9 +186,3 @@ git push
 After you have pushed your changes to your branch, open a pull request on GitHub.
 
 [step3](../_assets/vid/translation-step3.mp4 ':include :type=video controls width=100%')
-
-## Translation guidelines
-
-As Interlay will likely not be able to directly check the accuracy of your translation, you will be responsible for providing as accurate of a translation as possible. We ask you to not depend on Google Translate or other similar translation services, as these are not always accurate. If your target language has distinct formal and informal pronouns, preferably use formal ones. Likewise, prefer gender neutral pronouns if your language allows it.
-
-The documentation is a technical writing. As such, it contains a lot of jargon, such as "blockchain". If the language you are translating to has no widely adopted equivalent, it may be appropriate to use the English term. Most importantly, try to be consistent in the used terminology.
