@@ -46,10 +46,8 @@
 
 * [Roadmap](about/roadmap.md)
 
-* [Formal Specification](https://spec.interlay.io/)
+* [Translation Guide](about/translation-guide.md)
 
-* [Glossary](glossary/glossary.md)
+* [Glossary](about/glossary.md)
 
-* **Translations**
-  * [Translation guide](translation/guide.md)
-  * [English](/)
+* [Formal Specification :arrow_upper_right:](https://spec.interlay.io/)
