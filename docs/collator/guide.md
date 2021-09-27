@@ -33,7 +33,7 @@ Map the directory into a local volume used by the docker container:
 docker run \
   --network host \
   --volume ${PWD}/interbtc:/interbtc \
-  interlayhq/interbtc:interbtc-standalone-0.8.5 \
+  interlayhq/interbtc:interbtc-standalone-1-0-3 \
   interbtc-standalone \
   --base-path=/interbtc \
   --chain=/interbtc/testnet.json \
@@ -46,7 +46,7 @@ docker run \
 Download the pre-built binary and map the directory to the local `base-path`:
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/0.8.5/interbtc-standalone
+wget https://github.com/interlay/interbtc/releases/download/1.0.3/interbtc-standalone
 chmod +x interbtc-standalone
 ./interbtc-standalone \
   --base-path=${PWD}/interbtc \
@@ -74,12 +74,12 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 ?> This step will take some time depending on your hardware.
 
-Clone the interBTC bridge code, checkout release `0.8.5`, and build the node:
+Clone the interBTC bridge code, checkout release `1.0.3`, and build the node:
 
 ```shell
 git clone git@github.com:interlay/interbtc.git
 cd interbtc
-git checkout 0.8.5
+git checkout 1.0.3
 cargo build --release
 ```
 
