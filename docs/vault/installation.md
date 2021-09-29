@@ -169,7 +169,7 @@ sudo systemctl stop interbtc-vault.service
 
 ### 5.B. OPTIONAL: Start the Vault client directly
 
-To start the client manually, follow the [instructions below](#usage).
+To start the client manually, follow the [instructions below](#_6-start-the-vault-client).
 
 </details>
 
