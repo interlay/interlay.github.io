@@ -19,7 +19,7 @@ services:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   vault:
-    image: "interlayhq/interbtc-clients:vault-0-8-2"
+    image: "interlayhq/interbtc-clients:vault-1-0-2"
     command:
       - vault
       - --bitcoin-rpc-url
@@ -30,6 +30,8 @@ services:
       - rpcpassword
       - --network
       - testnet
+      - --currency-id
+      - dot
       - --keyfile
       - /keyfile.json
       - --keyname

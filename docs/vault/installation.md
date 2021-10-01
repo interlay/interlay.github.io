@@ -107,7 +107,7 @@ mkdir vault && cd vault
 Download the vault binary:
 
 ```shell
-wget https://github.com/interlay/interbtc-clients/releases/download/0.8.5/vault
+wget https://github.com/interlay/interbtc-clients/releases/download/1.0.2/vault
 ```
 
 Make the binary executable:
@@ -210,12 +210,12 @@ bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcus
 
 ?> This step will take about 45 minutes depending on your CPU.
 
-Clone the Vault code, checkout release `0.8.5`, and build the client:
+Clone the Vault code, checkout release `1.0.2`, and build the client:
 
 ```shell
 git clone git@github.com:interlay/interbtc-clients.git
 cd interbtc-clients
-git checkout 0.8.5
+git checkout 1.0.2
 cargo build -p vault
 ```
 
@@ -256,7 +256,8 @@ RUST_LOG=info cargo run -p vault -- \
   --auto-register-with-faucet-url 'https://api.interlay.io/faucet' \
   --telemetry-url 'https://api.interlay.io/telemetry' \
   --btc-parachain-url 'wss://api.interlay.io/parachain' \
-  --network=testnet
+  --network=testnet \
+  --currency-id=dot
 ```
 
 Logging can be configured using the [`RUST_LOG`](https://docs.rs/env_logger/0.8.3/env_logger/#enabling-logging) environment variable.
