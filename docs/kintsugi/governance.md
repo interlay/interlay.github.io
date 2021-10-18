@@ -2,6 +2,8 @@
 
 Kintsugi adopts [Polkadot’s governance mechanism](https://wiki.polkadot.network/docs/learn-governance).
 
+![Governance architecture](../_assets/img/governance.png)
+
 **Council**
 
 Day-to-day decisions are made by an elected council but can be overruled by the majority of KINT holders. The council is democratically elected by KINT holders but anyone can run for office. The term duration is approximately **seven days** after which the council is re-elected.
