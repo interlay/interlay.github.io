@@ -155,7 +155,7 @@ cargo build --release
 #### **Kintsugi**
 
 ```shell
-./target/release/interbtc \
+./target/release/interbtc-parachain \
   --base-path=${PWD}/data \
   --chain=kintsugi \
   --execution=wasm \
@@ -176,7 +176,7 @@ cargo build --release
 #### **Testnet**
 
 ```shell
-./target/release/interbtc \
+./target/release/interbtc-standalone \
   --base-path=${PWD}/data \
   --chain=testnet \
   --execution=wasm \
