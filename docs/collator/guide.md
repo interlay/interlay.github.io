@@ -1,59 +1,124 @@
-# Setting up a Collator
+# Setting up a Collator and Full-Node
 
-Running a Collator will allow you to sync and verify the integrity of the interBTC bridge.
+Running a collator or full-node will allow you to sync and verify the integrity of the interBTC bridge.
 To get started, follow this guide.
 
 At the end of this document you will have:
 
-- [x] Connected to the testnet
+- [x] Connected to a network
 - [x] Synced a local full-node
 
-?> Please note that in this testnet phase, consensus validation is run via Aura.
+?> Please note that we have not yet opened running collators to the community. Currently, it is only possible to run a full-node. We will communicate updates to this on our discord.
 
 The following instructions have been tested on Linux.
 
 ## Prerequisites
 
 Checkout the standard hardware requirements on the [Polkadot Wiki](https://wiki.polkadot.network/docs/en/maintain-guides-how-to-validate-polkadot#requirements).
-Prior to Kusama, we will review the exact requirements for a Collator node.
 
-Download the genesis chain spec into a separate directory to also store other chain files:
+Create a local directory to store persistent data:
 
 ```shell
-wget https://raw.githubusercontent.com/interlay/polkabtc-docs/master/scripts/testnet.json
-mkdir interbtc
-mv testnet.json interbtc
+mkdir -p data
 ```
+
+### Optional: Snapshots
+
+Syncing the embedded relay chain can take a number of days. [Polkashots](https://polkashots.io/) hosts database snapshots of Kusama and Polkadot which can be downloaded in minutes. Follow the relevant guide and extract the snapshot to the `data` directory.
 
 ## Quickstart
 
-Map the directory into a local volume used by the docker container:
+Map the directory into a local volume used by the docker container.
+
+<!-- tabs:start -->
+
+#### **Kintsugi**
 
 ```shell
 docker run \
   --network host \
-  --volume ${PWD}/interbtc:/interbtc \
-  interlayhq/interbtc:interbtc-standalone-1-0-3 \
-  interbtc-standalone \
-  --base-path=/interbtc \
-  --chain=/interbtc/testnet.json \
+  --volume ${PWD}/data:/data \
+  interlayhq/interbtc:interbtc-parachain-1-0-7 \
+  interbtc-parachain \
+  --base-path=/data \
+  --chain=kintsugi \
+  --execution=wasm \
+  --wasm-execution=compiled \
   --unsafe-ws-external \
-  --rpc-methods=Unsafe
+  --rpc-methods=unsafe \
+  --pruning=archive \
+  -- \
+  --rpc-cors=all \
+  --no-telemetry \
+  --execution=wasm \
+  --wasm-execution=compiled \
+  --database=RocksDb \
+  --unsafe-pruning \
+  --pruning=1000
 ```
+
+#### **Testnet**
+
+```shell
+docker run \
+  --network host \
+  --volume ${PWD}/data:/data \
+  interlayhq/interbtc:interbtc-standalone-1-0-7 \
+  interbtc-standalone \
+  --base-path=/data \
+  --chain=testnet \
+  --execution=wasm \
+  --wasm-execution=compiled \
+  --unsafe-ws-external \
+  --rpc-methods=unsafe
+```
+
+<!-- tabs:end -->
 
 ## Standard Installation
 
-Download the pre-built binary and map the directory to the local `base-path`:
+Download the pre-built binary and map the directory to the local `base-path`.
+
+<!-- tabs:start -->
+
+#### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.0.3/interbtc-standalone
+wget https://github.com/interlay/interbtc/releases/download/1.0.7/interbtc-parachain
+chmod +x interbtc-parachain
+./interbtc-parachain \
+  --base-path=${PWD}/data \
+  --chain=kintsugi \
+  --execution=wasm \
+  --wasm-execution=compiled \
+  --unsafe-ws-external \
+  --rpc-methods=unsafe \
+  --pruning=archive \
+  -- \
+  --rpc-cors=all \
+  --no-telemetry \
+  --execution=wasm \
+  --wasm-execution=compiled \
+  --database=RocksDb \
+  --unsafe-pruning \
+  --pruning=1000
+```
+
+#### **Testnet**
+
+```shell
+wget https://github.com/interlay/interbtc/releases/download/1.0.7/interbtc-standalone
 chmod +x interbtc-standalone
 ./interbtc-standalone \
-  --base-path=${PWD}/interbtc \
-  --chain=${PWD}/interbtc/testnet.json \
+  --base-path=${PWD}/data \
+  --chain=testnet \
+  --execution=wasm \
+  --wasm-execution=compiled \
   --unsafe-ws-external \
-  --rpc-methods=Unsafe
+  --rpc-methods=unsafe
 ```
+
+<!-- tabs:end -->
 
 ## Install from Source
 
@@ -74,24 +139,53 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 ?> This step will take some time depending on your hardware.
 
-Clone the interBTC bridge code, checkout release `1.0.3`, and build the node:
+Clone the interBTC bridge code, checkout release `1.0.7`, and build the node:
 
 ```shell
 git clone git@github.com:interlay/interbtc.git
 cd interbtc
-git checkout 1.0.3
+git checkout 1.0.7
 cargo build --release
 ```
 
 ### 3. Run the node
 
+<!-- tabs:start -->
+
+#### **Kintsugi**
+
 ```shell
-./target/release/interbtc \
-  --base-path=${PWD}/interbtc \
-  --chain=${PWD}/interbtc/testnet.json \
+./target/release/interbtc-parachain \
+  --base-path=${PWD}/data \
+  --chain=kintsugi \
+  --execution=wasm \
+  --wasm-execution=compiled \
   --unsafe-ws-external \
-  --rpc-methods=Unsafe
+  --rpc-methods=unsafe \
+  --pruning=archive \
+  -- \
+  --rpc-cors=all \
+  --no-telemetry \
+  --execution=wasm \
+  --wasm-execution=compiled \
+  --database=RocksDb \
+  --unsafe-pruning \
+  --pruning=1000
 ```
+
+#### **Testnet**
+
+```shell
+./target/release/interbtc-standalone \
+  --base-path=${PWD}/data \
+  --chain=testnet \
+  --execution=wasm \
+  --wasm-execution=compiled \
+  --unsafe-ws-external \
+  --rpc-methods=unsafe
+```
+
+<!-- tabs:end -->
 
 ## Upgrading
 
