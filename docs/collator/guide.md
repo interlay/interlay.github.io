@@ -1,4 +1,4 @@
-# Setting up a Collator
+# Setting up a Collator and Full-Node
 
 Running a collator or full-node will allow you to sync and verify the integrity of the interBTC bridge.
 To get started, follow this guide.
@@ -8,7 +8,7 @@ At the end of this document you will have:
 - [x] Connected to a network
 - [x] Synced a local full-node
 
-?> Please note that the testnet consensus validation is run via Aura.
+?> Please note that we have not yet opened running collators to the community. Currently, it is only possible to run a full-node. We will communicate updates to this on our discord.
 
 The following instructions have been tested on Linux.
 
