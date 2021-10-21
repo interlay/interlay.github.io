@@ -270,3 +270,15 @@ On startup, the Vault will automatically create or load the Bitcoin wallet using
 Go to the Vault client [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
 
 </details>
+
+## Advanced
+
+For added security, you may want to encrypt the Bitcoin wallet with a password.
+
+```shell
+bitcoin-cli -regtest -rpcwallet=interbtcvault encryptwallet "password"
+bitcoin-cli -testnet -rpcwallet=interbtcvault walletpassphrase "password" 100000000
+```
+
+This will keep the decryption key in memory for the specified timeout - in this example 100000000 seconds or 3 years.
+Once this timeout expires (or if the node is terminated) the wallet must be unlocked manually.
