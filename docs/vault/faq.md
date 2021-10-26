@@ -18,8 +18,6 @@ Definitely! Please only use one unique key per client to avoid race conditions o
 as another that was already running it will load the same Bitcoin wallet and may attempt to transfer "locked" funds. Please review the response to Vault
 theft below.
 
-?> Please note that only one Vault's SLA score will count toward the testnet challenges.
-
 ### Do Vaults earn fees?
 
 Yes! Vaults earn fees in interBTC and DOT.
@@ -38,7 +36,7 @@ Vaults must lock up DOT collateral worth ``150%`` of the locked BTC value.
 
 ### What happens if a Vault fails to redeem BTC?
 
-The Vault will be slashed based on its SLA and the user can (i) chose to retry with another Vault or (ii) claim the Vault's collateral.
+The Vault will be slashed a punishment fee and the user can (i) chose to retry with another Vault or (ii) claim the Vault's collateral.
 
 ### What happens if a vault steals?
 

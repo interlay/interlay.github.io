@@ -130,6 +130,4 @@ A user redeems interBTC for the equivalent amount of BTC or receives DOT as reim
 
 1. If no valid proof is provided on time, the Parachain slashes the Vault’s DOTs and reimburses the user at a beneficial exchange rate.
 
-In practice, a less strict approach will be taken, where Vaults remain unpunished for being offline (not stealing!) as long as they maintain an overall satisfactory SLA.
-
 ![High-level interBTC Redeem process](https://cdn-images-1.medium.com/max/3200/0*GeYgUaeduwBxfgfN)*High-level interBTC Redeem process*
