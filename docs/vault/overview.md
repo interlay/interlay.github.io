@@ -137,26 +137,11 @@ If Vaults go offline and fail to execute redeem, they are:
 - **Penalized** (**punishment fee** slashed) and
 - **Temporarily banned** for `24 hours` from accepting further redeem requests.
 
-The **punishment fee** is calculated based on the Vault's SLA ([Service Level Agreement](/vault/overview?id=service-level-agreements)) level, which is a value between `0` and `100`.
-The higher the Vault's SLA, the lower the punishment for a failed redeem.
-
-In detail, the punishment fee is calculated as follows:
-
-- **Minimum Punishment Fee**: `10%` of the failed redeem value.
-- **Maximum Punishment Fee**: `30%` of the failed redeem value.
-- **Punishment Fee**: calculated based on the Vaults SLA value as follows. Note: the maximum SLA (`max_sla`) value is `100` (see [here](/vault/overview?id=service-level-agreements)).
-
-
-    punishment_fee =
-        min_punishment_fee +
-        ((max_punishment_fee - min_punishment_fee) / max_sla * vault_sla)
-
-
-**Note**: the SLA of a Vault is **reset to 0 after a single failed redeem request** and the Vault must behave correctly / be online for prolonged periods to build up a high SLA level again.
+The **punishment fee** is calculated as a percentage (`10%`) of the redeem amount at the current exchange rate.
 
 ## Burn Event: Restoring a 1:1 Physical Peg
 
-When a Vault is liquidated, its DOT collateral is slashed up to`150%` of the liquidated BTC value, given the exchange rate at the time of liquidation.
+When a Vault is liquidated, its DOT collateral is slashed up to `150%` of the liquidated BTC value, given the exchange rate at the time of liquidation.
 
 The interBTC bridge now has less BTC locked than interBTC minted - but more than enough DOT collateral to maintain economic security.
 To re-establish the physical 1:1 peg between BTC and interBTC, the interBTC bridge allows users to **burn interBTC in return for DOT at a premium rate**.
