@@ -36,7 +36,7 @@ KINT will be controlled by the community:
   - 40% to Vault rewards;
   - 35% to the on-chain Treasury;
   - 5% to stake-to-vote staking rewards.
-* 30% is airdropped to the Interlay team, and early & future investors, who funded development of the protocol - subject to 1 year followed by 1 year linear vesting.
+* 30% is airdropped to the Interlay team, and early & future investors, who funded the development of the protocol - subject to a 1-year cliff followed by 1-year linear vesting.
 
 Starting in year 5, only the community receives new KINT from the annual inflation.
 
