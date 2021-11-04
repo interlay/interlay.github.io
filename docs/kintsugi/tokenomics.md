@@ -146,7 +146,7 @@ As such, the numbers below are **pure estimates and will very likely be subject 
 
 <table>
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>Time (since parachain launch)</th>
       <th>in days</th>
