@@ -113,7 +113,7 @@ The on-chain Treasury reserve is in turn distributed as follows (suggestion - fi
   </tr>
   <tr>
     <td colspan="2">Vault Rewards</td>
-    <td>40%</td>
+    <td>30%</td>
     <td>No vesting. Distributed on a per-block basis. Early rewards highest, decreasing over 4 years. 30% of tota 4yr allocation in year 1, 30% in year 2, 20% in year 3, remaining 10% in year 4. After 4 years, Vaults receive 40% of the annual inflation.&nbsp;&nbsp;</td>
   </tr>
   <tr>
@@ -156,42 +156,36 @@ As such, the numbers below are **pure estimates and will very likely be subject 
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
       <td>Launch</td>
       <td>1</td>
       <td>367000</td>
       <td>3.7%</td>
     </tr>
     <tr>
-      <th>1</th>
       <td>1 month</td>
       <td>30</td>
       <td>571000</td>
       <td>6%</td>
     </tr>
     <tr>
-      <th>2</th>
       <td>2 months</td>
       <td>60</td>
       <td>782000</td>
       <td>8%</td>
     </tr>
     <tr>
-      <th>3</th>
       <td>3 months</td>
       <td>90</td>
       <td>992000</td>
       <td>10%</td>
     </tr>
     <tr>
-      <th>4</th>
       <td>4 months</td>
       <td>120</td>
       <td>1203000</td>
       <td>12%</td>
     </tr>
     <tr>
-      <th>5</th>
       <td>5 months</td>
       <td>150</td>
       <td>1414000</td>
@@ -205,14 +199,12 @@ As such, the numbers below are **pure estimates and will very likely be subject 
       <td>16%</td>
     </tr>
     <tr>
-      <th>7</th>
       <td>1 year</td>
       <td>360</td>
       <td>2890000</td>
       <td>29%</td>
     </tr>
     <tr>
-      <th>8</th>
       <td>2 years</td>
       <td>720</td>
       <td>6645000</td>
