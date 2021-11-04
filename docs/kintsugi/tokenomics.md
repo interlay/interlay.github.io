@@ -144,7 +144,7 @@ Due to the nature of the stake-to-vote governance mechanism of KINT, it is impos
 As such, the numbers below are **pure estimates and will very likely be subject to change over the first 2-3 years of the network's existence. Use with caution!**.
 
 
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
