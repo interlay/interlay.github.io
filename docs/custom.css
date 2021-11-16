@@ -1,19 +1,40 @@
 
 :root {
-  --base-font: 12px;
-  --theme-color   :#1A0A2D;
-  --sidebar-padding: 0 25px;
-  --navbar-menu-padding: 0.5em 2em 0.5em 0.5em;
-  --primary-blue: #075ABC;
-  --secondary-teal: #1EE0D6;
-  --secondary-green: #A2E75E;
-  --secondary-blue: #3E96FF;
-  --secondary-purple: #A65AFF;
-  --secondary-pink: #DB5AAD;
-  --secondary-bitcoin: #FF9900;
-  --theme-color: var(--primary-blue);
+
+  /* Base config */
+  --base-font-size      : 16px;
+  --sidebar-padding     : 0 25px;
+  --navbar-menu-padding : 0.5em 2em 0.5em 0.5em;
+
+
+  /* Theme and Colors */
+  --primary-interlay    : #1A0A2D;
+  --primary-blue        : #075ABC;
+  --secondary-teal      : #1EE0D6;
+  --secondary-green     : #A2E75E;
+  --secondary-blue      : #3E96FF;
+  --secondary-purple    : #A65AFF;
+  --secondary-pink      : #DB5AAD;
+  --secondary-bitcoin   : #FF9900;
+  --theme-color         : var(--primary-interlay);
+  --primary-blue-shade  : hsl(212, 30%, 38%); 
+  --hover-color         : #D3D3D3;
+
+  /* Links */
+  --link-color                        : var(--primary-blue);
+  --link-text-decoration              : none;
+  --link-text-decoration--hover       : underline;
+
+
+  /* Sidebar */
+  --sidebar-nav-link-color--active              : var(--primary-blue);
+  --sidebar-nav-link-background-color--hover     : var(--hover-color);
+  --sidebar-nav-link-text-decoration--hover     : none;
+  --sidebar-nav-strong-color                    : var(--secondary-purple );
+  --sidebar-nav-strong-font-size                : ;
+
 }
 
 .app-name-link img {
-  width: 5em;
+  width: 10em;
 }

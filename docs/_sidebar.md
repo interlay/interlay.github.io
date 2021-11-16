@@ -1,5 +1,13 @@
 <!-- docs/_sidebar.md -->
 
+* [Interlay Documentation](/)
+
+* **Getting Started**
+
+  * [Interlay Network 101](getting-started/interlay-101.md)
+  * [interBTC](getting-started/interbtc.md)
+---
+
 * **Kintsugi (Kusama)**
 
   * [Overview](kintsugi/overview.md)

@@ -1,31 +1,26 @@
-# InterBTC & Kintsugi Documentation
+# Interlay & Kintsugi Documentation
+### Invest, earn and pay with BTC on any blockchain. Radically open and secured by insurance.
 
-## Radically Open Bitcoin for Decentralized Finance
 
-**interBTC** is Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant. interBTC will be hosted as a Polkadot parachain and connected to Cosmos, Ethereum and other major DeFi networks.
+### Introduction
 
-**Kintsugi** is interBTC's canary network, an experiment with real economic value deployed on Kusama. Kintsugi and interBTC share the same code base - with the difference that Kintsugi focusses strictly on innovation and will always be ahead in terms of features.
+Interlay is a decentralized network dedicated to connecting crypto-*currencies* like Bitcoin with DeFi *platforms* like Polkadot and Ethereum. The Interlay network is hosted as a Polkadot parachain and will be connected to Cosmos, Ethereum and other major DeFi networks.
+[Read more about Interlay's vision of blockchain interoperability](https://medium.com/interlay/the-future-of-bridging-assets-837998115f6b).
 
-![Cryptocurrency-backed Assets](_assets/img/CbA.jpg)
+**interBTC**, Interlay's flagshipt product, is Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant. 
 
-### Issue, Trade, and Redeem
+**Kintsugi** is Interlay's canary network, an experiment with real economic value deployed on Kusama. Kintsugi and Interlay share the same code base - with the difference that Kintsugi focusses strictly on innovation and will always be ahead in terms of features. [Read more about Interlay's dual network model](https://medium.com/interlay/the-interlay-parachain-is-coming-to-polkadot-552a57ff8d1b).
 
-The life-cycle of interBTC follows the three main protocols:
 
-- **Issue:** Lock your BTC with a Vault. Pick one, or run your own. Your BTC is always safe and insured by Vault collateral.
-- **Mint:** Get interBTC at a 1:1 ration to your locked BTC.
-- **BTC DeFi:** Earn on your Bitcoin. Use interBTC as collateral, for lending, yield farming and more. On Polkadot, Kusama, Cosmos, Ethereum and other major DeFi platforms.
-- **Redeem:** Redeem interBTC for actual BTC on Bitcoin - trustless and anytime you want.
+### Docs vs Specification vs Code
 
-### Radically Open & Secured by Insurance
+ - **This documentation** is aimed at anyone who is interested to learn about Interlay and Kintsugi, users of interBTC and operators of Vaults and Collators. 
 
-What makes interBTC unique is the strict dedication to being trustless and decentralized.
+ - We also maintain a **[200+ page specification](https://spec.interlay.io/index.html)** for internal use, audits, and formal verification. If you are a developer, researcher, hacker or simply want to learn how exactly Interlay (specifically, interBTC) - the specification is the next best resource apart from reading the [open source code](https://github.com/interlay).
 
-- **Secured by Insurance**. Vaults lock collateral on the interBTC parachain in various digital assets - in a MakerDAO-inspired multi-collateral system. If Vaults misbehave, their collateral is slashed and users reimbursed. As a user, you only trust that Bitcoin and the DeFi platform you use are secure.
+ - Finally, if you can code - you can also read the [open source code](https://github.com/interlay).
 
-- **Radically Open**. Anyone can become a Vault and help secure interBTC, anytime. Yes, you can run your own Vault!
-
-## Guides
+### Quicklinks
 
 **1.  [Learn about Kintsugi, the canary network on Kusama - going live NOW](kintsugi/overview.md)**
 
@@ -41,6 +36,6 @@ What makes interBTC unique is the strict dedication to being trustless and decen
 
 **7.  [Build your own Dapps with interBTC](developers/integration.md)**
 
-## Contributions
+### Contributions
 
 interBTC and Kintsugi are an open-source projects. We welcome contributions to the code and documentation. Feel free to checkout our [GitHub](https://github.com/interlay) and [Discord](https://discord.gg/KgCYK3MKSf).
