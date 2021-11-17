@@ -49,7 +49,7 @@ Summarizing, to trust interBTC, you only need to:
 
 ## Network Participants
 
-XCLAIM’s design has an emphasis on being open and permissionless. As such, any user can take up multiple roles at the same — but also leave the system whenever they wish. As such, to participate in the BTC Parachain, you can choose from:
+The design of interBTC has an emphasis on being open and permissionless. As such, any user can take up multiple roles at the same — but also leave the system whenever they wish. As such, to participate, you can choose from:
 
 **Vaults:** collateralized intermediaries who hold BTC locked on Bitcoin. Any user can become a Vault by simply locking DOT collateral. The requirements are (1) a Bitcoin full node, (2) a Polkadot account and (3) liquidity in accepted collateral assets.
 
@@ -103,6 +103,46 @@ A user redeems interBTC for the equivalent amount of BTC or receives DOT as reim
 1. If no valid proof is provided on time, the Parachain slashes the Vault’s DOTs and reimburses the user at a beneficial exchange rate.
 
 ![High-level interBTC Redeem process](../_assets/img/redeem.png)*High-level interBTC Redeem process*
+
+
+## Collateral
+
+To protect users against theft and loss of BTC, Vaults must lock collateral with the parachain, such that the value of the locked collateral is higher than the value of BTC locked with the Vault. To ensure Vaults have no incentive to steal user’s BTC, Vaults provide collateral in whitelisted assets - following a process similar to MakerDAO. To mitigate exchange rate fluctuations, interBTC employs over-collateralization and a multi-level collateral balancing scheme.
+
+### Multi-Collateral System
+Thereby, Vault operators can freely choose to lock collateral in any of the assets whitelisted by [protocol governance](/getting-started/interbtc?id=governance). Each Vault is then associated with one specific collateral asset - and a single operator can maintain an unlimited amount of Vaults. Each collateral asset currency has a governance-set threshold determining how much of it can be locked as collateral in the system. Once this threshold is reached, new Vaults must pick from other collateral assets, or request to increase the threshold with protocol governance.
+
+For users, the distinction between collaterals only becomes relevant when redeeming interBTC for BTC. Users can pick specific Vaults (one or multiple) for the redeem process - and are reimbursed in these specific Vault's collateral in case of failure. 
+
+Read more about the collateral system and re-balancing in the [Collateral section of the Vault page](/vault/overview?id=collateral).
+
+### Liquidations
+Vaults may be liquidated, i.e., have their collateral slashed and used to re-balance the system or to reimburse users, if:
+- they steal BTC,
+- fail to execute redeem requests,
+- or are severly under-collateralized
+
+Read more about liquidations in the [Liquidations section of the Vault page](/vault/overview?id=liquidations).
+
+## Governance
+
+Interlay and Kintsugi each implement a token-based decentralized governance mechanism. 
+Governance token holders have the ultimate decision power over:
+- **Runtime upgrades**: Fixes, substrate/library updates, improvements, new features, …
+- **Parameter upgrades**:
+  - Stable BTC Confirmations
+  - Whitelist collateral currencies and set thresholds
+  - Parachain Status (On/Off)
+  - Accepted oracles
+
+- **Treasury management**: decision on how to spend the assets locks in the network treasury.
+
+
+### Governance Implementations
+For the specifics of each network's governance, see:
+
+- **Kintsugi**: [Kintsugi Governance documentation](../kintsugi/governance)
+- **Interlay**: tbd
 
 
 ## interBTC vs kBTC
