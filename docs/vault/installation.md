@@ -15,6 +15,7 @@ At the end of this document you will have:
 - Make sure you have at least 50 GB of free disk space (ideally SSD).
 - You should have a stable Internet connection.
 - Make sure that your Vault client is running for at least 8 hours per day (you can do other things on the side).
+- Make sure [docker](https://docs.docker.com/engine/install/ ) and [docker-compose](https://docs.docker.com/compose/install/) are installed in your system. 
 
 ## Quickstart
 
@@ -56,7 +57,7 @@ If the Vault spends funds from another wallet this may be marked as theft.
 (Optional) If you already have a locally running Bitcoin testnet node, only start the Vault client:
 
 ```shell
-docker-compose up vault
+docker-compose up vault -d
 ```
 
 ?> You may need to edit the docker-compose to point `--bitcoin-rpc-url` to `http://localhost:18332`.
@@ -64,8 +65,12 @@ docker-compose up vault
 You can run the entire Vault client and the Bitcoin node with the following command:
 
 ```shell
-docker-compose up
+docker-compose up -d
 ```
+
+You can optionally view the running docker containers with command `docker ps`.
+You can optionally view the logs to see what the containers are doing with `docker logs interbtc-vault_vault_1` and `docker logs interbtc-vault_bitcoind_1`.
+Please take into account it can take a few hours for the bitcoin-core to sync for the first time.
 
 </details>
 

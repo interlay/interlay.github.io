@@ -2,6 +2,8 @@
 
 **Kintsugi** is interBTC's canary network, developed by Interlay under the supervision of Kintsugi Labs, a non-profit oriented organization responsible for Kintsugi's launch and the support of the decentralized network and ecosystem.
 
+The current Working Paper titled *Token Economy* is available [here](https://github.com/interlay/whitepapers/raw/master/Kintsugi_Token_Economy.pdf).
+
 ### kBTC - Radically Open Bitcoin on Kusama
 
 Kintsugi's kBTC brings radically open Bitcoin to Kusama to kickstart liquidity for parachains like Karura, Shiden and Moonriver.
