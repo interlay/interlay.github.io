@@ -1,7 +1,9 @@
 # Vaults
 
-Vaults are the heart of the interBTC and Kintsugi bridge. They are responsible for maintaining the physical 1:1 peg between BTC and interBTC/kBTC.
-Vaults receive BTC for safekeeping from users and ensure BTC remains locked while interBTC/kBTC exists
+Vaults are the heart of the interBTC and Kintsugi bridge. They are responsible for maintaining the physical 1:1 peg between BTC and interBTC.
+Vaults receive BTC for safekeeping from users and ensure BTC remains locked while interBTC exists
+
+## Introduction
 
 Vaults are **non-trusted** and **collateralized** and **any user can become a Vault** by providing collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
 
@@ -11,9 +13,9 @@ The secondary responsibility of a Vault is to monitor both Bitcoin and the bridg
 
 ### What do Vaults do?
 
-1. **Provide Collateral** and upload their Bitcoin public key to the bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping. Collateral can initially be provided in KSM (on Kintsugi) and DOT (on interBTC).
+1. **Provide Collateral** and upload their Bitcoin public key to the bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping. Collateral can initially be provided in assets white-listed by Governance. Initially KSM on Kintsugi and DOT on Interlay.
 2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's collateral until BTC is redeemed again.
-3. **Redeem**: Vaults monitor the interBTC/Kintsugi bridge for redeem requests. When a user requests to redeem interBTC/kBTC, Vaults release BTC to the user and prove that they behaved correctly via the BTC-Relay. Only if this proof is correct, the Vault's collateral is unlocked.
+3. **Redeem**: Vaults monitor the interBTC/Kintsugi bridge for redeem requests. When a user requests to redeem interBTC, Vaults release BTC to the user and prove that they behaved correctly via the BTC-Relay. Only if this proof is correct, the Vault's collateral is unlocked.
 
 To support the integrity of the bridge, Vaults are also able to assume the role of a Relayer:
 
@@ -24,7 +26,7 @@ To support the integrity of the bridge, Vaults are also able to assume the role 
 
 1. **Earning potential:**
 
-    - *interBTC/kBTC*: All Vaults are part of a fee pool and earn fees in interBTC/kBTC when any user issues or redeems interBTC/kBTC.
+    - *interBTC*: All Vaults are part of a fee pool and earn fees in interBTC when any user issues or redeems interBTC.
     - *KINT* (Kintsugi-only): Vaults receive a KINT block reward.
     - *KSM/DOT* (planned feature): Subject to governance, Vaults are able to provide collateral in liquid staked assets like LKSM or LDOT to receive both staking rewards from the relay chain and the rewards form the Kintsugi/interBTC bridge.
 
@@ -47,14 +49,14 @@ Vaults earn fees on issue and redeem, based on the BTC volume.
 
 Vaults earn fees based on the issued and redeemed BTC volume. To reduce variance of payouts, the bridge implements a **pooled fee model**.
 
-Each time a user issues or redeems interBTC/kBTC, they pay the following fees to a **global fee pool**:
+Each time a user issues or redeems interBTC, they pay the following fees to a **global fee pool**:
 
-- **Issue Fee**: `0.5%` of the Issue volume, paid in *interBTC/kBTC*
-- **Redeem**: `0.5%` of the redeem volume, paid in *interBTC/kBTC*
+- **Issue Fee**: `0.5%` of the Issue volume, paid in *interBTC*
+- **Redeem**: `0.5%` of the redeem volume, paid in *interBTC*
 
 From this fee pool, `100%` is distributed among all active Vaults based on the following factor:
 
-- 100% based on the Vault's **BTC in custody** ( = issued interBTC/kBTC) in proportion to the total locked BTC (= issued interBTC/kBTC) across all Vaults
+- 100% based on the Vault's **BTC in custody** ( = issued interBTC) in proportion to the total locked BTC (= issued interBTC) across all Vaults
 
 Specifically, each Vault's fee is calculated according to the following formula:
 
@@ -73,23 +75,43 @@ For the full details of the Vault rewards on the Kintsugi canary network, see th
 #### Interlay
 Vaults rewards on the main Interlay network are tbd.
 
-### INTR Vault Block Rewards (Interlay-only)
-
-Vaults receive KINT as fees for keeping BTC locked and providing the required insurance collateral in KSM and other assets. Early Vaults receive more rewards as they take up higher risk in terms of protocol maturity.
-
-For the full details, see the [Kintsugi whitepaper](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
-
 ## Collateral
 
 To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in whitelisted assets - following a similar process as [MakerDAO](https://docs.makerdao.com/smart-contract-modules/collateral-module). To mitigate exchange rate fluctuations, interBTC employs *over-collateralization* and a *multi-level collateral balancing* scheme.
 
-The parachain supports the usage of different currencies for usage as collateral. Which currencies are allowed is determined by governance - they have to explicitly white-list currencies to be able to be used as collateral. They also have to set the various safety thresholds for each currency.
+### Multi-Collateral System
 
-Vaults in the system are identified by a VaultId, which is essentially a (AccountId, CollateralCurrency, WrappedCurrency) tuple. Note the distinction between the AccountId and the VaultId. A vault operator can run multiple vaults using a the same AccountId but different collateral currencies (and thus VaultIds). Each vault is isolated from all others. This means that if vault operator has two running vaults using the same AccountId but different CollateralCurrencies, then if one of the vaults were to get liquidated, the other vaults remains untouched. The vault client manages all VaultIds associated with a given AccountId. Vault operators will be able to register new VaultIds through the UI, and the vault client will automatically start to manage these.
+The parachain supports the usage of different assets for usage as collateral. Governance white-lists asset that are accepted as collateral, specifying the various safety thresholds, as well as the maximum supply for each asset.
 
-When a user requests an issue, it selects a single vault to issue with (this choice may be made automatically by the UI). However, since the wrapped token is fully fungible, it may be redeemed with any vault, even if that vault is using a different collateral currency. When redeeming, the user again selects a single vault to redeem with. If a vault fails to execute a redeem request, the user is able to either get back its wrapped token, or to get reimbursed in the vault’s collateral currency. If the user prefers the latter, the choice of vault becomes relevant because it determines which currency is received in case of failure.
+Vaults are identified by a unique `VaultId` that is a tuple of:
 
-The WrappedCurrency part of the VaultId is currently always required to take the same value - in the future support for different wrapped currencies may be added.
+``(AccountId, CollateralCurrency, WrappedCurrency)`` 
+
+where `CollateralCurrency` is the collateral asset used by this Vault, and `WrappedCurrency` is the 1:1 backing asset (BTC).
+
+?> This distinction between `AccountId` and `VaultId` allows us to easily add *more collateral assets*, as well as *backing assets other than BTC*, such as Litecoin, Dogecoin, ZCash, etc.
+
+#### Vault Isolation
+
+A vault operator can run multiple vaults with different `VaultId`s with different collateral currencies using the same `AccountId`.
+Each Vault identified by a unique `VaultId` is isolated from all other Vaults.
+
+This means:
+- Liquidations only affect a specific `VaultId`.
+- Vault operators must take pro-active measures to re-balance between different collateral assets
+
+When users requests to mint interBTC, they selects a specific `VaultId` to lock BTC with. Typically, users will not care with which Vault they want to mint with (unless there is a competitive fee market in the future) and will accept the automatic selection offered by the UI.
+
+When redeeming interBTC for BTC, users again select a specific `VaultId`. Here, the selection is *security relevant*: If Vaults fails to execute redeem requests, users have the right to 
+- (a) retry with another Vault and claim a small penalty in the Vault's collateral (the `CollateralCurrency` associated with the `VaultId`);
+- (b) to request reimbursement in that specific Vault’s `CollateralCurrency`.
+
+#### Multiple VaultIDs - One Vault Client
+
+The [Vault client](https://github.com/interlay/interbtc-clients/tree/master/vault) manages all `VaultId`s associated with a given `AccountId`. This means, a Vault operator only needs to run *one off-chain client*.
+
+Vault operators can register new `VaultIds` through the UI and the Vault client will automatically start to manage these.
+
 
 ### Over-collateralization
 

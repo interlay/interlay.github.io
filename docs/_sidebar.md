@@ -1,35 +1,44 @@
 <!-- docs/_sidebar.md -->
 
-* [Interlay Documentation](/)
-* [Interlay 101](getting-started/interlay-101.md)
+[Interlay Documentation](/)
 
---- 
+* **Getting Started**
 
-* [**interBTC**](getting-started/interbtc.md)
----
 
-* **Kintsugi (Kusama)**
+  * [Interlay 101](getting-started/interlay-101.md)
+  * [FAQ :arrow_upper_right:](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
+  * [Learn interBTC](getting-started/interbtc.md)
+  * [Governance](getting-started/governance.md)
+
+
+* **Interlay Mainnet <br/> (Polkadot)**
+
+Coming soon
+
+<!--  * [Overview](interlay/overview.md)
+  * [Crowdloans](interlay/crowdloans.md)
+  * [Tokenomics](interlay/tokenomics.md)
+-->
+
+* **Kintsugi Canarynet <br/> (Kusama)**
+
 
   * [Overview](kintsugi/overview.md)
   * [Crowdloans](kintsugi/crowdloans.md)
   * [Tokenomics](kintsugi/tokenomics.md)
   * [Governance](kintsugi/governance.md)
 
----
 
-* **interBTC (Testnet)**
+* **Guides (Testnet)**
 
-  * [Overview](start/overview.md)
-  * [Getting Started](start/prereq.md)
-  * [Issue interBTC](start/issue.md)
-  * [Redeem interBTC](start/redeem.md)
-  * [FAQ](start/faq.md)
 
----
+  * [Getting Started](guides/prereq.md)
+  * [Issue interBTC](guides/issue.md)
+  * [Redeem interBTC](guides/redeem.md)
 
-* **Clients**
 
-* *Vaults*
+* **Vaults**
+
 
   * [Overview](vault/overview.md)
   * [Installation](vault/installation.md)
@@ -37,31 +46,36 @@
   * [Operating Guide](vault/guide.md)
   * [FAQ](vault/faq.md)
 
-* *Collators*
+
+* **Collators**
+
 
   * [Overview](collator/overview.md)
   * [Installation](collator/guide.md)
   * [FAQ](collator/faq.md)
 
----
+
 
 * **Developers**
 
-  * [Interacting with interBTC](developers/integration.md)
-  * [Documentation](developers/documentation.md)
 
----
+  * [interbtc.js](developers/integration.md)
+  * [References](developers/documentation.md)
+  
+
+
+* **Further Reading**
+
 
 * [Roadmap](about/roadmap.md)
-
 * [Research](about/research.md)
-
 * [Glossary](about/glossary.md)
-
 * [Formal Specification :arrow_upper_right:](https://spec.interlay.io/)
 
----
 
-* Adding Translations
+* **Adding Translations**
+
+
   * [Step-by-Step Guide](translation/guide.md)
   * [Best Practices](translation/best-practices.md)
+

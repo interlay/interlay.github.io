@@ -1,14 +1,13 @@
 # interBTC: Bitcoin on Any Blockchain
 
-
-## Overview 
+## Overview
 
 interBTC is a 1:1 Bitcoin backed asset that can be used to invest, earn and pay with BTC across the DeFi ecosystem on Polkadot, Ethereum, Cosmos and many more. 
 
-While interBTC exists, BTC held locked by Vaults on Bitcoin - individuals or service providers who 
- - (1) receive BTC into custody for safekeeping while interBTC exists,
- - (2) lock collateral in a MakerDAO-inspired multi-collateral system to protect users against theft and loss of BTC. 
+While interBTC exists, BTC held locked by Vaults on Bitcoin - individuals or service providers who
 
+- (1) receive BTC into custody for safekeeping while interBTC exists,
+- (2) lock collateral in a MakerDAO-inspired multi-collateral system to protect users against theft and loss of BTC.
 
 The life-cycle of interBTC follows four main phases:
 
@@ -18,8 +17,6 @@ The life-cycle of interBTC follows four main phases:
 - **Mint:** Get interBTC at a 1:1 ration to your locked BTC.
 - **BTC DeFi:** Earn on your Bitcoin. Use interBTC as collateral, for lending, yield farming and more. On Polkadot, Kusama, Cosmos, Ethereum and other major DeFi platforms.
 - **Redeem:** Redeem interBTC for actual BTC on Bitcoin - trustless and anytime you want.
-
-
 
 ## interBTC Security
 
@@ -33,7 +30,7 @@ Hence, as a holder of interBTC, you have the following guarantee:
 
 ?> You can always redeem interBTC for BTC, or be reimbursed in the collateral currency at a beneficial rate.
 
-In the a Vault misbehaves, you will be reimbursed from the Vault’s collateral and will end up making a *profitable* trade between BTC and and the collateral asset(s). 
+In the a Vault misbehaves, you will be reimbursed from the Vault’s collateral and will end up making a *profitable* trade between BTC and and the collateral asset(s).
 
 At launch, collateral will be put down in DOT. In the mid/long run, this may be extended to stablecoins or token-sets to improve stability.
 
@@ -60,7 +57,6 @@ The design of interBTC has an emphasis on being open and permissionless. As such
 - **End-Users** obtain interBTC from liquidity providers on Polkadot and use interBTC for payments and with applications. Requirements: Polkadot wallet
 
 Both can redeem owned interBTC for BTC at any time (requires a Bitcoin wallet).
-
 
 **Collators** maintain the Interlay parachain by collecting transactions and producing security proofs which are verified by validators of the Polkadot Relay Chain. This is a Polkadot-specific role. [Read more about Collators in the Polkadot Wiki](https://wiki.polkadot.network/docs/learn-collator).
 
@@ -104,12 +100,12 @@ A user redeems interBTC for the equivalent amount of BTC or receives DOT as reim
 
 ![High-level interBTC Redeem process](../_assets/img/redeem.png)*High-level interBTC Redeem process*
 
-
 ## Collateral
 
 To protect users against theft and loss of BTC, Vaults must lock collateral with the parachain, such that the value of the locked collateral is higher than the value of BTC locked with the Vault. To ensure Vaults have no incentive to steal user’s BTC, Vaults provide collateral in whitelisted assets - following a process similar to MakerDAO. To mitigate exchange rate fluctuations, interBTC employs over-collateralization and a multi-level collateral balancing scheme.
 
 ### Multi-Collateral System
+
 Thereby, Vault operators can freely choose to lock collateral in any of the assets whitelisted by [protocol governance](/getting-started/interbtc?id=governance). Each Vault is then associated with one specific collateral asset - and a single operator can maintain an unlimited amount of Vaults. Each collateral asset currency has a governance-set threshold determining how much of it can be locked as collateral in the system. Once this threshold is reached, new Vaults must pick from other collateral assets, or request to increase the threshold with protocol governance.
 
 For users, the distinction between collaterals only becomes relevant when redeeming interBTC for BTC. Users can pick specific Vaults (one or multiple) for the redeem process - and are reimbursed in these specific Vault's collateral in case of failure. 
@@ -117,32 +113,14 @@ For users, the distinction between collaterals only becomes relevant when redeem
 Read more about the collateral system and re-balancing in the [Collateral section of the Vault page](/vault/overview?id=collateral).
 
 ### Liquidations
+
 Vaults may be liquidated, i.e., have their collateral slashed and used to re-balance the system or to reimburse users, if:
+
 - they steal BTC,
 - fail to execute redeem requests,
 - or are severly under-collateralized
 
 Read more about liquidations in the [Liquidations section of the Vault page](/vault/overview?id=liquidations).
-
-## Governance
-
-Interlay and Kintsugi each implement a token-based decentralized governance mechanism. 
-Governance token holders have the ultimate decision power over:
-- **Runtime upgrades**: Fixes, substrate/library updates, improvements, new features, …
-- **Parameter upgrades**:
-  - Stable BTC Confirmations
-  - Whitelist collateral currencies and set thresholds
-  - Parachain Status (On/Off)
-  - Accepted oracles
-
-- **Treasury management**: decision on how to spend the assets locks in the network treasury.
-
-
-### Governance Implementations
-For the specifics of each network's governance, see:
-
-- **Kintsugi**: [Kintsugi Governance documentation](../kintsugi/governance)
-- **Interlay**: tbd
 
 
 ## interBTC vs kBTC
