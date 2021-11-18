@@ -50,7 +50,7 @@ Contributions are what make the open source community such an amazing place to b
 1. Fork the Project
 2. Clone your new fork and enter the working folder (`git clone https://github.com/youruser/interlay.github.io.git && cd interlay.github.io`)
 3. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-4. Make you changes
+4. Make your changes
 5. Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`)
 6. Push to the Branch (`git push origin feature/AmazingFeature`)
 7. Open a Pull Request
