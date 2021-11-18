@@ -52,7 +52,7 @@ Contributions are what make the open source community such an amazing place to b
 3. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 4. Make your changes
 5. Commit your changes (`git commit -m 'feat: Add some AmazingFeature'`)
-6. Push to the Branch (`git push origin feature/AmazingFeature`)
+6. Push to the branch (`git push origin feature/AmazingFeature`)
 7. Open a Pull Request
 
 We are using [semantic versioning](https://semver.org/) and [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary).
