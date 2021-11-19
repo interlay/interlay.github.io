@@ -23,6 +23,10 @@ At the end of this document you will have:
 Setup the Vault client using docker-compose. Best if you want to quickly try out running the client.
 </summary>
 
+### 0. Install docker and docker-compose
+
+Make sure [docker](https://docs.docker.com/engine/install/ ) and [docker-compose](https://docs.docker.com/compose/install/) are installed in your system.
+
 ### 1. Download the docker-compose file to start the Vault client and the Bitcoin node
 
 ```shell
@@ -56,7 +60,7 @@ If the Vault spends funds from another wallet this may be marked as theft.
 (Optional) If you already have a locally running Bitcoin testnet node, only start the Vault client:
 
 ```shell
-docker-compose up vault
+docker-compose up vault -d
 ```
 
 ?> You may need to edit the docker-compose to point `--bitcoin-rpc-url` to `http://localhost:18332`.
@@ -64,8 +68,12 @@ docker-compose up vault
 You can run the entire Vault client and the Bitcoin node with the following command:
 
 ```shell
-docker-compose up
+docker-compose up -d
 ```
+
+You can optionally view the running docker containers with command `docker-compose ps`.
+You can optionally view the logs to see what the containers are doing with `docker-compose logs -f vault` and `docker-compose logs -f bitcoind`.
+Please take into account it can take a few hours for the bitcoin-core to sync for the first time.
 
 </details>
 
