@@ -39,7 +39,8 @@
 
 * **Developers**
 
-  * [Interacting with interBTC](developers/integration.md)
+  * [Overview](developers/overview.md)
+  * [TypeScript Integration](developers/integration.md)
   * [Documentation](developers/documentation.md)
 
 ---
