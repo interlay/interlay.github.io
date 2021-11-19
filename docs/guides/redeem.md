@@ -7,7 +7,7 @@ At the end of this guide you will have:
 - [x] Redeemed your first interBTC from the interBTC app
 - [X] Received BTC for the redeemed interBTC in your Bitcoin wallet
 
-## Video Guide
+## Video Guide (OLD UI - New Guide is WIP)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-TZ2XUmXh9I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

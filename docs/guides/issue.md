@@ -8,7 +8,7 @@ At the end of this guide you will have:
 - [x] Locked BTC with a collateralized Vault
 - [x] Issued your first interBTC on the interBTC app
 
-## Video Guide
+## Video Guide (OLD UI - New Guide is WIP)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hMZTj6ctGQE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

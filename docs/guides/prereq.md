@@ -1,5 +1,6 @@
-# Getting started with interBTC
+# Setup (Testnet)
 
+!> Note: this guide is for TESTNET ONLY!
 
 To start using interBTC, follow the steps below to set up a Bitcoin and Polkadot testnet wallet.
 

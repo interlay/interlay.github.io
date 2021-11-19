@@ -6,13 +6,19 @@ The Interlay team is building a customized Substrate environment for interBTC, o
 
 ### Timeline So Far
 
-- **1st Web3 Foundation grant** (Spec & PoC) started in January 2020
-- **1st grant completed** in April 2020
-- **2nd Web3 Foundation grant** (Full Implementation) started in September 2020
-- **Alpha** testnet launched in November 2020
-- **Feature-ready Beta** launched on 2 March 2021
-- **(NOW) Kintsugi on Kusama** is going to parachain auctions starting 1st September 2021
-- **(soon) interBTC on Polkadot** expected in late 2021 / early 2022.
 
----
-A more detailed roadmap for Kinstugi Kusama launch and towards interBTC launch on Polkadot will be published here shortly.
+
+- **(Soon) Interlay on Polkadot**: Interlay is going to Polkadot parachain auctions in batch 2, starting December 23rd 2021
+- **(Now) Kintsugi to Kusama**: kBTC on Kusama and KINT airdrop planned before Christmas 2021.
+- **Kintsugi wins 11th Kusama parachain slot** on 13 October 2021
+- **Feature-ready Beta** launched on 2 March 2021
+- **Alpha** testnet launched in November 2020
+- **2nd Web3 Foundation grant** (Full Implementation) started in September 2020
+- **1st grant completed** in April 2020
+- **1st Web3 Foundation grant** (Spec & PoC) started in January 2020
+- **XCLAIM paper** describing the tech underlying interBTC published in 2018
+
+
+### [Kintsugi2Kusama Launch Roadmap :arrow_upper_right:](https://interlay.notion.site/07841855b3b5413ebc5174388d4a3e31?v=6392a91ab64b4c258e8bd5206daf3a96)
+
+### Interlay2Polkadot Launch Roadmap (Coming soon)

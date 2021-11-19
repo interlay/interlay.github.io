@@ -6,14 +6,14 @@
 
 
   * [Interlay 101](getting-started/interlay-101.md)
-  * [FAQ :arrow_upper_right:](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
   * [Learn interBTC](getting-started/interbtc.md)
   * [Governance](getting-started/governance.md)
+  * [FAQ :arrow_upper_right:](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
 
 
 * **Interlay Mainnet <br/> (Polkadot)**
 
-Coming soon
+*Coming soon*
 
 <!--  * [Overview](interlay/overview.md)
   * [Crowdloans](interlay/crowdloans.md)
@@ -32,7 +32,7 @@ Coming soon
 * **Guides (Testnet)**
 
 
-  * [Getting Started](guides/prereq.md)
+  * [Setup](guides/prereq.md)
   * [Issue interBTC](guides/issue.md)
   * [Redeem interBTC](guides/redeem.md)
 
