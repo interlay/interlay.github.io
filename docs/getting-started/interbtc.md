@@ -125,7 +125,7 @@ Read more about liquidations in the [Liquidations section of the Vault page](/va
 
 ## kBTC: Canary Network
 
-The flagship product of both Kintsugi and Interlay is “trustless Bitcoin for DeFi”. 
+The flagship product of both Kintsugi and Interlay is “trustless Bitcoin for DeFi”.
 
 kBTC on Kintsugi. interBTC on Interlay.
 
@@ -136,5 +136,28 @@ interBTC and kBTC are the same product at the core, with different parameterizat
 - **kBTC**, on the other hand, will be open to more experimental assets, including such that have lower liquidity — e.g. new forms of staking derivatives, LP tokens, young DeFi assets, perhaps even NFTs.
 
 
-# interBTC vs wBTC, renBTC,.. 
+# interBTC vs Competitors 
 
+> *Rome was not built in one day* (proverb)
+
+Centralized solutions are quick to build. As such, there exist a number of centralized and trusted wrapped Bitcoin providers, mostly operating on Ethereum (see [here](https://defipulse.com/btc) for a full list). However, Bitcoin was created with a vision of decentralization - and Interlay's mission is to ensure Bitcoin on other chains follows the same principles.
+
+We provide a comparison below, using [this peer-reviewed cross-chain analysis framework](https://fc21.ifca.ai/papers/139.pdf):
+
+![InterBTC vs other, centralized wrapped Bitcoin systems](../_assets/img/interbtc-vs-other.png) *InterBTC vs other, centralized wrapped Bitcoin systems.*
+
+- **wBTC** was created by BitGo, a crypto-custody company. All BTC locked in wBTC is held by BitGo. You cannot freely join to become a BTC custodian (only BitGo has custody), and there is no insurance against failure. Users must trust BitGo. If BTC is lost, stolen or subject to regulatory events, wBTC will have no value backing it. If using USD stablecoins as analogy, the equivalent of wBTC is USDT/USDC.
+- **renBTC** is a product of the Ren protocol, a crypto-startup that pivoted from Republic Protocol (a former protocol for dark pools, aka privacy-preserving trading). The BTC locked in renBTC is reportedly<sup>[1,](https://www.theblockcrypto.com/news+/76787/ren-bitcoin-wallet-decentralization)</sup><sup>[2](https://decrypt.co/40110/massive-honeypot-ren-holds-100m-bitcoin-centralized-wallet)</sup> held in a multisig controlled by the Ren team. It appears that Ren's Dark Nodes (part of the former dark pool protocol) are not responsible for the BTC custody - and hence it is not possible for new users to help secure Ren's locked BTC, making it a centralized protocol. Just like with wBTC, there is no insurance to reimburse users if BTC is lost - users must simply trust the Ren team. Using the USD stablecoin analogy, the equivalent of renBTC is USDT/USDC.
+- **tBTC v1** tried to build a decentralized version of BTC on Ethereum, similar to the design proposed in the XCLAIM paper (i.e., similar to interBTC). The BTC locked in tBTC is locked with Signers, who share control over the BTC keys using ECDSA threshold signatures (3-of-5). Signers provide collateral in ETH, which is used to reimburse users if BTC is lost. However, not everyone can become a Signer, citing the [tBTC FAQ](https://tbtc.network/faq/): "*Shortly after launch, there should be a group of roughly 80 private sale KEEP purchasers and a few other trusted parties signing for tBTC*". Due to tBTC v1 being a single-collateral system (ETH only), Signers [reportedly](https://tian7eth.medium.com/an-analyse-of-a-liquidation-of-tbtc-system-on-mainnet-82c70c9743e6) suffered from frequent liquidations, when the BTC/ETH price was volatile.
+    - *Why tBTC cannot decentralize the Signers: The ECDSA Threshold attack vector*: In fact, tBTC cannot decentralized the Signers, allowing anyone to join the Signer set, due to a security issue with their ECDSA threshold signatures: currently, it is only possible to check that sufficient signatures were made, but not *who* signed. This means that in a 3-of-5 threshold sig, all 5 Signers will be slashed if BTC is lost or stolen. If anyone could become a Signer, an attacked would create multiple identities try to mint/redeem tBTC until she is assigned a Signer set where she controls 3 out of the 5 Signer keys. The attacked then proceeds to steal (*"from herself"!*) the BTC using her 3 Signer keys. The protocol would slash the collateral of all 5 Signers - **effectively allowing the attacked to steal collateral of the 2 honest signers**. This can be repeated until all honest signers are slashed (or there is a manual/governance intervention).
+    - **tBTC v2** is moving back to a more centralized model<sup>[3](https://evandrosaturnino.medium.com/why-does-a-trustless-bitcoin-in-defi-matter-77c0d544f0d9)</sup>: BTC will be controlled by a larger group of 100 Signers, insurance will be locked in KEEP tokens only and cover a fraction of the locked BTC value. Apart from being a federated model, a v2 introduces the risk of using the native token as collateral: if there is a security breach, the token price will likely fall rapidly, making the insurance potentially worthless.
+
+
+**interBTC**, for comparison:
+
+- **Anyone** can become a Vault in interBTC, making it fully **decentralized**;
+- Vaults cannot prevent users from minting interBTC, making it **censorship resistant**
+- Vaults lock **collateral in different assets (MakerDAO-like multi-collateral system)**, making the price peg **more stable** and avoiding frequent liquidations. This also allows to use interest bearing assets, such as liquid staking assets, as collatera, making interBTC **more capital efficient**.
+- If BTC is lost or stolen, users are **reimbursed in collateral at a beneficial rate** (~110%), making it **financially trustless**.
+
+Using the USD stablecoin analogy, **interBTC is comparable to multi-collateral DAI - but better, because interBTC can be redeemed for BTC but DAI cannot be redeemed for physical USD**. So, strictly speaking, interBTC is a Bitcoin stablecoin.
