@@ -32,7 +32,7 @@ docsify serve ./docs
 
 ## Usage
 
-You can browse the documentation locally or directly on [docs.interlay.io](docs.interlay.io).
+You can browse the documentation locally or directly on [docs.interlay.io](https://docs.interlay.io).
 
 
 ### Adding content
@@ -59,5 +59,5 @@ We are using [semantic versioning](https://semver.org/) and [conventional commit
 
 If you are searching for a place to start or would like to discuss features, reach out to us:
 
--   [Telegram](t.me/interlay)
+-   [Telegram](https://t.me/interlay)
 -   [Discord](https://discord.gg/KgCYK3MKSf)
