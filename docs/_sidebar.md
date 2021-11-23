@@ -47,8 +47,9 @@
 
 * **Developers**
 
-  * [interbtc.js](developers/integration.md)
-  * [References](developers/documentation.md)
+  * [Overview](developers/overview.md)
+  * [TypeScript Integration](developers/integration.md)
+  * [Documentation](developers/documentation.md)
 
 * **Further Reading**
 
