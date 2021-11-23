@@ -8,7 +8,7 @@ At the end of this guide you will have:
 - [x] Locked BTC with a collateralized Vault
 - [x] Issued your first interBTC on the interBTC app
 
-## Video Guide
+## Video Guide (OLD UI - New Guide is WIP)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hMZTj6ctGQE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -22,21 +22,21 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](sta
 
 The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Issue tab.
 
-### 2. Enter the amount of interBTC you want to issue in the app
+### 2. Get testnet DOT via the Faucet
 
-?> Don't forget to get some testnet DOT via the faucet ("Request DOT" button, right-hand side of top bar) before making an issue request. You will need this to pay for the bridge transaction fees.
+Get some testnet DOT via the faucet with the "Request DOT" button, right-hand side of top bar, before making an issue request. You will need this to pay for the bridge transaction fees.
 
-Enter the amount of interBTC you want to issue. The app will automatically select a vault for you.
+### 3. Enter the amount of interBTC you want to issue in the app
+
+Enter the amount of interBTC you want to issue. The app will automatically select a Vault for you.
 
 Check the details of your issue request and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
-You should be able to see your request in the **"Issue Requests"** table below the app modal. Clicking on a row of this table will open a pop-up with more details about the request.
-
-### 3. Transfer BTC from your Bitcoin wallet to the given address
+### 4. Transfer BTC from your Bitcoin wallet to the Vault address
 
 Use your Bitcoin wallet to transfer the specified `amount` to the given `address`.
 
-?> This final amount includes a small system fee on top of the original amount specified.
+#### Optional: use a hardware wallet
 
 <details>
 <summary>
@@ -94,12 +94,15 @@ If configured, you may also check the status of the transaction in a block explo
 
 </details>
 
-### 4. Confirm your BTC transaction
+### 5. Wait for confirmation of your BTC transaction and receive interBTC automatically
 
-Once the payment has been sent, the app will automatically locate your transaction on the Bitcoin blockchain. If this transaction is correct, you can just wait for a few minutes and you will receive your interBTC. This is because a vault will eventually execute your request if your transaction has sufficient confirmations.
+Once you made the payment, the app will automatically locate your transaction on the Bitcoin blockchain. If this transaction is correct, you can wait for a few minutes and you will receive your interBTC. This is because a Vault will eventually execute your request if your transaction has sufficient confirmations.
 
-You can check the status of your issue request in the **"Issue Requests"** table below the app modal. If your Bitcoin transaction has enough confirmations but has not been executed by a vault yet, an **"Execute"** button will be displayed in the table. To finalize the Issue process and claim your interBTC, either wait for a vault to auto-execute your request, or click **"Execute"** yourself.
+### 6. Optional: Manually claim your interBTC
 
-### 5. Check your historical requests
+You can check the status of your issue request in the [Transactions](https://bridge.interlay.io/transactions) view in the **"Issue Requests"** table. If your Bitcoin transaction has enough confirmations but has not been executed by a Vault yet, click on the issue request that is "Pending". This will open a modal, where you will see an **"Execute"** button. To finalize the Issue process and claim your interBTC, either wait for a Vault to auto-execute your request, or click **"Execute"** yourself.
 
-If you have any historic or pending Issue requests, they are displayed in a table below the modal. Click on items in this table for more details about individual requests.
+## Questions?
+
+- Checkout out the [FAQ](https://www.notion.so/interlay/Interlay-FAQ-5e3019b1cfd94f6693dc186e9640e607#277286bac5224dbbab565af4fe1ec5d5)
+- Join our [Discord](https://discord.com/invite/KgCYK3MKSf)

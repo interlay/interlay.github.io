@@ -1,6 +1,5 @@
-# Kintsugi - interBTC’s Canary Network
+# Kintsugi - Interlay's Canary Network
 
-**Kintsugi** is interBTC's canary network, developed by Interlay under the supervision of Kintsugi Labs, a non-profit oriented organization responsible for Kintsugi's launch and the support of the decentralized network and ecosystem.
 
 ### kBTC - Radically Open Bitcoin on Kusama
 
@@ -27,3 +26,5 @@ Read the [Crowdloan chapter](kintsugi/crowdloans.md) to learn more about the KIN
 ### Kintsugi Origins
 
 Inspired by the ancient [Japanese tradition of embracing the flawed and imperfect](https://en.wikipedia.org/wiki/Kintsugi), Kintsugi accepts the nascent DeFi ecosystem on Kusama as chaotic while constantly being perfected by golden streaks of its community.
+
+

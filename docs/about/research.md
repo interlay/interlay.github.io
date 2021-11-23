@@ -1,16 +1,15 @@
 # Research at Interlay
 
-Technological advantage stems from persistent and rigorous research. 
+Technological advantage stems from persistent and rigorous research.
 Founded by ex-Imperial College London PhDs, we are dedicated to contribute to cutting-edge research in the areas of  blockchain interoperability, security, and crypto-economics.
 
-
-Our team members have co-authored over 30 scientific publications counting 1000+ citations amd counting, while at / in collaboration with leading universities and research centres around the globe. 
-
+Our team members have co-authored over 30 scientific publications counting 1000+ citations amd counting, while at / in collaboration with leading universities and research centres around the globe.
 
 Our key researchers include:
 - [Alexei Zamyatin](https://scholar.google.com/citations?user=BJDPyu0AAAAJ&hl=en&oi=ao) (Co-Founder & CEO). Focus: Cross-chain protocols & blockchain security.
 - [Dominik Harz](https://scholar.google.com/citations?user=s6Km5yQAAAAJ&hl=en&oi=ao) (Co-Founder & CTO). Focus: Stablecoins & DeFi protocols
 - [Daniel Perez](https://scholar.google.com/citations?user=W2XsCqwAAAAJ&hl=en&oi=ao) (Advisor). Focus: Smart contract and DeFi protocol security
+
 ## Interlay Research Papers
 
 ### [SoK: Communication Across Distributed Ledgers](https://eprint.iacr.org/2019/1128.pdf)
@@ -18,7 +17,7 @@ Our key researchers include:
 <details>
   <summary>Read abstract</summary>
    Since the inception of Bitcoin, a plethora of distributed ledgers differing in design and purpose has been created. While by design, blockchains provide no means to securely communicate with external systems, numerous attempts towards trustless cross-chain communication have been proposed over the years. Today, cross-chain communication (CCC) plays a fundamental role in cryptocurrency exchanges, scalability efforts via sharding, extension of existing systems through sidechains, and bootstrapping of new blockchains. Unfortunately, existing proposals are designed ad-hoc for specific use-cases, making it hard to gain confidence in their correctness and composability.
-   
+
    We provide the first systematic exposition of cross-chain communication protocols. We formalize the underlying research problem and show that CCC is impossible without a trusted third party, contrary to common beliefs in the blockchain community. With this result in mind, we develop a framework to design new and evaluate existing CCC protocols, focusing on the inherent trust assumptions thereof, and derive a classification covering the field of cross-chain communication to date. We conclude by discussing open challenges for CCC research and the implications of interoperability on the security and privacy of blockchains.
 </details>
 
@@ -31,13 +30,13 @@ Our key researchers include:
 <details>
   <summary>Read abstract</summary>
    Cryptocurrency light- or simplified payment verification (SPV) clients allow nodes with limited resources to efficiently verify execution of payments. Instead of downloading the entire blockchain, only block headers and selected transactions are stored. Still, the storage and bandwidth cost, linear in blockchain size, remain non-negligible, especially for smart contracts and mobile devices: as of April 2020, these amount to 50 MB in Bitcoin and 5 GB in Ethereum.
-   
+
    Recently, two improved sublinear light clients were proposed: to validate the blockchain, NIPoPoWs and FlyClient only download a polylogarithmic number of block headers, sampled at random. The actual verification of payments, however, remains costly: for each verified transaction, the corresponding block must too be downloaded. This yields NIPoPoWs and FlyClient only effective under low transaction volumes.
-   
+
    We present TxChain, a novel mechanism to maintain efficiency of light clients even under high transaction volumes. Specifically, we introduce the concept of contingent transaction aggregation, where proving inclusion of a single contingent transaction implicitly proves that n other transactions exist in the blockchain. To verify n payments, TxChain requires a only single transaction in the best (n≤c), and n/c+logc(n) transactions in the worst case (n>c). We deploy TxChain on Bitcoin without consensus changes and implement a soft fork for Ethereum. To demonstrate effectiveness in the cross-chain setting, we implement TxChain as a smart contract on Ethereum to efficiently verify Bitcoin payments.
 </details>
 
-- **Zamyatin A**, Avarikioti Z, Perez D, Knottenbelt WJ, 
+- **Zamyatin A**, Avarikioti Z, Perez D, Knottenbelt WJ,
 - 4th International Workshop on Cryptocurrencies and Blockchain Technology - CBT 2020
 - In collaboration with Imperial College London and ETH Zurich
 
@@ -46,7 +45,7 @@ Our key researchers include:
 <details>
   <summary>Read abstract</summary>
    Collateral employed in cryptoeconomic protocols protects against the misbehavior of economically rational agents, compensating honest users for damages and punishing misbehaving parties. The introduction of collateral, however, carries three disadvantages: (i) requiring agents to lock up a substantial amount of collateral can be an entry barrier, limiting the set of candidates to wealthy agents; (ii) affected agents incur ongoing opportunity costs as the collateral cannot be utilized elsewhere; and (iii) users wishing to interact with an agent on a frequent basis (e.g., with a service provider to facilitate second-layer payments), have to ensure the correctness of each interaction individually instead of subscribing to a service period in which interactions are secured by the underlying collateral.
-   
+
    We present Promise, a subscription mechanism to decrease the initial capital requirements of economically rational service providers in cryptoeconomic protocols. The mechanism leverages future income (such as service fees) prepaid by users to reduce the collateral actively locked up by service providers, while sustaining secure operation of the protocol. Promise is applicable in the context of multiple service providers competing for users. We provide a model for evaluating its effectiveness and argue its security. Demonstrating Promise's applicability, we discuss how Promise can be integrated into a cross-chain interoperability protocol, XCLAIM, and a second-layer scaling protocol, NOCUST. Last, we present an implementation of the protocol on Ethereum showing that all functions of the protocol can be implemented in constant time complexity and Promise only adds USD 0.05 for a setup per user and service provider and USD 0.01 per service delivery during the subscription period.
 </details>
 
@@ -56,9 +55,10 @@ Our key researchers include:
 - In collaboration with Imperial College London
 
 ## Related & Previous Research
-Our team has been actively contributing to cutting-edge research in the blockchain space over the past 6 years. 
 
-A lot of the concepts developed by our team during their previous research careers find their way into Interlay's products. Some of the most recent and relevant works of our team members are outlined below: 
+Our team has been actively contributing to cutting-edge research in the blockchain space over the past 6 years.
+
+A lot of the concepts developed by our team during their previous research careers find their way into Interlay's products. Some of the most recent and relevant works of our team members are outlined below:
 
 ### [XCLAIM: Trustless, Interoperable Cryptocurrency-Backed Assets](https://eprint.iacr.org/2018/643.pdf)
 <details>
@@ -71,8 +71,6 @@ We present XCLAIM: the first generic framework for achieving trustless and effic
 - **Zamyatin A**, **Harz D**, Lind J, Panayiotou P, Arthur G,  Knottenbelt WJ
 - IEEE Symposium on Security and Privacy (S&P)
 - In collaboration with Imperial College London, SBA Research
-
-
 
 ### [SoK: Decentralized Finance (DeFi)](https://arxiv.org/abs/2101.08778)
 
@@ -91,9 +89,8 @@ Stablecoins are one of the most widely capitalized type of cryptocurrency. Howev
 </details>
 
 - Klages-Mundt A, **Harz D**, Gudgeon L, Liu J, Minca A
-- ACM conference on Advances in Financial Technologies (AFT’20) 
+- ACM conference on Advances in Financial Technologies (AFT’20)
 - In collaboration with Cornell University, Imperial College London
-
 
 ### [The Decentralized Financial Crisis](https://arxiv.org/pdf/2002.08099.pdf)
 <details>
