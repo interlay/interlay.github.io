@@ -65,14 +65,16 @@ Specifically, each Vault's fee is calculated according to the following formula:
 
 The Vault fee is paid each time an Issue or Redeem request is executed.
 
-### Vault Block Rewards 
+### Vault Block Rewards
 
 Vaults receive governance tokens as fees for keeping BTC locked and providing the required insurance collateral in whitelisted assets. Early Vaults receive more rewards as they take up higher risk in terms of protocol maturity.
 
 #### Kintsugi
+
 For the full details of the Vault rewards on the Kintsugi canary network, see the [Kintsugi token economy paper](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf) published by Kintsugi Labs.
 
 #### Interlay
+
 Vaults rewards on the main Interlay network are tbd.
 
 ## Collateral
@@ -85,7 +87,7 @@ The parachain supports the usage of different assets for usage as collateral. Go
 
 Vaults are identified by a unique `VaultId` that is a tuple of:
 
-``(AccountId, CollateralCurrency, WrappedCurrency)`` 
+``(AccountId, CollateralCurrency, WrappedCurrency)``
 
 where `CollateralCurrency` is the collateral asset used by this Vault, and `WrappedCurrency` is the 1:1 backing asset (BTC).
 
@@ -97,12 +99,14 @@ A vault operator can run multiple vaults with different `VaultId`s with differen
 Each Vault identified by a unique `VaultId` is isolated from all other Vaults.
 
 This means:
+
 - Liquidations only affect a specific `VaultId`.
 - Vault operators must take pro-active measures to re-balance between different collateral assets
 
 When users requests to mint interBTC, they selects a specific `VaultId` to lock BTC with. Typically, users will not care with which Vault they want to mint with (unless there is a competitive fee market in the future) and will accept the automatic selection offered by the UI.
 
-When redeeming interBTC for BTC, users again select a specific `VaultId`. Here, the selection is *security relevant*: If Vaults fails to execute redeem requests, users have the right to 
+When redeeming interBTC for BTC, users again select a specific `VaultId`. Here, the selection is *security relevant*: If Vaults fails to execute redeem requests, users have the right to
+
 - (a) retry with another Vault and claim a small penalty in the Vault's collateral (the `CollateralCurrency` associated with the `VaultId`);
 - (b) to request reimbursement in that specific Vault’s `CollateralCurrency`.
 
@@ -112,18 +116,17 @@ The [Vault client](https://github.com/interlay/interbtc-clients/tree/master/vaul
 
 Vault operators can register new `VaultIds` through the UI and the Vault client will automatically start to manage these.
 
-
 ### Over-collateralization
 
 Vaults must over-collateralize their BTC holdings. The exact threshold is thereby determined for each accepted collateral asset. The up-to-date collateral thresholds can be checked by accessing the parachain storage, e.g. via [Polkadot.js Apps](https://polkadot.js.org/apps/#/explorer).
 
-**Example used for explanation:** In the following, we use DOT collateral with an over-collateralization rate of `150%` **as example**. 
+**Example used for explanation:** In the following, we use DOT collateral with an over-collateralization rate of `150%` **as example**.
 
 This means, the amount of BTC a Vault can accept for safekeeping is calculated by:
 
     max_vault_btc = vault_dot_collateral / (dot_collateral_threshold * btc_dot_exchange_rate)
 
-Where `dot_collateral_threshold = 1.5` (`150%`) according to our example. 
+Where `dot_collateral_threshold = 1.5` (`150%`) according to our example.
 
 ### Vault-Level Collateral Re-balancing
 
@@ -133,26 +136,86 @@ This can be achieved in 2 ways:
 - **interBTC Redeem**: if users redeem with the Vault, the collateralization ratio increases. The Vault can also maintain a interBTC reserve and execute self-redeems for quick rebalancing
 - **Increase Collateral**: alternatively, the Vault can also add more collateral to the system.
 
-#### Thresholds and Balancing Mechanisms
+## Collateral Thresholds
 
 The interBTC bridge introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
 
-**Secure Collateral**:
+We will release a post detailing how the calculation of this thresholds is achieved considering the liquidity and risk profile for each collateral asset.
 
-- *Threshold*: `150%` (example)
-- *Actions*: None necessary. The Vault can freely redeem any "unused" collateral above the `150%` threshold.
+### Secure Collateral
 
-**Premium Redeem**:
+#### Actions
 
-- *Threshold*: `135%` (example)
-- *Actions*: Users can execute redeem with this Vault and receive a premium of `5%` in DOT in addition to the redeemed BTC.
+None necessary. The Vault can freely redeem any "unused" collateral above the `150%` threshold.
 
-**Vault Liquidation**:
+#### Thresholds
 
-- *Threshold*: `110%` (example)
-- *Action*: The undercollateralized Vault is liquidated.
-    1. The Vaults entire DOT collateral is slashed
-    2. The interBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn interBTC** in return for DOT collateral at a premium rate. See **[Burn Event](/overview?id=burn-event-restoring-a-11-physical-peg)** below.
+<!-- tabs:start -->
+
+#### **Testnet**
+
+Testnet DOT: `150%`
+
+#### **Kintsugi (Canarynet)**
+
+KSM: `260%`
+
+#### **Interlay (Mainnet)**
+
+DOT: tbd
+
+<!-- tabs:end -->
+
+### Premium Redeem
+
+#### Actions
+
+Users can execute redeem with this Vault and receive a premium of `5%` in DOT in addition to the redeemed BTC.
+
+#### Thresholds
+
+<!-- tabs:start -->
+
+#### **Testnet**
+
+Testnet DOT: `135%`
+
+#### **Kintsugi (Canarynet)**
+
+KSM: `200%`
+
+#### **Interlay (Mainnet)**
+
+DOT: tbd
+
+<!-- tabs:end -->
+
+### Vault Liquidation
+
+#### Action
+
+The undercollateralized Vault is liquidated.
+
+1. The Vaults entire collateral is slashed
+2. The interBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn interBTC** in return for collateral at a premium rate. See **[Burn Event](/overview?id=burn-event-restoring-a-11-physical-peg)** below.
+
+#### Thresholds
+
+<!-- tabs:start -->
+
+#### **Testnet**
+
+Testnet DOT: `110%`
+
+#### **Kintsugi (Canarynet)**
+
+KSM: `150%`
+
+#### **Interlay (Mainnet)**
+
+DOT: tbd
+
+<!-- tabs:end -->
 
 ## Liquidations
 
@@ -167,9 +230,9 @@ A safety failure occurs in two cases:
 
 - **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge. Theft is detected and reported by [Vaults](/vault/overview) via an SPV proof.
 
-- **Severe Undercollteralization**: a Vaults drops below the liquidation collateral threshold (`110%` in our example).
+- **Severe Undercollteralization**: a Vaults drops below the liquidation collateral threshold (e.g., `110%` on testnet).
 
-In both cases, the **the Vault's entire collateral is liquidated - up to the secure collateral threshold (`150%`  in our example) of the liquidated BTC value - and BTC holdings are considered lost**.
+In both cases, the **the Vault's entire collateral is liquidated - up to the secure collateral threshold (e.g., `150%` on testnet) of the liquidated BTC value - and BTC holdings are considered lost**.
 
 Consequently, the interBTC bridge initiates a **[Burn Event](/vault/overview?id=burn-event-restoring-a-11-physical-peg)** to restore the 1:1 balance between BTC and interBTC.
 
@@ -184,18 +247,17 @@ The **punishment fee** is calculated as a percentage (e.g. `10%`) of the redeem 
 
 ## Burn Event: Restoring a 1:1 Physical Peg
 
-When a Vault is liquidated, its DOT collateral is slashed up to `150%` (example) of the liquidated BTC value, given the exchange rate at the time of liquidation.
+When a Vault is liquidated, its collateral is slashed up to the secure collateral threshold (e.g., `150%` on testnet) of the liquidated BTC value, given the exchange rate at the time of liquidation.
 
-The interBTC bridge now has less BTC locked than interBTC minted - but more than enough DOT collateral to maintain economic security.
-To re-establish the physical 1:1 peg between BTC and interBTC, the interBTC bridge allows users to **burn interBTC in return for DOT at a premium rate**.
+The interBTC bridge now has less BTC locked than interBTC minted - but more than enough collateral to maintain economic security.
+To re-establish the physical 1:1 peg between BTC and interBTC, the interBTC bridge allows users to **burn interBTC in return for collateral at a premium rate**.
 
 Specifically, the user's payout is calculated as follows:
 
-
-    burn_dot_payout =
-        (total_liquidated_dot_collateral / total_liquidated_interbtc)
+    burn_payout =
+        (total_liquidated_collateral / total_liquidated_interbtc)
         * user_burned_interbtc
 
-As long as the economic value of `burn_dot_payout` is higher than that of `user_burned_interbtc`, which may include private information of the user (that is, the user may think that DOT will become worth more soon), users are incentivized to burn interBTC in return for DOT and to re-balance the system.
+As long as the economic value of `burn_payout` is higher than that of `user_burned_interbtc`, which may include private information of the user (that is, the user may think that the collateral asset will become worth more soon), users are incentivized to burn interBTC in return for the collateral asset and to re-balance the system.
 
 This Burn Event continues until the 1:1 ratio of BTC to interBTC is restored.
