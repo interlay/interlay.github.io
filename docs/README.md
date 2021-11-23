@@ -1,13 +1,13 @@
 # Interlay & Kintsugi Documentation
-### Invest, earn and pay with BTC on any blockchain. Radically open and secured by insurance.
 
+### Invest, earn and pay with BTC on any blockchain. Radically open and secured by insurance.
 
 ### Introduction
 
-Interlay is a decentralized network dedicated to connecting crypto-*currencies* like Bitcoin with DeFi *platforms* like Polkadot and Ethereum. The Interlay network is hosted as a Polkadot parachain and will be connected to Cosmos, Ethereum and other major DeFi networks.
+Interlay is a decentralized network dedicated to connecting *crypto-currencies* like Bitcoin with DeFi *platforms* like Polkadot and Ethereum. The Interlay network is hosted as a Polkadot parachain and will be connected to Cosmos, Ethereum and other major DeFi networks.
 [Read more about Interlay's vision of blockchain interoperability](https://medium.com/interlay/the-future-of-bridging-assets-837998115f6b).
 
-**interBTC**, Interlay's flagship product, is Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant. 
+**interBTC**, Interlay's flagship product, is Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant.
 
 **Kintsugi** is Interlay's canary network, an experiment with real economic value deployed on Kusama. Kintsugi and Interlay share the same code base - with the difference that Kintsugi focusses strictly on innovation and will always be ahead in terms of features. [Read more about Interlay's dual network model](https://medium.com/interlay/the-interlay-parachain-is-coming-to-polkadot-552a57ff8d1b).
 
@@ -19,18 +19,18 @@ Interlay is a decentralized network dedicated to connecting crypto-*currencies* 
 
 **3.  [Learn about Kintsugi, Interlay's canary network](/kintsugi/overview.md)**
 
-**4.  [Testnet guides](/guides/prereq.md)**
+**4.  [Learn how to issue and redeem interBTC on testnet](/guides/prereq.md)**
 
 **5.  [What are Vaults and how to run them](vault/overview.md)**
 
-**6.  [How to setup Kusama/Polkadot Collators](/collator/overview.md)**
+**6.  [How to setup Kintsugi/Interlay Collators](/collator/overview.md)**
 
 **7.  [Build your own Dapps with interBTC](developers/integration.md)**
 
 
 ### How to use this document
 
-**The documentation (this document)** is aimed at anyone who is interested to learn about Interlay and Kintsugi. The in-depth guides on [Vaults](../vault/overview) and [Collators](../collator/overview) are aimed at operators of Vaults and Collators. 
+**The documentation (this document)** is aimed at anyone who is interested to learn about Interlay and Kintsugi. The in-depth guides on [Vaults](../vault/overview) and [Collators](../collator/overview) are aimed at operators of Vaults and Collators.
 
 Other useful resources:
 
@@ -42,7 +42,5 @@ Other useful resources:
 
 ### Contributing
 
-Interlay and Kintsugi are an open-source projects. We welcome contributions to the code and documentation. 
+Interlay and Kintsugi are an open-source projects. We welcome contributions to the code and documentation.
 If you want to add, improve, or fix errors, please open a PR on [GitHub](https://github.com/interlay) or ping us on [Discord](https://discord.gg/invite/interlay).
-
-

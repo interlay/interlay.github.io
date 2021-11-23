@@ -13,9 +13,8 @@ At the end of this guide you will have:
 
 ## Prerequisites
 
-?> You can skip these prerequisites if you have successfully completed issuing interBTC.
-
-Make sure you have the required [polkadot-js extension and a Bitcoin wallet](start/prereq.md).
+- Make sure you have the required [polkadot-js extension and a Bitcoin wallet](start/prereq.md).
+- Make sure you [have interBTC in your wallet](guides/issue.md)
 
 ## Redeem interBTC
 
@@ -23,20 +22,25 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](sta
 
 The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Redeem tab.
 
-?> If you have any historic or pending Redeem requests, they are displayed in a table below the modal. Clicking on a row of this table will open a pop-up with more details about the request.
+### 2. Get testnet DOT via the Faucet
 
-### 2. Fill in the details of your Redeem request
+Get some testnet DOT via the faucet with the "Request DOT" button, right-hand side of top bar, before making a redeem request. You will need this to pay for the bridge transaction fees.
+
+### 3. Enter the amount of interBTC you want to redeem and the BTC address you want to receive your BTC to
 
 Enter the amount of interBTC you want to redeem, and the Bitcoin address where you want to receive the redeemed Bitcoin amount. Supported address types: [P2SH](https://en.bitcoin.it/wiki/P2SH), [P2PKH](https://en.bitcoin.it/wiki/P2PKH) and [P2WPKH](https://wiki.trezor.io/P2WPKH).
 
-?> Ensure you have some testnet DOT before making a redeem request. If you haven't already, you can request some via the faucet ("Request DOT" button, right-hand side of top bar). You will need this to pay for parachain transaction fees.
+Check the bridge fee that is subtracted from your redeemed amount and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
-Check the bridge fee that will be subtracted from your redeemed amount and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
+### 4. Wait for confirmation of your BTC transaction and receive interBTC automatically
 
-The Polkadot address of the vault assigned to fulfill this request will be displayed.
+The Redeem request is now being processed by the Vault. Wait for a few minutes (might take upt to 24 hours) and you will receive your Bitcoin at the address you specified.
 
-?> The maximum amount of interBTC that you can redeem in a single request is limited by the maximum amount of BTC locked in a single vault. High-value Redeem requests, executed with multiple vaults simultaneously, will be added as a feature before mainnet launch.
+### 5. Optional: Check the status of your redeem request
 
-### 3. Confirm your request was successful
+You can check the status of your redeem request in the [Transactions](https://bridge.interlay.io/transactions) view in the **"Redeem Requests"** table. Note that Vaults have 24 hours to complete your request.
 
-The Redeem request is now being processed by the vault. Wait for a few minutes and you will receive your Bitcoin at the address you specified. You can see more details about your redeem request by clicking on it in the  **"Redeem Requests"** table below the app modal.
+## Questions?
+
+- Checkout out the [FAQ](https://www.notion.so/interlay/Interlay-FAQ-5e3019b1cfd94f6693dc186e9640e607#277286bac5224dbbab565af4fe1ec5d5)
+- Join our [Discord](https://discord.com/invite/KgCYK3MKSf)
