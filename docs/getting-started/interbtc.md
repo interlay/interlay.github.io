@@ -2,9 +2,9 @@
 
 ## Overview
 
-interBTC is a 1:1 Bitcoin backed asset that can be used to invest, earn and pay with BTC across the DeFi ecosystem on Polkadot, Ethereum, Cosmos and many more. 
+interBTC is a 1:1 Bitcoin backed asset that can be used to invest, earn and pay with BTC across the DeFi ecosystem on Polkadot, Ethereum, Cosmos and many more.
 
-While interBTC exists, BTC held locked by Vaults on Bitcoin - individuals or service providers who
+While interBTC exists, BTC held locked by collateralized Vaults on Bitcoin - individuals or service providers who
 
 - (1) receive BTC into custody for safekeeping while interBTC exists,
 - (2) lock collateral in a MakerDAO-inspired multi-collateral system to protect users against theft and loss of BTC.
@@ -41,7 +41,6 @@ Summarizing, to trust interBTC, you only need to:
 
 ?> interBTC is based on the XCLAIM framework - a peer-reviewed paper published at IEEE S&P, one of the most prestigious security conferences. You can [read the paper](https://eprint.iacr.org/2018/643.pdf) and checkout more of the [research published by the team behind Interlay](../about/research).
 
-
 ?> A more in-depth discussion about security can be found in the 200+ page [specification](https://spec.interlay.io/security_performance/liquidations.html).
 
 ## Network Participants
@@ -60,13 +59,11 @@ Both can redeem owned interBTC for BTC at any time (requires a Bitcoin wallet).
 
 **Collators** maintain the Interlay parachain by collecting transactions and producing security proofs which are verified by validators of the Polkadot Relay Chain. This is a Polkadot-specific role. [Read more about Collators in the Polkadot Wiki](https://wiki.polkadot.network/docs/learn-collator).
 
-Parachain’s NPoS consensus, as per Polkadot consensus rules. Requirement: (1) Parachain full node and (2) DOTs.
-
 <div id="step-by-step"></div>
 
 ## Mint and Redeem
 
-### Wrap BTC to mint interBTC
+### Lock BTC to mint interBTC
 
 A user (liquidity provider) mints new interBTC.
 
@@ -106,9 +103,9 @@ To protect users against theft and loss of BTC, Vaults must lock collateral with
 
 ### Multi-Collateral System
 
-Thereby, Vault operators can freely choose to lock collateral in any of the assets whitelisted by [protocol governance](/getting-started/interbtc?id=governance). Each Vault is then associated with one specific collateral asset - and a single operator can maintain an unlimited amount of Vaults. Each collateral asset currency has a governance-set threshold determining how much of it can be locked as collateral in the system. Once this threshold is reached, new Vaults must pick from other collateral assets, or request to increase the threshold with protocol governance.
+Vault operators can freely choose to lock collateral in any of the assets whitelisted by [protocol governance](/getting-started/interbtc?id=governance). Each Vault is then associated with one specific collateral asset - and a single operator can maintain an unlimited amount of Vaults. Each collateral asset currency has a governance-set threshold determining how much of it can be locked as collateral in the system. Once this threshold is reached, new Vaults must pick from other collateral assets, or request to increase the threshold with protocol governance.
 
-For users, the distinction between collaterals only becomes relevant when redeeming interBTC for BTC. Users can pick specific Vaults (one or multiple) for the redeem process - and are reimbursed in these specific Vault's collateral in case of failure. 
+For users, the distinction between collaterals only becomes relevant when redeeming interBTC for BTC. Users can pick specific Vaults (one or multiple) for the redeem process - and are reimbursed in these specific Vault's collateral in case of failure.
 
 Read more about the collateral system and re-balancing in the [Collateral section of the Vault page](/vault/overview?id=collateral).
 
@@ -121,7 +118,6 @@ Vaults may be liquidated, i.e., have their collateral slashed and used to re-bal
 - or are severly under-collateralized
 
 Read more about liquidations in the [Liquidations section of the Vault page](/vault/overview?id=liquidations).
-
 
 ## kBTC: Canary Network
 
@@ -136,7 +132,7 @@ interBTC and kBTC are the same product at the core, with different parameterizat
 - **kBTC**, on the other hand, will be open to more experimental assets, including such that have lower liquidity — e.g. new forms of staking derivatives, LP tokens, young DeFi assets, perhaps even NFTs.
 
 
-# interBTC vs Competitors 
+# interBTC vs Competitors
 
 > *Rome was not built in one day* (proverb)
 
