@@ -7,7 +7,7 @@
   * [Interlay 101](getting-started/interlay-101.md)
   * [Learn interBTC](getting-started/interbtc.md)
   * [Governance](getting-started/governance.md)
-  * [FAQ 🡥](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
+  * [FAQ &#129125;](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
 
 * **Interlay Mainnet (Polkadot)**
 
@@ -55,7 +55,7 @@
   * [Roadmap](about/roadmap.md)
   * [Research](about/research.md)
   * [Glossary](about/glossary.md)
-  * [Formal Specification 🡥](https://spec.interlay.io/)
+  * [Formal Specification &#129125;](https://spec.interlay.io/)
 
 * **Adding Translations**
 
