@@ -52,10 +52,10 @@
 
 * **Further Reading**
 
-* [Roadmap](about/roadmap.md)
-* [Research](about/research.md)
-* [Glossary](about/glossary.md)
-* [Formal Specification 🡥](https://spec.interlay.io/)
+  * [Roadmap](about/roadmap.md)
+  * [Research](about/research.md)
+  * [Glossary](about/glossary.md)
+  * [Formal Specification 🡥](https://spec.interlay.io/)
 
 * **Adding Translations**
 
