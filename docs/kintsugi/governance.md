@@ -52,7 +52,7 @@ Below, we visualize the percentage of `against` (in relation to the `electorate`
 
 As we can see, at low turnouts, the number of `against` votes must be significantly higher than the `approve` votes. As we get closer to 100% turnout we get closer to 50% `against` versus 50% `approve`.
 
-?> The idea behind this that proposals which the community do not deem impactful (e.g. minor parameter changes, small treasury proposals, etc.) will tend to pass, unless strongly opposed. If a disputed vote starts gaining higher turnouts, we move towards a traditional simple majority vote.
+?> The idea behind this is that proposals which the community do not deem impactful (e.g. minor parameter changes, small treasury proposals, etc.) will tend to pass, unless strongly opposed. If a disputed vote starts gaining higher turnouts, we move towards a traditional simple majority vote.
 
 ## Stake-to-Vote
 
@@ -89,15 +89,16 @@ The process of proposals and voting is very similar to [Polkadot’s governance 
 
 ### Process
 
-1) Any vKINT token holder can submit a public proposal. This "freezes" vKINT tokens (i.e., 1 vKINT can only be used with 1 proposal at a time).
-2) Other vKINT holders can [second](https://wiki.polkadot.network/docs/maintain-guides-democracy#seconding-a-proposal) that proposal, specifying how much vKINT they with to freeze.
+1) Any vKINT token holder can submit a public proposal. This requires a deposit which "reserves" vKINT tokens (i.e., restricts the total balance leftover for voting).
+2) Other vKINT holders can [second](https://wiki.polkadot.network/docs/maintain-guides-democracy#seconding-a-proposal) that proposal, specifying how much vKINT they want to reserve.
 
-?> Freezing vKINT has no impact on the lock duration. This is merely a way to limit the number of proposals you can vote on in parallel. Example: you have 10 vKINT. You second a proposal with 2 vKINT. You now use 8 vKINT to second other proposals (or make new proposals yourself), while 2 are frozen until proposal becomes a referendum or expires.  
+?> Reserving vKINT has no impact on the lock duration. This is merely a way to limit the number of proposals you can make in parallel. Example: you have 10 vKINT and second a proposal with 2 vKINT. You now use 8 vKINT to second other proposals (or make new proposals yourself), while 2 are reserved until the proposal becomes a referendum.  
 
-3) Once every ``7 days`` (= `LaunchPeriod`) the proposal with the highest vKINT backing becomes a referenda (i.e., goes to vote)
-4) vKINT holders vote on the referenda. 
-5) After the voting period, votes are counted (see [optimistic governance](kintsugi/governance?id=optimistic-governance) above)
-6) If the vote passed, the proposal is excecuted.  
+3) Once every ``7 days`` (= `LaunchPeriod`) the proposal with the highest vKINT backing becomes a referenda (i.e., goes to vote).
+4) All reserved proposal deposits are released.
+5) vKINT holders vote on the referenda. 
+6) After the voting period, votes are counted (see [optimistic governance](kintsugi/governance?id=optimistic-governance) above)
+7) If the vote passed, the proposal is executed.
 
 ## Technical Committee
 
