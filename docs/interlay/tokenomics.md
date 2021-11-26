@@ -79,7 +79,7 @@ Starting in year 5, the community receives 100% of newly minted INTR as part of 
     <td>Team &amp; early backers </td>
     <td>20%</td>
     <td>Airdrop shortly after parachain launch<br></td>
-    <td>48 weeks lockup, followed by 48 weeks linear vesting. Internal investor vs team breakdown to be released. </td>
+    <td>48 weeks lockup, followed by 144 weeks linear vesting. Internal investor vs team breakdown to be released. </td>
   </tr>
   <tr>
     <td>Foundation reserve (future development and ecosystem funding)</td>
