@@ -1,3 +1,3 @@
 # Interlay's Decentralized Governance
 
-Coming soon
+Coming soon - with learnings from [Kintsugi governance](../kintsugi/governance.md)

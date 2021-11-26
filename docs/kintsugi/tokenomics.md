@@ -33,7 +33,7 @@ Specifically, the emission schedule for the first 6 years looks as follows:
 KINT will be controlled by the community:
 
 * **70% is distributed to the community** as airdrops and block rewards.  
-  - 40% to Vault rewards;
+  - 30% to Vault rewards;
   - 35% to the on-chain Treasury;
   - 5% to stake-to-vote staking rewards.
 * 30% is airdropped to the Interlay team, and early & future investors, who funded the development of the protocol - subject to a 1-year cliff followed by 1-year linear vesting.
@@ -130,7 +130,7 @@ The on-chain Treasury reserve is in turn distributed as follows (suggestion - fi
   <tr>
     <td>Reserve (future development and ecosystem funding)</td>
     <td>10%</td>
-    <td>No liquid until spent. Vesting to be defined for each individual spend. </td>
+    <td>Not liquid until spent. Vesting to be defined for each individual spend. </td>
   </tr>
 </tbody>
 </table>

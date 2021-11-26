@@ -10,13 +10,11 @@
   * [FAQ :notebook_with_decorative_cover:](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
 
 * **Interlay Mainnet (Polkadot)**
-
-*Coming soon*
-
-<!--  * [Overview](interlay/overview.md)
+  
   * [Crowdloans](interlay/crowdloans.md)
   * [Tokenomics](interlay/tokenomics.md)
--->
+  * [Governance](interlay/governance.md)
+
 
 * **Kintsugi Canarynet (Kusama)**
 
