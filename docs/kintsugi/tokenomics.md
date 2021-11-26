@@ -128,7 +128,7 @@ The on-chain Treasury reserve is in turn distributed as follows (suggestion - fi
     <td>48 weeks lockup, followed by 48 weeks linear vesting. Internal investor vs team breakdown to be released. </td>
   </tr>
   <tr>
-    <td>Reserve (future development and ecosystem funding)</td>
+    <td>Foundation Reserve (future development and ecosystem funding)</td>
     <td>10%</td>
     <td>No liquid until spent. Vesting to be defined for each individual spend. </td>
   </tr>
@@ -138,7 +138,7 @@ The on-chain Treasury reserve is in turn distributed as follows (suggestion - fi
 
 ### Circulating Supply
 
-Due to the nature of the stake-to-vote governance mechanism of KINT, it is impossible to accurately predict the circulating supply (holds actively participating in governance may decide to stake KINT for prolonged periods). In addition, the reserves controlled by the on-chain treasury may be distributed to foster project development and ecosystem growth, as determined by community governance (KINT holders). 
+Due to the nature of the stake-to-vote governance mechanism of KINT, it is impossible to accurately predict the circulating supply (holds actively participating in governance may decide to stake KINT for prolonged periods). In addition, the reserves controlled by the on-chain treasury may be distributed to foster project development and ecosystem growth, as determined by community governance (KINT holders).
 
 
 As such, the numbers below are **pure estimates and will very likely be subject to change over the first 2-3 years of the network's existence. Use with caution!**.
