@@ -12,7 +12,7 @@ Below is a summary of the Interlay token economy, as described in the [token eco
 The INTR token’s main purposes are:
 
 * **Governance**- INTR holders vote on governance proposals and elect council members to make operational decisions. 
-* **Utility**. Mit-term, Interlay will support transaction fee payments in INTR and other digital assets, in addition to DOT. 
+* **Utility**. Mid-term, Interlay will support transaction fee payments in INTR and other digital assets, in addition to DOT. 
 
 ## Supply and Emission
 
