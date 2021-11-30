@@ -11,18 +11,16 @@
 
 * **Interlay Mainnet (Polkadot)**
 
-*Coming soon*
-
-<!--  * [Overview](interlay/overview.md)
-  * [Crowdloans](interlay/crowdloans.md)
   * [Tokenomics](interlay/tokenomics.md)
--->
+  * [Crowdloans](interlay/crowdloans.md)
+  * [Governance](interlay/governance.md)
+
 
 * **Kintsugi Canarynet (Kusama)**
 
   * [Overview](kintsugi/overview.md)
-  * [Crowdloans](kintsugi/crowdloans.md)
   * [Tokenomics](kintsugi/tokenomics.md)
+  * [Crowdloans](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
 
 * **Guides (Testnet)**
