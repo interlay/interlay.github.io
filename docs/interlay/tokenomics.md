@@ -36,7 +36,7 @@ INTR will be controlled by the community:
 
 Starting in year 5, the community receives 100% of newly minted INTR as part of the 2% annual inflation.
 
-*For a detailed breakdown and explanation of the INTR distribution, check out the [token economy whitepaper released by Interlay Labs](https://github.com/interlay/whitepapers)*
+*For a detailed breakdown and explanation of the INTR distribution, check out the [token economy whitepaper released by Kintsugi Labs](https://github.com/interlay/whitepapers)*
 
 
 ## Emission and Vesting Schedules
