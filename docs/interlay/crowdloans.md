@@ -102,7 +102,7 @@ Any INTR not used for the Early bird, Challenges, Referral, Kintsugi Legends, an
 
 ## Participating in the Crowdloan
 
-The crowdloan is a fully permissionless event - you make your own judgement on if and how you would like to participate.
+The crowdloan is a fully permissionless event - you make your own judgment if and how you would like to participate.
 
 !> You will need to read and accept the Terms and Conditions to qualify for the airdrop!
 
