@@ -20,12 +20,8 @@ KINT features an unlimited supply. The emission schedule is defined as follows:
 
 
 
-* 10 million KINT emitted over the first 4 years (4:3:2:1 million) 
+* 10 million KINT emitted over the first 4 years
 * 2% annual inflation afterwards, indefinitely.
-
-Specifically, the emission schedule for the first 6 years looks as follows:
-
-![Crowdloan Bonuses](../_assets/img/kintsugi/emission_schedule.png)
 
 
 ### Distribution

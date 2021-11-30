@@ -1,9 +1,9 @@
 # The Interlay Crowdloan
 
-Interlay participates in the Kusama parachain auctions and supports a crowdloan to enable the community to vote.
-To participate in the crowdloan, you need to lock your KSM and vote for Interlay to become a parachain.
+Interlay participates in the Polkadot parachain auctions and supports a crowdloan to enable the community to vote.
+To participate in the crowdloan, you need to lock your DOT and vote for Interlay to become a parachain.
 
-Below is a summary of the Interlay crowdloan details, as described in the [token economy whitepaper released by Interlay Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Interlay_Token_Economy.pdf).
+Below is a summary of the Interlay crowdloan details, as described in the [token economy whitepaper released by Kintsugi Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Interlay_Token_Economy.pdf).
 
 ## Hard Facts
 
@@ -98,17 +98,17 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
 </tbody>
 </table>
 
-Any INTR not used for the Core, Early, Referral and Success Airdrop will be distributed proportionally among all participants, further increasing the ratio of INTR per locked KSM.
+Any INTR not used for the Core, Early, Referral and Success Airdrop will be distributed proportionally among all participants, further increasing the ratio of INTR per locked DOT.
 
 ## Participating in the Crowdloan
 
 The crowdloan is a fully permissionless event - you make your own judgement on if and how you would like to participate.
 
-!> You will need to read and accept the [Terms and Conditions](TODO) to qualify for the airdrop!
+!> You will need to read and accept the Terms and Conditions to qualify for the airdrop!
 
 We recommend the following ways to participate:
 
 1. Via the [Interlay crowdloan website](https://crowdloan.interlay.io/) using the Polkadot.js browser extension
-3. Via partner exchanges (tbc)
-4. Via partner DeFi platforms (tbc)
-5. Via partner (mobile) wallets (tbc)
+2. Via partner exchanges (tbc)
+3. Via partner DeFi platforms (tbc)
+4. Via partner (mobile) wallets (tbc)

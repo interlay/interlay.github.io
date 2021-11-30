@@ -5,14 +5,14 @@ Interlay will be governed by its community from day 1 - via INTR, Interlay’s g
 
 ?> _INTR tokens will be distributed to network participants, builders and early backers as airdrops and block-rewards. There will be no public sale or ICO._
 
-Below is a summary of the Interlay token economy, as described in the [token economy whitepaper released by Kintsugi Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Interlay_Token_Economy.pdf).
+Below is a summary of the Interlay token economy, as described in the [token economy whitepaper released by Kintsugi Labs](https://github.com/interlay/whitepapers).
 
 ## Key Functions of INTR
 
 The INTR token’s main purposes are:
 
 * **Governance**- INTR holders vote on governance proposals and elect council members to make operational decisions. 
-* **Utility**. Mit-term, Interlay will support transaction fee payments in INTR and other digital assets, in addition to KSM. 
+* **Utility**. Mit-term, Interlay will support transaction fee payments in INTR and other digital assets, in addition to DOT. 
 
 ## Supply and Emission
 
@@ -31,12 +31,12 @@ INTR will be controlled by the community:
   - 10% as first crowdloan paradrop;
   - 25% to the on-chain Treasury;
   - 5% to stake-to-vote staking rewards.
-* 20% to the Interlay team & early backers who funded the development of the protocol - subject to a 1-year cliff followed by 1-year linear vesting.
+* 20% to the Interlay team & early backers who funded the development of the protocol - subject to a 48-week cliff followed by 144 weeks of linear vesting.
 * 10% to a Foundation reserve, to be used for funding ecosystem growth and future development.
 
 Starting in year 5, the community receives 100% of newly minted INTR as part of the 2% annual inflation.
 
-*For a detailed breakdown and explanation of the INTR distribution, check out the [token economy whitepaper released by Interlay Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Interlay_Token_Economy.pdf)*
+*For a detailed breakdown and explanation of the INTR distribution, check out the [token economy whitepaper released by Interlay Labs](https://github.com/interlay/whitepapers)*
 
 
 ## Emission and Vesting Schedules

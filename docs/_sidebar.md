@@ -10,17 +10,17 @@
   * [FAQ :notebook_with_decorative_cover:](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
 
 * **Interlay Mainnet (Polkadot)**
-  
-  * [Crowdloans](interlay/crowdloans.md)
+
   * [Tokenomics](interlay/tokenomics.md)
+  * [Crowdloans](interlay/crowdloans.md)
   * [Governance](interlay/governance.md)
 
 
 * **Kintsugi Canarynet (Kusama)**
 
   * [Overview](kintsugi/overview.md)
-  * [Crowdloans](kintsugi/crowdloans.md)
   * [Tokenomics](kintsugi/tokenomics.md)
+  * [Crowdloans](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
 
 * **Guides (Testnet)**
