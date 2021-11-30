@@ -98,7 +98,7 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
 </tbody>
 </table>
 
-Any INTR not used for the Core, Early, Referral and Success Airdrop will be distributed proportionally among all participants, further increasing the ratio of INTR per locked DOT.
+Any INTR not used for the Early bird, Challenges, Referral, Kintsugi Legends, and Strong supporters airdrop will be distributed proportionally among all participants, further increasing the ratio of INTR per locked DOT.
 
 ## Participating in the Crowdloan
 
