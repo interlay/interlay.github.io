@@ -38,7 +38,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-parachain-1-2-0 \
+  interlayhq/interbtc:interbtc-parachain-1-3-0 \
   interbtc-parachain \
   --base-path=/data \
   --chain=kintsugi \
@@ -63,7 +63,7 @@ docker run \
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-standalone-1-2-0 \
+  interlayhq/interbtc:interbtc-standalone-1-3-0 \
   interbtc-standalone \
   --base-path=/data \
   --chain=testnet \
@@ -84,7 +84,7 @@ Download the pre-built binary and map the directory to the local `base-path`.
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.2.0/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.3.0/interbtc-parachain
 chmod +x interbtc-parachain
 ./interbtc-parachain \
   --base-path=${PWD}/data \
@@ -107,7 +107,7 @@ chmod +x interbtc-parachain
 #### **Testnet**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.2.0/interbtc-standalone
+wget https://github.com/interlay/interbtc/releases/download/1.3.0/interbtc-standalone
 chmod +x interbtc-standalone
 ./interbtc-standalone \
   --base-path=${PWD}/data \
@@ -139,12 +139,12 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 ?> This step will take some time depending on your hardware.
 
-Clone the interBTC bridge code, checkout release `1.2.0`, and build the node:
+Clone the interBTC bridge code, checkout release `1.3.0`, and build the node:
 
 ```shell
 git clone git@github.com:interlay/interbtc.git
 cd interbtc
-git checkout 1.2.0
+git checkout 1.3.0
 cargo build --release
 ```
 
