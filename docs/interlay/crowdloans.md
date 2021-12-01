@@ -78,7 +78,7 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
   <tr>
     <td>Referral program</td>
     <td>5% </td>
-    <td>of base reward per referred DOT</td>
+    <td>each for the referrer and referred. [Minimum crowdloan](https://wiki.polkadot.network/docs/learn-crowdloans#supporting-a-crowdloan-campaign) contribution required for both accounts.</td>
   </tr>
   <tr>
     <td>Kintsugi Legends</td>
