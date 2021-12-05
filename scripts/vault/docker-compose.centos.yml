@@ -2,6 +2,7 @@ version: "3.8"
 services:
   bitcoind:
     image: "ruimarinho/bitcoin-core:0.21"
+    network_mode: host
     command:
       - -testnet
       - -server
@@ -13,26 +14,23 @@ services:
       - -rpcuser=rpcuser
       - -rpcpassword=rpcpassword
       - -fallbackfee=0.0002
-    ports:
-      - "18332:18332"
     volumes:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   vault:
-    image: "interlayhq/interbtc-clients:vault-1-0-4"
+    image: "interlayhq/interbtc-clients:vault-0-8-2"
+    network_mode: host
     command:
       - vault
       - --no-bitcoin-block-relay
       - --bitcoin-rpc-url
-      - "http://bitcoind:18332"
+      - "http://localhost:18332"
       - --bitcoin-rpc-user
       - rpcuser
       - --bitcoin-rpc-pass
       - rpcpassword
       - --network
       - testnet
-      - --currency-id
-      - dot
       - --keyfile
       - /keyfile.json
       - --keyname
@@ -54,6 +52,7 @@ services:
     restart: unless-stopped
   collator:
     image: "interlayhq/interbtc:interbtc-standalone-0.8.5"
+    network_mode: host
     command:
       - interbtc-standalone
       - --base-path=/interbtc
