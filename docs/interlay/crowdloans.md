@@ -15,7 +15,7 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
   </tr>
   <tr>
     <td>Crowdloan start</td>
-    <td>~ 15 December 2021 (depends on Polkadot governance)</td>
+    <td>~ 15 December 2021</td>
   </tr>
   <tr>
     <td>Parachain go-llive (if winner)</td>
