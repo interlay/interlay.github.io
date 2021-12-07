@@ -19,7 +19,7 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
   </tr>
   <tr>
     <td>Parachain go-llive (if winner)</td>
-    <td>11 March 2021 (same for all)</td>
+    <td>11 March 2022 (same for all)</td>
   </tr>
   <tr>
     <td></td>
