@@ -51,4 +51,4 @@ You can get testnet DOT by clicking on the faucet link in the top bar of bridge.
 
 ?> These testnet DOT are only usable on interBTC. They are **not real DOT and have no economic value**.
 
-### Great! You're now ready to [ issue your first interBTC](/start/issue)
+### Great! You're now ready to [ issue your first interBTC](/guides/issue)

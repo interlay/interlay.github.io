@@ -73,7 +73,7 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
   <tr>
     <td>Challenges</td>
     <td>2.5% <br>2.5% </td>
-    <td>Solve Interlay quiz <a href="">(try now &#10148;)</a> <br>Mint interBTC on testnet <a href="https://bridge.interlay.io/">(try now &#10148;)</a> - MUST use <a href="https://wiki.polkadot.network/docs/learn-accounts">same account!</a></td>
+    <td>Solve Interlay quiz <a href="https://interlay.typeform.com/InterlayQuiz">(try now &#10148;)</a> <br>Mint interBTC on testnet <a href="https://bridge.interlay.io/">(try now &#10148;)</a> - MUST use <a href="https://wiki.polkadot.network/docs/learn-accounts">same account!</a></td>
   </tr>
   <tr>
     <td>Referral program</td>
@@ -98,11 +98,11 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
 </tbody>
 </table>
 
-Any INTR not used for the Core, Early, Referral and Success Airdrop will be distributed proportionally among all participants, further increasing the ratio of INTR per locked DOT.
+Any INTR not used for the Early bird, Challenges, Referral, Kintsugi Legends, and Strong supporters airdrop will be distributed proportionally among all participants, further increasing the ratio of INTR per locked DOT.
 
 ## Participating in the Crowdloan
 
-The crowdloan is a fully permissionless event - you make your own judgement on if and how you would like to participate.
+The crowdloan is a fully permissionless event - you make your own judgment if and how you would like to participate.
 
 !> You will need to read and accept the Terms and Conditions to qualify for the airdrop!
 
