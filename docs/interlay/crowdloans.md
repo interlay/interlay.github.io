@@ -29,7 +29,7 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
     <td>Target slot</td>
     <td>6 - 11 (Batch 2)</td>
   </tr>
-    <tr>
+  <tr>
     <td>Parachain lease period / DOT lockup </td>
     <td>96 weeks</td>
   </tr>
@@ -38,12 +38,10 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
     <td>10% of the initial 4-year supply (100,000,000 INTR)</td>
   </tr>
   <tr>
-    <tr>
     <td>Vesting</td>
     <td>30% available when transfers are enabled. 70% vests linearly over 96 weeks</td>
   </tr>
   <tr>
-    <tr>
     <td>Airdrop distribution</td>
     <td>Proportional</td>
   </tr>
@@ -54,7 +52,7 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
 </tbody>
 </table>
 
-## Bonuses 
+## Bonuses
 
 <table>
 <thead>
@@ -78,7 +76,7 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
   <tr>
     <td>Referral program</td>
     <td>5% </td>
-    <td>each for the referrer and referred. [Minimum crowdloan](https://wiki.polkadot.network/docs/learn-crowdloans#supporting-a-crowdloan-campaign) contribution required for both accounts.</td>
+    <td>each for the referrer and referred. <a href="https://wiki.polkadot.network/docs/learn-crowdloans#supporting-a-crowdloan-campaign">Minimum crowdloan</a> contribution required for both accounts.</td>
   </tr>
   <tr>
     <td>Kintsugi Legends</td>
