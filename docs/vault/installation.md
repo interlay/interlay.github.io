@@ -44,7 +44,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -134,7 +134,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -239,7 +239,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
