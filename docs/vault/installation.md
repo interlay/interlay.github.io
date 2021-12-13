@@ -23,6 +23,10 @@ At the end of this document you will have:
 Setup the Vault client using docker-compose. Best if you want to quickly try out running the client.
 </summary>
 
+### 0. Install docker and docker-compose
+
+Make sure [docker](https://docs.docker.com/engine/install/ ) and [docker-compose](https://docs.docker.com/compose/install/) are installed in your system.
+
 ### 1. Download the docker-compose file to start the Vault client and the Bitcoin node
 
 ```shell
@@ -40,7 +44,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -56,7 +60,7 @@ If the Vault spends funds from another wallet this may be marked as theft.
 (Optional) If you already have a locally running Bitcoin testnet node, only start the Vault client:
 
 ```shell
-docker-compose up vault
+docker-compose up vault -d
 ```
 
 ?> You may need to edit the docker-compose to point `--bitcoin-rpc-url` to `http://localhost:18332`.
@@ -64,8 +68,12 @@ docker-compose up vault
 You can run the entire Vault client and the Bitcoin node with the following command:
 
 ```shell
-docker-compose up
+docker-compose up -d
 ```
+
+You can optionally view the running docker containers with command `docker-compose ps`.
+You can optionally view the logs to see what the containers are doing with `docker-compose logs -f vault` and `docker-compose logs -f bitcoind`.
+Please take into account it can take a few hours for the bitcoin-core to sync for the first time.
 
 </details>
 
@@ -107,7 +115,7 @@ mkdir vault && cd vault
 Download the vault binary:
 
 ```shell
-wget https://github.com/interlay/interbtc-clients/releases/download/1.0.2/vault
+wget https://github.com/interlay/interbtc-clients/releases/download/1.0.4/vault
 ```
 
 Make the binary executable:
@@ -126,7 +134,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
@@ -210,12 +218,12 @@ bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcus
 
 ?> This step will take about 45 minutes depending on your CPU.
 
-Clone the Vault code, checkout release `1.0.2`, and build the client:
+Clone the Vault code, checkout release `1.0.4`, and build the client:
 
 ```shell
 git clone git@github.com:interlay/interbtc-clients.git
 cd interbtc-clients
-git checkout 1.0.2
+git checkout 1.0.4
 cargo build -p vault
 ```
 
@@ -231,7 +239,7 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> The mnemonic shown above is for display purposes only. DO NOT share or reuse menumonics.
+!> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 

@@ -38,7 +38,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-parachain-1-0-7 \
+  interlayhq/interbtc:interbtc-parachain-1-4-2 \
   interbtc-parachain \
   --base-path=/data \
   --chain=kintsugi \
@@ -63,7 +63,7 @@ docker run \
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-standalone-1-0-7 \
+  interlayhq/interbtc:interbtc-standalone-1-3-0 \
   interbtc-standalone \
   --base-path=/data \
   --chain=testnet \
@@ -84,7 +84,7 @@ Download the pre-built binary and map the directory to the local `base-path`.
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.0.7/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.4.2/interbtc-parachain
 chmod +x interbtc-parachain
 ./interbtc-parachain \
   --base-path=${PWD}/data \
@@ -107,7 +107,7 @@ chmod +x interbtc-parachain
 #### **Testnet**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.0.7/interbtc-standalone
+wget https://github.com/interlay/interbtc/releases/download/1.3.0/interbtc-standalone
 chmod +x interbtc-standalone
 ./interbtc-standalone \
   --base-path=${PWD}/data \
@@ -139,13 +139,11 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 ?> This step will take some time depending on your hardware.
 
-Clone the interBTC bridge code, checkout release `1.0.7`, and build the node:
+Clone the interBTC bridge code, checkout the appropriate release and build the node:
 
 ```shell
 git clone git@github.com:interlay/interbtc.git
 cd interbtc
-git checkout 1.0.7
-cargo build --release
 ```
 
 ### 3. Run the node
@@ -155,6 +153,9 @@ cargo build --release
 #### **Kintsugi**
 
 ```shell
+git checkout 1.4.2
+cargo build --release
+
 ./target/release/interbtc-parachain \
   --base-path=${PWD}/data \
   --chain=kintsugi \
@@ -176,6 +177,9 @@ cargo build --release
 #### **Testnet**
 
 ```shell
+git checkout 1.3.0
+cargo build --release
+
 ./target/release/interbtc-standalone \
   --base-path=${PWD}/data \
   --chain=testnet \

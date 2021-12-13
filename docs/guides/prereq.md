@@ -1,5 +1,6 @@
-# Getting started with interBTC
+# Setup (Testnet)
 
+?> This guide is for the interBTC tesnet!
 
 To start using interBTC, follow the steps below to set up a Bitcoin and Polkadot testnet wallet.
 
@@ -17,6 +18,7 @@ You can also pick one of the following Bitcoin testnet wallets below:
 - **Bitpay**: https://bitpay.com/wallet/ (Linux; Guide here: https://support.bitpay.com/hc/en-us/articles/360015463612-How-to-Create-a-Testnet-Wallet)
 
 #### Hardware Wallets
+
 You can also use your hardware wallet. The following are tested and have Bitcoin testnet support:
 
 - **Ledger**: https://www.ledger.com/ (Guide: https://coinguides.org/ledger-testnet/)
@@ -41,16 +43,12 @@ You will need the polkadot-js browser extension to test interBTC.
 2. Create a new account.
 3. Connect account to bridge.interlay.io via the polkadot-js pop-up.
 
-?> Please make sure to first create an account before connecting your wallet to bridge.interlay.io!.
+?> Please make sure to first create an account before connecting your wallet to bridge.interlay.io.
 
 ### 4. Getting testnet DOT
 
 You can get testnet DOT by clicking on the faucet link in the top bar of bridge.interlay.io.
 
-!> **Note:** these testnet DOT are only usable on interBTC. They are **not real DOT and have no economic value**!
+?> These testnet DOT are only usable on interBTC. They are **not real DOT and have no economic value**.
 
-
-
-
-
-**Great! You're now ready to  [issue your first interBTC](/start/issue)!**
+### Great! You're now ready to [ issue your first interBTC](/guides/issue)
