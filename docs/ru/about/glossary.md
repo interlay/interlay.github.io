@@ -1,17 +1,17 @@
-# Словарь
+# Glossary
 
-**Interlay** это компания научных исследований и разработок, специализирующаяся на взаимодействии блокчейнов. Interlay представляет будущее, в котором соединение и взаимодействие блокчейнов будет легким и беспрепятственным. Надвигающаяся миссия Interlay — сделать Биткойн совместимым, путем полной децентрализации, устраняя необходимость доверять свои средства третьей стороне . Наши продукты, основанные бывшими кандидатами наук Имперского колледжа Лондона, подтверждаются первоклассными научными работами, а также сотрудничеством с ведущими исследовательскими лабораториями и технологическими компаниями по всему миру.
+**Interlay** is a R&D company focusing on blockchain interoperability. Interlay envisions a future where blockchains seamlessly connect and interact. Interlay’s imminent mission is to make Bitcoin interoperable in a fully trustless and decentralized way. Founded by ex-Imperial College CS PhDs, our products are backed by top-tier scientific papers and collaborate with leading research labs and tech companies around the world.
 
-**Kintsugi Labs** это некоммерческая организация, которая ответственна, непосредственно, за запуск Kintsugi. Их миссия — поддерживать развитие и рост децентрализованной сети. 
+**Kintsugi Labs** is a non-profit oriented organization responsible for the Kintsugi launch, whose mission is to support the development and growth of the decentralized network. 
 
-**interBTC** это флагманский продукт компании Interlay — работа с биткойном на любом блокчейне. Актив, обеспеченный биткойном один к одному (1:1), полностью совместимый и устойчивый к цензуре. interBTC будет размещен как парачейн Polkadot и подключен к Cosmos, Ethereum и другим основным сетям DeFi. 
+**interBTC** is Interlay’s flagship product - Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant. interBTC will be hosted as a Polkadot parachain and connected to Cosmos, Ethereum and other major DeFi networks. 
 
-**INTR** это токен управления interBTC, распределяемый между участниками сети и используемый для избрания членов совета и голосования по различным предложениям. INTR будет использоваться для управления парачейном interBTC на Polkadot. 
+**INTR** is interBTC’s governance token, distributed across network participants and used to elect council members and vote on proposals. INTR will be used to govern the interBTC parachain on Polkadot. 
 
-**Kintsugi** это канареечная сеть Interlay для interBTC, а также — тестовая сеть с реальной экономической ценностью, развернутой на Kusama (канареечная сеть Polkadot). Kintsugi и interBTC используют одну и ту же кодовую базу —лишь с той разницей, что Kintsugi выйдет на 2–3 версии раньше, чем interBTC, с огромным количеством экспериментальных функций. 
+**Kintsugi** is Interlay’s canary network for interBTC, a testnet with real economic value deployed on Kusama (Polkadot’s canary network). Kintsugi and interBTC share the same code base - with the difference that Kintsugi will be 2-3 releases ahead of interBTC with more experimental features. 
 
-**kBTC** это актив, обеспеченный биткойнами 1:1 в канареечной сети Kintsugi, развернутый на Kusama. Он имеет довольно схож с interBTC, но может иметь больше экспериментальных функций и различные параметризации.
+**kBTC** is a 1:1 Bitcoin-backed asset on the Kintsugi canary network, deployed on Kusama. It follows the same design as interBTC, yet may feature more experimental functions and parameterizations.
 
-**KINT** это токен управления Kintsugi, аналог INTR в Kusama. 
+**KINT** is Kintsugi’s governance token, the Kusama counterpart to INTR. 
 
-**XCLAIM** это протокол, лежащий в основе interBTC и kBTC. XCLAIM изобретен в 2018 году и опубликован в качестве первоклассной рецензируемой научной статьи основателями Interlay. Вы можете ознакомиться с этой статьей [здесь](https://eprint.iacr.org/2018/643).
+**XCLAIM** is the protocol underlying interBTC and kBTC. XCLAIM was invented in 2018, and published as a top-tier, peer-reviewed scientific paper by Interlay founders. You can read the paper [here](https://eprint.iacr.org/2018/643).
