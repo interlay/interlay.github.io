@@ -1,30 +1,27 @@
-# Kintsugi - Interlay's Canary Network
+# Kintsugi - Канареечная сеть Interlay
 
+### kBTC - Радикально открытый Биткоин в сети Kusama
 
-### kBTC - Radically Open Bitcoin on Kusama
+kBTC от Kintsugi принесёт в Kusama радикально открытый биткоин, чтобы запустить ликвидность BTC для таких парачейнов, как Karura, Shiden и Moonriver.
 
-Kintsugi's kBTC brings radically open Bitcoin to Kusama to kickstart liquidity for parachains like Karura, Shiden and Moonriver.
+**kBTC** это актив в сети Kusama, подкрепленный биткоином в соотношении 1:1, безопасность которого будет поддерживаться децентрализованной сетью хранилищ. Пользователи всегда должны быть уверены в том, что биткоин и DeFi платформа, которой они пользуются, абсолютно надежны.
 
-**kBTC** is a 1:1 Bitcoin-backed asset on Kusama, maintained by a decentralized network of collateralized Vaults. Users must only ever trust that Bitcoin and the DeFi platform they use are secure.
+Перейдите к  [разделу interBTC](start/overview.md) этого документа об interBTC, чтобы узнать больше информации об основополагающей децентрализованной кроссчейн технологии (протокол [XCLAIM](https://eprint.iacr.org/2018/643)).
 
-Head over to the  [interBTC chapter](start/overview.md) of this documentation to read more about the underlying trustless and decentralized cross-chain technology (the [XCLAIM](https://eprint.iacr.org/2018/643) protocol).
+### KINT: Децентрализованное управление
 
-### KINT: Decentralized Governance
+С первого дня создания, управление Kintsugi будет находиться в руках сообщества благодаря KINT, токену управления Kintsugi.
 
-Kintsugi is ruled by its community from day one - via KINT, Kintsugi's governance token.
+Предлагаем ознакомиться с [разделом о Токиномике](kintsugi/tokenomics.md) чтобы подробнее узнать о модели KINT, или разделом о процессе [Управления](kintsugi/governance.md).
 
-Read the [Tokenomics chapter](kintsugi/tokenomics.md) to learn about KINT's model, or read about the [Governance](kintsugi/governance.md) process.
+### Аукцион парачейнов и краудлоаны
 
-### Parachain Auction and Crowdloans
+Kintsugi принимает участие в аукционе парачейнов Kusama, чтобы добыть парачейн слот, тем самым предоставив сообществу право голоса.
 
-Kintsugi is participating in the Kusama parachain auctions to win a parachain slot. To allow to community to vote for bringing BTC to Kusama, Kintsugi is running a crowdloan.
+Прочтите [Раздео о Краудлоане](kintsugi/crowdloans.md) чтобы узнать больше информации о распределении KINT, в ходе аукциона и связанных с ним событий.
 
-Read the [Crowdloan chapter](kintsugi/crowdloans.md) to learn more about the KINT distribution and the auction process and events.
+**Если Вас заинтересовал этот вопрос, прочтите [этот документ](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf) изданный Kintsugi Labs, детально описывающий токеномику Kintsugi и его модели управления.**
 
-**For the interested: read the [token economy primer](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf) released by Kintsugi Labs for an in depth understanding of the Kintsugi tokenomics and governance models.**
+### Происхождение Kintsugi
 
-### Kintsugi Origins
-
-Inspired by the ancient [Japanese tradition of embracing the flawed and imperfect](https://en.wikipedia.org/wiki/Kintsugi), Kintsugi accepts the nascent DeFi ecosystem on Kusama as chaotic while constantly being perfected by golden streaks of its community.
-
-
+Вдохновленный  [древней Японской традицией принимать недостатки и несовершенства](https://en.wikipedia.org/wiki/Kintsugi), Kintsugi воспринимает зарождающуюся экосистему DeFi на Kusama как хаотичную, но постоянно совершенствующуюся золотыми проблесками своего сообщества.
