@@ -12,7 +12,7 @@
 * **Interlay Mainnet (Polkadot)**
 
   * [Tokenomics](interlay/tokenomics.md)
-  * [Crowdloans](interlay/crowdloans.md)
+  * [Crowdloans **- Live now!**](interlay/crowdloans.md)
   * [Governance](interlay/governance.md)
 
 
