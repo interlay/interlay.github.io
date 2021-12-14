@@ -34,9 +34,8 @@ Any KINT not used for the Core, Early, Referral and Success Airdrop will be dist
 
 
 ### Power User Bonus: 2% (200 000 KINT) of the initial 4-year KINT supply
+
 To incentivize kBTC adoption, 200 000 KINT will be airdropped to crowdloan participants who then also run Vaults and mint kBTC on Kusama, once Kintsugi is live. These airdrops will happen over the course of the first parachain lease period. In addition, protocol governance may approve special kBTC LP programs for crowdloan participants.
-
-
 
 ## Participating in the Crowdloan
 
@@ -47,3 +46,36 @@ We recommend the following ways to participate:
 1. Participate via the [Kintsugi crowdloan website](https://kintsugi.interlay.io/) using the Polkadot.js browser extension.
 2. Participate via partner exchanges.
 3. Participate via partner mobile wallets.
+
+## Claiming KINT
+
+Follow this guide to claim KINT. This guide applies the following contributors:
+
+* Contributions via https://kintsugi.interlay.io/, please use the account that you have used for the contribution
+* Contributions via https://polkadot.js.org/apps/#/, please use the account that you have used for the contribution
+* Contributions via the Bifrost SALP (https://bifrost.app/vcrowdloan?tab=ksm), please use the account that you have used for the contribution on the Bifrost app
+
+Other contributions, e.g., via exchanges will airdrop KINT tokens through other means. If you have contributed via any other means than the ones listed above, please contact the provider of the contribution for the KINT airdrop.
+
+### 1. Go to the KINT claim website at [ https://kintsugi.interlay.io/](https://kintsugi.interlay.io/)
+
+Scroll down to the claim form. If you have contributed to the Kintsugi crowdloan, you will see your estimated KINT airdrop together with your KSM locked.
+
+Click the checkbox accept the terms and conditions.
+
+![Claim KINT](../_assets/img/kintsugi/claim_kint_1.png)
+
+### 2. Sign the Terms and Conditions by clicking the "Claim KINT" button
+
+You will be asked to sign the terms and conditions via the polkadot.js extension.
+
+?> Signing the T&Cs is free of charge, i.e., there are no transaction fees for signing the T&Cs.
+
+![Sign TCs](../_assets/img/kintsugi/claim_kint_2.png)
+
+### 3. Successfully claimed KINT
+
+It may take up to 48 hours to see and access your KINT in your wallet. Thank you for participating.
+
+![Wait](../_assets/img/kintsugi/claim_kint_3.png)
+
