@@ -10,11 +10,27 @@ Connecting to parachain nodes:
 
 ## Asset API
 
-Querying account balances:
+### Overview of assets
 
-* **KINT**: `api.query.tokens.accounts('address', {Token: 'KINT'})`
-* **kBTC**: `api.query.tokens.accounts('address', {Token: 'KBTC'})`
-* **KSM**: `api.query.tokens.accounts('address', {Token: 'KSM'})`
-* **INTR**: `api.query.tokens.accounts('address', {Token: 'INTR'})`
-* **interBTC**: `api.query.tokens.accounts('address', {Token: 'INTERBTC'})`
-* **DOT**: `api.query.tokens.accounts('address', {Token: 'DOT'})`
+| Asset    | CURRENCY_ID | CURRENCY_INDEX |
+|----------|-------------|----------------|
+| DOT      | DOT         | 0              |
+| interBTC | INTERBTC    | 1              |
+| INTR     | INTR        | 2              |
+| KSM      | KSM         | 10             |
+| kBTC     | KBTC        | 11             |
+| KINT     | KINT        | 12             |
+
+?> For any newly added assets, please refer to the [on-chain implementation](https://github.com/interlay/interbtc/blob/master/primitives/src/lib.rs#L472). We will not update the currency id or index of already published assets.
+
+### Querying account balances
+
+```js
+api.query.tokens.accounts('address', {Token: CURRENCY_ID})
+```
+
+### Transferring tokens extrinsic
+
+```js
+api.tx.tokens.transfer('address', {Token: CURRENCY_ID}, amount)
+```
