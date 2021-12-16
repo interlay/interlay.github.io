@@ -46,6 +46,7 @@
 * **Developers**
 
   * [Overview](developers/overview.md)
+  * [API](developers/api.md)
   * [TypeScript Integration](developers/integration.md)
   * [Documentation](developers/documentation.md)
 
