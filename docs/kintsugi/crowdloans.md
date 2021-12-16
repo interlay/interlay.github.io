@@ -61,7 +61,7 @@ Other contributions, e.g., via exchanges will airdrop KINT tokens through other 
 
 Scroll down to the claim form. If you have contributed to the Kintsugi crowdloan, you will see your estimated KINT airdrop together with your KSM locked.
 
-Click the checkbox accept the terms and conditions.
+You MUST read and accept the terms and conditions to qualify for the airdrop.
 
 ![Claim KINT](../_assets/img/kintsugi/claim_kint_1.png)
 
