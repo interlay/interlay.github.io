@@ -69,7 +69,7 @@ Click the checkbox accept the terms and conditions.
 
 You will be asked to sign the terms and conditions via the polkadot.js extension.
 
-?> Signing the T&Cs is free of charge, i.e., there are no transaction fees for signing the T&Cs.
+?> There are **no** transaction fees for signing the T&Cs.
 
 ![Sign TCs](../_assets/img/kintsugi/claim_kint_2.png)
 
