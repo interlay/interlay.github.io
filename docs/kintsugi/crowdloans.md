@@ -79,3 +79,17 @@ It may take up to 48 hours to see and access your KINT in your wallet. Thank you
 
 ![Wait](../_assets/img/kintsugi/claim_kint_3.png)
 
+### 4. Check your KINT balance on [ polkadot.js.org/apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/chainstate)
+
+?> Ensure that you have the latest metadata by clicking on `Settings` --> `Metadata`.
+
+Go to `Developer` --> `Chain state` --> `tokens` --> `accounts` and enter:
+
+* `AccountId32`: Your account id that can be selected from the dropdown if you hav eadded it to polkadot.js or paste in the address string.
+* `InterbtcPrimitivesCurrencyId`: Select `Token: KINT`
+
+Once your claim is processed, you will find the vested KINT tokens in the `free` balance and the unvested KINT tokens in the `frozen` balance.
+
+![Balance](../_assets/img/kintsugi/claim_kint_4.png)
+
+?> Polkadot.js shows the balance in the smallest denomination. To get to 1 KINT, you have to divide the amount by 10^12. For example, if you have a free balance of 1,000,000,000,000, you have 1 KINT.
