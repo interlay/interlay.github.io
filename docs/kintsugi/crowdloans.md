@@ -79,3 +79,49 @@ It may take up to 48 hours to see and access your KINT in your wallet. Thank you
 
 ![Wait](../_assets/img/kintsugi/claim_kint_3.png)
 
+
+
+## Checking KINT Balance
+
+Withing ~48 hours of accepting the T&Cs and submitting the claim form, you should receive airdropped tokens in you account. Follow these steps to check your balance.
+
+!> Polkadot.js Accounts tab will **not show your KINT balance**. Kintsugi has a generic multi-currency pallet, which allows adding any token easily. However, Polkadot.js does not support this - yet. **Follow the instructions below to view your KINT balance via Polkadot.js Developer tab**
+
+### 1. Go to [ https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
+
+Make sure you check that "Hosted by Kinstugi Labs" is selected in the explorer sidebar.
+
+![Select chain](../_assets/img/kintsugi/check-balance/1_select-kintsugi-chain.png)
+
+### 2. Update Metadata
+
+Go to the "Settings" > "Metadata" tab.
+Click "Update metadata".
+
+?> In some cases, there is no "update" button shown - but the QR code will change automatically. This means the metadata was updated.
+
+![Select chain](../_assets/img/kintsugi/check-balance/2_update-metadata.png)
+
+### 3. View Balance in Developer > Chain state > Token
+
+In the "Developer" tab select "Chain state".
+
+![Select chain](../_assets/img/kintsugi/check-balance/3_chainstate.png)
+
+Then, in the dropdown, select the "token" pallet.
+
+![Select chain](../_assets/img/kintsugi/check-balance/4_select-tokens.png)
+
+Select your Account in the top-level dropdown, and select "KINT" in the currency selector dropdown (see image).
+
+Then click "+" in the top right of the form.
+
+![Select chain](../_assets/img/kintsugi/check-balance/5_enter-form.png)
+
+
+You will now see your KINT balance as follows:
+
+![Select chain](../_assets/img/kintsugi/check-balance/6_view_balance.png)
+
+- **free** shows your **total KINT balance**
+- **frozen** shows how much of your KINT are **still vesting**

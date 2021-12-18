@@ -20,7 +20,7 @@
 
   * [Overview](kintsugi/overview.md)
   * [Tokenomics](kintsugi/tokenomics.md)
-  * [Crowdloans](kintsugi/crowdloans.md)
+  * [Crowdloans - **Airdrop live!**](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
 
 * **Guides (Testnet)**
