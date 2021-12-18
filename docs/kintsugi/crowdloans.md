@@ -123,5 +123,7 @@ You will now see your KINT balance as follows:
 
 ![View balance](../_assets/img/kintsugi/check-balance/6_view_balance.png)
 
+?> Amounts are shown in the smallest currency unit on Kintsugi. To get to the actual KINT **divide by 1,000,000,000,000** (remove 12 decimal points). This is a Polkadot.js feature.
+
 - **free** shows your **total KINT balance**
 - **frozen** shows how much of your KINT are **still vesting**
