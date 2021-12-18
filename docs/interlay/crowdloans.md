@@ -114,6 +114,8 @@ using the [Polkadot.js](https://polkadot.js.org/) browser extension.
 
 !> The minimum contribution amount is 5 DOT. Attention: when using a non-custodial wallets such as Polkadot.js users must hold a [minimum balance of 6.1 DOT](https://support.polkadot.network/support/solutions/articles/65000168651-what-is-the-existential-deposit-) (such that 1.1 DOT are left after you contribute 5 DOT). 
 
+?> Known issue: Polkadot.js not recognized. [Follow these steps to fix](/guides/faq?id=polkadotjs-extension-not-detected-on-crowdloaninterlayio)
+
 ### Via partner exchanges (to be announced soon)
 
 ### Via partner DeFi platforms (to be announced soon)

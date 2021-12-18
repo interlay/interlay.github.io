@@ -87,6 +87,26 @@ Oracles need to submit up-to-date prices every hour. When the oracles are offlin
 
 The interBTC bridge protocols can be halted for a number of reasons. Halting means that users cannot issue or redeem at those points since we require an update to the chain. Reasons to halt the chain include oracles being offline or a Bitcoin fork.
 
+
+## Polkadot.js Extension not detected on crowdloan.interlay.io
+
+Sometimes Polkadot.js can act up. If you are getting `Pick a wallet. Add your account with the Polkadot JS Extension` even if you have Polkadot.js installed and have an active account, this is how to fix it:
+
+![Error message](../_assets/img/guide/error-polkadotjs.png)
+
+1. In the Polkadot.js extension, go to "Settings" (Gear Icon)
+2. Select "Manage Website Access" in the dropdown
+
+![Error message](../_assets/img/guide/polkadot-js-manage-permissions.png)
+
+
+3. Make sure "crowdloan.interlay.io" is set to "allowed"
+
+![Error message](../_assets/img/guide/polkadot-js-allow-crowdloan-page.png)
+
+4. Refresh the page
+
+
 ## More questions?
 
 Reach out on [Discord](https://discord.gg/KgCYK3MKSf) or [open an issue](https://github.com/interlay/interbtc-docs/issues).
