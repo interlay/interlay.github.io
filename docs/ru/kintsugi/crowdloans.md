@@ -1,49 +1,49 @@
-# The Kintsugi Crowdloan
+# Краудлоан Kintsugi
 
-Kintsugi participates in the Kusama parachain auctions and supports a crowdloan to enable the community to vote.
-To participate in the crowdloan, you need to lock your KSM and vote for Kintsugi to become a parachain.
+Kintsugi участвует в аукционах парачейнов Kusama и поддерживает краудлоан, чтобы сообщество могло принять участие в голосовании.
+Чтобы принять участие в краудлоане , вам нужно заблокировать свой KSM и проголосовать за то, чтобы Kintsugi стал парачейном.
 
-Below is a summary of the Kintsugi crowdloan details, as described in the [token economy whitepaper released by Kintsugi Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
+Ниже приводится краткое описание деталей краудлоана Kintsugi, как описано в [whitepaper по токен-экономике, выпущенном Kintsugi Labs] (https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
 
-## Hard Facts
+## Неоспоримые факты
 
-* **Target slot: 6 - 10**
-* **Lease duration: 8 periods (maximum lease duration ~48 weeks)**
-* **Max. lockup target: 200 000 KSM**
+* **Целевой слот: 6 - 10**
+* **Длительность аренды: 8 периодов (максимальная длительность аренды ~48 недель)**
+* **Макс. цель блокировки: 200 000 KSM**
 
-### Crowdloan Airdrop: 10% (1 million KINT) of the initial 4-year supply
+### Краудлоан: 10% (1 млн. КИНТ) от первоначального 4-летнего объема поставок
 
-The main crowdloan airdrop will comprise 10% (1 million KINT) of the initial 4-year KINT supply, with the following vesting schedule:
+Основной краудлоан будет составлять 10% (1 млн. KINT) от начального 4-летнего запаса KINT, со следующим графиком передачи прав:
 
-* **30% transferrable** at launch
-* Remaining **70% linearly vested** over 48-week parachain lease period.
+* **30% можно передать** при запуске
+* Оставшиеся **70% линейно распределяются** в течение 48-недельного периода аренды парачейна.
 
-Thereby, this airdrop will feature the following **special allocations**, to create a proactive crowdloan process:
+Таким образом, в этом эирдропе будут следующие **специальные распределения**, чтобы создать процесс активного краудлоана:
 
-* **Early**: 5% for first 3 days of crowdloan
-* **Referral**: 5% for the referrer and referred
-* **Strong supporter (new!)**: starting with 0.5% at 10 KSM, linearly increasing up to 5% if above 1000 KSM (min.: 10 KSM). *Applied retrospecively, incl. KSM lock-ups before announcement*.
+* **Ранние участники**: 5% за первые 3 днякраудлоана
+* **Рефералы**: 5% для реферера и реферала
+* ** Сильный сторонник (новый!)**: начиная с 0,5% при 10 KSM, линейно увеличивается до 5% при превышении 1000 KSM (мин.: 10 KSM). *Применяется задним числом, включая блокировку KSM до объявления*.
 
-![Strong supporter visualization](../_assets/img/kintsugi/strong-supporter-visual.png)
+![Визуализация сильного сторонника](../_assets/img/kintsugi/strong-supporter-visual.png)
 
-* **Success**: up to 100 000 additional KINT if specific KSM lockup targets are achieved. See table:
+* **Успех**: до 100 000 дополнительных KINT при достижении определенных целей по блокированию KSM. См. таблицу:
 
 ![Crowdloan Bonuses](../_assets/img/kintsugi/crowdloan_bonuses.png)
 
-Any KINT not used for the Core, Early, Referral and Success Airdrop will be distributed proportionally among all participants, further increasing the ratio of KINT per locked KSM.
+Любые KINT, не использованные для основного, раннего, реферального и успешного эирдропа, будут распределены пропорционально между всеми участниками, еще больше увеличивая соотношение KINT на заблокированный KSM.
 
 
-### Power User Bonus: 2% (200 000 KINT) of the initial 4-year KINT supply
-To incentivize kBTC adoption, 200 000 KINT will be airdropped to crowdloan participants who then also run Vaults and mint kBTC on Kusama, once Kintsugi is live. These airdrops will happen over the course of the first parachain lease period. In addition, protocol governance may approve special kBTC LP programs for crowdloan participants.
+### Бонус опытного пользователя: 2% (200 000 KINT) от первоначального 4-летнего запаса KINT.
+Чтобы стимулировать принятие kBTC, 200 000 KINT будут переданы по воздуху участникам краудлоана, которые затем также будут управлять хранилищами и чеканить kBTC на Кусаме, как только Kintsugi начнет работать. Эти выплаты будут осуществляться в течение первого периода аренды парачейна. Кроме того, руководство протокола может утвердить специальные программы kBTC LP для участников краудлоана.
 
 
 
-## Participating in the Crowdloan
+## Участие в краудлоане
 
-The crowdloan is a fully permissionless event - you make your own judgement on if and how you would like to participate.
+Краудлоан является полностью свободным мероприятием - вы сами решаете, хотите ли вы участвовать в нем и каким образом.
 
-We recommend the following ways to participate:
+Мы рекомендуем следующие способы участия:
 
-1. Participate via the [Kintsugi crowdloan website](https://kintsugi.interlay.io/) using the Polkadot.js browser extension.
-2. Participate via partner exchanges.
-3. Participate via partner mobile wallets.
+1. Участвовать через сайт [Kintsugi crowdloan website](https://kintsugi.interlay.io/), используя расширение для браузера Polkadot.js.
+2. Участвовать через партнерские биржи.
+3. Участвуйте через мобильные кошельки партнеров.
