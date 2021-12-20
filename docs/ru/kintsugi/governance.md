@@ -1,131 +1,131 @@
-# Governance: Liquid, Optimistic, Stake-to-Vote
+# Управление: Ликвидное, Оптимистичное, Stake-to-Vote
 
-Kintsugi's governance model is inspired by [Polkadot’s governance structure](https://wiki.polkadot.network/docs/learn-governance), yet introduces two major modifications: (1) liquid, optimistic governance and (2) stake-to-vote.
+Модель управления Kintsugi вдохновлена [структурой управления Polkadot] (https://wiki.polkadot.network/docs/learn-governance), но в нее внесены два основных изменения: (1) Ликвидность, оптимистичная модель управления и (2) Stake-to-Vote.
 
-## Voting Rights
+## Право голоса
 
-### Who can vote?
+### Кто может голосовать?
 
-Any KINT holder can participate in governance. To do so, you need to lock KINT - see [stake-to-vote](kintsugi/governance?id=stake-to-vote) below.
+Любой владелец KINT может участвовать в управлении. Для этого вам необходимо заблокировать KINT - см. ниже [stake-to-vote](kintsugi/governance?id=stake-to-vote).
 
-Both **vested** and **unvested** KINT can be used for voting (and stake-to-vote)!
+Как **инвестированные**, так и **неинвестированные** KINT могут быть использованы для голосования (и stake-to-vote)!
 
-### What can be voted upon?
+### Что может быть поставлено на голосование?
 
-Community governance can propose and vote on essentially any possible modification to the system. 
-Specifically:
+Руководство сообщества может предлагать и голосовать по практически любым возможным изменениям в системе. 
+В частности:
 
-- **Runtime upgrades** (code changes for bugfxes, substrate/library updates, new features, ...)
-- **Parameter upgrades** (collateral whitelisting, liquidation thresholds, accepted oracles, ...)
-- **Treasury spending**
+- **Обновления времени выполнения** (изменения кода для исправления ошибок, обновления субстрата/библиотеки, новые возможности, ...)
+- **Обновления параметров** (белый список залогов, пороги ликвидации, принятые оракулы, ...)
+- **Расходы казны**
 
-?> While many DeFi protocols bet on "gradual decentralization", Interlay focuses **on decentralization from day 1**. This entails a higher risk during the early days of the network, as the community learns to organize - but this risk ultimately pays off in the mid and long run. Kintsugi hence serves as an experiment, betting on the strength of the community.  
+?> В то время как многие протоколы DeFi делают ставку на "постепенную децентрализацию", Interlay фокусируется **на децентрализации с первого дня**. Это влечет за собой повышенный риск в первые дни существования сети, пока сообщество учится организовываться - но этот риск в конечном итоге окупается в среднесрочной и долгосрочной перспективе. Таким образом, Kintsugi выступает в качестве эксперимента, рассчитывая на силу сообщества. 
 
-## Liquid & Optimistic Governance
+## Ликвидное и Оптимистичное управление
 
-To promote a more active governance process and avoid the “lazy voter” problem, Kintsugi implements “optimistic governance”. This means:
+Чтобы способствовать более активному процессу управления и избежать проблемы "ленивого избирателя", Kintsugi внедряет " оптимистичное управление". Это означает:
 
-- **No Council**, only public proposals from community
-- Community can elect a **Technical Committee** to fast-track proposals
-- Referenda are **Super-Majority Against (Negative Turnout Bias)** by default
+- **Нет Совета**, только публичные предложения от сообщества
+- Сообщество может избрать **Технический комитет** для ускоренного рассмотрения предложений
+- Референдумы по умолчанию **Супербольшинство против (отрицательная явка)**.
 
-### Super-Majority Against (Negative Turnout Bias)
+### Сверхбольшинство против (негативная предвзятость явки)
 
-An important distinction is the negative turnout bias (Super-Majority Against​) voting threshold. This is best summarized in the [Polkadot wiki](https://wiki.polkadot.network/docs/learn-governance):
+Важным отличием является порог голосования с отрицательной явкой (Super-Majority Against). Лучше всего это описано в [Polkadot wiki](https://wiki.polkadot.network/docs/learn-governance):
 
-> A heavy super-majority of nay votes is required to reject at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries vote.
+> При низкой явке для отклонения требуется значительное большинство голосов "против", но при увеличении явки до 100% голосование становится простым большинством голосов "за".
 
-The outcome of a vote is determined by the following formula:
+Результат голосования определяется по следующей формуле:
 
-![Negative turnout bias formula](../_assets/img/kintsugi/negative-turnout-bias.png)
+![Формула смещения отрицательных оборотов](../_assets/img/kintsugi/negative-turnout-bias.png)
 
-where
+где
 
-- `against` are the votes against a proposal ("nay")
-- `approve` are the votes in favor of a proposal ("aye")
-- `electorate` is the total voting power of the network
-- `turnout` is the vote turnout (`against + approve`)
+- `против` - голоса против предложения ("против")
+- `одобрить` - голоса, поданные за предложение ("за")
+- `электорат` - общее количество голосов в сети
+- `явка` - это явка избирателей (`против + за`)
 
-Below, we visualize the percentage of `against` (in relation to the `electorate`) votes necessary to fail a proposal:
+Ниже мы представляем процент голосов "против" (по отношению к "электорату"), необходимых для провала предложения:
 
-![Plot: Minimum number of AGAINST votes to fail a vote, for given APPROVE votes](../_assets/img/kintsugi/nay-votes-to-fail-vote.png)
+![Схема: Минимальное количество голосов "ЗА" для провала голосования, для заданных голосов "ПРОТИВ"](../_assets/img/kintsugi/nay-votes-to-fail-vote.png)
 
-As we can see, at low turnouts, the number of `against` votes must be significantly higher than the `approve` votes. As we get closer to 100% turnout we get closer to 50% `against` versus 50% `approve`.
+Как мы видим, при низкой явке число голосов "против" должно быть значительно больше, чем голосов "за". По мере приближения к 100% явке мы приближаемся к 50% "против" против 50% "за".
 
-?> The idea behind this is that proposals which the community do not deem impactful (e.g. minor parameter changes, small treasury proposals, etc.) will tend to pass, unless strongly opposed. If a disputed vote starts gaining higher turnouts, we move towards a traditional simple majority vote.
+?> Идея заключается в том, что предложения, которые сообщество не считает важными (например, незначительные изменения параметров, небольшие предложения по казне и т.д.), как правило, проходят, если только против них нет сильных возражений. Если спорное голосование начнет набирать больше голосов, мы перейдем к традиционному голосованию простым большинством.
 
 ## Stake-to-Vote
 
-To vote on governance proposals, users must lock KINT with the Kintsugi parachain (escrow)- minting vKINT, a non-transferable token representing each user's voting power at any given point in time.
+Чтобы проголосовать за предложения по управлению, пользователи должны заблокировать KINT в парачайне Kintsugi (escrow) - майнинг vKINT, непередаваемого токена, представляющего право голоса каждого пользователя в любой момент времени.
 
-### Hard facts
+### Неопровержимые факты
 
-- The longer KINT are locked, the more vKINT are minted.
-- Lock periods:
-  - **Minimum: 1 week**
-  - **Maximum: 96 weeks** (2x the maximum parachain lease period on Kusama).
-- As time progresses, the vKINT balance **decreases linearly with time** (per block)
-- KINT can be withdrawn at the end of the lock period (all at once)
-- You can extend the lock period at any time (up to the maximum lock period)
+- Чем дольше блокируются KINT, тем больше чеканится vKINT.
+- Периоды блокировки:
+  - **Минимальный: 1 неделя**
+  - **Максимум: 96 недель** (в 2 раза больше максимального срока аренды парачейна на Kusama).
+- С течением времени баланс vKINT **уменьшается линейно со временем** (за блок).
+- KINT могут быть сняты в конце периода блокировки (все сразу).
+- Вы можете продлить период блокировки в любое время (до максимального периода блокировки)
 
-?> The idea is simple: **the longer KINT are locked**, the **more voting power** a voter has, since the voter has a **longer-term stake in the health and success** of Kintsugi.
+?> Идея проста: **Чем дольше KINT заблокирован**, тем **больше голоса** имеет избиратель, поскольку он имеет **долгосрочную заинтересованность в здоровом состоянии и успехе** Kintsugi.
 
-### Staking Rewards
+### Награды за стекинг
 
-Users who lock KINT to mint vKINT and participate in governance receive staking rewards in KINT: 
+Пользователи, которые блокируют KINT для чеканки vKINT и участвуют в управлении, получают вознаграждение за стекинг в KINT:
 
-- Years 1-4: **5% of the initial 4 year supply of KINT**
-- Year 5+: **6.7% of the annual inflation**
+- Годы 1-4: **5% от первоначального 4-летнего предложения KINT**.
+- Год 5+: **6,7% от годовой инфляции**.
 
-The staking rewards are distributed on a per-block basis, proportoinal to the vKINT balance per user (using interBTC's [scalable reward distribution mechanism](https://spec.interlay.io/economics/fees.html#excursion-scalable-reward-distribution)). This means: to keep receiving the same amount of rewards, vKINT locks must be extended periodically.
+Вознаграждения за стекинг распределяются на основе каждого блока, пропорционально балансу vKINT для каждого пользователя (с использованием [масштабируемого механизма распределения вознаграждений] от interBTC (https://spec.interlay.io/economics/fees.html#excursion-scalable-reward-distribution)). Это означает: чтобы продолжать получать одинаковое количество вознаграждений, необходимо периодически продлевать блокировки vKINT.
 
-?> Outlook: In the mid-term, additional criteria may be added to receiving staking rewards, if so decided by Governance. For example, accounts with very active vote participation may be rewarded higher rewards.
+?> Перспективы: В среднесрочной перспективе могут быть добавлены дополнительные критерии для получения вознаграждения за стекинг, если так решит руководство. Например, аккаунты с очень активным участием в голосовании могут получать более высокое вознаграждение.
 
-## Proposals and Referenda
+## Предложения и референдумы
 
-The process of proposals and voting is very similar to [Polkadot’s governance structure](https://wiki.polkadot.network/docs/learn-governance) - with the difference that all proposals are public and undergo a referenda (= voting process), as visualized below:
+Процесс подачи предложений и голосования очень похож на [структуру управления Polkadot](https://wiki.polkadot.network/docs/learn-governance) - с той разницей, что все предложения являются публичными и проходят через референдум (= процесс голосования), как показано ниже:
 
 <img src="../_assets/img/kintsugi/governance.jpeg" alt="KINT Governance" width="400"/>
 
-### Process
+### Процесс
 
-1) Any vKINT token holder can submit a public proposal. This requires a deposit which "reserves" vKINT tokens (i.e., restricts vKINT available for voting on ongoing referenda or seconding other proposals. ).
-2) Other vKINT holders can [second](https://wiki.polkadot.network/docs/maintain-guides-democracy#seconding-a-proposal) that proposal, specifying how much vKINT they want to reserve.
+1) Любой держатель токенов vKINT может подать публичное предложение. Для этого необходимо внести депозит, который "резервирует" токены vKINT (т.е. ограничивает доступность vKINT для голосования на текущих референдумах или поддержания других предложений. ).
+2) Другие держатели vKINT могут [second](https://wiki.polkadot.network/docs/maintain-guides-democracy#seconding-a-proposal) это предложение, указав, сколько vKINT они хотят зарезервировать.
 
-?> Reserving vKINT has no impact on the lock duration. This is merely a way to limit the number of proposals you can make in parallel. Example: you have 10 vKINT and second a proposal with 2 vKINT. You now use 8 vKINT to second other proposals (or make new proposals yourself), while 2 are reserved until the proposal becomes a referendum.  
+?> Резервирование vKINT не влияет на продолжительность блокировки. Это просто способ ограничить количество предложений, которые вы можете делать параллельно. Пример: у вас есть 10 vKINT и вы поддержали предложение с 2 vKINT. Теперь вы используете 8 vKINT, чтобы поддержать другие предложения (или сделать новые предложения самостоятельно), а 2 зарезервированы до тех пор, пока предложение не перейдет в разряд референдума.  
 
-3) Once every ``7 days`` (= `LaunchPeriod`) the proposal with the highest vKINT backing becomes a referenda (i.e., goes to vote).
-4) All vKINT reserved for this proposal are released (i.e., are now available to be used for voting on the new referendum or to second other proposals).
-5) vKINT holders vote on the referenda. 
-6) After the voting period, votes are counted (see [optimistic governance](kintsugi/governance?id=optimistic-governance) above)
-7) If the vote passed, the proposal is executed.
+3) Раз в ``7 дней`` (= ``LaunchPeriod``) предложение с наибольшей поддержкой vKINT становится референдумом (т.е. выходит на голосование).
+4) Все vKINT, зарезервированные для этого предложения, высвобождаются (т.е. теперь могут быть использованы для голосования на новом референдуме или для поддержки других предложений).
+5) Держатели vKINT голосуют на референдумах. 
+6) После окончания периода голосования производится подсчет голосов (см. выше [оптимистичное управление](kintsugi/governance?id=optimistic-governance)).
+7) Если голосование прошло, предложение исполняется.
 
-## Technical Committee
+## Технический комитет
 
-Kintsugi also exhibits a Technical Committee (TC) of developer teams, voted on by the community governance. 
+В Kintsugi также есть Технический комитет (ТК), состоящий из команд разработчиков и голосуемый руководством сообщества. 
 
-The **only function of the TC is fast-tracking proposals**: a fast-tracked instantly goes to vote, even if other proposals have not vKINT backing. This fast-tracking mechanism is used to ensure the system can be upgraded quickly in case of critical bugfixes.
+Единственной функцией ТК является ускоренное отслеживание предложений**: ускоренное предложение мгновенно попадает на голосование, даже если другие предложения не получили поддержку vKINT. Этот механизм ускоренного отслеживания используется для обеспечения возможности быстрого обновления системы в случае критических исправлений.
 
-!> The TC has **no veto power**! The TC can only fast-track proposals - but **can never interfere with governance votes**.
+!!!> ТК имеет **без права вето**! ТК может только ускорить рассмотрение предложений - но **не может вмешиваться в голосование руководства**.
 
-At launch, the Interlay team, as main code contributors, will represent the Technical Committee to ensure bug fixes can be fast-tracked if necessary. The community can elect another TC or increase the number of TC seats anytime through a proposal.
+При запуске команда Interlay, как основные авторы кода, будет представлять Технический комитет, чтобы гарантировать, что исправления ошибок могут быть быстро отслежены в случае необходимости. Сообщество может избрать другой ТК или увеличить количество мест в ТК в любое время посредством предложения.
 
-## Voting Power Distribution
+## Распределение полномочий при голосовании
 
-Kintsugi will launch 100% decentralized from day 1:
+Kintsugi будет запущена на 100% децентрализованной с первого дня:
 
-- No admin keys,
-- No single entity / group has more than 50% voting power,
-- Any KINT holder can participate in governance.
+- Никаких ключей администратора,
+- Ни один субъект / группа не имеет более 50% голосующего права,
+- Любой владелец KINT может участвовать в управлении.
 
-?> Recommended reading for understanding the governance and voting power dynamics: [KINT token economy whitepaper released by Kintsugi Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
+Рекомендуемая литература для понимания динамики управления и права голоса: [Техническое описание экономики токенов KINT, выпущенное Kintsugi Labs] (https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
 
-### Restricting Team and Investor Voting Power 
-Since both vested and unvested tokens can participate in voting, the Interlay team and investors introduce additional restrictions on their own voting power during the first 2 years after network launch. Specifically: while the community can use 100% of their vested and unvested KINT to vote, team and investors can only use a portion of their KINT (which is subject to lockup and vesting) to participate in governance - increasing linearly over 2 years.
+### Ограничение права голоса команды и инвесторов 
+Поскольку в голосовании могут участвовать как наделенные, так и ненаделенные токены, команда Interlay и инвесторы вводят дополнительные ограничения на свое право голоса в течение первых 2 лет после запуска сети. А именно: в то время как сообщество может использовать 100% своих наделенных и ненаделенных KINT для голосования, команда и инвесторы могут использовать только часть своих KINT (которые подлежат блокировке и наделению правами) для участия в управлении - линейно увеличиваясь в течение 2 лет.
 
-### Estimates: First 2 Years
-The estimated voting power distribution of Kintsugi over the first 2 years is hence as follows*:
+### Оценки: Первые 2 года
+Предполагаемое распределение голосов Kintsugi в течение первых 2 лет выглядит следующим образом*:
 
-![Kintsugi voting power distribution over first 2 years](../_assets/img/kintsugi/voting-power.png)
+![Распределение голосов Kintsugi за первые 2 года](../_assets/img/kintsugi/voting-power.png)
 
-\* This excludes the 10% Foundation Reserve and the remaining 21% of the On-chain Treasury which are excluded from voting. The LP rewards are estimated - and may be higher during the first two years.
+\* Сюда не входят 10% резерва Фонда и оставшиеся 21% цепной казны, которые исключены из голосования. Вознаграждение LP является приблизительным и может быть выше в течение первых двух лет.
