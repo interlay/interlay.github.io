@@ -1,124 +1,124 @@
-# Research at Interlay
+# Исследования в Interlay
 
-Technological advantage stems from persistent and rigorous research.
-Founded by ex-Imperial College London PhDs, we are dedicated to contribute to cutting-edge research in the areas of  blockchain interoperability, security, and crypto-economics.
+Технологические преимущества обусловлены постоянными и тщательными исследованиями.
+Основанная бывшими докторами наук Имперского колледжа Лондона, мы стремимся внести свой вклад в передовые исследования в области совместимости блокчейна, безопасности и криптоэкономики.
 
-Our team members have co-authored over 30 scientific publications counting 1000+ citations amd counting, while at / in collaboration with leading universities and research centres around the globe.
+Члены нашей команды стали соавторами более 30 научных публикаций с 1000+ цитирований и более, работая в ведущих университетах и исследовательских центрах по всему миру.
 
-Our key researchers include:
-- [Alexei Zamyatin](https://scholar.google.com/citations?user=BJDPyu0AAAAJ&hl=en&oi=ao) (Co-Founder & CEO). Focus: Cross-chain protocols & blockchain security.
-- [Dominik Harz](https://scholar.google.com/citations?user=s6Km5yQAAAAJ&hl=en&oi=ao) (Co-Founder & CTO). Focus: Stablecoins & DeFi protocols
-- [Daniel Perez](https://scholar.google.com/citations?user=W2XsCqwAAAAJ&hl=en&oi=ao) (Advisor). Focus: Smart contract and DeFi protocol security
+В число наших ключевых исследователей входят:
+- [Алексей Замятин](https://scholar.google.com/citations?user=BJDPyu0AAAAJ&hl=en&oi=ao) (соучредитель и генеральный директор). Фокус: Межцепочечные протоколы и безопасность блокчейна.
+- [Доминик Харц](https://scholar.google.com/citations?user=s6Km5yQAAAAJ&hl=en&oi=ao) (соучредитель и технический директор). Фокус: Стабильные монеты и протоколы DeFi
+- [Даниэль Перес](https://scholar.google.com/citations?user=W2XsCqwAAAAJ&hl=en&oi=ao) (советник). Фокус: Смарт-контракт и безопасность протокола DeFi
 
-## Interlay Research Papers
+## Исследовательские работы Interlay
 
-### [SoK: Communication Across Distributed Ledgers](https://eprint.iacr.org/2019/1128.pdf)
+### [SoK: Связь между распределенными регистрами](https://eprint.iacr.org/2019/1128.pdf)
 
 <details>
-  <summary>Read abstract</summary>
-   Since the inception of Bitcoin, a plethora of distributed ledgers differing in design and purpose has been created. While by design, blockchains provide no means to securely communicate with external systems, numerous attempts towards trustless cross-chain communication have been proposed over the years. Today, cross-chain communication (CCC) plays a fundamental role in cryptocurrency exchanges, scalability efforts via sharding, extension of existing systems through sidechains, and bootstrapping of new blockchains. Unfortunately, existing proposals are designed ad-hoc for specific use-cases, making it hard to gain confidence in their correctness and composability.
+  <summary>Читать аннотацию</summary>
+   С момента создания Биткойна было создано множество распределенных учетных книг, различающихся по дизайну и назначению. Хотя по своей природе блокчейн не предоставляет средств для безопасной связи с внешними системами, за прошедшие годы было предложено множество попыток создать межцепочечную связь, не требующую доверия. Сегодня межцепочечная коммуникация (CМК) играет фундаментальную роль в криптовалютных биржах, усилиях по масштабированию с помощью шардинга, расширении существующих систем с помощью сайдчейнов и создании новых блокчейнов. К сожалению, существующие предложения разработаны ad-hoc для конкретных случаев использования, что затрудняет уверенность в их корректности и совместимости.
 
-   We provide the first systematic exposition of cross-chain communication protocols. We formalize the underlying research problem and show that CCC is impossible without a trusted third party, contrary to common beliefs in the blockchain community. With this result in mind, we develop a framework to design new and evaluate existing CCC protocols, focusing on the inherent trust assumptions thereof, and derive a classification covering the field of cross-chain communication to date. We conclude by discussing open challenges for CCC research and the implications of interoperability on the security and privacy of blockchains.
+   Мы предлагаем первое систематическое изложение протоколов межцепочечной коммуникации. Мы формализуем основную проблему исследования и показываем, что CМК невозможна без доверенной третьей стороны, вопреки распространенному мнению в сообществе блокчейн. С учетом этого результата мы разрабатываем структуру для проектирования новых и оценки существующих протоколов ССС, уделяя особое внимание присущим им предположениям о доверии, и выводим классификацию, охватывающую область межцепочечной коммуникации на сегодняшний день. В заключение мы обсуждаем открытые задачи для исследования ССС и последствия совместимости для безопасности и конфиденциальности блокчейн.
 </details>
 
 - **Zamyatin A**, Al-Bassam M, Zindros D, Kokoris-Kogias E, Moreno-Sanchez P, Kiayias A, Knottenbelt WJ
-- Financial Cyprography and Data Security 2021
-- In collaboration with Imperial College London, UCL, IOHK, EPFL, TU Vienna, University of Athens, University of Edinburgh
+- Финансовая криптография и безопасность данных 2021
+- В сотрудничестве с Лондонским Имперским колледжем, UCL, IOHK, EPFL, TU Vienna, Афинским университетом, Эдинбургским университетом.
 
-### [TxChain: Efficient Cryptocurrency Light Clients via Contingent Transaction Aggregation](https://eprint.iacr.org/2020/580.pdf)
+### [TxChain: Эффективные криптовалютные легкие клиенты через агрегацию условных транзакций](https://eprint.iacr.org/2020/580.pdf)
 
-<details>
-  <summary>Read abstract</summary>
-   Cryptocurrency light- or simplified payment verification (SPV) clients allow nodes with limited resources to efficiently verify execution of payments. Instead of downloading the entire blockchain, only block headers and selected transactions are stored. Still, the storage and bandwidth cost, linear in blockchain size, remain non-negligible, especially for smart contracts and mobile devices: as of April 2020, these amount to 50 MB in Bitcoin and 5 GB in Ethereum.
+<детали>
+  <summary>Читать аннотацию</summary>
+   Криптовалютные light- или упрощенные клиенты проверки платежей (SPV) позволяют узлам с ограниченными ресурсами эффективно проверять исполнение платежей. Вместо загрузки всего блокчейна сохраняются только заголовки блоков и выбранные транзакции. Тем не менее, затраты на хранение и пропускную способность, линейные по размеру блокчейна, остаются незначительными, особенно для смарт-контрактов и мобильных устройств: по состоянию на апрель 2020 года они составляют 50 МБ в Bitcoin и 5 ГБ в Ethereum.
 
-   Recently, two improved sublinear light clients were proposed: to validate the blockchain, NIPoPoWs and FlyClient only download a polylogarithmic number of block headers, sampled at random. The actual verification of payments, however, remains costly: for each verified transaction, the corresponding block must too be downloaded. This yields NIPoPoWs and FlyClient only effective under low transaction volumes.
+   Недавно были предложены два улучшенных сублинейных легких клиента: для верификации блокчейна NIPoPoWs и FlyClient загружают только полилогарифмическое число заголовков блоков, выбранных случайным образом. Однако фактическая проверка платежей остается дорогостоящей: для каждой проверенной транзакции также необходимо загрузить соответствующий блок. В результате NIPoPoWs и FlyClient эффективны только при низких объемах транзакций.
 
-   We present TxChain, a novel mechanism to maintain efficiency of light clients even under high transaction volumes. Specifically, we introduce the concept of contingent transaction aggregation, where proving inclusion of a single contingent transaction implicitly proves that n other transactions exist in the blockchain. To verify n payments, TxChain requires a only single transaction in the best (n≤c), and n/c+logc(n) transactions in the worst case (n>c). We deploy TxChain on Bitcoin without consensus changes and implement a soft fork for Ethereum. To demonstrate effectiveness in the cross-chain setting, we implement TxChain as a smart contract on Ethereum to efficiently verify Bitcoin payments.
+   Мы представляем TxChain - новый механизм, позволяющий поддерживать эффективность легких клиентов даже при больших объемах транзакций. В частности, мы вводим понятие агрегации условных транзакций, когда включение одной условной транзакции неявно доказывает, что в блокчейне существует n других транзакций. Чтобы проверить n платежей, TxChain требуется только одна транзакция в лучшем случае (n≤c), и n/c+logc(n) транзакций в худшем случае (n>c). Мы развернули TxChain на Bitcoin без изменения консенсуса и реализовали мягкий форк для Ethereum. Чтобы продемонстрировать эффективность в межцепочечном окружении, мы внедрили TxChain в качестве смарт-контракта на Ethereum для эффективной проверки платежей Bitcoin.
 </details>
 
 - **Zamyatin A**, Avarikioti Z, Perez D, Knottenbelt WJ,
-- 4th International Workshop on Cryptocurrencies and Blockchain Technology - CBT 2020
-- In collaboration with Imperial College London and ETH Zurich
+- 4-й Международный семинар по криптовалютам и технологии блокчейн - CBT 2020
+- В сотрудничестве с Имперским колледжем Лондона и ETH Цюриха
 
-### [Promise: Leveraging Future Gains for Collateral Reduction](https://eprint.iacr.org/2020/532.pdf)
+### [Promise: использование будущих прибылей для уменьшения залога](https://eprint.iacr.org/2020/532.pdf)
 
-<details>
-  <summary>Read abstract</summary>
-   Collateral employed in cryptoeconomic protocols protects against the misbehavior of economically rational agents, compensating honest users for damages and punishing misbehaving parties. The introduction of collateral, however, carries three disadvantages: (i) requiring agents to lock up a substantial amount of collateral can be an entry barrier, limiting the set of candidates to wealthy agents; (ii) affected agents incur ongoing opportunity costs as the collateral cannot be utilized elsewhere; and (iii) users wishing to interact with an agent on a frequent basis (e.g., with a service provider to facilitate second-layer payments), have to ensure the correctness of each interaction individually instead of subscribing to a service period in which interactions are secured by the underlying collateral.
+<детали>
+  <summary>Читать аннотацию</summary>
+   Залог, используемый в криптоэкономических протоколах, защищает от неправильного поведения экономически рациональных агентов, компенсируя ущерб честным пользователям и наказывая недобросовестные стороны. Введение залога, однако, имеет три недостатка: (i) требование к агентам заблокировать значительную сумму залога может стать входным барьером, ограничивая набор кандидатов состоятельными агентами; (ii) пострадавшие агенты несут постоянные издержки упущенных возможностей, поскольку залог не может быть использован в другом месте; и (iii) пользователи, желающие часто взаимодействовать с агентом (например, с поставщиком услуг для облегчения платежей второго уровня), должны обеспечивать корректность каждого взаимодействия индивидуально вместо подписки на период обслуживания, в котором взаимодействие обеспечивается базовым залогом.
 
-   We present Promise, a subscription mechanism to decrease the initial capital requirements of economically rational service providers in cryptoeconomic protocols. The mechanism leverages future income (such as service fees) prepaid by users to reduce the collateral actively locked up by service providers, while sustaining secure operation of the protocol. Promise is applicable in the context of multiple service providers competing for users. We provide a model for evaluating its effectiveness and argue its security. Demonstrating Promise's applicability, we discuss how Promise can be integrated into a cross-chain interoperability protocol, XCLAIM, and a second-layer scaling protocol, NOCUST. Last, we present an implementation of the protocol on Ethereum showing that all functions of the protocol can be implemented in constant time complexity and Promise only adds USD 0.05 for a setup per user and service provider and USD 0.01 per service delivery during the subscription period.
+   Мы представляем Promise, механизм подписки для снижения требований к начальному капиталу экономически рациональных поставщиков услуг в криптоэкономических протоколах. Механизм использует будущие доходы (такие как плата за услуги), предоплаченные пользователями, для уменьшения залога, активно блокируемого поставщиками услуг, поддерживая при этом безопасную работу протокола. Promise применим в условиях, когда несколько поставщиков услуг конкурируют за пользователей. Мы предоставляем модель для оценки его эффективности и доказываем его безопасность. Демонстрируя применимость Promise, мы обсуждаем, как Promise может быть интегрирован в протокол межцепочечной совместимости XCLAIM и протокол второго уровня масштабирования NOCUST. Наконец, мы представляем реализацию протокола на Ethereum, показывающую, что все функции протокола могут быть реализованы с постоянной временной сложностью, а Promise добавляет только 0,05 доллара США за настройку на пользователя и поставщика услуг и 0,01 доллара США за доставку услуг в течение периода подписки.
 </details>
 
 - **Harz D**, Gudgeon L, Khalil R,**Zamyatin A**
-  affiliations: Imperial College London
-- International Conference on Mathematical Research for Blockchain Economy 2020
-- In collaboration with Imperial College London
+  Членство: Имперский колледж Лондона
+- Международная конференция по математическим исследованиям для блокчейн-экономики 2020 года
+- В сотрудничестве с Имперским колледжем Лондона
 
-## Related & Previous Research
+## Аналогичные и предыдущие исследования
 
-Our team has been actively contributing to cutting-edge research in the blockchain space over the past 6 years.
+Наша команда активно участвует в передовых исследованиях в области блокчейна на протяжении последних 6 лет.
 
-A lot of the concepts developed by our team during their previous research careers find their way into Interlay's products. Some of the most recent and relevant works of our team members are outlined below:
+Многие концепции, разработанные нашей командой во время их предыдущей научной карьеры, нашли свое воплощение в продуктах Interlay. Ниже приведены некоторые из самых последних и значимых работ членов нашей команды:
 
-### [XCLAIM: Trustless, Interoperable Cryptocurrency-Backed Assets](https://eprint.iacr.org/2018/643.pdf)
+### [XCLAIM: бездоверительные, интероперабельные криптовалютные обеспеченные активы](https://eprint.iacr.org/2018/643.pdf)
 <details>
-  <summary>Read abstract</summary>
-Building trustless cross-blockchain trading protocols is challenging. Centralized exchanges thus remain the preferred route to execute transfers across blockchains. However, these services require trust and therefore undermine the very nature of the blockchains on which they operate. To overcome this, several decentralized exchanges have recently emerged which offer support for atomic cross-chain swaps (ACCS). ACCS enable the trustless exchange of cryptocurrencies across blockchains, and are the only known mechanism to do so. However, ACCS suffer significant limitations; they are slow, inefficient and costly, meaning that they are rarely used in practice.
+  <summary>Читать аннотацию</summary>
+Создание протоколов кросс-блокчейновой торговли, не требующих доверия, является сложной задачей. Поэтому централизованные биржи остаются предпочтительным способом осуществления переводов между блокчейнами. Однако эти сервисы требуют доверия и поэтому подрывают саму природу блокчейн, на которых они работают. Чтобы решить эту проблему, недавно появилось несколько децентрализованных бирж, которые предлагают поддержку атомарных кросс-чейн свопов (ACCS). ACCS позволяют осуществлять бездоверительный обмен криптовалютами между блокчейнами и являются единственным известным механизмом для этого. Однако ACCS имеют существенные недостатки: они медленные, неэффективные и дорогостоящие, что означает, что они редко используются на практике.
 
-We present XCLAIM: the first generic framework for achieving trustless and efficient cross-chain exchanges using cryptocurrency-backed assets (CbAs). XCLAIM offers protocols for issuing, transferring, swapping and redeeming CbAs securely in a non-interactive manner on existing blockchains. We instantiate XCLAIM between Bitcoin and Ethereum and evaluate our implementation; it costs less than USD 0.50 to issue an arbitrary amount of Bitcoin-backed tokens on Ethereum. We show XCLAIM is not only faster, but also significantly cheaper than atomic cross-chain swaps. Finally, XCLAIM is compatible with the majority of existing blockchains without modification, and enables several novel cryptocurrency applications, such as cross-chain payment channels and efficient multi-party swaps.
+Мы представляем XCLAIM: первую общую структуру для обеспечения бездоверительного и эффективного кросс-чейн обмена с использованием активов, обеспеченных криптовалютой (CbA). XCLAIM предлагает протоколы для безопасного выпуска, передачи, обмена и погашения CbAs неинтерактивным способом на существующих блокчейнах. Мы внедряем XCLAIM между Bitcoin и Ethereum и оцениваем нашу реализацию: выпуск произвольного количества токенов, обеспеченных Bitcoin, на Ethereum стоит менее 0,50 доллара США. Мы показали, что XCLAIM не только быстрее, но и значительно дешевле, чем атомарные кросс-чейн свопы. Наконец, XCLAIM совместим с большинством существующих блокчейнов без модификации и позволяет реализовать несколько новых криптовалютных приложений, таких как кросс-чейн платежные каналы и эффективные многосторонние свопы.
 </details>
 
-- **Zamyatin A**, **Harz D**, Lind J, Panayiotou P, Arthur G,  Knottenbelt WJ
-- IEEE Symposium on Security and Privacy (S&P)
-- In collaboration with Imperial College London, SBA Research
+- **Zamyatin A**, **Harz D**, Lind J, Panayiotou P, Arthur G, Knottenbelt WJ
+- Симпозиум IEEE по безопасности и конфиденциальности (S&P)
+- В сотрудничестве с Имперским колледжем Лондона, SBA Research
 
-### [SoK: Decentralized Finance (DeFi)](https://arxiv.org/abs/2101.08778)
+### [SoK: Децентрализованные финансы (DeFi)](https://arxiv.org/abs/2101.08778)
 
 <details>
-  <summary>Read abstract</summary>
-Decentralized Finance (DeFi), a blockchain powered peer-to-peer financial system, is mushrooming. One and a half years ago the total value locked in DeFi systems was approximately 700m USD, now, as of September 2021, it stands at around 100bn USD. The frenetic evolution of the ecosystem has created challenges in understanding the basic principles of these systems and their security risks. In this Systematization of Knowledge (SoK) we delineate the DeFi ecosystem along the following axes: its primitives, its operational protocol types and its security. We provide a distinction between technical security, which has a healthy literature, and economic security, which is largely unexplored, connecting the latter with new models and thereby synthesizing insights from computer science, economics and finance. Finally, we outline the open research challenges in the ecosystem across these security types.
+  <summary>Читать аннотацию</summary>
+Децентрализованные финансы (DeFi), одноранговые финансовые системы на основе блокчейна, растут как грибы. Полтора года назад общая стоимость, заблокированная в системах DeFi, составляла около 700 млн долларов США, а сейчас, по состоянию на сентябрь 2021 года, она составляет около 100 млрд долларов США. Стремительное развитие экосистемы создало проблемы в понимании основных принципов работы этих систем и рисков их безопасности. В данной систематизации знаний (SoK) мы описываем экосистему DeFi по следующим направлениям: ее примитивы, типы операционных протоколов и безопасность. Мы проводим различие между технической безопасностью, по которой существует обширная литература, и экономической безопасностью, которая в значительной степени не изучена, связывая последнюю с новыми моделями и тем самым синтезируя знания из информатики, экономики и финансов. Наконец, мы описываем открытые исследовательские задачи в экосистеме по всем этим типам безопасности.
 </details>
 
 - Werner S, Perez D, Gudgeon L, Klages-Mundt A, **Harz D**, Knottenbelt WJ
-- In colaboration with Imperial College London, Cornell University
+- В сотрудничестве с Имперским колледжем Лондона, Корнельским университетом
 
-### [Stablecoins 2.0: Economic Foundations and Risk-based Models](https://arxiv.org/pdf/2006.12388.pdf)
+### [Стейблкоины 2.0: Экономические основы и модели, основанные на риске](https://arxiv.org/pdf/2006.12388.pdf)
 <details>
-  <summary>Read abstract</summary>
-Stablecoins are one of the most widely capitalized type of cryptocurrency. However, their risks vary significantly according to their design and are often poorly understood. We seek to provide a sound foundation for stablecoin theory, with a risk-based functional characterization of the economic structure of stablecoins. First, we match existing economic models to the disparate set of custodial systems. Next, we characterize the unique risks that emerge in non-custodial stablecoins and develop a model framework that unifies existing models from economics and computer science. We further discuss how this modeling framework is applicable to a wide array of cryptoeconomic systems, including cross-chain protocols, collateralized lending, and decentralized exchanges. These unique risks yield unanswered research questions that will form the crux of research in decentralized finance going forward.
+  <summary>Читать аннотацию</summary>
+Стейблкоины являются одним из наиболее широко распространенных видов криптовалют. Однако их риски значительно варьируются в зависимости от их конструкции и зачастую плохо изучены. Мы стремимся заложить прочный фундамент для теории стейблкоинов с помощью функциональной характеристики экономической структуры стейблкоинов, основанной на рисках. Во-первых, мы сопоставляем существующие экономические модели с разрозненным набором кастодиальных систем. Далее мы характеризуем уникальные риски, возникающие в некастодиальных стабильных монетах, и разрабатываем модельную структуру, объединяющую существующие модели из экономики и информатики. Далее мы обсуждаем, как эта модель применима к широкому спектру криптоэкономических систем, включая кросс-чейн протоколы, залоговое кредитование и децентрализованные биржи. Эти уникальные риски дают ответы на вопросы, которые станут основой исследований в области децентрализованных финансов в будущем.
 </details>
 
 - Klages-Mundt A, **Harz D**, Gudgeon L, Liu J, Minca A
-- ACM conference on Advances in Financial Technologies (AFT’20)
-- In collaboration with Cornell University, Imperial College London
+- Конференция ACM по достижениям в области финансовых технологий (AFT'20)
+- В сотрудничестве с Корнельским университетом, Имперским колледжем Лондона
 
 ### [The Decentralized Financial Crisis](https://arxiv.org/pdf/2002.08099.pdf)
 <details>
-  <summary>Read abstract</summary>
-The Global Financial Crisis of 2008, caused by the accumulation of excessive financial risk, inspired Satoshi Nakamoto to create Bitcoin. Now, more than ten years later, Decentralized Finance (DeFi), a peer-to-peer financial paradigm which leverages blockchain-based smart contracts to ensure its integrity and security, contains over 702m USD of capital as of April 15th, 2020. As this ecosystem develops, it is at risk of the very sort of financial meltdown it is supposed to be preventing. In this paper we explore how design weaknesses and price fluctuations in DeFi protocols could lead to a DeFi crisis. We focus on DeFi lending protocols as they currently constitute most of the DeFi ecosystem with a 76% market share by capital as of April 15th, 2020.
-First, we demonstrate the feasibility of attacking Maker's governance design to take full control of the protocol, the largest DeFi protocol by market share, which would have allowed the theft of 0.5bn USD of collateral and the minting of an unlimited supply of DAI tokens. In doing so, we present a novel strategy utilizing so-called flash loans that would have in principle allowed the execution of the governance attack in just two transactions and without the need to lock any assets. Approximately two weeks after we disclosed the attack details, Maker modified the governance parameters mitigating the attack vectors. Second, we turn to a central component of financial risk in DeFi lending protocols. Inspired by stress-testing as performed by central banks, we develop a stress-testing framework for a stylized DeFi lending protocol, focusing our attention on the impact of a drying-up of liquidity on protocol solvency. Based on our parameters, we find that with sufficiently illiquidity a lending protocol with a total debt of 400m USD could become undercollateralized within 19 days.
+  <summary>Читать аннотацию</summary>
+Глобальный финансовый кризис 2008 года, вызванный накоплением чрезмерного финансового риска, вдохновил Сатоши Накамото на создание Bitcoin. Теперь, более десяти лет спустя, Децентрализованные финансы (DeFi), одноранговая финансовая парадигма, использующая смарт-контракты на основе блокчейна для обеспечения своей целостности и безопасности, содержит более 702 млн долларов США капитала по состоянию на 15 апреля 2020 года. По мере развития этой экосистемы она подвергается риску финансового краха, который она должна предотвратить. В этой статье мы исследуем, как недостатки конструкции и колебания цен в протоколах DeFi могут привести к кризису DeFi. Мы фокусируемся на протоколах кредитования DeFi, поскольку в настоящее время они составляют большую часть экосистемы DeFi с долей рынка 76% по капиталу по состоянию на 15 апреля 2020 года.
+Во-первых, мы демонстрируем возможность атаки на дизайн управления Maker для получения полного контроля над протоколом, крупнейшим по доле рынка протоколом DeFi, что позволило бы украсть 0,5 млрд долларов США залога и напечатать неограниченное количество токенов DAI. При этом мы представляем новую стратегию с использованием так называемых флэш-кредитов, которая в принципе позволила бы осуществить атаку на управление всего за две транзакции и без необходимости блокировки каких-либо активов. Примерно через две недели после того, как мы раскрыли детали атаки, Maker изменил параметры управления, смягчив векторы атаки. Во-вторых, мы обратимся к центральному компоненту финансового риска в протоколах кредитования DeFi. Вдохновленные стресс-тестированием, проводимым центральными банками, мы разработали структуру стресс-тестирования для стилизованного протокола кредитования DeFi, сосредоточив свое внимание на влиянии истощения ликвидности на платежеспособность протокола. Основываясь на наших параметрах, мы обнаружили, что при достаточной неликвидности кредитный протокол с общим долгом в 400 млн. долларов США может стать недостаточно обеспеченным в течение 19 дней.
 </details>
 
 - Gudgeon L, Perez D, **Harz D**, Livshits B, Gervais A
-- 2020 Crypto Valley Conference on Blockchain Technology (CVCBT)
-- In collaboration with Imperial College London
+- 2020 Конференция Crypto Valley по технологии блокчейн (CVCBT)
+- В сотрудничестве с Имперским колледжем Лондона
 
-### [Commit-Chains: Secure, Scalable Off-Chain Payments](https://eprint.iacr.org/2018/642.pdf)
+### [Commit-Chains: Безопасные, масштабируемые внецепочечные платежи](https://eprint.iacr.org/2018/642.pdf)
 <details>
-  <summary>Read abstract</summary>
-Current permissionless blockchains suffer from scalability limitations. To scale without changing the underlying blockchain, one avenue is to lock funds into blockchain smart-contracts (collateral) and enact transactions outside, or off- the blockchain, via accountable peer-to-peer messages. Disputes among peers are resolved with appropriate collateral redistribution on the blockchain. In this work we lay the foundations for commit-chains, a novel off-chain scaling solution for existing blockchains where an untrusted and non-custodial operator commits the state of its user account balances via constant-sized, periodic checkpoints. Users dispute operator misbehavior via a smart contract. The commit-chain paradigm enables for the first time that off-chain users can receive payments while being offline. Moreover, locked funds can be managed efficiently at constant communication costs, alleviating collateral fragmentation.
+  <summary>Читать аннотацию</summary>
+Существующие блокчейны без права доступа страдают от ограничений масштабируемости. Для масштабирования без изменения базового блокчейна одним из способов является блокировка средств в смарт-контрактах блокчейна (залог) и осуществление транзакций вне блокчейна, или за пределами блокчейна, посредством подотчетных одноранговых сообщений. Споры между равными решаются с помощью соответствующего перераспределения залога в блокчейне. В этой работе мы закладываем основы для commit-chains, нового внецепочечного решения для масштабирования существующих блокчейнов, в котором ненадежный и независимый оператор фиксирует состояние балансов своих пользовательских счетов через периодические контрольные точки постоянного размера. Пользователи оспаривают неправильное поведение оператора с помощью смарт-контракта. Парадигма commit-chain впервые позволяет пользователям вне сети получать платежи, находясь в автономном режиме. Более того, заблокированными средствами можно эффективно управлять при постоянных затратах на связь, что облегчает фрагментацию залога.
 
-We instantiate two account-based commit-chain constructions: NOCUST, based on a cost-effective challenge-response dispute mechanism; and NOCUST-ZKP, which provides provably correct operation via zkSNARKs. These constructions offer a trade-off between correctness, verification, and efficiency while both are practical and ensure key properties such as balance safety; that is, no honest user loses coins. We implemented both constructions on a smart contract enabled blockchain. Our evaluation demonstrates that NOCUST's operational costs in terms of computation and communication scale logarithmically in the number of users and transactions, and allow very efficient lightweight clients (a user involved in e.g. 100 daily transactions only needs to store a constant 46 kb of data, allowing secure payments even on mobile devices). NOCUST is operational in production since March 2019.
+Мы применяем две конструкции commit-chain на основе счетов: NOCUST, основанная на экономически эффективном механизме споров "вызов-ответ", и NOCUST-ZKP, которая обеспечивает доказательно корректную работу с помощью zkSNARKs. Эти конструкции предлагают компромисс между корректностью, верификацией и эффективностью, при этом обе они практичны и обеспечивают такие ключевые свойства, как безопасность баланса; то есть ни один честный пользователь не потеряет монеты. Мы реализовали обе конструкции на блокчейне с поддержкой смарт-контрактов. Наша оценка показывает, что операционные затраты NOCUST на вычисления и связь логарифмически зависят от количества пользователей и транзакций и позволяют использовать очень эффективные легковесные клиенты (пользователю, участвующему, например, в 100 ежедневных транзакциях, требуется хранить всего 46 кб данных, что позволяет проводить безопасные платежи даже на мобильных устройствах). NOCUST работает в производственном режиме с марта 2019 года.
 </details>
 
 - Khalil R, **Zamyatin A**, Felley G, Moreno-Sanchez P, Gervais A
-- In collaboration with Imperial College London, TU Wien, Liquidity Network
+- В сотрудничестве с Имперским колледжем Лондона, ТУ Вена, Liquidity Network
 
-### [Pay To Win: Cheap, Crowdfundable, Cross-chain Algorithmic Incentive Manipulation Attacks on PoW Cryptocurrencies](https://eprint.iacr.org/2019/775.pdf)
+### [Плати, чтобы победить: Дешевые, доступные для краудфандинга кросс-чейн алгоритмические атаки на манипулирование стимулами в криптовалютах PoW](https://eprint.iacr.org/2019/775.pdf)
 <details>
-  <summary>Read abstract</summary>
-In this paper we extend the attack landscape of bribing attacks on cryptocurrencies by presenting a new method, which we call Pay-To-Win (P2W). To the best of our knowledge, it is the first approach capable of facilitating double-spend collusion across different blockchains. Moreover, our technique can also be used to specifically incentivize transaction exclusion or (re)ordering. For our construction we rely on smart contracts to render the payment and receipt of bribes trustless for the briber as well as the bribee. Attacks using our approach are operated and financed out-of-band i.e., on a funding cryptocurrency, while the consequences are induced in a different target cryptocurrency. Hereby, the main requirement is that smart contracts on the funding cryptocurrency are able to verify consensus rules of the target. For a concrete instantiation of our P2W method, we choose Bitcoin as a target and Ethereum as a funding cryptocurrency. Our P2W method is designed in a way that reimburses collaborators even in the case of an unsuccessful attack. Interestingly, this actually renders our approach approximately one order of magnitude cheaper than comparable bribing techniques (e.g., the whale attack). We demonstrate the technical feasibility of P2W attacks through publishing all relevant artifacts of this paper, ranging from calculations of success probabilities to a fully functional proof-of-concept implementation, consisting of an Ethereum smart contract and a Python client.
+  <summary>Читать аннотацию</summary>
+В этой статье мы расширяем спектр нападений с целью подкупа на криптовалюты, представляя новый метод, который мы называем Pay-To-Win (P2W). Насколько нам известно, это первый подход, способный облегчить двойной сговор на разных блокчейнах. Более того, наша методика может быть использована для специального стимулирования исключения или (повторного) заказа транзакций. В нашей конструкции мы опираемся на смарт-контракты, чтобы сделать выплату и получение взяток бездоверительными как для взяткодателя, так и для взяткополучателя. Атаки с использованием нашего подхода осуществляются и финансируются вне диапазона, т.е. на финансирующую криптовалюту, а последствия индуцируются в другой целевой криптовалюте. Таким образом, главное требование заключается в том, чтобы смарт-контракты на финансирующей криптовалюте могли проверять правила консенсуса целевой криптовалюты. Для конкретной реализации нашего метода P2W мы выбрали в качестве целевой криптовалюты биткоин, а в качестве финансирующей криптовалюты - Ethereum. Наш P2W-метод разработан таким образом, что даже в случае неудачной атаки участники получают компенсацию. Интересно, что это фактически делает наш подход примерно на порядок дешевле, чем аналогичные методы подкупа (например, атака китов). Мы демонстрируем техническую осуществимость атак P2W путем публикации всех соответствующих артефактов данной работы, начиная от расчетов вероятности успеха и заканчивая полностью функциональной реализацией proof-of-concept, состоящей из смарт-контракта Ethereum и клиента Python.
 </details>
 
 - Judmayer A, Stifter N, **Zamyatin A**, Tsabary I, Eyal I, Gazi P, Meiklejohn S, Weippl E
-- In collaboration with SBA Research, TU Wien, Imperial College London, Technion, IC3, IOHK, and UCL
+- В сотрудничестве с SBA Research, TU Wien, Имперским колледжем Лондона, Технионом, IC3, IOHK и UCL
