@@ -123,7 +123,33 @@ You will now see your KINT balance as follows:
 
 ![View balance](../_assets/img/kintsugi/check-balance/6_view_balance.png)
 
-?> Amounts are shown in the smallest currency unit on Kintsugi. To get to the actual KINT **divide by 1,000,000,000,000** (remove 12 decimal points). This is a Polkadot.js feature.
+?> Amounts are shown in **micro KINT** - the smallest currency unit on Kintsugi. To get to the actual KINT **divide by 1,000,000,000,000** (remove 12 decimal points). This is a Polkadot.js feature.
 
 - **free** shows your **total KINT balance**
 - **frozen** shows how much of your KINT are **still vesting**
+
+
+## Transfer KINT
+
+1. To transfer KINT, select "Extrsinsics" in the "Developer".
+
+2. In the dropdown, select the "tokens" pallet.
+
+3. Enter the source account.
+   
+4. Enter the destination account.
+
+5. Select "KINT" in the "Token" dropdown.
+
+6. Enter the amount **in micro KINT**.
+7. Press "Sign Transaction". In the opened modal, enter your account password, and then click "Sign and Submit".
+
+
+You will see a green success message after 10-20 seconds in the top right if the transfer was successful.
+
+
+
+
+?> Reminder: 1 KINT = 1,000,000,000,000 micro KINT (12 zeroes).
+
+![Transfer](../_assets/img/kintsugi/transfer/transfer-step-1.png)
