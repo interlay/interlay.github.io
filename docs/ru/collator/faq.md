@@ -1,15 +1,15 @@
 # FAQ
 
-### Who can become a Collator?
+### Кто может стать Коллатором?
 
-The interBTC bridge is fully decentralized: anyone can run a Collator.
+Мост interBTC полностью децентрализован: любой может стать коллатором.
 
-### Do Collators earn fees?
+### Получают ли коллаторы вознаграждение?
 
-Technically yes, but this is not currently implemented.
+Технически да, но в настоящее время это не реализовано.
 
-## Troubleshooting
+## Устранение неполадок
 
-### Bootnode with peer id `xxx` is on a different chain
+### Загрузочная нода с идентификатором пира `xxx` находится на другой цепи.
 
-The genesis chain spec is invalid, please download the file specified in the instructions.
+Спецификация цепи genesis недействительна, пожалуйста, загрузите файл, указанный в инструкции.

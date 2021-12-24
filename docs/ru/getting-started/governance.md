@@ -1,20 +1,20 @@
-# Decentralized Governance
+# Децентрализованное управление
 
-Interlay and Kintsugi each implement a token-based decentralized governance mechanism.
-Governance token holders have the ultimate decision power over:
+Interlay и Kintsugi реализуют децентрализованный механизм управления на основе токенов.
+Держатели токенов управления имеют право принимать окончательные решения в отношении:
 
-- **Runtime upgrades**: Fixes, substrate/library updates, improvements, new features, …
-- **Parameter upgrades**:
-  - Stable BTC Confirmations
-  - Whitelist collateral currencies and set thresholds
-  - Parachain Status (On/Off)
-  - Accepted oracles
+- **Обновления времени выполнения**: Исправления, обновления субстрата/библиотеки, улучшения, новые возможности, ...
+- **Обновления параметров**:
+  - Стабильные подтверждения BTC
+  - Белый список валют обеспечения и установка пороговых значений
+  - Статус парачейна (включен/выключен)
+  - Одобренные оракулы
 
-- **Treasury management**: decision on how to spend the assets locks in the network treasury.
+- **Управление казной**: решение о том, как потратить средства, хранящиеся в сетевой казне.
 
-### Governance Implementations
+### Реализация управления
 
-For the specifics of each network's governance, see:
+Об особенностях управления каждой сети смотрите:
 
-- **Kintsugi**: [Kintsugi Governance documentation](../kintsugi/governance)
-- **Interlay**: Coming soon
+- **Kintsugi**: [документация по управлению Kintsugi](../kintsugi/governance)
+- **Interlay**: Скоро появится

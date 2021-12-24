@@ -1,32 +1,32 @@
-# Documentation
+# Документация
 
-## Specification
+## Спецификация
 
-At the heart of the Interlay and Kintsugi networks lay the substrate-based parachains.
-The functionality, protocols, and security aspects of the parachains are all detailed in the specification.
-If you want to get started working on the core Interlay and Kintsugi networks, understand in detail how the system works, and contribute to it, this is the primary starting point.
+В основе сетей Interlay и Kintsugi лежат парачейны на субстрате.
+Функциональность, протоколы и аспекты безопасности парачейнов подробно описаны в спецификации.
+Если вы хотите начать работу над ядром сетей Interlay и Kintsugi, детально понять, как работает система, и внести свой вклад в ее развитие, эта спецификация является основной отправной точкой.
 
-- [Specification as HTML](https://spec.interlay.io/)
-- [Specification as PDF](https://interlay.gitlab.io/interbtc-spec/interbtc-spec.pdf)
-- [Code](https://github.com/interlay/interbtc-spec)
+- [Спецификация в формате HTML](https://spec.interlay.io/)
+- [Спецификация в формате PDF](https://interlay.gitlab.io/interbtc-spec/interbtc-spec.pdf)
+- [Код](https://github.com/interlay/interbtc-spec)
 
-## Parachain
+## Парачейн
 
- The core of the system: the parachain implementing the Interlay and Kintsugi networks.
+ Ядро системы: parachain, реализующий сети Interlay и Kintsugi.
 
-- [Documentation](https://docs.interlay.io/interbtc/)
-- [Code](https://github.com/interlay/interbtc)
+- [Документация](https://docs.interlay.io/interbtc/)
+- [Код](https://github.com/interlay/interbtc)
 
-## Vaults
+## Хранилища
 
-The off-chain client implementing the Vault.
+Оффчейн клиент, реализующий хранилище.
 
-- [Documentation](https://docs.interlay.io/interbtc-clients/)
-- [Code](https://github.com/interlay/interbtc-clients/tree/master/vault)
+- [Документация](https://docs.interlay.io/interbtc-clients/)
+- [Код](https://github.com/interlay/interbtc-clients/tree/master/vault)
 
 ## interbtc-api
 
-A TypeScript library to interact with the Interlay and Kintsugi networks. See also [TypeScript Integration](developers/integration.md)
+Библиотека TypeScript для взаимодействия с сетями Interlay и Kintsugi. См. также [TypeScript Integration](developers/integration.md)
 
-- [Documentation](https://docs.interlay.io/interbtc-api/#/classes/DefaultInterBTCAPI)
-- [Code](https://github.com/interlay/interbtc-api)
+- [Документация](https://docs.interlay.io/interbtc-api/#/classes/DefaultInterBTCAPI)
+- [Код](https://github.com/interlay/interbtc-api)

@@ -1,7 +1,7 @@
-# Overview
+# Обзор
 
-The Interlay and Kintsugi networks consist of a range of different components.
+Сети Interlay и Kintsugi состоят из целого ряда различных компонентов.
 
-![Components Overview](../_assets/img/developers/components.svg)
+![Обзор компонентов](../_assets/img/developers/components.svg)
 
-*Overview of interBTC bridge components.*
+*Обзор компонентов моста InterBTC.

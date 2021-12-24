@@ -1,7 +1,7 @@
-# Collators
+# Коллаторы
 
-Collators are responsible for collecting parachain transactions and producing state-transition proofs. For more details checkout the [Polkadot Wiki](https://wiki.polkadot.network/docs/en/learn-collator).
+Коллаторы отвечают за сбор транзакций парачейна  и создание доказательств перехода состояния. Более подробную информацию можно найти в [Polkadot Wiki](https://wiki.polkadot.network/docs/en/learn-collator).
 
-Please note that in our testnet phase, we are actually running an independent chain based on Proof-of-Authority (PoA). This is for better control of the network whilst we collect user feedback and fix bugs. Therefore nodes are not actually collating blocks as they will be on Rococo and eventually Kusama / Polkadot. Please checkout [Polkadot's roadmap](https://polkadot.network/launch-parachains/) for futher details on when to expect live parachains.
+Обратите внимание, что на этапе тестирования сети мы запускаем независимую цепочку, основанную на доказательстве полномочий (Proof-of-Authority, PoA). Это необходимо для лучшего контроля над сетью, пока мы собираем отзывы пользователей и исправляем ошибки. Поэтому ноды фактически не собирают блоки, как это будет происходить на Rococo и, в перспективе, на Kusama / Polkadot. Пожалуйста, ознакомьтесь с [дорожной картой Polkadot](https://polkadot.network/launch-parachains/) для получения более подробной информации о том, когда ожидать живых парачейнов.
 
-Running a local full-node / Collator will vastly improve the reliablity of your Vault or Relayer client. Once synced, you may set `--btc-parachain-url=ws://localhost:9944` to point your client to this node.
+Запуск локальной полнофункциональной ноды / Коллатора значительно повысит надежность вашего клиента храниолища или Релеера. После синхронизации вы можете установить `--btc-parachain-url=ws://localhost:9944`, чтобы направить ваш клиент к этой ноде.

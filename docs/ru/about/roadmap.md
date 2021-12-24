@@ -1,24 +1,24 @@
-# Roadmap
+# Дорожная карта
 
-The Interlay team is building a customized Substrate environment for interBTC, optimized to verify Bitcoin payments. The BTC Parachain includes a Bitcoin cross-chain SPV client (BTC-Relay), integrations with secure price oracles and XCMP, as well as support for hardware wallets. In addition, Interlay is also building client software for Vaults, Relayers (who make sure BTC-Relay is up to date), as well as an easy-to-use web interface.
+Команда Interlay создает специализированную среду Substrate для interBTC, оптимизированную для верификации платежей Bitcoin. Парачейн BTC включает в себя SPV-клиент кросс-цепочки Биткойн (BTC-Relay), интеграции с безопасными ценовыми оракулами и XCMP, а также поддержку аппаратных кошельков. Кроме того, Interlay создает клиентское программное обеспечение для хранилищ, релейеров (которые следят за актуальностью BTC-Relay), а также простой в использовании веб-интерфейс.
 
-[Interlay](https://interlay.io/) has previously released a [detailed technical specification](https://interlay.gitlab.io/interbtc-spec/) and a [working PoC implementation](https://github.com/interlay/interbtc). After the successful pilot project, Interlay won a second [Web3 Foundation grant](https://web3.foundation/grants/) to complete the BTC Parachain - the core milestones of this project were completed in March 2021.
+Компания [Interlay](https://interlay.io/) ранее выпустила [подробную техническую спецификацию](https://interlay.gitlab.io/interbtc-spec/) и [рабочую реализацию PoC](https://github.com/interlay/interbtc). После успешного пилотного проекта Interlay выиграла второй грант [Web3 Foundation](https://web3.foundation/grants/) на завершение проекта BTC Parachain - основные этапы этого проекта были завершены в марте 2021 года.
 
-### Timeline So Far
-
-
-
-- **(Soon) Interlay on Polkadot**: Interlay is going to Polkadot parachain auctions in batch 2, starting December 23rd 2021
-- **(Now) Kintsugi to Kusama**: kBTC on Kusama and KINT airdrop planned before Christmas 2021.
-- **Kintsugi wins 11th Kusama parachain slot** on 13 October 2021
-- **Feature-ready Beta** launched on 2 March 2021
-- **Alpha** testnet launched in November 2020
-- **2nd Web3 Foundation grant** (Full Implementation) started in September 2020
-- **1st grant completed** in April 2020
-- **1st Web3 Foundation grant** (Spec & PoC) started in January 2020
-- **XCLAIM paper** describing the tech underlying interBTC published in 2018
+### Хронология на данный момент
 
 
-### [Kintsugi2Kusama Launch Roadmap :arrow_upper_right:](https://interlay.notion.site/07841855b3b5413ebc5174388d4a3e31?v=6392a91ab64b4c258e8bd5206daf3a96)
 
-### Interlay2Polkadot Launch Roadmap (Coming soon)
+- **(Скоро) Интерлей на Polkadot**: Interlay выходит на парачейн-аукционы Polkadot в партии 2, начиная с 23 декабря 2021 г.
+- **(Сейчас) Kintsugi на Kusama**: kBTC на Kusama и KINT airdrop запланированы до Рождества 2021 года.
+- **Kintsugi выигрывает 11-й слот Kusama парачейна** 13 октября 2021 г.
+- **Бета-версия** запущена 2 марта 2021 г.
+- **Альфа** тестовая сеть запущена в ноябре 2020 г.
+- **2-й грант Фонда Web3** (полная реализация) начат в сентябре 2020 г.
+- **1-й грант завершен** в апреле 2020 г.
+- **1-й грант фонда Web3 Foundation** (Spec & PoC) начат в январе 2020 г.
+- Статья **XCLAIM**, описывающая технологию, лежащую в основе interBTC, опубликована в 2018 году
+
+
+### [Дорожная карта запуска Kintsugi2Kusama  :arrow_upper_right:](https://interlay.notion.site/07841855b3b5413ebc5174388d4a3e31?v=6392a91ab64b4c258e8bd5206daf3a96)
+
+### Дорожная карта запуска Interlay2Polkadot (скоро появится)

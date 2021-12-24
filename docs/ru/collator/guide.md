@@ -1,34 +1,34 @@
-# Setting up a Collator and Full-Node
+# Настройка коллатора и полнофункциональной ноды
 
-Running a collator or full-node will allow you to sync and verify the integrity of the interBTC bridge.
-To get started, follow this guide.
+Запуск коллатора или полнофункциональной ноды позволит вам синхронизировать и проверять целостность моста interBTC.
+Чтобы начать работу, следуйте этому руководству.
 
-At the end of this document you will have:
+В конце этого документа вы получите:
 
-- [x] Connected to a network
-- [x] Synced a local full-node
+- [x] Подключились к сети
+- [x] Синхронизировали локальную полнофункциональную ноду
 
-?> Please note that we have not yet opened running collators to the community. Currently, it is only possible to run a full-node. We will communicate updates to this on our discord.
+?> Обратите внимание, что мы еще не открыли сообществу возможность запуска коллаторов. В настоящее время можно запустить только полнофункциональную ноду. Мы будем сообщать об обновлениях на нашем discord.
 
-The following instructions have been tested on Linux.
+Следующие инструкции были протестированы на Linux.
 
-## Prerequisites
+## Предварительные условия
 
-Checkout the standard hardware requirements on the [Polkadot Wiki](https://wiki.polkadot.network/docs/en/maintain-guides-how-to-validate-polkadot#requirements).
+Ознакомьтесь со стандартными требованиями к оборудованию на [Polkadot Wiki](https://wiki.polkadot.network/docs/en/maintain-guides-how-to-validate-polkadot#requirements).
 
-Create a local directory to store persistent data:
+Создайте локальный каталог для хранения постоянных данных:
 
 ```shell
 mkdir -p data
 ```
 
-### Optional: Snapshots
+### Дополнительно: Снепшоты
 
-Syncing the embedded relay chain can take a number of days. [Polkashots](https://polkashots.io/) hosts database snapshots of Kusama and Polkadot which can be downloaded in minutes. Follow the relevant guide and extract the snapshot to the `data` directory.
+Синхронизация встроенной ретрансляционной цепочки может занять несколько дней. На сайте [Polkashots](https://polkashots.io/) размещены снепшоты баз данных Kusama и Polkadot, которые можно загрузить за несколько минут. Следуйте соответствующему руководству и извлеките снепшот в каталог `data`.
 
-## Quickstart
+## Быстрый старт
 
-Map the directory into a local volume used by the docker container.
+Разместите каталог на локальном томе, используемом контейнером docker.
 
 <!-- tabs:start -->
 
@@ -75,9 +75,9 @@ docker run \
 
 <!-- tabs:end -->
 
-## Standard Installation
+## Стандартная установка
 
-Download the pre-built binary and map the directory to the local `base-path`.
+Загрузите предварительно созданный двоичный файл и сопоставьте каталог с локальным `base-path`.
 
 <!-- tabs:start -->
 
@@ -120,13 +120,13 @@ chmod +x interbtc-standalone
 
 <!-- tabs:end -->
 
-## Install from Source
+## Установка из источника
 
-?> Building from source requires `clang 11`. Make sure to check this via `clang -v`.
+?> Сборка из исходников требует `clang 11`. Обязательно проверьте это через `clang -v`.
 
-### 1. Install Rust
+### 1. Установка Rust
 
-We typically aim to support the latest version of nightly, check the README for the most up-to-date build instructions.
+Мы обычно стремимся поддерживать последнюю версию nightly, проверьте README для получения наиболее актуальных инструкций по сборке.
 
 ```shell
 curl https://sh.rustup.rs -sSf | sh
@@ -135,18 +135,18 @@ rustup default nightly
 rustup target add wasm32-unknown-unknown --toolchain nightly
 ```
 
-### 2. Compile the node
+### 2. Компиляция ноды
 
-?> This step will take some time depending on your hardware.
+?> Этот шаг займет некоторое время в зависимости от вашего оборудования.
 
-Clone the interBTC bridge code, checkout the appropriate release and build the node:
+Клонируйте код моста interBTC, проверьте соответствующий релиз и соберите ноду:
 
 ```shell
 git clone git@github.com:interlay/interbtc.git
 cd interbtc
 ```
 
-### 3. Run the node
+### 3. Запауск ноды
 
 <!-- tabs:start -->
 
@@ -191,6 +191,6 @@ cargo build --release
 
 <!-- tabs:end -->
 
-## Upgrading
+## Обновление
 
-In most cases, breaking changes to on-chain logic will be handled via the [forkless runtime upgrades](https://substrate.dev/docs/en/knowledgebase/runtime/upgrades#forkless-runtime-upgrades). However, this will not cover updates to the RPC tooling which will require that you terminate, download and restart your node.
+В большинстве случаев внесение изменений в логику цепочки будет осуществляться через механизм [forkless runtime upgrades](https://substrate.dev/docs/en/knowledgebase/runtime/upgrades#forkless-runtime-upgrades). Однако это не распространяется на обновления инструментария RPC, которые потребуют завершения работы, загрузки и перезапуска ноды.
