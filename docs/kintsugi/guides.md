@@ -103,10 +103,16 @@ You will now see your KINT balance as follows:
 - **frozen** shows how much of your KINT are **still vesting**
 
 
+?> `Available for transfer` = `free` - `frozen`
+
 ## Transfer KINT
 
-?> Important: At the end of the transfer, write down / store the block hash of your transaction! (see [Step 3 below](kintsugi/guides?id=_3-transfer-kint-in-developer-gt-extrinsics-gt-tokens)). **Do not close the browser / tab before you do this!** Otherwise you will need to manually find your transaction in Polkadot.js. 
+?> Important: At the end of the transfer, write down / store the block hash of your transaction! (see [Step 3 below](kintsugi/guides?id=_3-transfer-kint-in-developer-gt-extrinsics-gt-tokens)). **Do not close the browser / tab before you do this!** Otherwise you will need to manually find your transaction in Polkadot.js.
 
+?> You need to keep a very small amount of KINT (0.000,000,001 KINT or 1000 pico KINT) in your account as existential deposit (for now).
+
+
+?> You can only transfer tokens that have unlocked! `Available for transfer` = `free` - `frozen`
 
 #### 1. [ Update Metadata](kintsugi/guides?id=update-metadata-in-polkadotjs-repetitive)
 
@@ -114,18 +120,23 @@ To be sure everything works, please do this step first!
 
 #### 2. Transfer KINT in Developer > Extrinsics > Tokens
 
-1. To transfer KINT, select "Extrsinsics" in the "Developer".
+1. To transfer KINT, select "Extrinsics" in the "Developer".
 
 2. In the dropdown, select the "tokens" pallet.
 
-3. Enter the source account.
+3. Select the `transfer()` function. If you want to transfer all available tokens, you can use `transferAll()` - but be careful!
+
+?> Important: You need to use `transfer()`, not `forceTransfer()`. Otherwise you will get a `BadOrigin` error.
+
+4. Enter the source account.
    
-4. Enter the destination account.
+5. Enter the destination account.
 
-5. Select "KINT" in the "Token" dropdown.
+6. Select "KINT" in the "Token" dropdown.
 
-6. Enter the amount **in pico KINT (1 KINT = 1,000,000,000,000 pico KINT)**.
-7. Press "Sign Transaction". In the opened modal, enter your account password, and then click "Sign and Submit".
+7. Enter the amount **in pico KINT (1 KINT = 1,000,000,000,000 pico KINT)**.
+   
+8. Press "Sign Transaction". In the opened modal, enter your account password, and then click "Sign and Submit".
 
 
 You will see a green success message after 10-20 seconds in the top right if the transfer was successful.
@@ -226,3 +237,21 @@ At the bottom of the box you will find the `status` and `InBlock` fields - this 
 3. You will see all events in that block. Check the `tokens.Transfer` events to find your transaction (no search function available yet).
 
 ![Check block](../_assets/img/kintsugi/find-tx/check-block.png)
+
+
+## Claim Vested Tokens
+
+If your tokens are subject to vesting ("frozen" field is non-zero) then they will unlock over time. 
+
+To claim the latest unlocked tokens, do the following:
+
+#### 1. [ Update Metadata](kintsugi/guides?id=update-metadata-in-polkadotjs-repetitive)
+
+#### 2. Claim last unlocked tokens
+
+1. Go to "Developers" > "Extrinsics"
+2. Select "vesting" in the extrinsic dropdown
+3. Select the "claim()" function
+4. Submit Transaction
+
+If you had tokens that have unlocked, you will see them in your balance.
