@@ -219,7 +219,6 @@ At the bottom of the box you will find the `status` and `InBlock` fields - this 
 
 ![Save TX Info - 2](../_assets/img/kintsugi/transfer/find-tx-network-tab.png)
 
-
 ## Find a Transfer Transaction
 
 1. Go to the Kintsugi [Network tab](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer) in Polkadot.js.
