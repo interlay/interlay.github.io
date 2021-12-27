@@ -22,6 +22,7 @@
   * [Tokenomics](kintsugi/tokenomics.md)
   * [Crowdloans - **Airdrop live!**](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
+  * [Guides](kintsugi/guides.md)
 
 * **Guides (Testnet)**
 
