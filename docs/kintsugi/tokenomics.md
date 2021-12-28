@@ -134,75 +134,69 @@ The on-chain Treasury reserve is in turn distributed as follows (suggestion - fi
 
 ### Circulating Supply
 
+Last updated 28 Dec 2021.
+
+**Live circulating supply (estimate): 408k KINT** 
+
+
 Due to the nature of the stake-to-vote governance mechanism of KINT, it is impossible to accurately predict the circulating supply (holds actively participating in governance may decide to stake KINT for prolonged periods). In addition, the reserves controlled by the on-chain treasury may be distributed to foster project development and ecosystem growth, as determined by community governance (KINT holders).
 
 
 As such, the numbers below are **pure estimates and will very likely be subject to change over the first 2-3 years of the network's existence. Use with caution!**.
 
-
 <table>
-  <thead>
-    <tr >
-      <th>Time (since parachain launch)</th>
-      <th>in days</th>
-      <th>Circulating KINT</th>
-      <th>% of total supply</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Launch</td>
-      <td>1</td>
-      <td>422000</td>
-      <td>4.200</td>
-    </tr>
-    <tr>
-      <td>1 month</td>
-      <td>30</td>
-      <td>587000</td>
-      <td>5.900</td>
-    </tr>
-    <tr>
-      <td>2 months</td>
-      <td>60</td>
-      <td>757000</td>
-      <td>7.600</td>
-    </tr>
-    <tr>
-      <td>3 months</td>
-      <td>90</td>
-      <td>927000</td>
-      <td>9.300</td>
-    </tr>
-    <tr>
-      <td>4 months</td>
-      <td>120</td>
-      <td>1097000</td>
-      <td>11.000</td>
-    </tr>
-    <tr>
-      <td>5 months</td>
-      <td>150</td>
-      <td>1267000</td>
-      <td>12.700</td>
-    </tr>
-    <tr>
-      <td>6 months</td>
-      <td>180</td>
-      <td>1437000</td>
-      <td>14.400</td>
-    </tr>
-    <tr>
-      <td>1 year</td>
-      <td>360</td>
-      <td>2457000</td>
-      <td>24.600</td>
-    </tr>
-    <tr>
-      <td>2 years</td>
-      <td>720</td>
-      <td>5544000</td>
-      <td>55.400</td>
-    </tr>
-  </tbody>
+<thead>
+  <tr>
+    <th>Time (since parachain launch)</th>
+    <th>in days</th>
+    <th>Estimate % of total supply</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Launch</td>
+    <td>1</td>
+    <td>4-6%</td>
+  </tr>
+  <tr>
+    <td>1 month</td>
+    <td>30</td>
+    <td>6-8%</td>
+  </tr>
+  <tr>
+    <td>2 months</td>
+    <td>60</td>
+    <td>7.5-9.5%</td>
+  </tr>
+  <tr>
+    <td>3 months</td>
+    <td>90</td>
+    <td>9-11%</td>
+  </tr>
+  <tr>
+    <td>4 months</td>
+    <td>120</td>
+    <td>11-13%</td>
+  </tr>
+  <tr>
+    <td>5 months</td>
+    <td>150</td>
+    <td>12.5-15%</td>
+  </tr>
+  <tr>
+    <td>6 months</td>
+    <td>180</td>
+    <td>14-16%</td>
+  </tr>
+  <tr>
+    <td>1 year</td>
+    <td>360</td>
+    <td>~26%</td>
+  </tr>
+  <tr>
+    <td>2 years</td>
+    <td>720</td>
+    <td>~56%</td>
+  </tr>
+</tbody>
 </table>
