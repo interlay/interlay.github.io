@@ -112,12 +112,28 @@ You can participate using the following methods (including, but not limited to):
 
 using the [Polkadot.js](https://polkadot.js.org/) browser extension. 
 
-!> The minimum contribution amount is 5 DOT. Attention: when using a non-custodial wallets such as Polkadot.js users must hold a [minimum balance of 6.1 DOT](https://support.polkadot.network/support/solutions/articles/65000168651-what-is-the-existential-deposit-) (such that 1.1 DOT are left after you contribute 5 DOT). 
+?> The minimum contribution amount is 5 DOT. Attention: when using a non-custodial wallets such as Polkadot.js users must hold a [minimum balance of 6.1 DOT](https://support.polkadot.network/support/solutions/articles/65000168651-what-is-the-existential-deposit-) (such that 1.1 DOT are left after you contribute 5 DOT). 
 
 ?> Known issue: Polkadot.js not recognized. [Follow these steps to fix](/guides/faq?id=polkadotjs-extension-not-detected-on-crowdloaninterlayio)
 
-### Via partner exchanges (to be announced soon)
+### Other Methods
 
-### Via partner DeFi platforms (to be announced soon)
+!> Please be careful when using 3rd party crowdloan providers - this is at your own responsibility. Do you own research.
+
+
+#### Via partner (mobile) wallets
+
+- [Fearless Wallet](https://fearlesswallet.io/). Supports referrals.
+
+
+#### Via partner DeFi platforms
+
+?> Please note: as of now, all of the liquid crowdloan solutions listed below are custodial, i.e., not fully decentralized.
+
+- [Parallel Finance](https://crowdloan.parallel.fi/#/auction/polkadot). Supports referrals. Additional PARA token bonus. You receive liquid cDOT tokens.
+- [Equilibrium](https://xdot.equilibrium.io/en). You receive liquid xDOT tokens. Additional EQ token bonus.
+- [Bifrost](https://bifrost.app/vcrowdloan). You receive liquid vsDOT tokens. Additional BNC token bonus.
   
-### Via partner (mobile) wallets (to be announced soon)
+#### Via partner exchanges
+
+To be announced soon
