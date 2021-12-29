@@ -35,7 +35,7 @@ You will be asked to sign the terms and conditions via the polkadot.js extension
 
 #### 3. Successfully claimed KINT
 
-It may take up to 48 hours to see and access your KINT in your wallet. Thank you for participating.
+**It may take up to 48 hours** to see and access your KINT in your wallet. Thank you for participating.
 
 ![Wait](../_assets/img/kintsugi/claim_kint_3.png)
 
@@ -69,6 +69,16 @@ There are two cases:
 ## Checking KINT Balance
 
 Withing ~48 hours of accepting the T&Cs and submitting the claim form, you should receive airdropped tokens in you account. Follow these steps to check your balance.
+
+### Sub.id
+
+The simplest way to see your KINT balance (and balances of other tokens that you have on the Kintsugi parachain) is currently through [Sub.id by Subsocial](https://sub.id/#/).
+
+Go to [sub.id](https://sub.id/#/) and enter your account.
+
+### Polkadot.js
+
+More advanced users can use Polkadot.js developer tools to check the account balance.
 
 !> Polkadot.js Accounts tab will **not show your KINT balance**. Kintsugi has a generic multi-currency pallet, which allows adding any token easily. However, Polkadot.js does not support this - yet. **Follow the instructions below to view your KINT balance via Polkadot.js Developer tab**
 
