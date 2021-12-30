@@ -40,20 +40,11 @@ You will be asked to sign the terms and conditions via the polkadot.js extension
 ![Wait](../_assets/img/kintsugi/claim_kint_3.png)
 
 
-## Update Metadata in Polkadot.js  (Repetitive!)
+## Update Metadata in Polkadot.js 
 
-!> Currently, you need to update the Metadata each time you open Polkadot.js in a new tab or browser. This issue is being worked on.
+Once in a while there are updates that require reloading metadata so Polkadot.js can properly interact with the Kintsugi parachain through your browser.
 
-
-#### 1. Go to [ https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
-
-Make sure you check that "Hosted by Kinstugi Labs" is selected in the explorer sidebar.
-
-![Select hoster](../_assets/img/kintsugi/check-balance/1_select-kintsugi-chain.png)
-
-#### 2. Wait for Metadata to Update
-
-Go to the "Settings" > "Metadata" tab. 
+To update metadata, go to the "Settings" > "Metadata" tab. 
 
 There are two cases:
 
@@ -82,11 +73,8 @@ More advanced users can use Polkadot.js developer tools to check the account bal
 
 !> Polkadot.js Accounts tab will **not show your KINT balance**. Kintsugi has a generic multi-currency pallet, which allows adding any token easily. However, Polkadot.js does not support this - yet. **Follow the instructions below to view your KINT balance via Polkadot.js Developer tab**
 
-#### 1. [ Update Metadata](kintsugi/guides?id=update-metadata-in-polkadotjs-repetitive)
 
-To be sure everything works, please do this step first!
-
-#### 2. View Balance in Developer > Chain state > Token
+#### View Balance in Developer > Chain state > Token
 
 In the "Developer" tab select "Chain state".
 
@@ -124,11 +112,8 @@ You will now see your KINT balance as follows:
 
 ?> You can only transfer tokens that have unlocked! `Available for transfer` = `free` - `frozen`
 
-#### 1. [ Update Metadata](kintsugi/guides?id=update-metadata-in-polkadotjs-repetitive)
 
-To be sure everything works, please do this step first!
-
-#### 2. Transfer KINT in Developer > Extrinsics > Tokens
+#### Transfer KINT in Developer > Extrinsics > Tokens
 
 1. To transfer KINT, select "Extrinsics" in the "Developer".
 
@@ -160,7 +145,7 @@ You will see a green success message after 10-20 seconds in the top right if the
 
 !> Important: write down / save the block hash of your transaction!
 
-#### 3.View and Save Transaction Details
+#### 2. View and Save Transaction Details
 
 
 **Option 1: RPC Call Log**
@@ -255,9 +240,6 @@ If your tokens are subject to vesting ("frozen" field is non-zero) then they wil
 
 To claim the latest unlocked tokens, do the following:
 
-#### 1. [ Update Metadata](kintsugi/guides?id=update-metadata-in-polkadotjs-repetitive)
-
-#### 2. Claim last unlocked tokens
 
 1. Go to "Developers" > "Extrinsics"
 2. Select "vesting" in the extrinsic dropdown
