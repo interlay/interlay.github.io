@@ -14,6 +14,7 @@ Follow this guide to claim KINT. This guide applies the following contributors:
 * Contributions via https://kintsugi.interlay.io/, please use the account that you have used for the contribution
 * Contributions via https://polkadot.js.org/apps/#/, please use the account that you have used for the contribution
 * Contributions via the Bifrost SALP (https://bifrost.app/vcrowdloan?tab=ksm), please use the account that you have used for the contribution on the Bifrost app
+* Contributions via the Fearless wallet. Here, **you must first import you Fearless account into Polkadot.js**. The Fearless team has prepared a [guide](https://wiki.fearlesswallet.io/accounts/walkthrough/exporting-and-importing-a-wallet-using-a-passphrase).
 
 Other contributions, e.g., via exchanges will airdrop KINT tokens through other means. If you have contributed via any other means than the ones listed above, please contact the provider of the contribution for the KINT airdrop.
 
