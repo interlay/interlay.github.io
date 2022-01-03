@@ -1,98 +1,98 @@
-# Operating the Vault Client
+# Работа с клиентом Хранилища
 
-Usually, you will not need to interact with your Vault client as it automatically executes its [main tasks](vault/overview?id=what-do-vaults-do).
-However, sometimes it is necessary to interact with the Vault client, for example, if you would like to add or withdraw collateral.
+Обычно вам не нужно взаимодействовать с клиентом хранилища, поскольку он автоматически выполняет свои [основные задачи](vault/overview?id=what-do-vaults-do).
+Однако иногда необходимо взаимодействовать с клиентом хранилища, например, если вы хотите добавить или снять обеспечение.
 
-At the end of this document you will have:
+В конце этого документа вы сможете:
 
-- [x] Deposited additional collateral
-- [x] Withdrawn surplus collateral
-- [x] Learned about automatic actions of your Vault
-- [x] Visited the Vault dashboard
+- [x] Внести дополнительное обеспечение
+- [x] Изъять излишки обеспечения
+- [x] Узнать об автоматических действиях вашего Vault
+- [x] Посетить дашбоард хранилища
 
-## Changing Collateral
+## Изменение обеспечения
 
-### Increasing Collateral
+### Увеличение залога
 
-**Web UI**
+**Веб-интерфейс**
 
-Go to the Vault tab and click on button next to the `Collateral: X DOT for Y BTC` text (above the Issue Requests table). Then, follow the isntructions.
+Перейдите на вкладку Хранилище и нажмите на кнопку рядом с надписью `Collateral: X DOT за Y BTC` (над таблицей Issue Requests). Затем следуйте инструкциям.
 
-**interbtc-js library**
+**библиотека interbtc-js**.
 
-You can use [interbtc-js](https://github.com/interlay/interbtc-js) to lock additional collateral.
+Вы можете использовать [interbtc-js](https://github.com/interlay/interbtc-js) для блокировки дополнительного обеспечения.
 
-```js
+``js
 import { createinterbtcAPI } from "@interlay/interbtc";
 
 const interbtc = await createinterbtcAPI("ws://127.0.0.1:9944", "testnet");
 interbtc.setAccount(KEYRING);
 
-// 100 DOT denominated in Planck
+// 100 DOT, деноминированных в Planck.
 const additionalCollateralInPlanck = "1000000000000";
 await interbtc.vaults.lockAdditionalCollateral(additionalCollateralInPlanck);
 ```
 
-### Withdrawing Collateral
+### Снятие обеспечения
 
-**Web UI**
+**Веб-интерфейс**
 
-Go to the Vault tab and click on the button next to the `Collateral: X DOT for Y BTC` text (above the Issue Requests table). Then, follow the isntructions.
+Перейдите на вкладку Vault и нажмите на кнопку рядом с надписью `Collateral: X DOT за Y BTC` (над таблицей Заявки на выпуск). Затем следуйте инструкциям.
 
-**interbtc-js library**
+**библиотека interbtc-js**.
 
-You can use [interbtc-js](https://github.com/interlay/interbtc-js) to withdraw collateral.
+Вы можете использовать [interbtc-js](https://github.com/interlay/interbtc-js) для вывода залога.
 
-```js
+``js
 import { createinterbtcAPI } from "@interlay/interbtc";
 
 const interbtc = await createinterbtcAPI("ws://127.0.0.1:9944", "testnet");
 interbtc.setAccount(KEYRING);
 
-// 100 DOT denominated in Planck
+// 100 DOT, деноминированных в Planck.
 const collateralToWithdrawInPlanck = "1000000000000";
 await interbtc.vaults.withdrawCollateral(collateralToWithdrawInPlanck);
 ```
 
-## Automatic Actions
+## Автоматические действия
 
-### Registering your Vault
+### Регистрация вашего хранилища
 
-The default behavior on testnet is **automatic registration** using Interlay's DOT faucet as set in the `auto-register-with-faucet-url` arg. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
+По умолчанию в testnet используется **автоматическая регистрация** с помощью DOT-крана Interlay, заданного в аргументе `auto-register-with-faucet-url`. Другим вариантом регистрации является флаг `auto-register-with-collateral`, как описано в [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
 
-You can also register your Vault through our web UI, going to the "Vault" tab, clicking the `Register` button and completing the steps.
+Вы также можете зарегистрировать свое хранилище через наш веб-интерфейс, перейдя на вкладку " Хранилище", нажав кнопку `Регистрация` и выполнив все шаги.
 
-Moreover, you can interact with the Vault pallet directly using [interbtc-js](https://github.com/interlay/interbtc-js).
+Кроме того, вы можете взаимодействовать с пакетом хранилища напрямую, используя [interbtc-js](https://github.com/interlay/interbtc-js).
 
-```js
+``js
 import { createinterbtcAPI } from "@interlay/interbtc";
 
 const interbtc = await createinterbtcAPI("ws://127.0.0.1:9944", "testnet");
 interbtc.setAccount(KEYRING);
 
-// 100 DOT denominated in Planck
+// 100 DOT, деноминированных в Планке
 const collateralInPlanck = "1000000000000";
 await interbtc.vaults.register(collateralInPlanck, BTC_PUBLIC_KEY);
 ```
 
-### Earning Fees
+### Заработок комиссионных
 
-The Vault client is automatically earning fees as described in the [Fee Model](vault/overview?id=fee-model).
+Клиент хранилища автоматически зарабатывает комиссионные, как описано в разделе [Модель оплаты вознаграждения](vault/overview?id=fee-model).
 
-### Accepting Issue and Redeem Requests
+### Принятие запросов на выдачу и погашение
 
-Issue and Redeem requests are processed automatically at the moment, signing transactions on the Bitcoin and Polkadot networks using the mnemonic/account credentials you provide to the client when running it.
+Запросы на выпуск и погашение обрабатываются автоматически, подписывая транзакции в сетях Bitcoin и Polkadot с использованием мнемоники/учетных данных, которые вы предоставляете клиенту при его запуске.
 
-### Leaving interBTC
+### Выход из interBTC
 
-The process to leave interBTC depends on whether or not your Vault client holds BTC in custody.
+Процесс выхода из interBTC зависит от того, есть ли у вашего клиента хранилища BTC на хранении.
 
-If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client without risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
+Если в вашем Vault нет BTC на хранении, вы можете в любой момент вывести весь свой залог DOT и покинуть систему. Вы можете остановить клиента Vault без риска быть наказанным. Вы не будете участвовать в запросах на выпуск или погашение после того, как снимете свое обеспечение DOT.
 
-If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another Vault. You can request to be replaced through the [Vault dashboard](https://bridge.interlay.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
+Если ваши клиенты Vault держат на хранении хотя бы _некоторое количество BTC_, у вас есть два варианта выхода из системы. Оба варианта требуют перемещения BTC, которые находятся у вас на хранении. Вариант А, уход через _замену_, требует, чтобы вы запросили замену на другое хранилище. Вы можете запросить замену через [Vault dashboard](https://bridge.interlay.io/vault). Вариант B, уход через _redeem_, требует, чтобы вы ждали, пока пользователь выкупит всю сумму BTC, которую хранит Vault. Только после того, как у вас останется 0 BTC, клиент Vault сможет вывести весь свой залог.
 
-## Dashboard
+## Приборная панель
 
-You can monitor the operation of your Vault on the Vault dashboard by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).
+Вы можете следить за работой вашего Vault на приборной панели Vault, добавив ключ в расширение [polkadot{.js}](https://polkadot.js.org/extension/).
 
-Once the Vault is up and running, a "Vault" tab will appear in the topbar of the app at [bridge.interlay.io](https://bridge.interlay.io/) (or you can access directly at [bridge.interlay.io/vault](https://bridge.interlay.io/vault)).
+Как только хранилище будет запущено, в верхней панели приложения появится вкладка "Vault" по адресу [bridge.interlay.io](https://bridge.interlay.io/) (или вы можете получить доступ непосредственно по адресу [bridge.interlay.io/vault](https://bridge.interlay.io/vault)).

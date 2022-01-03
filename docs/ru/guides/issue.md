@@ -1,108 +1,108 @@
-# Issue interBTC
+# Выпуск interBTC
 
-interBTC allows you to receive a representation of BTC to be used any way you see fit in the Polkadot ecosystem.
-To get you started, follow this guide.
+interBTC позволяет вам получить представление BTC для использования любым удобным для вас способом в экосистеме Polkadot.
+Чтобы начать работу, следуйте этому руководству.
 
-At the end of this guide you will have:
+В конце этого руководства вы получите:
 
-- [x] Locked BTC with a collateralized Vault
-- [x] Issued your first interBTC on the interBTC app
+- [x] Заблокируете BTC в хранилище с обеспечением
+- [x] Выпустите свой первый InterBTC в приложении InterBTC
 
-## Video Guide (OLD UI - New Guide is WIP)
+## Видеоруководство (старый пользовательский интерфейс - новое руководство находится в разработке)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hMZTj6ctGQE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Prerequisites
+## Предварительные условия
 
-Make sure you have the required [polkadot-js extension and a Bitcoin wallet](start/prereq.md).
+Убедитесь, что у вас есть необходимые [расширение polkadot-js и кошелек Bitcoin](start/prereq.md).
 
-## Issue interBTC
+## Выпуск interBTC
 
-### 1. Go to [ bridge.interlay.io](https://bridge.interlay.io)
+### 1. Перейдите на сайт [ bridge.interlay.io](https://bridge.interlay.io).
 
-The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Issue tab.
+Приложение имеет 3 вкладки: Выпустить, Погасить и Перевести. Убедитесь, что вы находитесь на вкладке "Выпуск".
 
-### 2. Get testnet DOT via the Faucet
+### 2. Получите тестовые DOT через кран
 
-Get some testnet DOT via the faucet with the "Request DOT" button, right-hand side of top bar, before making an issue request. You will need this to pay for the bridge transaction fees.
+Получите немного тестовых DOT через кран с помощью кнопки "Request DOT" в правой части верхней панели, прежде чем делать запрос на выпуск. Это понадобится вам для оплаты транзакционных сборов моста.
 
-### 3. Enter the amount of interBTC you want to issue in the app
+### 3. Введите сумму interBTC, которую вы хотите выпустить, в приложении
 
-Enter the amount of interBTC you want to issue. The app will automatically select a Vault for you.
+Введите сумму interBTC, которую вы хотите выпустить. Приложение автоматически выберет для вас Vault.
 
-Check the details of your issue request and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
+Проверьте детали запроса на выпуск и нажмите **"Подтвердить "**. Подпишите транзакцию через расширение `polkadot-js`, когда вас попросят, и подождите несколько минут.
 
-### 4. Transfer BTC from your Bitcoin wallet to the Vault address
+### 4. Переведите BTC с вашего кошелька Bitcoin на адрес хранилища
 
-Use your Bitcoin wallet to transfer the specified `amount` to the given `address`.
+Используйте свой кошелек Bitcoin для перевода указанной `суммы` на указанный `адрес`.
 
-#### Optional: use a hardware wallet
+#### Дополнительно: используйте аппаратный кошелек
 
 <details>
 <summary>
-<b>Send BTC with the Ledger wallet</b>
+<b>Отправить BTC с помощью кошелька Ledger</b>
 
 </summary>
 
-To configure [Ledger Live](https://www.ledger.com/ledger-live) to work with Bitcoin testnet, go to `Setting` > `Experimental features` and enable `Developer mode`. Using the `Manager`, install the `Bitcoin testnet` app onto your device.
+Чтобы настроить [Ledger Live](https://www.ledger.com/ledger-live) для работы с Bitcoin testnet, перейдите в раздел `Настройки` > `Экспериментальные возможности` и включите `Режим разработчика`. Используя `Менеджер`, установите приложение `Bitcoin testnet` на свое устройство.
 
-Enter the recipient address or scan the QR code. ([Support](https://support.ledger.com/hc/en-us/articles/360019123593-Send-crypto-assets))
+Введите адрес получателя или отсканируйте QR-код. ([Поддержка](https://support.ledger.com/hc/en-us/articles/360019123593-Send-crypto-assets))
 
-![Enter Recipient](../_assets/img/ledger/1-recipient.png)
+![Введите получателя](../_assets/img/ledger/1-recipient.png)
 
-Enter the amount - this may be auto-completed.
+Введите сумму - она может быть автоматически заполнена.
 
-![Enter Amount](../_assets/img/ledger/2-amount.png)
+![Введите Сумму](../_assets/img/ledger/2-amount.png)
 
-Review the summary and click **"Continue"**.
+Просмотрите итоговую информацию и нажмите **"Продолжить "**.
 
-![Summary](../_assets/img/ledger/3-summary.png)
+![Итог](../_assets/img/ledger/3-summary.png)
 
-Confirm the recipient address, amount and fees on the device.
+Подтвердите адрес получателя, сумму и сборы на устройстве.
 
-![Confirm](../_assets/img/ledger/4-device-2.png)
+![Подтверждение](../_assets/img/ledger/4-device-2.png)
 
-The receipt will show the transaction ID, click **"View in explorer"** to check whether your transaction is included in the Bitcoin network.
+На экране появится идентификатор транзакции, нажмите **"Просмотр в проводнике "**, чтобы проверить, включена ли ваша транзакция в сеть Bitcoin.
 
-![Receipt](../_assets/img/ledger/5-receipt.png)
+![Счет](../_assets/img/ledger/5-receipt.png)
 
 </details>
 
 <details>
 <summary>
-<b>Send BTC with the Trezor wallet</b>
+<b>Отправить BTC с помощью кошелька Trezor</b>
 </summary>
 
-To configure the [Trezor Wallet](https://wallet.trezor.io/#/) to work with Bitcoin testnet, go to the `Wallet Settings` and set `Backend Server URL` to `https://tbtc2.trezor.io`.
+Чтобы настроить [Trezor Wallet](https://wallet.trezor.io/#/) для работы с Bitcoin тестнет, перейдите в `Настройки кошелька` и установите `Адрес сервера бэкенда` в `https://tbtc2.trezor.io`.
 
-For up-to-date details please checkout the [Trezor Wiki](https://wiki.trezor.io/Bitcoin_testnet).
+Для получения более подробной информации, пожалуйста, ознакомьтесь с [Trezor Wiki](https://wiki.trezor.io/Bitcoin_testnet).
 
-![Configuration](../_assets/img/trezor/1-configuration.png)
+![Конфигурация](../_assets/img/trezor/1-configuration.png)
 
-Enter the recipient address and amount manually or scan the QR code. ([User Manual](https://wiki.trezor.io/User_manual:Making_payments#Enter_the_destination_address_and_the_amount))
+Введите адрес получателя и сумму вручную или отсканируйте QR-код. ([Руководство пользователя](https://wiki.trezor.io/User_manual:Making_payments#Enter_the_destination_address_and_the_amount))
 
-![Enter Recipient & Amount](../_assets/img/trezor/2-send-testnet.png)
+![Введите получателя и сумму](../_assets/img/trezor/2-send-testnet.png)
 
-Confirm the recipient address, amount and fees on the device.
+Подтвердите адрес получателя, сумму и комиссионные на устройстве.
 
-![Confirm](../_assets/img/trezor/3-confirm-device.png)
+![Подтвердить](../_assets/img/trezor/3-confirm-device.png)
 
-The payment will appear in the `Transactions` tab as unconfirmed. Once this is included in the Bitcoin network the status should update.
-If configured, you may also check the status of the transaction in a block explorer.
+Платеж появится на вкладке `Транзакции` как неподтвержденный. Как только он будет включен в сеть Bitcoin, статус должен обновиться.
+Если настроено, вы также можете проверить статус транзакции в проводнике блоков.
 
-![Receipt](../_assets/img/trezor/4-transactions.png)
+![Счет](../_assets/img/trezor/4-transactions.png)
 
 </details>
 
-### 5. Wait for confirmation of your BTC transaction and receive interBTC automatically
+### 5. Дождитесь подтверждения вашей транзакции BTC и автоматически получите interBTC
 
-Once you made the payment, the app will automatically locate your transaction on the Bitcoin blockchain. If this transaction is correct, you can wait for a few minutes and you will receive your interBTC. This is because a Vault will eventually execute your request if your transaction has sufficient confirmations.
+Как только вы совершили платеж, приложение автоматически найдет вашу транзакцию в блокчейне Bitcoin. Если транзакция верна, вы сможете подождать несколько минут и получите свой interBTC. Это связано с тем, что хранилище в конечном итоге выполнит ваш запрос, если ваша транзакция имеет достаточное количество подтверждений.
 
-### 6. Optional: Manually claim your interBTC
+### 6. Опционально: Вручную потребовать свой interBTC
 
-You can check the status of your issue request in the [Transactions](https://bridge.interlay.io/transactions) view in the **"Issue Requests"** table. If your Bitcoin transaction has enough confirmations but has not been executed by a Vault yet, click on the issue request that is "Pending". This will open a modal, where you will see an **"Execute"** button. To finalize the Issue process and claim your interBTC, either wait for a Vault to auto-execute your request, or click **"Execute"** yourself.
+Вы можете проверить статус вашего запроса на выпуск в окне [Транзакции](https://bridge.interlay.io/transactions) в таблице **"Запросы на выпуск "**. Если ваша транзакция Bitcoin имеет достаточное количество подтверждений, но еще не была выполнена хранилищем, нажмите на запрос на выпуск, который находится в состоянии "Pending". Откроется модальное окно, в котором вы увидите кнопку **"Execute "**. Чтобы завершить процесс эмиссии и получить свои InterBTC, либо дождитесь автоматического выполнения запроса в хранилище, либо нажмите **"Выполнить "** самостоятельно.
 
-## Questions?
+## Возникли вопросы?
 
 - Checkout out the [FAQ](https://www.notion.so/interlay/Interlay-FAQ-5e3019b1cfd94f6693dc186e9640e607#277286bac5224dbbab565af4fe1ec5d5)
-- Join our [Discord](https://discord.com/invite/KgCYK3MKSf)
+- Присоединяйтесь к нашему [Discord](https://discord.com/invite/KgCYK3MKSf)

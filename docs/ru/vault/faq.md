@@ -1,87 +1,87 @@
-# FAQ
+# ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
 
-### Who can become a Vault?
+### Кто может стать хранилищем?
 
-The interBTC bridge is fully decentralized: anyone can run a Vault.
+Мост interBTC полностью децентрализован: любой может управлять хранилищем.
 
-### How many Vaults can there be?
+### Сколько может быть хранилищ?
 
-As many as want to participate.
+Столько, сколько хотят участвовать.
 
-### What is the minimum number of required Vaults?
+### Каково минимальное количество необходимых хранилищ?
 
-One honest and online Vault is enough to allow users to move BTC to Polkadot. A user can even be his/her own Vault. The more Vaults, however, the better.
+Достаточно одного честного и онлайн хранилища, чтобы пользователи могли переводить BTC в Polkadot. Пользователь может даже быть своим собственным хранилищем. Однако чем больше хранилищ, тем лучше.
 
-### Can I run multiple Vaults?
+### Могу ли я управлять несколькими хранилищами?
 
-Definitely! Please only use one unique key per client to avoid race conditions on signing. Additionally, if a Vault is started using the same key name
-as another that was already running it will load the same Bitcoin wallet and may attempt to transfer "locked" funds. Please review the response to Vault
-theft below.
+Определенно! Пожалуйста, используйте только один уникальный ключ для каждого клиента, чтобы избежать условий гонки при подписании. Кроме того, если хранилище запускается с тем же именем ключа.
+как уже запущенное другое, оно загрузит тот же кошелек Bitcoin и может попытаться перевести "заблокированные" средства. Пожалуйста, ознакомьтесь с ответом на
+ниже.
 
-### Do Vaults earn fees?
+### Получают ли хранилища комиссионные?
 
-Yes! Vaults earn fees in interBTC and DOT.
+Да! Хранилища получают комиссию в interBTC и DOT.
 
-### How often must Vaults come online?
+### Как часто хранилища должны быть онлайн?
 
-Vaults **should remain online** to check for issue and, most importantly, redeem requests.
-Currently, Vaults have ``24 hours`` to execute a redeem request.
-As such, a Vault must come online **at least once every ``24 hours``**.
+Хранилища **должны оставаться онлайн** для проверки эмиссии и, самое главное, запросов на погашение.
+В настоящее время у хранилищ есть ``24 часа`` для выполнения запроса на погашение.
+Таким образом, хранилище должно выходить в сеть **по крайней мере, один раз в ``24 часа``**.
 
-We recommend Vaults remain online to avoid failing redeem requests in times of high network load on Bitcoin.
+Мы рекомендуем хранилищам оставаться онлайн, чтобы избежать неудачных запросов на выкуп во время высокой нагрузки на сеть Bitcoin.
 
-### What are collateral requirements?
+### Каковы требования к обеспечению?
 
-Vaults must lock up DOT collateral worth ``150%`` of the locked BTC value.
+Хранилища должны заблокировать залог DOT в размере ``150%`` от стоимости заблокированных BTC.
 
-### What happens if a Vault fails to redeem BTC?
+### Что произойдет, если хранилище не сможет выкупить BTC?
 
-The Vault will be slashed a punishment fee and the user can (i) chose to retry with another Vault or (ii) claim the Vault's collateral.
+Хранилище будет подвергнуто штрафу, и пользователь может (i) выбрать повторную попытку с другим хранилищем или (ii) потребовать залог хранилища.
 
-### What happens if a vault steals?
+### Что произойдет, если хранилище совершит кражу?
 
-The Vault's collateral, up to ``150%`` of the stolen BTC value at the current exchange rate, is slashed and the interBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg).
-See [here](/vault/overview?id=collateral) for more details.
+Залог хранилища, составляющий до ``150%`` стоимости украденных BTC по текущему курсу, списывается, и мост interBTC инициирует [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg).
+Более подробную информацию смотрите [здесь](/vault/overview?id=collateral).
 
-### What happens if a vault is undercollateralized?
+### Что происходит, если хранилище недостаточно обеспечено?
 
-The Vault must re-balance its collateral. If it fails to do so, the interBTC bridge has a multi-stage collateral scheme in place. See [here](/vault/overview?id=over-collateralization) for more details.
+Хранилище должно восстановить баланс своего обеспечения. Если ему это не удается, в мосте interBTC действует многоступенчатая схема обеспечения. Более подробную информацию смотрите [здесь](/vault/overview?id=over-collateralization).
 
-### How do Vaults manage Bitcoin keys?
+### Как хранилища управляют ключами Bitcoin?
 
-Vaults are responsible for managing their own Bitcoin private keys.
-Each Vault must submit a Bitcoin public key (the "master" key) when registering with the interBTC bridge.
+Хранилища отвечают за управление своими собственными закрытыми ключами Биткойн.
+Каждое хранилище должно предоставить публичный ключ Биткойн ("главный" ключ) при регистрации на мосте interBTC.
 
-The Vault client uses a separate wallet file, specified upon start-up, which is imported into the Vault's local Bitcoin full node (Bitcoin Core wallet).
+Клиент Хранилища использует отдельный файл кошелька, указанный при запуске, который импортируется в локальный полный узел Bitcoin Хранилища (кошелек Bitcoin Core).
 
-!> Never transfer funds manually from the Bitcoin wallet as it may be considered theft.
+!> Никогда не переводите средства вручную из кошелька Bitcoin, так как это может быть расценено как кража.
 
-### How are deposit addresses generated?
+### Как генерируются адреса депозитов?
 
-Each time a user requests to issue new interBTC, the interBTC bridge uses the master key of the selected Vault to derive Bitcoin addresses (controlled by this Vault) via an on [on-chain key derivation scheme](https://interlay.gitlab.io/interbtc-spec/security_performance/security-analysis.html). This address is used by the user for the BTC deposit.
+Каждый раз, когда пользователь запрашивает выпуск новых interBTC, мост interBTC использует мастер-ключ выбранного хранилища для получения Bitcoin-адресов (контролируемых этим хранилищем) через [on-chain key derivation scheme](https://interlay.gitlab.io/interbtc-spec/security_performance/security-analysis.html). Этот адрес используется пользователем для депозита BTC.
 
-### What if all Relayers go offline?
+### Что если все ретрансляторы уйдут в оффлайн?
 
-While unlikely, if all Relayers go offline the interBTC bridge will pause operation.
+Хотя это маловероятно, если все ретрансляторы выйдут из сети, мост interBTC приостановит работу.
 
-## Troubleshooting
+## Устранение неполадок
 
-### Vault has stolen BTC
+### Хранилище украло BTC
 
-Funds have unexpectedly been sent from an address registered to your Vault. This may happen if you have transferred
-BTC from your wallet manually or if you have started another Vault using the same keyname.
+Средства неожиданно были отправлены с адреса, зарегистрированного на вашем Хранилище. Это может произойти, если вы перевели
+BTC из вашего кошелька вручную или если вы запустили другое хранилище, используя то же имя ключа.
 
-### Failed to obtain public key
+### Не удалось получить открытый ключ
 
-On startup, the Vault will check that your Bitcoin full node still has access to the key it registered with.
-If this is not the case, something may have happened to your [wallet](https://en.bitcoin.it/wiki/Wallet) file.
+При запуске Хранилище проверяет, что ваша полная нода Bitcoin  все еще имеет доступ к ключу, с которым она был зарегистрирован.
+Если это не так, возможно, что-то случилось с файлом Вашего [кошелька](https://en.bitcoin.it/wiki/Wallet).
 
-### Fee estimation failed. Fallbackfee is disabled.
+### Не удалось рассчитать комиссию. Fallbackfee отключен.
 
-Sometimes it is not possible for Bitcoin to estimate the transaction fees for redeem requests.
-To avoid this happening, set a sensible default on startup such as `-fallbackfee=0.0002`.
+Иногда Биткойн не может оценить комиссию за транзакцию для запросов на выкуп.
+Чтобы этого не произошло, установите разумное значение по умолчанию при запуске, например `-fallbackfee=0.0002`.
 
-### No available targets are compatible with this triple.
+### Нет доступных целей, совместимых с этой тройкой.
 
-The secp256k1 elliptic-curve dependency used for generating Vault addresses requires a newer version of [Clang](https://clang.llvm.org/).
-Please download the latest available version for your distribution or check the minimum supported version in the build instructions.
+Зависимость secp256k1 elliptic-curve, используемая для генерации адресов хранилищ, требует более новой версии [Clang](https://clang.llvm.org/).
+Пожалуйста, загрузите последнюю доступную версию для вашего дистрибутива или проверьте минимально поддерживаемую версию в инструкции по сборке.

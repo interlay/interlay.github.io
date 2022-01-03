@@ -1,37 +1,37 @@
-# Interlay Network 101
+# Сеть Interlay 101
 
-## Introduction
+## Введение
 
-Interlay is a decentralized network dedicated to connecting crypto-currencies like Bitcoin with DeFi platforms like Polkadot and Ethereum. The Interlay network is hosted as a Polkadot parachain and will be connected to Cosmos, Ethereum and other major DeFi networks. Read more about Interlay’s vision of blockchain interoperability.
+Interlay - это децентрализованная сеть, предназначенная для соединения криптовалют, таких как биткоин, с платформами DeFi, такими как Polkadot и Ethereum. Сеть Interlay размещена в качестве парачейна Polkadot и будет подключена к Cosmos, Ethereum и другим крупным DeFi сетям. Подробнее о видении Interlay относительно совместимости блокчейна.
 
-**[interBTC](/getting-started/overview?id=interbtc-bitcoin-on-any-blockchain)**, Interlay’s flagshipt product, is Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant.
+**[interBTC](/getting-started/overview?id=interbtc-bitcoin-on-any-blockchain)**, Флагманский продукт Interlay - Bitcoin на любом блокчейне. Актив, обеспеченный Bitcoin в соотношении 1:1, полностью обеспеченный, совместимый и устойчивый к цензуре.
 
-**[Kintsugi](../kintsugi/overview)** is Interlay’s canary network, an experiment with real economic value deployed on Kusama. Kintsugi and Interlay share the same code base - with the difference that Kintsugi focusses strictly on innovation and will always be ahead in terms of features. Read more about Interlay’s dual network model.
+**[Kintsugi](../kintsugi/overview)** это канареечная сеть Interlay, эксперимент с реальной экономической ценностью, развернутый на Кусаме. Kintsugi и Interlay используют одну и ту же базу кода - с той разницей, что Kintsugi фокусируется строго на инновациях и всегда будет впереди по количеству функций. Подробнее о модели двойной сети Interlay.
 
-### For a high level overview of the Interlay network - see this [ info slide deck](https://docs.google.com/presentation/d/1nqxPiL5Ya5IBEkofdg5TVa4gc4SkBXTpHWOX15duqns/edit#slide=id.g86723de484_0_6)
-Includes team background, interBTC, Kintsugi, comparison to other wrapped Bitcoin versions, and roadmap.
+### Для высокоуровневого обзора сети Interlay - смотрите этот [ информационный слайд-деск].(https://docs.google.com/presentation/d/1nqxPiL5Ya5IBEkofdg5TVa4gc4SkBXTpHWOX15duqns/edit#slide=id.g86723de484_0_6)
+Включает информацию о команде, interBTC, Kintsugi, сравнение с другими обернутыми версиями Bitcoin и дорожную карту.
 
-### Explanatory videos and a "30sec - 5min - 30min - 60min" info decks are WIP and will be posted here soon.
+### Поясняющие видео и информационные таблицы "30 секунд - 5 минут - 30 минут - 60 минут" находятся в стадии WIP и будут размещены здесь в ближайшее время.
 
 
-## Networks
+## Сети
 
-#### Interlay - Mainnet on Polkadot
+#### Interlay - Основная сеть на Polkadot
 
-- Coming soon
+- Скоро будет
 
-#### Kintsugi - Canary Network on Kusama
+#### Kintsugi - Канареечная сеть на  Kusama
 
-Canary network (testnet with real economic value) on Kusama.
+Канареечная сеть (тестовая сеть с реальной экономической ценностью) на Kusama.
 
-- [Read more](../kintsugi/overview.md)
+- [Читать далее](../kintsugi/overview.md)
 - [Website (kintsugi.interlay.io)](https://kintsugi.interlay.io/)
 - [Blockchain Explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
 
-#### Testnet
+#### Тестовая сеть 
 
-A PoA zero-value testnet.
+Тестовая сеть с нулевым значением PoA.
 
-- [Testing Guides](../guides/prereq.md)
+- [Справочники по тестированию](../guides/prereq.md)
 - [Website (bridge.interlay.io)](https://bridge.interlay.io/)
 - [Blockchain Explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain%2F#/explorer)

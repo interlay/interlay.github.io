@@ -1,46 +1,46 @@
-# Redeem interBTC
+# Погашение interBTC
 
-interBTC can be redeemed at any point in time for BTC on the Bitcoin blockchain. To receive BTC for your existing interBTC, follow this guide.
+InterBTC можно обменять в любой момент времени на BTC на блокчейне Bitcoin. Чтобы получить BTC за имеющиеся у вас interBTC, следуйте этому руководству.
 
-At the end of this guide you will have:
+В конце этого руководства вы получите:
 
-- [x] Redeemed your first interBTC from the interBTC app
-- [X] Received BTC for the redeemed interBTC in your Bitcoin wallet
+- [x] Выкупили свой первый interBTC через приложение interBTC
+- [X] Получили BTC за выкупленные interBTC на свой кошелек Bitcoin
 
-## Video Guide (OLD UI - New Guide is WIP)
+## Видеоруководство (старый пользовательский интерфейс - новое руководство находится в стадии разработки)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-TZ2XUmXh9I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Prerequisites
+## Предварительные условия
 
-- Make sure you have the required [polkadot-js extension and a Bitcoin wallet](start/prereq.md).
-- Make sure you [have interBTC in your wallet](guides/issue.md)
+- Убедитесь, что у вас есть необходимые [расширение polkadot-js и кошелек Bitcoin](start/prereq.md).
+- Убедитесь, что у вас [есть interBTC в кошельке](guides/issue.md)
 
-## Redeem interBTC
+## Погашение interBTC
 
-### 1. Go to [ bridge.interlay.io](https://bridge.interlay.io)
+### 1. Перейдите на сайт [ bridge.interlay.io](https://bridge.interlay.io).
 
-The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Redeem tab.
+В приложении есть 3 вкладки: Выпуск, Погашение и Перевод. Убедитесь, что вы находитесь на вкладке "Выкупить".
 
-### 2. Get testnet DOT via the Faucet
+### 2. Получите тестовые DOT через Кран
 
-Get some testnet DOT via the faucet with the "Request DOT" button, right-hand side of top bar, before making a redeem request. You will need this to pay for the bridge transaction fees.
+Прежде чем сделать запрос на выкуп, получите немного testnet DOT через кран с помощью кнопки "Request DOT", расположенной в правой части верхней панели. Они понадобятся вам для оплаты комиссии за транзакцию моста.
 
-### 3. Enter the amount of interBTC you want to redeem and the BTC address you want to receive your BTC to
+### 3. Введите сумму interBTC, которую вы хотите выкупить, и адрес BTC, на который вы хотите получить BTC.
 
-Enter the amount of interBTC you want to redeem, and the Bitcoin address where you want to receive the redeemed Bitcoin amount. Supported address types: [P2SH](https://en.bitcoin.it/wiki/P2SH), [P2PKH](https://en.bitcoin.it/wiki/P2PKH) and [P2WPKH](https://wiki.trezor.io/P2WPKH).
+Введите сумму interBTC, которую вы хотите погасить, и Bitcoin-адрес, на который вы хотите получить погашенную сумму Bitcoin. Поддерживаемые типы адресов: [P2SH](https://en.bitcoin.it/wiki/P2SH), [P2PKH](https://en.bitcoin.it/wiki/P2PKH) и [P2WPKH](https://wiki.trezor.io/P2WPKH).
 
-Check the bridge fee that is subtracted from your redeemed amount and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
+Проверьте комиссию моста, которая будет вычтена из выкупленной вами суммы, и нажмите **"Подтвердить "**. Подпишите транзакцию через расширение `polkadot-js`, когда вас попросят, и подождите несколько минут.
 
-### 4. Wait for confirmation of your BTC transaction and receive interBTC automatically
+### 4. Дождитесь подтверждения транзакции BTC и автоматически получите interBTC.
 
-The Redeem request is now being processed by the Vault. Wait for a few minutes (might take upt to 24 hours) and you will receive your Bitcoin at the address you specified.
+Запрос Redeem сейчас обрабатывается хранилищем. Подождите несколько минут (может занять до 24 часов), и вы получите свой Bitcoin на указанный вами адрес.
 
-### 5. Optional: Check the status of your redeem request
+### 5. Необязательно: Проверить статус запроса на выкуп
 
-You can check the status of your redeem request in the [Transactions](https://bridge.interlay.io/transactions) view in the **"Redeem Requests"** table. Note that Vaults have 24 hours to complete your request.
+Вы можете проверить статус запроса на выкуп в представлении [Transactions](https://bridge.interlay.io/transactions) в таблице **"Redeem Requests "**. Обратите внимание, что у хранилищ есть 24 часа, чтобы выполнить ваш запрос.
 
-## Questions?
+## Возникли вопросы?
 
 - Checkout out the [FAQ](https://www.notion.so/interlay/Interlay-FAQ-5e3019b1cfd94f6693dc186e9640e607#277286bac5224dbbab565af4fe1ec5d5)
-- Join our [Discord](https://discord.com/invite/KgCYK3MKSf)
+- Присоединяйтесь к нашему [Discord](https://discord.com/invite/KgCYK3MKSf)

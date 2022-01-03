@@ -1,3 +1,3 @@
-# Interlay Mainnet on Polkadot
+# Майннет Interlay на Polkadot
 
-Coming soon
+Скоро появится

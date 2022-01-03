@@ -1,178 +1,178 @@
-# Vaults
+# Хранилища
 
-Vaults are the heart of the interBTC and Kintsugi bridge. They are responsible for maintaining the physical 1:1 peg between BTC and interBTC.
-Vaults receive BTC for safekeeping from users and ensure BTC remains locked while interBTC exists
+Хранилища - это сердце моста interBTC и Kintsugi. Они отвечают за поддержание физической привязки 1:1 между BTC и interBTC.
+Хранилища принимают BTC на хранение от пользователей и обеспечивают сохранность BTC, пока существует interBTC.
 
-## Introduction
+## Введение
 
-Vaults are **non-trusted** and **collateralized** and **any user can become a Vault** by providing collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
+Хранилища являются **недоверенными** и **обеспеченными**, и **любой пользователь может стать хранилищем**, предоставив обеспечение. Это означает: как пользователь, вы можете свободно выбрать любое хранилище, которое вам нравится, или стать своим собственным хранилищем. Вы не обязаны доверять кому-то другому, если хотите быть особо осторожным.
 
-The correct behavior of Vaults is enforced by the bridge. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of the bridge. If a Vault tries to steal BTC, this will be automatically detected and the Vault will lose its collateral - and users will be reimbursed using this collateral (at a beneficial rate).
+Правильное функционирование хранилищ обеспечивается мостом. В частности, хранилища должны доказать правильность своего поведения компоненту BTC-Relay - клиенту Bitcoin SPV, реализованному непосредственно поверх моста. Если хранилище попытается украсть BTC, это будет автоматически обнаружено, и хранилище потеряет свой залог, а пользователи получат компенсацию за счет этого залога (по выгодной стоимости).
 
-The secondary responsibility of a Vault is to monitor both Bitcoin and the bridge to ensure that the BTC-Relay stays up to date with the Bitcoin mainchain by relaying Bitcoin block headers. BTC-Relay is self-healing and automatically detects and recovers from Bitcoin forks.
+Дополнительная обязанность хранилища - следить за Bitcoin и мостом, чтобы BTC-Relay оставался в курсе событий в главном цепочке Bitcoin, передавая заголовки блоков Bitcoin. BTC-Relay самовосстанавливается и автоматически обнаруживает и восстанавливается после форков Биткойна.
 
-### What do Vaults do?
+###  Чем занимаются хранилища?
 
-1. **Provide Collateral** and upload their Bitcoin public key to the bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping. Collateral can initially be provided in assets white-listed by Governance. Initially KSM on Kintsugi and DOT on Interlay.
-2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's collateral until BTC is redeemed again.
-3. **Redeem**: Vaults monitor the interBTC/Kintsugi bridge for redeem requests. When a user requests to redeem interBTC, Vaults release BTC to the user and prove that they behaved correctly via the BTC-Relay. Only if this proof is correct, the Vault's collateral is unlocked.
+1. **Предоставляют залог** и загружают свой открытый ключ Bitcoin на мост. Сумма предоставленного обеспечения определяет, сколько BTC хранилище может принять на хранение. Изначально залог может быть предоставлен в активах, включенных в белый список Управления. Первоначально это KSM на Kintsugi и DOT на Interlay.
+2. **Задача**: Хранилища получают BTC от пользователей на хранение. Это блокирует залог хранилища до тех пор, пока BTC снова не будут выкуплены.
+3. **Погашение**: Хранилища контролируют мост interBTC/Kintsugi на предмет запросов на выкуп. Когда пользователь запрашивает выкуп interBTC, хранилища выдают BTC пользователю и доказывают, что он вел себя правильно через BTC-Relay. Только если это доказательство верно, залог хранилища разблокируется.
 
-To support the integrity of the bridge, Vaults are also able to assume the role of a Relayer:
+Чтобы поддержать целостность моста, хранилища также могут брать на себя роль ретранслятора:
 
-1. **Maintain BTC-Relay**: submit Bitcoin block headers to BTC-Relay and make sure the bridge stays up to date with the Bitcoin mainchain.
-2. **Report Vault Theft**: monitor Vault Bitcoin addresses and BTC holdings and report theft to the bridge (providing an SPV proof to BTC-Relay)
+1. **Поддерживать BTC-Relay**: передавать заголовки блоков Биткойна в BTC-Relay и следить за тем, чтобы мост оставался в курсе событий в главном цепочке Биткойна.
+2. **Сообщать о краже из хранилища**: отслеживать биткоин-адреса и BTC в хранилище и сообщать о краже на мост (предоставляя SPV-доказательство на BTC-Relay).
 
-### Why operating a Vault?
+### Зачем использовать хранилище?
 
-1. **Earning potential:**
+1. **Потенциал заработка:**
 
-    - *interBTC*: All Vaults are part of a fee pool and earn fees in interBTC when any user issues or redeems interBTC.
-    - *KINT* (Kintsugi-only): Vaults receive a KINT block reward.
-    - *KSM/DOT* (planned feature): Subject to governance, Vaults are able to provide collateral in liquid staked assets like LKSM or LDOT to receive both staking rewards from the relay chain and the rewards form the Kintsugi/interBTC bridge.
+    - *interBTC*: Все хранилища являются частью пула комиссий и зарабатывают комиссии в interBTC, когда любой пользователь выпускает или обменивает interBTC.
+    - *KINT* (только для Kintsugi-): Хранилища получают вознаграждение за блок KINT.
+    - *KSM/DOT* (планируемая функция): В зависимости от управления, хранилища могут предоставлять обеспечение в ликвидных активах, таких как LKSM или LDOT, чтобы получать вознаграждение как от цепочки ретрансляции, так и от моста Kintsugi/interBTC.
 
-2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you sell interBTC.
+2. **Самостоятельное хранение:** В хранилищах хранятся BTC пользователей. Если вы являетесь крупным поставщиком ликвидности, вы можете стать своим собственным хранилищем и сохранять хранение своих BTC до тех пор, пока не продадите их interBTC.
 
-### What do I need to become a Vault?
+### Что мне нужно, чтобы стать хранилищем?
 
-1. Vault client ([source](https://github.com/interlay/interbtc-clients))
-2. Bitcoin full node ([instructions](https://bitcoin.org/en/full-node))
-3. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
-4. Some KSM/DOT to provide as collateral and pay for transaction fees
+1. Клиент хранилища ([источник](https://github.com/interlay/interbtc-clients)).
+2. Полная нода  биткойна ([инструкции](https://bitcoin.org/en/full-node)).
+3. Аккаунт Polkadot ([пара открытый/закрытый ключ](https://wiki.polkadot.network/docs/en/learn-keys))
+4. Некоторое количество KSM/DOT для предоставления в качестве залога и оплаты комиссий за транзакции.
 
-Head over to ["Installation"](/vault/installation) for a detailed setup guide.
+Перейдите по ссылке ["Установка"](/vault/installation) для получения подробного руководства по установке.
 
-## Fee Model
+## Модель вознаграждения
 
-Vaults earn fees on issue and redeem, based on the BTC volume.
+Хранилища получают комиссию за выпуск и погашение, основанную на объеме BTC.
 
-### Pool-based Fee Distribution
+### Распределение вознаграждения на основе пула
 
-Vaults earn fees based on the issued and redeemed BTC volume. To reduce variance of payouts, the bridge implements a **pooled fee model**.
+Хранилища получают комиссию на основе объема выпущенных и погашенных BTC. Чтобы уменьшить разброс выплат, мост реализует **модель распределения вознаграждения на основе пула**.
 
-Each time a user issues or redeems interBTC, they pay the following fees to a **global fee pool**:
+Каждый раз, когда пользователь выпускает или погашает InterBTC, он платит следующие сборы в **глобальный пул сборов**:
 
-- **Issue Fee**: `0.5%` of the Issue volume, paid in *interBTC*
-- **Redeem**: `0.5%` of the redeem volume, paid in *interBTC*
+- **Выпускной сбор**: `0,5%` от объема эмиссии, оплачивается в *interBTC*.
+- **Выкуп**: `0,5%` от объема выпуска, выплачивается в *interBTC*.
 
-From this fee pool, `100%` is distributed among all active Vaults based on the following factor:
+Из этого пула вознаграждений `100%` распределяется между всеми активными хранилищами на основе следующего коэффициента:
 
-- 100% based on the Vault's **BTC in custody** ( = issued interBTC) in proportion to the total locked BTC (= issued interBTC) across all Vaults
+- 100% на основе **BTC в хранилище** (= выпущенные interBTC) пропорционально общему количеству заблокированных BTC (= выпущенные interBTC) во всех хранилищах.
 
-Specifically, each Vault's fee is calculated according to the following formula:
+В частности, комиссия каждого хранилища рассчитывается по следующей формуле:
 
     vault_fee =
-    pool * (vault_locked_btc / total_locked_btc)
+    пул * (vault_locked_btc / total_locked_btc)
 
-The Vault fee is paid each time an Issue or Redeem request is executed.
+Комиссия хранилища выплачивается каждый раз, когда выполняется запрос на выпуск или погашение.
 
-### Vault Block Rewards
+### Вознаграждение за блокчейн хранилища
 
-Vaults receive governance tokens as fees for keeping BTC locked and providing the required insurance collateral in whitelisted assets. Early Vaults receive more rewards as they take up higher risk in terms of protocol maturity.
+Хранилища получают токены управления в качестве платы за хранение заблокированного  BTC и предоставление необходимого страхового обеспечения в активах, включенных в белый список. Ранние хранилища получают больше вознаграждений, поскольку они берут на себя больший риск с точки зрения зрелости протокола.
 
-#### Kintsugi
+#### Kintsugi.
 
-For the full details of the Vault rewards on the Kintsugi canary network, see the [Kintsugi token economy paper](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf) published by Kintsugi Labs.
+Полную информацию о вознаграждении хранилищ в канареечной сети Kintsugi можно найти в документе [Kintsugi token economy paper](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf), опубликованном Kintsugi Labs.
 
 #### Interlay
 
-Vaults rewards on the main Interlay network are tbd.
+Вознаграждения за хранилища в основной сети Interlay пока не определены.
 
-## Collateral
+## Обеспечение
 
-To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in whitelisted assets - following a similar process as [MakerDAO](https://docs.makerdao.com/smart-contract-modules/collateral-module). To mitigate exchange rate fluctuations, interBTC employs *over-collateralization* and a *multi-level collateral balancing* scheme.
+Чтобы у хранилищ не было стимула красть BTC пользователей, хранилища предоставляют залог в активах, включенных в белый список - по аналогичной схеме, как и в [MakerDAO](https://docs.makerdao.com/smart-contract-modules/collateral-module). Чтобы смягчить колебания обменного курса, interBTC использует *сверхзалог* и *многоуровневую схему балансировки залога*.
 
-### Multi-Collateral System
+### Система мульти-обеспечения
 
-The parachain supports the usage of different assets for usage as collateral. Governance white-lists asset that are accepted as collateral, specifying the various safety thresholds, as well as the maximum supply for each asset.
+Парачейн поддерживает использование различных активов в качестве залога. Управление составляет белый список активов, которые принимаются в качестве залога, указывая различные пороги безопасности, а также максимальное предложение для каждого актива.
 
-Vaults are identified by a unique `VaultId` that is a tuple of:
+Хранилища идентифицируются уникальным `VaultId`, который представляет собой кортеж из:
 
-``(AccountId, CollateralCurrency, WrappedCurrency)``
+``(AccountId, CollateralCurrency, WrappedCurrency)``.
 
-where `CollateralCurrency` is the collateral asset used by this Vault, and `WrappedCurrency` is the 1:1 backing asset (BTC).
+где `CollateralCurrency` - залоговый актив, используемый данным хранилищем, а `WrappedCurrency` - резервный актив 1:1 (BTC).
 
-?> This distinction between `AccountId` and `VaultId` allows us to easily add *more collateral assets*, as well as *backing assets other than BTC*, such as Litecoin, Dogecoin, ZCash, etc.
+Это различие между `AccountId` и `VaultId` позволяет нам легко добавлять *больше залоговых активов*, а также *залоговые активы, отличные от BTC*, такие как Litecoin, Dogecoin, ZCash и т.д.
 
-#### Vault Isolation
+#### Изоляция хранилищ
 
-A vault operator can run multiple vaults with different `VaultId`s with different collateral currencies using the same `AccountId`.
-Each Vault identified by a unique `VaultId` is isolated from all other Vaults.
+Оператор хранилища может управлять несколькими хранилищами с разными `VaultId` с разными валютами обеспечения, используя один и тот же `AccountId`.
+Каждое хранилище, идентифицированное уникальным `VaultId`, изолировано от всех других хранилищ.
 
-This means:
+Это означает:
 
-- Liquidations only affect a specific `VaultId`.
-- Vault operators must take pro-active measures to re-balance between different collateral assets
+- Ликвидация затрагивает только конкретное `VaultId`.
+- Операторы хранилищ должны принимать активные меры для восстановления баланса между различными активами обеспечения.
 
-When users requests to mint interBTC, they selects a specific `VaultId` to lock BTC with. Typically, users will not care with which Vault they want to mint with (unless there is a competitive fee market in the future) and will accept the automatic selection offered by the UI.
+Когда пользователи запрашивают возможность чеканки InterBTC, они выбирают определенный `VaultId` для блокировки BTC. Обычно пользователи не заботятся о том, в каком хранилище они хотят чеканить (если только в будущем не появится конкурентный рынок комиссий), и принимают автоматический выбор, предлагаемый пользовательским интерфейсом.
 
-When redeeming interBTC for BTC, users again select a specific `VaultId`. Here, the selection is *security relevant*: If Vaults fails to execute redeem requests, users have the right to
+При обмене InterBTC на BTC пользователи снова выбирают конкретный `VaultId`. В данном случае выбор имеет отношение к *безопасности*: Если хранилища не могут выполнить запрос на погашение, пользователи имеют право
 
-- (a) retry with another Vault and claim a small penalty in the Vault's collateral (the `CollateralCurrency` associated with the `VaultId`);
-- (b) to request reimbursement in that specific Vault’s `CollateralCurrency`.
+- (a) повторить попытку с другим Vault и потребовать небольшой штраф в обеспечении хранилища (`CollateralCurrency`, связанный с `VaultId`);
+- (b) запросить возмещение в `валюте обеспечения` этого конкретного хранилища.
 
-#### Multiple VaultIDs - One Vault Client
+#### Несколько идентификаторов хранилища - один клиент хранилища
 
-The [Vault client](https://github.com/interlay/interbtc-clients/tree/master/vault) manages all `VaultId`s associated with a given `AccountId`. This means, a Vault operator only needs to run *one off-chain client*.
+ [Клиент хранилища](https://github.com/interlay/interbtc-clients/tree/master/vault) управляет всеми `VaultId`, связанными с данным `AccountId`. Это означает, что оператору хранилища нужно запускать только *один оф-чейн клиент*.
 
-Vault operators can register new `VaultIds` through the UI and the Vault client will automatically start to manage these.
+Операторы хранилищ могут регистрировать новые `VaultId` через пользовательский интерфейс, и клиент хранилища автоматически начнет управлять ими.
 
-### Over-collateralization
+### Избыточное обеспечение
 
-Vaults must over-collateralize their BTC holdings. The exact threshold is thereby determined for each accepted collateral asset. The up-to-date collateral thresholds can be checked by accessing the parachain storage, e.g. via [Polkadot.js Apps](https://polkadot.js.org/apps/#/explorer).
+Хранилища должны иметь избыточное обеспечение своих BTC. Точный порог определяется для каждого принимаемого залогового актива. Актуальные пороги залога можно проверить, обратившись к хранилищу парачейна, например, через [Polkadot.js Apps](https://polkadot.js.org/apps/#/explorer).
 
-**Example used for explanation:** In the following, we use DOT collateral with an over-collateralization rate of `150%` **as example**.
+**Пример, используемый для объяснения:** Далее в качестве примера** мы используем залог DOT с коэффициентом избыточного обеспечения `150%`.
 
-This means, the amount of BTC a Vault can accept for safekeeping is calculated by:
+Это означает, что сумма BTC, которую хранилище может принять на хранение, рассчитывается следующим образом:
 
     max_vault_btc = vault_dot_collateral / (dot_collateral_threshold * btc_dot_exchange_rate)
 
-Where `dot_collateral_threshold = 1.5` (`150%`) according to our example.
+Где `dot_collateral_threshold = 1.5` (`150%`), согласно нашему примеру.
 
-### Vault-Level Collateral Re-balancing
+### Перебалансировка обеспечения на уровне хранилища
 
-To protect against short and long term exchange rate fluctuations, Vaults are **instructed to keep their collateralization rate up to date**.
-This can be achieved in 2 ways:
+Для защиты от краткосрочных и долгосрочных колебаний обменного курса хранилища **инструктируются поддерживать уровень обеспечения в актуальном состоянии**.
+Это может быть достигнуто двумя способами:
 
-- **interBTC Redeem**: if users redeem with the Vault, the collateralization ratio increases. The Vault can also maintain a interBTC reserve and execute self-redeems for quick rebalancing
-- **Increase Collateral**: alternatively, the Vault can also add more collateral to the system.
+- **interBTC Redeem**: если пользователи пополняют счет в хранилище, коэффициент обеспечения увеличивается. Хранилище также может поддерживать резерв interBTC и осуществлять самопогашение для быстрого восстановления баланса.
+- **Увеличение залога**: в качестве альтернативы, хранилище может добавить больше залога в систему.
 
-## Collateral Thresholds
+## Пороги обеспечения
 
-The interBTC bridge introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
+Мост interBTC вводит несколько пороговых значений с различными действиями, чтобы гарантировать, что хранилища никогда не упадут ниже 100% обеспечения:
 
-We will release a post detailing how the calculation of this thresholds is achieved considering the liquidity and risk profile for each collateral asset.
+Мы опубликуем сообщение с подробным описанием того, как рассчитываются эти пороговые значения с учетом ликвидности и профиля риска для каждого залогового актива.
 
-### Secure Collateral
+### Обеспечение залога
 
-#### Actions
+#### Действия
 
-None necessary. The Vault can freely redeem any "unused" collateral above the `150%` threshold.
+Нет необходимости. Хранилище может свободно выкупить любой "неиспользованный" залог, превышающий порог `150%`.
 
-#### Thresholds
+#### Пороговые значения
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Тестнет**
 
 Testnet DOT: `150%`
 
-#### **Kintsugi (Canarynet)**
+#### **Kintsugi (Канареечная сеть)**.
 
 KSM: `260%`
 
-#### **Interlay (Mainnet)**
+#### **Interlay ( Майннет)**.
 
-DOT: tbd
+DOT: неизвестно
 
 <!-- tabs:end -->
 
-### Premium Redeem
+### Премиум Погашение
 
-#### Actions
+#### Действия
 
-Users can execute redeem with this Vault and receive a premium of `5%` in DOT in addition to the redeemed BTC.
+Пользователи могут выполнить выкуп с помощью этого хранилища и получить премию в размере `5%` в DOT в дополнение к выкупленным BTC.
 
-#### Thresholds
+#### Пороговые значения
 
 <!-- tabs:start -->
 
@@ -180,84 +180,84 @@ Users can execute redeem with this Vault and receive a premium of `5%` in DOT in
 
 Testnet DOT: `135%`
 
-#### **Kintsugi (Canarynet)**
+#### **Kintsugi (Канареечная сеть)**.
 
 KSM: `200%`
 
-#### **Interlay (Mainnet)**
+#### **Interlay (Майннет)**.
 
-DOT: tbd
+DOT: неизвестно
 
 <!-- tabs:end -->
 
-### Vault Liquidation
+### Ликвидация хранилища
 
-#### Action
+#### Действие
 
-The undercollateralized Vault is liquidated.
+Хранилище с недостаточным обеспечением ликвидируется.
 
-1. The Vaults entire collateral is slashed
-2. The interBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn interBTC** in return for collateral at a premium rate. See **[Burn Event](/overview?id=burn-event-restoring-a-11-physical-peg)** below.
+1. Весь залог хранилища сокращается.
+2. Мост interBTC инициирует ликвидационный своп в порядке поступления: любой пользователь может **сжечь interBTC** в обмен на обеспечение по премиальной ставке. См. **[Событие сожжения](/overview?id=burn-event-restoring-a-11-physical-peg)** ниже.
 
-#### Thresholds
+#### Пороговые значения
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Тестнет**.
 
 Testnet DOT: `110%`
 
-#### **Kintsugi (Canarynet)**
+#### **Kintsugi (Канареечная сеть)**.
 
 KSM: `150%`
 
-#### **Interlay (Mainnet)**
+#### **Interlay ( Майннет)**.
 
-DOT: tbd
+DOT: неизвестно
 
 <!-- tabs:end -->
 
-## Liquidations
+## Ликвидация
 
-If Vaults fail to behave according to protocol rules, they face punishment through liquidation of collateral.
-There are 2 types of failures: **safety failures** and **crash failures**.
+Если хранилища не могут вести себя в соответствии с правилами протокола, они подвергаются наказанию в виде ликвидации залога.
+Существует 2 типа отказов: **сбои безопасности** и **сбои аварии**.
 
-If a Vault fails to execute a redeem on time, steals BTC or falls below the liquidation collateral threshold, a liquidation event is initiated.
+Если хранилище не выполняет выкуп вовремя, крадет BTC или опускается ниже порога ликвидационного залога, инициируется событие ликвидации.
 
-### Safety Failures
+### Сбои в системе безопасности
 
-A safety failure occurs in two cases:
+Сбой безопасности происходит в двух случаях:
 
-- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge. Theft is detected and reported by [Vaults](/vault/overview) via an SPV proof.
+- **Кража**: считается, что хранилище совершило кражу, если оно перемещает/расходует BTC с несанкционированного моста interBTC. Кража обнаруживается и сообщается [Хранилища](/vault/overview) через SPV-доказательство.
 
-- **Severe Undercollteralization**: a Vaults drops below the liquidation collateral threshold (e.g., `110%` on testnet).
+- **Серьезное невозможность обеспечить залог**: хранилище опускается ниже порога ликвидационного залога (например, `110%` в тестнете).
 
-In both cases, the **the Vault's entire collateral is liquidated - up to the secure collateral threshold (e.g., `150%` on testnet) of the liquidated BTC value - and BTC holdings are considered lost**.
+В обоих случаях **весь залог хранилища ликвидируется - до порогового значения безопасного залога (например, `150%` на тестнете) от ликвидационной стоимости BTC - и хранилища BTC считаются потерянными**.
 
-Consequently, the interBTC bridge initiates a **[Burn Event](/vault/overview?id=burn-event-restoring-a-11-physical-peg)** to restore the 1:1 balance between BTC and interBTC.
+Следовательно, мост interBTC инициирует **[Событие сожжения](/vault/overview?id=burn-event-restoring-a-11-physical-peg)** для восстановления баланса 1:1 между BTC и interBTC.
 
-### Crash Failures (Failed Redeem)
+### Сбои в работе хранилищ (неудачное погашение)
 
-If Vaults go offline and fail to execute redeem, they are:
+Если хранилища выходят из сети и не могут выполнить погашение, они:
 
-- **Penalized** (**punishment fee** slashed) and
-- **Temporarily banned** for e.g. `24 hours` from accepting further redeem requests.
+- **Пенализированы** (**снижена плата штрафа**) и
+- **Временно запрещено**, например, на `24 часа`, принимать дальнейшие запросы на погашение.
 
-The **punishment fee** is calculated as a percentage (e.g. `10%`) of the redeem amount at the current exchange rate.
+Размер **штрафа** рассчитывается в процентах (например, `10%`) от суммы выкупа по текущему курсу.
 
-## Burn Event: Restoring a 1:1 Physical Peg
+## Событие сожжения: Восстановление физической привязки 1:1
 
-When a Vault is liquidated, its collateral is slashed up to the secure collateral threshold (e.g., `150%` on testnet) of the liquidated BTC value, given the exchange rate at the time of liquidation.
+Когда хранилище ликвидируется, его залог уменьшается до порога безопасного залога (например, `150%` на testnet) от стоимости ликвидированных BTC, учитывая обменный курс на момент ликвидации.
 
-The interBTC bridge now has less BTC locked than interBTC minted - but more than enough collateral to maintain economic security.
-To re-establish the physical 1:1 peg between BTC and interBTC, the interBTC bridge allows users to **burn interBTC in return for collateral at a premium rate**.
+Теперь на мосту interBTC заблокировано меньше BTC, чем добыто interBTC - но более чем достаточно залога для поддержания экономической безопасности.
+Чтобы восстановить физическую привязку 1:1 между BTC и interBTC, мост interBTC позволяет пользователям **сжечь interBTC в обмен на залог по премиальной ставке**.
 
-Specifically, the user's payout is calculated as follows:
+В частности, выплата пользователю рассчитывается следующим образом:
 
     burn_payout =
         (total_liquidated_collateral / total_liquidated_interbtc)
-        * user_burned_interbtc
+        * пользовательский_сгоревший_interbtc
 
-As long as the economic value of `burn_payout` is higher than that of `user_burned_interbtc`, which may include private information of the user (that is, the user may think that the collateral asset will become worth more soon), users are incentivized to burn interBTC in return for the collateral asset and to re-balance the system.
+До тех пор, пока экономическая ценность `burn_payout` выше, чем `user_burned_interbtc`, которая может включать частную информацию пользователя (то есть, пользователь может думать, что залоговый актив скоро станет стоить больше), пользователи стимулируются сжигать interBTC в обмен на залоговый актив и восстанавливать баланс системы.
 
-This Burn Event continues until the 1:1 ratio of BTC to interBTC is restored.
+Это событие сжигания продолжается до тех пор, пока не восстановится соотношение 1:1 между BTC и interBTC.

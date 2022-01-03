@@ -1,42 +1,42 @@
-# Installing the Vault Client
+# Установка клиента Хранилища
 
-Running a Vault will allow you to hold BTC of users in custody and in return earn a return on your collateral.
-To install the Vault client, follow this guide.
+Запуск Хранилища позволит вам держать BTC пользователей на хранении и получать доход от залога.
+Чтобы установить клиент Vault, следуйте этому руководству.
 
-At the end of this document you will have:
+В конце этого документа вы сможете:
 
-- [x] Started the Vault client locally
-- [x] Registered your Vault on the interBTC testnet
+- [x] Запустить клиент хранилища локально
+- [x] Зарегистрировать свое хранилище в сети тестнет interBTC 
 
-## Prerequisites
+## Предварительные условия
 
-- Make sure that you have a recent version of Linux or MacOS running. Windows support is not tested.
-- Make sure that you have at least 2GB of RAM.
-- Make sure you have at least 50 GB of free disk space (ideally SSD).
-- You should have a stable Internet connection.
-- Make sure that your Vault client is running for at least 8 hours per day (you can do other things on the side).
+- Убедитесь, что у вас установлена последняя версия Linux или MacOS. Поддержка Windows не тестировалась.
+- Убедитесь, что у вас не менее 2 ГБ оперативной памяти.
+- Убедитесь, что у вас есть не менее 50 ГБ свободного дискового пространства (в идеале - SSD).
+- У вас должно быть стабильное подключение к Интернету.
+- Убедитесь, что ваш клиент хранилища работает не менее 8 часов в день (вы можете заниматься другими делами в это время).
 
-## Quickstart
+## Быстрый старт
 
 <details>
 <summary>
-Setup the Vault client using docker-compose. Best if you want to quickly try out running the client.
+Установка клиента хранилища с помощью пакета docker-compose. Лучше всего подходит, если вы хотите быстро попробовать запустить клиент.
 </summary>
 
-### 0. Install docker and docker-compose
+### 0. Установите docker и docker-compose.
 
-Make sure [docker](https://docs.docker.com/engine/install/ ) and [docker-compose](https://docs.docker.com/compose/install/) are installed in your system.
+Убедитесь, что [docker](https://docs.docker.com/engine/install/ ) и [docker-compose](https://docs.docker.com/compose/install/) установлены в вашей системе.
 
-### 1. Download the docker-compose file to start the Vault client and the Bitcoin node
+### 1.Загрузите файл docker-compose для запуска клиента хранилища и ноды Bitcoin
 
 ```shell
 mkdir vault && cd vault
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/docker-compose.yml
 ```
 
-### 2. Add your Polkadot account to use with your Vault
+### 2. Добавьте свою учетную запись Polkadot для использования с вашим хранилищем
 
-Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the Vault, e.g.:
+Добавьте в эту папку файл `keyfile.json`, содержащий мнемонику учетной записи, которую вы хотите использовать для хранилища, например:
 
 ```json
 {
@@ -44,69 +44,69 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
+!> Мнемоника, показанная выше, предназначена только для демонстрации. НЕ распространяйте и не используйте мнемоники повторно.
 
-You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
+Вы можете использовать [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) для автоматической генерации:
 
 ```shell
 subkey generate --output-type json | jq '{"interbtcvault": .secretPhrase}' > keyfile.json
 ```
 
-Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
-If the Vault spends funds from another wallet this may be marked as theft.
+Пожалуйста, используйте отдельное ключевое имя и мнемонику для каждого клиента. Это имя определяет, какой кошелек будет загружен на ноде Bitcoin.
+Если хранилище тратит средства из другого кошелька, это может быть отмечено как кража.
 
-### 3. Start the Vault client
+### 3. Запустите клиент хранилища
 
-(Optional) If you already have a locally running Bitcoin testnet node, only start the Vault client:
+( Опционально) Если у вас уже есть локально запущенна нода Bitcoin в тестовой сети, запустите только клиент хранилища:
 
 ```shell
 docker-compose up vault -d
 ```
 
-?> You may need to edit the docker-compose to point `--bitcoin-rpc-url` to `http://localhost:18332`.
+?> Вам может понадобиться отредактировать docker-compose, чтобы указать `--bitcoin-rpc-url` на `http://localhost:18332`.
 
-You can run the entire Vault client and the Bitcoin node with the following command:
+Вы можете запустить весь клиент хранилища и ноду Bitcoin с помощью следующей команды:
 
 ```shell
 docker-compose up -d
 ```
 
-You can optionally view the running docker containers with command `docker-compose ps`.
-You can optionally view the logs to see what the containers are doing with `docker-compose logs -f vault` and `docker-compose logs -f bitcoind`.
-Please take into account it can take a few hours for the bitcoin-core to sync for the first time.
+Вы можете просмотреть запущенные контейнеры docker с помощью команды `docker-compose ps`.
+При желании вы можете просмотреть журналы, чтобы узнать, что происходит в контейнерах, с помощью команд `docker-compose logs -f vault` и `docker-compose logs -f bitcoind`.
+Обратите внимание, что для первой синхронизации биткойн-ядра может потребоваться несколько часов.
 
 </details>
 
-## Standard Installation
+## Стандартная установка
 
 <details>
 <summary>
-Run Bitcoin and the Vault binary as a service on your computer or server. Best for if you are mostly interested in operating a Vault for earning interBTC and participating in the protocol.
+Запустите Bitcoin и бинарный протокол хранилища в качестве сервиса на своем компьютере или сервере. Этот вариант подходит для тех, кто заинтересован в работе хранилища для заработка InterBTC и участия в протоколе.
 </summary>
 
-!> This method is currently only supported for Linux.
+!> В настоящее время этот метод поддерживается только для Linux.
 
-### 1. Install a local Bitcoin node
+### 1. Установите локальную ноду Биткойн
 
-Download and install a [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node) by following the [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions).
+Скачайте и установите [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node), следуя [инструкциям по Linux](https://bitcoin.org/en/full-node#linux-instructions).
 
-!> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault.
+!> Не забудьте сделать резервную копию кошелька в [каталог данных](https://en.bitcoin.it/wiki/Data_directory), чтобы сохранить ключи, хранящиеся в вашем хранилище.
 
-### 2. Start the Bitcoin testnet node
+### 2. Запустите ноду Bitcoin тестнет .
 
-?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
+?> Синхронизация BTC тестнет занимает около 30 ГБ памяти и занимает пару часов в зависимости от вашего интернет-соединения.
 
-Since the Vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
+Поскольку Хранилищу не требуется нода Bitcoin со всеми данными и для снижения аппаратных требований, вы можете запустить Bitcoin со следующими [оптимизациями](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
 ```shell
 bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
 ```
 
-!> The fallback fee argument is crucial. Without it, your vault may fail to make payments in certain circumstances, which it will be punished for.
+!> Аргумент о резервной комиссии имеет решающее значение. Без него ваше хранилище может не осуществить платежи в определенных обстоятельствах, за что оно будет подвергнуто штрафу.
 
-### 3. Install the Vault client
+### 3. Установите клиент хранилища Vault
 
-Create a folder for your Vault and enter it:
+Создайте папку для вашего хранилища и войдите в нее:
 
 ```shell
 mkdir vault && cd vault
@@ -118,15 +118,15 @@ Download the vault binary:
 wget https://github.com/interlay/interbtc-clients/releases/download/1.0.4/vault
 ```
 
-Make the binary executable:
+Сделайте двоичный файл исполняемым:
 
 ```shell
 chmod +x vault
 ```
 
-### 4. Add your Polkadot account to use with your Vault
+### 4. Добавьте свою учетную запись Polkadot для использования с вашим хранилищем
 
-Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the Vault, e.g.:
+Добавьте в эту папку файл `keyfile.json`, содержащий мнемонику учетной записи, которую вы хотите использовать для хранилища, например:
 
 ```json
 {
@@ -134,20 +134,20 @@ Add a `keyfile.json` file into that folder that contains the mnemonic of the acc
 }
 ```
 
-!> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
+!> Мнемоника, показанная выше, предназначена только для демонстрации. НЕ распространяйте и не используйте мнемоники повторно.
 
-You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
+Вы можете использовать [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) для автоматической генерации:
 
 ```shell
 subkey generate --output-type json | jq '{"interbtcvault": .secretPhrase}' > keyfile.json
 ```
 
-Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
-If the Vault spends funds from another wallet this may be marked as theft.
+Пожалуйста, используйте разные ключевые имена и мнемоники для каждого клиента. Это имя определяет, какой кошелек будет загружен на ноде Bitcoin .
+Если хранилище тратит средства из другого кошелька, это может быть отмечено как кража.
 
-### 5.A. Start the Vault client as a systemd service
+### 5.A. Запуск клиента Vault в качестве службы systemd
 
-?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
+?> Некоторые из наиболее распространенных систем Linux поддерживают этот способ (см. [systemd](https://en.wikipedia.org/wiki/Systemd)).
 
 ```shell
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
@@ -157,137 +157,137 @@ sudo systemctl daemon-reload
 sudo systemctl start interbtc-vault.service
 ```
 
-You can then check the status of your service by running:
+Затем вы можете проверить состояние вашей службы, выполнив команду:
 
 ```shell
 journalctl --follow _SYSTEMD_UNIT=interbtc-vault.service
 ```
 
-Or by streaming the logs to the `vault.log` file in the current directory:
+Или путем потоковой передачи журналов в файл `vault.log` в текущем каталоге:
 
 ```shell
 journalctl --follow _SYSTEMD_UNIT=interbtc-vault.service &> vault.log
 ```
 
-To stop the service, run:
+Чтобы остановить службу, выполните команду:
 
 ```shell
 sudo systemctl stop interbtc-vault.service
 ```
 
-### 5.B. OPTIONAL: Start the Vault client directly
+### 5.B. ВАРИАНТ: Запуск клиента хранилища напрямую
 
-To start the client manually, follow the [instructions below](#_6-start-the-vault-client).
+Чтобы запустить клиент вручную, следуйте [инструкциям ниже](#_6-start-the-vault-client).
 
 </details>
 
-## Install from Source
+## Установка из источника
 
 <details>
 <summary>
-Build the Vault client from source. Best if you have experience compiling rust code, interested in making contributions, and see how the Vault client works under the hood.
+Сборка клиента Vault из исходных данных. Лучше всего, если у вас есть опыт компиляции rust-кода, вы хотите внести свой вклад и посмотреть, как работает клиент хранилища под капотом.
 </summary>
 
-?> Building from source requires `clang 11`. Make sure to check this via `clang -v`.
+''> Сборка из исходников требует `clang 11`. Обязательно проверьте это через `clang -v`.
 
-### 1. Install Rust
+### 1. Установите Rust
 
-```shell
+`` shell
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-### 2. Install a local Bitcoin node
+### 2. Установите локальную ноду Bitcoin
 
-Download and install a [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node) by following the [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions), [Windows instructions](https://bitcoin.org/en/full-node#windows-instructions) or [Mac OS X instructions](https://bitcoin.org/en/full-node#mac-os-x-instructions).
+Скачайте и установите [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node), следуя инструкциям [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions), [Windows instructions](https://bitcoin.org/en/full-node#windows-instructions) или [Mac OS X instructions](https://bitcoin.org/en/full-node#mac-os-x-instructions).
 
-!> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault.
+!> Не забудьте сделать резервную копию кошелька в [каталог данных](https://en.bitcoin.it/wiki/Data_directory), чтобы сохранить ключи, хранящиеся в вашем хранилище.
 
-### 3. Start the Bitcoin testnet node
+### 3. Запустите узел тестовой сети Bitcoin.
 
-?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
+?> Синхронизация BTC тестнет занимает около 30 ГБ памяти и длится пару часов в зависимости от вашего интернет-соединения.
 
-Since the Vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
+Поскольку хранилищу не требуется нода Bitcoin со всеми данными и для снижения аппаратных требований, вы можете запустить Bitcoin со следующими [оптимизациями](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
-```shell
+`` shell
 bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
 ```
 
-!> The fallback fee argument is crucial. Without it, your vault may fail to make payments in certain circumstances, which it will be punished for.
+!!!> Аргумент платы за откат имеет решающее значение. Без него ваше хранилище может не выполнить платежи в определенных обстоятельствах, за что оно будет наказано.
 
-### 4. Build the Vault client
+### 4. Создайте клиент хранилища
 
-?> This step will take about 45 minutes depending on your CPU.
+?> Этот шаг займет около 45 минут в зависимости от вашего процессора.
 
-Clone the Vault code, checkout release `1.0.4`, and build the client:
+Клонируйте код Vault, проверьте релиз `1.0.4` и соберите клиент:
 
-```shell
+`` shell
 git clone git@github.com:interlay/interbtc-clients.git
 cd interbtc-clients
 git checkout 1.0.4
 cargo build -p vault
 ```
 
-### 5. Add your Polkadot account to use with your Vault
+### 5. Добавьте свою учетную запись Polkadot для использования с вашим хранилищем.
 
-?> You can execute this step in parallel to step 4.
+Вы можете выполнить этот шаг параллельно с шагом 4.
 
-Add a `keyfile.json` file into that folder that contains the mnemonic of the account you want to use for the Vault, e.g.:
+Добавьте в эту папку файл `keyfile.json`, содержащий мнемонику учетной записи, которую вы хотите использовать для Vault, например:
 
-```json
+``json
 {
   "interbtcvault": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
 }
 ```
 
-!> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
+Мнемоника, показанная выше, предназначена только для демонстрации. НЕ распространяйте и не используйте мнемоники повторно.
 
-You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
+Вы можете использовать [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey), чтобы сгенерировать это автоматически:
 
 ```shell
 subkey generate --output-type json | jq '{"interbtcvault": .secretPhrase}' > keyfile.json
 ```
 
-Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
-If the Vault spends funds from another wallet this may be marked as theft.
+Пожалуйста, используйте отдельное имя ключа и мнемонику для каждого клиента. Это имя определяет, какой кошелек будет загружен на полную ноду Bitcoin.
+Если хранилище тратит средства из другого кошелька, это может быть отмечено как кража.
 
-### 6. Start the Vault client
+### 6. Запуск клиента хранилища
 
-To start the client, you can connect to our parachain full node:
+Чтобы запустить клиент, вы можете подключиться к нашей парачейн ноде:
 
-```shell
-RUST_LOG=info cargo run -p vault -- \
-  --bitcoin-rpc-url http://localhost:18332 \
+``shell
+RUST_LOG=info cargo run -p vault -- \\
+  --bitcoin-rpc-url http://localhost:18332 \00 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname interbtcvault \
   --auto-register-with-faucet-url 'https://api.interlay.io/faucet' \
   --telemetry-url 'https://api.interlay.io/telemetry' \
-  --btc-parachain-url 'wss://api.interlay.io/parachain' \
+  ---btc-parachain-url 'wss://api.interlay.io/parachain' \
   --network=testnet \
   --currency-id=dot
 ```
 
-Logging can be configured using the [`RUST_LOG`](https://docs.rs/env_logger/0.8.3/env_logger/#enabling-logging) environment variable.
-By default, the Vault will log at `info` or above but you may, for example, configure `debug` logs for increased verbosity.
+Ведение журнала можно настроить с помощью переменной окружения [`RUST_LOG`](https://docs.rs/env_logger/0.8.3/env_logger/#enabling-logging).
+По умолчанию хранилище будет вести журнал на уровне `info` или выше, но вы можете, например, настроить журнал `debug` для увеличения его информативности.
 
-On startup, the Vault will automatically create or load the Bitcoin wallet using the keyname specified above and import additional keys generated from issue requests.
+При запуске хранилища автоматически создаст или загрузит кошелек Bitcoin, используя ключевое имя, указанное выше, и импортирует дополнительные ключи, сгенерированные из запросов на выпуск.
 
-### For a local development setup, check the README
+### Для локальной настройки разработки ознакомьтесь с файлом README.
 
-Go to the Vault client [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
+Перейдите к клиенту хранилища [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
 
 </details>
 
-## Advanced
+## Дополнительно
 
-For added security, you may want to encrypt the Bitcoin wallet with a password.
+Для дополнительной безопасности вы можете зашифровать кошелек Bitcoin паролем.
 
 <!-- tabs:start -->
 
 #### **Regtest**
 
-```shell
+`` shell
 bitcoin-cli -regtest -rpcwallet=interbtcvault encryptwallet "password"
 bitcoin-cli -regtest -rpcwallet=interbtcvault walletpassphrase "password" 100000000
 ```
@@ -308,5 +308,5 @@ bitcoin-cli -rpcwallet=interbtcvault walletpassphrase "password" 100000000
 
 <!-- tabs:end -->
 
-This will keep the decryption key in memory for the specified timeout - in this example 100000000 seconds or 3 years.
-Once this timeout expires (or if the node is terminated) the wallet must be unlocked manually.
+Это сохранит ключ расшифровки в памяти в течение указанного тайм-аута - в данном примере 100000000 секунд или 3 года.
+По истечении этого тайм-аута (или если узел будет завершен) кошелек должен быть разблокирован вручную.

@@ -1,96 +1,96 @@
-# INTR Tokenomics
+# Токеномика INTR
 
-Interlay will be governed by its community from day 1 - via INTR, Interlay’s governance token. 
-
-
-?> _INTR tokens will be distributed to network participants, builders and early backers as airdrops and block-rewards. There will be no public sale or ICO._
-
-Below is a summary of the Interlay token economy, as described in the [token economy whitepaper released by Kintsugi Labs](https://github.com/interlay/whitepapers).
-
-## Key Functions of INTR
-
-The INTR token’s main purposes are:
-
-* **Governance**- INTR holders vote on governance proposals and elect council members to make operational decisions. 
-* **Utility**. Mid-term, Interlay will support transaction fee payments in INTR and other digital assets, in addition to DOT. 
-
-## Supply and Emission
-
-INTR features an **unlimited supply**. The emission schedule is defined as follows: 
-
-* 1 billion (1,000,000,000) INTR emitted over the first 4 years
-* 2% annual inflation afterwards, indefinitely.
+Interlay будет управляться сообществом с первого дня - посредством INTR, токена управления Interlay. 
 
 
-## Distribution
+Токены INTR будут распределяться среди участников сети, производителей и ранних бекеров в качестве аэрдропов и блокчейн-наград. Публичной продажи или ICO не будет._
 
-INTR will be controlled by the community:
+Ниже приводится краткое описание экономики токенов Interlay, как описано в [whitepaper по экономике токенов, выпущенном Kintsugi Labs] (https://github.com/interlay/whitepapers).
 
-* **70% is distributed to the community** as airdrops and block rewards.  
-  - 30% as Vault rewards;
-  - 10% as first crowdloan paradrop;
-  - 25% to the on-chain Treasury;
-  - 5% to stake-to-vote staking rewards.
-* 20% to the Interlay team & early backers who funded the development of the protocol - subject to a 48-week cliff followed by 144 weeks of linear vesting.
-* 10% to a Foundation reserve, to be used for funding ecosystem growth and future development.
+## Основные функции INTR
 
-Starting in year 5, the community receives 100% of newly minted INTR as part of the 2% annual inflation.
+Основными функциями токена INTR являются:
 
-*For a detailed breakdown and explanation of the INTR distribution, check out the [token economy whitepaper released by Kintsugi Labs](https://github.com/interlay/whitepapers)*
+* **Управление** - держатели INTR голосуют за предложения по управлению и выбирают членов совета для принятия оперативных решений. 
+* **Использование**. В среднесрочной перспективе Interlay будет поддерживать платежи за транзакции в INTR и других цифровых активах, в дополнение к DOT. 
+
+*# Поставка и эмиссия
+
+INTR имеет **неограниченное предложение**. График эмиссии определен следующим образом: 
+
+* 1 миллиард (1 000 000 000) INTR в течение первых 4 лет.
+* 2% ежегодной инфляции после этого, бессрочно.
 
 
-## Emission and Vesting Schedules
+## Распределение
+
+INTR будет контролироваться сообществом:
+
+* **70% распределяется среди членов сообщества** в виде аэродропов и наград за блоки.  
+  - 30% в качестве вознаграждений за хранилища;
+  - 10% в качестве первого парадоропа краудлоана;
+  - 25% в ончейн-казначейство;
+  - 5% в качестве вознаграждения за ставки на голосование.
+* 20% - команде Interlay и ранним спонсорам, которые финансировали разработку протокола - с учетом 48-недельного обрыва, за которым последуют 144 недели линейного наделения правами.
+* 10% в резерв Фонда, который будет использоваться для финансирования роста экосистемы и будущего развития.
+
+Начиная с 5-го года, сообщество получает 100% от вновь начисленных INTR в рамках 2% ежегодной инфляции.
+
+*Для получения подробного описания и объяснения распределения INTR, ознакомьтесь с [whitepaper по экономике токенов, выпущенным Kintsugi Labs](https://github.com/interlay/whitepapers)*.
+
+
+## Графики эмиссии и наделения правами
 
 <table>
 <thead>
   <tr>
-    <th>Allocation</th>
-    <th>% of initial 4yr INTR Supply</th>
-    <th>Emission</th>
-    <th>Vesting / Distribution</th>
+    <th>Выделение</th>
+    <th>% от первоначального 4-летнего предложения ИНТР</th>
+    <th>Эмиссия</th>
+    <th>Выделение/распределение</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>1st crowdloan airdrop</td>
+    <td>1-й краудленд</td>
     <td>10%</td>
-    <td>Airdrop shortly after parachain launch<br></td>
-    <td>30% liquid when transfers are enabled, 70% linearly vested over parachain lease period (~96 weeks) </td>
+    <td>Аэрдроп вскоре после запуска парачейна<br></td>.
+    <td>30% ликвидности при включении трансферов, 70% линейно распределяются в течение срока аренды парачейна(~96 недель)</td>.
   </tr>
   <tr>
-    <td>On-chain Treasury (controlled by community governance)</td>
+    <td>Он-чейн казначейство (под контролем руководства сообщества)</td> </td>
     <td>25%</td>
-    <td>Allocation at launch</td>
-    <td>No vesting</td>
+    <Распределение при запуске</td>
+    <td>Без вестинга</td>
   </tr>
   <tr>
-    <td>Vault Rewards</td>
+    <Вознаграждения за хранилище</td>
     <td>30%</td>
-    <td>On a per-block basis</td>
-    <td>No vesting</td>
+    <td>За каждый блок</td>
+    <td>Без вестинга</td>
   </tr>
   <tr>
-    <td>Stake-to-Vote Rewards</td>
+    <td> Награды за участие в голосовании</td>
     <td>5%</td>
-    <td>On a per-block basis</td>
-    <td>No vesting</td>
+    <td>За каждый блок</td>
+    <td>Без вестинга</td>
   </tr>
   <tr>
-    <td>Team &amp; early backers </td>
+    <td> Команда и; ранние бекеры </td>
     <td>20%</td>
-    <td>Airdrop shortly after parachain launch<br></td>
-    <td>48 weeks lockup, followed by 144 weeks linear vesting. Internal investor vs team breakdown to be released. </td>
+    <td>Аэрдроп вскоре после запуска парачейна<br></td>
+    <td>48 недель блокировки, затем 144 недели линейного распределения. Внутреннее распределение инвесторов и команды будет опубликовано позднее. </td>
   </tr>
   <tr>
-    <td>Foundation reserve (future development and ecosystem funding)</td>
+    <td> Резерв фонда (будущее развитие и финансирование экосистемы)</td>
     <td>10%</td>
-    <td>Airdrop shortly after parachain launch<br></td>
-    <td>Not liquid until spent. Vesting to be defined for each individual spend. </td>
+    <td>Аэрдроп вскоре после запуска парачейна<br></td>
+    <td>Не ликвиден до момента расходования. Срок владения будет определен для каждой отдельной траты. </td>
   </tr>
 </tbody>
 </table>
 
 
-## Circulating Supply
+## Общий оборот
 
-More details to be added soon.
+Более подробная информация будет добавлена в ближайшее время.

@@ -1,33 +1,33 @@
-# Setup (Testnet)
+# Настройка ( Тестнет )
 
-?> This guide is for the interBTC tesnet!
+?> Это руководство предназначено для теснета interBTC!
 
-To start using interBTC, follow the steps below to set up a Bitcoin and Polkadot testnet wallet.
+Чтобы начать использовать interBTC, выполните следующие шаги по настройке кошелька Bitcoin и Polkadot в тестнете.
 
-### 1. Installing a Bitcoin testnet wallet
+### 1. Установка кошелька Bitcoin тестнет.
 
-You will need a Bitcoin testnet wallet to test interBTC.
-For a general overview of Bitcoin wallets you can consult [bitcoin.org's wallet selector](https://bitcoin.org/en/choose-your-wallet?step=5).
+Для тестирования interBTC вам понадобится тестовый кошелек Bitcoin.
+Для общего обзора кошельков Bitcoin вы можете обратиться к [bitcoin.org's wallet selector](https://bitcoin.org/en/choose-your-wallet?step=5).
 
 
-You can also pick one of the following Bitcoin testnet wallets below:
+Вы также можете выбрать один из следующих кошельков тестовой сети Bitcoin :
 
-- **GreenAddress**: https://test.greenaddress.it/en/ (Android and IOS)
-- **Bitcoin Testnet Wallet**: https://play.google.com/store/apps/details?id=de.schildbach.wallet_test (Android only)
-- **Electrum**: https://electrum.org/#home (Linux, Windows, macOS and Android)
-- **Bitpay**: https://bitpay.com/wallet/ (Linux; Guide here: https://support.bitpay.com/hc/en-us/articles/360015463612-How-to-Create-a-Testnet-Wallet)
+- **GreenAddress**: https://test.greenaddress.it/en/ (Android и IOS)
+- **Bitcoin Testnet Wallet**: https://play.google.com/store/apps/details?id=de.schildbach.wallet_test (только для Android)
+- **Electrum**: https://electrum.org/#home (Linux, Windows, macOS и Android)
+- **Bitpay**: https://bitpay.com/wallet/ (Linux; руководство здесь: https://support.bitpay.com/hc/en-us/articles/360015463612-How-to-Create-a-Testnet-Wallet)
 
-#### Hardware Wallets
+#### Аппаратные кошельки
 
-You can also use your hardware wallet. The following are tested and have Bitcoin testnet support:
+Вы также можете использовать аппаратный кошелек. Следующие из них протестированы и имеют поддержку тестовой сети Bitcoin:
 
-- **Ledger**: https://www.ledger.com/ (Guide: https://coinguides.org/ledger-testnet/)
-- **Trezor**: https://trezor.io/ (Guide: https://wiki.trezor.io/Bitcoin_testnet)
+- **Ledger**: https://www.ledger.com/ (Руководство: https://coinguides.org/ledger-testnet/)
+- **Trezor**: https://trezor.io/ (Руководство: https://wiki.trezor.io/Bitcoin_testnet)
 
-### 2. Getting testnet BTC
+### 2. Получение BTC в тестнете
 
-Make sure you have at least some tBTC in your wallet.
-You can get testnet BTC by clicking on the faucet link in the top bar of bridge.interlay.io, or from one of the following faucets:
+Убедитесь, что в вашем кошельке есть хотя бы немного tBTC.
+Вы можете получить BTC testnet, нажав на ссылку крана в верхней панели сайта bridge.interlay.io, или с одного из следующих кранов:
 
 - [https://testnet-faucet.mempool.co/](https://testnet-faucet.mempool.co/)
 - [https://bitcoinfaucet.uo1.net/](https://bitcoinfaucet.uo1.net/)
@@ -35,20 +35,20 @@ You can get testnet BTC by clicking on the faucet link in the top bar of bridge.
 - [https://kuttler.eu/en/bitcoin/btc/faucet/](https://kuttler.eu/en/bitcoin/btc/faucet/)
 - [https://tbtc.bitaps.com/](https://tbtc.bitaps.com/)
 
-### 3. Installing a Polkadot wallet (polkadot-js browser extension)
+### 3. Установка кошелька Polkadot (расширение для браузера polkadot-js)
 
-You will need the polkadot-js browser extension to test interBTC.
+Для тестирования interBTC вам понадобится браузерное расширение polkadot-js.
 
-1. Install the polkadot-js extension in your browser: [https://github.com/polkadot-js/extension](https://github.com/polkadot-js/extension).
-2. Create a new account.
-3. Connect account to bridge.interlay.io via the polkadot-js pop-up.
+1. Установите расширение polkadot-js в вашем браузере: [https://github.com/polkadot-js/extension](https://github.com/polkadot-js/extension).
+2. Создайте новый аккаунт.
+3. Подключите аккаунт к bridge.interlay.io через всплывающее окно polkadot-js.
 
-?> Please make sure to first create an account before connecting your wallet to bridge.interlay.io.
+?> Пожалуйста, убедитесь, что сначала создали аккаунт, прежде чем подключать кошелек к bridge.interlay.io.
 
-### 4. Getting testnet DOT
+### 4. Получение testnet DOT
 
-You can get testnet DOT by clicking on the faucet link in the top bar of bridge.interlay.io.
+Вы можете получить testnet DOT, нажав на ссылку крана в верхней панели bridge.interlay.io.
 
-?> These testnet DOT are only usable on interBTC. They are **not real DOT and have no economic value**.
+Эти тестовые DOT можно использовать только на interBTC. Они **не являются настоящими DOT и не имеют экономической ценности**.
 
-### Great! You're now ready to [ issue your first interBTC](/guides/issue)
+### Отлично! Теперь вы готовы [ выпустить свой первый interBTC](/guides/issue)
