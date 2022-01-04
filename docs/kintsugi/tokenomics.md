@@ -136,8 +136,9 @@ The on-chain Treasury reserve is in turn distributed as follows (suggestion - fi
 
 Last updated 28 Dec 2021.
 
-**Live circulating supply (estimate): 408k KINT** 
+**Live circulating supply (estimate): 465k KINT** 
 
+?> Circulating supply = liquid tokens that can be sold & purchased on the market.
 
 Due to the nature of the stake-to-vote governance mechanism of KINT, it is impossible to accurately predict the circulating supply (holds actively participating in governance may decide to stake KINT for prolonged periods). In addition, the reserves controlled by the on-chain treasury may be distributed to foster project development and ecosystem growth, as determined by community governance (KINT holders).
 
