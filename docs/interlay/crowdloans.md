@@ -110,7 +110,7 @@ You can participate using the following methods (including, but not limited to):
 
 ### Via the [ official Interlay Network crowdloan website](https://crowdloan.interlay.io/) 
 
-using the [Polkadot.js](https://polkadot.js.org/) browser extension. 
+using the [Polkadot.js](https://polkadot.js.org/) browser extension.
 
 ?> The minimum contribution amount is 5 DOT. Attention: when using a non-custodial wallets such as Polkadot.js users must hold a [minimum balance of 6.1 DOT](https://support.polkadot.network/support/solutions/articles/65000168651-what-is-the-existential-deposit-) (such that 1.1 DOT are left after you contribute 5 DOT). 
 
@@ -127,6 +127,7 @@ using the [Polkadot.js](https://polkadot.js.org/) browser extension.
 
 #### Via 3rd party websites
 
+- [Polkadot.js Apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains/crowdloan)
 - [Dotmarketcap](https://dotmarketcap.com/auction/polkadot).
 
 #### Via DeFi platforms
@@ -139,4 +140,5 @@ using the [Polkadot.js](https://polkadot.js.org/) browser extension.
   
 #### Via exchanges
 
+- [Kraken](https://www.kraken.com/u/earn/parachains)
 - [Gate.io](https://www.gate.io/)
