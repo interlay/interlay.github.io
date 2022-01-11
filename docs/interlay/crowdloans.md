@@ -121,12 +121,15 @@ using the [Polkadot.js](https://polkadot.js.org/) browser extension.
 !> Please be careful when using 3rd party crowdloan providers - this is at your own responsibility. Do you own research.
 
 
-#### Via partner (mobile) wallets
+#### Via (mobile) wallets
 
 - [Fearless Wallet](https://fearlesswallet.io/). Supports referrals.
 
+#### Via 3rd party websites
 
-#### Via partner DeFi platforms
+- [Dotmarketcap](https://dotmarketcap.com/auction/polkadot).
+
+#### Via DeFi platforms
 
 ?> Please note: as of now, all of the liquid crowdloan solutions listed below are custodial, i.e., not fully decentralized.
 
@@ -134,6 +137,6 @@ using the [Polkadot.js](https://polkadot.js.org/) browser extension.
 - [Equilibrium](https://xdot.equilibrium.io/en). You receive liquid xDOT tokens. Additional EQ token bonus.
 - [Bifrost](https://bifrost.app/vcrowdloan). You receive liquid vsDOT tokens. Additional BNC token bonus.
   
-#### Via partner exchanges
+#### Via exchanges
 
-To be announced soon
+- [Gate.io](https://www.gate.io/)
