@@ -249,9 +249,19 @@ At the bottom of the box you will find the `status` and `InBlock` fields - this 
 ## Token Vesting
 
 ### Vesting Schedule: Per Block
-KINT received via the crowdloan airdrop are subject to vesting. KINT tokens vest **per block**.
+
+KINT received via the crowdloan airdrop are subject to vesting.
+Vesting stared on 13 October (when Kintsugi won a parachain) and happens **per block**.
 
 Your vested tokens are shown as "locked" or "frozen" (depending on the wallet/platform).
+
+### How many tokens should I have unlocked?
+
+You can calculate based on this formula:
+
+`my_tokens x 0.3 + (tokens x 0.7 x days_since_13oct2021 / 336)`
+
+where `my_tokens` is the total amount of KINT you received in the airdrop and `days_since_13oct2021` is the number of days that passed since 13 October 2021 when vesting started.
 
 ### Claim via Polkadot.js Developers Tab
 To receive your unlocked tokens, you need to make a transaction on the Kintsugi parachain.
