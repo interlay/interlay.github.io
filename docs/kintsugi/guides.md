@@ -62,13 +62,24 @@ There are two cases:
 
 Withing ~48 hours of accepting the T&Cs and submitting the claim form, you should receive airdropped tokens in you account. Follow these steps to check your balance.
 
+### Polkadot.js Account Page
+
+Go to the [Kintsugi Polkadot.js Accounts page](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/accounts).
+You can see you balances in the `balances` colum.
+Click on the arrow to see locked versus transferrable amounts.
+
+!> Make sure that you select the Kintsugi Labs node. OnFinality node is not yet upgraded to the latest version v1.5.10! 
+
+?> If your account is not showing up in Polkadot.js you may need to [import it](https://support.polkadot.network/support/solutions/articles/65000176241-how-to-import-a-private-key-from-another-wallet-to-polkadot-js).
+
 ### Sub.id
 
 The simplest way to see your KINT balance (and balances of other tokens that you have on the Kintsugi parachain) is currently through [Sub.id by Subsocial](https://sub.id/#/).
 
 Go to [sub.id](https://sub.id/#/) and enter your account.
 
-### Polkadot.js
+
+### Polkadot.js Developer Tab (Advanced)
 
 More advanced users can use Polkadot.js developer tools to check the account balance.
 
@@ -235,12 +246,27 @@ At the bottom of the box you will find the `status` and `InBlock` fields - this 
 ![Check block](../_assets/img/kintsugi/find-tx/check-block.png)
 
 
-## Claim Vested Tokens
+## Token Vesting
 
-If your tokens are subject to vesting ("frozen" field is non-zero) then they will unlock over time. 
+### Vesting Schedule: Per Block
+
+KINT received via the crowdloan airdrop are subject to vesting.
+Vesting stared on 13 October (when Kintsugi won a parachain) and happens **per block**.
+
+Your vested tokens are shown as "locked" or "frozen" (depending on the wallet/platform).
+
+### How many tokens should I have unlocked?
+
+You can calculate based on this formula:
+
+`my_tokens x 0.3 + (tokens x 0.7 x days_since_13oct2021 / 336)`
+
+where `my_tokens` is the total amount of KINT you received in the airdrop and `days_since_13oct2021` is the number of days that passed since 13 October 2021 when vesting started.
+
+### Claim via Polkadot.js Developers Tab
+To receive your unlocked tokens, you need to make a transaction on the Kintsugi parachain.
 
 To claim the latest unlocked tokens, do the following:
-
 
 1. Go to "Developers" > "Extrinsics"
 2. Select "vesting" in the extrinsic dropdown
