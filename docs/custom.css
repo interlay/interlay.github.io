@@ -1,4 +1,3 @@
-
 :root {
 
   /* Base config */
@@ -20,7 +19,7 @@
   --secondary-pink      : #DB5AAD;
   --secondary-bitcoin   : #FF9900;
   --theme-color         : var(--primary-interlay);
-  --primary-blue-shade  : hsl(212, 30%, 38%); 
+  --primary-blue-shade  : hsl(212, 30%, 38%);
   --hover-color         : #D3D3D3;
 
   /* Links */
@@ -55,7 +54,6 @@
   width: 10em;
 }
 
-
 .markdown-section {
   margin: 0em auto 5em 5em;
 }
@@ -68,4 +66,19 @@
 
 .sidebar {
   font-size: 14px;
+}
+
+.docs-button {
+  background-color: var(--primary-blue);
+  border: none;
+  color: white !important;
+  text-align: center;
+  text-decoration: none !important;
+  display: block;
+  padding: 1em 2rem;
+  border-radius: var(--border-radius-m);
+}
+
+.util-w100 {
+  width: 100%
 }
