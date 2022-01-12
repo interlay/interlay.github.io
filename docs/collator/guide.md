@@ -38,7 +38,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-parachain-1-5-4 \
+  interlayhq/interbtc:interbtc-parachain-1-5-10 \
   interbtc-parachain \
   --base-path=/data \
   --chain=kintsugi \
