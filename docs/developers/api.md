@@ -25,12 +25,26 @@ Connecting to parachain nodes:
 
 ### Querying account balances
 
+Returns the `amount` of tokens in the smallest denomination.
+
 ```js
 api.query.tokens.accounts('address', {Token: CURRENCY_ID})
 ```
 
 ### Transferring tokens extrinsic
 
+Transfers an `amount` of tokens in the smallest denomination.
+
 ```js
 api.tx.tokens.transfer('address', {Token: CURRENCY_ID}, amount)
 ```
+
+### Implementation notes
+
+All assets in Kintsugi and Interlay networks are implemented using [orml](https://github.com/open-web3-stack/open-runtime-module-library).
+
+- Asset implementation: [orml-tokens](https://github.com/open-web3-stack/open-runtime-module-library/tree/master/tokens)
+- Cross-chain transfer implementation (XCM): [orml-xtokens](https://github.com/open-web3-stack/open-runtime-module-library/tree/master/xtokens)
+
+?> Querying the `system` account is not supported on Kintsugi or Interlay. Please use the API methods described above to achieve transfers.
+
