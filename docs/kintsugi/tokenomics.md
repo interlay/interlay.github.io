@@ -11,8 +11,10 @@ Below is a summary of the Kintsugi token economy, as described in the [token eco
 
 The KINT token’s main purposes are:
 
-* **Governance**- KINT holders vote on governance proposals and elect council members to make operational decisions. 
-* **Utility**. Mit-term, Kintsugi will support transaction fee payments in KINT and other digital assets, in addition to KSM. 
+* **Governance**. KINT holders vote on governance proposals.
+* **Staking**. To participate in governance, holders stake KINT and earn KINT staking rewards in return (5% of supply).
+* **Utility**. Transaction fees can be paid in KINT.
+* **Outlook**:  KINT will be tightly integrated into the bridge, offering token holders additional security and product benefits.
 
 ### Supply and Emission
 
