@@ -12,10 +12,10 @@ ExecStart=/opt/interbtc/vault/vault \
   --keyfile /opt/interbtc/vault/keyfile.json \
   --keyname interbtcvault \
   --auto-register-with-faucet-url 'https://api.interlay.io/faucet' \
-  --telemetry-url 'https://api.interlay.io/telemetry' \
   --btc-parachain-url 'wss://api.interlay.io/parachain' \
   --network=testnet \
-  --currency-id=dot
+  --collateral-currency-id=KSM \
+  --wrapped-currency-id=KBTC
 Restart=on-failure
 RestartSec=5
 
