@@ -24,11 +24,12 @@
   * [Governance](kintsugi/governance.md)
   * [Guides](kintsugi/guides.md)
 
-* **Guides (Testnet)**
+* **Guides**
 
-  * [Setup](guides/prereq.md)
-  * [Issue interBTC](guides/issue.md)
+  * [Wallets](guides/prereq.md)
+  * [Mint interBTC](guides/issue.md)
   * [Redeem interBTC](guides/redeem.md)
+  * [Governance](guides/governance.md)
 
 * **Vaults**
 
