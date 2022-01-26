@@ -1,16 +1,43 @@
-# Setup (Testnet)
+# Wallets
 
-?> This guide is for the interBTC tesnet!
+Interacting with any blockchain requires to have a wallet.
 
-To start using interBTC, follow the steps below to set up a Bitcoin and Polkadot testnet wallet.
+At the end of this guide you will have:
 
-### 1. Installing a Bitcoin testnet wallet
+- [x] Installed the polkadot.js browser extension and created a Polkadot wallet
+- [x] Installed and created a Bitcoin wallet
+- [x] For testnet, you will also have requested testnet KSM and testnet BTC
 
-You will need a Bitcoin testnet wallet to test interBTC.
+## Polkadot Wallet
+
+### 1. Installing a Polkadot wallet (polkadot-js browser extension)
+
+You will need the polkadot-js browser extension. Install the polkadot-js extension in your browser: [https://polkadot.js.org/extension/](https://polkadot.js.org/extension/).
+
+### 2. Create a new account
+
+Go to the plus sign at the top of the extension and click on "Create new account" and follow the instructions.
+
+### 3. Accounts and addresses
+
+Polkadot uses [address formats](https://wiki.polkadot.network/docs/build-ss58-registryhttps://wiki.polkadot.network/docs/learn-accounts#address-format) for different chains. That way, you can use the same account and have unique addresses on each chain. By default, all addresses can be automatically converted between different chains.
+
+For example, the `Alice` account can take the following formats:
+
+- **Generic Substrate**: 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
+- **Polkadot**: 15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5
+- **Kusama**: HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F
+- **Kintsugi**: a3f1Q33MZ6B82T7rwQ1Ke1Qekzuxe8yRbfvRxkPh11jdsrTLR
+
+You can easily use the same account across different chains in the Polkadot ecosystem.
+
+## Bitcoin Wallet
+
+### 1. Installing a Bitcoin wallet
+
 For a general overview of Bitcoin wallets you can consult [bitcoin.org's wallet selector](https://bitcoin.org/en/choose-your-wallet?step=5).
 
-
-You can also pick one of the following Bitcoin testnet wallets below:
+You can also pick one of the following Bitcoin wallets below. The selected wallets below are compatible with Bitcoin testnet and will make it easy to test interBTC.
 
 - **GreenAddress**: https://test.greenaddress.it/en/ (Android and IOS)
 - **Bitcoin Testnet Wallet**: https://play.google.com/store/apps/details?id=de.schildbach.wallet_test (Android only)
@@ -19,10 +46,23 @@ You can also pick one of the following Bitcoin testnet wallets below:
 
 #### Hardware Wallets
 
-You can also use your hardware wallet. The following are tested and have Bitcoin testnet support:
+You can also use your hardware wallet. The following are tested and have Bitcoin mainnet and testnet support:
 
 - **Ledger**: https://www.ledger.com/ (Guide: https://coinguides.org/ledger-testnet/)
 - **Trezor**: https://trezor.io/ (Guide: https://wiki.trezor.io/Bitcoin_testnet)
+
+
+### 2. Creating a Bitcoin wallet
+
+Depending on the Bitcoin wallet installed in step 1, follow the instructions in the wallet to create an account.
+
+## Testnet Faucets
+
+### 1. Getting testnet DOT
+
+You can get testnet DOT by clicking on the faucet link in the top bar of https://bridge.interlay.io.
+
+?> These testnet DOT are only usable on interBTC. They are **not real DOT and have no economic value**.
 
 ### 2. Getting testnet BTC
 
@@ -35,20 +75,4 @@ You can get testnet BTC by clicking on the faucet link in the top bar of bridge.
 - [https://kuttler.eu/en/bitcoin/btc/faucet/](https://kuttler.eu/en/bitcoin/btc/faucet/)
 - [https://tbtc.bitaps.com/](https://tbtc.bitaps.com/)
 
-### 3. Installing a Polkadot wallet (polkadot-js browser extension)
-
-You will need the polkadot-js browser extension to test interBTC.
-
-1. Install the polkadot-js extension in your browser: [https://github.com/polkadot-js/extension](https://github.com/polkadot-js/extension).
-2. Create a new account.
-3. Connect account to bridge.interlay.io via the polkadot-js pop-up.
-
-?> Please make sure to first create an account before connecting your wallet to bridge.interlay.io.
-
-### 4. Getting testnet DOT
-
-You can get testnet DOT by clicking on the faucet link in the top bar of bridge.interlay.io.
-
-?> These testnet DOT are only usable on interBTC. They are **not real DOT and have no economic value**.
-
-### Great! You're now ready to [ issue your first interBTC](/guides/issue)
+### Great! You're now ready to [ mint your first interBTC](/guides/issue)
