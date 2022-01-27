@@ -7,11 +7,11 @@ Kintsugi network can be accessed in different ways:
 
 The guides below enable you to:
 
-- [x] Claim KINT tokens from the crowdloan
-- [x] Check KINT, KSM, and kBTC balances
-- [x] Transfer KINT, KSM, and kBTC
-- [x] Finding past transactions
-- [x] Understand and claim vested KINT
+- [Claim KINT tokens from the crowdloan](/kintsugi/guides?id=claiming-kint-crowdloan-airdrop)
+- [Check token balances (KINT, KSM, kBTC, etc.)](/kintsugi/guides?id=checking-balances)
+- [Transfer (KINT, KSM, kBTC, etc.)](/kintsugi/guides?id=transfer-tokens)
+- [Finding past transactions](/kintsugi/guides?id=find-a-transfer-transaction)
+- [Understand and claim vested KINT](/kintsugi/guides?id=token-vesting)
 
 ?> More explorers and wallets will be added soon.
 
