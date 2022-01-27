@@ -43,7 +43,7 @@ The crowdloan is a fully permissionless event - you make your own judgement on i
 
 We recommend the following ways to participate:
 
-1. Participate via the [Kintsugi crowdloan website](https://kintsugi.interlay.io/) using the Polkadot.js browser extension.
+1. Participate via the [Kintsugi crowdloan website](https://claim-kint.interlay.io/) using the Polkadot.js browser extension.
 2. Participate via partner exchanges.
 3. Participate via partner mobile wallets.
 

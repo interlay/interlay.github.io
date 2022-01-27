@@ -1,11 +1,19 @@
 # Kintsugi Guides
 
-At launch, Kintsugi Network can be accessed via [Polkadot.js Apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer).
+Kintsugi network can be accessed in different ways:
 
-This is a very powerful tool, but it is not easy to use. Please follow the guides below.
+- Official Dapp at [kintsugi.interlay.io](https://kintsugi.interlay.io): This is currently restricted to querying balances and making transfers.
+- Polkadot.js: At launch, Kintsugi Network can be accessed via [Polkadot.js Apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer). This is a very powerful tool, but it is not easy to use.
 
-?> Explorer and wallet support is WIP and will be added soon.
+The guides below enable you to:
 
+- [x] Claim KINT tokens from the crowdloan
+- [x] Check KINT, KSM, and kBTC balances
+- [x] Transfer KINT, KSM, and kBTC
+- [x] Finding past transactions
+- [x] Understand and claim vested KINT
+
+?> More explorers and wallets will be added soon.
 
 ## Claiming KINT Crowdloan Airdrop
 
@@ -18,7 +26,7 @@ Follow this guide to claim KINT. This guide applies the following contributors:
 
 Other contributions, e.g., via exchanges will airdrop KINT tokens through other means. If you have contributed via any other means than the ones listed above, please contact the provider of the contribution for the KINT airdrop.
 
-#### 1. Go to the KINT claim website at [ https://kintsugi.interlay.io/](https://kintsugi.interlay.io/)
+#### 1. Go to the KINT claim website at [ https://claim-kint.interlay.io/](https://claim-kint.interlay.io/)
 
 Scroll down to the claim form. If you have contributed to the Kintsugi crowdloan, you will see your estimated KINT airdrop together with your KSM locked.
 
@@ -40,35 +48,21 @@ You will be asked to sign the terms and conditions via the polkadot.js extension
 
 ![Wait](../_assets/img/kintsugi/claim_kint_3.png)
 
-
-## Update Metadata in Polkadot.js 
-
-Once in a while there are updates that require reloading metadata so Polkadot.js can properly interact with the Kintsugi parachain through your browser.
-
-To update metadata, go to the "Settings" > "Metadata" tab. 
-
-There are two cases:
-
-(A) If you see the "Update metadata" button, click it and confirm if the modal that will open.
-
-(B) If you do not see any button, wait for 1-2 seconds. You will see the QR code changes.
-
-?> In most cases, there is no "update" button -  **the QR code will change automatically**. This means the metadata was updated.
-
-![Update metadata](../_assets/img/kintsugi/check-balance/2_update-metadata.png)
-
-
-## Checking KINT Balance
+## Checking Balances
 
 Withing ~48 hours of accepting the T&Cs and submitting the claim form, you should receive airdropped tokens in you account. Follow these steps to check your balance.
+
+### Kintsugi App
+
+Go to the [Kintsugi Dapp](https://kintsugi.interlay.io) and make sure you allow polkadot.js to connect to the website. Once you have your account connected, the different tokens balances will show up at the top right-hand side.
+
+?> If your account is not showing up in Polkadot.js you may need to [import it](https://support.polkadot.network/support/solutions/articles/65000176241-how-to-import-a-private-key-from-another-wallet-to-polkadot-js).
 
 ### Polkadot.js Account Page
 
 Go to the [Kintsugi Polkadot.js Accounts page](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/accounts).
 You can see you balances in the `balances` colum.
 Click on the arrow to see locked versus transferrable amounts.
-
-!> Make sure that you select the Kintsugi Labs node. OnFinality node is not yet upgraded to the latest version v1.5.10! 
 
 ?> If your account is not showing up in Polkadot.js you may need to [import it](https://support.polkadot.network/support/solutions/articles/65000176241-how-to-import-a-private-key-from-another-wallet-to-polkadot-js).
 
@@ -78,13 +72,9 @@ The simplest way to see your KINT balance (and balances of other tokens that you
 
 Go to [sub.id](https://sub.id/#/) and enter your account.
 
-
 ### Polkadot.js Developer Tab (Advanced)
 
 More advanced users can use Polkadot.js developer tools to check the account balance.
-
-!> Polkadot.js Accounts tab will **not show your KINT balance**. Kintsugi has a generic multi-currency pallet, which allows adding any token easily. However, Polkadot.js does not support this - yet. **Follow the instructions below to view your KINT balance via Polkadot.js Developer tab**
-
 
 #### View Balance in Developer > Chain state > Token
 
@@ -102,7 +92,6 @@ Then click "+" in the top right of the form.
 
 ![Enter account and select KINT currency](../_assets/img/kintsugi/check-balance/5_enter-form.png)
 
-
 You will now see your KINT balance as follows:
 
 ![View balance](../_assets/img/kintsugi/check-balance/6_view_balance.png)
@@ -112,20 +101,27 @@ You will now see your KINT balance as follows:
 - **free** shows your **total KINT balance**
 - **frozen** shows how much of your KINT are **still vesting**
 
-
 ?> `Available for transfer` = `free` - `frozen`
 
-## Transfer KINT
-
-?> Important: At the end of the transfer, write down / store the block hash of your transaction! (see [Step 3 below](kintsugi/guides?id=_3-transfer-kint-in-developer-gt-extrinsics-gt-tokens)). **Do not close the browser / tab before you do this!** Otherwise you will need to manually find your transaction in Polkadot.js.
+## Transfer Tokens
 
 ?> You need to keep a very small amount of KINT (0.000,000,001 KINT or 1000 pico KINT) in your account as existential deposit (for now).
 
-
 ?> You can only transfer tokens that have unlocked! `Available for transfer` = `free` - `frozen`
 
+### Kintsugi App
+
+- Go to the [Kintsugi Dapp transfer page](https://kintsugi.interlay.io/transfer) and make sure you allow polkadot.js to connect to the website.
+- Select the token you would like to transfer, e.g., KSM, KBTC, or KINT.
+- Your available balance is shown on top of the amount input field.
+- Enter the address of the recipient. THis can be in any supported Polkadot address format and will automatically be converted to the Kintsugi address format for the transfer.
+- Click "Transfer" and sign the extrinsic to make a transaction.
+
+### Polkadot.js Developer Tab (Advanced)
 
 #### Transfer KINT in Developer > Extrinsics > Tokens
+
+?> Important: At the end of the transfer, write down / store the block hash of your transaction! (see [Step 3 below](kintsugi/guides?id=_3-transfer-kint-in-developer-gt-extrinsics-gt-tokens)). **Do not close the browser / tab before you do this!** Otherwise you will need to manually find your transaction in Polkadot.js.
 
 1. To transfer KINT, select "Extrinsics" in the "Developer".
 
@@ -136,13 +132,13 @@ You will now see your KINT balance as follows:
 ?> Important: You need to use `transfer()`, not `forceTransfer()`. Otherwise you will get a `BadOrigin` error.
 
 4. Enter the source account.
-   
+
 5. Enter the destination account.
 
 6. Select "KINT" in the "Token" dropdown.
 
 7. Enter the amount **in pico KINT (1 KINT = 1,000,000,000,000 pico KINT)**.
-   
+
 8. Press "Sign Transaction". In the opened modal, enter your account password, and then click "Sign and Submit".
 
 
@@ -224,7 +220,7 @@ The data in the box will look something like this:
 
 It shows the list of events, including the `Transfer` you just made - here you can also see the sender and receiver accounts, and the amount of KINT sent (in pico KINT).
 
-At the bottom of the box you will find the `status` and `InBlock` fields - this shows you the block hash of the block in which your transfer was included. 
+At the bottom of the box you will find the `status` and `InBlock` fields - this shows you the block hash of the block in which your transfer was included.
 
 ?> Use the block hash to search for the block in the [Netork tab](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer) of Polkadot.js - for example, if you need help with your transaction.
 
