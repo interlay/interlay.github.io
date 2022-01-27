@@ -37,13 +37,13 @@ subkey generate --output-type json | jq '{"interbtcvault": .secretPhrase}' > key
 Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
 If the Vault spends funds from another wallet this may be marked as theft.
 
-## Quickstart
+## Quickstart Installation
 
-Setup the Vault client using docker-compose. Best if you want to quickly try out running the client.
+Setup the Vault client using docker-compose. This guide is only for the testnet, please follow the [Standard Installation](vault/installation?id=standard-installation) for Kintsugi.
 
 ### 1. Install docker and docker-compose
 
-Make sure [docker](https://docs.docker.com/engine/install/ ) and [docker-compose](https://docs.docker.com/compose/install/) are installed in your system.
+Make sure [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) are installed in your system.
 
 ### 2. Download the docker-compose file
 
@@ -72,10 +72,9 @@ You can optionally view the running docker containers with command `docker-compo
 what the containers are doing with `docker-compose logs -f vault` and `docker-compose logs -f bitcoind`.
 Please take into account it can take a few hours for the bitcoin-core to sync for the first time.
 
-
 ## Standard Installation
 
-Run Bitcoin and the Vault binary as a service on your computer or server. Best for if you are mostly interested in operating a Vault for earning interBTC and participating in the protocol.
+Run Bitcoin and the Vault binary as a service on your computer or server. Follow this guide if you are interested in operating a Vault for earning and participating in the protocol.
 
 !> This method is currently only supported for Linux.
 
@@ -87,7 +86,7 @@ Download and install a [Bitcoin Core full-node](https://bitcoin.org/en/full-node
 
 ### 2. Start the Bitcoin node
 
-?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
+?> Synchronizing the BTC testnet requires 40GB of storage and the BTC mainnet requires 400GB. Depending on your internet connection, the download time may take anything from hours to days.
 
 Since the Vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
 
@@ -137,7 +136,8 @@ chmod +x vault
 
 ### 4. [Optional] Install from source
 
-Build the Vault client from source.
+Build the Vault client from source, this is necessary if we do not host builds compatible with your architecture.
+Please also check the [README](https://github.com/interlay/interbtc-clients/tree/master/vault) for development instructions.
 
 ?> Building from source requires `clang 11`. Make sure to check this via `clang -v`.
 
@@ -222,11 +222,6 @@ Logging can be configured using the [`RUST_LOG`](https://docs.rs/env_logger/0.8.
 By default, the Vault will log at `info` or above but you may, for example, configure `debug` logs for increased verbosity.
 
 On startup, the Vault will automatically create or load the Bitcoin wallet using the keyname specified above and import additional keys generated from issue requests.
-
-### For a local development setup, check the README
-
-Go to the Vault client [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
-
 
 ### [Optional] Start the Vault client as a systemd service
 

@@ -5,7 +5,7 @@ The Vault client is constantly being improved. Follow this guide to get the late
 At the end of this document you will have:
 
 - [x] Upgraded your Vault client to the latest version
-- [x] Restarted the Vautl client to connect to the interBTC bridge
+- [x] Restarted the Vault client to connect to the bridge
 
 We will announce on public channels when a new release is made available for the Vault client. The changelog and binaries will be published on the [release page](https://github.com/interlay/interbtc-clients/releases). Depending on the method of installation:
 
@@ -26,13 +26,11 @@ rm docker-compose.yaml
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/docker-compose.yml -O docker-compose.yml
 ```
 
-### 3. Re-start the containers
+### 3. Restart the containers
 
 ```shell
 docker-compose up
 ```
-
-</details>
 
 ## Standard Installation
 
@@ -46,20 +44,31 @@ OR terminate the process with `Ctrl+C`.
 
 ### 2. Re-download the binary and setup script
 
+<!-- tabs:start -->
+
+#### **Testnet**
+
 ```shell
-wget https://github.com/interlay/interbtc-clients/releases/download/1.5.4/vault -O vault
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.5.4/vault-parachain-metadata-testnet
+```
+
+#### **Kintsugi**
+
+```shell
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.5.4/vault-parachain-metadata-kintsugi
+```
+
+<!-- tabs:end -->
+
+```shell
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup
 ```
 
-### 3. Re-start the service
+### 3. Restart the service
 
 ```shell
 sudo systemctl start interbtc-vault.service
 ```
 
-</details>
-
-## Install from Source
-
-Terminate the process using `Ctrl+C` and follow the instructions from the [installation](vault/installation?id=install-from-source).
+OR start the [process manually](vault/installation?id=_5-start-the-vault-client).
