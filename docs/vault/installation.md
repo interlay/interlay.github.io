@@ -41,18 +41,18 @@ If the Vault spends funds from another wallet this may be marked as theft.
 
 Setup the Vault client using docker-compose. Best if you want to quickly try out running the client.
 
-### Install docker and docker-compose
+### 1. Install docker and docker-compose
 
 Make sure [docker](https://docs.docker.com/engine/install/ ) and [docker-compose](https://docs.docker.com/compose/install/) are installed in your system.
 
-### Download the docker-compose file
+### 2. Download the docker-compose file
 
 ```shell
 mkdir vault && cd vault
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/docker-compose.yml
 ```
 
-### Start the docker-compose process
+### 3. Start the docker-compose process
 
 (Optional) If you already have a locally running Bitcoin testnet node, only start the Vault client:
 
@@ -79,17 +79,19 @@ Run Bitcoin and the Vault binary as a service on your computer or server. Best f
 
 !> This method is currently only supported for Linux.
 
-### Install a Bitcoin node
+### 1. Install a Bitcoin node
 
 Download and install a [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node) by following the [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions).
 
 !> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault.
 
-### Start the Bitcoin node
+### 2. Start the Bitcoin node
 
 ?> Synchronizing the BTC testnet takes about 30 GB of storage and takes a couple of hours depending on your internet connection.
 
 Since the Vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
+
+<!-- tabs:start -->
 
 #### **Testnet**
 
@@ -107,7 +109,7 @@ bitcoind -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpa
 
 !> The fallback fee argument is crucial. Without it, your vault may fail to make payments in certain circumstances, which it will be punished for.
 
-### Install a pre-built binary
+### 3. Install a pre-built binary
 
 Download the asset from GitHub:
 
@@ -133,19 +135,19 @@ Make the binary executable:
 chmod +x vault
 ```
 
-### [Optional] Install from source
+### 4. [Optional] Install from source
 
 Build the Vault client from source.
 
 ?> Building from source requires `clang 11`. Make sure to check this via `clang -v`.
 
-#### Install Rust
+#### 4.1 Install Rust
 
 ```shell
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-#### Build the Vault client
+#### 4.2 Build the Vault client
 
 ?> This step will take some time depending on your CPU.
 
@@ -174,7 +176,7 @@ cargo build --bin vault --features parachain-metadata-kintsugi
 
 <!-- tabs:end -->
 
-### Start the Vault client
+### 5. Start the Vault client
 
 Move the vault binary into your `$PATH`.
 
