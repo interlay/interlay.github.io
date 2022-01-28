@@ -5,14 +5,16 @@ Before participating, we recommend to learn about [Kintsugi's governance](kintsu
 
 Following this guide, you will learn the most important aspects of being active in governance:
 
-- [x] Participating in [stake-to-vote](kintsugi/governance?id=stake-to-vote)
 - [x] Making a public proposal
 - [x] Showing support for proposals to put them up for a vote
+- [x] Making a Treasury proposal
 - [x] Voting on referenda
+- [x] Fast-track a proposal as part of the Technical Committee
 
-## Participate in Stake-to-Vote
 
-You can lock KINT/INTR to receive vKINT/vINTR. While you can lock any amount of KINT/INTR, below is a list of the minimum vKINT/vINTR required to make a proposal in governance:
+### Required Tokens
+
+The minimum vKINT/vINTR required to make a proposal in governance is as follows:
 
 <!-- tabs:start -->
 
@@ -30,63 +32,11 @@ tbd vINTR
 
 <!-- tabs:end -->
 
-### App
-
-Will be added soon.
-
-### Polkadot.js (Advanced)
-
-?> This is a low-level interface intended for advanced users.
-
-Make sure you connect to the correct parachain in [polkadot.js.org/apps](https://polkadot.js.org/apps).
-
-#### 1. Lock KINT/INTR
-
-- Go to Developer -> Extrinsics -> escrow -> createLock
-- Enter the `amount` of tokens you would like to lock. For KINT, convert by 1 KINT = 1 * 10^12 planck KINT. For example, if you want to lock 50 KINT, you would enter 50,000,000,000,000 planck KINT.
-- Enter the time the KINT should be locked for. KINT will not be accessible before the lock expires. The `unlockHeight` is specified in numbers of blocks and rounds down to the closest week. One week is equal to 50,400 blocks. For example, if the chain is currently at block height 100,000 and you wish to lock tokens for 10 weeks, you would enter current block height + 10 weeks * 50,400 blocks = 100,000 + 10 * 50,400 = 604,000.
-- Submit the extrinsic to lock the tokens.
-
-![Lock KINT](../_assets/img/guide/governance-stake-to-vote-1.png)
-
-#### 2. Check locked KINT/INTR
-
-- Go to Developer -> Chain Sate -> escrow -> locked
-- The `amount` is the KINT locked in planck KINT
-- The `end` is the block number at which all KINT can be withdrawn
-
-![Check KINT](../_assets/img/guide/governance-stake-to-vote-2.png)
-
-#### 3. Check vKINT/vINTR balance
-
-The vKINT and vINTR balances decrease linearly over time.
-To calculate the current balance, we use the following [formula](https://spec.interlay.io/spec/escrow.html#point):
-
-`balance = bias - (slope * (now - height))`
-
-- `now`: Go to Explorer and note down the current block height. This is the now value.
-- `bias`, `height`, and `slope`: Go to Developer - Chain State -> escrow -> userPointEpoch and note down the current epoch. Then go to Developer - Chain State -> escrow -> userPointHistory and insert your account as well as the epoch from the previous step. This will give the current `bias` and `slope` as well as the `height` (see `ts`) in which tokens were locked.
-
-In the example in the images, we have 500 KINT locked for four weeks. This results in:
-
-19,424,086,457,961 - (103,339,947 * (64,100 - 64,037)) = 19,417,576,041,300 planck vKINT = 19.4 vKINT
-
-![Check vKINT](../_assets/img/guide/governance-stake-to-vote-3.png)
-
-<!-- ## Make a Treasury Proposal
-
-### App
-
-### Polkadot.js
-
-Make sure you are corected to the correct parachain in [polkadot.js.org/apps](https://polkadot.js.org/apps).
-
-#### 1. Navigate -->
+?> Before participating in governance, you will need to have staked your KINT or INTR tokens. Please follow [the guide](guides/stake).
 
 ## Make a Public Proposal
 
 Anyone can make a proposal if they have locked enough governance tokens.
-Make sure to follow the steps to [lock KINT or INTR to receive vKINT or vINTR](#participate-in-stake-to-vote).
 
 ### Polkadot.js
 
@@ -118,6 +68,76 @@ Go to Governance -> Democracy -> Submit preimage and propose the change you desi
 
 ## Show Support for a Proposal
 
+Once a proposal is created, governance participants are asked to support proposals. One proposal per week is promoted to a referendum.
+
 ### Polkadot.js
 
+Make sure you connect to the correct parachain in [polkadot.js.org/apps](https://polkadot.js.org/apps).
+#### 1. Select a Porposal to Support
+
+Go to Governance -> Democracy. If there are any ongoing proposal, you should see them listed on this page.
+
+![Proposals](../_assets/img/guide/governance-second-1.png)
+
+#### 2. Second a Proposal
+
+From the list of the porposal, click "Second" and in the opened modal, click "Second" again to show support for the proposal.
+
+![Proposals](../_assets/img/guide/governance-second-2.png)
+
+#### 3. Confirm
+
+Once you signed the extrinsic in step 2, you should see your account being listed in a "Seconds" dropdown in the list of proposal.
+
+![Proposals](../_assets/img/guide/governance-second-3.png)
+
+
+## Make a Treasury Proposal
+
+Anyone can make a treasury proposal if they have locked enough KINT or INTR.
+
+### Polkadot.js
+
+Make sure you connect to the correct parachain in [polkadot.js.org/apps](https://polkadot.js.org/apps).
+
+#### 1. Submit a Proposal
+
+Go to Governance -> Treasury -> Submit proposal and propose who should receive funds from the Interlay or Kintsugi treasuries.
+
+![Treasury](../_assets/img/guide/governance-treasury-1.png)
+
+?> You will have to bond a fraction of the requested value in either KINT or INTR.
+
+#### 2. Bring the Treasury Proposal to a Vote via a Public Proposal
+
+As Kintsugi and Interlay do not have a council, the entire community has to agree on treasury spendings. THis requires a public proposal. To achieve this, follow the steps of creating a public propsal.
+
+A quick overview:
+
+**Approve Proposal Preimage**
+
+Select the treasury proposal id that should be approved.
+
+![Treasury](../_assets/img/guide/governance-treasury-2.png)
+
+**Submit Proposal**
+
+Select the hash of the preimage and submit the proposal.
+
+![Propose](../_assets/img/guide/governance-proposal-3.png)
+
+**Second the Proposal**
+
+Last, second the proposal to give it a chance to become a referenda.
+
 ## Vote on a Referenda
+
+
+## Fast-track a Proposal
+
+If you are a member of the [Kintsugi Technical Committee](kintsugi/governance#technical-committee), you can propose to fast-track proposals.
+
+- Go to Governance -> Tech. comm. -> Propsals -> Submit proposal
+- Enter the id of the proposal which you propose to fast-track
+
+![TC](../_assets/img/guide/governance-technical-committee-1.png)

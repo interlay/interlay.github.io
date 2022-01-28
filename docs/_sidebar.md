@@ -15,7 +15,6 @@
   * [Crowdloans **- Live now!**](interlay/crowdloans.md)
   * [Governance](interlay/governance.md)
 
-
 * **Kintsugi Canarynet (Kusama)**
 
   * [Overview](kintsugi/overview.md)
@@ -29,6 +28,7 @@
   * [Wallets](guides/prereq.md)
   * [Mint interBTC](guides/issue.md)
   * [Redeem interBTC](guides/redeem.md)
+  * [Staking](guides/stake.md)
   * [Governance](guides/governance.md)
 
 * **Vaults**
