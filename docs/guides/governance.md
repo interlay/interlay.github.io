@@ -5,12 +5,12 @@ Before participating, we recommend to learn about [Kintsugi's governance](kintsu
 
 Following this guide, you will learn the most important aspects of being active in governance:
 
+- [x] Gauging interest via an off-chain proposal
 - [x] Making a public proposal
 - [x] Showing support for proposals to put them up for a vote
 - [x] Making a Treasury proposal
 - [x] Voting on referenda
 - [x] Fast-track a proposal as part of the Technical Committee
-
 
 ### Required Tokens
 
@@ -33,6 +33,26 @@ tbd vINTR
 <!-- tabs:end -->
 
 ?> Before participating in governance, you will need to have staked your KINT or INTR tokens. Please follow [the guide](guides/stake).
+
+## Off-chain Proposals
+
+Off-chain proposals are a way to coordinate and gauge the communities opinion on a proposal before making an on-chain proposal. Since the entire process is off-chain, it's free to create proposals and to vote.
+
+This process is recommended for new proposals and where members of governance are not sure if the community would agree with their proposal.
+
+### OpenSquare
+
+Go to https://opensquare.io/space/kintsugi/ to create and vote on off-chain proposals.
+
+![OffChain](../_assets/img/guide/governance-off-chain-proposal-1.png)
+
+#### Creating a New Proposal
+
+Connect the wallet in the top right and then click on "New Proposal" to create a new off-chain proposal.
+
+#### Vote on a New Proposal
+
+Connect the wallet in the top right and then select the proposal to vote on.
 
 ## Make a Public Proposal
 
@@ -91,7 +111,6 @@ Once you signed the extrinsic in step 2, you should see your account being liste
 
 ![Proposals](../_assets/img/guide/governance-second-3.png)
 
-
 ## Make a Treasury Proposal
 
 Anyone can make a treasury proposal if they have locked enough KINT or INTR.
@@ -131,7 +150,6 @@ Select the hash of the preimage and submit the proposal.
 Last, second the proposal to give it a chance to become a referenda.
 
 ## Vote on a Referenda
-
 
 ## Fast-track a Proposal
 

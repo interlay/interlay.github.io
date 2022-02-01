@@ -68,3 +68,21 @@ In the example in the images, we have 500 KINT locked for four weeks. This resul
 19,424,086,457,961 - (103,339,947 * (64,100 - 64,037)) = 19,417,576,041,300 planck vKINT = 19.4 vKINT
 
 ![Check vKINT](../_assets/img/guide/governance-stake-to-vote-3.png)
+
+## Extend Staking Lock
+
+### App
+
+Will be added soon.
+
+## Withdraw Staking Rewards
+
+### App
+
+Will be added soon.
+
+## Withdraw Staked KINT or INTR
+
+### App
+
+Will be added soon.
