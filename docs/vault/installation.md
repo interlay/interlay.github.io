@@ -1,6 +1,7 @@
 # Installing the Vault Client
 
 Running a Vault will allow you to hold BTC of users in custody and in return earn a return on your collateral.
+
 To install the Vault client, follow this guide.
 
 At the end of this document you will have:
@@ -10,11 +11,14 @@ At the end of this document you will have:
 
 ## Prerequisites
 
-- Make sure that you have a recent version of Linux or MacOS running. Windows support is not tested.
-- Make sure that you have at least 2GB of RAM.
-- Make sure you have at least 50 GB of free disk space (ideally SSD).
-- You should have a stable Internet connection.
-- Make sure that your Vault client is running for at least 8 hours per day (you can do other things on the side).
+- Recent version of Linux or MacOS. Windows support is not tested.
+- At least 2 GB of RAM and a good CPU - exact requirements not yet benchmarked.
+- Free disk space (ideally SSD): 
+  - at least **40 GB** for the Bitcoin testnet, *or*
+  - at least **400 GB** for the Bitcoin mainnet.
+- You should have a stable internet connection.
+
+The Vault client should have consistent up-time, running for at least 8 hours per day.
 
 ### Keyfile
 
