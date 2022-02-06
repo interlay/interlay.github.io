@@ -19,6 +19,7 @@
 * **Kintsugi Canarynet (Kusama)**
 
   * [Overview](kintsugi/overview.md)
+  * [Basics](kintsugi/basics.md)
   * [Tokenomics](kintsugi/tokenomics.md)
   * [Crowdloans - **Airdrop live!**](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
