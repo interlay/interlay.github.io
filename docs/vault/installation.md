@@ -13,7 +13,7 @@ At the end of this document you will have:
 
 - Recent version of Linux or MacOS. Windows support is not tested.
 - At least 2 GB of RAM and a good CPU - exact requirements not yet benchmarked.
-- Free disk space (ideally SSD): 
+- Free disk space (ideally SSD):
   - at least **40 GB** for the Bitcoin testnet, *or*
   - at least **400 GB** for the Bitcoin mainnet.
 - You should have a stable internet connection.
@@ -197,8 +197,8 @@ vault \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname interbtcvault \
-  --auto-register-with-faucet-url 'https://api-dev-kintsugi.interlay.io/faucet' \
-  --btc-parachain-url 'wss://api-dev-kintsugi.interlay.io:443/parachain' \
+  --auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
+  --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain' \
   --network=testnet \
   --collateral-currency-id=KSM \
   --wrapped-currency-id=KBTC
