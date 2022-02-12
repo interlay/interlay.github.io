@@ -38,7 +38,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-parachain-1-5-10 \
+  interlayhq/interbtc:interbtc-parachain-1-7-3 \
   interbtc-parachain \
   --base-path=/data \
   --chain=kintsugi \
@@ -84,7 +84,7 @@ Download the pre-built binary and map the directory to the local `base-path`.
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.5.10/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.7.3/interbtc-parachain
 chmod +x interbtc-parachain
 ./interbtc-parachain \
   --base-path=${PWD}/data \
@@ -153,7 +153,7 @@ cd interbtc
 #### **Kintsugi**
 
 ```shell
-git checkout 1.5.10
+git checkout 1.7.3
 cargo build --release
 
 ./target/release/interbtc-parachain \
