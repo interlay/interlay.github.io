@@ -36,12 +36,8 @@ services:
       - "https://api-testnet.interlay.io/faucet"
       - --btc-parachain-url
       - "wss://api-testnet.interlay.io/parachain"
-      - --network
-      - testnet
       - --collateral-currency-id
       - KSM
-      - --wrapped-currency-id
-      - KBTC
     environment:
       RUST_LOG: info
     volumes:
