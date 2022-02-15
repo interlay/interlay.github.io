@@ -49,7 +49,7 @@ OR terminate the process with `Ctrl+C`.
 #### **Testnet**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.5.8/vault-parachain-metadata-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.5.9/vault-parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
@@ -65,7 +65,11 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 chmod +x ./setup && sudo ./setup
 ```
 
-### 3. Restart the service
+### 3. Update command line arguments
+
+If upgrading from a version before 1.5.9, make sure to remove the `--network` and `--wrapped-currency-id` command line arguments. If using the service to run the vault, these are located in the `interbtc-vault.service` file
+
+### 4. Restart the service
 
 ```shell
 sudo systemctl start interbtc-vault.service

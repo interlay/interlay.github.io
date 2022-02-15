@@ -121,7 +121,7 @@ Download the asset from GitHub:
 #### **Testnet**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.5.8/vault-parachain-metadata-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.5.9/vault-parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
@@ -167,7 +167,7 @@ cd interbtc-clients
 #### **Testnet**
 
 ```shell
-git checkout 1.5.8
+git checkout 1.5.9
 cargo build --bin vault --features parachain-metadata-testnet
 ```
 
@@ -199,9 +199,7 @@ vault \
   --keyname interbtcvault \
   --auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
   --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain' \
-  --network=testnet \
-  --collateral-currency-id=KSM \
-  --wrapped-currency-id=KBTC
+  --collateral-currency-id=KSM
 ```
 
 #### **Kintsugi**
