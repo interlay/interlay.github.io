@@ -16,7 +16,7 @@ At the end of this document you will have:
 
 **Web UI**
 
-Go to the Vault tab and click on button next to the `Collateral: X DOT for Y BTC` text (above the Issue Requests table). Then, follow the isntructions.
+Go to the Vault tab and click on button next to the `Collateral: X DOT for Y BTC` text (above the Issue Requests table). Then, follow the instructions.
 
 **interbtc-js library**
 
@@ -96,3 +96,35 @@ If your Vault clients holds at least _some BTC in custody_, you have two options
 You can monitor the operation of your Vault on the Vault dashboard by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).
 
 Once the Vault is up and running, a "Vault" tab will appear in the topbar of the app at [testnet.interlay.io](https://testnet.interlay.io/) (or you can access directly at [testnet.interlay.io/vault](https://testnet.interlay.io/vault)).
+
+## Security
+
+For added security, you may want to encrypt the Bitcoin wallet with a password.
+
+<!-- tabs:start -->
+
+#### **Regtest**
+
+```shell
+bitcoin-cli -regtest -rpcwallet=interbtcvault encryptwallet "password"
+bitcoin-cli -regtest -rpcwallet=interbtcvault walletpassphrase "password" 100000000
+```
+
+#### **Testnet**
+
+```shell
+bitcoin-cli -testnet -rpcwallet=interbtcvault encryptwallet "password"
+bitcoin-cli -testnet -rpcwallet=interbtcvault walletpassphrase "password" 100000000
+```
+
+#### **Mainnet**
+
+```shell
+bitcoin-cli -rpcwallet=interbtcvault encryptwallet "password"
+bitcoin-cli -rpcwallet=interbtcvault walletpassphrase "password" 100000000
+```
+
+<!-- tabs:end -->
+
+This will keep the decryption key in memory for the specified timeout - in this example 100000000 seconds or 3 years.
+Once this timeout expires (or if the node is terminated) the wallet must be unlocked manually.

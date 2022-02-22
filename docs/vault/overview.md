@@ -236,6 +236,29 @@ In both cases, the **the Vault's entire collateral is liquidated - up to the sec
 
 Consequently, the interBTC bridge initiates a **[Burn Event](/vault/overview?id=burn-event-restoring-a-11-physical-peg)** to restore the 1:1 balance between BTC and interBTC.
 
+#### Severe Undercollteralization
+
+Sever undercollateralization might occur when either the collateral asset (e.g. KSM) and the wrapped asset (e.g. BTC) exchange rates as reported by the oracle are changing. A Vault is liquidated when either (1) the the collateral (e.g., KSM) exchange rate drops significantly in relation to the wrapped asset (e.g., BTC) or (2) the wrapped asset (e.g., BTC) exchange rate rises significantly in relation to the collateral (e.g., KSM). 
+
+(1) and (2) are ultimately the same thing, but possibly it helps to think about it in KSM/USD and BTC/USD rates, which means that if either (1) or (2) or both (1) and (2) happen at the same time, a Vault is liquidated.
+
+**Example**
+
+*Liquidation Price*
+
+Let's say a Vault has currently 1000 KSM collateral and 1 BTC locked (the wrapped asset). Let's also assume that this represents a collateralization of 200%. And let's use 1000 KSM = $100,000 (i.e., $100/KSM) and 1 BTC = $50,000 for simplicity. Last, let's say the liquidation threshold is at 150% collateralization, so when a Vault is below this threshold, the Vault will be automatically liquidated.
+
+The liquidation price is reached when:
+
+- Case (1) from above: 1000 KSM = $75,000 -> $75k of collateral are backing $50k of BTC -> 150% collateralization -> liquidation price for KSM is at $75/KSM assuming only the KSM price moves
+- Case (2) from above: 1 BTC = $66,666 -> $100k of collateral are backing $66k of BTC -> 150% collateralization -> liquidation price for BTC is at $66,666/BTC assuming only the BTC price moves.
+
+Note that if (1) and (2) happen at the same time, i.e., BTC price rises and KSM price drops, liquidations might happen earlier so the liquidation price updates everytimee the price in the exchange rate oracle changes.
+
+*Value at risk*
+
+The value at risk is the current collateral in the Vault, i.e., the value of KSM in the vault. So if the KSM price drops in case (1), value at risk would go from $100k to $75k whereas in case (2) value at risk stays at $100k since only BTC price moves.
+
 ### Crash Failures (Failed Redeem)
 
 If Vaults go offline and fail to execute redeem, they are:

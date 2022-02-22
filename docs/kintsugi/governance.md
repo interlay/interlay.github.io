@@ -77,7 +77,7 @@ Users who lock KINT to mint vKINT and participate in governance receive staking 
 - Years 1-4: **5% of the initial 4 year supply of KINT**
 - Year 5+: **6.7% of the annual inflation**
 
-The staking rewards are distributed on a per-block basis, proportoinal to the vKINT balance per user (using interBTC's [scalable reward distribution mechanism](https://spec.interlay.io/economics/fees.html#excursion-scalable-reward-distribution)). This means: to keep receiving the same amount of rewards, vKINT locks must be extended periodically.
+The staking rewards are distributed on a per-block basis, proportional to the initial vKINT voting balance on deposit (using interBTC's [scalable reward distribution mechanism](https://spec.interlay.io/economics/fees.html#excursion-scalable-reward-distribution)). This encourages users to lockup as much as possible for as long as possible, no more rewards are earned after withdrawal.
 
 ?> Outlook: In the mid-term, additional criteria may be added to receiving staking rewards, if so decided by Governance. For example, accounts with very active vote participation may be rewarded higher rewards.
 

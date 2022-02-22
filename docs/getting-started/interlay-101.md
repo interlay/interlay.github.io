@@ -25,13 +25,14 @@ Includes team background, interBTC, Kintsugi, comparison to other wrapped Bitcoi
 Canary network (testnet with real economic value) on Kusama.
 
 - [Read more](../kintsugi/overview.md)
-- [Website (kintsugi.interlay.io)](https://kintsugi.interlay.io/)
-- [Blockchain Explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
+- [Dapp (kintsugi.interlay.io)](https://kintsugi.interlay.io/)
+- [Crowdloan/Claim app (claim-kint.interlay.io)](https://claim-kint.interlay.io/)
+- [Blockchain explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
 
 #### Testnet
 
 A PoA zero-value testnet.
 
 - [Testing Guides](../guides/prereq.md)
-- [Website (testnet.interlay.io)](https://testnet.interlay.io/)
-- [Blockchain Explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain%2F#/explorer)
+- [Testnet Application (testnet.interlay.io)](https://testnet.interlay.io/)
+- [Blockchain Explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-testnet.interlay.io%2Fparachain%2F#/explorer)

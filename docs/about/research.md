@@ -9,8 +9,24 @@ Our key researchers include:
 - [Alexei Zamyatin](https://scholar.google.com/citations?user=BJDPyu0AAAAJ&hl=en&oi=ao) (Co-Founder & CEO). Focus: Cross-chain protocols & blockchain security.
 - [Dominik Harz](https://scholar.google.com/citations?user=s6Km5yQAAAAJ&hl=en&oi=ao) (Co-Founder & CTO). Focus: Stablecoins & DeFi protocols
 - [Daniel Perez](https://scholar.google.com/citations?user=W2XsCqwAAAAJ&hl=en&oi=ao) (Advisor). Focus: Smart contract and DeFi protocol security
+- Theodore Bugnet (Software Engineer). Focus: Cross-chain protocols & blockchain security.
 
 ## Interlay Research Papers
+
+
+### [XCC: Theft-Resilient and Collateral-Optimized Cryptocurrency-Backed Assets](../_assets/papers/XCC_paper.pdf ':ignore')
+<details>
+  <summary>Read abstract</summary>
+The need for cross-blockchain interoperability is higher than ever. Today, there exists a plethora of blockchain-based cryptocurrencies, with varying levels of adoption and diverse niche use cases, and yet communication across blockchains is still in its infancy. Despite the vast potential for novel applications in an interoperable ecosystem, cross-chain tools and protocols are few and often limited.
+
+Cross-chain communication requires a trusted third party, as the Fair Exchange problem is reducible to it. However, the decentralised consensus of blockchains can be used as a source of trust, and financial incentives can achieve security. XCLAIM uses these principles to enable collateralised cryptocurrency-backed assets (CbAs) to be created and used. However, full collateralization is inefficient, and to protect against exchange rate fluctuations overcollateralization is necessary. This is a significant barrier to scaling, and as a result, in practice, most systems still employ a centralised architecture.
+
+In this work, we introduce XCC, an extension to the XCLAIM framework which allows for a significant reduction in collateral required. By making use of periodic, timelocked commitments on the backing blockchain, XCC decouples locked collateral from issued CbAs, allowing fractional collateralization without loss of security. We instantiate XCC between Bitcoin and Ethereum to showcase practical feasibility. XCC is compatible with the majority of existing blockchains without modification.
+</details>
+
+- **Bugnet T, Zamyatin A**
+- Pre-print, 2022
+- In collaboration with Imperial College London
 
 ### [SoK: Communication Across Distributed Ledgers](https://eprint.iacr.org/2019/1128.pdf)
 
