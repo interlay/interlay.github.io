@@ -178,8 +178,13 @@ You will see a description for the referendum, for example the one below:
 #### 3. Vote on a Referendum
 
 On the side of the referendum, you see a modal that will allow you to vote on the referendum with your staked governance tokens, i.e., vINTR or vKINT.
+
+![Vote Location](../_assets/img/guide/governance-referenda-vote.png)
+
 To place a vote, you will send an on-chain transaction locking the staked governance tokens for the period of the vote.
 After the vote has passed, the staked governance tokens are returned to your account.
+
+![Vote](../_assets/img/guide/governance-referenda-vote-detail.png)
 
 #### 4. Check the Vote Outcome
 
