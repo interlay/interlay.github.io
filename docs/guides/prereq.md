@@ -4,9 +4,9 @@ Interacting with any blockchain requires to have a wallet.
 
 At the end of this guide you will have:
 
-- [x] Installed the polkadot.js browser extension and created a Polkadot wallet
-- [x] Installed and created a Bitcoin wallet
-- [x] For testnet, you will also have requested testnet KSM and testnet BTC
+- [x] [Installed the polkadot.js browser extension and created a Polkadot wallet](#polkadot-wallet)
+- [x] [Installed and created a Bitcoin wallet](#bitcoin-wallet)
+- [x] [Testnet only: you will also have requested testnet KSM and testnet BTC](#testnet-faucets)
 
 ## Polkadot Wallet
 
@@ -60,14 +60,14 @@ Depending on the Bitcoin wallet installed in step 1, follow the instructions in 
 
 ### 1. Getting testnet DOT
 
-You can get testnet DOT by clicking on the faucet link in the top bar of https://bridge.interlay.io.
+You can get testnet KSM by clicking on the faucet link in the top bar of https://testnet.interlay.io.
 
-?> These testnet DOT are only usable on interBTC. They are **not real DOT and have no economic value**.
+?> These testnet KSM are only usable on testnet. They are **not real KSM and have no economic value**.
 
 ### 2. Getting testnet BTC
 
 Make sure you have at least some tBTC in your wallet.
-You can get testnet BTC by clicking on the faucet link in the top bar of bridge.interlay.io, or from one of the following faucets:
+You can get testnet BTC by clicking on the faucet link in the top bar of testnet.interlay.io, or from one of the following faucets:
 
 - [https://testnet-faucet.mempool.co/](https://testnet-faucet.mempool.co/)
 - [https://bitcoinfaucet.uo1.net/](https://bitcoinfaucet.uo1.net/)
