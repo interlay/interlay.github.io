@@ -5,12 +5,12 @@ Before participating, we recommend to learn about [Kintsugi's governance](kintsu
 
 Following this guide, you will learn the most important aspects of being active in governance:
 
-- [x] Gauging interest via an off-chain proposal
-- [x] Making a public proposal
-- [x] Showing support for proposals to put them up for a vote
-- [x] Making a Treasury proposal
-- [x] Voting on referenda
-- [x] Fast-track a proposal as part of the Technical Committee
+- [x] [Gauging interest via an off-chain proposal](#off-chain-proposals)
+- [x] [Creating a public proposal](#create-a-public-on-chain-proposal)
+- [x] [Showing support for proposals to put them up for a referendum](#show-support-for-a-proposal)
+- [x] [Creating a Treasury proposal](#create-a-treasury-proposal)
+- [x] [Voting on referenda](#vote-on-referenda)
+- [x] [Technical Committee: Fast-track a proposal](#fast-track-a-proposal)
 
 ### Required Tokens
 
@@ -34,7 +34,7 @@ tbd vINTR
 
 ?> Before participating in governance, you will need to have staked your KINT or INTR tokens. Please follow [the guide](guides/stake).
 
-## Off-chain Proposals
+## Off-Chain Proposals
 
 Off-chain proposals are a way to coordinate and gauge the communities opinion on a proposal before making an on-chain proposal. Since the entire process is off-chain, it's free to create proposals and to vote.
 
@@ -54,7 +54,7 @@ Connect the wallet in the top right and then click on "New Proposal" to create a
 
 Connect the wallet in the top right and then select the proposal to vote on.
 
-## Make a Public Proposal
+## Create a Public On-Chain Proposal
 
 Anyone can make a proposal if they have locked enough governance tokens.
 
@@ -74,15 +74,15 @@ Go to Governance -> Democracy -> Submit preimage and propose the change you desi
 
 #### 2. Submit a Proposal
 
-- Go to Developer -> Chain State -> democracy -> preimages and unselect "include option". This will show all current preimages. Check the preimage with your account id (the `provider`) and note down the hash of the preimage.
+Go to Developer -> Chain State -> democracy -> preimages and unselect "include option". This will show all current preimages. Check the preimage with your account id (the `provider`) and note down the hash of the preimage.
 
 ![Preimage Hash](../_assets/img/guide/governance-proposal-2.png)
 
-- Go to Governance -> Democracy -> Submit proposal and insert the preimage hash as well as the amount of vKINT/vINTR to lock for the proposal. The minimum required is automatically selected. Hit "Sign and Submit" to submit the proposal.
+Go to Governance -> Democracy -> Submit proposal and insert the preimage hash as well as the amount of vKINT/vINTR to lock for the proposal. The minimum required is automatically selected. Hit "Sign and Submit" to submit the proposal.
 
 ![Propose](../_assets/img/guide/governance-proposal-3.png)
 
-- It takes some time and might require a hard-refresh (Ctrl + Shift + r) of the browser and eventually the proposal will show up in Governance -> Democracy.
+It takes some time and might require a hard-refresh (Ctrl + Shift + r) of the browser and eventually the proposal will show up in Governance -> Democracy.
 
 ![Proposals](../_assets/img/guide/governance-proposal-4.png)
 
@@ -111,7 +111,7 @@ Once you signed the extrinsic in step 2, you should see your account being liste
 
 ![Proposals](../_assets/img/guide/governance-second-3.png)
 
-## Make a Treasury Proposal
+## Create a Treasury Proposal
 
 Anyone can make a treasury proposal if they have locked enough KINT or INTR.
 
@@ -149,13 +149,50 @@ Select the hash of the preimage and submit the proposal.
 
 Last, second the proposal to give it a chance to become a referenda.
 
-## Vote on a Referenda
+## Vote on Referenda
+
+After a set number of blocks, the proposal with the highest backing staked governance tokens will be put up for a vote.
+Once a proposal is decided to be voted on, it is called a *referendum*.
+
+### SubSquare
+
+You can see all referenda for Kintsugi at https://kintsugi.subsquare.io/democracy/referendums.
+
+#### 1. Make Sure you are Logged-In and Linked your Account
+
+Subsquare requires an account. Make sure to register or log-in:
+
+![Login](../_assets/img/guide/governance-referenda-login.png)
+
+Next, make sure you have a web3 address linked when you go to your in the topbar -> Settings.
+
+![Link Address](../_assets/img/guide/governance-referenda-link-address.png)
+
+#### 2. Select a Referendum
+
+First, click on the referendum you would like to vote on from the list of referenda.
+You will see a description for the referendum, for example the one below:
+
+![Referendum Example](../_assets/img/guide/governance-referenda-example.png)
+
+#### 3. Vote on a Referendum
+
+On the side of the referendum, you see a modal that will allow you to vote on the referendum with your staked governance tokens, i.e., vINTR or vKINT.
+To place a vote, you will send an on-chain transaction locking the staked governance tokens for the period of the vote.
+After the vote has passed, the staked governance tokens are returned to your account.
+
+#### 4. Check the Vote Outcome
+
+Once the voting period is over, you will see the result of the referendum in the same modal that you voted through.
+
+![Outcome](../_assets/img/guide/governance-referenda-1.png)
 
 ## Fast-track a Proposal
 
 If you are a member of the [Kintsugi Technical Committee](kintsugi/governance#technical-committee), you can propose to fast-track proposals.
 
-- Go to Governance -> Tech. comm. -> Propsals -> Submit proposal
-- Enter the id of the proposal which you propose to fast-track
+- Go to Governance -> Tech. comm. -> Proposals -> Submit proposal
+- Enter the id of the proposal which you propose to fast-track to a referendum
+- Enter the delay for the enactment of the referendum. For almost instant enactment us a small block number like 3, for a large delay, use a larger number of blocks.
 
 ![TC](../_assets/img/guide/governance-technical-committee-1.png)
