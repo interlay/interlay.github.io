@@ -36,7 +36,7 @@ interBTC is based on XCLAIM - a top-tier, peer-reviewed research paper. interBTC
 
 There can be two reasons for this:
 
-- **Reached maximum capacity**: If the capacity indicated on the [dashboard](https://bridge.interlay.io/dashboard) shows that the number of issued interBTC is equal to the capacity, you cannot issue more interBTC. Each interBTC must be backed by 150% worth of DOT collateral and this represents the upper limit.
+- **Reached maximum capacity**: If the capacity indicated on the [dashboard](https://testnet.interlay.io/dashboard) shows that the number of issued interBTC is equal to the capacity, you cannot issue more interBTC. Each interBTC must be backed by 150% worth of DOT collateral and this represents the upper limit.
 
 ?> Testnet Note: The number of concurrent connections to our chain instances is restricted to monitor the load. Best course of action is to retry after some time/reload the website. We are looking to increase the load.
 

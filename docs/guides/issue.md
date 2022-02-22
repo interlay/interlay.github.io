@@ -18,7 +18,7 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](sta
 
 ## Issue interBTC
 
-### 1. Go to [ bridge.interlay.io](https://bridge.interlay.io)
+### 1. Go to [ testnet.interlay.io](https://testnet.interlay.io)
 
 The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Issue tab.
 
@@ -100,7 +100,7 @@ Once you made the payment, the app will automatically locate your transaction on
 
 ### 6. Optional: Manually claim your interBTC
 
-You can check the status of your issue request in the [Transactions](https://bridge.interlay.io/transactions) view in the **"Issue Requests"** table. If your Bitcoin transaction has enough confirmations but has not been executed by a Vault yet, click on the issue request that is "Pending". This will open a modal, where you will see an **"Execute"** button. To finalize the Issue process and claim your interBTC, either wait for a Vault to auto-execute your request, or click **"Execute"** yourself.
+You can check the status of your issue request in the [Transactions](https://testnet.interlay.io/transactions) view in the **"Issue Requests"** table. If your Bitcoin transaction has enough confirmations but has not been executed by a Vault yet, click on the issue request that is "Pending". This will open a modal, where you will see an **"Execute"** button. To finalize the Issue process and claim your interBTC, either wait for a Vault to auto-execute your request, or click **"Execute"** yourself.
 
 ## Questions?
 

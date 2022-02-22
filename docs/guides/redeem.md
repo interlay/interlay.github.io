@@ -18,7 +18,7 @@ At the end of this guide you will have:
 
 ## Redeem interBTC
 
-### 1. Go to [ bridge.interlay.io](https://bridge.interlay.io)
+### 1. Go to [ testnet.interlay.io](https://testnet.interlay.io)
 
 The app has 3 tabs: Issue, Redeem, and Transfer. Ensure you are on the Redeem tab.
 
@@ -38,7 +38,7 @@ The Redeem request is now being processed by the Vault. Wait for a few minutes (
 
 ### 5. Optional: Check the status of your redeem request
 
-You can check the status of your redeem request in the [Transactions](https://bridge.interlay.io/transactions) view in the **"Redeem Requests"** table. Note that Vaults have 24 hours to complete your request.
+You can check the status of your redeem request in the [Transactions](https://testnet.interlay.io/transactions) view in the **"Redeem Requests"** table. Note that Vaults have 24 hours to complete your request.
 
 ## Questions?
 
