@@ -73,7 +73,7 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
   <tr>
     <td>Challenges <br> <b>(ends 23 December)</b></td>
     <td>2.5% <br>2.5% </td>
-    <td>Solve Interlay quiz <a href="https://interlay.typeform.com/InterlayQuiz">(try now &#10148;)</a> <br>Mint interBTC on testnet <a href="https://bridge.interlay.io/">(try now &#10148;)</a> - MUST use <a href="https://wiki.polkadot.network/docs/learn-accounts">same account!</a><br><i>Note: the challenge bonuses are updated every few days on the <a href="https://crowdloan.interlay.io/">Interlay network crowdloan page</a> - please be patient if you do not see the bonus right away.</i> </td>
+    <td>Solve Interlay quiz <a href="https://interlay.typeform.com/InterlayQuiz">(try now &#10148;)</a> <br>Mint interBTC on testnet <a href="https://testnet.interlay.io/">(try now &#10148;)</a> - MUST use <a href="https://wiki.polkadot.network/docs/learn-accounts">same account!</a><br><i>Note: the challenge bonuses are updated every few days on the <a href="https://crowdloan.interlay.io/">Interlay network crowdloan page</a> - please be patient if you do not see the bonus right away.</i> </td>
   </tr>
   <tr>
     <td>Referral program</td>
@@ -108,11 +108,11 @@ The crowdloan is a fully permissionless event - you make your own judgment if an
 
 You can participate using the following methods (including, but not limited to):
 
-### Via the [ official Interlay Network crowdloan website](https://crowdloan.interlay.io/) 
+### Via the [ official Interlay Network crowdloan website](https://crowdloan.interlay.io/)
 
 using the [Polkadot.js](https://polkadot.js.org/) browser extension.
 
-?> The minimum contribution amount is 5 DOT. Attention: when using a non-custodial wallets such as Polkadot.js users must hold a [minimum balance of 6.1 DOT](https://support.polkadot.network/support/solutions/articles/65000168651-what-is-the-existential-deposit-) (such that 1.1 DOT are left after you contribute 5 DOT). 
+?> The minimum contribution amount is 5 DOT. Attention: when using a non-custodial wallets such as Polkadot.js users must hold a [minimum balance of 6.1 DOT](https://support.polkadot.network/support/solutions/articles/65000168651-what-is-the-existential-deposit-) (such that 1.1 DOT are left after you contribute 5 DOT).
 
 ?> Known issue: Polkadot.js not recognized. [Follow these steps to fix](/guides/faq?id=polkadotjs-extension-not-detected-on-crowdloaninterlayio)
 
@@ -137,7 +137,7 @@ using the [Polkadot.js](https://polkadot.js.org/) browser extension.
 - [Parallel Finance](https://crowdloan.parallel.fi/#/auction/polkadot). Supports referrals. Additional PARA token bonus. You receive liquid cDOT tokens.
 - [Equilibrium](https://xdot.equilibrium.io/en). You receive liquid xDOT tokens. Additional EQ token bonus.
 - [Bifrost](https://bifrost.app/vcrowdloan). You receive liquid vsDOT tokens. Additional BNC token bonus.
-  
+
 #### Via exchanges
 
 - [Kraken](https://www.kraken.com/u/earn/parachains)

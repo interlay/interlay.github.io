@@ -33,6 +33,6 @@ Canary network (testnet with real economic value) on Kusama.
 
 A PoA zero-value testnet.
 
-- [Testing guides](../guides/prereq.md)
-- [Testnet app (bridge.interlay.io)](https://bridge.interlay.io/)
-- [Blockchain explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain%2F#/explorer)
+- [Testing Guides](../guides/prereq.md)
+- [Testnet Application (testnet.interlay.io)](https://testnet.interlay.io/)
+- [Blockchain Explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-testnet.interlay.io%2Fparachain%2F#/explorer)
