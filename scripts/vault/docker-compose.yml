@@ -19,17 +19,17 @@ services:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   vault:
-    image: "interlayhq/interbtc-clients:vault-parachain-metadata-testnet-1-5-4"
+    image: "interlayhq/interbtc-clients:vault-parachain-metadata-testnet-1-5-10"
     command:
-      - vault
+      - vault-parachain-metadata-testnet
       - --bitcoin-rpc-url
       - "http://bitcoind:18332"
       - --bitcoin-rpc-user
       - rpcuser
       - --bitcoin-rpc-pass
       - rpcpassword
-      - --keyname
-      - interbtcvault
+      - --keyfile
+      - keyfile.json
       - --keyname
       - interbtcvault
       - --auto-register-with-faucet-url
