@@ -35,7 +35,7 @@ services:
       - --auto-register-with-faucet-url
       - "https://api-testnet.interlay.io/faucet"
       - --btc-parachain-url
-      - "wss://api-testnet.interlay.io/parachain"
+      - "wss://api-testnet.interlay.io:443/parachain"
       - --collateral-currency-id
       - KSM
     environment:
