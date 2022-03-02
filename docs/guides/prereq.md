@@ -8,11 +8,13 @@ At the end of this guide you will have:
 - [x] [Installed and created a Bitcoin wallet](#bitcoin-wallet)
 - [x] [Testnet only: you will also have requested testnet KSM and testnet BTC](#testnet-faucets)
 
-## Polkadot Wallet
+## Kusama / Polkadot Wallet 
 
 ### 1. Installing a Polkadot wallet (polkadot-js browser extension)
 
-You will need the polkadot-js browser extension. Install the polkadot-js extension in your browser: [https://polkadot.js.org/extension/](https://polkadot.js.org/extension/).
+To interact with the Interlay/Kintsugi Dapp you will need the polkadot-js browser extension. 
+
+Install the polkadot-js extension in your browser: [https://polkadot.js.org/extension/](https://polkadot.js.org/extension/).
 
 ### 2. Create a new account
 
@@ -35,38 +37,72 @@ You can easily use the same account across different chains in the Polkadot ecos
 
 ### 1. Installing a Bitcoin wallet
 
+
+
+<!-- tabs:start -->
+
+#### **Kintsugi**
 For a general overview of Bitcoin wallets you can consult [bitcoin.org's wallet selector](https://bitcoin.org/en/choose-your-wallet?step=5).
 
-You can also pick one of the following Bitcoin wallets below. The selected wallets below are compatible with Bitcoin testnet and will make it easy to test interBTC.
+
+
+#### **Testnet**
+
+For testnet, you can also pick one of the following Bitcoin wallets that support testnet accounts:
 
 - **GreenAddress**: https://test.greenaddress.it/en/ (Android and IOS)
 - **Bitcoin Testnet Wallet**: https://play.google.com/store/apps/details?id=de.schildbach.wallet_test (Android only)
 - **Electrum**: https://electrum.org/#home (Linux, Windows, macOS and Android)
 - **Bitpay**: https://bitpay.com/wallet/ (Linux; Guide here: https://support.bitpay.com/hc/en-us/articles/360015463612-How-to-Create-a-Testnet-Wallet)
+<!-- tabs:end -->
+
+
 
 #### Hardware Wallets
 
 You can also use your hardware wallet. The following are tested and have Bitcoin mainnet and testnet support:
 
+<!-- tabs:start -->
+
+#### **Kintsugi**
+
+- **Ledger**: https://www.ledger.com/ 
+- **Trezor**: https://trezor.io/ 
+
+#### **Testnet**
+
 - **Ledger**: https://www.ledger.com/ (Guide: https://coinguides.org/ledger-testnet/)
 - **Trezor**: https://trezor.io/ (Guide: https://wiki.trezor.io/Bitcoin_testnet)
+
+<!-- tabs:end -->
+
 
 
 ### 2. Creating a Bitcoin wallet
 
 Depending on the Bitcoin wallet installed in step 1, follow the instructions in the wallet to create an account.
 
-## Testnet Faucets
+### Great! You're now ready to [ mint your first interBTC](/guides/issue)
 
-### 1. Getting testnet DOT
 
-You can get testnet KSM by clicking on the faucet link in the top bar of https://testnet.interlay.io.
+## Faucets (Testnet Only!)
 
-?> These testnet KSM are only usable on testnet. They are **not real KSM and have no economic value**.
+To test, you will need testnet tokens. Please follow the steps below.
+
+Attention: 
+
+- Testnet tokens have no economic value. 
+- Do not use real BTC or other mainnet assets on testnet!
+
+### 1. Getting testnet KSM/DOT
+
+You can get testnet KSM/DOT by clicking on the faucet link in the top bar of https://testnet.interlay.io.
+
+?> These testnet KSM/DOT are only usable on testnet. They are **not real KSM/DOT and have no economic value**.
 
 ### 2. Getting testnet BTC
 
-Make sure you have at least some tBTC in your wallet.
+Make sure you have at least some testnet BTC in your wallet.
 You can get testnet BTC by clicking on the faucet link in the top bar of testnet.interlay.io, or from one of the following faucets:
 
 - [https://testnet-faucet.mempool.co/](https://testnet-faucet.mempool.co/)
@@ -74,5 +110,3 @@ You can get testnet BTC by clicking on the faucet link in the top bar of testnet
 - [https://coinfaucet.eu/en/btc-testnet/](https://coinfaucet.eu/en/btc-testnet/)
 - [https://kuttler.eu/en/bitcoin/btc/faucet/](https://kuttler.eu/en/bitcoin/btc/faucet/)
 - [https://tbtc.bitaps.com/](https://tbtc.bitaps.com/)
-
-### Great! You're now ready to [ mint your first interBTC](/guides/issue)

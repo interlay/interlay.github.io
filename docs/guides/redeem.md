@@ -1,4 +1,4 @@
-# Redeem interBTC
+# Redeem kBTC/interBTC (Testnet)
 
 interBTC can be redeemed at any point in time for BTC on the Bitcoin blockchain. To receive BTC for your existing interBTC, follow this guide.
 

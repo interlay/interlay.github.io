@@ -91,6 +91,25 @@ If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral a
 
 If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another Vault. You can request to be replaced through the [Vault dashboard](https://testnet.interlay.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
 
+## Self-Minting 
+
+The current bridge user interface randomizes Vaults during the issue process. 
+
+To mint with your own (or another specific) Vault, you can use the Polkadot.js interface:
+
+1. Select Extrinsics in the Developer tab
+2. Select "issue" in the "state query" drop down
+3. Select "requestIssue" as the function to be executed
+4. Enter your Vault account and the issue amounts. 
+
+   -  The BTC amount must be entered with 8 decimals (1 BTC = 1000000000)
+   -  On Kintsugi, select "KSM" as the collateral token and kBTC as the wrapped token (DOT and interBTC on Interlay)
+   -  Enter 1000000000000 (= 1 KINT) as griefing collatral, you will get this back once you complete the issue operation. You can also check see how griefing collateral is needed via the "Issue" UI but 1 KINT will suffice in most cases.  
+
+### Why Self-Mint?
+
+You Vault only starts earning rewards once BTC is locked - and rewards are determined by your share of the total BTC locked in the system. Hence, you can increase your rewards by bringing your own BTC into the system. 
+
 ## Dashboard
 
 You can monitor the operation of your Vault on the Vault dashboard by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).

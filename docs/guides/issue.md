@@ -1,4 +1,4 @@
-# Mint interBTC
+# Mint kBTC/interBTC (Testnet)
 
 interBTC allows you to receive a representation of BTC to be used any way you see fit in the Polkadot ecosystem.
 To get you started, follow this guide.
