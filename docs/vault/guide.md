@@ -106,6 +106,9 @@ To mint with your own (or another specific) Vault, you can use the Polkadot.js i
    -  On Kintsugi, select "KSM" as the collateral token and kBTC as the wrapped token (DOT and interBTC on Interlay)
    -  Enter 1000000000000 (= 1 KINT) as griefing collatral, you will get this back once you complete the issue operation. You can also check see how griefing collateral is needed via the "Issue" UI but 1 KINT will suffice in most cases.  
 
+
+![Screenshot: self-minting via Polkadot.js Developer tab](../_assets/img/guide/self-mint.png)
+
 ### Why Self-Mint?
 
 You Vault only starts earning rewards once BTC is locked - and rewards are determined by your share of the total BTC locked in the system. Hence, you can increase your rewards by bringing your own BTC into the system. 
