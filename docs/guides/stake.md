@@ -6,7 +6,7 @@ Staking allows two things in the Kintsugi and Interlay networks:
 
 Following this guide, you will learn:
 
-- [x] Staking your KINT/INTR tokens
+- [x] [Staking your KINT/INTR tokens](#stake-kint-or-intr)
 - [x] Extending your lock time to increase your vKINT/vINTR stake
 - [x] Withdrawing staking rewards
 - [x] Withdrawing staked KINT/INTR tokens
@@ -15,12 +15,35 @@ Following this guide, you will learn:
 
 When staking KINT or INTR to receive vKINT or vINTR, the amount of vKINT or vINTR received depends on two factors:
 
-- The amount of KINT/INTR staked. The higher the amount of staked KINT/INTR, the more vKINT/vINTR is generated.
-- The period for which KINT/INTR is staked. The longer KINT/INTR are staked, the more vKINT/vINTR is generated.
+- **The amount of KINT/INTR staked**. The higher the amount of staked KINT/INTR, the more vKINT/vINTR is generated.
+- **How long KINT/INTR is staked**. The longer KINT/INTR are staked, the more vKINT/vINTR is generated.
 
-The amount of staked KINT/INTR is equal to the amount of received vKINT/vINTR at the time of staking if the maximum staking period is chosen. For example, in Kintsugi staking 10 KINT for 96 weeks results in 10 vKINT at the time of staking. If 10 KINT are staked for 48 weeks, 5 vKINT are generated. vKINT and vINTR decrease linearly overtime.
+Read more about the motivation and principles in the [Governance](/getting-started/governance.md) section.
 
-For reference, please check the maximum staking periods for [Kintsugi](kintsugi/governance#hard-facts) and [Interlay](interlay/governance#hard-facts).
+#### Important considerations
+
+- Minimum staking duration is 1 week. Maximum staking duration = 2x parachain lease period (e.g. 96 weeks on Kintsugi).  You can stake in increments of 1 week (e.g. 2 weeks, 5 weeks, ...)
+
+- You get 1 vKINT (or vINTR) if you stake 1 KINT (or INTR) for the maximum possible period. For reference, please check the maximum staking periods for [Kintsugi](kintsugi/governance#hard-facts) and [Interlay](interlay/governance#hard-facts).
+```
+1 vKINT = 1 KINT staked for 96 weeks (maximum staking duration on Kintsugi) 
+```
+
+- vKINT/vINTR amounts decrease linearly as time progresses, unless the lock is extended.
+
+- The lock duration is **per account**! This means: if you lock 1 KINT to 48 weeks and want to add 100 KINT later, you have 2 options:
+
+  - (A) Lock 100 KINT for 48 weeks or more
+  - (B) Use another account to lock the 100 KINT for shorter durations
+
+**Example**
+
+- You **stake** `10` KINT for `96` weeks. This will get you `10` vKINT.
+- In `48` weeks, you will have `5` vKINT left since `50%` of the lock period has passed.
+- You **extend** your current lock by `24` weeks. You now have `7.5` vKINT since your KINT are locked for `(48+24) = 72` weeks and `72/96= 75%`. 
+- In 24 weeks, you will again have `5` vKINT (since the remaining lock is `48` weeks which is `50`% of the maximum lock period of `96` weeks). 
+- You **add** `10` KINT to your stake and **extend** the lock by 24 weeks. You now have ``15`` vKINT (``20 KINT x (48 + 24)/96 weeks``)
+- If you now want to stake `100` KINT for `2 weeks` you will need to do this via a second account. 
 
 ## Stake KINT or INTR
 
@@ -28,9 +51,50 @@ You can lock KINT/INTR to receive vKINT/vINTR. If you plan to participate in gov
 
 ### App
 
-Will be added soon.
+The easiest way to stake KINT/INTR is via the Staking DApp!
 
+<!-- tabs:start -->
+
+#### **Kintsugi**
+[kintsugi.interlay.io/staking](https://kintsugi.interlay.io/staking)
+
+
+
+
+#### **Interlay**
+
+Coming soon
+
+#### **Testnet**
+
+[testnet.interlay.io/staking](https://testnet.interlay.io/staking)
+<!-- tabs:end -->
+
+?> We use Kintsugi as example in the following - Interlay staking looks and works the same.
+
+
+1. In the staking app, enter the amount you want to stake.
+3. Enter the staking period *in weeks*. Minimum 1 week, maximum 96 weeks for KINT (longer for INTR)
+4. Review the unlock date and the reward estimates.
+
+?> Note: The reward estimates may change as more or less people stake.
+
+4. Click "Stake" and sign the transaction.
+
+![Stake Kint](../_assets/img/guide/stake.png)
+
+
+
+5. You can now see (a) the amount of staked KINT, (b) your voting power in vKINT (also used to calculate rewards), and (c) your staking rewards available for withdrawal.
+
+![Check staking balance](../_assets/img/guide/stake-balance.png)
+
+!> **Risk vs Return**: The more and the longer you lock, the more rewards you can earn. However, once your tokens are staked you can only withdraw them at the end of the staking period. Please DYOR and familiarize yourself with the [risks of staking](https://cryptogeeks.org/risks-of-staking-crypto/).
 ### Polkadot.js (Advanced)
+<details>
+<summary>
+Click to expand
+</summary>
 
 ?> This is a low-level interface intended for advanced users.
 
@@ -68,6 +132,9 @@ In the example in the images, we have 500 KINT locked for four weeks. This resul
 19,424,086,457,961 - (103,339,947 * (64,100 - 64,037)) = 19,417,576,041,300 planck vKINT = 19.4 vKINT
 
 ![Check vKINT](../_assets/img/guide/governance-stake-to-vote-3.png)
+
+</details>
+
 
 ## Extend Staking Lock
 
