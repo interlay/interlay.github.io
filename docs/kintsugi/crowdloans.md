@@ -37,13 +37,5 @@ Any KINT not used for the Core, Early, Referral and Success Airdrop will be dist
 
 To incentivize kBTC adoption, 200 000 KINT will be airdropped to crowdloan participants who then also run Vaults and mint kBTC on Kusama, once Kintsugi is live. These airdrops will happen over the course of the first parachain lease period. In addition, protocol governance may approve special kBTC LP programs for crowdloan participants.
 
-## Participating in the Crowdloan
 
-The crowdloan is a fully permissionless event - you make your own judgement on if and how you would like to participate.
-
-We recommend the following ways to participate:
-
-1. Participate via the [Kintsugi crowdloan website](https://claim-kint.interlay.io/) using the Polkadot.js browser extension.
-2. Participate via partner exchanges.
-3. Participate via partner mobile wallets.
 

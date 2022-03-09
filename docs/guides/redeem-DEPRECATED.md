@@ -13,7 +13,7 @@ At the end of this guide you will have:
 
 ## Prerequisites
 
-- Make sure you have the required [polkadot-js extension and a Bitcoin wallet](start/prereq.md).
+- Make sure you have the required [polkadot-js extension and a Bitcoin wallet](guides/wallets-explorers.md).
 - Make sure you [have interBTC in your wallet](guides/issue.md)
 
 ## Redeem interBTC

@@ -99,13 +99,13 @@ Since the Vault does not require a Bitcoin node with all the data and to reduce 
 #### **Testnet**
 
 ```shell
-bitcoind -testnet -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
+bitcoind -testnet -server -par=1 -maxuploadtarget=200 -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
 ```
 
 #### **Kintsugi**
 
 ```shell
-bitcoind -server -par=1 -maxuploadtarget=200 -blocksonly -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
+bitcoind -server -par=1 -maxuploadtarget=200 -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
 ```
 
 <!-- tabs:end -->

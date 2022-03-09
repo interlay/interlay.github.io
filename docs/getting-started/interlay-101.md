@@ -8,19 +8,29 @@ Interlay is a decentralized network dedicated to connecting crypto-currencies li
 
 **[Kintsugi](../kintsugi/overview)** is Interlay’s canary network, an experiment with real economic value deployed on Kusama. Kintsugi and Interlay share the same code base - with the difference that Kintsugi focusses strictly on innovation and will always be ahead in terms of features. Read more about Interlay’s dual network model.
 
-### For a high level overview of the Interlay network - see this [ info slide deck](https://docs.google.com/presentation/d/1nqxPiL5Ya5IBEkofdg5TVa4gc4SkBXTpHWOX15duqns/edit#slide=id.g86723de484_0_6)
+### High level overview - see this [ info slide deck](https://docs.google.com/presentation/d/1Z3S55W6zu16WgGfOLMk0Y1bQvPbEHzQZF_B0SFESI-Q/)
 Includes team background, interBTC, Kintsugi, comparison to other wrapped Bitcoin versions, and roadmap.
 
-### Explanatory videos and a "30sec - 5min - 30min - 60min" info decks are WIP and will be posted here soon.
+### Explanatory Videos
 
+#### Interlay in 1 Minute
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h_LZhiS6Gho" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### Interlay in 45 Minutes (ETH Denver)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iJFqwtxgLqk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+#### For more videos, check out the [ Interlay YouTube channel](https://www.youtube.com/channel/UCiO00-2FXx_V0HSSmr1-c7Q)!
 
 ## Networks
 
-#### Interlay - Mainnet on Polkadot
+### Interlay - Mainnet on Polkadot
 
 - Coming soon
 
-#### Kintsugi - Canary Network on Kusama
+### Kintsugi - Canary Network on Kusama
 
 Canary network (testnet with real economic value) on Kusama.
 
@@ -29,7 +39,7 @@ Canary network (testnet with real economic value) on Kusama.
 - [Crowdloan/Claim app (claim-kint.interlay.io)](https://claim-kint.interlay.io/)
 - [Blockchain explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
 
-#### Testnet
+### Testnet
 
 A PoA zero-value testnet.
 

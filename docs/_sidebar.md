@@ -12,24 +12,25 @@
 * **Interlay Mainnet (Polkadot)**
 
   * [Tokenomics](interlay/tokenomics.md)
-  * [Crowdloans **- Live now!**](interlay/crowdloans.md)
+  * [Crowdloans **- Completed**](interlay/crowdloans.md)
   * [Governance](interlay/governance.md)
 
 * **Kintsugi Canarynet (Kusama)**
 
   * [Overview](kintsugi/overview.md)
   * [Tokenomics](kintsugi/tokenomics.md)
-  * [Crowdloans - **Airdrop live!**](kintsugi/crowdloans.md)
+  * [Crowdloans - **Airdrop live**](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
-  * [Guides](kintsugi/guides.md)
-
+  
 * **Guides**
 
-  * [Wallets](guides/prereq.md)
-  * [Mint interBTC](guides/issue.md)
-  * [Redeem interBTC](guides/redeem.md)
+  * [Wallets / Explorers](guides/wallets-explorers.md)
+  * [Transfers](guides/transfers.md)
+  * [Bridge](guides/bridge.md)
   * [Staking](guides/stake.md)
   * [Governance](guides/governance.md)
+  * [Crowdloans](guides/crowdloans.md)
+  * [Token Vesting](guides/vesting.md)
 
 * **Vaults**
 
