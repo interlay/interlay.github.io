@@ -49,7 +49,7 @@ Read more about the motivation and principles in the [Governance](/getting-start
 
 You can lock KINT/INTR to receive vKINT/vINTR. If you plan to participate in governance, please check the [minimum staking requirements per network](guides/governance#required-tokens).
 
-### App
+### Using the App
 
 The easiest way to stake KINT/INTR is via the Staking DApp!
 
@@ -138,18 +138,50 @@ In the example in the images, we have 500 KINT locked for four weeks. This resul
 
 ## Extend Staking Lock
 
-### App
+Use the staking app to extend your staking lock.
 
-Will be added soon.
+?> **Why should I extend my staking lock time?** The longer you stake your KINT, the more voting power (vKINT) you have and hence the more rewards you will earn. Your vKINT decreases as your remaining lock time decreases (the shorter the lock, the less vKINT). To increase your vKINT, you can extend your lock. See [above](#short-primer-on-stake-to-vote) for more info.
+
+1. On the staking app, check how long your KINT is currently staked.
+
+![Check current lock](../_assets/img/guide/remaining-duration.png)
+
+2. Enter by how many **weeks** you would like to extend your lock. Minimum extension = 1 week. Maximum = maximum lock period (96 weeks on Kintsugi) minus your current lock period. 
+
+![Extend stake](../_assets/img/guide/extend-stake.png)
+
+3. Check the new unlock date and the estimated rewards. If you are happy with it, click the button below and sign the transaction.
+
+
+Note: the interface will show you the maximum possible lock period if you try to enter a too long lock period.
+
+![Too long lock](../_assets/img/guide/too-long-lock.png)
+
 
 ## Withdraw Staking Rewards
 
-### App
+Use the staking app to withdraw your staking rewards.
 
-Will be added soon.
+1. Check how many rewards you can withdraw.  
+2. Click "Withdraw" to claim your rewards.
+
+![Withdraw staking rewards](../_assets/img/guide/claim-rewards.png)
+
 
 ## Withdraw Staked KINT or INTR
 
-### App
+Use the staking app to withdraw your staked KINT/INTR **at/after the end of the lock period**.
 
-Will be added soon.
+?> You can always only withdraw your **entire** staked KINT/INTR at once at the end of the lock period. Partial withdrawals are not possible.
+
+1. Check if you can withdraw your staked KINT/INTR.
+
+Before staking period is over - **withdraw NOT possible**:
+
+![Lock not over yet](../_assets/img/guide/withdraw-button-pending.png)
+
+After staking period is over - **withdraw possible**:
+
+![Lock over](../_assets/img/guide/withdraw-stake-active.png)
+
+2. Click "Withdraw" and sign the transaction. 
