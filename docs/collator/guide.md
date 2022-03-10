@@ -38,7 +38,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-parachain-1-7-3 \
+  interlayhq/interbtc:interbtc-parachain-1-8-1 \
   interbtc-parachain \
   --base-path=/data \
   --chain=kintsugi \
@@ -63,7 +63,7 @@ docker run \
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-standalone-1-3-0 \
+  interlayhq/interbtc:interbtc-standalone-1-8-1 \
   interbtc-standalone \
   --base-path=/data \
   --chain=testnet \
@@ -84,7 +84,7 @@ Download the pre-built binary and map the directory to the local `base-path`.
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.7.3/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.8.1/interbtc-parachain
 chmod +x interbtc-parachain
 ./interbtc-parachain \
   --base-path=${PWD}/data \
@@ -107,7 +107,7 @@ chmod +x interbtc-parachain
 #### **Testnet**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.3.0/interbtc-standalone
+wget https://github.com/interlay/interbtc/releases/download/1.8.1/interbtc-standalone
 chmod +x interbtc-standalone
 ./interbtc-standalone \
   --base-path=${PWD}/data \
@@ -153,7 +153,7 @@ cd interbtc
 #### **Kintsugi**
 
 ```shell
-git checkout 1.7.3
+git checkout 1.8.1
 cargo build --release
 
 ./target/release/interbtc-parachain \
@@ -177,7 +177,7 @@ cargo build --release
 #### **Testnet**
 
 ```shell
-git checkout 1.3.0
+git checkout 1.8.1
 cargo build --release
 
 ./target/release/interbtc-standalone \

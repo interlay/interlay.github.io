@@ -6,7 +6,7 @@ The interBTC bridge is fully decentralized: anyone can run a Collator.
 
 ### Do Collators earn fees?
 
-Technically yes, but this is not currently implemented.
+Collators earn transaction fees made by users for preparing blocks.
 
 ## Troubleshooting
 
