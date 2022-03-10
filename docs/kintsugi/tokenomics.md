@@ -39,27 +39,7 @@ KINT will be controlled by the community:
 Starting in year 5, only the community receives new KINT from the annual inflation.
 
 
-<table>
-  <tr>
-   <td>
-<img src="../_assets/img/kintsugi/Kintsugi_initial_distribution.jpg" width="" alt="alt_text" title="image_tooltip">
-<p>
-Distribution of the initial 4-year supply.
-   </td>
-   <td>
-<img src="../_assets/img/kintsugi/Kintsugi_5y_distribution.jpg" width="" alt="alt_text" title="image_tooltip">
-<p>
-Distribution of the 2% annual inflation starting in year 5.
-   </td>
-  </tr>
-</table>
-
-
-**Suggested On-Chain Treasury Reserve**
-
-The on-chain Treasury reserve is in turn distributed as follows (suggestion - final allocation to be decided, from time to time, by Kintsugi community governance):
-
-<img src="../_assets/img/kintsugi/on-chain_treasury_distribution.jpg" width="50%" alt="alt_text" title="image_tooltip">
+![Kintsugi tokenomics](../_assets/img/Kintsugi-tokenomics.png)
 
 
 **Full Tokenomic Details**
