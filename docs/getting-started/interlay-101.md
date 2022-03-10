@@ -8,6 +8,8 @@ Interlay is a decentralized network dedicated to connecting crypto-currencies li
 
 **[Kintsugi](../kintsugi/overview)** is Interlay’s canary network, an experiment with real economic value deployed on Kusama. Kintsugi and Interlay share the same code base - with the difference that Kintsugi focusses strictly on innovation and will always be ahead in terms of features. Read more about Interlay’s dual network model.
 
+![Interlay Network](../_assets/img/Interlay-network-stakeholders.png)
+
 ### High level overview - see this [ info slide deck](https://docs.google.com/presentation/d/1Z3S55W6zu16WgGfOLMk0Y1bQvPbEHzQZF_B0SFESI-Q/)
 Includes team background, interBTC, Kintsugi, comparison to other wrapped Bitcoin versions, and roadmap.
 
