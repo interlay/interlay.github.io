@@ -34,7 +34,7 @@ tbd vINTR
 
 ?> Before participating in governance, you will need to have staked your KINT or INTR tokens. Please follow [the guide](guides/stake).
 
-## Off-Chain Proposals
+## Off-Chain Voting
 
 Off-chain proposals are a way to coordinate and gauge the communities opinion on a proposal before making an on-chain proposal. Since the entire process is off-chain, it's free to create proposals and to vote.
 
@@ -54,15 +54,52 @@ Connect the wallet in the top right and then click on "New Proposal" to create a
 
 Connect the wallet in the top right and then select the proposal to vote on.
 
-## Create a Public On-Chain Proposal
+
+## Governance Platform
+
+Both Kintsugi and Interlay use the SubSquare governance platform to discuss and vote on proposals.
+
+?> **Important**: You need to convince the community that your proposal is useful and deserves backing. Only proposals with sufficient backing from the community go to vote. For this, you need to upload a description on SubSquare and participate in the discussion.
+
+<!-- tabs:start -->
+
+#### **Kintsugi (Canarynet)**
+
+[[kintsugi.subsquare.io]](https://kintsugi.subsquare.io/)
+
+
+#### **Interlay (Mainnet)**
+
+Coming soon
+
+#### **Testnet**
+
+[test-kint.subsquare.io](https://test-kint.subsquare.io/)
+
+<!-- tabs:end -->
+
+#### 1. Create an account
+
+Subsquare requires an account. Make sure to register or log-in:
+
+![Login](../_assets/img/guide/governance-referenda-login.png)
+
+
+#### 2. Connect Polkadot/Kusama/Substrate account
+
+Next, make sure you have a web3 address linked when you go to your in the topbar -> Settings.
+
+![Link Address](../_assets/img/guide/governance-referenda-link-address.png)
+
+## On-Chain Proposal
 
 Anyone can make a proposal if they have locked enough governance tokens.
+This involves 2 steps:
 
-### Polkadot.js
+1. Creating the on-chain proposal via Polkadot.js
+2. Adding text/arguments/explanation to your proposal via the [governance platform](#governance-platform)
 
-Make sure you connect to the correct parachain in [polkadot.js.org/apps](https://polkadot.js.org/apps).
-
-#### 1. Submit a Preimage
+### Step 1: Submit Proposal via Polkadot.js
 
 Governance can change the runtime code as well as all sorts of parameters. In the first step, decide what the proposal you are about to create should change.
 
@@ -85,6 +122,26 @@ Go to Governance -> Democracy -> Submit proposal and insert the preimage hash as
 It takes some time and might require a hard-refresh (Ctrl + Shift + r) of the browser and eventually the proposal will show up in Governance -> Democracy.
 
 ![Proposals](../_assets/img/guide/governance-proposal-4.png)
+
+
+### Step 2: Add Proposal Text
+
+Now it is time to add the text, explaining and arguing in favor of your proposal.
+
+?> **This is the most important part!** Kintsugi is a decentralized network. You need to convince the community that your proposal is useful and deserves backing. Only proposals with sufficient backing from the community go to vote. 
+
+
+#### 1. Log into SubSquare 
+
+See [above](#governance-platform).
+Make sure you have connected your Substrate account!
+
+#### 2. Find and edit your proposal
+
+Go to "Proposals" and select your proposal from the list. 
+
+?> If you connected the same account as the one you used to create the proposal, you will be able to add title and text.
+
 
 ## Show Support for a Proposal
 
