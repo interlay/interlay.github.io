@@ -142,7 +142,7 @@ Go to "Proposals" and select your proposal from the list.
 
 ?> If you connected the same account as the one you used to create the proposal, you will be able to add title and text.
 
-
+   
 ## Show Support for a Proposal
 
 Once a proposal is created, governance participants are asked to support proposals. One proposal per week is promoted to a referendum.
