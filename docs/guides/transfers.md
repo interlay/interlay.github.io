@@ -22,12 +22,26 @@ Coming soon
 
 <!-- tabs:end -->
 
+### Transfer to another address
 
 1. Go to the Transfer page on the app. Make sure you allow polkadot.js to connect to the website.
 2. Select the token you would like to transfer, e.g., KSM, KBTC, or KINT.
 3. Your available balance is shown on top of the amount input field.
 4. Enter the address of the recipient. This can be in any supported Polkadot address format and will automatically be converted to the Kintsugi address format for the transfer.
 5. Click "Transfer" and sign the extrinsic to make a transaction.
+
+### Cross chain transfers
+
+?> At present, we only support transferring KSM from Kusama to Kintsugi
+
+1. Go to the Transfer page on the app. Make sure you allow polkadot.js to connect to the website.
+2. Select the Cross Chain Transfer tab.
+3. Make sure you select the correct account from the account selector at the top of the page. This is the account from which the transfer will be made.
+4. Your available balance on the relay chain is shown above the amount field. This wil be different from the parachain balance shown at the top of the page.
+5. The "from" chain value will automatically be set to Kusama and the "to" chain value will be set to Kintsugi.
+6. Select an account from the destination select field. You can only transfer to accounts that are in your wallet.
+7. Click "Transfer" and sign the extrinsic to make a transaction.
+8. After the transfer has been made, if you select the account/wallet that has received the KSM from the account selector then the top right KSM balance should be updated to include the amount of KSM transferred.
 
 ## Polkadot.js Developer Tab (Advanced)
 
