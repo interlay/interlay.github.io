@@ -4,10 +4,15 @@ Running a Vault will allow you to hold BTC of users in custody and in return ear
 
 To install the Vault client, follow this guide.
 
-At the end of this document you will have:
+## Checklist
 
-- [x] Started the Vault client
-- [x] Registered your Vault
+- [x] Generate Sr25519 key(s) for the parachain ([LINK](/vault/installation?id=keyfile))
+- [x] Transfer collateral from the relay chain ([LINK](/guides/transfers?id=cross-chain-transfers))
+- [x] Start and sync a Bitcoin full-node ([LINK](/vault/installation?id=_2-start-the-bitcoin-node))
+- [x] Start the Vault client and make sure it is registered ([LINK](/vault/installation?id=_5-start-the-vault-client))
+- [x] Ensure the Vault can accept issue, redeem and replace requests ([LINK](/vault/guide?id=accepting-issue-and-redeem-requests))
+- [x] Verify backups are in place (Bitcoin wallet and Substrate keys) ([LINK](https://bitcoin.org/en/secure-your-wallet))
+- [x] Subscribe to critical updates for continued operation ([LINK](https://discord.gg/invite/interlay))
 
 ## Prerequisites
 
@@ -17,16 +22,20 @@ At the end of this document you will have:
   - at least **40 GB** for the Bitcoin testnet, *or*
   - at least **400 GB** for the Bitcoin mainnet.
 - You should have a stable internet connection.
+- Have at least 1 KINT/INTR to pay for initial transaction fees.
+- Have a minimum amount of collateral assets, see [requirements](/vault/overview?id=minimum).
 
 The Vault client should have consistent up-time, running for at least 8 hours per day.
 
 ### Keyfile
 
-Create a `keyfile.json` file that contains the mnemonic of the account you want to use for the Vault, e.g.:
+!> Ensure that you have a backup of the substrate key in a safe place.
+
+Create a `keyfile.json` file that contains the mnemonic of the substrate account you want to use for the Vault, e.g.:
 
 ```json
 {
-  "interbtcvault": "mango inspire guess truly stone husband double exhaust reflect wood soldier steel"
+  "0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71": "pizza fan clock economy angry rich enhance reveal repair figure disagree loan"
 }
 ```
 
@@ -35,11 +44,19 @@ Create a `keyfile.json` file that contains the mnemonic of the account you want 
 You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
 
 ```shell
-subkey generate --output-type json | jq '{"interbtcvault": .secretPhrase}' > keyfile.json
+subkey generate --output-type json | jq '{(.accountId): .secretPhrase}' > keyfile.json
 ```
 
 Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
 If the Vault spends funds from another wallet this may be marked as theft.
+
+### Funding
+
+The account used to register **MUST** be endowed with collateral (at launch this is KSM for Kintsugi and DOT for Interlay) and the parachain's native token for transaction fees - KINT for Kintsugi and INTR for Interlay.
+
+Please follow [this guide](guides/transfers?id=cross-chain-transfers) for transferring assets between chains.
+
+Please also check the [minimum collateral requirements](/vault/overview?id=minimum) for Vaults.
 
 ## Quickstart Installation
 
@@ -86,7 +103,15 @@ Run Bitcoin and the Vault binary as a service on your computer or server. Follow
 
 Download and install a [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node) by following the [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions).
 
-!> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault.
+!> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault. Please check [this guide](https://bitcoin.org/en/secure-your-wallet) for more security best-practices.
+
+Please note the following default ports for incoming TCP and JSON-RPC connections:
+
+|         | P2P   | RPC   |
+|---------|-------|-------|
+| Regtest | 18444 | 18443 |
+| Testnet | 18333 | 18332 |
+| Mainnet | 8333  | 8332  |
 
 ### 2. Start the Bitcoin node
 
@@ -190,32 +215,34 @@ To start the client, you can connect to our parachain full node:
 
 #### **Testnet**
 
+To request funds from the faucet:
+
 ```shell
 vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
-  --keyname interbtcvault \
+  --keyname 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71 \
+  --collateral-currency-id=KSM \
   --auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
-  --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain' \
-  --collateral-currency-id=KSM
+  --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain'
 ```
 
 #### **Kintsugi**
 
+To register with 1 KSM (1000000000000 Planck):
+
 ```shell
 vault \
-  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-url http://localhost:8332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
-  --keyname interbtcvault \
-  --auto-register-with-faucet-url 'https://api-kusama.interlay.io/faucet' \
-  --btc-parachain-url 'wss://api-kusama.interlay.io/parachain' \
-  --network=mainnet \
+  --keyname 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71 \
   --collateral-currency-id=KSM \
-  --wrapped-currency-id=KBTC
+  --auto-register-with-collateral 1000000000000 \
+  --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain'
 ```
 
 <!-- tabs:end -->
@@ -225,7 +252,7 @@ By default, the Vault will log at `info` or above but you may, for example, conf
 
 On startup, the Vault will automatically create or load the Bitcoin wallet using the keyname specified above and import additional keys generated from issue requests.
 
-### [Optional] Start the Vault client as a systemd service
+### 6. [Optional] Start the Vault client as a systemd service
 
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
 

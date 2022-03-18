@@ -10,17 +10,15 @@ As many as want to participate.
 
 ### What is the minimum number of required Vaults?
 
-One honest and online Vault is enough to allow users to move BTC to Polkadot. A user can even be his/her own Vault. The more Vaults, however, the better.
+One honest and online Vault is enough to allow users to move BTC to Polkadot. A user can even be their own Vault. The more Vaults, however, the better.
 
 ### Can I run multiple Vaults?
 
-Definitely! Please only use one unique key per client to avoid race conditions on signing. Additionally, if a Vault is started using the same key name
-as another that was already running it will load the same Bitcoin wallet and may attempt to transfer "locked" funds. Please review the response to Vault
-theft below.
+Definitely! Please only use one unique key per client to avoid race conditions on signing. Additionally, if a Vault is started using the same key name as another that was already running it will load the same Bitcoin wallet and may attempt to transfer "locked" funds. Please review the response to Vault theft below.
 
 ### Do Vaults earn fees?
 
-Yes! Vaults earn fees in interBTC and DOT.
+Yes! Vaults earn fees in kBTC/interBTC and KINT/INTR.
 
 ### How often must Vaults come online?
 
@@ -32,15 +30,15 @@ We recommend Vaults remain online to avoid failing redeem requests in times of h
 
 ### What are collateral requirements?
 
-Vaults must lock up DOT collateral worth ``150%`` of the locked BTC value.
+Vaults must lock up collateral equivalent to the locked BTC value based on the [network thresholds](/vault/overview?id=collateral-thresholds).
 
 ### What happens if a Vault fails to redeem BTC?
 
 The Vault will be slashed a punishment fee and the user can (i) chose to retry with another Vault or (ii) claim the Vault's collateral.
 
-### What happens if a vault steals?
+### What happens if a Vault steals?
 
-The Vault's collateral, up to ``150%`` of the stolen BTC value at the current exchange rate, is slashed and the interBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg).
+The Vault's collateral, up to the [secure threshold](/vault/overview?id=secure-collateral) of the stolen BTC value at the current exchange rate, is slashed and the interBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg).
 See [here](/vault/overview?id=collateral) for more details.
 
 ### What happens if a vault is undercollateralized?
@@ -49,10 +47,10 @@ The Vault must re-balance its collateral. If it fails to do so, the interBTC bri
 
 ### How do Vaults manage Bitcoin keys?
 
-Vaults are responsible for managing their own Bitcoin private keys.
-Each Vault must submit a Bitcoin public key (the "master" key) when registering with the interBTC bridge.
+Vaults utilise the local Bitcoin Core full-node for key management.
 
-The Vault client uses a separate wallet file, specified upon start-up, which is imported into the Vault's local Bitcoin full node (Bitcoin Core wallet).
+Each Vault must submit a Bitcoin public key (the "master" key) when registering with the interBTC bridge.
+When the Vault (re)starts it will check that this key is still held by the Bitcoin wallet.
 
 !> Never transfer funds manually from the Bitcoin wallet as it may be considered theft.
 
@@ -83,5 +81,4 @@ To avoid this happening, set a sensible default on startup such as `-fallbackfee
 
 ### No available targets are compatible with this triple.
 
-The secp256k1 elliptic-curve dependency used for generating Vault addresses requires a newer version of [Clang](https://clang.llvm.org/).
-Please download the latest available version for your distribution or check the minimum supported version in the build instructions.
+The secp256k1 elliptic-curve dependency used for generating Vault addresses requires a newer version of [Clang](https://clang.llvm.org/). Please download the latest available version for your distribution or check the minimum supported version in the build instructions.
