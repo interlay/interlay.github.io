@@ -6,12 +6,13 @@ To install the Vault client, follow this guide.
 
 ## Checklist
 
-- [x] Generate Sr25519 key(s) for the parachain
-- [x] Transfer collateral from the relay chain
-- [x] Start the Vault client and make sure it is registered
-- [x] Ensure the Vault can accept issue, redeem and replace requests
-- [x] Verify backups are in place (Bitcoin wallet and Substrate keys)
-- [x] Subscribe to critical updates for continued operation 
+- [x] Generate Sr25519 key(s) for the parachain ([LINK](/vault/installation?id=keyfile))
+- [x] Transfer collateral from the relay chain ([LINK](/guides/transfers?id=cross-chain-transfers))
+- [x] Start and sync a Bitcoin full-node ([LINK](/vault/installation?id=_2-start-the-bitcoin-node))
+- [x] Start the Vault client and make sure it is registered ([LINK](/vault/installation?id=_5-start-the-vault-client))
+- [x] Ensure the Vault can accept issue, redeem and replace requests ([LINK](/vault/guide?id=accepting-issue-and-redeem-requests))
+- [x] Verify backups are in place (Bitcoin wallet and Substrate keys) ([LINK](https://bitcoin.org/en/secure-your-wallet))
+- [x] Subscribe to critical updates for continued operation ([LINK](https://discord.gg/invite/interlay))
 
 ## Prerequisites
 
@@ -21,12 +22,16 @@ To install the Vault client, follow this guide.
   - at least **40 GB** for the Bitcoin testnet, *or*
   - at least **400 GB** for the Bitcoin mainnet.
 - You should have a stable internet connection.
+- Have at least 1 KINT/INTR to pay for initial transaction fees.
+- Have a minimum amount of collateral assets, see [requirements](/vault/overview?id=minimum).
 
 The Vault client should have consistent up-time, running for at least 8 hours per day.
 
 ### Keyfile
 
-Create a `keyfile.json` file that contains the mnemonic of the account you want to use for the Vault, e.g.:
+!> Ensure that you have a backup of the substrate key in a safe place.
+
+Create a `keyfile.json` file that contains the mnemonic of the substrate account you want to use for the Vault, e.g.:
 
 ```json
 {
@@ -50,6 +55,8 @@ If the Vault spends funds from another wallet this may be marked as theft.
 The account used to register **MUST** be endowed with collateral (at launch this is KSM for Kintsugi and DOT for Interlay) and the parachain's native token for transaction fees - KINT for Kintsugi and INTR for Interlay.
 
 Please follow [this guide](guides/transfers?id=cross-chain-transfers) for transferring assets between chains.
+
+Please also check the [minimum collateral requirements](/vault/overview?id=minimum) for Vaults.
 
 ## Quickstart Installation
 

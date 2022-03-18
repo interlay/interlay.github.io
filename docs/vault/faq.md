@@ -18,7 +18,7 @@ Definitely! Please only use one unique key per client to avoid race conditions o
 
 ### Do Vaults earn fees?
 
-Yes! Vaults earn fees in interBTC and KINT/INTR.
+Yes! Vaults earn fees in kBTC/interBTC and KINT/INTR.
 
 ### How often must Vaults come online?
 
@@ -30,7 +30,7 @@ We recommend Vaults remain online to avoid failing redeem requests in times of h
 
 ### What are collateral requirements?
 
-Vaults must lock up collateral worth ``150%`` of the locked BTC value.
+Vaults must lock up collateral equivalent to the locked BTC value based on the [network thresholds](/vault/overview?id=collateral-thresholds).
 
 ### What happens if a Vault fails to redeem BTC?
 
@@ -38,7 +38,7 @@ The Vault will be slashed a punishment fee and the user can (i) chose to retry w
 
 ### What happens if a Vault steals?
 
-The Vault's collateral, up to ``150%`` of the stolen BTC value at the current exchange rate, is slashed and the interBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg).
+The Vault's collateral, up to the [secure threshold](/vault/overview?id=secure-collateral) of the stolen BTC value at the current exchange rate, is slashed and the interBTC bridge initiates a [**Burn Event**](/overview?id=burn-event-restoring-a-11-physical-peg).
 See [here](/vault/overview?id=collateral) for more details.
 
 ### What happens if a vault is undercollateralized?

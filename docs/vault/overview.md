@@ -81,6 +81,26 @@ Vaults rewards on the main Interlay network are tbd.
 
 To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in whitelisted assets - following a similar process as [MakerDAO](https://docs.makerdao.com/smart-contract-modules/collateral-module). To mitigate exchange rate fluctuations, interBTC employs *over-collateralization* and a *multi-level collateral balancing* scheme.
 
+### Minimum
+
+Each currency & network has different minimum deposits, noted here:
+
+<!-- tabs:start -->
+
+#### **Testnet**
+
+Testnet KSM: 0
+
+#### **Kintsugi (Canarynet)**
+
+KSM: 3
+
+#### **Interlay (Mainnet)**
+
+DOT: tbd
+
+<!-- tabs:end -->
+
 ### Multi-Collateral System
 
 The parachain supports the usage of different assets for usage as collateral. Governance white-lists asset that are accepted as collateral, specifying the various safety thresholds, as well as the maximum supply for each asset.
@@ -146,7 +166,7 @@ We will release a post detailing how the calculation of this thresholds is achie
 
 #### Actions
 
-None necessary. The Vault can freely redeem any "unused" collateral above the `150%` threshold.
+None necessary. The Vault can freely redeem any "unused" collateral above the secure threshold.
 
 #### Thresholds
 
@@ -154,7 +174,7 @@ None necessary. The Vault can freely redeem any "unused" collateral above the `1
 
 #### **Testnet**
 
-Testnet DOT: `150%`
+Testnet KSM: `150%`
 
 #### **Kintsugi (Canarynet)**
 
@@ -178,7 +198,7 @@ Users can execute redeem with this Vault and receive a premium of `5%` in DOT in
 
 #### **Testnet**
 
-Testnet DOT: `135%`
+Testnet KSM: `135%`
 
 #### **Kintsugi (Canarynet)**
 
@@ -205,7 +225,7 @@ The undercollateralized Vault is liquidated.
 
 #### **Testnet**
 
-Testnet DOT: `110%`
+Testnet KSM: `110%`
 
 #### **Kintsugi (Canarynet)**
 
