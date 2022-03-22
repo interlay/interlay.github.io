@@ -5,10 +5,13 @@ However, sometimes it is necessary to interact with the Vault client, for exampl
 
 At the end of this document you will have:
 
-- [x] Deposited additional collateral
-- [x] Withdrawn surplus collateral
-- [x] Learned about automatic actions of your Vault
-- [x] Visited the Vault dashboard
+- [x] [Deposited additional collateral](#increasing-collateral)
+- [x] [Withdrawn surplus collateral](#withdrawing-collateral)
+- [x] [Learned about automatic actions of your Vault](#automatic-actions)
+- [x] [Self-Minted kBTC](#self-minting)
+- [x] [Visited the Vault dashboard](#dapp-vault-dashboard)
+- [x] [Set up Prometheus and Grafana for monitoring your Vault](#prometheus-and-grafana)
+- [x] [Improved the security of your Vault](#security)
 
 ## Changing Collateral
 
@@ -113,11 +116,96 @@ To mint with your own (or another specific) Vault, you can use the Polkadot.js i
 
 You Vault only starts earning rewards once BTC is locked - and rewards are determined by your share of the total BTC locked in the system. Hence, you can increase your rewards by bringing your own BTC into the system. 
 
-## Dashboard
+## Monitoring
 
-You can monitor the operation of your Vault on the Vault dashboard by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).
+Vault operators can monitor their clients using both the [Dapp Vault Dashboard](vault/guide?id=dapp-vault-dashboard) and [Prometheus / Grafana](vault/guide?id=prometheus-and-grafana).
 
-Once the Vault is up and running, a "Vault" tab will appear in the topbar of the app at [testnet.interlay.io](https://testnet.interlay.io/) (or you can access directly at [testnet.interlay.io/vault](https://testnet.interlay.io/vault)).
+### Dapp Vault Dashboard
+
+You can monitor the operation of your Vault on the Vault dashboard in the Dapp, by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).
+
+Once the Vault is up and running, a "Vault" tab will appear in the sidebar of the Dapp at [testnet.interlay.io](https://testnet.interlay.io/) (or you can access directly at [testnet.interlay.io/vault](https://testnet.interlay.io/vault)).
+
+### Prometheus and Grafana
+
+Similar to how Substrate provides functionality for [monitoring Nodes](https://wiki.polkadot.network/docs/maintain-guides-how-to-monitor-your-node), Vault operators have the option to monitor their clients using [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.com/).
+
+The Vault client exposes data such as collateralization, Bitcoin balance, CPU seconds, memory usage of your machine, and more. To monitor this data, Prometheus is used to collect metrics and Grafana for displaying them on a dashboard.
+
+The key used for tracking the metrics is a concatenation of the collateral and wrapped currencies of the client (e.g. "KSM_KBTC"). This allows for tracking clients with different currency combinations in Grafana.
+
+### Metrics
+A list of currently tracked custom metrics can be found [here](https://github.com/interlay/interbtc-clients/blob/61f2ae95d8716a8ac2b3b16d70abf2f91ef0f399/vault/src/metrics.rs#L247). These are in addition to the OS metrics tracked by default by Prometheus, such as CPU seconds, virtual memory bytes, and open file descriptors.
+
+Check the [Running Instructions](#running-instructions) section to find out how to fetch all metrics from the endpoint exposed by the client.
+
+
+Bridge-specific metrics (Collateralization, Locked Collateral, Required Collateral) get updated on each `FeedValues` oracle event, every ~25 mins. These are quite costly to update as they call parachain RPCs.
+
+### Running instructions
+
+Vault monitoring is enabled by default. The client provides the following configuration flags, identical to the ones used for monitoring Substrate nodes:
+```bash
+--no-prometheus
+   Do not expose a Prometheus metric endpoint
+--prometheus-external
+   Expose Prometheus exporter on all interfaces.
+   Default is local.
+--prometheus-port <PROMETHEUS_PORT>
+   Specify Prometheus exporter TCP Port
+   [default: 9615]
+```
+
+If monitoring is enabled, the client will log the metrics endpoint on startup. Below is an example:
+```
+./vault \
+--bitcoin-rpc-url http://localhost:18332 \
+--keyfile keyfile.json \
+--keyname "0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71" \
+--auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
+--btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain' \
+--prometheus-external
+...
+Mar 23 14:25:20.451  INFO vault: Starting Prometheus exporter at http://0.0.0.0:9615
+```
+
+To fetch the exported metrics, query the `/metrics` endpoint exposed by the Prometheus exporter with the command below. This will show all the available metrics.
+```bash
+curl http://HOST_IP:9615/metrics
+```
+
+#### Running Prometheus
+Configuration files for the Prometheus service are provided in the [interbtc-clients repo](https://github.com/interlay/interbtc-clients/tree/master/vault/src/monitoring).
+
+To customize the configuration of the Prometheus service, edit the `prometheus.yml` file using the command below.
+```bash
+git clone https://github.com/interlay/interbtc-clients
+cd interbtc-clients
+vim vault/src/monitoring/prometheus.yml
+```
+
+```bash
+git clone https://github.com/interlay/interbtc-clients
+cd interbtc-clients/vault/src/monitoring
+docker build -t prometheus .
+docker run -p 9090:9090 --network=host prometheus
+```
+
+#### Running Grafana
+If the default Prometheus port is used (`9615`), the default instructions from the Grafana docs will work by default: https://grafana.com/docs/grafana/latest/installation/debian
+
+Once Grafana is up and running, [import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) the [Vault client configuration](../_assets/config/grafana.json) file to see the metrics.
+
+### Example Visualisation
+![Vault Client Grafana Dashboard](../_assets/img/vault/granafa_monitoring.png)
+
+### Questions monitoring aims to answer
+
+#### How can I know if my client is offline?
+When the Vault client crashes, the metrics endpoint will not reachable any longer. This means that the Grafana dashboard will stop showing data points,
+as in the screenshot below (yellow line). This behaviour can be observed for all Grafana tiles on a crash.
+
+![Offline Vault](../_assets/img/vault/offline_vault.png)
 
 ## Security
 
