@@ -128,6 +128,8 @@ Once the Vault is up and running, a "Vault" tab will appear in the sidebar of th
 
 ### Prometheus and Grafana
 
+!> **Note:** Monitoring with Prometheus is in beta stage and the interface is subject to change. [Check the Prometheus exporter endpoint](#querying-the-prometheus-exporter) to see the currently exposed metrics.
+
 Similar to how Substrate provides functionality for [monitoring Nodes](https://wiki.polkadot.network/docs/maintain-guides-how-to-monitor-your-node), Vault operators have the option to monitor their clients using [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.com/).
 
 The Vault client exposes data such as collateralization, Bitcoin balance, CPU seconds, memory usage of your machine, and more. To monitor this data, Prometheus is used to collect metrics and Grafana for displaying them on a dashboard.
@@ -137,7 +139,7 @@ The key used for tracking the metrics is a concatenation of the collateral and w
 ### Metrics
 A list of currently tracked custom metrics can be found [here](https://github.com/interlay/interbtc-clients/blob/61f2ae95d8716a8ac2b3b16d70abf2f91ef0f399/vault/src/metrics.rs#L247). These are in addition to the OS metrics tracked by default by Prometheus, such as CPU seconds, virtual memory bytes, and open file descriptors.
 
-Check the [Running Instructions](#running-instructions) section to find out how to fetch all metrics from the endpoint exposed by the client.
+Check the [Prometheus exporter](#querying-the-prometheus-exporter) section to find out how to query all the currently exposed metrics.
 
 
 Bridge-specific metrics (Collateralization, Locked Collateral, Required Collateral) get updated on each `FeedValues` oracle event, every ~25 mins. These are quite costly to update as they call parachain RPCs.
@@ -169,6 +171,7 @@ If monitoring is enabled, the client will log the metrics endpoint on startup. B
 Mar 23 14:25:20.451  INFO vault: Starting Prometheus exporter at http://0.0.0.0:9615
 ```
 
+#### Querying the Prometheus exporter
 To fetch the exported metrics, query the `/metrics` endpoint exposed by the Prometheus exporter with the command below. This will show all the available metrics.
 ```bash
 curl http://HOST_IP:9615/metrics
