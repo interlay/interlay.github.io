@@ -205,12 +205,12 @@ To customize the configuration of the Prometheus service, edit the `prometheus.y
 ```bash
 git clone https://github.com/interlay/interbtc-clients
 cd interbtc-clients
-vim vault/src/monitoring/prometheus.yml
+vim .deploy/monitoring/prometheus.yml
 ```
 
 ```bash
 git clone https://github.com/interlay/interbtc-clients
-cd interbtc-clients/vault/src/monitoring
+cd interbtc-clients/.deploy/monitoring
 docker build -t prometheus .
 docker run -p 9090:9090 --network=host prometheus
 ```
