@@ -9,6 +9,7 @@ At the end of this document you will have:
 - [x] Withdrawn surplus collateral
 - [x] Learned about automatic actions of your Vault
 - [x] Visited the Vault dashboard
+- [x] Supplied additional BTC to cover fees
 
 ## Changing Collateral
 
@@ -138,6 +139,32 @@ You Vault only starts earning rewards once BTC is locked - and rewards are deter
 You can monitor the operation of your Vault on the Vault dashboard by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).
 
 Once the Vault is up and running, a "Vault" tab will appear in the topbar of the app at [testnet.interlay.io](https://testnet.interlay.io/) (or you can access directly at [testnet.interlay.io/vault](https://testnet.interlay.io/vault)).
+
+## Bitcoin Fees
+
+It is the responsibility of the Vault operator to ensure that they can cover excess Bitcoin fees when spending from additional UTXOs. To do this they can list addresses held by their wallet and transfer BTC from an [external source](https://bitcoin.org/en/exchanges).
+
+<!-- tabs:start -->
+
+#### **Regtest**
+
+```shell
+bitcoin-cli -regtest -rpcwallet=interbtcvault listaddressgroupings
+```
+
+#### **Testnet**
+
+```shell
+bitcoin-cli -testnet -rpcwallet=interbtcvault listaddressgroupings
+```
+
+#### **Mainnet**
+
+```shell
+bitcoin-cli -rpcwallet=interbtcvault listaddressgroupings
+```
+
+<!-- tabs:end -->
 
 ## Security
 

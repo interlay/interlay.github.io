@@ -137,6 +137,8 @@ bitcoind -server -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
 
 !> The fallback fee argument is crucial. Without it, your vault may fail to make payments in certain circumstances, which it will be punished for.
 
+Please also note that the Vault may require additional funds to cover Bitcoin transaction fees as specified [here](/vault/guide?id=bitcoin-fees).
+
 ### 3. Install a pre-built binary
 
 Download the asset from GitHub:
