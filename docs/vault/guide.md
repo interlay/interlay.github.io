@@ -142,7 +142,7 @@ A list of currently tracked custom metrics can be found [here](https://github.co
 Check the [Prometheus exporter](#querying-the-prometheus-exporter) section to find out how to query all the currently exposed metrics.
 
 
-Bridge-specific metrics (Collateralization, Locked Collateral, Required Collateral) get updated on each `FeedValues` oracle event, every ~25 mins. These are quite costly to update as they call parachain RPCs.
+Bridge-specific metrics (Collateralization, Locked Collateral, Required Collateral) get updated on each `FeedValues` oracle event. These are quite costly to update as they call parachain RPCs.
 
 ### Running instructions
 
@@ -161,12 +161,12 @@ Vault monitoring is enabled by default. The client provides the following config
 If monitoring is enabled, the client will log the metrics endpoint on startup. Below is an example:
 ```
 ./vault \
---bitcoin-rpc-url http://localhost:18332 \
---keyfile keyfile.json \
---keyname "0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71" \
---auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
---btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain' \
---prometheus-external
+   --bitcoin-rpc-url http://localhost:18332 \
+   --keyfile keyfile.json \
+   --keyname "0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71" \
+   --auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
+   --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain' \
+   --prometheus-external
 ...
 Mar 23 14:25:20.451  INFO vault: Starting Prometheus exporter at http://0.0.0.0:9615
 ```
