@@ -230,6 +230,32 @@ as in the screenshot below (yellow line). This behaviour can be observed for all
 
 ![Offline Vault](../_assets/img/vault/offline_vault.png)
 
+## Bitcoin Fees
+
+It is the responsibility of the Vault operator to ensure that they can cover excess Bitcoin fees when spending from additional UTXOs. To do this they can list addresses held by their wallet and transfer BTC from an [external source](https://bitcoin.org/en/exchanges).
+
+<!-- tabs:start -->
+
+#### **Regtest**
+
+```shell
+bitcoin-cli -regtest -rpcwallet=interbtcvault listaddressgroupings
+```
+
+#### **Testnet**
+
+```shell
+bitcoin-cli -testnet -rpcwallet=interbtcvault listaddressgroupings
+```
+
+#### **Mainnet**
+
+```shell
+bitcoin-cli -rpcwallet=interbtcvault listaddressgroupings
+```
+
+<!-- tabs:end -->
+
 ## Security
 
 For added security, you may want to encrypt the Bitcoin wallet with a password.
