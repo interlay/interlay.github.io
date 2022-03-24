@@ -64,6 +64,10 @@ While unlikely, if all Relayers go offline the interBTC bridge will pause operat
 
 ## Troubleshooting
 
+### Insufficient funds
+
+The Vault does not have sufficient BTC to process outstanding requests, this is likely due to the overpayment of Bitcoin fees relative to what was allocated by the parachain - when the Vault spends from more UTXOs it will cost more. You **MUST** transfer additional BTC to cover fees as specified [here](/vault/guide?id=bitcoin-fees). We plan to assign treasury funds to reimburse Vault operators as well as improve the on-chain estimations.
+
 ### Vault has stolen BTC
 
 Funds have unexpectedly been sent from an address registered to your Vault. This may happen if you have transferred

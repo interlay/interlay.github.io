@@ -137,6 +137,8 @@ bitcoind -server -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
 
 !> The fallback fee argument is crucial. Without it, your vault may fail to make payments in certain circumstances, which it will be punished for.
 
+Please also note that the Vault may require additional funds to cover Bitcoin transaction fees as specified [here](/vault/guide?id=bitcoin-fees).
+
 ### 3. Install a pre-built binary
 
 Download the asset from GitHub:
@@ -146,13 +148,13 @@ Download the asset from GitHub:
 #### **Testnet**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.8.0/vault-parachain-metadata-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.8.1/vault-parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.8.0/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.8.1/vault-parachain-metadata-kintsugi
 ```
 
 <!-- tabs:end -->
@@ -192,14 +194,14 @@ cd interbtc-clients
 #### **Testnet**
 
 ```shell
-git checkout 1.8.0
+git checkout 1.8.1
 cargo build --bin vault --features parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-git checkout 1.8.0
+git checkout 1.8.1
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
@@ -231,7 +233,7 @@ vault \
 
 #### **Kintsugi**
 
-To register with 1 KSM (1000000000000 Planck):
+To register with 3 KSM (3000000000000 Planck):
 
 ```shell
 vault \
@@ -241,7 +243,7 @@ vault \
   --keyfile keyfile.json \
   --keyname 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71 \
   --collateral-currency-id=KSM \
-  --auto-register-with-collateral 1000000000000 \
+  --auto-register-with-collateral 3000000000000 \
   --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain'
 ```
 
