@@ -41,7 +41,7 @@ Coming soon
 3. Make sure you select the correct account from the account selector at the top of the page. This is the account from which the transfer will be made.
 4. Your available balance on the relay chain (Kusama) is shown above the amount field. This wil be different from the parachain balance shown at the top of the page.
 5. Set the "from" chain value to Kusama and the "to" chain value to Kintsugi. You should only need to set one field, as the other field will be changed automatically.
-6. Select an account from the destination select field. You can only transfer to accounts that are in your wallet.If you want to transfer using the same account, make sure that the destination account matches the account selector at the to of the page.
+6. Select an account from the destination select field. You can only transfer to accounts that are in your wallet.If you want to transfer using the same account, make sure that the destination account matches the account selector at the top of the page.
 7. Click "Transfer" and sign the extrinsic to make a transaction.
 8. After the transfer has been made, if you select the account/wallet that has received the KSM from the account selector then the top right KSM balance should be updated to include the amount of KSM transferred.
 
