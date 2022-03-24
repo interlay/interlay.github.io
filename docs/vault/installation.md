@@ -233,7 +233,7 @@ vault \
 
 #### **Kintsugi**
 
-To register with 1 KSM (1000000000000 Planck):
+To register with 3 KSM (3000000000000 Planck):
 
 ```shell
 vault \
@@ -243,7 +243,7 @@ vault \
   --keyfile keyfile.json \
   --keyname 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71 \
   --collateral-currency-id=KSM \
-  --auto-register-with-collateral 1000000000000 \
+  --auto-register-with-collateral 3000000000000 \
   --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain'
 ```
 
