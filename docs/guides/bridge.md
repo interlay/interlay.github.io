@@ -7,12 +7,9 @@ To get you started, follow this guide.
 
 At the end of this guide you will have:
 
-- [x] Locked BTC with a collateralized Vault
-- [x] Issued your first kBTC/interBTC on the kBTC/interBTC app
-
-### Video Guide (OLD UI - New Guide is WIP)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hMZTj6ctGQE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+- [x] [Requested to mint kBTC/interBTC on the Kintsugi/Interlay parachain](#_3-enter-the-amount-of-btc-you-want-to-bridge-to-polkadotkusama)
+- [x] [Sent BTC to a Vault on the Bitcoin blockchain](#_4-transfer-btc-from-your-bitcoin-wallet-to-the-vault-address)
+- [x] [Received kBTC/interBTC on the Kintsugi/Interlay parachain](#_5-wait-for-confirmation-of-your-btc-transaction-and-receive-kbtcinterbtc-automatically)
 
 ### Prerequisites
 
@@ -38,6 +35,8 @@ Coming soon
 
 The bridge has 2 tabs: Issue and Redeem. (Sometimes a third tab, Burn, will be visible.) Ensure you are on the Issue tab.
 
+![The Issue page](../_assets/img/guide/bridge-issue-page.png)
+
 #### 2. Obtain KINT/INTR to pay the transaction fees.
 You will need some of the native on-chain currency (KINT on Kintsugi, INTR on Interlay) to pay the transaction fee. Additionally, to prevent spam, you will need to place a small deposit which will be returned to you once the request has been completed.
 
@@ -61,6 +60,30 @@ Check the details of your issue request and click **"Confirm"**. Sign the transa
 #### 4. Transfer BTC from your Bitcoin wallet to the Vault address
 
 Use your Bitcoin wallet to transfer the specified `amount` to the given `address`.
+
+![Bitcoin transaction details](../_assets/img/guide/bridge-issue-tx-details.png)
+
+If you navigate away from the page, you can always find these details again under the **Transactions** page.
+
+<!-- tabs:start -->
+
+##### **Kintsugi**
+[kintsugi.interlay.io/transactions](https://kintsugi.interlay.io/transactions)
+
+##### **Interlay**
+
+Coming soon
+
+##### **Testnet**
+
+[testnet.interlay.io/transactions](https://testnet.interlay.io/transactions)
+<!-- tabs:end -->
+
+![Tansactions page](../_assets/img/guide/bridge-transactions-page.png)
+
+Find your pending issue request in the **"Issue Requests"** table and click on it. There you will find the details of the Bitcoin transaction you need to make.
+
+![Tansactions page](../_assets/img/guide/bridge-transaction-page-tx-details.png)
 
 ?> Optional: you can use a hardware wallet
 
@@ -154,25 +177,11 @@ You also have the options to try again to send the correct amount. Note that mul
 </details>
 
 #### 6. Optional: Manually claim your interBTC
+You can check the status of your issue request in the Transactions view in the **"Issue Requests"** table as [described above](#_4-transfer-btc-from-your-bitcoin-wallet-to-the-vault-address).
 
-You can check the status of your issue request in the Transactions view in the **"Issue Requests"** table.
+If your Bitcoin transaction has enough confirmations but has not been executed by a Vault yet, click on the issue request that is "Pending". This will open a modal, where you will see a **"Claim kBTC"** (or **"Claim interBTC"**) button. To finalize the Issue process and claim your kBTC/interBTC, either wait for a Vault to auto-execute your request, or click **"Claim"** yourself.
 
-<!-- tabs:start -->
-
-##### **Kintsugi**
-[kintsugi.interlay.io/transactions](https://kintsugi.interlay.io/transactions)
-
-##### **Interlay**
-
-Coming soon
-
-##### **Testnet**
-
-[testnet.interlay.io/transactions](https://testnet.interlay.io/transactions)
-<!-- tabs:end -->
-
-If your Bitcoin transaction has enough confirmations but has not been executed by a Vault yet, click on the issue request that is "Pending". This will open a modal, where you will see an **"Execute"** button. To finalize the Issue process and claim your kBTC/interBTC, either wait for a Vault to auto-execute your request, or click **"Execute"** yourself.
-
+![Tansactions page](../_assets/img/guide/bridge-issue-claim.png)
 
 ## Redeem
 
@@ -180,12 +189,11 @@ kBTC or interBTC can be redeemed at any point in time for BTC on the Bitcoin blo
 
 At the end of this guide you will have:
 
-- [x] Redeemed your first kBTC/interBTC from the app
-- [X] Received BTC for the redeemed kBTC/interBTC in your Bitcoin wallet
+- [x] [Requested to redeem your kBTC/interBTC on the Kintsugi/Interlay parachain](#_2-enter-the-amount-of-kbtcinterbtc-you-want-to-redeem-and-the-btc-address-you-want-to-receive-your-btc-to)
+- [x] [Received BTC on the Bitcoin blockchain](#_3-wait-for-confirmation-of-your-request-and-receive-btc-automatically)
+- [x] [Optionally: retried to redeem kBTC/interBTC with another Vault](#retry)
+- [x] [Optionally: reimbursed kBTC/interBTC for KSM/DOT](#reimburse)
 
-### Video Guide (OLD UI - New Guide is WIP)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-TZ2XUmXh9I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Prerequisites
 
@@ -211,22 +219,24 @@ Coming soon
 [testnet.interlay.io/bridge](https://testnet.interlay.io/bridge)
 <!-- tabs:end -->
 
-The bridge has 2 tabs: Issue and Redeem. (Sometimes a third tab, Burn, will be visible.) Ensure you are on the Issue tab.
+The bridge has 2 tabs: Issue and Redeem. (Sometimes a third tab, Burn, will be visible.) Ensure you are on the Redeem tab.
 
-#### 3. Enter the amount of kBTC/interBTC you want to redeem and the BTC address you want to receive your BTC to
+![Redeem page](../_assets/img/guide/bridge-redeem-page.png)
+
+#### 2. Enter the amount of kBTC/interBTC you want to redeem and the BTC address you want to receive your BTC to
 
 Enter the amount of kBTC/interBTC you want to redeem, and the Bitcoin address where you want to receive the redeemed Bitcoin amount. Supported address types are: [P2SH](https://en.bitcoin.it/wiki/P2SH), [P2PKH](https://en.bitcoin.it/wiki/P2PKH) and [P2WPKH](https://wiki.trezor.io/P2WPKH).
 
 Check the bridge fee that is subtracted from your redeemed amount and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
-#### 4. Wait for confirmation of your request and receive BTC automatically
+#### 3. Wait for confirmation of your request and receive BTC automatically
 
-The Redeem request is now being processed by the Vault. Wait for a few minutes (might take up to 24 hours) and you will receive your Bitcoin at the address you specified.
+The Redeem request is now being processed by the Vault. On testnet, the request will take approx. 20 minutes and on the Kintsugi and Interlay networks, the request will take at least 1 hour. Vaults have 24 hours to complete the request in total. After this, you will receive your Bitcoin at the address you specified.
 
 If the Vault does not fulfil the request within 24 hours, you have the option to either reimburse your BTC or retry your request; see below.
 
-#### 5. Optional: Retry or Reimburse your request
-You can check the status of your issue request in the Transactions view in the **"Redeem Requests"** table.
+#### 4. Optional: Retry or Reimburse your request
+You can check the status of your redeem request in the Transactions view in the **"Redeem Requests"** table.
 
 <!-- tabs:start -->
 
@@ -245,12 +255,14 @@ Coming soon
 Vaults have 24 hours to complete your request. If it is not completed in time, you have the option to either Reimubse or Retry.
 
 ##### Reimburse
+
 Reimbursing a redeem request that hasn't been fulfilled in time means accepting a payout in the Vault's collateral currency instead of BTC. The Vault's collateral will be slashed to the value equivalent to the BTC amount in the redeem request, plus a convenience fee. Your kBTC/interBTC will then be redeemed for this amount of collateral, rather than BTC.
 
-Click on the redeem request that is "Pending". This will open a modal, where you will see a **"Reimburse"** button. Click on it to reimburse your request, forfeiting your BTC and receiving a greater value in collateral in return.
+Click on the redeem request that is "Pending". This will open a modal, where you will see a **"Reimburse"** button if the request has been open for more than 24 hours. Click on it to reimburse your request, forfeiting your BTC and receiving a greater value in collateral in return.
 
 ##### Retry
+
 If you wish to receive BTC directly rather than any collateral currency, then you have the option to cancel the redeem request, which will give you the opportunity to open a new one. The Vault will be slashed a percentage of the request for failing to fulfil it in time, which will be transferred to you as a convenience fee; otherwise, you will retain ownership of your kBTC/interBTC and will need to open a new redeem request if you still wish to redeem for BTC.
 
 
-Click on the redeem request that is "Pending". This will open a modal, where you will see a **"Retry"** button. Click on it to cancel your request, receiving a percentage in collateral as a convenience fee and allowing you to open a new redeem request for your kBTC/interBTC.
+Click on the redeem request that is "Pending". This will open a modal, where you will see a **"Retry"** button if the request has been open for more than 24 hours. Click on it to cancel your request, receiving a percentage in collateral as a convenience fee and allowing you to open a new redeem request for your kBTC/interBTC.
