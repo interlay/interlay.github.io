@@ -148,7 +148,7 @@ Download the asset from GitHub:
 #### **Testnet**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.8.1/vault-parachain-metadata-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.9.0/vault-parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
@@ -194,7 +194,7 @@ cd interbtc-clients
 #### **Testnet**
 
 ```shell
-git checkout 1.8.1
+git checkout 1.9.0
 cargo build --bin vault --features parachain-metadata-testnet
 ```
 

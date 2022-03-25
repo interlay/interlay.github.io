@@ -49,7 +49,7 @@ OR terminate the process with `Ctrl+C`.
 #### **Testnet**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.8.1/vault-parachain-metadata-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.9.0/vault-parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
