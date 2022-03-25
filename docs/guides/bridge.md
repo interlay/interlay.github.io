@@ -229,6 +229,8 @@ Enter the amount of kBTC/interBTC you want to redeem, and the Bitcoin address wh
 
 Check the bridge fee that is subtracted from your redeemed amount and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
+![Redeem confirmation modal](../_assets/img/guide/bridge-redeem-popup.png)
+
 #### 3. Wait for confirmation of your request and receive BTC automatically
 
 The Redeem request is now being processed by the Vault. On testnet, the request will take approx. 20 minutes and on the Kintsugi and Interlay networks, the request will take at least 1 hour. Vaults have 24 hours to complete the request in total. After this, you will receive your Bitcoin at the address you specified.
