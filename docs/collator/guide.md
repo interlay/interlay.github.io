@@ -107,7 +107,7 @@ chmod +x interbtc-parachain
 #### **Testnet**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.8.1/interbtc-standalone
+wget https://github.com/interlay/interbtc/releases/download/1.9.0/interbtc-standalone
 chmod +x interbtc-standalone
 ./interbtc-standalone \
   --base-path=${PWD}/data \
@@ -177,7 +177,7 @@ cargo build --release
 #### **Testnet**
 
 ```shell
-git checkout 1.8.1
+git checkout 1.9.0
 cargo build --release
 
 ./target/release/interbtc-standalone \
