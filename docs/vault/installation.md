@@ -101,9 +101,11 @@ Run Bitcoin and the Vault binary as a service on your computer or server. Follow
 
 ### 1. Install a Bitcoin node
 
-Download and install a [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node) by following the [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions).
+Download and install version 22 of the [Bitcoin Core full-node](https://bitcoin.org/en/full-node#what-is-a-full-node) by following the [Linux instructions](https://bitcoin.org/en/full-node#linux-instructions).
 
 !> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault. Please check [this guide](https://bitcoin.org/en/secure-your-wallet) for more security best-practices.
+
+!> The newest supported Bitcoin Core version is 22. Version 23 uses descriptor wallets by default, which we not currently support. 
 
 Please note the following default ports for incoming TCP and JSON-RPC connections:
 
