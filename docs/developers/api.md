@@ -4,9 +4,10 @@
 
 Connecting to parachain nodes:
 
-* **Kintsugi (by Kintsugi Labs)**: `wss://api-kusama.interlay.io/parachain`
+* **Interlay (by Kintsugi Labs)**: `wss://api.interlay.io:443/parachain`
+* **Kintsugi (by Kintsugi Labs)**: `wss://api-kusama.interlay.io:443/parachain`
 * **Kintsugi (by OnFinality)**: `wss://kintsugi.api.onfinality.io/public-ws`
-* **Testnet**: `wss://api.interlay.io/parachain`
+* **Testnet**: `wss://api-testnet.interlay.io:443/parachain`
 
 ## Asset API
 
@@ -15,7 +16,7 @@ Connecting to parachain nodes:
 | Asset    | CURRENCY_ID | CURRENCY_INDEX | DECIMALS |
 |----------|-------------|----------------|----------|
 | DOT      | DOT         | 0              | 10       |
-| interBTC | INTERBTC    | 1              | 8        |
+| interBTC | IBTC        | 1              | 8        |
 | INTR     | INTR        | 2              | 10       |
 | KSM      | KSM         | 10             | 12       |
 | kBTC     | KBTC        | 11             | 8        |
