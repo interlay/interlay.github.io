@@ -209,6 +209,7 @@ vim .deploy/monitoring/prometheus.yml
 ```
 
 Run the service:
+
 ```bash
 git clone https://github.com/interlay/interbtc-clients
 cd interbtc-clients/.deploy/monitoring
@@ -223,14 +224,18 @@ The Prometheus AlertManager can be configured to send notifications on certain t
 To customize the AlertManager alerting rules, edit `rules.yml`. To customize the destination of the alert, edit `alertmanager.yml`. Check [this guide](https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/) for more details about configuring AlertManager.
 
 
-Once AlertManager is configured, add unit tests to `tests.yml` and run them with:
+Once AlertManager is configured, make sure that `prometheus` is installed and you can access the `promtool`. For example in Ubuntu use:
 ```bash
 apt-get install prometheus
+```
+
+Then add unit tests to `tests.yml` and run them with:
+```bash
 promtool test rules test.yml
 ```
 
 Run the service:
-```ssh
+```bash
 git clone https://github.com/interlay/interbtc-clients
 cd interbtc-clients/.deploy/monitoring
 chmod +x download_latest
@@ -241,7 +246,7 @@ chmod +x download_latest
 #### Running Grafana
 If the default Prometheus port is used (`9615`), the default instructions from the Grafana docs will work by default: https://grafana.com/docs/grafana/latest/installation/debian
 
-Once Grafana is up and running, [import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) the [Vault client configuration](../_assets/config/grafana.json) file to see the metrics.
+Once Grafana is up and running, [import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) the [Vault client configuration](../_assets/config/grafana.json  ':ignore') file to see the metrics.
 
 ### Example Visualisation
 ![Vault Client Grafana Dashboard](../_assets/img/vault/granafa_monitoring.png)
