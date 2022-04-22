@@ -18,7 +18,7 @@ services:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   vault:
-    image: "interlayhq/interbtc-clients:vault-parachain-metadata-testnet-1-8-0"
+    image: "interlayhq/interbtc-clients:vault-parachain-metadata-testnet-1-10-1"
     command:
       - vault-parachain-metadata-testnet
       - --bitcoin-rpc-url
