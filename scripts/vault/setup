@@ -1,8 +1,33 @@
 #!/bin/sh
+create_vault_service() {
+  echo "Creating $network Vault"
+  [ -d /opt/$network ] || mkdir /opt/$network
+  [ -d /opt/$network/vault ] || mkdir /opt/$network/vault
+  cp ./vault /opt/$network/vault/
+  cp ./keyfile.json /opt/$network/vault/
+  [ -d /usr/lib/systemd/system/ ] || mkdir /usr/lib/systemd/system/
+  cp $network-vault.service /usr/lib/systemd/system/
+}
 
-[ -d /opt/interbtc ] || mkdir /opt/interbtc
-[ -d /opt/interbtc/vault ] || mkdir /opt/interbtc/vault
-cp ./vault /opt/interbtc/vault/
-cp ./keyfile.json /opt/interbtc/vault/
-[ -d /usr/lib/systemd/system/ ] || mkdir /usr/lib/systemd/system/
-cp interbtc-vault.service /usr/lib/systemd/system/
+case $1 in
+
+  testnet)
+    network="testnet"
+    create_vault_service
+    ;;
+
+  kintsugi)
+    network="kintsugi"
+    create_vault_service
+    ;;
+
+  interlay)
+    network="interlay"
+    create_vault_service
+    ;;
+
+  *)
+    echo "Please specify a network. Valid options are: testnet, kintsugi, and interlay."
+    ;;
+
+esac

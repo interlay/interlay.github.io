@@ -105,7 +105,7 @@ Download and install version 22 of the [Bitcoin Core full-node](https://bitcoin.
 
 !> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault. Please check [this guide](https://bitcoin.org/en/secure-your-wallet) for more security best-practices.
 
-!> The newest supported Bitcoin Core version is 22. Version 23 uses descriptor wallets by default, which we not currently support. 
+!> The newest supported Bitcoin Core version is 22. Version 23 uses descriptor wallets by default, which we not currently support.
 
 Please note the following default ports for incoming TCP and JSON-RPC connections:
 
@@ -227,7 +227,7 @@ vault \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
-  --keyname 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71 \
+  --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
   --collateral-currency-id=KSM \
   --auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
   --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain'
@@ -243,7 +243,7 @@ vault \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
-  --keyname 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71 \
+  --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
   --collateral-currency-id=KSM \
   --auto-register-with-collateral 3000000000000 \
   --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain'
@@ -260,28 +260,104 @@ On startup, the Vault will automatically create or load the Bitcoin wallet using
 
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
 
+<!-- tabs:start -->
+
+#### **Testnet**
+
+Download the systemd service file and a small helper script to install the service.
+
 ```shell
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
-wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/interbtc-vault.service
-chmod +x ./setup && sudo ./setup
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-vault.service
+```
+
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here.
+
+```shell
+vim testnet-vault.service
+```
+
+Install the service and start it.
+
+```shell
+chmod +x ./setup && sudo ./setup testnet
 sudo systemctl daemon-reload
-sudo systemctl start interbtc-vault.service
+sudo systemctl start testnet-vault.service
+```
+
+You can also automatically start the Vault client on system reboot with:
+
+```shell
+sudo systemctl enable testnet-vault.service
 ```
 
 You can then check the status of your service by running:
 
 ```shell
-journalctl --follow _SYSTEMD_UNIT=interbtc-vault.service
+journalctl --follow _SYSTEMD_UNIT=testnet-vault.service
 ```
 
 Or by streaming the logs to the `vault.log` file in the current directory:
 
 ```shell
-journalctl --follow _SYSTEMD_UNIT=interbtc-vault.service &> vault.log
+journalctl --follow _SYSTEMD_UNIT=testnet-vault.service &> vault.log
 ```
 
 To stop the service, run:
 
 ```shell
-sudo systemctl stop interbtc-vault.service
+sudo systemctl stop testnet-vault.service
 ```
+
+#### **Kintsugi**
+
+Download the systemd service file and a small helper script to install the service.
+
+```shell
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-vault.service
+```
+
+?> Please adjust the systemd service file to insert your substrate key into the arguments as well as the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
+
+```shell
+vim testnet-vault.service
+```
+
+Install the service and start it.
+
+```shell
+chmod +x ./setup && sudo ./setup kintsugi
+sudo systemctl daemon-reload
+sudo systemctl start kintsugi-vault.service
+```
+
+You can also automatically start the Vault client on system reboot with:
+
+```shell
+sudo systemctl enable kintsugi-vault.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=kintsugi-vault.service
+```
+
+Or by streaming the logs to the `vault.log` file in the current directory:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=kintsugi-vault.service &> vault.log
+```
+
+To stop the service, run:
+
+```shell
+sudo systemctl stop kintsugi-vault.service
+```
+
+#### **Interlay**
+
+Coming soon.
+
+<!-- tabs:end -->
