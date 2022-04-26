@@ -145,7 +145,7 @@ You Vault only starts earning rewards once BTC is locked - and rewards are deter
 1. Developer -> Extrinsics -> vaultRegistry -> acceptNewIssues(KSM, KBTC, true)
 2. Developer -> Extrinsics -> issue -> requestIssue
 3. Developer -> Extrinsics -> vaultRegistry -> acceptNewIssues(KSM, KBTC, false)
-![Screenshot: Creating batchAll call to avoid sniping your collateral](../_assets/img/guide/batchallcall.png)
+![Screenshot: Creating batchAll call to avoid sniping your collateral](../_assets/img/vault/batchallcall.png)
 
 
 ## Monitoring
