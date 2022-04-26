@@ -115,6 +115,8 @@ Please note the following default ports for incoming TCP and JSON-RPC connection
 | Testnet | 18333 | 18332 |
 | Mainnet | 8333  | 8332  |
 
+Once your bitcoin node is running, you can use `nmap -p 8332 127.0.0.1` to verify that the RPC port is open.
+
 ### 2. Start the Bitcoin node
 
 ?> Synchronizing the BTC testnet requires 40GB of storage and the BTC mainnet requires 400GB. Depending on your internet connection, the download time may take anything from hours to days.
@@ -315,13 +317,13 @@ Download the systemd service file and a small helper script to install the servi
 
 ```shell
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
-wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-vault.service
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/kintsugi-vault.service
 ```
 
 ?> Please adjust the systemd service file to insert your substrate key into the arguments as well as the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
 
 ```shell
-vim testnet-vault.service
+vim kintsugi-vault.service
 ```
 
 Install the service and start it.

@@ -6,7 +6,7 @@ After=network.target
 Environment="RUST_LOG=info"
 Type=simple
 ExecStart=/opt/kintsugi/vault/vault \
-  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-url http://localhost:8332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile /opt/kintsugi/vault/keyfile.json \
