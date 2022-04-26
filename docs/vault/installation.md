@@ -115,6 +115,8 @@ Please note the following default ports for incoming TCP and JSON-RPC connection
 | Testnet | 18333 | 18332 |
 | Mainnet | 8333  | 8332  |
 
+Once your bitcoin node is running, you can use `nmap -p 8332 127.0.0.1` to verify that the RPC port is open.
+
 ### 2. Start the Bitcoin node
 
 ?> Synchronizing the BTC testnet requires 40GB of storage and the BTC mainnet requires 400GB. Depending on your internet connection, the download time may take anything from hours to days.
