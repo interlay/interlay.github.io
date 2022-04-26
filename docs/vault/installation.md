@@ -315,13 +315,13 @@ Download the systemd service file and a small helper script to install the servi
 
 ```shell
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
-wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-vault.service
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/kintsugi-vault.service
 ```
 
 ?> Please adjust the systemd service file to insert your substrate key into the arguments as well as the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
 
 ```shell
-vim testnet-vault.service
+vim kintsugi-vault.service
 ```
 
 Install the service and start it.
