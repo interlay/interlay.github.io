@@ -6,12 +6,8 @@ Please note that while we are happy to surface such use cases and might provide 
 
 ### All Opportunities At A Glance:
 
-
-
-[![Solarbeam Pool](https://github.com/interlay/interlay.github.io/blob/3feb1277c1d4c450f087b7fa3ad2b8698975a1f6/docs/_assets/img/kintsugi/Solarbeam%20kBTC%20Pool.png)](https://app.solarbeam.io/farm?filter=stable) 
-[![Karura Pool](https://github.com/interlay/interlay.github.io/blob/3feb1277c1d4c450f087b7fa3ad2b8698975a1f6/docs/_assets/img/kintsugi/Karura%20kBTC%20Pool.png)](https://apps.karura.network/earn)
-
-
+[![Solarbeam Pool](../_assets/img/kintsugi/Solarbeam%20kBTC%20Pool.png)](https://app.solarbeam.io/farm?filter=stable) 
+[![Karura Pool](../_assets/img/kintsugi/Karura%20kBTC%20Pool.png)](https://apps.karura.network/earn)
 
 ### 1. kBTC / wBTC pool on Solarbeam (Moonriver)
 
