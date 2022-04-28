@@ -20,7 +20,7 @@ At the end of this document you will have:
 
 **Web UI**
 
-Go to the Vault tab and click on the `Deposit Collateral` tab. Then follow the instructions.
+Go to the Vault tab and click on the `Deposit Collateral` button. Then follow the instructions.
 
 **interbtc-js library**
 
@@ -41,7 +41,7 @@ await interbtc.vaults.lockAdditionalCollateral(additionalCollateralInPlanck);
 
 **Web UI**
 
-Go to the Vault tab and click on the `Withdraw Collateral` button. Then follow the isntructions.
+Go to the Vault tab and click on the `Withdraw Collateral` button. Then follow the instructions.
 
 **interbtc-js library**
 
@@ -63,8 +63,6 @@ await interbtc.vaults.withdrawCollateral(collateralToWithdrawInPlanck);
 ### Registering your Vault
 
 The default behavior on testnet is **automatic registration** using Interlay's DOT faucet as set in the `auto-register-with-faucet-url` arg. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
-
-You can also register your Vault through our web UI, going to the "Vault" tab, clicking the `Register` button and completing the steps.
 
 Moreover, you can interact with the Vault pallet directly using [interbtc-js](https://github.com/interlay/interbtc-js).
 
@@ -112,9 +110,7 @@ To mint with your own (or another specific) Vault, you can use the Polkadot.js i
    -  On Kintsugi, select "KSM" as the collateral token and kBTC as the wrapped token (DOT and interBTC on Interlay)
    -  Enter 1000000000000 (= 1 KINT) as griefing collatral, you will get this back once you complete the issue operation. You can also check see how griefing collateral is needed via the "Issue" UI but 1 KINT will suffice in most cases.
 
-
 ![Screenshot: self-minting via Polkadot.js Developer tab](../_assets/img/guide/self-mint.png)
-
 
 ### Step 2. Get BTC Deposit Address and Send BTC
 
@@ -168,6 +164,7 @@ Bridge-specific metrics (Collateralization, Locked Collateral, Required Collater
 ### Running instructions
 
 Vault monitoring is enabled by default. The client provides the following configuration flags, identical to the ones used for monitoring Substrate nodes:
+
 ```bash
 --no-prometheus
    Do not expose a Prometheus metric endpoint
@@ -180,6 +177,7 @@ Vault monitoring is enabled by default. The client provides the following config
 ```
 
 If monitoring is enabled, the client will log the metrics endpoint on startup. Below is an example:
+
 ```
 ./vault \
    --bitcoin-rpc-url http://localhost:18332 \
@@ -193,15 +191,19 @@ Mar 23 14:25:20.451  INFO vault: Starting Prometheus exporter at http://0.0.0.0:
 ```
 
 #### Querying the Prometheus exporter
+
 To fetch the exported metrics, query the `/metrics` endpoint exposed by the Prometheus exporter with the command below. This will show all the available metrics.
+
 ```bash
 curl http://HOST_IP:9615/metrics
 ```
 
 #### Running Prometheus
+
 Configuration files for the Prometheus service are provided in the [interbtc-clients repo](https://github.com/interlay/interbtc-clients/tree/master/vault/src/monitoring).
 
 To customize the configuration of the Prometheus service, edit the `prometheus.yml` file using the command below.
+
 ```bash
 git clone https://github.com/interlay/interbtc-clients
 cd interbtc-clients
@@ -219,22 +221,25 @@ chmod +x download_latest
 ```
 
 ### Running AlertManager
+
 The Prometheus AlertManager can be configured to send notifications on certain triggers. These include email, Slack, and PagerDuty.
 
 To customize the AlertManager alerting rules, edit `rules.yml`. To customize the destination of the alert, edit `alertmanager.yml`. Check [this guide](https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/) for more details about configuring AlertManager.
 
-
 Once AlertManager is configured, make sure that `prometheus` is installed and you can access the `promtool`. For example in Ubuntu use:
+
 ```bash
 apt-get install prometheus
 ```
 
 Then add unit tests to `tests.yml` and run them with:
+
 ```bash
 promtool test rules test.yml
 ```
 
 Run the service:
+
 ```bash
 git clone https://github.com/interlay/interbtc-clients
 cd interbtc-clients/.deploy/monitoring
@@ -244,16 +249,19 @@ chmod +x download_latest
 ```
 
 #### Running Grafana
+
 If the default Prometheus port is used (`9615`), the default instructions from the Grafana docs will work by default: https://grafana.com/docs/grafana/latest/installation/debian
 
 Once Grafana is up and running, [import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) the [Vault client configuration](../_assets/config/grafana.json  ':ignore') file to see the metrics.
 
 ### Example Visualisation
+
 ![Vault Client Grafana Dashboard](../_assets/img/vault/granafa_monitoring.png)
 
 ### Questions monitoring aims to answer
 
 #### How can I know if my client is offline?
+
 When the Vault client crashes, the metrics endpoint will not reachable any longer. This means that the Grafana dashboard will stop showing data points,
 as in the screenshot below (yellow line). This behaviour can be observed for all Grafana tiles on a crash.
 
@@ -286,6 +294,8 @@ bitcoin-cli -rpcwallet=interbtcvault listaddressgroupings
 <!-- tabs:end -->
 
 ## Security
+
+### Encrypting Bitcoin Keys
 
 For added security, you may want to encrypt the Bitcoin wallet with a password.
 

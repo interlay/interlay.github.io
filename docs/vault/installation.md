@@ -1,6 +1,7 @@
 # Installing the Vault Client
 
 Running a Vault will allow you to hold BTC of users in custody and in return earn a return on your collateral.
+Since Vault clients take funds into custody, this guide assumes that you have operated a Linux server before and understand how to securely store hot wallets.
 
 To install the Vault client, follow this guide.
 
@@ -60,7 +61,7 @@ Please also check the [minimum collateral requirements](/vault/overview?id=minim
 
 ## Quickstart Installation
 
-Setup the Vault client using docker-compose. This guide is only for the testnet, please follow the [Standard Installation](vault/installation?id=standard-installation) for Kintsugi.
+Setup the Vault client using docker-compose. This guide is only for the testnet, please follow the [Standard Installation](vault/installation?id=standard-installation) for Kintsugi and Interlay.
 
 ### 1. Install docker and docker-compose
 
@@ -97,7 +98,7 @@ Please take into account it can take a few hours for the bitcoin-core to sync fo
 
 Run Bitcoin and the Vault binary as a service on your computer or server. Follow this guide if you are interested in operating a Vault for earning and participating in the protocol.
 
-!> This method is currently only supported for Linux.
+?> This method is currently only supported for Linux.
 
 ### 1. Install a Bitcoin node
 
@@ -115,7 +116,6 @@ Please note the following default ports for incoming TCP and JSON-RPC connection
 | Testnet | 18333 | 18332 |
 | Mainnet | 8333  | 8332  |
 
-Once your bitcoin node is running, you can use `nmap -p 8332 127.0.0.1` to verify that the RPC port is open.
 
 ### 2. Start the Bitcoin node
 
@@ -134,14 +134,29 @@ bitcoind -testnet -server -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee
 #### **Kintsugi**
 
 ```shell
-bitcoind -server -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee=0.0002
+bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PASSWORD> -fallbackfee=0.0002
+```
+
+#### **Interlay**
+
+```shell
+bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PASSWORD> -fallbackfee=0.0002
 ```
 
 <!-- tabs:end -->
 
+#### Verifying Installatioon
+
+Once your bitcoin node is running, you can use `nmap -p 8332 127.0.0.1` to verify that the RPC port is open.
+
+#### Important Notes
+
 !> The fallback fee argument is crucial. Without it, your vault may fail to make payments in certain circumstances, which it will be punished for.
 
-Please also note that the Vault may require additional funds to cover Bitcoin transaction fees as specified [here](/vault/guide?id=bitcoin-fees).
+!> Make sure that your Bitcoin RPC port is not available from the internet. You can check this by running e.g., `nmap -p 8332 your.server.ip.address` from another computer. If you expose your Bitcoin RPC port to the internet, you stand at risk of losing all funds including all collateral and BTC locked with the Vault.
+You should also use a custom RPC username and password instead of the default `rpcuser` and `rpcpassword`. Just make sure to use the same username and password combination when you start your Vault and your Bitcoin node. That bitcoin username and password combination should be different than your OS login credentials.
+
+?> Please also note that the Vault may require additional funds to cover Bitcoin transaction fees as specified [here](/vault/guide?id=bitcoin-fees).
 
 ### 3. Install a pre-built binary
 
@@ -242,8 +257,8 @@ To register with 3 KSM (3000000000000 Planck):
 ```shell
 vault \
   --bitcoin-rpc-url http://localhost:8332 \
-  --bitcoin-rpc-user rpcuser \
-  --bitcoin-rpc-pass rpcpassword \
+  --bitcoin-rpc-user <INSERT_CUSTOM_USERNAME> \
+  --bitcoin-rpc-pass <INSERT_YOUR_PASSWORD> \
   --keyfile keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
   --collateral-currency-id=KSM \
@@ -320,7 +335,7 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/kintsugi-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key into the arguments as well as the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key, the Bitcoin RPC username and password, and the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
 
 ```shell
 vim kintsugi-vault.service
