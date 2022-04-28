@@ -134,7 +134,7 @@ bitcoind -testnet -server -rpcuser=rpcuser -rpcpassword=rpcpassword -fallbackfee
 #### **Kintsugi**
 
 ```shell
-bitcoind -server -rpcuser=rpcuser -rpcpassword=<INSERT_YOUR_PASSWORD> -fallbackfee=0.0002
+bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PASSWORD> -fallbackfee=0.0002
 ```
 
 #### **Interlay**
