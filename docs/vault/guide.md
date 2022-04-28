@@ -20,7 +20,7 @@ At the end of this document you will have:
 
 **Web UI**
 
-Go to the Vault tab and click on button next to the `Collateral: X DOT for Y BTC` text (above the Issue Requests table). Then, follow the instructions.
+Go to the Vault tab and click on the `Deposit Collateral` tab. Then follow the instructions.
 
 **interbtc-js library**
 
@@ -41,7 +41,7 @@ await interbtc.vaults.lockAdditionalCollateral(additionalCollateralInPlanck);
 
 **Web UI**
 
-Go to the Vault tab and click on the button next to the `Collateral: X DOT for Y BTC` text (above the Issue Requests table). Then, follow the isntructions.
+Go to the Vault tab and click on the `Withdraw Collateral` button. Then follow the isntructions.
 
 **interbtc-js library**
 
