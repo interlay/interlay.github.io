@@ -154,6 +154,7 @@ Once your bitcoin node is running, you can use `nmap -p 8332 127.0.0.1` to verif
 !> The fallback fee argument is crucial. Without it, your vault may fail to make payments in certain circumstances, which it will be punished for.
 
 !> Make sure that your Bitcoin RPC port is not available from the internet. You can check this by running e.g., `nmap -p 8332 your.server.ip.address` from another computer. If you expose your Bitcoin RPC port to the internet, you stand at risk of losing all funds including all collateral and BTC locked with the Vault.
+You should also use a custom RPC username and password instead of the default `rpcuser` and `rpcpassword`. Just make sure to use the same username and password combination when you start your Vault and your Bitcoin node. That bitcoin username and password combination should be different than your OS login credentials.
 
 ?> Please also note that the Vault may require additional funds to cover Bitcoin transaction fees as specified [here](/vault/guide?id=bitcoin-fees).
 
