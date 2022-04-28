@@ -335,7 +335,7 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/kintsugi-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key, the Bitcoin RPC password, and the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key, the Bitcoin RPC username and password, and the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
 
 ```shell
 vim kintsugi-vault.service
