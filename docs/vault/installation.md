@@ -257,7 +257,7 @@ To register with 3 KSM (3000000000000 Planck):
 ```shell
 vault \
   --bitcoin-rpc-url http://localhost:8332 \
-  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-user <INSERT_CUSTOM_USERNAME> \
   --bitcoin-rpc-pass <INSERT_YOUR_PASSWORD> \
   --keyfile keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
