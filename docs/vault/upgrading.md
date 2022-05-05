@@ -34,7 +34,35 @@ docker-compose up
 
 ## Standard Installation
 
-### 1. Stop the service
+### 1. Migrate to the new file path and name
+
+Some older versions of the docs used different paths and service names. If you were using interbtc-vault.service for testnet or kintsugi, you need to run the following:
+
+<!-- tabs:start -->
+
+#### **Testnet**
+
+```shell
+# rename the service file
+mv /usr/lib/systemd/system/interbtc-vault.service /usr/lib/systemd/system/testnet-vault.service
+
+# replace the /opt/interbtc/ path in the service by /opt/testnet/
+sed -i 's+/opt/interbtc/+/opt/testnet/+g' /usr/lib/systemd/system/testnet-vault.service
+```
+
+#### **Kintsugi**
+
+```shell
+# rename the service file
+mv /usr/lib/systemd/system/interbtc-vault.service /usr/lib/systemd/system/kintsugi-vault.service
+
+# replace the /opt/interbtc/ path in the service by /opt/kintsugi/
+sed -i 's+/opt/interbtc/+/opt/kintsugi/+g' /usr/lib/systemd/system/kintsugi-vault.service
+```
+
+<!-- tabs:end -->
+
+### 2. Stop the service
 
 <!-- tabs:start -->
 
@@ -55,7 +83,7 @@ sudo systemctl stop kintsugi-vault.service
 
 OR terminate the process with `Ctrl+C`.
 
-### 2. Re-download the binary and setup script
+### 3. Re-download the binary and setup script
 
 <!-- tabs:start -->
 
@@ -79,7 +107,7 @@ chmod +x ./setup && sudo ./setup kintsugi
 
 <!-- tabs:end -->
 
-### 3. Restart the service
+### 4. Restart the service
 
 <!-- tabs:start -->
 
