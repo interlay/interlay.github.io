@@ -36,9 +36,22 @@ docker-compose up
 
 ### 1. Stop the service
 
+<!-- tabs:start -->
+
+#### **Testnet**
+
 ```shell
-sudo systemctl stop interbtc-vault.service
+sudo systemctl stop testnet-vault.service
 ```
+
+#### **Kintsugi**
+
+```shell
+sudo systemctl stop kintsugi-vault.service
+```
+
+<!-- tabs:end -->
+
 
 OR terminate the process with `Ctrl+C`.
 
@@ -50,29 +63,38 @@ OR terminate the process with `Ctrl+C`.
 
 ```shell
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.10.3/vault-parachain-metadata-testnet
+
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
+chmod +x ./setup && sudo ./setup testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.10.3/vault-parachain-metadata-kintsugi
+
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
+chmod +x ./setup && sudo ./setup kintsugi
 ```
 
 <!-- tabs:end -->
 
-```shell
-wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
-chmod +x ./setup && sudo ./setup
-```
+### 3. Restart the service
 
-### 3. Update command line arguments
+<!-- tabs:start -->
 
-If upgrading from a version before 1.5.9, make sure to remove the `--network` and `--wrapped-currency-id` command line arguments. If using the service to run the vault, these are located in the `interbtc-vault.service` file
-
-### 4. Restart the service
+#### **Testnet**
 
 ```shell
-sudo systemctl start interbtc-vault.service
+sudo systemctl start testnet-vault.service
 ```
+
+#### **Kintsugi**
+
+```shell
+sudo systemctl start kintsugi-vault.service
+```
+
+<!-- tabs:end -->
 
 OR start the [process manually](vault/installation?id=_5-start-the-vault-client).
