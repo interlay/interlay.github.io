@@ -5,11 +5,11 @@ After=network.target
 [Service]
 Environment="RUST_LOG=info"
 Type=simple
-ExecStart=/opt/interbtc/vault/vault \
+ExecStart=/opt/testnet/vault/vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
-  --keyfile /opt/interbtc/vault/keyfile.json \
+  --keyfile /opt/testnet/vault/keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
   --auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
   --btc-parachain-url 'wss://api-testnet.interlay.io/parachain' \
