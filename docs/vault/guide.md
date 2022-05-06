@@ -153,6 +153,9 @@ The Vault client exposes data such as collateralization, Bitcoin balance, CPU se
 
 The key used for tracking the metrics is a concatenation of the collateral and wrapped currencies of the client (e.g. "KSM_KBTC"). This allows for tracking clients with different currency combinations in Grafana.
 
+#### Example Visualisation
+![Vault Client Grafana Dashboard](../_assets/img/vault/granafa_monitoring.png)
+
 ### Metrics
 A list of currently tracked custom metrics can be found [here](https://github.com/interlay/interbtc-clients/blob/61f2ae95d8716a8ac2b3b16d70abf2f91ef0f399/vault/src/metrics.rs#L247). These are in addition to the OS metrics tracked by default by Prometheus, such as CPU seconds, virtual memory bytes, and open file descriptors.
 
@@ -254,9 +257,10 @@ If the default Prometheus port is used (`9615`), the default instructions from t
 
 Once Grafana is up and running, [import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) the [Vault client configuration](../_assets/config/grafana.json  ':ignore') file to see the metrics.
 
-### Example Visualisation
+#### Running Node Exporter
+For a better overview of the host hardware and kernel, operators are encouraged to monitor more than the OS-level metrics provided by default. Node Exporter is a Prometheus service that can be run to collect such metrics. Follow [this guide](https://prometheus.io/docs/guides/node-exporter/) to set up Node Exporter. We recommend using [this Grafana template](https://grafana.com/grafana/dashboards/1860) to visualise the metrics collected by Prometheus.
 
-![Vault Client Grafana Dashboard](../_assets/img/vault/granafa_monitoring.png)
+![Node Exporter Grafana Dashboard](../_assets/img/vault/node_exporter_monitoring.png)
 
 ### Questions monitoring aims to answer
 
@@ -266,6 +270,12 @@ When the Vault client crashes, the metrics endpoint will not reachable any longe
 as in the screenshot below (yellow line). This behaviour can be observed for all Grafana tiles on a crash.
 
 ![Offline Vault](../_assets/img/vault/offline_vault.png)
+
+#### How can I know if a redeem request is about to expire?
+
+The *Remaining Time to Redeem* tile displays the time, in hours, left to execute the oldest redeem request with the vault. After this period elapses, the vault will get slashed. If there is no open redeem request, the default value of this metric is 24. The default AlertManager rules configuration in this documentation sends an alert when there is one hour left to execute (see [here](https://github.com/interlay/interbtc-clients/blob/d585af332d33ae763c1941eed5d63e73fe61ab52/.deploy/monitoring/rules.yml#L14)).
+
+![Remaining Time to Redeem](../_assets/img/vault/remaining_time_to_redeem.png)
 
 ## Bitcoin Fees
 

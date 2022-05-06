@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -26,6 +29,10 @@
   "liveNow": false,
   "panels": [
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -77,12 +84,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 7,
         "w": 7,
         "x": 0,
         "y": 0
       },
-      "id": 20,
+      "id": 30,
       "options": {
         "legend": {
           "calcs": [],
@@ -100,17 +107,18 @@
             "type": "prometheus",
             "uid": "hlKqKKLnz"
           },
-          "exemplar": true,
-          "expr": "native_currency_balance",
-          "interval": "",
-          "legendFormat": "",
+          "expr": "remaining_time_to_redeem_hours",
           "refId": "A"
         }
       ],
-      "title": "Native Currency Balance (KINT / INTR)",
+      "title": "Remaining Time to Redeem",
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -208,6 +216,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -293,6 +305,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -347,9 +363,9 @@
         "h": 8,
         "w": 7,
         "x": 0,
-        "y": 8
+        "y": 7
       },
-      "id": 18,
+      "id": 20,
       "options": {
         "legend": {
           "calcs": [],
@@ -368,16 +384,20 @@
             "uid": "hlKqKKLnz"
           },
           "exemplar": true,
-          "expr": "issue_count",
+          "expr": "native_currency_balance",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Issue Count",
+      "title": "Native Currency Balance (KINT / INTR)",
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -463,6 +483,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -548,6 +572,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -602,9 +630,9 @@
         "h": 8,
         "w": 7,
         "x": 0,
-        "y": 16
+        "y": 15
       },
-      "id": 14,
+      "id": 18,
       "options": {
         "legend": {
           "calcs": [],
@@ -623,16 +651,20 @@
             "uid": "hlKqKKLnz"
           },
           "exemplar": true,
-          "expr": "avg_btc_fee",
+          "expr": "issue_count",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Average BTC Tx Fee",
+      "title": "Issue Count",
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -719,6 +751,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -804,6 +840,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -858,9 +898,9 @@
         "h": 8,
         "w": 7,
         "x": 0,
-        "y": 24
+        "y": 23
       },
-      "id": 24,
+      "id": 14,
       "options": {
         "legend": {
           "calcs": [],
@@ -879,24 +919,20 @@
             "uid": "hlKqKKLnz"
           },
           "exemplar": true,
-          "expr": "mean_idle_duration_ms",
+          "expr": "avg_btc_fee",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "hlKqKKLnz"
-          },
-          "hide": false,
-          "refId": "B"
         }
       ],
-      "title": "Mean Idle Duration (ms)",
+      "title": "Average BTC Tx Fee",
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -990,6 +1026,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1075,6 +1115,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1129,7 +1173,104 @@
         "h": 8,
         "w": 7,
         "x": 0,
-        "y": 32
+        "y": 31
+      },
+      "id": 24,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "hlKqKKLnz"
+          },
+          "exemplar": true,
+          "expr": "mean_idle_duration_ms",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "hlKqKKLnz"
+          },
+          "hide": false,
+          "refId": "B"
+        }
+      ],
+      "title": "Mean Idle Duration (ms)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "hlKqKKLnz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 0,
+        "y": 39
       },
       "id": 16,
       "options": {
@@ -1161,7 +1302,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 35,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1175,6 +1316,6 @@
   "timezone": "",
   "title": "Vault Monitoring",
   "uid": "Q7rIEtY7k",
-  "version": 8,
+  "version": 9,
   "weekStart": ""
 }
