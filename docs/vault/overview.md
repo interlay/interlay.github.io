@@ -118,6 +118,8 @@ where `CollateralCurrency` is the collateral asset used by this Vault, and `Wrap
 A vault operator can run multiple vaults with different `VaultId`s with different collateral currencies using the same `AccountId`.
 Each Vault identified by a unique `VaultId` is isolated from all other Vaults.
 
+**Note:** At any given time there should only be one vault client running for any given `AccountId`. Having multiple vault clients running and using the same `AccountId` can lead to double payments (e.g. on redeem requests) which qualify as vault theft. 
+
 This means:
 
 - Liquidations only affect a specific `VaultId`.
@@ -248,7 +250,7 @@ If a Vault fails to execute a redeem on time, steals BTC or falls below the liqu
 
 A safety failure occurs in two cases:
 
-- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge. Theft is detected and reported by [Vaults](/vault/overview) via an SPV proof.
+- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge (unauthorized withdrawals, double payments or any similar unauthorized operation with the BTC in the wallet). Theft is detected and reported by [Vaults](/vault/overview) via an SPV proof.
 
 - **Severe Undercollateralization**: a Vaults drops below the liquidation collateral threshold (e.g., `110%` on testnet).
 
