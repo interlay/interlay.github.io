@@ -250,7 +250,7 @@ If a Vault fails to execute a redeem on time, steals BTC or falls below the liqu
 
 A safety failure occurs in two cases:
 
-- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge. Theft is detected and reported by [Vaults](/vault/overview) via an SPV proof.
+- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge (unauthorized withdrawals, double payments or any similar unauthorized operation with the BTC in the wallet). Theft is detected and reported by [Vaults](/vault/overview) via an SPV proof.
 
 - **Severe Undercollateralization**: a Vaults drops below the liquidation collateral threshold (e.g., `110%` on testnet).
 
