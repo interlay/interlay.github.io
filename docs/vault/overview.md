@@ -118,6 +118,8 @@ where `CollateralCurrency` is the collateral asset used by this Vault, and `Wrap
 A vault operator can run multiple vaults with different `VaultId`s with different collateral currencies using the same `AccountId`.
 Each Vault identified by a unique `VaultId` is isolated from all other Vaults.
 
+**Note:** At any given time there should only be one vault client running for any given `AccountId`. Having multiple vault clients running and using the same `AccountId` can lead to double payments (e.g. on redeem requests) which qualify as vault theft. 
+
 This means:
 
 - Liquidations only affect a specific `VaultId`.
