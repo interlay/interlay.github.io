@@ -5,93 +5,65 @@ However, sometimes it is necessary to interact with the Vault client, for exampl
 
 At the end of this document you will have:
 
-- [x] [Deposited additional collateral](#increasing-collateral)
-- [x] [Withdrawn surplus collateral](#withdrawing-collateral)
 - [x] [Learned about automatic actions of your Vault](#automatic-actions)
-- [x] [Self-Minted kBTC](#self-minting)
+- [x] [Deposited and withdrawn collateral](#collateral)
+- [x] [Activated and deactivated the Vault](#activatedeactive-the-vault-for-new-issue-requests)
+- [x] [Self-Minted kBTC/iBTC](#self-minting)
 - [x] [Visited the Vault dashboard](#dapp-vault-dashboard)
 - [x] [Set up Prometheus and Grafana for monitoring your Vault](#prometheus-and-grafana)
 - [x] [Supplied additional BTC to cover fees](#bitcoin-fees)
 - [x] [Improved the security of your Vault](#security)
+- [x] [Left the Interlay/Kintsugi bridge](#leaving-interlaykintsugi)
 
-## Changing Collateral
+## Automatic Actions
+
+### Registering The Vault
+
+On start-up, the Valt client will try to automaticlly register itself if you set the flags described in the installation instructions.
+While it's possible to manually register the Vault with, e.g., polkadot.js.org/apps, we do not recommend this as it requires manual creation of a BTC master key and submitting the public key in its raw format to the parachain as part of the registration.
+
+### Earning Fees and Block Rewards
+
+The Vault client is automatically receiving fees and block rewards as described in the [Fee Model](vault/overview?id=fee-model).
+
+### Accepting Issue and Redeem Requests
+
+Issue and Redeem requests are processed automatically, signing transactions on the Bitcoin and Interlay/Kintsugi networks using the mnemonic/account credentials you provide to the Vault client when running it.
+
+### Submitting BTC Block Headers
+
+Following the installation instructions, the Vault client will submit new BTC block headers to the parachain contributing to the overall availability of the BTC-Relay.
+
+### Reporting Vault Theft
+
+Following the installation instructions, the Vault client automatically monitors the Bitcoin blockchain for potential theft transactions of other Vaults and will report them to the parachain. A successful theft report results in a reward for the reporting Vault.
+
+### Replace Requests
+
+By default, Vault client will try to accept replace requests by other Vaults to take over their locked BTC. Accepting replace requests increases the relative share of locked BTC for the Vault and hence increases the earned fees and block rewards of the Vault client.
+
+## Collateral
 
 ### Increasing Collateral
 
 **Web UI**
 
-Go to the Vault tab and click on the `Deposit Collateral` button. Then follow the instructions.
-
-**interbtc-js library**
-
-You can use [interbtc-js](https://github.com/interlay/interbtc-js) to lock additional collateral.
-
-```js
-import { createinterbtcAPI } from "@interlay/interbtc";
-
-const interbtc = await createinterbtcAPI("ws://127.0.0.1:9944", "testnet");
-interbtc.setAccount(KEYRING);
-
-// 100 DOT denominated in Planck
-const additionalCollateralInPlanck = "1000000000000";
-await interbtc.vaults.lockAdditionalCollateral(additionalCollateralInPlanck);
-```
+Go to the Vault navigation item in the sidebar and click on the `Deposit Collateral` button. Then follow the instructions.
 
 ### Withdrawing Collateral
 
 **Web UI**
 
-Go to the Vault tab and click on the `Withdraw Collateral` button. Then follow the instructions.
+Go to the Vault navigation item in the sidebar and click on the `Withdraw Collateral` button. Then follow the instructions.
 
-**interbtc-js library**
+## Activate/Deactive the Vault for new Issue Requests
 
-You can use [interbtc-js](https://github.com/interlay/interbtc-js) to withdraw collateral.
+You can decide if your Vault should accept new issue requests by users.
 
-```js
-import { createinterbtcAPI } from "@interlay/interbtc";
+**Polkadot.js**
 
-const interbtc = await createinterbtcAPI("ws://127.0.0.1:9944", "testnet");
-interbtc.setAccount(KEYRING);
-
-// 100 DOT denominated in Planck
-const collateralToWithdrawInPlanck = "1000000000000";
-await interbtc.vaults.withdrawCollateral(collateralToWithdrawInPlanck);
-```
-
-## Automatic Actions
-
-### Registering your Vault
-
-The default behavior on testnet is **automatic registration** using Interlay's DOT faucet as set in the `auto-register-with-faucet-url` arg. Another option for registering is the `auto-register-with-collateral` flag, as described in the [README](https://github.com/interlay/interbtc-clients/tree/master/vault).
-
-Moreover, you can interact with the Vault pallet directly using [interbtc-js](https://github.com/interlay/interbtc-js).
-
-```js
-import { createinterbtcAPI } from "@interlay/interbtc";
-
-const interbtc = await createinterbtcAPI("ws://127.0.0.1:9944", "testnet");
-interbtc.setAccount(KEYRING);
-
-// 100 DOT denominated in Planck
-const collateralInPlanck = "1000000000000";
-await interbtc.vaults.register(collateralInPlanck, BTC_PUBLIC_KEY);
-```
-
-### Earning Fees
-
-The Vault client is automatically earning fees as described in the [Fee Model](vault/overview?id=fee-model).
-
-### Accepting Issue and Redeem Requests
-
-Issue and Redeem requests are processed automatically at the moment, signing transactions on the Bitcoin and Polkadot networks using the mnemonic/account credentials you provide to the client when running it.
-
-### Leaving interBTC
-
-The process to leave interBTC depends on whether or not your Vault client holds BTC in custody.
-
-If you Vault has _no BTC in custody_, you can withdraw all your DOT collateral at any time and leave the system. It is safe to stop the Vault client without risking being penalized. You will not participate in any issue or redeem requests once you have removed your DOT collateral.
-
-If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved. Option A, leaving through _replace_, requires you to request being replaced by another Vault. You can request to be replaced through the [Vault dashboard](https://testnet.interlay.io/vault). Option B, leaving through _redeem_ requires you to wait for a user to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral.
+1. Go to polkadot.js.org/apps -> extrinsics -> VaultRegistry -> acceptNewIssues
+2. Set the collateral and wrapped currency pair (e.g., KSM/KBTC) and if you want to accept new requests (e.g., Yes or No)
 
 ## Self-Minting
 
@@ -126,7 +98,6 @@ Now you must send the BTC to the Bitcoin address **generated by the parachain**.
 
 ![Screenshot: getting the BTC deposit address](../_assets/img/guide/issue-btc-address.png)
 
-
 3. Make the BTC transfer. Your Vault will then automatically handle everything else (proof submission,..)
 
 ### Why Self-Mint?
@@ -154,13 +125,14 @@ The Vault client exposes data such as collateralization, Bitcoin balance, CPU se
 The key used for tracking the metrics is a concatenation of the collateral and wrapped currencies of the client (e.g. "KSM_KBTC"). This allows for tracking clients with different currency combinations in Grafana.
 
 #### Example Visualisation
+
 ![Vault Client Grafana Dashboard](../_assets/img/vault/granafa_monitoring.png)
 
 ### Metrics
+
 A list of currently tracked custom metrics can be found [here](https://github.com/interlay/interbtc-clients/blob/61f2ae95d8716a8ac2b3b16d70abf2f91ef0f399/vault/src/metrics.rs#L247). These are in addition to the OS metrics tracked by default by Prometheus, such as CPU seconds, virtual memory bytes, and open file descriptors.
 
 Check the [Prometheus exporter](#querying-the-prometheus-exporter) section to find out how to query all the currently exposed metrics.
-
 
 Bridge-specific metrics (Collateralization, Locked Collateral, Required Collateral) get updated on each `FeedValues` oracle event. These are quite costly to update as they call parachain RPCs.
 
@@ -258,6 +230,7 @@ If the default Prometheus port is used (`9615`), the default instructions from t
 Once Grafana is up and running, [import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) the [Vault client configuration](../_assets/config/grafana.json  ':ignore') file to see the metrics.
 
 #### Running Node Exporter
+
 For a better overview of the host hardware and kernel, operators are encouraged to monitor more than the OS-level metrics provided by default. Node Exporter is a Prometheus service that can be run to collect such metrics. Follow [this guide](https://prometheus.io/docs/guides/node-exporter/) to set up Node Exporter. We recommend using [this Grafana template](https://grafana.com/grafana/dashboards/1860) to visualise the metrics collected by Prometheus.
 
 ![Node Exporter Grafana Dashboard](../_assets/img/vault/node_exporter_monitoring.png)
@@ -336,3 +309,14 @@ bitcoin-cli -rpcwallet=interbtcvault walletpassphrase "password" 100000000
 
 This will keep the decryption key in memory for the specified timeout - in this example 100000000 seconds or 3 years.
 Once this timeout expires (or if the node is terminated) the wallet must be unlocked manually.
+
+## Leaving Interlay/Kintsugi
+
+The process to leave Interlay/Kintsugi depends on whether or not your Vault client holds BTC in custody.
+
+If you Vault has _no BTC in custody_, you can withdraw all your collateral at any time and leave the system. It is safe to stop the Vault client without risking being penalized. You will not participate in any issue or redeem requests once you have removed your collateral.
+
+If your Vault clients holds at least _some BTC in custody_, you have two options to leave the system. Both options require that the BTC that you have in custody is moved.
+
+- **Replace**: leaving through _replace_, requires you to request being replaced by another Vault. You can request to be replaced through the Vault dashboard by replace 100% of the BTC that is locked with the Vault and waiting for other Vaults to accept the request. Once the replace request is accepted, your Vault client will execute the replace request by sending BTC to the accepting Vault and executing the request on the parachain.
+- **Redeem**, leaving through _redeem_ requires you to wait for a user or yourself to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral. If you redeem with your own Vault, the Vault will not receive fees for this such that 0 BTC remains in your Vault client.
