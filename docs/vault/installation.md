@@ -30,7 +30,7 @@ When operating a Vault client ensure the following:
 1. **Do not operate two or more Vault clients with the same keyfile/account at the same time.** The Vault stands the risk to execute redeem transactions twice which will be flagged as theft. The Vault will in turn lose all its collateral.
 2. **Do not allow any third party access to the server operating the Vault client.** If anyone is able to access the Bitcoin or Interlay/Kintsugi wallets, the third-party is able to extract all funds.
 3. **Do backup Bitcoin and Interlay/Kintsugi keys.** If the keys are not backed-up and the server operating the Vault client loses this data, the Vault stands the risk of losing all funds.
-4. **Do monitor the Vault for potential failures.** This includes two parts: keeping the collateralization level above the liquidation threshold and fulfilling redeem requests on time.
+4. **Do monitor the Vault for potential failures.** This includes three parts: (1) keeping the collateralization level above the liquidation threshold, (2) fulfilling redeem requests on time, (3) ensuring that you have enough BTC in the Vault's wallet to fulfill redeem requests.
 
 ## Prerequisites
 
