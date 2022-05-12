@@ -78,41 +78,6 @@ Please follow [this guide](guides/transfers?id=cross-chain-transfers) for transf
 
 Please also check the [minimum collateral requirements](/vault/overview?id=minimum) for Vaults.
 
-## Quickstart Installation
-
-Setup the Vault client using docker-compose. This guide is only for the testnet, please follow the [Standard Installation](vault/installation?id=standard-installation) for Kintsugi and Interlay.
-
-### 1. Install docker and docker-compose
-
-Make sure [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) are installed in your system.
-
-### 2. Download the docker-compose file
-
-```shell
-mkdir vault && cd vault
-wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/docker-compose.yml
-```
-
-### 3. Start the docker-compose process
-
-(Optional) If you already have a locally running Bitcoin testnet node, only start the Vault client:
-
-```shell
-docker-compose up vault -d
-```
-
-?> You may need to edit the docker-compose to point `--bitcoin-rpc-url` to `http://localhost:18332`.
-
-You can run the entire Vault client and the Bitcoin node with the following command:
-
-```shell
-docker-compose up -d
-```
-
-You can optionally view the running docker containers with command `docker-compose ps` or check the logs to see
-what the containers are doing with `docker-compose logs -f vault` and `docker-compose logs -f bitcoind`.
-Please take into account it can take a few hours for the bitcoin-core to sync for the first time.
-
 ## Standard Installation
 
 Run Bitcoin and the Vault binary as a service on your computer or server. Follow this guide if you are interested in operating a Vault for earning and participating in the protocol.
