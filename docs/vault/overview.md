@@ -1,21 +1,21 @@
 # Vaults
 
-Vaults are the heart of the interBTC and Kintsugi bridge. They are responsible for maintaining the physical 1:1 peg between BTC and interBTC.
-Vaults receive BTC for safekeeping from users and ensure BTC remains locked while interBTC exists
+Vaults are the heart of the Interlay and Kintsugi bridge. They are responsible for maintaining the physical 1:1 peg between BTC and iBTC/kBTC.
+Vaults receive BTC for safekeeping from users and ensure BTC remains locked while iBTC/kBTC exists
 
 ## Introduction
 
-Vaults are **non-trusted** and **collateralized** and **any user can become a Vault** by providing collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
+Vaults are **non-trusted** and **collateralized**.**Any user can become a Vault** by providing collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
 
 The correct behavior of Vaults is enforced by the bridge. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of the bridge. If a Vault tries to steal BTC, this will be automatically detected and the Vault will lose its collateral - and users will be reimbursed using this collateral (at a beneficial rate).
 
-The secondary responsibility of a Vault is to monitor both Bitcoin and the bridge to ensure that the BTC-Relay stays up to date with the Bitcoin mainchain by relaying Bitcoin block headers. BTC-Relay is self-healing and automatically detects and recovers from Bitcoin forks.
+The secondary responsibility of a Vault is to monitor both Bitcoin and the bridge to ensure that the BTC-Relay stays up to date with the Bitcoin blockchain by relaying Bitcoin block headers. BTC-Relay is self-healing and automatically detects and recovers from Bitcoin forks.
 
 ### What do Vaults do?
 
-1. **Provide Collateral** and upload their Bitcoin public key to the bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping. Collateral can initially be provided in assets white-listed by Governance. Initially KSM on Kintsugi and DOT on Interlay.
+1. **Provide Collateral** and upload their Bitcoin public key to the bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping. Collateral is provided in assets white-listed by Governance.
 2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's collateral until BTC is redeemed again.
-3. **Redeem**: Vaults monitor the interBTC/Kintsugi bridge for redeem requests. When a user requests to redeem interBTC, Vaults release BTC to the user and prove that they behaved correctly via the BTC-Relay. Only if this proof is correct, the Vault's collateral is unlocked.
+3. **Redeem**: Vaults monitor the Interlay/Kintsugi bridge for redeem requests. When a user requests to redeem iBTC, Vaults release BTC to the user and prove that they behaved correctly via the BTC-Relay. Only if this proof is correct, the Vault's collateral is unlocked.
 
 To support the integrity of the bridge, Vaults are also able to assume the role of a Relayer:
 
@@ -26,18 +26,19 @@ To support the integrity of the bridge, Vaults are also able to assume the role 
 
 1. **Earning potential:**
 
-    - *interBTC*: All Vaults are part of a fee pool and earn fees in interBTC when any user issues or redeems interBTC.
-    - *KINT* (Kintsugi-only): Vaults receive a KINT block reward.
-    - *KSM/DOT* (planned feature): Subject to governance, Vaults are able to provide collateral in liquid staked assets like LKSM or LDOT to receive both staking rewards from the relay chain and the rewards form the Kintsugi/interBTC bridge.
+    - *iBTC/kBTC fees*: All Vaults are part of a fee pool and earn fees in iBTC/kBTC when any user issues or redeems iBTC/kBTC.
+    - *KINT/INTR*: Vaults receive a KINT/INTR block reward.
+    - *Interest-generating Collateral* (planned feature): Subject to governance, Vaults are able to provide collateral in interested genrating assets such as staking derivatives (e.g., LKSM, LDOT) and LP tokens.
 
-2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you sell interBTC.
+2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you exchange iBTC/kBTC.
 
 ### What do I need to become a Vault?
 
 1. Vault client ([source](https://github.com/interlay/interbtc-clients))
 2. Bitcoin full node ([instructions](https://bitcoin.org/en/full-node))
 3. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
-4. Some KSM/DOT to provide as collateral and pay for transaction fees
+4. Collateral like KSM or DOT as well as other collateral assets.
+5. Native chain tokens like KINT and INTR to pay for transaction fees.
 
 Head over to ["Installation"](/vault/installation) for a detailed setup guide.
 
@@ -51,12 +52,10 @@ Vaults earn fees based on the issued and redeemed BTC volume. To reduce variance
 
 Each time a user issues or redeems interBTC, they pay the following fees to a **global fee pool**:
 
-- **Issue Fee**: `0.5%` of the Issue volume, paid in *interBTC*
-- **Redeem**: `0.5%` of the redeem volume, paid in *interBTC*
+- **Issue Fee**: `0.5%` of the Issue volume, paid in *iBTC/kBTC*
+- **Redeem**: `0.5%` of the redeem volume, paid in *iBTC/kBTC*
 
-From this fee pool, `100%` is distributed among all active Vaults based on the following factor:
-
-- 100% based on the Vault's **BTC in custody** ( = issued interBTC) in proportion to the total locked BTC (= issued interBTC) across all Vaults
+From this fee pool, `100%` is distributed among all active Vaults based on the Vault's **BTC in custody** ( = issued iBTC/kBTC) in proportion to the total locked BTC (= issued iBTC/kBTC) across all Vaults
 
 Specifically, each Vault's fee is calculated according to the following formula:
 
@@ -75,13 +74,13 @@ For the full details of the Vault rewards on the Kintsugi canary network, see th
 
 #### Interlay
 
-Vaults rewards on the main Interlay network are tbd.
+For the full details of the Vault rewards on the Interlay network, see the [Interlay token economy paper](https://raw.githubusercontent.com/interlay/whitepapers/master/Interlay_Token_Economy.pdf) published by Kintsugi Labs.
 
 ## Collateral
 
-To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in whitelisted assets - following a similar process as [MakerDAO](https://docs.makerdao.com/smart-contract-modules/collateral-module). To mitigate exchange rate fluctuations, interBTC employs *over-collateralization* and a *multi-level collateral balancing* scheme.
+To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in whitelisted assets - following a similar process as [MakerDAO](https://docs.makerdao.com/smart-contract-modules/collateral-module). To mitigate exchange rate fluctuations, Interlay and Kintsugi employ *over-collateralization* and a *multi-level collateral balancing* scheme.
 
-### Minimum
+### Minimum Collateral
 
 Each currency & network has different minimum deposits, noted here:
 
@@ -118,14 +117,14 @@ where `CollateralCurrency` is the collateral asset used by this Vault, and `Wrap
 A vault operator can run multiple vaults with different `VaultId`s with different collateral currencies using the same `AccountId`.
 Each Vault identified by a unique `VaultId` is isolated from all other Vaults.
 
-**Note:** At any given time there should only be one vault client running for any given `AccountId`. Having multiple vault clients running and using the same `AccountId` can lead to double payments (e.g. on redeem requests) which qualify as vault theft. 
+?> At any given time there should only be one vault client running for any given `AccountId`. Having multiple vault clients running and using the same `AccountId` can lead to double payments (e.g. on redeem requests) which qualify as vault theft.
 
 This means:
 
 - Liquidations only affect a specific `VaultId`.
 - Vault operators must take pro-active measures to re-balance between different collateral assets
 
-When users requests to mint interBTC, they selects a specific `VaultId` to lock BTC with. Typically, users will not care with which Vault they want to mint with (unless there is a competitive fee market in the future) and will accept the automatic selection offered by the UI.
+When users requests to mint iBTC/kBTC, they selects a specific `VaultId` to lock BTC with. Typically, users will not care with which Vault they want to mint with (unless there is a competitive fee market in the future) and will accept the automatic selection offered by the UI.
 
 When redeeming interBTC for BTC, users again select a specific `VaultId`. Here, the selection is *security relevant*: If Vaults fails to execute redeem requests, users have the right to
 
@@ -153,22 +152,21 @@ Where `dot_collateral_threshold = 1.5` (`150%`) according to our example.
 ### Vault-Level Collateral Re-balancing
 
 To protect against short and long term exchange rate fluctuations, Vaults are **instructed to keep their collateralization rate up to date**.
-This can be achieved in 2 ways:
+This is achieved in three ways:
 
-- **interBTC Redeem**: if users redeem with the Vault, the collateralization ratio increases. The Vault can also maintain a interBTC reserve and execute self-redeems for quick rebalancing
-- **Increase Collateral**: alternatively, the Vault can also add more collateral to the system.
+- **Increase Collateral** - *instant collateral increase*: the Vault can add more collateral to the system. This increases the collateralization immediatly.
+- **Redeem** - *collateral increase after 3 to 36 hours* (up to the redeem period - up to 24 hours): if users redeem with the Vault, the collateralization ratio increases. However, the collateral only increases when the redeem request is executed. The lower bound for this are the required Bitcoin and parachain confirmation. In practice, it will take at least 3 hours until such a request is processed. The Vault can also maintain an iBTC/kBTC reserve and execute self-redeems for quick rebalancing.
+- **Replace** - *possible collateral increase*: A Vault can request to be replaced by another Vault. By sending such a request to the parachain, the Vault offers other Vaults to take over the locked BTC. This strategy should work well when there is free capacity to issue new BTC in the system as Vaults will try to maximize their locked BTC to increase their share of fees and block rewards. However, there is no guarantee that a Vault will accept the replace request. Especially, when the bridge has little to no capacity to issue new BTC all Vaults are saturated and it is unlikely that other Vaults will accept the replace request.
 
 ## Collateral Thresholds
 
-The interBTC bridge introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
-
-We will release a post detailing how the calculation of this thresholds is achieved considering the liquidity and risk profile for each collateral asset.
+The Interlay and Kintsugi bridges introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
 
 ### Secure Collateral
 
 #### Actions
 
-None necessary. The Vault can freely redeem any "unused" collateral above the secure threshold.
+None necessary. The Vault can freely withdraw any "unused" collateral above the secure threshold.
 
 #### Thresholds
 
@@ -192,7 +190,7 @@ DOT: tbd
 
 #### Actions
 
-Users can execute redeem with this Vault and receive a premium of `5%` in DOT in addition to the redeemed BTC.
+Users can execute redeem with this Vault and receive a premium of `5%` in the collateral asset (e.g., KSM or DOT) in addition to the redeemed BTC.
 
 #### Thresholds
 
@@ -219,7 +217,7 @@ DOT: tbd
 The undercollateralized Vault is liquidated.
 
 1. The Vaults entire collateral is slashed
-2. The interBTC bridge initiates a first-come-first-served liquidation swap: any user can **burn interBTC** in return for collateral at a premium rate. See **[Burn Event](/overview?id=burn-event-restoring-a-11-physical-peg)** below.
+2. The bridge initiates a first-come-first-served liquidation swap: any user can **burn iBTC/kBTC** in return for collateral at a premium rate. See **[Burn Event](/overview?id=burn-event-restoring-a-11-physical-peg)** below.
 
 #### Thresholds
 
@@ -260,7 +258,7 @@ Consequently, the interBTC bridge initiates a **[Burn Event](/vault/overview?id=
 
 #### Severe Undercollateralization
 
-Sever undercollateralization might occur when either the collateral asset (e.g. KSM) and the wrapped asset (e.g. BTC) exchange rates as reported by the oracle are changing. A Vault is liquidated when either (1) the the collateral (e.g., KSM) exchange rate drops significantly in relation to the wrapped asset (e.g., BTC) or (2) the wrapped asset (e.g., BTC) exchange rate rises significantly in relation to the collateral (e.g., KSM). 
+Sever undercollateralization might occur when either the collateral asset (e.g. KSM) and the wrapped asset (e.g. BTC) exchange rates as reported by the oracle are changing. A Vault is liquidated when either (1) the the collateral (e.g., KSM) exchange rate drops significantly in relation to the wrapped asset (e.g., BTC) or (2) the wrapped asset (e.g., BTC) exchange rate rises significantly in relation to the collateral (e.g., KSM).
 
 (1) and (2) are ultimately the same thing, but possibly it helps to think about it in KSM/USD and BTC/USD rates, which means that if either (1) or (2) or both (1) and (2) happen at the same time, a Vault is liquidated.
 
