@@ -14,6 +14,23 @@ To install the Vault client, follow this guide.
 - [x] Ensure the Vault can accept issue, redeem and replace requests ([LINK](/vault/guide?id=accepting-issue-and-redeem-requests))
 - [x] Verify backups are in place (Bitcoin wallet and Substrate keys) ([LINK](https://bitcoin.org/en/secure-your-wallet))
 - [x] Subscribe to critical updates for continued operation ([LINK](https://discord.gg/invite/interlay))
+- [x] Monitor the Vault client for any unusual operation ([LINK](/vault/guide?id=monitoring))
+- [x] Understand the Do's and Dont's ([LINK](/vault/installation?id=dos-and-donts))
+
+## Do's and Dont's
+
+Operating a Vault client at the current stage involves running a fully automated client on a server.
+This client has access to hot wallets for both Bitcoin and the Interlay/Kintsugi networks.
+The setup below is - on purpose - technically challenging to minimize the chance that Vaults and users lose funds due to operation errors.
+
+?> In the future, there will be an option to split custody of funds such that the Vault client is only acting as a relayer of transactions but does not have access to users funds. This aims to solve two issues: First, it should be a lot easier to open a Vault to back iBTC/kBTC form just the Dapp. Second, it opens up the possibility to have infrastructure providers and LP providers work together together to operate Vaults with the maintance from experience infrastructure providers and the capital of LP providers.
+
+When operating a Vault client ensure the following:
+
+1. **Do not operate two or more Vault clients with the same keyfile/account at the same time.** The Vault stands the risk to execute redeem transactions twice which will be flagged as theft. The Vault will in turn lose all its collateral.
+2. **Do not allow any third party access to the server operating the Vault client.** If anyone is able to access the Bitcoin or Interlay/Kintsugi wallets, the third-party is able to extract all funds. Specifically, make sure that the [RPC ports for the Bitcoin full node are not accessible via the internet](/vault/installation?id=_1-install-a-bitcoin-node).
+3. **Do backup Bitcoin and Interlay/Kintsugi keys.** If the keys are not backed-up and the server operating the Vault client loses this data, the Vault stands the risk of losing all funds. There are notes for backing up the [Substrate key](/vault/installation?id=keyfile) and for backing up the [Bitcoin wallet linked in the installation below](/vault/installation?id=_1-install-a-bitcoin-node).
+4. **Do monitor the Vault for potential failures.** This includes three parts: (1) keeping the collateralization level above the liquidation threshold, (2) fulfilling redeem requests on time, (3) ensuring that you have enough BTC in the Vault's wallet to fulfill redeem requests. Make sure to check out the [monitoring guides to find out how to achieve this](/vault/guide?id=monitoring).
 
 ## Prerequisites
 
@@ -21,10 +38,12 @@ To install the Vault client, follow this guide.
 - At least 2 GB of RAM and a good CPU - exact requirements not yet benchmarked.
 - Free disk space (ideally SSD):
   - at least **40 GB** for the Bitcoin testnet, *or*
-  - at least **400 GB** for the Bitcoin mainnet.
+  - at least **500 GB** for the Bitcoin mainnet.
 - You should have a stable internet connection.
 - Have at least 1 KINT/INTR to pay for initial transaction fees.
 - Have a minimum amount of collateral assets, see [requirements](/vault/overview?id=minimum).
+
+### Uptime
 
 The Vault client should have consistent up-time, running for at least 8 hours per day.
 
@@ -53,46 +72,11 @@ If the Vault spends funds from another wallet this may be marked as theft.
 
 ### Funding
 
-The account used to register **MUST** be endowed with collateral (at launch this is KSM for Kintsugi and DOT for Interlay) and the parachain's native token for transaction fees - KINT for Kintsugi and INTR for Interlay.
+The account used to register must be endowed with collateral (at launch this is KSM for Kintsugi and DOT for Interlay) and the parachain's native token for transaction fees - KINT for Kintsugi and INTR for Interlay.
 
 Please follow [this guide](guides/transfers?id=cross-chain-transfers) for transferring assets between chains.
 
 Please also check the [minimum collateral requirements](/vault/overview?id=minimum) for Vaults.
-
-## Quickstart Installation
-
-Setup the Vault client using docker-compose. This guide is only for the testnet, please follow the [Standard Installation](vault/installation?id=standard-installation) for Kintsugi and Interlay.
-
-### 1. Install docker and docker-compose
-
-Make sure [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) are installed in your system.
-
-### 2. Download the docker-compose file
-
-```shell
-mkdir vault && cd vault
-wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/docker-compose.yml
-```
-
-### 3. Start the docker-compose process
-
-(Optional) If you already have a locally running Bitcoin testnet node, only start the Vault client:
-
-```shell
-docker-compose up vault -d
-```
-
-?> You may need to edit the docker-compose to point `--bitcoin-rpc-url` to `http://localhost:18332`.
-
-You can run the entire Vault client and the Bitcoin node with the following command:
-
-```shell
-docker-compose up -d
-```
-
-You can optionally view the running docker containers with command `docker-compose ps` or check the logs to see
-what the containers are doing with `docker-compose logs -f vault` and `docker-compose logs -f bitcoind`.
-Please take into account it can take a few hours for the bitcoin-core to sync for the first time.
 
 ## Standard Installation
 
