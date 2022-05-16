@@ -14,7 +14,9 @@ We will announce on public channels when a new release is made available for the
 ## Important Notes [`1.11.0`](https://github.com/interlay/interbtc-clients/releases/tag/1.11.0)
 
 - All transactions are now made with [Opt-in RBF](https://bitcoincore.org/en/faq/optin_rbf/)
-- The CLI changed to support registration with multi-collateral (added `--faucet-url` and `--auto-register`)
+- The CLI changed to support registration with multi-collateral:
+    - Replace `--auto-register-with-faucet-url=$FAUCET_URL` with `--faucet-url=$FAUCET_URL` and `--auto-register=KSM=faucet`
+    - Replace `--auto-register-with-collateral=$AMOUNT` with `--auto-register=KSM=$AMOUNT`
 
 ## Quickstart Installation
 
