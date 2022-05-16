@@ -18,7 +18,7 @@ services:
       - ./cache:/home/bitcoin/.bitcoin/testnet3
     restart: unless-stopped
   vault:
-    image: "interlayhq/interbtc-clients:vault-parachain-metadata-testnet-1-10-2"
+    image: "interlayhq/interbtc-clients:vault-parachain-metadata-testnet-1-11-0"
     command:
       - vault-parachain-metadata-testnet
       - --bitcoin-rpc-url
@@ -31,8 +31,10 @@ services:
       - keyfile.json
       - --keyname
       - interbtcvault
-      - --auto-register-with-faucet-url
+      - --faucet-url
       - "https://api-testnet.interlay.io/faucet"
+      - --auto-register
+      - "KSM=faucet"
       - --btc-parachain-url
       - "wss://api-testnet.interlay.io:443/parachain"
       - --collateral-currency-id
