@@ -151,13 +151,13 @@ Download the asset from GitHub:
 #### **Testnet**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.10.3/vault-parachain-metadata-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.11.0/vault-parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.10.3/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.11.0/vault-parachain-metadata-kintsugi
 ```
 
 <!-- tabs:end -->
@@ -197,14 +197,14 @@ cd interbtc-clients
 #### **Testnet**
 
 ```shell
-git checkout 1.10.3
+git checkout 1.11.0
 cargo build --bin vault --features parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-git checkout 1.10.3
+git checkout 1.11.0
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
@@ -230,7 +230,8 @@ vault \
   --keyfile keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
   --collateral-currency-id=KSM \
-  --auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
+  --faucet-url 'https://api-testnet.interlay.io/faucet' \
+  --auto-register=KSM=faucet \
   --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain'
 ```
 
@@ -245,8 +246,7 @@ vault \
   --bitcoin-rpc-pass <INSERT_YOUR_PASSWORD> \
   --keyfile keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
-  --collateral-currency-id=KSM \
-  --auto-register-with-collateral 3000000000000 \
+  --auto-register=KSM=3000000000000 \
   --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain'
 ```
 
