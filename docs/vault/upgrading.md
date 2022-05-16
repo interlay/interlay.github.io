@@ -11,6 +11,11 @@ We will announce on public channels when a new release is made available for the
 
 !> Occasionally, breaking changes will be introduced to the Vault client. In these cases it is important to update your Vault client in a timely manner to not run the risk of being slashed. We will notify on our channels (Discord, Twitter, Telegram) when this is the case.
 
+## Important Notes [`1.11.0`](https://github.com/interlay/interbtc-clients/releases/tag/1.11.0)
+
+- All transactions are now made with [Opt-in RBF](https://bitcoincore.org/en/faq/optin_rbf/)
+- The CLI changed to support registration with multi-collateral (added `--faucet-url` and `--auto-register`)
+
 ## Quickstart Installation
 
 ### 1. Stop the containers
