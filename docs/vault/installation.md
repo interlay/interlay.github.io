@@ -129,7 +129,7 @@ bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PAS
 
 <!-- tabs:end -->
 
-#### Verifying Installatioon
+#### Verifying Installation
 
 Once your bitcoin node is running, you can use `nmap -p 8332 127.0.0.1` to verify that the RPC port is open.
 
@@ -151,13 +151,13 @@ Download the asset from GitHub:
 #### **Testnet**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.11.0/vault-parachain-metadata-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.11.1/vault-parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.11.0/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.11.1/vault-parachain-metadata-kintsugi
 ```
 
 <!-- tabs:end -->
@@ -197,14 +197,14 @@ cd interbtc-clients
 #### **Testnet**
 
 ```shell
-git checkout 1.11.0
+git checkout 1.11.1
 cargo build --bin vault --features parachain-metadata-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-git checkout 1.11.0
+git checkout 1.11.1
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
@@ -229,7 +229,6 @@ vault \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
-  --collateral-currency-id=KSM \
   --faucet-url 'https://api-testnet.interlay.io/faucet' \
   --auto-register=KSM=faucet \
   --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain'

@@ -11,9 +11,8 @@ ExecStart=/opt/interlay/vault/vault \
   --bitcoin-rpc-pass <INSERT_YOUR_PASSWORD> \
   --keyfile /opt/interlay/vault/keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
-  --auto-register-with-collateral <INSERT_THE_INITIAL_COLLATERAL, minimum: 300000000000> \
-  --btc-parachain-url 'wss://api-interlay.io:443/parachain' \
-  --collateral-currency-id=DOT
+  --btc-parachain-url 'wss://api.interlay.io:443/parachain' \
+  --auto-register=DOT=<INSERT_THE_INITIAL_COLLATERAL, minimum: 300000000000>
 Restart=on-failure
 RestartSec=5
 

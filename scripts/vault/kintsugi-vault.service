@@ -11,9 +11,8 @@ ExecStart=/opt/kintsugi/vault/vault \
   --bitcoin-rpc-pass <INSERT_YOUR_PASSWORD> \
   --keyfile /opt/kintsugi/vault/keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
-  --auto-register-with-collateral <INSERT_THE_INITIAL_COLLATERAL, minimum: 3000000000000> \
   --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain' \
-  --collateral-currency-id=KSM
+  --auto-register=KSM=<INSERT_THE_INITIAL_COLLATERAL, minimum: 3000000000000>
 Restart=on-failure
 RestartSec=5
 
