@@ -11,9 +11,9 @@ ExecStart=/opt/testnet/vault/vault \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile /opt/testnet/vault/keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
-  --auto-register-with-faucet-url 'https://api-testnet.interlay.io/faucet' \
   --btc-parachain-url 'wss://api-testnet.interlay.io/parachain' \
-  --collateral-currency-id=KSM
+  --faucet-url 'https://api-testnet.interlay.io/faucet' \
+  --auto-register=KSM=faucet
 Restart=on-failure
 RestartSec=5
 
