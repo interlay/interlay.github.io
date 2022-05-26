@@ -19,7 +19,7 @@ Interlay is a decentralized network dedicated to connecting *crypto-currencies* 
 
 **3.  [Learn about Kintsugi, Interlay's canary network](/kintsugi/overview.md)**
 
-**4.  [Learn how to issue and redeem interBTC on testnet](/guides/prereq.md)**
+**4.  [Learn how to issue and redeem kBTC and interBTC](/guides/bridge.md)**
 
 **5.  [What are Vaults and how to run them](vault/overview.md)**
 
