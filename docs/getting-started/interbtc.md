@@ -73,7 +73,7 @@ A user (liquidity provider) mints new interBTC.
 
 1. The user then sends BTC to the Vault.
 
-1. The user proofs to the interBTC bridge that he/she sent the BTC to the vault (using a transaction inclusion proof against the BTC Relay).
+1. The user proofs to the interBTC bridge that they sent the BTC to the vault (using a transaction inclusion proof against the BTC Relay).
 
 1. Upon successful verification of the proof, the user mints interBTC and receives the tokens to his or her account balance.
 
