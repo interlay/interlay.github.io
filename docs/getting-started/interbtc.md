@@ -30,7 +30,7 @@ Hence, as a holder of interBTC, you have the following guarantee:
 
 ?> You can always redeem interBTC for BTC, or be reimbursed in the collateral currency at a beneficial rate.
 
-In the a Vault misbehaves, you will be reimbursed from the Vault’s collateral and will end up making a *profitable* trade between BTC and and the collateral asset(s).
+In case the Vault misbehaves, you will be reimbursed from the Vault’s collateral and will end up making a *profitable* trade between BTC and the collateral asset(s).
 
 At launch, collateral will be put down in DOT. In the mid/long run, this may be extended to stablecoins or token-sets to improve stability.
 
@@ -53,7 +53,7 @@ The design of interBTC has an emphasis on being open and permissionless. As such
 
 - **Liquidity Providers** lock BTC with Vaults to mint 1:1 backed *interBTC* on the Parachain. Requirement: (1) Bitcoin wallet and (2) Polkadot wallet.
 
-- **End-Users** obtain interBTC from liquidity providers on Polkadot and use interBTC for payments and with applications. Requirements: Polkadot wallet
+- **End-Users** obtain interBTC from liquidity providers on Polkadot and use interBTC for payments and with applications. Requirements: Polkadot wallet.
 
 Both can redeem owned interBTC for BTC at any time (requires a Bitcoin wallet).
 
@@ -73,7 +73,7 @@ A user (liquidity provider) mints new interBTC.
 
 1. The user then sends BTC to the Vault.
 
-1. The user proofs to the interBTC bridge that it send the BTC to the vault (using a transaction inclusion proof against the BTC Relay).
+1. The user proofs to the interBTC bridge that they sent the BTC to the vault (using a transaction inclusion proof against the BTC Relay).
 
 1. Upon successful verification of the proof, the user mints interBTC and receives the tokens to his or her account balance.
 
