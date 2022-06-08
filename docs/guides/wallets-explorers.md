@@ -9,83 +9,47 @@ At the end of this guide you will have:
 - [x] [Checked your account balances on Kintsugi / Interlay](#kintintr-balances)
 - [x] [Testnet only: you will also have requested testnet KSM and testnet BTC](#testnet-faucets)
 
-## Substrate Wallets 
+## Substrate Wallets
 
 ### Browser Extensions to Interact With Dapps
 
 To interact with the Interlay/Kintsugi Dapp you will need a Substrate-compatible browser extension.
 
-<!-- tabs:start -->
+#### [polkadot.js](https://polkadot.js.org/extension/)
 
-#### **Kintsugi**
+1. **install** the polkadot-js extension in your browser: [https://polkadot.js.org/extension/](https://polkadot.js.org/extension/).
 
+2. **create account**. go to the plus sign at the top of the extension and click on "create new account" and follow the instructions.
 
-#### [Polkadot.js](https://polkadot.js.org/extension/)
+#### [subwallet](https://subwallet.app/)
 
-1. **Install** the polkadot-js extension in your browser: [https://polkadot.js.org/extension/](https://polkadot.js.org/extension/).
-
-2. **Create account**. Go to the plus sign at the top of the extension and click on "Create new account" and follow the instructions.
-
-#### [SubWallet](https://subwallet.app/)
-
-*Early stage - Untested!*
-Guide: https://docs.subwallet.app/user-guide/how-to-install-subwallet
+*early stage - untested!*
+guide: https://docs.subwallet.app/user-guide/how-to-install-subwallet
 
 #### Coming soon
 
 - [Talisman](https://app.talisman.xyz/)
-
-
-
-#### **Interlay**
-
-Coming soon
-
-#### **Testnet**
-
-#### [Polkadot.js](https://polkadot.js.org/extension/)
-
-1. **Install** the polkadot-js extension in your browser: [https://polkadot.js.org/extension/](https://polkadot.js.org/extension/).
-
-2. **Create account**. Go to the plus sign at the top of the extension and click on "Create new account" and follow the instructions.
-
-#### [SubWallet](https://subwallet.app/)
-
-*Early stage - Untested!*
-Guide: https://docs.subwallet.app/user-guide/how-to-install-subwallet
-
-#### Coming soon
-
-- [Talisman](https://app.talisman.xyz/)
-
-<!-- tabs:end -->
 
 ### Web Wallets
 
 <!-- tabs:start -->
+#### **Interlay**
+
+#### Polkadot.js Apps
+
+Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/explorer)
 
 #### **Kintsugi**
 
 #### Polkadot.js Apps
 
-
 Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
-
-
-
-#### **Interlay**
-
-#### Polkadot.js Apps
-
-
-Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/explorer)
 
 #### **Testnet**
 
 #### Polkadot.js Apps
 
 Go to [https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Fapi-dev-kintsugi.interlay.io%252Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Fapi-dev-kintsugi.interlay.io%252Fparachain#/explorer)
-
 
 <!-- tabs:end -->
 
@@ -94,6 +58,10 @@ Go to [https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Fapi-dev-kintsugi.inte
 
 <!-- tabs:start -->
 
+#### **Interlay**
+
+Coming soon
+
 #### **Kintsugi**
 
 #### [Nova wallet](https://novawallet.io/)
@@ -101,23 +69,13 @@ Supports Android and IOS.
 
 Also supports interacting with the Kintsugi Dapp via their Web3 browser (untested!)
 
-
 #### [Math wallet](https://mathwallet.org/kintsugibtc-wallet/en/)
- 
+
 Supports Android and IOS. Web-wallet currently not working.
 
 #### Coming soon:
 
 - [Fearless Wallet](https://fearlesswallet.io/)
-
-
-#### **Interlay**
-
-Coming soon
-
-#### **Testnet**
-
-Coming soon
 
 
 <!-- tabs:end -->
@@ -138,16 +96,27 @@ For example, the `Alice` account can take the following formats:
 - **Polkadot**: 15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5
 - **Kusama**: HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F
 - **Kintsugi**: a3f1Q33MZ6B82T7rwQ1Ke1Qekzuxe8yRbfvRxkPh11jdsrTLR
+- **Interlay**: wdCJ8CsZchTEfUP8Xz1eZKNRjW5cuYjJ9fh6pcZNXezsysBrJ
 
 You can easily use the same account across different chains in the Polkadot ecosystem.
 
-
-
 ## Substrate Explorers
 
-
-
 <!-- tabs:start -->
+
+#### **Interlay**
+
+#### Subscan
+
+[interlay.subscan.io](https://interlay.subscan.io/)
+
+#### Sub.id (Balances only)
+
+Go to [sub.id](https://sub.id/#/) and enter your account.
+
+#### Polkadot.js Apps
+
+Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/accounts)
 
 #### **Kintsugi**
 
@@ -156,18 +125,12 @@ You can easily use the same account across different chains in the Polkadot ecos
 [kintsugi.subscan.io](https://kintsugi.subscan.io/)
 
 #### Sub.id (Balances only)
+
 Go to [sub.id](https://sub.id/#/) and enter your account.
 
 #### Polkadot.js Apps
 
 Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/accounts)
-
-
-#### **Interlay**
-
-#### Polkadot.js Apps
-
-Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/accounts)
 
 #### **Testnet**
 
@@ -216,7 +179,7 @@ You will now see your KINT balance as follows:
 
 ## Bitcoin Wallets
 
-You can use basically **any** Bitcoin wallet to interact with the kBTC (on Kintsugi) and interBTC (on Interlay). 
+You can use basically **any** Bitcoin wallet to interact with the kBTC (on Kintsugi) and interBTC (on Interlay).
 
 
 <!-- tabs:start -->
@@ -236,8 +199,6 @@ For testnet, you can also pick one of the following Bitcoin wallets that support
 - **Bitpay**: https://bitpay.com/wallet/ (Linux; Guide here: https://support.bitpay.com/hc/en-us/articles/360015463612-How-to-Create-a-Testnet-Wallet)
 <!-- tabs:end -->
 
-
-
 #### Hardware Wallets
 
 You can also use your hardware wallet. The following are tested and have Bitcoin mainnet and testnet support:
@@ -246,8 +207,8 @@ You can also use your hardware wallet. The following are tested and have Bitcoin
 
 #### **Bitcoin Mainnet**
 
-- **Ledger**: https://www.ledger.com/ 
-- **Trezor**: https://trezor.io/ 
+- **Ledger**: https://www.ledger.com/
+- **Trezor**: https://trezor.io/
 
 !> Attention: do **not** use mainnet Bitcoin wallets for Kintsugi / Interlay **testnet**
 
@@ -278,14 +239,13 @@ There are many Bitcoin Mainnet explorers. We find the following have the best us
 
 <!-- tabs:end -->
 
-
 ## Faucets (Testnet Only!)
 
 To test, you will need testnet tokens. Please follow the steps below.
 
-Attention: 
+Attention:
 
-- Testnet tokens have no economic value. 
+- Testnet tokens have no economic value.
 - Do not use real BTC or other mainnet assets on testnet!
 
 ### 1. Getting testnet KSM/DOT
