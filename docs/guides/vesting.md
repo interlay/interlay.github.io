@@ -1,7 +1,7 @@
 # Token Vesting
 
 
-## Crowdloan Vesting 
+## Crowdloan Vesting
 
 ### Vesting Schedule
 
@@ -12,7 +12,9 @@ Your vested tokens are shown as "locked" or "frozen" (depending on the wallet/pl
 
 #### **Kintsugi**
 
-Vesting stared on 13 October (when Kintsugi won a parachain). 
+Vesting started on 13 October 2021 (when Kintsugi won a parachain).
+
+Vesting takes **48 weeks in total**.
 
 Unlocking happens **per ~block~ week** (see below).
 
@@ -28,7 +30,17 @@ where `my_tokens` is the total amount of KINT you received in the airdrop and `d
 
 #### **Interlay**
 
-Coming soon
+Vesting started on 12 March 2022 (when Interlay won a parachain).
+
+Vesting takes **96 weeks in total**.
+
+Unlocking happens **every 10 blocks**.
+
+You can calculate your vested tokens based on this formula:
+
+`my_tokens x 0.3 + (tokens x 0.7 x days_since_12mar2022 / 672)`
+
+where `my_tokens` is the total amount of INTR you received in the airdrop and `days_since_12mar2022` is the number of days that passed since 12 March 2022 when vesting started.
 
 <!-- tabs:end -->
 
