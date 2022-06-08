@@ -11,8 +11,9 @@
 
 * **Interlay Mainnet (Polkadot)**
 
+  * [Overview](interlay/overview.md)
   * [Tokenomics](interlay/tokenomics.md)
-  * [Crowdloans **- Completed**](interlay/crowdloans.md)
+  * [Crowdloans - **Airdrop live**](interlay/crowdloans.md)
   * [Governance](interlay/governance.md)
 
 * **Kintsugi Canarynet (Kusama)**
@@ -22,7 +23,7 @@
   * [Crowdloans - **Airdrop live**](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
   * [Earn With kBTC](kintsugi/Earn-With-kBTC.md)
-  
+
 * **Guides**
 
   * [Wallets / Explorers](guides/wallets-explorers.md)

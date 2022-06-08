@@ -1,6 +1,9 @@
 # Governance: Liquid, Optimistic, Stake-to-Vote
 
-Kintsugi's governance model is inspired by [Polkadot’s governance structure](https://wiki.polkadot.network/docs/learn-governance), yet introduces two major modifications: (1) liquid, optimistic governance and (2) stake-to-vote.
+Kintsugi's governance model is inspired by [Polkadot’s governance structure](https://wiki.polkadot.network/docs/learn-governance), yet introduces two major modifications.
+
+1. Liquid, optimistic governance
+2. Stake-to-vote.
 
 ## Voting Rights
 
@@ -12,14 +15,14 @@ Both **vested** and **unvested** KINT can be used for voting (and stake-to-vote)
 
 ### What can be voted upon?
 
-Community governance can propose and vote on essentially any possible modification to the system. 
+Community governance can propose and vote on essentially any possible modification to the system.
 Specifically:
 
-- **Runtime upgrades** (code changes for bugfxes, substrate/library updates, new features, ...)
+- **Runtime upgrades** (code changes for bugfixes, substrate/library updates, new features, ...)
 - **Parameter upgrades** (collateral whitelisting, liquidation thresholds, accepted oracles, ...)
 - **Treasury spending**
 
-?> While many DeFi protocols bet on "gradual decentralization", Interlay focuses **on decentralization from day 1**. This entails a higher risk during the early days of the network, as the community learns to organize - but this risk ultimately pays off in the mid and long run. Kintsugi hence serves as an experiment, betting on the strength of the community.  
+?> While many DeFi protocols bet on "gradual decentralization", Interlay focuses **on decentralization from day 1**. This entails a higher risk during the early days of the network, as the community learns to organize - but this risk ultimately pays off in the mid and long run. Kintsugi hence serves as an experiment, betting on the strength of the community.
 
 ## Liquid & Optimistic Governance
 
@@ -72,7 +75,7 @@ To vote on governance proposals, users must lock KINT with the Kintsugi parachai
 
 ### Staking Rewards
 
-Users who lock KINT to mint vKINT and participate in governance receive staking rewards in KINT: 
+Users who lock KINT to mint vKINT and participate in governance receive staking rewards in KINT:
 
 - Years 1-4: **5% of the initial 4 year supply of KINT**
 - Year 5+: **6.7% of the annual inflation**
@@ -92,17 +95,17 @@ The process of proposals and voting is very similar to [Polkadot’s governance 
 1) Any vKINT token holder can submit a public proposal. This requires a deposit which "reserves" vKINT tokens (i.e., restricts vKINT available for voting on ongoing referenda or seconding other proposals. ).
 2) Other vKINT holders can [second](https://wiki.polkadot.network/docs/maintain-guides-democracy#seconding-a-proposal) that proposal, specifying how much vKINT they want to reserve.
 
-?> Reserving vKINT has no impact on the lock duration. This is merely a way to limit the number of proposals you can make in parallel. Example: you have 10 vKINT and second a proposal with 2 vKINT. You now use 8 vKINT to second other proposals (or make new proposals yourself), while 2 are reserved until the proposal becomes a referendum.  
+?> Reserving vKINT has no impact on the lock duration. This is merely a way to limit the number of proposals you can make in parallel. Example: you have 10 vKINT and second a proposal with 2 vKINT. You now use 8 vKINT to second other proposals (or make new proposals yourself), while 2 are reserved until the proposal becomes a referendum.
 
 3) Once every ``7 days`` (= `LaunchPeriod`) the proposal with the highest vKINT backing becomes a referenda (i.e., goes to vote).
 4) All vKINT reserved for this proposal are released (i.e., are now available to be used for voting on the new referendum or to second other proposals).
-5) vKINT holders vote on the referenda. 
+5) vKINT holders vote on the referenda.
 6) After the voting period, votes are counted (see [optimistic governance](kintsugi/governance?id=optimistic-governance) above)
 7) If the vote passed, the proposal is executed.
 
 ## Technical Committee
 
-Kintsugi also exhibits a Technical Committee (TC) of developer teams, voted on by the community governance. 
+Kintsugi also exhibits a Technical Committee (TC) of developer teams, voted on by the community governance.
 
 The **only function of the TC is fast-tracking proposals**: a fast-tracked instantly goes to vote, even if other proposals have not vKINT backing. This fast-tracking mechanism is used to ensure the system can be upgraded quickly in case of critical bugfixes.
 
@@ -120,7 +123,7 @@ Kintsugi will launch 100% decentralized from day 1:
 
 ?> Recommended reading for understanding the governance and voting power dynamics: [KINT token economy whitepaper released by Kintsugi Labs](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf).
 
-### Restricting Team and Investor Voting Power 
+### Restricting Team and Investor Voting Power
 Since both vested and unvested tokens can participate in voting, the Interlay team and investors introduce additional restrictions on their own voting power during the first 2 years after network launch. Specifically: while the community can use 100% of their vested and unvested KINT to vote, team and investors can only use a portion of their KINT (which is subject to lockup and vesting) to participate in governance - increasing linearly over 2 years.
 
 ### Estimates: First 2 Years
