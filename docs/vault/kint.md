@@ -25,6 +25,8 @@ This method is suitable both for adding KINT if you are already running a KSM va
 
 Follow the instructions as in [the vault installation guide](vault/installation.md#_5-start-the-vault-client). However, modify the `--auto-register=KSM=3000000000000` argument to specify `KINT` instead of `KSM` as the currency. Then launch the daemon, or if your vault client is currently running then restart it.
 
+Note that the minimum collateral amount is 55 KINT, i.e. use no less than `--auto-register=KINT=55000000000000`.
+
 Note that this argument can also be specified multiple times - however it is no longer necessary after initial registration, so if you are already running a registered KSM vault, you do not need to keep the `--auto-register=KSM` argument. If you are starting a brand new vault and with to use both collaterals, specify both arguments.
 
 ### Registering through polkadot.js
@@ -33,7 +35,7 @@ This method is suitable if you are already running a Vault client and wish to re
 1. Go to polkadot.js.org/apps and ensure you have the Kintsugi network selected
 2. Click on Developer -> Extrinsics
 3. Select your existing Vault account, the `vaultRegistry` pallet and the `registerVault` extrinsic
-4. Enter `KINT` as the collateral and `KBTC` as the wrapped currency, and the amount of KINT to use as initial collateral in Planck. 1 KINT = 10^12 Planck (1000000000000).
+4. Enter `KINT` as the collateral and `KBTC` as the wrapped currency, and the amount of KINT to use as initial collateral in Planck. 1 KINT = 10^12 Planck (1000000000000). The minimum collateral amount is 55 KINT, or 55000000000000 Planck.
 5. Sign and submit the transaction
 
 The Vault client running for your account will automatically being to operate the newly registered Vault.
@@ -185,12 +187,12 @@ This will return your current locked collateral amount, in KINT multiplied by 10
 Pending the UI upgrade, there are two main methods to calculate the current collateralization rate of your vault.
 
 ### Viewing collateralization through Prometheus
-TODO - Dan could you add?
+If your Vault has [Prometheus and Grafana set up](vault/guide.md#prometheus-and-grafana), then you can view the collateralization rate in the Grafana dashboard.
 
 ### Calculating collateralization manually through polkadot.js
 If you are not running Prometheus, you can calculate the collateralization rate manually using on-chain data directly.
 
-1. Perform the steps, detailed above, to [obtain the locked kBTC amount and locked collateral of your vault](#viewing-stats-through-polkadotjs). Ensure you convert the values to KINT and kBTC, with the appropriate number of decimal places.
+1. Perform the steps, detailed above, to [obtain the locked kBTC amount and locked collateral of your vault](#viewing-stats-through-polkadotjs). Ensure you convert the values from Plank to KINT (divide by 10^12) and from Satoshi to kBTC (divide by 10^8).
 2. Similarly, query the `oracle` pallet for the `aggregate` value, and enter "ExchangeRate", "Token" and "KINT" as the parameters.
 3. Divide the returned value by 10^22 to obtain the exchange rate. For example, for a return of `80,250,381,189,311,293,237,950,000`, the exchange rate is approximately 8025.038.
 4. Use the following formula: `collateralization = collateral / exchangeRate / kBTC`. For example, for a vault with 16050 KINT of collateral locked, 0.5 kBTC issued, and an exchange rate of 8025, the collateralization rate will be 16050 / 8025 / 0.5 = 4, or 400%.
