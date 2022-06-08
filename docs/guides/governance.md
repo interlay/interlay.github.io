@@ -18,17 +18,17 @@ The minimum vKINT/vINTR required to make a proposal in governance is as follows:
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Interlay (Mainnet)**
 
-5 vKINT
+250 vINTR
 
 #### **Kintsugi (Canarynet)**
 
 5 vKINT
 
-#### **Interlay (Mainnet)**
+#### **Testnet**
 
-tbd vINTR
+5 vKINT
 
 <!-- tabs:end -->
 
@@ -54,7 +54,6 @@ Connect the wallet in the top right and then click on "New Proposal" to create a
 
 Connect the wallet in the top right and then select the proposal to vote on.
 
-
 ## Governance Platform
 
 Both Kintsugi and Interlay use the SubSquare governance platform to discuss and vote on proposals.
@@ -63,14 +62,14 @@ Both Kintsugi and Interlay use the SubSquare governance platform to discuss and 
 
 <!-- tabs:start -->
 
-#### **Kintsugi (Canarynet)**
-
-[[kintsugi.subsquare.io]](https://kintsugi.subsquare.io/)
-
-
 #### **Interlay (Mainnet)**
 
-Coming soon
+
+[interlay.subsquare.io](https://interlay.subsquare.io/)
+
+#### **Kintsugi (Canarynet)**
+
+[kintsugi.subsquare.io](https://kintsugi.subsquare.io/)
 
 #### **Testnet**
 
@@ -78,16 +77,19 @@ Coming soon
 
 <!-- tabs:end -->
 
-#### 1. Create an account
+#### 1. (Optional) Create an account
 
-Subsquare requires an account. Make sure to register or log-in:
+Subsquare requires an account or use your polkadot.js wallet.
+
+If you want to use an account instead of your wallet, make sure to register or log-in:
 
 ![Login](../_assets/img/guide/governance-referenda-login.png)
 
+#### 2. (Optional) Connect Polkadot/Kusama/Substrate account
 
-#### 2. Connect Polkadot/Kusama/Substrate account
+If you used a traditional account instead of your web3 wallet, you need to link the account to a polkadot.js wallet.
 
-Next, make sure you have a web3 address linked when you go to your in the topbar -> Settings.
+Next, make sure you have a polkadot.js address linked when you go to your in the topbar -> Settings.
 
 ![Link Address](../_assets/img/guide/governance-referenda-link-address.png)
 
@@ -128,17 +130,16 @@ It takes some time and might require a hard-refresh (Ctrl + Shift + r) of the br
 
 Now it is time to add the text, explaining and arguing in favor of your proposal.
 
-?> **This is the most important part!** Kintsugi is a decentralized network. You need to convince the community that your proposal is useful and deserves backing. Only proposals with sufficient backing from the community go to vote. 
+?> **This is the most important part!** Kintsugi and Interlay are decentralized networks. You need to convince the community that your proposal is useful and deserves backing. Only proposals with sufficient backing from the community go to vote.
 
-
-#### 1. Log into SubSquare 
+#### 1. Log into SubSquare
 
 See [above](#governance-platform).
 Make sure you have connected your Substrate account!
 
 #### 2. Find and edit your proposal
 
-Go to "Proposals" and select your proposal from the list. 
+Go to "Proposals" and select your proposal from the list.
 
 ?> If you connected the same account as the one you used to create the proposal, you will be able to add title and text.
 
@@ -186,7 +187,7 @@ Go to Governance -> Treasury -> Submit proposal and propose who should receive f
 
 #### 2. Bring the Treasury Proposal to a Vote via a Public Proposal
 
-As Kintsugi and Interlay do not have a council, the entire community has to agree on treasury spendings. THis requires a public proposal. To achieve this, follow the steps of creating a public propsal.
+As Kintsugi and Interlay do not have a council, the entire community has to agree on treasury spendings. This requires a public proposal. To achieve this, follow the steps of creating a public propsal.
 
 A quick overview:
 
@@ -213,11 +214,13 @@ Once a proposal is decided to be voted on, it is called a *referendum*.
 
 ### SubSquare
 
+You can see all referenda for Interlay at https://interlay.subsquare.io/democracy/referendums.
+
 You can see all referenda for Kintsugi at https://kintsugi.subsquare.io/democracy/referendums.
 
 #### 1. Make Sure you are Logged-In and Linked your Account
 
-Subsquare requires an account. Make sure to register or log-in:
+Make sure to log-in:
 
 ![Login](../_assets/img/guide/governance-referenda-login.png)
 
