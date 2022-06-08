@@ -100,7 +100,7 @@ The process of proposals and voting is very similar to [Polkadot’s governance 
 3) Once every ``7 days`` (= `LaunchPeriod`) the proposal with the highest vKINT backing becomes a referenda (i.e., goes to vote).
 4) All vKINT reserved for this proposal are released (i.e., are now available to be used for voting on the new referendum or to second other proposals).
 5) vKINT holders vote on the referenda.
-6) After the voting period, votes are counted (see [optimistic governance](kintsugi/governance?id=optimistic-governance) above)
+6) After the voting period of ``7 days``, votes are counted (see [optimistic governance](kintsugi/governance?id=optimistic-governance) above)
 7) If the vote passed, the proposal is executed.
 
 ## Technical Committee
