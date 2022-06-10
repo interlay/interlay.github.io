@@ -40,6 +40,7 @@
   * [Installation](vault/installation.md)
   * [Upgrading](vault/upgrading.md)
   * [Operating Guide](vault/guide.md)
+  * [KINT Vault Guide](vault/kint.md)
   * [FAQ](vault/faq.md)
 
 * **Collators**
