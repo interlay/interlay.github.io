@@ -41,6 +41,13 @@ This method is suitable if you are already running a Vault client and wish to re
 The Vault client running for your account will automatically being to operate the newly registered Vault.
 
 ![Registering a KINT vault through polkadot.js](../_assets/img/vault/polkadotjs-register-kint.png)
+## Managing the Vault via the UI
+
+?> This is still in beta at the moment. Expect missing features and bugs until this feature is officially released on the UI.
+
+You can visit the latest UI builds for Kintsugi here [https://kintsugi-master.interlay.io/vaults/](https://kintsugi-master.interlay.io/vaults/).
+
+You will find a second card for the KINT Vault once you have registered the Vault.
 
 ## Managing collateral through polkadot.js
 Pending the UI upgrade, you will have to use polkadot.js to deposit additional collateral or withdraw unused collateral.
