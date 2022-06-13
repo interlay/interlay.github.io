@@ -155,7 +155,7 @@ wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.1
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.11.2/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.12.0/vault-parachain-metadata-kintsugi
 ```
 
 <!-- tabs:end -->
@@ -202,7 +202,7 @@ cargo build --bin vault --features parachain-metadata-testnet
 #### **Kintsugi**
 
 ```shell
-git checkout 1.11.2
+git checkout 1.12.0
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
