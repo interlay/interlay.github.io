@@ -112,19 +112,19 @@ Since the Vault does not require a Bitcoin node with all the data and to reduce 
 #### **Testnet**
 
 ```shell
-bitcoind -testnet -server -rpcuser=rpcuser -rpcpassword=rpcpassword
+bitcoind -testnet -server -rpcuser=rpcuser -rpcpassword=rpcpassword -walletrbf=1
 ```
 
 #### **Kintsugi**
 
 ```shell
-bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PASSWORD>
+bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PASSWORD> -walletrbf=1
 ```
 
 #### **Interlay**
 
 ```shell
-bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PASSWORD>
+bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PASSWORD> -walletrbf=1
 ```
 
 <!-- tabs:end -->
