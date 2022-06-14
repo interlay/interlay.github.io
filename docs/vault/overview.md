@@ -245,6 +245,19 @@ The undercollateralized Vault is liquidated.
 
 <!-- tabs:end -->
 
+### Checking Thresholds On-Chain
+
+While we endeavour to keep the docs up to date and clearly communicate and announce any changes, the source of truth is ultimately the on-chain data. To verify for yourself that the values above are correct, follow these steps:
+
+1. Go to polkadot.js.org/apps
+2. Select the appropriate network - Interlay (under "Polkadot and parachains"), Kintsugi (under "Kusama and parachains") or Interlay Testnet (under "Test networks")
+3. Go to the Developer -> Chain State page
+4. Select the `vaultRegistry` pallet and either `secureCollateralThreshold`, `premiumRedeemThreshold` or `liquidationCollateralThreshold`
+5. Select the desired collateral currency - e.g. either KSM or KINT on Kintsugi, DOT on Interlay, etc.
+6. Select `KBTC` as the wrapped asset on Kintsugi, and `IBTC` on Interlay
+7. Click the `+` icon to run the query
+8. Divide the displayed value by 10^16 (10000000000000000) to obtain the percentage - e.g. a return of `3,000,000,000,000,000,000` means a 300% threshold
+
 ## Liquidations
 
 If Vaults fail to behave according to protocol rules, they face punishment through liquidation of collateral.
