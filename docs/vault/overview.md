@@ -88,15 +88,17 @@ Each currency & network has different minimum deposits, noted here:
 
 #### **Testnet**
 
-Testnet KSM: 0
+* Testnet KSM: 0
+* Testnet KINT: 0
 
 #### **Kintsugi (Canarynet)**
 
-KSM: 3
+* KSM: 3
+* KINT: 55
 
 #### **Interlay (Mainnet)**
 
-DOT: tbd
+* DOT: tbd
 
 <!-- tabs:end -->
 
@@ -174,15 +176,17 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 
 #### **Testnet**
 
-Testnet KSM: `150%`
+* Testnet KSM: `150%`
+* Testnet KINT: `400%`
 
 #### **Kintsugi (Canarynet)**
 
-KSM: `260%`
+* KSM: `260%`
+* KINT: `900%`
 
 #### **Interlay (Mainnet)**
 
-DOT: tbd
+* DOT: tbd
 
 <!-- tabs:end -->
 
@@ -198,15 +202,17 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 
 #### **Testnet**
 
-Testnet KSM: `135%`
+* Testnet KSM: `135%`
+* Testnet KINT: `300%`
 
 #### **Kintsugi (Canarynet)**
 
-KSM: `200%`
+* KSM: `200%`
+* KINT: `650%`
 
 #### **Interlay (Mainnet)**
 
-DOT: tbd
+* DOT: tbd
 
 <!-- tabs:end -->
 
@@ -225,17 +231,32 @@ The undercollateralized Vault is liquidated.
 
 #### **Testnet**
 
-Testnet KSM: `110%`
+* Testnet KSM: `110%`
+* Testnet KINT: `200%`
 
 #### **Kintsugi (Canarynet)**
 
-KSM: `150%`
+* KSM: `150%`
+* KINT: `500%`
 
 #### **Interlay (Mainnet)**
 
-DOT: tbd
+* DOT: tbd
 
 <!-- tabs:end -->
+
+### Checking Thresholds On-Chain
+
+While we endeavour to keep the docs up to date and clearly communicate and announce any changes, the source of truth is ultimately the on-chain data. To verify for yourself that the values above are correct, follow these steps:
+
+1. Go to polkadot.js.org/apps
+2. Select the appropriate network - Interlay (under "Polkadot and parachains"), Kintsugi (under "Kusama and parachains") or Interlay Testnet (under "Test networks")
+3. Go to the Developer -> Chain State page
+4. Select the `vaultRegistry` pallet and either `secureCollateralThreshold`, `premiumRedeemThreshold` or `liquidationCollateralThreshold`
+5. Select the desired collateral currency - e.g. either KSM or KINT on Kintsugi, DOT on Interlay, etc.
+6. Select `KBTC` as the wrapped asset on Kintsugi, and `IBTC` on Interlay
+7. Click the `+` icon to run the query
+8. Divide the displayed value by 10^16 (10000000000000000) to obtain the percentage - e.g. a return of `3,000,000,000,000,000,000` means a 300% threshold
 
 ## Liquidations
 
