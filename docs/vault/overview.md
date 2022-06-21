@@ -98,7 +98,7 @@ Each currency & network has different minimum deposits, noted here:
 
 #### **Interlay (Mainnet)**
 
-* DOT: tbd
+* DOT: 30
 
 <!-- tabs:end -->
 
@@ -186,7 +186,7 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 
 #### **Interlay (Mainnet)**
 
-* DOT: tbd
+* DOT: `260%`
 
 <!-- tabs:end -->
 
@@ -212,7 +212,7 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 
 #### **Interlay (Mainnet)**
 
-* DOT: tbd
+* DOT: `200%`
 
 <!-- tabs:end -->
 
@@ -241,7 +241,7 @@ The undercollateralized Vault is liquidated.
 
 #### **Interlay (Mainnet)**
 
-* DOT: tbd
+* DOT: `150%`
 
 <!-- tabs:end -->
 
