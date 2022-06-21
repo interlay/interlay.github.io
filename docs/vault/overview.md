@@ -223,7 +223,7 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 The undercollateralized Vault is liquidated.
 
 1. The Vaults entire collateral is slashed
-2. The bridge initiates a first-come-first-served liquidation swap: any user can **burn iBTC/kBTC** in return for collateral at a premium rate. See **[Burn Event](/overview?id=burn-event-restoring-a-11-physical-peg)** below.
+2. The bridge initiates a first-come-first-served liquidation swap: any user can **burn iBTC/kBTC** in return for collateral at a premium rate. See **[Burn Event](/vault/overview?id=burn-event-restoring-a-11-physical-peg)** below.
 
 #### Thresholds
 
