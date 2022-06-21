@@ -1,10 +1,10 @@
 # Interlay Main Network
 
-### iBTC - Radically Open Bitcoin on Polkadot
+### IBTC - Radically Open Bitcoin on Polkadot
 
-Interlay's iBTC brings radically open Bitcoin to Polkadot to kickstart liquidity for parachains like Acala, Astar and Moonbeam.
+Interlay's IBTC brings radically open Bitcoin to Polkadot to kickstart liquidity for parachains like Acala, Astar and Moonbeam.
 
-**iBTC** is a 1:1 Bitcoin-backed asset on Polkadot, maintained by a decentralized network of collateralized Vaults. Users must only ever trust that Bitcoin and the DeFi platform they use are secure.
+**IBTC** is a 1:1 Bitcoin-backed asset on Polkadot, maintained by a decentralized network of collateralized Vaults. Users must only ever trust that Bitcoin and the DeFi platform they use are secure.
 
 Head over to the [interBTC chapter](start/overview.md) of this documentation to read more about the underlying trustless and decentralized cross-chain technology (the [XCLAIM](https://eprint.iacr.org/2018/643) protocol).
 

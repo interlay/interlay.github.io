@@ -1,11 +1,11 @@
 # Kintsugi - Interlay's Canary Network
 
 
-### kBTC - Radically Open Bitcoin on Kusama
+### KBTC - Radically Open Bitcoin on Kusama
 
-Kintsugi's kBTC brings radically open Bitcoin to Kusama to kickstart liquidity for parachains like Karura, Shiden and Moonriver.
+Kintsugi's KBTC brings radically open Bitcoin to Kusama to kickstart liquidity for parachains like Karura, Shiden and Moonriver.
 
-**kBTC** is a 1:1 Bitcoin-backed asset on Kusama, maintained by a decentralized network of collateralized Vaults. Users must only ever trust that Bitcoin and the DeFi platform they use are secure.
+**KBTC** is a 1:1 Bitcoin-backed asset on Kusama, maintained by a decentralized network of collateralized Vaults. Users must only ever trust that Bitcoin and the DeFi platform they use are secure.
 
 Head over to the  [interBTC chapter](start/overview.md) of this documentation to read more about the underlying trustless and decentralized cross-chain technology (the [XCLAIM](https://eprint.iacr.org/2018/643) protocol).
 

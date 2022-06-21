@@ -91,9 +91,9 @@ Below is a summary of the Interlay crowdloan details, as described in the [token
     <td>Contribute more than 50,000 DOT</td>
   </tr>
   <tr>
-    <td><i>To be confirmed:</i><br/>kBTC user bonus</td>
+    <td><i>To be confirmed:</i><br/>KBTC user bonus</td>
     <td>tbc</td>
-    <td>Mint kBTC and/or run a Vault with collateral. Will be announced ad-hoc!</td>
+    <td>Mint KBTC and/or run a Vault with collateral. Will be announced ad-hoc!</td>
   </tr>
 </tbody>
 </table>

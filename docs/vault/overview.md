@@ -1,7 +1,7 @@
 # Vaults
 
-Vaults are the heart of the Interlay and Kintsugi bridge. They are responsible for maintaining the physical 1:1 peg between BTC and iBTC/kBTC.
-Vaults receive BTC for safekeeping from users and ensure BTC remains locked while iBTC/kBTC exists
+Vaults are the heart of the Interlay and Kintsugi bridge. They are responsible for maintaining the physical 1:1 peg between BTC and IBTC/KBTC.
+Vaults receive BTC for safekeeping from users and ensure BTC remains locked while IBTC/KBTC exists
 
 ## Introduction
 
@@ -15,7 +15,7 @@ The secondary responsibility of a Vault is to monitor both Bitcoin and the bridg
 
 1. **Provide Collateral** and upload their Bitcoin public key to the bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping. Collateral is provided in assets white-listed by Governance.
 2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's collateral until BTC is redeemed again.
-3. **Redeem**: Vaults monitor the Interlay/Kintsugi bridge for redeem requests. When a user requests to redeem iBTC, Vaults release BTC to the user and prove that they behaved correctly via the BTC-Relay. Only if this proof is correct, the Vault's collateral is unlocked.
+3. **Redeem**: Vaults monitor the Interlay/Kintsugi bridge for redeem requests. When a user requests to redeem IBTC, Vaults release BTC to the user and prove that they behaved correctly via the BTC-Relay. Only if this proof is correct, the Vault's collateral is unlocked.
 
 To support the integrity of the bridge, Vaults are also able to assume the role of a Relayer:
 
@@ -26,11 +26,11 @@ To support the integrity of the bridge, Vaults are also able to assume the role 
 
 1. **Earning potential:**
 
-    - *iBTC/kBTC fees*: All Vaults are part of a fee pool and earn fees in iBTC/kBTC when any user issues or redeems iBTC/kBTC.
+    - *IBTC/KBTC fees*: All Vaults are part of a fee pool and earn fees in IBTC/KBTC when any user issues or redeems IBTC/KBTC.
     - *KINT/INTR*: Vaults receive a KINT/INTR block reward.
     - *Interest-generating Collateral* (planned feature): Subject to governance, Vaults are able to provide collateral in interested genrating assets such as staking derivatives (e.g., LKSM, LDOT) and LP tokens.
 
-2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you exchange iBTC/kBTC.
+2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you exchange IBTC/KBTC.
 
 ### What do I need to become a Vault?
 
@@ -52,10 +52,10 @@ Vaults earn fees based on the issued and redeemed BTC volume. To reduce variance
 
 Each time a user issues or redeems interBTC, they pay the following fees to a **global fee pool**:
 
-- **Issue Fee**: `0.5%` of the Issue volume, paid in *iBTC/kBTC*
-- **Redeem**: `0.5%` of the redeem volume, paid in *iBTC/kBTC*
+- **Issue Fee**: `0.5%` of the Issue volume, paid in *IBTC/KBTC*
+- **Redeem**: `0.5%` of the redeem volume, paid in *IBTC/KBTC*
 
-From this fee pool, `100%` is distributed among all active Vaults based on the Vault's **BTC in custody** ( = issued iBTC/kBTC) in proportion to the total locked BTC (= issued iBTC/kBTC) across all Vaults
+From this fee pool, `100%` is distributed among all active Vaults based on the Vault's **BTC in custody** ( = issued IBTC/KBTC) in proportion to the total locked BTC (= issued IBTC/KBTC) across all Vaults
 
 Specifically, each Vault's fee is calculated according to the following formula:
 
@@ -126,7 +126,7 @@ This means:
 - Liquidations only affect a specific `VaultId`.
 - Vault operators must take pro-active measures to re-balance between different collateral assets
 
-When users requests to mint iBTC/kBTC, they selects a specific `VaultId` to lock BTC with. Typically, users will not care with which Vault they want to mint with (unless there is a competitive fee market in the future) and will accept the automatic selection offered by the UI.
+When users requests to mint IBTC/KBTC, they selects a specific `VaultId` to lock BTC with. Typically, users will not care with which Vault they want to mint with (unless there is a competitive fee market in the future) and will accept the automatic selection offered by the UI.
 
 When redeeming interBTC for BTC, users again select a specific `VaultId`. Here, the selection is *security relevant*: If Vaults fails to execute redeem requests, users have the right to
 
@@ -157,7 +157,7 @@ To protect against short and long term exchange rate fluctuations, Vaults are **
 This is achieved in three ways:
 
 - **Increase Collateral** - *instant collateral increase*: the Vault can add more collateral to the system. This increases the collateralization immediatly.
-- **Redeem** - *collateral increase after 3 to 36 hours* (up to the redeem period - up to 24 hours): if users redeem with the Vault, the collateralization ratio increases. However, the collateral only increases when the redeem request is executed. The lower bound for this are the required Bitcoin and parachain confirmation. In practice, it will take at least 3 hours until such a request is processed. The Vault can also maintain an iBTC/kBTC reserve and execute self-redeems for quick rebalancing.
+- **Redeem** - *collateral increase after 3 to 36 hours* (up to the redeem period - up to 24 hours): if users redeem with the Vault, the collateralization ratio increases. However, the collateral only increases when the redeem request is executed. The lower bound for this are the required Bitcoin and parachain confirmation. In practice, it will take at least 3 hours until such a request is processed. The Vault can also maintain an IBTC/KBTC reserve and execute self-redeems for quick rebalancing.
 - **Replace** - *possible collateral increase*: A Vault can request to be replaced by another Vault. By sending such a request to the parachain, the Vault offers other Vaults to take over the locked BTC. This strategy should work well when there is free capacity to issue new BTC in the system as Vaults will try to maximize their locked BTC to increase their share of fees and block rewards. However, there is no guarantee that a Vault will accept the replace request. Especially, when the bridge has little to no capacity to issue new BTC all Vaults are saturated and it is unlikely that other Vaults will accept the replace request.
 
 ## Collateral Thresholds
@@ -223,7 +223,7 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 The undercollateralized Vault is liquidated.
 
 1. The Vaults entire collateral is slashed
-2. The bridge initiates a first-come-first-served liquidation swap: any user can **burn iBTC/kBTC** in return for collateral at a premium rate. See **[Burn Event](/vault/overview?id=burn-event-restoring-a-11-physical-peg)** below.
+2. The bridge initiates a first-come-first-served liquidation swap: any user can **burn IBTC/KBTC** in return for collateral at a premium rate. See **[Burn Event](/vault/overview?id=burn-event-restoring-a-11-physical-peg)** below.
 
 #### Thresholds
 

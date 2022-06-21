@@ -8,7 +8,7 @@ At the end of this document you will have:
 - [x] [Learned about automatic actions of your Vault](#automatic-actions)
 - [x] [Deposited and withdrawn collateral](#collateral)
 - [x] [Activated and deactivated the Vault](#activatedeactive-the-vault-for-new-issue-requests)
-- [x] [Self-Minted kBTC/iBTC](#self-minting)
+- [x] [Self-Minted KBTC/IBTC](#self-minting)
 - [x] [Visited the Vault dashboard](#dapp-vault-dashboard)
 - [x] [Set up Prometheus and Grafana for monitoring your Vault](#prometheus-and-grafana)
 - [x] [Supplied additional BTC to cover fees](#bitcoin-fees)
@@ -79,7 +79,7 @@ To mint with your own (or another specific) Vault, you can use the Polkadot.js i
 4. Enter your Vault account and the issue amounts.
 
    -  The BTC amount must be entered with 8 decimals (1 BTC = 100000000)
-   -  On Kintsugi, select "KSM" as the collateral token and kBTC as the wrapped token (DOT and interBTC on Interlay)
+   -  On Kintsugi, select "KSM" as the collateral token and KBTC as the wrapped token (DOT and interBTC on Interlay)
    -  Enter 1000000000000 (= 1 KINT) as griefing collatral, you will get this back once you complete the issue operation. You can also check see how griefing collateral is needed via the "Issue" UI but 1 KINT will suffice in most cases.
 
 ![Screenshot: self-minting via Polkadot.js Developer tab](../_assets/img/guide/self-mint.png)

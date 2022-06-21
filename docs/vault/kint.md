@@ -8,7 +8,7 @@ At the end of this document you will have:
 - [x] [Registered a KINT vault](#registration)
 - [x] [Deposited and withdrawn collateral through polkadot.js](#managing-collateral-through-polkadotjs)
 - [x] [Observed the pending requests for your vault through Squid](#checking-requests-through-squid)
-- [x] [Observed the collateral amount and minted kBTC amount though polkadot.js](#viewing-stats-through-polkadotjs)
+- [x] [Observed the collateral amount and minted KBTC amount though polkadot.js](#viewing-stats-through-polkadotjs)
 - [x] [Calculated the collateralization rate of your vault](#calculating-the-collateralization-rate)
 
 ## Multiple collateral operation
@@ -107,7 +107,7 @@ Enter the following query to view the Issue requests against your vault:
 Edit the string after `accountId_eq` to match the account ID of your vault. Press the Play button above the query editing field to run the query.
 
  * The `request` field contains the data about the request the user has submitted.
- * The `execution` field will be `null` until the Issue request has been executed. After execution, it will contain the details of the execution - including potentially a different kBTC amount (`amountWrapped`), in case the user underpaid or overpaid.
+ * The `execution` field will be `null` until the Issue request has been executed. After execution, it will contain the details of the execution - including potentially a different KBTC amount (`amountWrapped`), in case the user underpaid or overpaid.
  * The `cancellation` field will similarly be `null` unless the request has expired and has been cancelled.
 
 The information otherwise matches what you would normally see in the tables in our UI dashboards.
@@ -159,12 +159,12 @@ The process for Redeem requests is near-identical. Use the following query:
 }
 ```
 
-Here, the `userBackingAddress` is the BTC address that the Redeem request will be paid out to. `collateralPremium` contains the owed premium in case this was a premium redeem - it will be 0 otherwise. The `cancellation` field contains some extra data - `reimbursed` will be `true` if the user chose to burn their kBTC for collateral, or `false` if the user chose to retry instead.
+Here, the `userBackingAddress` is the BTC address that the Redeem request will be paid out to. `collateralPremium` contains the owed premium in case this was a premium redeem - it will be 0 otherwise. The `cancellation` field contains some extra data - `reimbursed` will be `true` if the user chose to burn their KBTC for collateral, or `false` if the user chose to retry instead.
 
 ## Viewing stats through polkadot.js
 In polkadot.js, you can view some information about the current state of your vault.
 
-### Viewing locked kBTC (and other information)
+### Viewing locked KBTC (and other information)
 1. Go to polkadot.js.org/apps and ensure you have the Kintsugi network selected
 2. Click on Developer -> Chain State
 3. Select your existing Vault account, the `vaultRegistry` pallet and the `vaults` query
@@ -174,8 +174,8 @@ In polkadot.js, you can view some information about the current state of your va
 This will show you the on-chain data about the vault, including:
  * The status
  * Whether it has been banned, and if so, for how long
- * The amount of issued kBTC held (in Satoshi)
- * The amount of kBTC in currently pending Issue and Redeem requests
+ * The amount of issued KBTC held (in Satoshi)
+ * The amount of KBTC in currently pending Issue and Redeem requests
  * Information about Replaces and liquidation, if any has happened
 
 ### Viewing currently locked collateral
@@ -199,7 +199,7 @@ If your Vault has [Prometheus and Grafana set up](vault/guide.md#prometheus-and-
 ### Calculating collateralization manually through polkadot.js
 If you are not running Prometheus, you can calculate the collateralization rate manually using on-chain data directly.
 
-1. Perform the steps, detailed above, to [obtain the locked kBTC amount and locked collateral of your vault](#viewing-stats-through-polkadotjs). Ensure you convert the values from Plank to KINT (divide by 10^12) and from Satoshi to kBTC (divide by 10^8).
+1. Perform the steps, detailed above, to [obtain the locked KBTC amount and locked collateral of your vault](#viewing-stats-through-polkadotjs). Ensure you convert the values from Plank to KINT (divide by 10^12) and from Satoshi to KBTC (divide by 10^8).
 2. Similarly, query the `oracle` pallet for the `aggregate` value, and enter "ExchangeRate", "Token" and "KINT" as the parameters.
 3. Divide the returned value by 10^22 to obtain the exchange rate. For example, for a return of `80,250,381,189,311,293,237,950,000`, the exchange rate is approximately 8025.038.
-4. Use the following formula: `collateralization = collateral / exchangeRate / kBTC`. For example, for a vault with 16050 KINT of collateral locked, 0.5 kBTC issued, and an exchange rate of 8025, the collateralization rate will be 16050 / 8025 / 0.5 = 4, or 400%.
+4. Use the following formula: `collateralization = collateral / exchangeRate / KBTC`. For example, for a vault with 16050 KINT of collateral locked, 0.5 KBTC issued, and an exchange rate of 8025, the collateralization rate will be 16050 / 8025 / 0.5 = 4, or 400%.

@@ -9,7 +9,7 @@ The Interlay team is building a customized Substrate environment for interBTC, o
 
 
 - **(Soon) Interlay on Polkadot**: Interlay is going to Polkadot parachain auctions in batch 2, starting December 23rd 2021
-- **(Now) Kintsugi to Kusama**: kBTC on Kusama and KINT airdrop planned before Christmas 2021.
+- **(Now) Kintsugi to Kusama**: KBTC on Kusama and KINT airdrop planned before Christmas 2021.
 - **Kintsugi wins 11th Kusama parachain slot** on 13 October 2021
 - **Feature-ready Beta** launched on 2 March 2021
 - **Alpha** testnet launched in November 2020
