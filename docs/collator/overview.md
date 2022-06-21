@@ -1,7 +1,5 @@
 # Collators
 
-Collators are responsible for collecting parachain transactions and producing state-transition proofs. For more details checkout the [Polkadot Wiki](https://wiki.polkadot.network/docs/en/learn-collator).
+Collators are responsible for collecting parachain transactions and producing state-transition proofs. For more details checkout the [Polkadot Wiki](https://wiki.polkadot.network/docs/en/learn-collator). We use the [`collator-selection` pallet](https://github.com/paritytech/cumulus/blob/master/pallets/collator-selection/src/lib.rs) developed by Parity to allow candidates to register on a first-come-first-serve basis. Each candidate must deposit a `CandidacyBond` to register. We allow up to the `DesiredCandidates` count to be registered but candidates may be removed after the configured `KickThreshold` if no block is produced.
 
-Please note that in our testnet phase, we are actually running an independent chain based on Proof-of-Authority (PoA). This is for better control of the network whilst we collect user feedback and fix bugs. Therefore nodes are not actually collating blocks as they will be on Rococo and eventually Kusama / Polkadot. Please checkout [Polkadot's roadmap](https://polkadot.network/launch-parachains/) for futher details on when to expect live parachains.
-
-Running a local full-node / Collator will vastly improve the reliablity of your Vault or Relayer client. Once synced, you may set `--btc-parachain-url=ws://localhost:9944` to point your client to this node.
+Running a local node will vastly improve the reliability of your Vault client. Once synced, you may set `--btc-parachain-url=ws://localhost:9944` to point your client to this node.
