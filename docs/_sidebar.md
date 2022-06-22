@@ -22,7 +22,7 @@
   * [Tokenomics](kintsugi/tokenomics.md)
   * [Crowdloans - **Airdrop live**](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
-  * [Earn With kBTC](kintsugi/Earn-With-kBTC.md)
+  * [Earn With KBTC](kintsugi/Earn-With-KBTC.md)
 
 * **Guides**
 

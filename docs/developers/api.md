@@ -19,7 +19,7 @@ Connecting to parachain nodes:
 | interBTC | IBTC        | 1              | 8        |
 | INTR     | INTR        | 2              | 10       |
 | KSM      | KSM         | 10             | 12       |
-| kBTC     | KBTC        | 11             | 8        |
+| KBTC     | KBTC        | 11             | 8        |
 | KINT     | KINT        | 12             | 12       |
 
 ?> For any newly added assets, please refer to the [on-chain implementation](https://github.com/interlay/interbtc/blob/master/primitives/src/lib.rs#L472). We will not update the currency id or index of already published assets.

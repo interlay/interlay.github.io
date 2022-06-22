@@ -1,10 +1,10 @@
 # interbtc-docs
 
-interBTC documentation for users, vaults, developers and anyone else.
+IBTC documentation for users, vaults, developers and anyone else.
 
 ## About
 
-This is the central place for user guides and links to developer documentation in the interBTC universe.
+This is the central place for user guides and links to developer documentation in the IBTC universe.
 
 ## Getting Started
 

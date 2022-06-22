@@ -179,7 +179,7 @@ You will now see your KINT balance as follows:
 
 ## Bitcoin Wallets
 
-You can use basically **any** Bitcoin wallet to interact with the kBTC (on Kintsugi) and interBTC (on Interlay).
+You can use basically **any** Bitcoin wallet to interact with the KBTC (on Kintsugi) and interBTC (on Interlay).
 
 
 <!-- tabs:start -->

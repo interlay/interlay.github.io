@@ -24,7 +24,7 @@
 ### Transfer to another address
 
 1. Go to the Transfer page on the app. Make sure you allow polkadot.js to connect to the website.
-2. Select the token you would like to transfer, e.g., DOT, iBTC, INTR, KSM, KBTC, or KINT.
+2. Select the token you would like to transfer, e.g., DOT, IBTC, INTR, KSM, KBTC, or KINT.
 3. Your available balance is shown on top of the amount input field.
 4. Enter the address of the recipient. This can be in any supported Polkadot address format and will automatically be converted to the Interlay/Kintsugi address format for the transfer.
 5. Click "Transfer" and sign the extrinsic to make a transaction.

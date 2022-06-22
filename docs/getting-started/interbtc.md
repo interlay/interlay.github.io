@@ -119,17 +119,17 @@ Vaults may be liquidated, i.e., have their collateral slashed and used to re-bal
 
 Read more about liquidations in the [Liquidations section of the Vault page](/vault/overview?id=liquidations).
 
-## kBTC: Canary Network
+## KBTC: Canary Network
 
 The flagship product of both Kintsugi and Interlay is “trustless Bitcoin for DeFi”.
 
-kBTC on Kintsugi. interBTC on Interlay.
+KBTC on Kintsugi. interBTC on Interlay.
 
-interBTC and kBTC are the same product at the core, with different parameterizations and risk profiles. Specifically, they will have different backing collaterals and security thresholds.
+interBTC and KBTC are the same product at the core, with different parameterizations and risk profiles. Specifically, they will have different backing collaterals and security thresholds.
 
 - **interBTC**. Only assets with large liquidity, which pass a rigorous security analysis, will be accepted as collateral for interBTC — similar to the MakerDAO process for DAI.
 
-- **kBTC**, on the other hand, will be open to more experimental assets, including such that have lower liquidity — e.g. new forms of staking derivatives, LP tokens, young DeFi assets, perhaps even NFTs.
+- **KBTC**, on the other hand, will be open to more experimental assets, including such that have lower liquidity — e.g. new forms of staking derivatives, LP tokens, young DeFi assets, perhaps even NFTs.
 
 
 # interBTC vs Competitors

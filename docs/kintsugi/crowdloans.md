@@ -35,7 +35,7 @@ Any KINT not used for the Core, Early, Referral and Success Airdrop will be dist
 
 ### Power User Bonus: 2% (200 000 KINT) of the initial 4-year KINT supply
 
-To incentivize kBTC adoption, 200 000 KINT will be airdropped to crowdloan participants who then also run Vaults and mint kBTC on Kusama, once Kintsugi is live. These airdrops will happen over the course of the first parachain lease period. In addition, protocol governance may approve special kBTC LP programs for crowdloan participants.
+To incentivize KBTC adoption, 200 000 KINT will be airdropped to crowdloan participants who then also run Vaults and mint KBTC on Kusama, once Kintsugi is live. These airdrops will happen over the course of the first parachain lease period. In addition, protocol governance may approve special KBTC LP programs for crowdloan participants.
 
 
 

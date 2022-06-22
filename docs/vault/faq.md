@@ -18,7 +18,7 @@ Definitely! Please only use one unique key per client to avoid race conditions o
 
 ### Do Vaults earn fees?
 
-Yes! Vaults earn fees in kBTC/interBTC and KINT/INTR.
+Yes! Vaults earn fees in KBTC/interBTC and KINT/INTR.
 
 ### How often must Vaults come online?
 
