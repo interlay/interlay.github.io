@@ -245,7 +245,7 @@ vault \
   --btc-parachain-url 'wss://api-dev-kintsugi.interlay.io:443/parachain'
 ```
 
-#### **Testnet-Kintsugi**
+#### **Testnet-Interlay**
 
 To request funds from the faucet:
 
@@ -257,7 +257,8 @@ vault \
   --keyfile keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
   --faucet-url 'https://staging.interlay-dev.interlay.io/faucet' \
-  --auto-register=KSM=faucet \
+  --auto-register=DOT=faucet \
+  --auto-register=INTR=faucet \
   --btc-parachain-url 'wss://staging.interlay-dev.interlay.io:443/parachain'
 ```
 

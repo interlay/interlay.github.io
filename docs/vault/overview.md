@@ -91,7 +91,7 @@ Each currency & network has different minimum deposits, noted here:
 * Testnet KSM: 0
 * Testnet KINT: 0
 
-#### **Testnet-Kintsugi**
+#### **Testnet-Interlay**
 
 * Testnet DOT: 0
 * Testnet INTR: 0
