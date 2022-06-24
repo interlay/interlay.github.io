@@ -69,7 +69,11 @@ The easiest way to stake KINT/INTR is via the Staking DApp!
 
 [kintsugi.interlay.io/staking](https://kintsugi.interlay.io/staking)
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
+
+[kintnet.interlay.io/staking](https://kintnet.interlay.io/staking)
+
+#### **Testnet-Interlay**
 
 [testnet.interlay.io/staking](https://testnet.interlay.io/staking)
 <!-- tabs:end -->

@@ -86,10 +86,15 @@ Each currency & network has different minimum deposits, noted here:
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 * Testnet KSM: 0
 * Testnet KINT: 0
+
+#### **Testnet-Interlay**
+
+* Testnet DOT: 0
+* Testnet INTR: 0
 
 #### **Kintsugi (Canarynet)**
 
@@ -174,10 +179,15 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 * Testnet KSM: `150%`
 * Testnet KINT: `400%`
+
+#### **Testnet-Interlay**
+
+* Testnet DOT: `150%`
+* Testnet INTR: `400%`
 
 #### **Kintsugi (Canarynet)**
 
@@ -200,10 +210,16 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 * Testnet KSM: `135%`
 * Testnet KINT: `300%`
+
+
+#### **Testnet-Interlay**
+
+* Testnet DOT: `135%`
+* Testnet INTR: `300%`
 
 #### **Kintsugi (Canarynet)**
 
@@ -229,10 +245,15 @@ The undercollateralized Vault is liquidated.
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 * Testnet KSM: `110%`
 * Testnet KINT: `200%`
+
+#### **Testnet-Interlay**
+
+* Testnet DOT: `110%`
+* Testnet INTR: `200%`
 
 #### **Kintsugi (Canarynet)**
 

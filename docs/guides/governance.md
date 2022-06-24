@@ -26,9 +26,13 @@ The minimum vKINT/vINTR required to make a proposal in governance is as follows:
 
 5 vKINT
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 5 vKINT
+
+#### **Testnet-Interlay**
+
+5 vINTR
 
 <!-- tabs:end -->
 
@@ -71,7 +75,7 @@ Both Kintsugi and Interlay use the SubSquare governance platform to discuss and 
 
 [kintsugi.subsquare.io](https://kintsugi.subsquare.io/)
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 [test-kint.subsquare.io](https://test-kint.subsquare.io/)
 

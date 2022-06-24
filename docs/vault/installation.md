@@ -146,10 +146,16 @@ Download the asset from GitHub:
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.13.0/vault-parachain-metadata-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.13.0/vault-parachain-metadata-kintsugi-testnet
+```
+
+#### **Testnet-Interlay**
+
+```shell
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.13.0/vault-parachain-metadata-interlay-testnet
 ```
 
 #### **Kintsugi**
@@ -192,11 +198,18 @@ cd interbtc-clients
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 ```shell
 git checkout 1.13.0
-cargo build --bin vault --features parachain-metadata-testnet
+cargo build --bin vault --features parachain-metadata-kintsugi-testnet
+```
+
+#### **Testnet-Interlay**
+
+```shell
+git checkout 1.13.0
+cargo build --bin vault --features parachain-metadata-interlay-testnet
 ```
 
 #### **Kintsugi**
@@ -216,7 +229,7 @@ To start the client, you can connect to our parachain full node:
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 To request funds from the faucet:
 
@@ -227,9 +240,26 @@ vault \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
-  --faucet-url 'https://api-testnet.interlay.io/faucet' \
+  --faucet-url 'https://api-dev-kintsugi.interlay.io/faucet' \
   --auto-register=KSM=faucet \
-  --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain'
+  --btc-parachain-url 'wss://api-dev-kintsugi.interlay.io:443/parachain'
+```
+
+#### **Testnet-Interlay**
+
+To request funds from the faucet:
+
+```shell
+vault \
+  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-pass rpcpassword \
+  --keyfile keyfile.json \
+  --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+  --faucet-url 'https://staging.interlay-dev.interlay.io/faucet' \
+  --auto-register=DOT=faucet \
+  --auto-register=INTR=faucet \
+  --btc-parachain-url 'wss://staging.interlay-dev.interlay.io:443/parachain'
 ```
 
 #### **Kintsugi**
@@ -260,7 +290,7 @@ On startup, the Vault will automatically create or load the Bitcoin wallet using
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 Download the systemd service file and a small helper script to install the service.
 
@@ -305,6 +335,53 @@ To stop the service, run:
 
 ```shell
 sudo systemctl stop testnet-vault.service
+```
+
+#### **Testnet-Interlay**
+
+Download the systemd service file and a small helper script to install the service.
+
+```shell
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-interlay-vault.service
+```
+
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here.
+
+```shell
+vim testnet-vault.service
+```
+
+Install the service and start it.
+
+```shell
+chmod +x ./setup && sudo ./setup testnet-interlay
+sudo systemctl daemon-reload
+sudo systemctl start testnet-interlay-vault.service
+```
+
+You can also automatically start the Vault client on system reboot with:
+
+```shell
+sudo systemctl enable testnet-interlay-vault.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=testnet-interlay-vault.service
+```
+
+Or by streaming the logs to the `vault.log` file in the current directory:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=testnet-interlay-vault.service &> vault.log
+```
+
+To stop the service, run:
+
+```shell
+sudo systemctl stop testnet-interlay-vault.service
 ```
 
 #### **Kintsugi**

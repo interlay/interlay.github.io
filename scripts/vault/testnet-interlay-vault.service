@@ -1,0 +1,22 @@
+[Unit]
+Description=Vault servicing issue and redeem requests for interBTC
+After=network.target
+
+[Service]
+Environment="RUST_LOG=info"
+Type=simple
+ExecStart=/opt/testnet-interlay/vault/vault \
+  --bitcoin-rpc-url http://localhost:18332 \
+  --bitcoin-rpc-user rpcuser \
+  --bitcoin-rpc-pass rpcpassword \
+  --keyfile /opt/testnet/vault/keyfile.json \
+  --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+  --btc-parachain-url 'wss://staging.interlay-dev.interlay.io:443/parachain' \
+  --faucet-url 'https://staging.interlay-dev.interlay.io/faucet' \
+  --auto-register=DOT=faucet \
+  --auto-register=INTR=faucet
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
