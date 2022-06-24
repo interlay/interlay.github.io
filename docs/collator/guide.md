@@ -84,7 +84,7 @@ Download the pre-built binary and map the directory to the local `base-path`.
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.13.0/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.16.0/interbtc-parachain
 chmod +x interbtc-parachain
 ./interbtc-parachain \
   --base-path=${PWD}/data \
@@ -153,7 +153,7 @@ cd interbtc
 #### **Kintsugi**
 
 ```shell
-git checkout 1.13.0
+git checkout 1.16.0
 cargo build --release
 
 ./target/release/interbtc-parachain \
