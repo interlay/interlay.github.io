@@ -28,7 +28,11 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](gui
 
 Coming soon
 
-##### **Testnet**
+##### **Testnet-Kintsugi**
+
+[testnet.interlay.io/bridge](https://kintnet.interlay.io/bridge)
+
+##### **Testnet-Interlay**
 
 [testnet.interlay.io/bridge](https://testnet.interlay.io/bridge)
 <!-- tabs:end -->
@@ -48,7 +52,7 @@ A list of exchanges with KINT listings can be found on [Coingecko](https://www.c
 Coming soon
 
 ##### **Testnet**
-On testnet, you can obtain some test KINT by clicking on the "KINT Faucet" button on the right-hand side of the sidebar.
+On testnet, you can obtain some test KINT/INTR by clicking on the "KINT/INTR Faucet" button on the right-hand side of the top bar.
 <!-- tabs:end -->
 
 #### 3. Enter the amount of BTC you want to bridge to Interlay/Kintsugi
@@ -77,7 +81,10 @@ If you navigate away from the page, you can always find these details again unde
 
 Coming soon
 
-##### **Testnet**
+##### **Testnet-Kintsugi**
+
+[testnet.interlay.io/transactions](https://kintnet.interlay.io/transactions)
+##### **Testnet-Interlay**
 
 [testnet.interlay.io/transactions](https://testnet.interlay.io/transactions)
 <!-- tabs:end -->
@@ -216,7 +223,11 @@ At the end of this guide you will have:
 
 Coming soon
 
-##### **Testnet**
+##### **Testnet-Kintsugi**
+
+[kintnet.interlay.io/bridge](https://kintnet.interlay.io/bridge)
+
+##### **Testnet-Interlay**
 
 [testnet.interlay.io/bridge](https://testnet.interlay.io/bridge)
 <!-- tabs:end -->
@@ -251,7 +262,11 @@ You can check the status of your redeem request in the Transactions view in the 
 
 Coming soon
 
-##### **Testnet**
+##### **Testnet-Kintsugi**
+
+[kintnet.interlay.io/transactions](https://kintnet.interlay.io/transactions)
+
+##### **Testnet-Interlay**
 
 [testnet.interlay.io/transactions](https://testnet.interlay.io/transactions)
 <!-- tabs:end -->

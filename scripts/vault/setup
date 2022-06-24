@@ -16,6 +16,11 @@ case $1 in
     create_vault_service
     ;;
 
+  testnet-interlay)
+    network="testnet-interlay"
+    create_vault_service
+    ;;
+
   kintsugi)
     network="kintsugi"
     create_vault_service

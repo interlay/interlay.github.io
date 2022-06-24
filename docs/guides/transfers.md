@@ -15,7 +15,11 @@
 
 [kintsugi.interlay.io/transfer](https://kintsugi.interlay.io/transfer)
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
+
+[kintnet.interlay.io/transfer](https://kintnet.interlay.io/transfer)
+
+#### **Testnet-Interlay**
 
 [testnet.interlay.io/transfer](https://testnet.interlay.io/transfer)
 

@@ -45,11 +45,17 @@ Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain
 
 Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 #### Polkadot.js Apps
 
 Go to [https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Fapi-dev-kintsugi.interlay.io%252Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Fapi-dev-kintsugi.interlay.io%252Fparachain#/explorer)
+
+#### **Testnet-Interlay**
+
+#### Polkadot.js Apps
+
+Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interlay.io%2Fparachain#/explorer)
 
 <!-- tabs:end -->
 
@@ -132,11 +138,17 @@ Go to [sub.id](https://sub.id/#/) and enter your account.
 
 Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/accounts)
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 #### Polkadot.js Apps
 
 Go to [https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Fapi-dev-kintsugi.interlay.io%252Fparachain#/accounts](https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Fapi-dev-kintsugi.interlay.io%252Fparachain#/accounts)
+
+#### **Testnet-Interlay**
+
+#### Polkadot.js Apps
+
+Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interlay.io%2Fparachain#/accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interlay.io%2Fparachain#/accounts)
 
 <!-- tabs:end -->
 

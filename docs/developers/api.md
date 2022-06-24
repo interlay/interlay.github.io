@@ -7,7 +7,8 @@ Connecting to parachain nodes:
 * **Interlay (by Kintsugi Labs)**: `wss://api.interlay.io:443/parachain`
 * **Kintsugi (by Kintsugi Labs)**: `wss://api-kusama.interlay.io:443/parachain`
 * **Kintsugi (by OnFinality)**: `wss://kintsugi.api.onfinality.io/public-ws`
-* **Testnet**: `wss://api-testnet.interlay.io:443/parachain`
+* **Testnet-Kintsugi**: `wss://api-dev-kintsugi.interlay.io:443/parachain`
+* **Testnet-Interlay**: `wss://staging.interlay-dev.interlay.io:443/parachain`
 
 ## Asset API
 

@@ -34,42 +34,21 @@ docker-compose up
 
 ## Standard Installation
 
-### 1. Migrate to the new file path and name
-
-Some older versions of the docs used different paths and service names. If you were using interbtc-vault.service for testnet or kintsugi, you need to run the following:
+### 1. Stop the service
 
 <!-- tabs:start -->
 
-#### **Testnet**
-
-```shell
-# rename the service file
-mv /usr/lib/systemd/system/interbtc-vault.service /usr/lib/systemd/system/testnet-vault.service
-
-# replace the /opt/interbtc/ path in the service by /opt/testnet/
-sed -i 's+/opt/interbtc/+/opt/testnet/+g' /usr/lib/systemd/system/testnet-vault.service
-```
-
-#### **Kintsugi**
-
-```shell
-# rename the service file
-mv /usr/lib/systemd/system/interbtc-vault.service /usr/lib/systemd/system/kintsugi-vault.service
-
-# replace the /opt/interbtc/ path in the service by /opt/kintsugi/
-sed -i 's+/opt/interbtc/+/opt/kintsugi/+g' /usr/lib/systemd/system/kintsugi-vault.service
-```
-
-<!-- tabs:end -->
-
-### 2. Stop the service
-
-<!-- tabs:start -->
-
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 ```shell
 sudo systemctl stop testnet-vault.service
+```
+
+
+#### **Testnet-Interlay**
+
+```shell
+sudo systemctl stop testnet-interlay-vault.service
 ```
 
 #### **Kintsugi**
@@ -87,13 +66,22 @@ OR terminate the process with `Ctrl+C`.
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.13.0/vault-parachain-metadata-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.13.0/vault-parachain-metadata-kintsugi-testnet
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup testnet
+```
+
+#### **Testnet-Interlay**
+
+```shell
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.13.0/vault-parachain-metadata-interlay-testnet
+
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
+chmod +x ./setup && sudo ./setup testnet-interlay
 ```
 
 #### **Kintsugi**
@@ -111,10 +99,16 @@ chmod +x ./setup && sudo ./setup kintsugi
 
 <!-- tabs:start -->
 
-#### **Testnet**
+#### **Testnet-Kintsugi**
 
 ```shell
 sudo systemctl start testnet-vault.service
+```
+
+#### **Testnet-Interlay**
+
+```shell
+sudo systemctl start testnet-interlay-vault.service
 ```
 
 #### **Kintsugi**
