@@ -61,7 +61,7 @@ Create a `keyfile.json` file that contains the mnemonic of the substrate account
 
 !> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
 
-You may use [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) to generate this automatically:
+You may use [subkey](https://docs.substrate.io/reference/command-line-tools/subkey/) to generate this automatically:
 
 ```shell
 subkey generate --output-type json | jq '{(.accountId): .secretPhrase}' > keyfile.json
