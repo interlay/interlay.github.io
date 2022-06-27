@@ -27,10 +27,12 @@ The setup below is - on purpose - technically challenging to minimize the chance
 
 When operating a Vault client ensure the following:
 
-1. **Do not operate two or more Vault clients with the same keyfile/account at the same time.** The Vault stands the risk to execute redeem transactions twice which will be flagged as theft. The Vault will in turn lose all its collateral.
+1. **Do not operate two or more Vault clients with the same keyname/account at the same time.** The Vault stands the risk to execute redeem transactions twice which will be flagged as theft. The Vault will in turn lose all its collateral.
 2. **Do not allow any third party access to the server operating the Vault client.** If anyone is able to access the Bitcoin or Interlay/Kintsugi wallets, the third-party is able to extract all funds. Specifically, make sure that the [RPC ports for the Bitcoin full node are not accessible via the internet](/vault/installation?id=_1-install-a-bitcoin-node).
 3. **Do backup Bitcoin and Interlay/Kintsugi keys.** If the keys are not backed-up and the server operating the Vault client loses this data, the Vault stands the risk of losing all funds. There are notes for backing up the [Substrate key](/vault/installation?id=keyfile) and for backing up the [Bitcoin wallet linked in the installation below](/vault/installation?id=_1-install-a-bitcoin-node).
 4. **Do monitor the Vault for potential failures.** This includes three parts: (1) keeping the collateralization level above the liquidation threshold, (2) fulfilling redeem requests on time, (3) ensuring that you have enough BTC in the Vault's wallet to fulfill redeem requests. Make sure to check out the [monitoring guides to find out how to achieve this](/vault/guide?id=monitoring).
+
+Multiple vaults _can_ share the same bitcoin node, but only if they are each started with a unique `--keyname` argument, regardless of the network the vault runs on. That is, vaults need to use unique `--keyname` arguments even if one is running on Kintsugi while the other is running on Interlay.
 
 ## Prerequisites
 
