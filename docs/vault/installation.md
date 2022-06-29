@@ -115,7 +115,7 @@ Please note the following default ports for incoming TCP and JSON-RPC connection
 
 ?> Synchronizing the BTC testnet requires 40GB of storage and the BTC mainnet requires 400GB. Depending on your internet connection, the download time may take anything from hours to days.
 
-Since the Vault does not require a Bitcoin node with all the data and to reduce hardware requirements, you can start Bitcoin with the following [optimizations](https://bitcoin.org/en/full-node#what-is-a-full-node):
+Use the tested commands below to start the Bitcoin node. Please refer to the [Bitcoin full node guide](https://bitcoin.org/en/full-node#what-is-a-full-node) for more details on how to operate a Bitcoin node.
 
 <!-- tabs:start -->
 
