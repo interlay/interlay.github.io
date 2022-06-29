@@ -1,5 +1,15 @@
 # Installing the Vault Client
 
+<a class="btc-raffle-button util-w100" href="https://interlay.typeform.com/to/CqV7GIYq">
+  <b>BTC in DeFi survey + RAFFLE! </br>Win Bitcoin Amsterdam 2022 tickets!</b>
+</a>
+
+For experts & Vault operators:
+</br>
+<a class="docs-button util-w100" href="https://forms.gle/ndrcxfF7qnnbDH4i8">
+  iBTC Vault operator survey
+</a>
+
 Running a Vault will allow you to hold BTC of users in custody and in return earn a return on your collateral.
 Since Vault clients take funds into custody, this guide assumes that you have operated a Linux server before and understand how to securely store hot wallets.
 

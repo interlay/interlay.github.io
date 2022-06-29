@@ -79,6 +79,17 @@
   border-radius: var(--border-radius-m);
 }
 
+.btc-raffle-button {
+  background-color: #ff9900;
+  border: none;
+  color: white !important;
+  text-align: center;
+  text-decoration: none !important;
+  display: block;
+  padding: 1em 2rem;
+  border-radius: var(--border-radius-m);
+}
+
 .util-w100 {
   width: 100%
 }
