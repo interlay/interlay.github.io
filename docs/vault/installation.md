@@ -41,8 +41,10 @@ When operating a Vault client ensure the following:
 2. **Do NOT allow any third party access to the server operating the Vault client.** If anyone is able to access the Bitcoin or Interlay/Kintsugi wallets, the third-party is able to extract all funds. Specifically, make sure that the [RPC ports for the Bitcoin full node are not accessible via the internet](/vault/installation?id=_1-install-a-bitcoin-node).
 3. **DO backup Bitcoin and Interlay/Kintsugi keys.** If the keys are not backed-up and the server operating the Vault client loses this data, the Vault stands the risk of losing all funds. There are notes for backing up the [Substrate key](/vault/installation?id=keyfile) and for backing up the [Bitcoin wallet linked in the installation below](/vault/installation?id=_1-install-a-bitcoin-node).
 4. **DO monitor the Vault for potential failures.** This includes three parts: (1) keeping the collateralization level above the liquidation threshold, (2) fulfilling redeem requests on time, (3) ensuring that you have enough BTC in the Vault's wallet to fulfill redeem requests. Make sure to check out the [monitoring guides to find out how to achieve this](/vault/guide?id=monitoring).
+5. **DO use unique `--prometheus-port` arguments when running multiple clients.** Otherwise the vault client may fail to open the port.
 
-Multiple vaults _can_ share the same bitcoin node, but only if they are each started with a unique `--keyname` argument, regardless of the network the vault runs on. That is, vaults need to use unique `--keyname` arguments even if one is running on Kintsugi while the other is running on Interlay.
+!> Multiple vaults _can_ share the same bitcoin node, but only if they are each started with a unique `--keyname` argument, regardless of the network the vault runs on. That is, vaults need to use unique `--keyname` arguments even if one is running on Kintsugi while the other is running on Interlay. Failing to do so can result in the vaults being liquidated because of theft.
+
 
 ## Prerequisites
 
