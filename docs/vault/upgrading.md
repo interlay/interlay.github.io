@@ -11,6 +11,9 @@ We will announce on public channels when a new release is made available for the
 
 !> Occasionally, breaking changes will be introduced to the Vault client. In these cases it is important to update your Vault client in a timely manner to not run the risk of being slashed. We will notify on our channels (Discord, Twitter, Telegram) when this is the case.
 
+## Useful Notes `1.14.1` - TODO set correct version here
+ - We now support pruned bitcoin nodes. You may add the `-prune=550` argument to your bitcoin node and restart it, to bring disk space usage to about 0.5GiB on both mainnet and testnet. See the relevant section in the [installation guide](vault/installation.md#_2-start-the-bitcoin-node).
+
 ## Quickstart Installation
 
 ### 1. Stop the containers
