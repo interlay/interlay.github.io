@@ -69,7 +69,7 @@ OR terminate the process with `Ctrl+C`.
 #### **Testnet-Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.13.0/vault-parachain-metadata-kintsugi-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.15.0/vault-parachain-metadata-kintsugi-testnet
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup testnet
@@ -78,7 +78,7 @@ chmod +x ./setup && sudo ./setup testnet
 #### **Testnet-Interlay**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.13.0/vault-parachain-metadata-interlay-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.15.0/vault-parachain-metadata-interlay-testnet
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup testnet-interlay
@@ -87,7 +87,7 @@ chmod +x ./setup && sudo ./setup testnet-interlay
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.14.0/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.15.0/vault-parachain-metadata-kintsugi
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup kintsugi
