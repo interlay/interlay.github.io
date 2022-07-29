@@ -69,6 +69,8 @@ There is a minimum global secure threshold enforced across all Vaults. However, 
 
 The threshold is an optional parameter - submitting with an empty threshold will _reset_ your vault to use the global threshold (if a custom one had been previously set).
 
+?> It is not possible to set an individual secure threshold that is below the globally enforced secure threshold. The parachain will always pick the higher of the two.
+
 Including this parameter will instead set a custom threshold, provided it is higher than the default global one. Enter a number equal to the percentage (e.g., 300%) multiplied by 10^16 (e.g, 3000000000000000000).
 
 ## Activate/Deactive the Vault for new Issue Requests
