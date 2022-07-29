@@ -61,7 +61,7 @@ Go to the Vault navigation item in the sidebar and click on the `Withdraw Collat
 
 The secure threshold is a collateralization threshold that acts as a buffer above the thresholds that penalize a Vault. Being below the secure threshold incurs no penalty, but it disables the Vault's ability to accept issue requests, limiting the risk of its collateralization falling further.
 
-There is a minimum global secure threshold enforced across all vaults; however, you may optionally set a custom, higher one if you wish for a bigger security margin.
+There is a minimum global secure threshold enforced across all Vaults. However, Vault operators may optionally set a custom, higher threshold if they wish for a bigger security margin.
 
 **Polkadot.js**
 1. Go to polkadot.js.org/apps -> extrinsics -> VaultRegistry -> setCustomSecureThreshold
