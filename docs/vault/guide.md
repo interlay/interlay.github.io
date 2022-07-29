@@ -7,6 +7,7 @@ At the end of this document you will have:
 
 - [x] [Learned about automatic actions of your Vault](#automatic-actions)
 - [x] [Deposited and withdrawn collateral](#collateral)
+- [x] [Set a custom secure threshold](#setting-a-custom-secure-threshold)
 - [x] [Activated and deactivated the Vault](#activatedeactive-the-vault-for-new-issue-requests)
 - [x] [Self-Minted KBTC/IBTC](#self-minting)
 - [x] [Visited the Vault dashboard](#dapp-vault-dashboard)
@@ -55,6 +56,20 @@ Go to the Vault navigation item in the sidebar and click on the `Deposit Collate
 **Web UI**
 
 Go to the Vault navigation item in the sidebar and click on the `Withdraw Collateral` button. Then follow the instructions.
+
+## Setting a custom secure threshold
+
+The secure threshold is a collateralization threshold that acts as a buffer above the thresholds that penalize a Vault. Being below the secure threshold incurs no penalty, but it disables the Vault's ability to accept issue requests, limiting the risk of its collateralization falling further.
+
+There is a minimum global secure threshold enforced across all Vaults. However, Vault operators may optionally set a custom, higher threshold if they wish for a bigger security margin.
+
+**Polkadot.js**
+1. Go to polkadot.js.org/apps -> extrinsics -> VaultRegistry -> setCustomSecureThreshold
+2. Set the collateral and wrapped currency pair (e.g., KSM/KBTC) and the threshold parameter
+
+The threshold is an optional parameter - submitting with an empty threshold will _reset_ your vault to use the global threshold (if a custom one had been previously set).
+
+Including this parameter will instead set a custom threshold, provided it is higher than the default global one. Enter a number equal to the percentage (e.g., 300%) multiplied by 10^16 (e.g, 3000000000000000000).
 
 ## Activate/Deactive the Vault for new Issue Requests
 
