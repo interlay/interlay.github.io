@@ -59,7 +59,7 @@ Go to the Vault navigation item in the sidebar and click on the `Withdraw Collat
 
 ## Setting a custom secure threshold
 
-The secure threshold is a collateralization threshold that acts as a buffer above the thresholds that penalise your vault. Being below the secure threshold incurs no penalty, but disables your vault's ability to accept issue requests, in order to limit the risk of its collateralization falling further.
+The secure threshold is a collateralization threshold that acts as a buffer above the thresholds that penalize a Vault. Being below the secure threshold incurs no penalty, but it disables the Vault's ability to accept issue requests, limiting the risk of its collateralization falling further.
 
 There is a minimum global secure threshold enforced across all vaults; however, you may optionally set a custom, higher one if you wish for a bigger security margin.
 
