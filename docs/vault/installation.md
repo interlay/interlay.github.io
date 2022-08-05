@@ -160,13 +160,13 @@ Download the asset from GitHub:
 
 <!-- tabs:start -->
 
-#### **Testnet-Kintsugi**
+#### **Testnet (Kintsugi)**
 
 ```shell
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.15.0/vault-parachain-metadata-kintsugi-testnet
 ```
 
-#### **Testnet-Interlay**
+#### **Testnet (Interlay)**
 
 ```shell
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.15.0/vault-parachain-metadata-interlay-testnet
@@ -176,6 +176,12 @@ wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.1
 
 ```shell
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.15.0/vault-parachain-metadata-kintsugi
+```
+
+#### **Interlay**
+
+```shell
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0/vault-parachain-metadata-interlay
 ```
 
 <!-- tabs:end -->
@@ -212,14 +218,14 @@ cd interbtc-clients
 
 <!-- tabs:start -->
 
-#### **Testnet-Kintsugi**
+#### **Testnet (Kintsugi)**
 
 ```shell
 git checkout 1.15.0
 cargo build --bin vault --features parachain-metadata-kintsugi-testnet
 ```
 
-#### **Testnet-Interlay**
+#### **Testnet (Interlay)**
 
 ```shell
 git checkout 1.15.0
@@ -233,6 +239,13 @@ git checkout 1.15.0
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
+#### **Interlay**
+
+```shell
+git checkout 1.16.0
+cargo build --bin vault --features parachain-metadata-interlay
+```
+
 <!-- tabs:end -->
 
 ### 5. Start the Vault client
@@ -243,7 +256,7 @@ To start the client, you can connect to our parachain full node:
 
 <!-- tabs:start -->
 
-#### **Testnet-Kintsugi**
+#### **Testnet (Kintsugi)**
 
 To request funds from the faucet:
 
@@ -259,7 +272,7 @@ vault \
   --btc-parachain-url 'wss://api-dev-kintsugi.interlay.io:443/parachain'
 ```
 
-#### **Testnet-Interlay**
+#### **Testnet (Interlay)**
 
 To request funds from the faucet:
 
@@ -291,6 +304,21 @@ vault \
   --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain'
 ```
 
+#### **Interlay**
+
+To register with 30 DOT (300000000000 Planck):
+
+```shell
+vault \
+  --bitcoin-rpc-url http://localhost:8332 \
+  --bitcoin-rpc-user <INSERT_CUSTOM_USERNAME> \
+  --bitcoin-rpc-pass <INSERT_YOUR_PASSWORD> \
+  --keyfile keyfile.json \
+  --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+  --auto-register=DOT=300000000000 \
+  --btc-parachain-url 'wss://api.interlay.io:443/parachain'
+```
+
 <!-- tabs:end -->
 
 Logging can be configured using the [`RUST_LOG`](https://docs.rs/env_logger/0.8.3/env_logger/#enabling-logging) environment variable.
@@ -304,7 +332,7 @@ On startup, the Vault will automatically create or load the Bitcoin wallet using
 
 <!-- tabs:start -->
 
-#### **Testnet-Kintsugi**
+#### **Testnet (Kintsugi)**
 
 Download the systemd service file and a small helper script to install the service.
 
@@ -351,7 +379,7 @@ To stop the service, run:
 sudo systemctl stop testnet-vault.service
 ```
 
-#### **Testnet-Interlay**
+#### **Testnet (Interlay)**
 
 Download the systemd service file and a small helper script to install the service.
 
@@ -447,6 +475,49 @@ sudo systemctl stop kintsugi-vault.service
 
 #### **Interlay**
 
-Coming soon.
+Download the systemd service file and a small helper script to install the service.
+
+```shell
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/interlay-vault.service
+```
+
+?> Please adjust the systemd service file to insert your substrate key, the Bitcoin RPC username and password, and the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
+
+```shell
+vim interlay-vault.service
+```
+
+Install the service and start it.
+
+```shell
+chmod +x ./setup && sudo ./setup interlay
+sudo systemctl daemon-reload
+sudo systemctl start interlay-vault.service
+```
+
+You can also automatically start the Vault client on system reboot with:
+
+```shell
+sudo systemctl enable interlay-vault.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=interlay-vault.service
+```
+
+Or by streaming the logs to the `vault.log` file in the current directory:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=interlay-vault.service &> vault.log
+```
+
+To stop the service, run:
+
+```shell
+sudo systemctl stop interlay-vault.service
+```
 
 <!-- tabs:end -->
