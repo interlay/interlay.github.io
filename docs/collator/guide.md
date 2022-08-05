@@ -195,7 +195,7 @@ cargo build --release
 #### **Interlay**
 
 ```shell
-git checkout 1.17.0
+git checkout 1.18.0
 cargo build --release
 
 ./target/release/interbtc-parachain \
