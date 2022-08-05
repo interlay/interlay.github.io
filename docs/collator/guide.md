@@ -38,7 +38,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-parachain-1-8-1 \
+  interlayhq/interbtc:interbtc-parachain-1-17-0 \
   interbtc-parachain \
   --base-path=/data \
   --chain=kintsugi \
@@ -57,20 +57,29 @@ docker run \
   --pruning=1000
 ```
 
-#### **Testnet**
+#### **Interlay**
 
 ```shell
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-standalone-1-8-1 \
-  interbtc-standalone \
+  interlayhq/interbtc:interbtc-parachain-1-18-0 \
+  interbtc-parachain \
   --base-path=/data \
-  --chain=testnet \
+  --chain=interlay \
   --execution=wasm \
   --wasm-execution=compiled \
   --unsafe-ws-external \
-  --rpc-methods=unsafe
+  --rpc-methods=unsafe \
+  --pruning=archive \
+  -- \
+  --rpc-cors=all \
+  --no-telemetry \
+  --execution=wasm \
+  --wasm-execution=compiled \
+  --database=RocksDb \
+  --unsafe-pruning \
+  --pruning=1000
 ```
 
 <!-- tabs:end -->
@@ -84,7 +93,7 @@ Download the pre-built binary and map the directory to the local `base-path`.
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.16.0/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.17.0/interbtc-parachain
 chmod +x interbtc-parachain
 ./interbtc-parachain \
   --base-path=${PWD}/data \
@@ -104,18 +113,27 @@ chmod +x interbtc-parachain
   --pruning=1000
 ```
 
-#### **Testnet**
+#### **Interlay**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.13.0/interbtc-standalone
-chmod +x interbtc-standalone
-./interbtc-standalone \
+wget https://github.com/interlay/interbtc/releases/download/1.18.0/interbtc-parachain
+chmod +x interbtc-parachain
+./interbtc-parachain \
   --base-path=${PWD}/data \
-  --chain=testnet \
+  --chain=interlay \
   --execution=wasm \
   --wasm-execution=compiled \
   --unsafe-ws-external \
-  --rpc-methods=unsafe
+  --rpc-methods=unsafe \
+  --pruning=archive \
+  -- \
+  --rpc-cors=all \
+  --no-telemetry \
+  --execution=wasm \
+  --wasm-execution=compiled \
+  --database=RocksDb \
+  --unsafe-pruning \
+  --pruning=1000
 ```
 
 <!-- tabs:end -->
@@ -139,7 +157,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 ?> This step will take some time depending on your hardware.
 
-Clone the interBTC bridge code, checkout the appropriate release and build the node:
+Clone the parachain code, checkout the appropriate release and build the node:
 
 ```shell
 git clone git@github.com:interlay/interbtc.git
@@ -153,7 +171,7 @@ cd interbtc
 #### **Kintsugi**
 
 ```shell
-git checkout 1.16.0
+git checkout 1.17.0
 cargo build --release
 
 ./target/release/interbtc-parachain \
@@ -174,19 +192,28 @@ cargo build --release
   --pruning=1000
 ```
 
-#### **Testnet**
+#### **Interlay**
 
 ```shell
-git checkout 1.13.0
+git checkout 1.18.0
 cargo build --release
 
-./target/release/interbtc-standalone \
+./target/release/interbtc-parachain \
   --base-path=${PWD}/data \
-  --chain=testnet \
+  --chain=interlay \
   --execution=wasm \
   --wasm-execution=compiled \
   --unsafe-ws-external \
-  --rpc-methods=unsafe
+  --rpc-methods=unsafe \
+  --pruning=archive \
+  -- \
+  --rpc-cors=all \
+  --no-telemetry \
+  --execution=wasm \
+  --wasm-execution=compiled \
+  --database=RocksDb \
+  --unsafe-pruning \
+  --pruning=1000
 ```
 
 <!-- tabs:end -->
