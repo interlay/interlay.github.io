@@ -13,7 +13,7 @@ Please note that while we are happy to surface such use cases, this is by no mea
 
 * **Type Of Opportunity**. Incentivised pool between iBTC and aUSD.
 * **Opportunity / Incentives**. Pool incentivized by Interlay and Acala networks in INTR and ACA. More incentives tbc. 
-* **Duration**. Boostrap phase stars Aug 11, 2022, runs for 48h. Main pool launches on Aug 13, 2022. Initially incentives are provided for 3 months.
+* **Duration**. Bootstrap phase stars Aug 11, 2022, runs for 48h. Main pool launches on Aug 13, 2022. Initially incentives are provided for 3 months.
 * **Transferring IBTC to Karura**:  To transfer IBTC from Interlay to Acala, you can use the dedicated app on Acala: [Transfer IBTC to Acala](https://apps.acala.network/bridge)
 * **Link To The Pool**: [Acala IBTC/aUSD](https://apps.acala.network/earn)
 
