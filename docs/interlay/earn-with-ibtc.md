@@ -4,7 +4,7 @@ Since one of the main reasons for issuing IBTC is to use it with DeFi dApps or p
 
 Please note that while we are happy to surface such use cases, this is by no means financial advice. Please do your own research and inform yourself about impermanent loss and about each dApp's or protocol's policies and fees. Interlay holds no liability for 3rd party networks / services. 
 
-## Selected Pool Opportunities - Launching August 11th!
+## Selected Use Cases - Launching August 11th!
 
 [![Acala Pool](../_assets/img/interlay/AcalaPool.png ':size=40%')](https://apps.acala.network/earn)
 [![StellaSwap Pool](../_assets/img/interlay/StellaSwapPool.png ':size=40%')](https://app.stellaswap.com/farm)
