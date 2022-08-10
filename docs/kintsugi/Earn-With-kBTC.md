@@ -4,7 +4,7 @@ Since one of the main reasons for issuing KBTC is to use it with DeFi dApps or p
 
 Please note that while we are happy to surface such use cases and might provide incentives for one or more, this is by no means financial advice. Please do your own research and inform yourself about impermanent loss and about each dApp's or protocol's policies and fees.
 
-### All Opportunities At A Glance:
+### All Use cases At A Glance:
 
 [![Solarbeam Pool](../_assets/img/kintsugi/Solarbeam%20kBTC%20Pool.png)](https://app.solarbeam.io/farm?filter=stable)
 [![Karura Pool](../_assets/img/kintsugi/Karura%20kBTC%20Pool.png)](https://apps.karura.network/earn)
