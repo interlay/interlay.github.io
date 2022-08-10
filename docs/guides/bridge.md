@@ -39,7 +39,7 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](gui
 
 The bridge has 2 tabs: Issue and Redeem. Ensure you are on the Issue tab.
 
-![The Issue page](../_assets/img/guide/bridge-issue-page.png)
+![The Issue page](../_assets/img/guide/interlay-bridge-issue-page.png)
 
 #### 2. Obtain KINT/INTR to pay the transaction fees.
 
@@ -71,7 +71,7 @@ Check the details of your issue request and click **"Confirm"**. Sign the transa
 
 Use your Bitcoin wallet to transfer the specified `amount` to the given `address`.
 
-![Bitcoin transaction details](../_assets/img/guide/bridge-issue-tx-details.png)
+![Bitcoin transaction details](../_assets/img/guide/interlay-bridge-issue-tx-details.png)
 
 If you navigate away from the page, you can always find these details again under the **Transactions** page.
 
@@ -91,11 +91,11 @@ If you navigate away from the page, you can always find these details again unde
 [testnet.interlay.io/transactions](https://testnet.interlay.io/transactions)
 <!-- tabs:end -->
 
-![Tansactions page](../_assets/img/guide/bridge-transactions-page.png)
+![Tansactions page](../_assets/img/guide/interlay-bridge-transactions-page.png)
 
 Find your pending issue request in the **"Issue Requests"** table and click on it. There you will find the details of the Bitcoin transaction you need to make.
 
-![Tansactions page](../_assets/img/guide/bridge-transaction-page-tx-details.png)
+![Tansactions page](../_assets/img/guide/interlay-bridge-transaction-page-tx-details.png)
 
 ?> Optional: you can use a hardware wallet
 
@@ -192,7 +192,7 @@ You can check the status of your issue request in the Transactions view in the *
 
 If your Bitcoin transaction has enough confirmations but has not been executed by a Vault yet, click on the issue request that is "Pending". This will open a modal, where you will see a **"Claim KBTC"** (or **"Claim IBTC"**) button. To finalize the Issue process and claim your IBTC/KBTC, either wait for a Vault to auto-execute your request, or click **"Claim"** yourself.
 
-![Tansactions page](../_assets/img/guide/bridge-issue-claim.png)
+![Tansactions page](../_assets/img/guide/interlay-bridge-issue-claim.png)
 
 ## Redeem
 
@@ -235,7 +235,7 @@ At the end of this guide you will have:
 
 The bridge has 2 tabs: Issue and Redeem. Ensure you are on the Redeem tab.
 
-![Redeem page](../_assets/img/guide/bridge-redeem-page.png)
+![Redeem page](../_assets/img/guide/interlay-bridge-redeem-page.png)
 
 #### 2. Enter the amount of IBTC/KBTC you want to redeem and the BTC address you want to receive your BTC to
 
@@ -243,7 +243,7 @@ Enter the amount of IBTC/KBTC you want to redeem, and the Bitcoin address where 
 
 Check the bridge fee that is subtracted from your redeemed amount and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
-![Redeem confirmation modal](../_assets/img/guide/bridge-redeem-popup.png)
+![Redeem confirmation modal](../_assets/img/guide/interlay-bridge-redeem-popup.png)
 
 #### 3. Wait for confirmation of your request and receive BTC automatically
 
