@@ -15,6 +15,7 @@
   * [Tokenomics](interlay/tokenomics.md)
   * [Crowdloans - **Airdrop live**](interlay/crowdloans.md)
   * [Governance](interlay/governance.md)
+  * [Earn With iBTC](interlay/earn-with-ibtc.md)
 
 * **Kintsugi Canarynet (Kusama)**
 
