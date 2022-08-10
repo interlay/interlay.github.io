@@ -1,4 +1,4 @@
-# Earn With Your IBTC
+# Use Your IBTC
 
 Since one of the main reasons for issuing IBTC is to use it with DeFi dApps or protocols, we have collected below some of the use cases and opportunities that you can consider.
 
