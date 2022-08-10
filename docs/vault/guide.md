@@ -127,13 +127,23 @@ Sometimes you may prefer to _only_ self mint. However, it's possible that you re
 
 #### If vault is not yet registered
 
-If you have not registered the vault yet, you can atomically register with collateral and do the self-issue. To achieve this, first start your vault client without the `--auto-register` CLI argument. When the client starts up, it will register your public bitcoin key, which is a prerequisite to vault registration. Next, you use the polkadot.js app to do a batch of `registerVault` and `requestIssue`. The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page on the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly. An example is shown below.
+If you have not registered the vault yet, you can atomically register with collateral and do the self-issue. 
+
+1. First start your vault client without the `--auto-register` CLI argument. When the client starts up, it will register your public bitcoin key, which is a prerequisite to vault registration. 
+
+2. Next, you use the polkadot.js app to do a batch of `registerVault` and `requestIssue`. Go to "Extrinsics", select `utility` > `batchAll` in the dropdowns. You can then add multiple calls that will be executed all at once (see screenshot below). 
+
+?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page of the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly. 
 
 ![Screenshot: atomic registration and self-issue](../_assets/img/guide/atomic-register-issue.png)
 
 #### If vault is registered
 
-If you have already registered a vault, you can atomically add additional collateral and do the self-issue. To achieve this, use the polkadot.js app to do a batch of `depositCollateral` and `requestIssue`. The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page on the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly. An example is shown below.
+If you have already registered a vault, you can atomically add additional collateral and do the self-issue. 
+
+1. Use the polkadot.js app to do a batch of `depositCollateral` and `requestIssue`.  Go to "Extrinsics", select `utility` > `batchAll` in the dropdowns. You can then add multiple calls that will be executed all at once (see screenshot below).
+
+?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page on the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly. 
 
 ![Screenshot: atomic deposit and self-issue](../_assets/img/guide/atomic-deposit-issue.png)
 
