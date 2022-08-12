@@ -73,6 +73,8 @@ Create a `keyfile.json` file that contains the mnemonic of the substrate account
 }
 ```
 
+In this example, the left hand side is the public key and the right hand side is the secret mnemonic phrase.
+
 !> The mnemonic shown above is for display purposes only. DO NOT share or reuse mnemonics.
 
 You may use [subkey](https://docs.substrate.io/reference/command-line-tools/subkey/) to generate this automatically:
@@ -81,8 +83,9 @@ You may use [subkey](https://docs.substrate.io/reference/command-line-tools/subk
 subkey generate --output-type json | jq '{(.accountId): .secretPhrase}' > keyfile.json
 ```
 
-Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node.
-If the Vault spends funds from another wallet this may be marked as theft.
+Please use a separate keyname and mnemonic for each client. This name determines which wallet to load on the Bitcoin full node. If the Vault spends funds from another wallet this may leave the Vault without BTC to cover future redeem requests.
+
+?> You may also generate the keyfile manually using the [Polkadot extension](https://support.polkadot.network/support/solutions/articles/65000098878).
 
 ### Funding
 
