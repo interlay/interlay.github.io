@@ -35,10 +35,6 @@ Issue and Redeem requests are processed automatically, signing transactions on t
 
 Following the installation instructions, the Vault client will submit new BTC block headers to the parachain contributing to the overall availability of the BTC-Relay.
 
-### Reporting Vault Theft
-
-Following the installation instructions, the Vault client automatically monitors the Bitcoin blockchain for potential theft transactions of other Vaults and will report them to the parachain. A successful theft report results in a reward for the reporting Vault.
-
 ### Replace Requests
 
 By default, Vault client will try to accept replace requests by other Vaults to take over their locked BTC. Accepting replace requests increases the relative share of locked BTC for the Vault and hence increases the earned fees and block rewards of the Vault client.
