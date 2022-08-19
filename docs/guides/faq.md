@@ -8,7 +8,7 @@ The interBTC bridge ensures that there is sufficient collateral locked to econom
 
 ### Who are the vaults? Can anyone become a Vault?
 
-Vaults maintain the physical backing of interBTC: they ensure BTC remains locked while interBTC exists. Anyone can become a Vault. You only need: (1) a Bitcoin wallet, (2) a Polkadot wallet, and (3) to register by lock collateral (secures the BTC you get to hold in custody).
+Vaults maintain the physical backing of interBTC: they ensure users can redeem interBTC for "physical" BTC on the Bitcoin blockchain. Anyone can become a Vault. You only need: (1) a Bitcoin wallet, (2) a Polkadot wallet, and (3) to register by locking collateral (secures the BTC you get to hold in custody).
 
 ### Can I always get my BTC back?
 
