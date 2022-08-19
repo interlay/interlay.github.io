@@ -71,7 +71,7 @@ To vote on governance proposals, users must lock KINT with the Kintsugi parachai
 - KINT can be withdrawn at the end of the lock period (all at once)
 - You can extend the lock period at any time (up to the maximum lock period)
 
-?> For performance reasons, the end dates of locks are rounded down to the nearest multiple of the granularity.
+?> For performance reasons, the end dates of locks are rounded down to the nearest multiple of the granularity, i.e., KINT can be locked in weekly intervals.
 
 ?> The idea is simple: **the longer KINT are locked**, the **more voting power** a voter has, since the voter has a **longer-term stake in the health and success** of Kintsugi.
 
