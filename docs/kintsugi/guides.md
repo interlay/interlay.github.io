@@ -90,12 +90,12 @@ It shows the list of events, including the `Transfer` you just made - here you c
 
 At the bottom of the box you will find the `status` and `InBlock` fields - this shows you the block hash of the block in which your transfer was included.
 
-?> Use the block hash to search for the block in the [Netork tab](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer) of Polkadot.js - for example, if you need help with your transaction.
+?> Use the block hash to search for the block in the [Network tab](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer) of Polkadot.js - for example, if you need help with your transaction.
 
 
 **Option 2: Network Tab (manual search)**
 
-1. Go to the [Netork tab](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer) of Polkadot.js
+1. Go to the [Network tab](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer) of Polkadot.js
 2. Under `recent events` check the latest `tokens.Transfer` events to find your account (no search function available).+
 3. **Save and click on the block number** next to your `tokens.Transfer` event. Note: this shows (a) the block number and (b) the index )(= position) of your transaction in that block (e.g.  index 0 means it is the first transaction).
 
