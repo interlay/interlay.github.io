@@ -7,7 +7,7 @@ Vaults receive BTC for safekeeping from users and ensure BTC remains locked whil
 
 Vaults are **non-trusted** and **collateralized**.**Any user can become a Vault** by providing collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
 
-The correct behavior of Vaults is enforced by the bridge. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of the bridge. If a Vault steals BTC, this will be detected when it fails to fulfill redeem requests, resulting in: (i) the Vault losing its collateral and (ii) users being reimbursed using this collateral (at a beneficial rate).
+The correct behavior of Vaults is enforced by the bridge. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of the bridge. If a Vault fails to fulfill a redeem request the Vault may lose its collateral which can be reimbursed to the user (at a beneficial rate).
 
 The secondary responsibility of a Vault is to monitor both Bitcoin and the bridge to ensure that the BTC-Relay stays up to date with the Bitcoin blockchain by relaying Bitcoin block headers. BTC-Relay is self-healing and automatically detects and recovers from Bitcoin forks.
 
