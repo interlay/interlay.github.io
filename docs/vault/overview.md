@@ -323,7 +323,7 @@ The liquidation price is reached when:
 - Case (1) from above: 1000 KSM = $75,000 -> $75k of collateral are backing $50k of BTC -> 150% collateralization -> liquidation price for KSM is at $75/KSM assuming only the KSM price moves
 - Case (2) from above: 1 BTC = $66,666 -> $100k of collateral are backing $66k of BTC -> 150% collateralization -> liquidation price for BTC is at $66,666/BTC assuming only the BTC price moves.
 
-Note that if (1) and (2) happen at the same time, i.e., BTC price rises and KSM price drops, liquidations might happen earlier so the liquidation price updates everytimee the price in the exchange rate oracle changes.
+Note that if (1) and (2) happen at the same time, i.e., BTC price rises and KSM price drops, liquidations might happen earlier so the liquidation price updates every time the price in the exchange rate oracle changes.
 
 *Value at risk*
 

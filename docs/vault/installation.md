@@ -33,7 +33,7 @@ Operating a Vault client at the current stage involves running a fully automated
 This client has access to hot wallets for both Bitcoin and the Interlay/Kintsugi networks.
 The setup below is - on purpose - technically challenging to minimize the chance that Vaults and users lose funds due to operation errors.
 
-?> In the future, there will be an option to split custody of funds such that the Vault client is only acting as a relayer of transactions but does not have access to users funds. This aims to solve two issues: First, it should be a lot easier to open a Vault to back IBTC/KBTC form just the Dapp. Second, it opens up the possibility to have infrastructure providers and LP providers work together together to operate Vaults with the maintance from experience infrastructure providers and the capital of LP providers.
+?> In the future, there will be an option to split custody of funds such that the Vault client is only acting as a relayer of transactions but does not have access to users funds. This aims to solve two issues: First, it should be a lot easier to open a Vault to back IBTC/KBTC form just the Dapp. Second, it opens up the possibility to have infrastructure providers and LP providers work together together to operate Vaults with the maintenance from experience infrastructure providers and the capital of LP providers.
 
 When operating a Vault client ensure the following:
 
