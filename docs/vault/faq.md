@@ -38,7 +38,9 @@ The Vault will be slashed a punishment fee and the user can (i) chose to retry w
 
 ### What happens if a Vault steals?
 
-Theft reporting was removed [here](https://github.com/interlay/interbtc/pull/677) in accordance with [this post-mortem](https://medium.com/interlay/kintsugi-released-urgent-security-patches-aebf969ee087). The proposals to enact this change were successfully executed on Kintsugi and Interlay.
+If a Vault fails to fulfill a redeem request on time, it incurs a punishment fee (paid to the redeeming user) and can be liquidated, at the choice of the redeeming user. Vaults can freely move around BTC (e.g. between hot and cold storage) they have received, as long as they execute redeem requests on time.  
+
+An earlier version of the protocol had a "theft reporting" feature which prevented Vaults from moving BTC, unless there was a redeem/replace request. Theft reporting was removed [here](https://github.com/interlay/interbtc/pull/677) in accordance with [this post-mortem](https://medium.com/interlay/kintsugi-released-urgent-security-patches-aebf969ee087) since it does not add to the economic security of the bridge and with the purpose of improving Vault flexibility. The proposals to enact this change were successfully executed on Kintsugi and Interlay.
 
 ### What happens if a vault is undercollateralized?
 

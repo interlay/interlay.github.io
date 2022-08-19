@@ -12,7 +12,7 @@ Vaults maintain the physical backing of interBTC: they ensure BTC remains locked
 
 ### Can I always get my BTC back?
 
-interBTC guarantees that you will either (1) get you BTC back whenever you want, or (2) you will be reimbursed in collateral at a beneficial rate (better than current market price).
+interBTC guarantees that you will either (1) get you BTC back whenever you want, or (2) you will be reimbursed in collateral at a beneficial rate (current spot rate plus penalty fee incurred by the failed Vault).
 
 ### Why is the price of interBTC different to BTC?
 
@@ -28,6 +28,9 @@ interBTC has been audited by the following companies:
 - [NCC](https://www.nccgroup.com/)
 - [Informal Systems](https://informal.systems/)
 - [Quarkslab](https://www.quarkslab.com/)
+- [SR Labs](https://www.srlabs.de/) (automatic testing, full audit in August 2022)
+
+You can find all audit reports [here](https://github.com/interlay/audit-reports/blob/master/README.md)
 
 ### Why is interBTC better than other BTC bridges?
 
