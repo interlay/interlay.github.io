@@ -71,6 +71,8 @@ To vote on governance proposals, users must lock KINT with the Kintsugi parachai
 - KINT can be withdrawn at the end of the lock period (all at once)
 - You can extend the lock period at any time (up to the maximum lock period)
 
+?> For performance reasons, the end dates of locks are rounded down - i.e. KINT are locked in weekly intervals.
+
 ?> The idea is simple: **the longer KINT are locked**, the **more voting power** a voter has, since the voter has a **longer-term stake in the health and success** of Kintsugi.
 
 ### Staking Rewards
@@ -107,7 +109,7 @@ The process of proposals and voting is very similar to [Polkadot’s governance 
 
 Kintsugi also exhibits a Technical Committee (TC) of developer teams, voted on by the community governance.
 
-The **only function of the TC is fast-tracking proposals**: a fast-tracked instantly goes to vote, even if other proposals have not vKINT backing. This fast-tracking mechanism is used to ensure the system can be upgraded quickly in case of critical bugfixes.
+The **only function of the TC is fast-tracking proposals**: a fast-tracked instantly goes to vote, even if other proposals have more vKINT backing. This fast-tracking mechanism is used to ensure the system can be upgraded quickly in case of critical bugfixes.
 
 !> The TC has **no veto power**! The TC can only fast-track proposals - but **can never interfere with governance votes**.
 
