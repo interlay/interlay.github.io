@@ -14,14 +14,14 @@ Connecting to parachain nodes:
 
 ### Overview of assets
 
-| Asset    | CURRENCY_ID | CURRENCY_INDEX | DECIMALS |
-|----------|-------------|----------------|----------|
-| DOT      | DOT         | 0              | 10       |
-| interBTC | IBTC        | 1              | 8        |
-| INTR     | INTR        | 2              | 10       |
-| KSM      | KSM         | 10             | 12       |
-| KBTC     | KBTC        | 11             | 8        |
-| KINT     | KINT        | 12             | 12       |
+| Asset       | CURRENCY_ID | CURRENCY_INDEX | DECIMALS | Multilocation                                       |
+|-------------|-------------|----------------|----------|-----------------------------------------------------|
+| DOT         | DOT         | 0              | 10       | (Parent, Here)                                      |
+| interBTC    | IBTC        | 1              | 8        | (Parent, (X2, Parachain: 2032, GeneralKey: 0x0001)) |
+| INTR        | INTR        | 2              | 10       | (Parent, (X2, Parachain: 2032, GeneralKey: 0x0002)) |
+| KSM         | KSM         | 10             | 12       | (Parent, Here)                                      |
+| kintsugiBTC | KBTC        | 11             | 8        | (Parent, (X2, Parachain: 2092, GeneralKey: 0x000b)) |
+| KINT        | KINT        | 12             | 12       | (Parent, (X2, Parachain: 2092, GeneralKey: 0x000c)) |
 
 ?> For any newly added assets, please refer to the [on-chain implementation](https://github.com/interlay/interbtc/blob/master/primitives/src/lib.rs#L472). We will not update the currency id or index of already published assets.
 
