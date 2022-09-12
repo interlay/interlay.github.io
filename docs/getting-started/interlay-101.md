@@ -31,7 +31,7 @@ Recommended videos:
 
 ### Interlay Mainnet
 
-Substrate chain, secured by Polkadot's PoS as a parachain. 6 second block times, ~1500 transactions per second.
+Substrate chain, secured by Polkadot's PoS as a parachain. 12-second block times, ~1500 transactions per second.
 
 - [Dapp (app.interlay.io)](https://app.interlay.io/)
 - [DAO Governance](https://interlay.subsquare.io/)
