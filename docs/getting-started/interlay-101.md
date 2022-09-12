@@ -52,7 +52,7 @@ Substrate chain, secured by Polkadot's PoS as a parachain. 6 second block times,
 
 ### Kintsugi (Canary network)
 
-Canary network (experimental network with real economic value). Substrate chain, secured by Polkadot's PoS as a parachain. 12 second block times, ~1500 transactions per second.
+Canary network (experimental network with real economic value). Substrate chain, secured by Kusama's PoS as a parachain. 12-second block times, ~1500 transactions per second.
 
 - [What is a canary network?](../kintsugi/overview.md)
 - [Dapp (kintsugi.interlay.io)](https://kintsugi.interlay.io/)
