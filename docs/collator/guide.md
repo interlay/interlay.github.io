@@ -38,8 +38,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-parachain-1-17-0 \
-  interbtc-parachain \
+  interlayhq/interbtc:1.18.0 \
   --base-path=/data \
   --chain=kintsugi \
   --execution=wasm \
@@ -47,6 +46,7 @@ docker run \
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
+  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
@@ -54,7 +54,8 @@ docker run \
   --wasm-execution=compiled \
   --database=RocksDb \
   --unsafe-pruning \
-  --pruning=1000
+  --pruning=1000 \
+  --state-cache-size=0
 ```
 
 #### **Interlay**
@@ -63,7 +64,7 @@ docker run \
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:interbtc-parachain-1-18-0 \
+  interlayhq/interbtc:1.18.0 \
   interbtc-parachain \
   --base-path=/data \
   --chain=interlay \
@@ -72,6 +73,7 @@ docker run \
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
+  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
@@ -79,7 +81,8 @@ docker run \
   --wasm-execution=compiled \
   --database=RocksDb \
   --unsafe-pruning \
-  --pruning=1000
+  --pruning=1000 \
+  --state-cache-size=0
 ```
 
 <!-- tabs:end -->
@@ -103,6 +106,7 @@ chmod +x interbtc-parachain
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
+  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
@@ -110,7 +114,8 @@ chmod +x interbtc-parachain
   --wasm-execution=compiled \
   --database=RocksDb \
   --unsafe-pruning \
-  --pruning=1000
+  --pruning=1000 \
+  --state-cache-size=0
 ```
 
 #### **Interlay**
@@ -126,6 +131,7 @@ chmod +x interbtc-parachain
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
+  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
@@ -133,7 +139,8 @@ chmod +x interbtc-parachain
   --wasm-execution=compiled \
   --database=RocksDb \
   --unsafe-pruning \
-  --pruning=1000
+  --pruning=1000 \
+  --state-cache-size=0
 ```
 
 <!-- tabs:end -->
@@ -182,6 +189,7 @@ cargo build --release
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
+  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
@@ -189,7 +197,8 @@ cargo build --release
   --wasm-execution=compiled \
   --database=RocksDb \
   --unsafe-pruning \
-  --pruning=1000
+  --pruning=1000 \
+  --state-cache-size=0
 ```
 
 #### **Interlay**
@@ -206,6 +215,7 @@ cargo build --release
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
+  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
@@ -213,7 +223,8 @@ cargo build --release
   --wasm-execution=compiled \
   --database=RocksDb \
   --unsafe-pruning \
-  --pruning=1000
+  --pruning=1000 \
+  --state-cache-size=0
 ```
 
 <!-- tabs:end -->
