@@ -107,15 +107,29 @@ This involves 2 steps:
 
 ### Step 1: Submit Proposal via Polkadot.js
 
-Governance can change the runtime code as well as all sorts of parameters. In the first step, decide what the proposal you are about to create should change.
+?> We recommend you reach out the community on [Discord](https://discord.com/invite/KgCYK3MKSf) in the #governance channel before creating a proposal.
 
-?> We recommend you reach out to Interlay on [Discord](https://discord.com/invite/KgCYK3MKSf) in the #direction channel before creating a proposal.
+#### 1. Create and Submit a Preimage
+
+Governance can change the runtime code as well as all sorts of parameters. In the first step, decide what the proposal you are about to create should change. The exact changes you want to make are encoded in a so called "Preimage". 
+
+**Option A: Creating a new preimage**
 
 Go to Governance -> Democracy -> Submit preimage and propose the change you desire. In the example below, we are setting the minimum required amount of KSM for Vaults to register to 1 KSM. Hit "Sign and Submit" to submit the preimage.
 
 ![Preimage](../_assets/img/guide/governance-proposal-1.png)
 
+**Option B: Submitting a prepared preimage**
+
+If you have a pre-image already prepared (e.g. prepared using another tool, recommended for complex preimages with many parameters/calls), then you can simply submit the `hex-encoded call` to save time (instead of manually recreating the preimage in polkadot.js). 
+
+Go to Developer -> Extrinsics -> democracy -> notePreimage and insert the `hex-encoded call` of your preimage in the "encodedProposal" field.  Submit and sign the transaction. 
+
+![Preimage Hash](../_assets/img/guide/note-preimage-encoded-call-hash.png)
+
 #### 2. Submit a Proposal
+
+Now that the preimage has been uploaded, it is time to create the actual governance proposal. 
 
 Go to Developer -> Chain State -> democracy -> preimages and unselect "include option". This will show all current preimages. Check the preimage with your account id (the `provider`) and note down the hash of the preimage.
 
