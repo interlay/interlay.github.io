@@ -19,32 +19,54 @@ Includes team background, interBTC, Kintsugi, comparison to other wrapped Bitcoi
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h_LZhiS6Gho" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-#### Interlay in 45 Minutes (ETH Denver)
+Recommended videos:
+- [Interlay in 20mins](https://www.youtube.com/watch?v=1buT9r77J7Q&ab_channel=Interlay)
+- [Secure Cross-Bridges for DeFi](https://www.youtube.com/watch?v=Ywa0EUMosnk&ab_channel=Interlay)
+- [Interlay origins @ Scaling Bitcoin 2018](https://youtu.be/FI9cwksTrQs?t=6410)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iJFqwtxgLqk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#### For more videos, check out the [ Interlay YouTube channel](https://www.youtube.com/channel/UCiO00-2FXx_V0HSSmr1-c7Q)
 
-
-#### For more videos, check out the [ Interlay YouTube channel](https://www.youtube.com/channel/UCiO00-2FXx_V0HSSmr1-c7Q)!
 
 ## Networks
 
-### Interlay - Mainnet on Polkadot
+### Interlay Mainnet
 
-- Coming soon
+Substrate chain, secured by Polkadot's PoS as a parachain. 6 second block times, ~1500 transactions per second.
 
-### Kintsugi - Canary Network on Kusama
+- [Dapp (app.interlay.io)](https://app.interlay.io/)
+- [DAO Governance](https://interlay.subsquare.io/)
+- Blockchain explorers:
+  - [Subscan](https://interlay.subscan.io/)
+  - [Polkaholic (incl. XCM tracker)](https://interlay.polkaholic.io/)
+  - [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/explorer)
+- Wallets:
+  - [Polkadot.js (Signer, browser)](https://polkadot.js.org/extension/)
+  - [Subwallet (browser)](https://subwallet.app/)
+  - [Talisman (browser)](https://talisman.xyz/)
+  - [Nova (mobile)](https://novawallet.io/)
+  - [Fearless (mobile)](https://fearlesswallet.io/)
+  - [Subscan multisig (multisig tool, needs another brower wallet)](https://multisig.subscan.io/)
+  - Ledger (hardware, coming soon)
+- [Testnet](https://testnet.interlay.io/)
 
-Canary network (testnet with real economic value) on Kusama.
 
-- [Read more](../kintsugi/overview.md)
+### Kintsugi (Canary network)
+
+Canary network (experimental network with real economic value). Substrate chain, secured by Polkadot's PoS as a parachain. 12 second block times, ~1500 transactions per second.
+
+- [What is a canary network?](../kintsugi/overview.md)
 - [Dapp (kintsugi.interlay.io)](https://kintsugi.interlay.io/)
-- [Crowdloan/Claim app (claim-kint.interlay.io)](https://claim-kint.interlay.io/)
-- [Blockchain explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
-
-### Testnet
-
-A PoA zero-value testnet.
-
-- [Testing Guides](../guides/prereq.md)
-- [Testnet Application (testnet.interlay.io)](https://testnet.interlay.io/)
-- [Blockchain Explorer (polkadot.js.org/apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-testnet.interlay.io%2Fparachain%2F#/explorer)
+- [DAO Governance](https://kintsugi.subsquare.io/)
+- Blockchain explorers:
+  - [Subscan](https://kintsugi.subscan.io/)
+  - [Polkaholic (incl. XCM tracker)](https://kintsugi.polkaholic.io/)
+  - [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
+- Wallets:
+  - [Polkadot.js (Signer, browser)](https://polkadot.js.org/extension/)
+  - [Subwallet (browser)](https://subwallet.app/)
+  - [Talisman (browser)](https://talisman.xyz/)
+  - [Nova (mobile)](https://novawallet.io/)
+  - [Fearless (mobile)](https://fearlesswallet.io/)
+  - [Subscan multisig (multisig tool, needs another brower wallet)](https://multisig.subscan.io/)
+  - Ledger (hardware, coming soon)
+- [Testnet](https://kintnet.interlay.io/)

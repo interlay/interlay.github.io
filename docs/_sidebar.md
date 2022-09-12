@@ -13,17 +13,15 @@
 
   * [Overview](interlay/overview.md)
   * [Tokenomics](interlay/tokenomics.md)
-  * [Crowdloans - **Airdrop live**](interlay/crowdloans.md)
   * [Governance](interlay/governance.md)
-  * [Use iBTC - **Now live**](interlay/earn-with-ibtc.md)
+  * [Use iBTC](interlay/earn-with-ibtc.md)
 
 * **Kintsugi Canarynet (Kusama)**
 
   * [Overview](kintsugi/overview.md)
   * [Tokenomics](kintsugi/tokenomics.md)
-  * [Crowdloans - **Airdrop live**](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
-  * [Use KBTC - **Now live**](kintsugi/Earn-With-kBTC.md)
+  * [Use KBTC](kintsugi/Earn-With-kBTC.md)
 
 * **Guides**
 
