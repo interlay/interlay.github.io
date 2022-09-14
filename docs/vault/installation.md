@@ -166,25 +166,25 @@ Download the asset from GitHub:
 #### **Testnet (Kintsugi)**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.15.0/vault-parachain-metadata-kintsugi-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-kintsugi-testnet
 ```
 
 #### **Testnet (Interlay)**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.15.0/vault-parachain-metadata-interlay-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-interlay-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.15.0/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-kintsugi
 ```
 
 #### **Interlay**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0/vault-parachain-metadata-interlay
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-interlay
 ```
 
 <!-- tabs:end -->
@@ -224,28 +224,28 @@ cd interbtc-clients
 #### **Testnet (Kintsugi)**
 
 ```shell
-git checkout 1.15.0
+git checkout 1.16.0-hotfix
 cargo build --bin vault --features parachain-metadata-kintsugi-testnet
 ```
 
 #### **Testnet (Interlay)**
 
 ```shell
-git checkout 1.15.0
+git checkout 1.16.0-hotfix
 cargo build --bin vault --features parachain-metadata-interlay-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-git checkout 1.15.0
+git checkout 1.16.0-hotfix
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
 #### **Interlay**
 
 ```shell
-git checkout 1.16.0
+git checkout 1.16.0-hotfix
 cargo build --bin vault --features parachain-metadata-interlay
 ```
 
