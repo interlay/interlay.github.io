@@ -41,6 +41,12 @@ To support the integrity of the bridge, Vaults are also able to assume the role 
 
 Head over to ["Installation"](/vault/installation) for a detailed setup guide.
 
+### Risks
+
+1. **Exchange Rate and Collateralization**: Vaults provide collateral to back locked BTC. If the collateralization falls below the liquidation collateral threshold, the Vault is liquidated. In case of a liquidation, Vaults collateral is seized as described [in the section on severe undercollateralization](vault/overview?id=severe-undercollateralization). Vaults with different collateral assets are [isolated](vault/overview?id=vault-isolation). This means that if, e.g., a Vault operator uses the same account id to run a DOT and USDC Vault, liquidating the DOT vault has not impact on the USDC Vault as long as the collateralization rate of the USDC Vault is below the liquidation threshold. [Learn how to maintain your collateralization here](vault/guide?id=managing-collateral).
+2. **Offline**: If a Vault fails to process a redeem request from a user within the given time limit, then part or all of the Vaults collateral is slashed depending on the size of the redeem request. See [failed redeem requests for more details](vault/overview?id=failed-redeem). [The Vault uptime requirement is specified here](vault/installation?id=uptime).
+3. **Bitcoin Fee Fluctution**: Bitcoin fees fluctuate. The Interlay and Kintsugi chain use an oracle to submit the current Bitcoin fee estimates that Vault take into account when sending BTC. However, the actual fees that the Vault's Bitcoin wallet choose might defer from the estimate given by the Interlay or Kintsugi chain. Vault operators need to ensure that they have at least the same amount of BTC in their Bitcoin wallets as the amount that their Vault has locked on the Interlay or Kintsugi chain. [You can check this following the guide here](vault/guide?id=bitcoin-balance-check).
+
 ## Fee Model
 
 Vaults earn fees on issue and redeem, based on the BTC volume.
@@ -284,11 +290,11 @@ If Vaults fail to behave according to protocol rules, they face punishment throu
 
 ### Failed Redeem
 
-If Vaults go offline and fail to execute redeem, there are two possible outcomes. 
+If Vaults go offline and fail to execute redeem, there are two possible outcomes.
 
 **Outcome 1: User retries with another Vault**
 
-After the redeem request expires, the user can cancel it and decide to retry with another Vault. In this case: 
+After the redeem request expires, the user can cancel it and decide to retry with another Vault. In this case:
 
 - **A punishment fee** is slashed from the Vaults collateral and paid to the user, and
 - **A temporary ban** is incurred upon the Vault e.g. `24 hours` from accepting further requests.
@@ -300,11 +306,11 @@ After the redeem request expires, the user can cancel it and decide to liquidate
 - **A punishment fee** is slashed from the Vaults collateral and paid to the user,
 - **Vault collateral is slashed** at the current spot collateral-to-BTC exchange rate and paid to the user,
 - **A temporary ban** is incurred upon the Vault e.g. `24 hours` from accepting further requests (if it still has collateral left), and
-- **The Vault keeps the BTC**. 
+- **The Vault keeps the BTC**.
 
 ### Severe Undercollateralization
 
-If a Vaults drops below the liquidation collateral threshold, the **the Vault's entire remaining collateral is liquidated** and BTC holdings are considered lost (i.e., the Vault gets to keep the BTC). 
+If a Vaults drops below the liquidation collateral threshold, the **the Vault's entire remaining collateral is liquidated** and BTC holdings are considered lost (i.e., the Vault gets to keep the BTC).
 Consequently, the interBTC bridge initiates a **[Burn Event](/vault/overview?id=burn-event-restoring-a-11-physical-peg)** to restore the 1:1 balance between BTC and interBTC.
 
 **What causes undercollateralization?**
