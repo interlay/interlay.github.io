@@ -326,6 +326,8 @@ By default, the Vault will log at `info` or above but you may, for example, conf
 
 On startup, the Vault will automatically create or load the Bitcoin wallet using the keyname specified above and import additional keys generated from issue requests.
 
+?> We recommend saving the output of the logs. This will help you as the operator as well as the Interlay team to help debugging the Vault client should any errors arise. If you are unsure how to achieve this, we recommend using systemd for running the Vault client as it will provide an in-built way to store logs as described in [Step 6](#6-optional-start-the-vault-client-as-a-systemd-service).
+
 #### Successful Startup
 
 When your start your Vault client, you should see logs similar to this:
@@ -365,13 +367,13 @@ Download the systemd service file and a small helper script to install the servi
 
 ```shell
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
-wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-vault.service
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-kintsugi-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here. [Related](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim).
 
 ```shell
-vim testnet-vault.service
+vim testnet-kintsugi-vault.service
 ```
 
 Install the service and start it.
@@ -415,10 +417,10 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-interlay-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here. [Related](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim).
 
 ```shell
-vim testnet-vault.service
+vim testnet-interlay-vault.service
 ```
 
 Install the service and start it.
@@ -462,7 +464,7 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/kintsugi-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key, the Bitcoin RPC username and password, and the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here. [Related](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim).
 
 ```shell
 vim kintsugi-vault.service
@@ -509,7 +511,7 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/interlay-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key, the Bitcoin RPC username and password, and the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here. [Related](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim).
 
 ```shell
 vim interlay-vault.service
