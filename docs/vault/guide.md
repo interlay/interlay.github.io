@@ -5,22 +5,55 @@ However, sometimes it is necessary to interact with the Vault client, for exampl
 
 At the end of this document you will have:
 
+- [x] [Visited the Vault dashboard and checked the logs](#vault-dashboard-and-logs)
 - [x] [Learned about automatic actions of your Vault](#automatic-actions)
-- [x] [Deposited and withdrawn collateral](#collateral)
-- [x] [Set a custom secure threshold](#setting-a-custom-secure-threshold)
-- [x] [Activated and deactivated the Vault](#activatedeactive-the-vault-for-new-issue-requests)
+- [x] [Upgraded the Vault client](#upgrading-the-vault-client)
+- [x] [Maintain your collateralization rate](#managing-collateral)
+- [x] [Ensure that there are enough BTC in the Vault's wallet](#bitcoin-balance-check)
 - [x] [Self-Minted KBTC/IBTC](#self-minting)
-- [x] [Visited the Vault dashboard](#dapp-vault-dashboard)
 - [x] [Set up Prometheus and Grafana for monitoring your Vault](#prometheus-and-grafana)
-- [x] [Supplied additional BTC to cover fees](#bitcoin-fees)
 - [x] [Improved the security of your Vault](#security)
 - [x] [Left the Interlay/Kintsugi bridge](#leaving-interlaykintsugi)
+
+## Vault Dashboard and Logs
+
+Congratulations on successfully installing the Vault client!
+
+### Visit your Vault Dashboard
+
+?> Make sure you have added the Vault substrate key to a compatible web wallet extension like polkadot.js or Talisman wallet.
+
+Once your Vault is registered, the app on [Kintsugi](https://kintsugi.interlay.io) and [Interlay](https://app.interlay.io) as well as the [Interlay Testnet](https://testnet.interlay.io/) and [Kintsugi Testnet](https://kintnet.interlay.io/) will show you an overview of all your registered Vaults.
+
+![Vaults](../_assets/img/vault/vault-dashboard.png)
+
+### Vault Logs
+
+Your Vault client will print out logs to inform you of its operation and any potential errors.
+
+```sh
+Sep 19 11:06:02.428  INFO vault::system: Adding keys from past issues...
+Sep 19 11:06:03.021  INFO vault::issue: Rescanning bitcoin chain from height 740163...
+Sep 19 11:07:38.905  INFO vault::system: Initializing metrics...
+Sep 19 11:07:39.656  INFO vault::system: Adding derivation key...
+Sep 19 11:07:39.920  INFO vault::system: Adding keys from past issues...
+Sep 19 11:07:40.590  INFO vault::issue: Rescanning bitcoin chain from height 730755...
+Sep 19 11:10:24.057  INFO vault::system: Initializing metrics...
+Sep 19 11:10:24.642  INFO vault::system: Waiting for new block...
+Sep 19 11:10:36.672  INFO vault::system: Got new block...
+Sep 19 11:10:36.673  INFO vault::system: Checking for open requests...
+Sep 19 11:10:37.140  INFO vault::system: Done processing open requests
+```
+
+### Checking your Vault
+
+The dashboard and the logs give you a basic way to keep an eye on the Vault. More sophisticated methods and actions are described further down on this page.
 
 ## Automatic Actions
 
 ### Registering The Vault
 
-On start-up, the Valt client will try to automaticlly register itself if you set the flags described in the installation instructions.
+On start-up, the Vault client will try to automatically register itself if you set the flags described in the installation instructions.
 While it's possible to manually register the Vault with, e.g., polkadot.js.org/apps, we do not recommend this as it requires manual creation of a BTC master key and submitting the public key in its raw format to the parachain as part of the registration.
 
 ### Earning Fees and Block Rewards
@@ -39,9 +72,133 @@ Following the installation instructions, the Vault client will submit new BTC bl
 
 By default, Vault client will try to accept replace requests by other Vaults to take over their locked BTC. Accepting replace requests increases the relative share of locked BTC for the Vault and hence increases the earned fees and block rewards of the Vault client.
 
-## Collateral
+## Upgrading the Vault Client
+
+The Vault client is constantly being improved. Follow this guide to get the latest version of the Vault client.
+
+We will announce on public channels when a new release is made available for the Vault client. The changelog and binaries will be published on the [release page](https://github.com/interlay/interbtc-clients/releases). Depending on the method of installation:
+
+!> Occasionally, breaking changes will be introduced to the Vault client. In these cases it is important to update your Vault client in a timely manner to not run the risk of being slashed. We will notify on our channels (Discord, Twitter, Telegram) when this is the case.
+
+### Standard Installation
+
+#### 1. Stop the service
+
+<!-- tabs:start -->
+
+#### **Testnet-Kintsugi**
+
+```shell
+sudo systemctl stop testnet-vault.service
+```
+
+#### **Testnet-Interlay**
+
+```shell
+sudo systemctl stop testnet-interlay-vault.service
+```
+
+#### **Kintsugi**
+
+```shell
+sudo systemctl stop kintsugi-vault.service
+```
+
+#### **Interlay**
+
+```shell
+sudo systemctl stop interlay-vault.service
+```
+
+<!-- tabs:end -->
+
+OR terminate the process with `Ctrl+C`.
+
+#### 2. Re-download the binary and setup script
+
+<!-- tabs:start -->
+
+#### **Testnet-Kintsugi**
+
+```shell
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-kintsugi-testnet
+
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
+chmod +x ./setup && sudo ./setup testnet-kintsugi
+```
+
+#### **Testnet-Interlay**
+
+```shell
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-interlay-testnet
+
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
+chmod +x ./setup && sudo ./setup testnet-interlay
+```
+
+#### **Kintsugi**
+
+```shell
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-kintsugi
+
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
+chmod +x ./setup && sudo ./setup kintsugi
+```
+
+#### **Interlay**
+
+```shell
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-interlay
+
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
+chmod +x ./setup && sudo ./setup interlay
+```
+
+<!-- tabs:end -->
+
+#### 3. Restart the service
+
+<!-- tabs:start -->
+
+#### **Testnet-Kintsugi**
+
+```shell
+sudo systemctl start testnet-vault.service
+```
+
+#### **Testnet-Interlay**
+
+```shell
+sudo systemctl start testnet-interlay-vault.service
+```
+
+#### **Kintsugi**
+
+```shell
+sudo systemctl start kintsugi-vault.service
+```
+
+#### **Interlay**
+
+```shell
+sudo systemctl start interlay-vault.service
+```
+
+<!-- tabs:end -->
+
+OR start the [process manually](vault/installation?id=_5-start-the-vault-client).
+
+## Managing Collateral
+
+Vaults need to maintain their collateral above the [secure collateral threshold](vault/overview?id=secure-collateral) to be able to back new iBTC/kBTC.
+
+If Vaults fall below the [premium redeem threshold](vault/overview?id=premium-redeem), anyone can redeem against these Vaults and receive a premium that is slashed from the Vault's collateral.
+
+Most importantly, Vaults need to ensure [that at all times they are above the liquidation threshold](vault/overview?id=vault-liquidation).
 
 ### Increasing Collateral
+
+Adding new collateral will increase the collateralization rate.
 
 **Web UI**
 
@@ -49,17 +206,20 @@ Go to the Vault navigation item in the sidebar and click on the `Deposit Collate
 
 ### Withdrawing Collateral
 
+Removing collateral will decrease the collateralization rate.
+
 **Web UI**
 
 Go to the Vault navigation item in the sidebar and click on the `Withdraw Collateral` button. Then follow the instructions.
 
-## Setting a custom secure threshold
+### Setting a custom secure threshold
 
 The secure threshold is a collateralization threshold that acts as a buffer above the thresholds that penalize a Vault. Being below the secure threshold incurs no penalty, but it disables the Vault's ability to accept issue requests, limiting the risk of its collateralization falling further.
 
 There is a minimum global secure threshold enforced across all Vaults. However, Vault operators may optionally set a custom, higher threshold if they wish for a bigger security margin.
 
 **Polkadot.js**
+
 1. Go to polkadot.js.org/apps -> extrinsics -> VaultRegistry -> setCustomSecureThreshold
 2. Set the collateral and wrapped currency pair (e.g., KSM/KBTC) and the threshold parameter
 
@@ -69,7 +229,7 @@ The threshold is an optional parameter - submitting with an empty threshold will
 
 Including this parameter will instead set a custom threshold, provided it is higher than the default global one. Enter a number equal to the percentage (e.g., 300%) multiplied by 10^16 (e.g, 3000000000000000000).
 
-## Activate/Deactive the Vault for new Issue Requests
+### Activate/Deactive the Vault for new Issue Requests
 
 You can decide if your Vault should accept new issue requests by users.
 
@@ -77,6 +237,60 @@ You can decide if your Vault should accept new issue requests by users.
 
 1. Go to polkadot.js.org/apps -> extrinsics -> VaultRegistry -> acceptNewIssues
 2. Set the collateral and wrapped currency pair (e.g., KSM/KBTC) and if you want to accept new requests (e.g., Yes or No)
+
+## Bitcoin Balance Check
+
+If you don't use the full [monitoring](#monitoring) described below, you should still check once in a while if your Vault client has equal or more BTC in its Bitcoin wallet than the amount of BTC locked on the Interlay or Kintsugi chains. You can compare the two as follows:
+
+1. Navigate to your Vault dashboard and check the "Locked BTC". This gives you the locked BTC that the Interlay or Kintsugi chain assume the Vault holds. In the example below, the `DOT/IBTC` Vault has `7.85948385` BTC locked.
+![BTC_locked](../_assets/img/vault/btc-locked.png)
+2. Connect to the system running the Bitcoin node for your Vault client. You can list the BTC balance of the `DOT/IBTC` Vault by running the following command on the CLI with the keyname you specified when running the Vault client (from the [installation instructions](vault/installation?id=_5-start-the-vault-client)):
+
+```sh
+bitcoin-cli -rpcwallet=<INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71>-DOT-IBTC getbalance
+```
+
+The output will look like
+
+```sh
+$ bitcoin-cli -rpcwallet=0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71-DOT-IBTC getbalance
+> 7.8678
+```
+
+In the example given here, the Vault client is healthy: the Vault client has `7.8678` BTC in its Bitcoin wallet and the Interlay chain assumes that it has `7.85948385` BTC locked. That means, even if the Vault is requested to return all BTC, it will have enough BTC to fulfill those requests.
+
+?> If you are unsure about the Bitcoin wallets or you used an alternative for specifiying the Vault keyfile, you can run `bitcoin-cli listwalletdir` to see all your Vault wallets. You can then insert each item of the returned rpc wallets to check their balance.
+
+### What if my BTC balance in the Bitcoin wallet is higher than the BTC Locked on the App Dashboard?
+
+In this case, all is well with your Vault. You do not need to do anything. We do not recommend withdrawing any surplus, instead leaving it as a buffer for the vault to use for future tx fees.
+
+### What if my BTC balance in the Bitcoin wallet is smaller than the BTC Locked on the App Dashboard?
+
+**What does this mean?**
+
+The BTC balance in your Vault's Bitcoin wallet is too low to fulfill a redeem request that would redeem all of the Vault's BTC locked according to the Interlay or Kintsugi chain.
+
+?> If your Vault is currently processing a redeem request, BTC will already have been sent from its Bitcoin wallet. However, the BTC will still appear as locked on the Interlay or Kintsugi chains. Once the redeem request confirms, the Bitcoin and Interlay/Kintsugi balances should be the same/similar again.
+
+**What should be done about that?**
+
+You have two options:
+
+1. *Wait and observe*: On redeem requests, users tend to pay more for BTC transaction fees to the Vault than the actual BTC transaction fee that the Vault has to pay. If the difference between the Bitcoin wallet balance and the Interlay/Kintsugi chain balance is quite small, it might be OK to wait for a couple of redeem request. Ideally, the Vault will have enough BTC in its wallet.
+2. *Insufficient BTC to fulfill a redeem request*: If a user request to redeem more BTC from your Vault than the Vault has in its wallet, the Vault client will show a `BitcoinError ... Insufficient funds...` in the logs. Typically, you would need to send BTC from another source to your Vault wallet.
+
+If you encounter errors with the Vault client, we recommend to reach out to the Interlay team in the #vault-lounge in the [Interlay Discord](https://discord.com/invite/KgCYK3MKSf). We can help investigate the issue.
+
+**Adding BTC to a Vault's wallet**
+
+Generate a new address for the Bitcoin wallet, e.g., for the `DOT/IBTC` Vault.
+
+```sh
+bitcoin-cli -rpcwallet=<INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71>-DOT-IBTC getnewaddress
+```
+
+This will return a new address for your Vault. You can then use any Bitcoin wallet of your choice to send BTC to that address to refund the Vault's wallet.
 
 ## Self-Minting
 
@@ -123,35 +337,29 @@ Sometimes you may prefer to _only_ self mint. However, it's possible that you re
 
 #### If vault is not yet registered
 
-If you have not registered the vault yet, you can atomically register with collateral and do the self-issue. 
+If you have not registered the vault yet, you can atomically register with collateral and do the self-issue.
 
-1. First start your vault client without the `--auto-register` CLI argument. When the client starts up, it will register your public bitcoin key, which is a prerequisite to vault registration. 
+1. First start your vault client without the `--auto-register` CLI argument. When the client starts up, it will register your public bitcoin key, which is a prerequisite to vault registration.
 
-2. Next, you use the polkadot.js app to do a batch of `registerVault` and `requestIssue`. Go to "Extrinsics", select `utility` > `batchAll` in the dropdowns. You can then add multiple calls that will be executed all at once (see screenshot below). 
+2. Next, you use the polkadot.js app to do a batch of `registerVault` and `requestIssue`. Go to "Extrinsics", select `utility` > `batchAll` in the dropdowns. You can then add multiple calls that will be executed all at once (see screenshot below).
 
-?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page of the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly. 
+?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page of the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly.
 
 ![Screenshot: atomic registration and self-issue](../_assets/img/guide/atomic-register-issue.png)
 
 #### If vault is registered
 
-If you have already registered a vault, you can atomically add additional collateral and do the self-issue. 
+If you have already registered a vault, you can atomically add additional collateral and do the self-issue.
 
 1. Use the polkadot.js app to do a batch of `depositCollateral` and `requestIssue`.  Go to "Extrinsics", select `utility` > `batchAll` in the dropdowns. You can then add multiple calls that will be executed all at once (see screenshot below).
 
-?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page on the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly. 
+?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page on the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly.
 
 ![Screenshot: atomic deposit and self-issue](../_assets/img/guide/atomic-deposit-issue.png)
 
 ## Monitoring
 
-Vault operators can monitor their clients using both the [Dapp Vault Dashboard](vault/guide?id=dapp-vault-dashboard) and [Prometheus / Grafana](vault/guide?id=prometheus-and-grafana).
-
-### Dapp Vault Dashboard
-
-You can monitor the operation of your Vault on the Vault dashboard in the Dapp, by adding the key to the [polkadot{.js} extension](https://polkadot.js.org/extension/).
-
-Once the Vault is up and running, a "Vault" tab will appear in the sidebar of the Dapp at [testnet.interlay.io](https://testnet.interlay.io/) (or you can access directly at [testnet.interlay.io/vault](https://testnet.interlay.io/vault)).
+Vault operators can monitor their clients using both the [Vault dashboard and logs](vault/guide?id=vault-dashboard-and-logs) and [Prometheus / Grafana](vault/guide?id=prometheus-and-grafana).
 
 ### Prometheus and Grafana
 
@@ -288,32 +496,6 @@ as in the screenshot below (yellow line). This behaviour can be observed for all
 The *Remaining Time to Redeem* tile displays the time, in hours, left to execute the oldest redeem request with the vault. After this period elapses, the vault will get slashed. If there is no open redeem request, the default value of this metric is 24. The default AlertManager rules configuration in this documentation sends an alert when there is one hour left to execute (see [here](https://github.com/interlay/interbtc-clients/blob/d585af332d33ae763c1941eed5d63e73fe61ab52/.deploy/monitoring/rules.yml#L14)).
 
 ![Remaining Time to Redeem](../_assets/img/vault/remaining_time_to_redeem.png)
-
-## Bitcoin Fees
-
-It is the responsibility of the Vault operator to ensure that they can cover excess Bitcoin fees when spending from additional UTXOs. To do this they can list addresses held by their wallet and transfer BTC from an [external source](https://bitcoin.org/en/exchanges).
-
-<!-- tabs:start -->
-
-#### **Regtest**
-
-```shell
-bitcoin-cli -regtest -rpcwallet=interbtcvault listaddressgroupings
-```
-
-#### **Testnet**
-
-```shell
-bitcoin-cli -testnet -rpcwallet=interbtcvault listaddressgroupings
-```
-
-#### **Mainnet**
-
-```shell
-bitcoin-cli -rpcwallet=interbtcvault listaddressgroupings
-```
-
-<!-- tabs:end -->
 
 ## Security
 

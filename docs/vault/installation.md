@@ -1,10 +1,6 @@
 # Installing the Vault Client
 
-<a class="btc-raffle-button util-w100" href="https://interlay.typeform.com/to/CqV7GIYq">
-  <b>BTC in DeFi survey + RAFFLE! </br>Win Bitcoin Amsterdam 2022 tickets!</b>
-</a>
-
-For experts & Vault operators:
+For Vault operators:
 </br>
 <a class="docs-button util-w100" href="https://forms.gle/ndrcxfF7qnnbDH4i8">
   iBTC Vault operator survey
@@ -17,15 +13,18 @@ To install the Vault client, follow this guide.
 
 ## Checklist
 
+- [x] Understand the Do's and Dont's ([LINK](/vault/installation?id=dos-and-donts))
 - [x] Generate Sr25519 key(s) for the parachain ([LINK](/vault/installation?id=keyfile))
 - [x] Transfer collateral from the relay chain ([LINK](/guides/transfers?id=cross-chain-transfers))
 - [x] Start and sync a Bitcoin full-node ([LINK](/vault/installation?id=_2-start-the-bitcoin-node))
 - [x] Start the Vault client and make sure it is registered ([LINK](/vault/installation?id=_5-start-the-vault-client))
 - [x] Ensure the Vault can accept issue, redeem and replace requests ([LINK](/vault/guide?id=accepting-issue-and-redeem-requests))
 - [x] Verify backups are in place (Bitcoin wallet and Substrate keys) ([LINK](https://bitcoin.org/en/secure-your-wallet))
+
+## Post Installation Steps
+
 - [x] Subscribe to critical updates for continued operation ([LINK](https://discord.gg/invite/interlay))
-- [x] Monitor the Vault client for any unusual operation ([LINK](/vault/guide?id=monitoring))
-- [x] Understand the Do's and Dont's ([LINK](/vault/installation?id=dos-and-donts))
+- [x] Head over to the operating guide to manage your Vault ([LINK](vault/guide))
 
 ## Do's and Dont's
 
@@ -37,14 +36,13 @@ The setup below is - on purpose - technically challenging to minimize the chance
 
 When operating a Vault client ensure the following:
 
-1. **Do NOT operate two or more Vault clients with the same keyname/account at the same time.** The Vault stands the risk to execute redeem transactions twice which will lead to a loss of BTC - and, in the worst case, liquidation of collateral if the lost BTC is not sourced/recovered to fulfill redeem requests. 
+1. **Do NOT operate two or more Vault clients with the same keyname/account at the same time.** The Vault stands the risk to execute redeem transactions twice which will lead to a loss of BTC - and, in the worst case, liquidation of collateral if the lost BTC is not sourced/recovered to fulfill redeem requests.
 2. **Do NOT allow any third party access to the server operating the Vault client.** If anyone is able to access the Bitcoin or Interlay/Kintsugi wallets, the third-party is able to extract all funds. Specifically, make sure that the [RPC ports for the Bitcoin full node are not accessible via the internet](/vault/installation?id=_1-install-a-bitcoin-node).
 3. **DO backup Bitcoin and Interlay/Kintsugi keys.** If the keys are not backed-up and the server operating the Vault client loses this data, the Vault stands the risk of losing all funds. There are notes for backing up the [Substrate key](/vault/installation?id=keyfile) and for backing up the [Bitcoin wallet linked in the installation below](/vault/installation?id=_1-install-a-bitcoin-node).
 4. **DO monitor the Vault for potential failures.** This includes three parts: (1) keeping the collateralization level above the liquidation threshold, (2) fulfilling redeem requests on time, (3) ensuring that you have enough BTC in the Vault's wallet to fulfill redeem requests. Make sure to check out the [monitoring guides to find out how to achieve this](/vault/guide?id=monitoring).
 5. **DO use unique `--prometheus-port` arguments when running multiple clients.** Otherwise the vault client may fail to open the port.
 
-!> Multiple vaults _can_ share the same bitcoin node, but only if they are each started with a unique `--keyname` argument, regardless of the network the vault runs on. That is, vaults need to use unique `--keyname` arguments even if one is running on Kintsugi while the other is running on Interlay. Failing to do so can result in the Vaults spending BTC that is not theirs. This can lead to messy accounting, and in the worst case, to double payments and loss of funds. 
-
+!> Multiple vaults _can_ share the same bitcoin node, but only if they are each started with a unique `--keyname` argument, regardless of the network the vault runs on. That is, vaults need to use unique `--keyname` arguments even if one is running on Kintsugi while the other is running on Interlay. Failing to do so can result in the Vaults spending BTC that is not theirs. This can lead to messy accounting, and in the worst case, to double payments and loss of funds.
 
 ## Prerequisites
 
@@ -116,7 +114,6 @@ Please note the following default ports for incoming TCP and JSON-RPC connection
 | Regtest | 18444 | 18443 |
 | Testnet | 18333 | 18332 |
 | Mainnet | 8333  | 8332  |
-
 
 ### 2. Start the Bitcoin node
 
@@ -329,6 +326,35 @@ By default, the Vault will log at `info` or above but you may, for example, conf
 
 On startup, the Vault will automatically create or load the Bitcoin wallet using the keyname specified above and import additional keys generated from issue requests.
 
+?> We recommend saving the output of the logs. This will help you as the operator as well as the Interlay team to help debugging the Vault client should any errors arise. If you are unsure how to achieve this, we recommend using systemd for running the Vault client as it will provide an in-built way to store logs as described in [Step 6](#6-optional-start-the-vault-client-as-a-systemd-service).
+
+#### Successful Startup
+
+When your start your Vault client, you should see logs similar to this:
+
+```sh
+Sep 19 11:05:59.799  INFO vault: Starting Prometheus exporter at http://127.0.0.1:9615
+Sep 19 11:05:59.799  INFO service: Version: 1.16.0
+Sep 19 11:05:59.799  INFO service: AccountId: a3d....
+Sep 19 11:05:59.799  INFO Server::run{addr=127.0.0.1:9615}: warp::server: listening on http://127.0.0.1:9615
+Sep 19 11:05:59.799  INFO bitcoin: Connecting to bitcoin-core...
+Sep 19 11:05:59.800  INFO bitcoin: Connected to main
+Sep 19 11:05:59.800  INFO bitcoin: Bitcoin version 220000
+Sep 19 11:05:59.807  INFO bitcoin: Waiting for bitcoin-core to sync...
+Sep 19 11:05:59.808  INFO bitcoin: Synced!
+Sep 19 11:05:59.808  INFO runtime::conn: Connecting to the btc-parachain...
+Sep 19 11:06:00.235  INFO runtime::conn: Connected!
+Sep 19 11:06:01.052  INFO runtime::rpc: spec_name=kintsugi-parachain
+Sep 19 11:06:01.052  INFO runtime::rpc: spec_version=1018000
+Sep 19 11:06:01.052  INFO runtime::rpc: transaction_version=3
+Sep 19 11:06:01.163  INFO runtime::rpc: Refreshing nonce: 1097
+Sep 19 11:06:01.496  INFO vault::system: Using 6 bitcoin confirmations
+Sep 19 11:06:01.496  INFO vault::system: Subscribing to error events...
+Sep 19 11:06:02.172  INFO vault::system: Adding derivation key...
+Sep 19 11:06:02.428  INFO vault::system: Adding keys from past issues...
+Sep 19 11:06:03.021  INFO vault::issue: Rescanning bitcoin chain from height 740163...
+```
+
 ### 6. [Optional] Start the Vault client as a systemd service
 
 ?> Some of the most common Linux systems support this approach (see [systemd](https://en.wikipedia.org/wiki/Systemd)).
@@ -341,13 +367,13 @@ Download the systemd service file and a small helper script to install the servi
 
 ```shell
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
-wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-vault.service
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-kintsugi-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here. [Related](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim).
 
 ```shell
-vim testnet-vault.service
+vim testnet-kintsugi-vault.service
 ```
 
 Install the service and start it.
@@ -391,10 +417,10 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/testnet-interlay-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here. [Related](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim).
 
 ```shell
-vim testnet-vault.service
+vim testnet-interlay-vault.service
 ```
 
 Install the service and start it.
@@ -438,7 +464,7 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/kintsugi-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key, the Bitcoin RPC username and password, and the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here. [Related](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim).
 
 ```shell
 vim kintsugi-vault.service
@@ -485,7 +511,7 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/interlay-vault.service
 ```
 
-?> Please adjust the systemd service file to insert your substrate key, the Bitcoin RPC username and password, and the initial amount of collateral you want to register the Vault with similar to step 5 above. Vim is only used as an example here.
+?> Please adjust the systemd service file to insert your substrate key into the arguments similar to step 5 above with your favorite text editor. Vim is only used as an example here. [Related](https://stackoverflow.com/questions/11828270/how-do-i-exit-vim).
 
 ```shell
 vim interlay-vault.service
