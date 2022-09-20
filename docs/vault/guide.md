@@ -23,7 +23,7 @@ Congratulations on successfully installing the Vault client!
 
 ?> Make sure you have added the Vault substrate key to a compatible web wallet extension like polkadot.js or Talisman wallet.
 
-Once your Vault is registered, the app on [Kintsugi](https://kintsugi.interlay.io) and [Interlay](https://app.interlay.io) will show you an overview of all your registered Vaults.
+Once your Vault is registered, the app on [Kintsugi](https://kintsugi.interlay.io) and [Interlay](https://app.interlay.io) as well as the [Interlay Testnet](https://testnet.interlay.io/) and [Kintsugi Testnet](https://kintnet.interlay.io/) will show you an overview of all your registered Vaults.
 
 ![Vaults](../_assets/img/vault/vault-dashboard.png)
 
@@ -53,7 +53,7 @@ The dashboard and the logs give you a basic way to keep an eye on the Vault. Mor
 
 ### Registering The Vault
 
-On start-up, the Valt client will try to automaticlly register itself if you set the flags described in the installation instructions.
+On start-up, the Vault client will try to automatically register itself if you set the flags described in the installation instructions.
 While it's possible to manually register the Vault with, e.g., polkadot.js.org/apps, we do not recommend this as it requires manual creation of a BTC master key and submitting the public key in its raw format to the parachain as part of the registration.
 
 ### Earning Fees and Block Rewards
@@ -104,11 +104,17 @@ sudo systemctl stop testnet-interlay-vault.service
 sudo systemctl stop kintsugi-vault.service
 ```
 
+#### **Interlay**
+
+```shell
+sudo systemctl stop interlay-vault.service
+```
+
 <!-- tabs:end -->
 
 OR terminate the process with `Ctrl+C`.
 
-#### 3. Re-download the binary and setup script
+#### 2. Re-download the binary and setup script
 
 <!-- tabs:start -->
 
@@ -118,7 +124,7 @@ OR terminate the process with `Ctrl+C`.
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-kintsugi-testnet
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
-chmod +x ./setup && sudo ./setup testnet
+chmod +x ./setup && sudo ./setup testnet-kintsugi
 ```
 
 #### **Testnet-Interlay**
@@ -139,9 +145,18 @@ wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vau
 chmod +x ./setup && sudo ./setup kintsugi
 ```
 
+#### **Interlay**
+
+```shell
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-interlay
+
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
+chmod +x ./setup && sudo ./setup interlay
+```
+
 <!-- tabs:end -->
 
-#### 4. Restart the service
+#### 3. Restart the service
 
 <!-- tabs:start -->
 
@@ -163,6 +178,12 @@ sudo systemctl start testnet-interlay-vault.service
 sudo systemctl start kintsugi-vault.service
 ```
 
+#### **Interlay**
+
+```shell
+sudo systemctl start interlay-vault.service
+```
+
 <!-- tabs:end -->
 
 OR start the [process manually](vault/installation?id=_5-start-the-vault-client).
@@ -171,11 +192,13 @@ OR start the [process manually](vault/installation?id=_5-start-the-vault-client)
 
 Vaults need to maintain their collateral above the [secure collateral threshold](vault/overview?id=secure-collateral) to be able to back new iBTC/kBTC.
 
+If Vaults fall below the [premium redeem threshold](vault/overview?id=premium-redeem), anyone can redeem against these Vaults and receive a premium that is slashed from the Vault's collateral.
+
 Most importantly, Vaults need to ensure [that at all times they are above the liquidation threshold](vault/overview?id=vault-liquidation).
 
 ### Increasing Collateral
 
-Adding new collateral will increase the collateral threshold.
+Adding new collateral will increase the collateralization rate.
 
 **Web UI**
 
@@ -183,7 +206,7 @@ Go to the Vault navigation item in the sidebar and click on the `Deposit Collate
 
 ### Withdrawing Collateral
 
-Removing collateral will decrease the collateral threshold.
+Removing collateral will decrease the collateralization rate.
 
 **Web UI**
 
@@ -236,11 +259,11 @@ $ bitcoin-cli -rpcwallet=0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c
 
 In the example given here, the Vault client is healthy: the Vault client has `7.8678` BTC in its Bitcoin wallet and the Interlay chain assumes that it has `7.85948385` BTC locked. That means, even if the Vault is requested to return all BTC, it will have enough BTC to fulfill those requests.
 
-?> If you are unsure about the Bitcoin wallets or you used an alternative for specifiying the Vault keyfile, you can run `bitcoin-cli listwallets` to see all your Vault wallets. You can then insert each item of the returned rpc wallets to check their balance.
+?> If you are unsure about the Bitcoin wallets or you used an alternative for specifiying the Vault keyfile, you can run `bitcoin-cli listwalletdir` to see all your Vault wallets. You can then insert each item of the returned rpc wallets to check their balance.
 
 ### What if my BTC balance in the Bitcoin wallet is higher than the BTC Locked on the App Dashboard?
 
-In this case, all is well with your Vault. You do not need to do anything.
+In this case, all is well with your Vault. You do not need to do anything. We do not recommend withdrawing any surplus, instead leaving it as a buffer for the vault to use for future tx fees.
 
 ### What if my BTC balance in the Bitcoin wallet is smaller than the BTC Locked on the App Dashboard?
 
@@ -248,16 +271,20 @@ In this case, all is well with your Vault. You do not need to do anything.
 
 The BTC balance in your Vault's Bitcoin wallet is too low to fulfill a redeem request that would redeem all of the Vault's BTC locked according to the Interlay or Kintsugi chain.
 
+?> If your Vault is currently processing a redeem request, BTC will already have been sent from its Bitcoin wallet. However, the BTC will still appear as locked on the Interlay or Kintsugi chains. Once the redeem request confirms, the Bitcoin and Interlay/Kintsugi balances should be the same/similar again.
+
 **What should be done about that?**
 
 You have two options:
 
-1. *Wait and observe*: On redeem requests, users tend to pay more for BTC transaction fees to the Vault than the actual BTC transaction fee that the Vault has to pay. If the difference between the Bitcoin wallet balance and the Interlay/Kintsugi chain balance is quite small, it might be OK to just wait for a couple of redeem request. Ideally, the Vault will have enough BTC in its wallet.
-2. *Insufficient BTC to fulfill a redeem request*: If a user request to redeem more BTC from your Vault than the Vault has in its wallet, the Vault client will show a `BitcoinError ... Insufficient funds...` in the logs. In that case, you need to send BTC from another source to your Vault wallet.
+1. *Wait and observe*: On redeem requests, users tend to pay more for BTC transaction fees to the Vault than the actual BTC transaction fee that the Vault has to pay. If the difference between the Bitcoin wallet balance and the Interlay/Kintsugi chain balance is quite small, it might be OK to wait for a couple of redeem request. Ideally, the Vault will have enough BTC in its wallet.
+2. *Insufficient BTC to fulfill a redeem request*: If a user request to redeem more BTC from your Vault than the Vault has in its wallet, the Vault client will show a `BitcoinError ... Insufficient funds...` in the logs. Typically, you would need to send BTC from another source to your Vault wallet.
+
+If you encounter errors with the Vault client, we recommend to reach out to the Interlay team in the #vault-lounge in the [Interlay Discord](https://discord.com/invite/KgCYK3MKSf). We can help investigate the issue.
 
 **Adding BTC to a Vault's wallet**
 
-Generate a new address for the Bitcoin wallet, e.g., for the `DOT/IBTC` Vault:
+Generate a new address for the Bitcoin wallet, e.g., for the `DOT/IBTC` Vault.
 
 ```sh
 bitcoin-cli -rpcwallet=<INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71>-DOT-IBTC getnewaddress

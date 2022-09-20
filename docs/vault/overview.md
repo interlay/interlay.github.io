@@ -34,7 +34,7 @@ To support the integrity of the bridge, Vaults are also able to assume the role 
 ### What do I need to become a Vault?
 
 1. Vault client ([source](https://github.com/interlay/interbtc-clients))
-2. Bitcoin full node ([instructions](https://bitcoin.org/en/full-node))
+2. Bitcoin node ([instructions](https://bitcoin.org/en/full-node))
 3. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
 4. Collateral like KSM or DOT as well as other collateral assets.
 5. Native chain tokens like KINT and INTR to pay for transaction fees.
@@ -43,9 +43,12 @@ Head over to ["Installation"](/vault/installation) for a detailed setup guide.
 
 ### Risks
 
-1. **Exchange Rate and Collateralization**: Vaults provide collateral to back locked BTC. If the collateralization falls below the liquidation collateral threshold, the Vault is liquidated. In case of a liquidation, Vaults collateral is seized as described [in the section on severe undercollateralization](vault/overview?id=severe-undercollateralization). Vaults with different collateral assets are [isolated](vault/overview?id=vault-isolation). This means that if, e.g., a Vault operator uses the same account id to run a DOT and USDC Vault, liquidating the DOT vault has not impact on the USDC Vault as long as the collateralization rate of the USDC Vault is below the liquidation threshold. [Learn how to maintain your collateralization here](vault/guide?id=managing-collateral).
-2. **Offline**: If a Vault fails to process a redeem request from a user within the given time limit, then part or all of the Vaults collateral is slashed depending on the size of the redeem request. See [failed redeem requests for more details](vault/overview?id=failed-redeem). [The Vault uptime requirement is specified here](vault/installation?id=uptime).
-3. **Bitcoin Fee Fluctution**: Bitcoin fees fluctuate. The Interlay and Kintsugi chain use an oracle to submit the current Bitcoin fee estimates that Vault take into account when sending BTC. However, the actual fees that the Vault's Bitcoin wallet choose might defer from the estimate given by the Interlay or Kintsugi chain. Vault operators need to ensure that they have at least the same amount of BTC in their Bitcoin wallets as the amount that their Vault has locked on the Interlay or Kintsugi chain. [You can check this following the guide here](vault/guide?id=bitcoin-balance-check).
+Running a Vault and providing liquidity to Interlay or Kintsugi does not come without risks. Please research and understand the risks.
+
+1. **Exchange Rate and Collateralization**: Vaults provide collateral to back locked BTC. If the collateralization falls below the liquidation collateral threshold, the Vault is liquidated. In case of a liquidation, the [Vault's collateral is seized](vault/overview?id=severe-undercollateralization). Vaults with different collateral assets are [isolated](vault/overview?id=vault-isolation). This means that if, e.g., a Vault operator uses the same account id to run a DOT and USDC Vault, liquidating the DOT vault has no impact on the liquidation risk of the USDC Vault. [Learn how to maintain your collateralization here](vault/guide?id=managing-collateral).
+2. **Vault Client Offline**: If a Vault fails to process a redeem request from a user within the given time limit, then part or all of the Vaults collateral is slashed depending on the size of the redeem request. See [failed redeem requests for more details](vault/overview?id=failed-redeem). [The Vault uptime requirement is specified here](vault/installation?id=uptime).
+3. **Bitcoin Fee Fluctution**: Bitcoin fees fluctuate. The Interlay and Kintsugi chain use an oracle to submit the current Bitcoin fee estimates that Vault take into account when sending BTC. However, the actual fees that the Vault's Bitcoin wallet choose might differ from the estimate given by the Interlay or Kintsugi chain. Vault operators need to ensure that they have at least the same amount of BTC in their Bitcoin wallets as the amount that their Vault has locked on the Interlay or Kintsugi chain. [You can check this following the guide here](vault/guide?id=bitcoin-balance-check).
+4. **Software Bugs**: The Interlay teams seeks to eliminate software bugs as much as possible but it is impossible to exclude software risks completely. Using the Vault client is optional (but recommended). All actions the Vault client executes can also be done manually. Our [Interlay/Kintsugi chain](https://github.com/interlay/interbtc) and [Vault client](https://github.com/interlay/interbtc-clients/tree/master/vault) are open-source. The code has been [audited by NCC Group, Informal Systems, and Quarkslab](https://github.com/interlay/interbtc/tree/master/docs/audits). We collaborate with [Immunefi for our bug bounty program](https://immunefi.com/bounty/interlay/).
 
 ## Fee Model
 
