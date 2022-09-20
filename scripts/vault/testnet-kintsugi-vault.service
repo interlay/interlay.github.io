@@ -5,14 +5,14 @@ After=network.target
 [Service]
 Environment="RUST_LOG=info"
 Type=simple
-ExecStart=/opt/testnet/vault/vault \
+ExecStart=/opt/testnet-kintsugi/vault/vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
   --bitcoin-rpc-pass rpcpassword \
-  --keyfile /opt/testnet/vault/keyfile.json \
+  --keyfile /opt/testnet-kintsugi/vault/keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
-  --btc-parachain-url 'wss://api-testnet.interlay.io/parachain' \
-  --faucet-url 'https://api-testnet.interlay.io/faucet' \
+  --btc-parachain-url 'wss://api-dev-kintsugi.interlay.io:443/parachain' \
+  --faucet-url 'https://api-dev-kintsugi.interlay.io/faucet' \
   --auto-register=KSM=faucet
 Restart=on-failure
 RestartSec=5

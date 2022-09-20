@@ -11,8 +11,8 @@ create_vault_service() {
 
 case $1 in
 
-  testnet)
-    network="testnet"
+  testnet-kintsugi)
+    network="testnet-kintsugi"
     create_vault_service
     ;;
 
@@ -32,7 +32,7 @@ case $1 in
     ;;
 
   *)
-    echo "Please specify a network. Valid options are: testnet, kintsugi, and interlay."
+    echo "Please specify a network. Valid options are: testnet-kintsugi, testnet-interlay, kintsugi, and interlay."
     ;;
 
 esac

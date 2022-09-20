@@ -13,16 +13,15 @@
 
   * [Overview](interlay/overview.md)
   * [Tokenomics](interlay/tokenomics.md)
-  * [Crowdloans - **Airdrop live**](interlay/crowdloans.md)
   * [Governance](interlay/governance.md)
+  * [Use iBTC](interlay/earn-with-ibtc.md)
 
 * **Kintsugi Canarynet (Kusama)**
 
   * [Overview](kintsugi/overview.md)
   * [Tokenomics](kintsugi/tokenomics.md)
-  * [Crowdloans - **Airdrop live**](kintsugi/crowdloans.md)
   * [Governance](kintsugi/governance.md)
-  * [Earn With KBTC](kintsugi/Earn-With-KBTC.md)
+  * [Use KBTC](kintsugi/Earn-With-kBTC.md)
 
 * **Guides**
 
@@ -38,7 +37,6 @@
 
   * [Overview](vault/overview.md)
   * [Installation](vault/installation.md)
-  * [Upgrading](vault/upgrading.md)
   * [Operating Guide](vault/guide.md)
   * [KINT Vault Guide](vault/kint.md)
   * [FAQ](vault/faq.md)

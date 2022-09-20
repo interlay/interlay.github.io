@@ -99,7 +99,7 @@ A user redeems interBTC for the equivalent amount of BTC or receives DOT as reim
 
 ## Collateral
 
-To protect users against theft and loss of BTC, Vaults must lock collateral with the parachain, such that the value of the locked collateral is higher than the value of BTC locked with the Vault. To ensure Vaults have no incentive to steal user’s BTC, Vaults provide collateral in whitelisted assets - following a process similar to MakerDAO. To mitigate exchange rate fluctuations, interBTC employs over-collateralization and a multi-level collateral balancing scheme.
+To protect users against theft and loss of BTC, Vaults must lock collateral with the parachain, such that the value of the locked collateral is higher than the value of BTC locked with the Vault. To ensure Vaults have no incentive to steal user’s BTC, Vaults provide collateral in whitelisted assets that may be forfeit on exit - following a process similar to MakerDAO. To mitigate exchange rate fluctuations, interBTC employs over-collateralization and a multi-level collateral balancing scheme.
 
 ### Multi-Collateral System
 
@@ -113,8 +113,7 @@ Read more about the collateral system and re-balancing in the [Collateral sectio
 
 Vaults may be liquidated, i.e., have their collateral slashed and used to re-balance the system or to reimburse users, if:
 
-- they steal BTC,
-- fail to execute redeem requests,
+- they fail to execute redeem requests,
 - or are severly under-collateralized
 
 Read more about liquidations in the [Liquidations section of the Vault page](/vault/overview?id=liquidations).

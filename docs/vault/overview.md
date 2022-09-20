@@ -7,7 +7,7 @@ Vaults receive BTC for safekeeping from users and ensure BTC remains locked whil
 
 Vaults are **non-trusted** and **collateralized**.**Any user can become a Vault** by providing collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
 
-The correct behavior of Vaults is enforced by the bridge. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of the bridge. If a Vault tries to steal BTC, this will be automatically detected and the Vault will lose its collateral - and users will be reimbursed using this collateral (at a beneficial rate).
+The correct behavior of Vaults is enforced by the bridge. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of the bridge. If a Vault fails to fulfill a redeem request the Vault may lose its collateral which can be reimbursed to the user (at a beneficial rate).
 
 The secondary responsibility of a Vault is to monitor both Bitcoin and the bridge to ensure that the BTC-Relay stays up to date with the Bitcoin blockchain by relaying Bitcoin block headers. BTC-Relay is self-healing and automatically detects and recovers from Bitcoin forks.
 
@@ -20,7 +20,6 @@ The secondary responsibility of a Vault is to monitor both Bitcoin and the bridg
 To support the integrity of the bridge, Vaults are also able to assume the role of a Relayer:
 
 1. **Maintain BTC-Relay**: submit Bitcoin block headers to BTC-Relay and make sure the bridge stays up to date with the Bitcoin mainchain.
-2. **Report Vault Theft**: monitor Vault Bitcoin addresses and BTC holdings and report theft to the bridge (providing an SPV proof to BTC-Relay)
 
 ### Why operating a Vault?
 
@@ -35,12 +34,21 @@ To support the integrity of the bridge, Vaults are also able to assume the role 
 ### What do I need to become a Vault?
 
 1. Vault client ([source](https://github.com/interlay/interbtc-clients))
-2. Bitcoin full node ([instructions](https://bitcoin.org/en/full-node))
+2. Bitcoin node ([instructions](https://bitcoin.org/en/full-node))
 3. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
 4. Collateral like KSM or DOT as well as other collateral assets.
 5. Native chain tokens like KINT and INTR to pay for transaction fees.
 
 Head over to ["Installation"](/vault/installation) for a detailed setup guide.
+
+### Risks
+
+Running a Vault and providing liquidity to Interlay or Kintsugi does not come without risks. Please research and understand the risks.
+
+1. **Exchange Rate and Collateralization**: Vaults provide collateral to back locked BTC. If the collateralization falls below the liquidation collateral threshold, the Vault is liquidated. In case of a liquidation, the [Vault's collateral is seized](vault/overview?id=severe-undercollateralization). Vaults with different collateral assets are [isolated](vault/overview?id=vault-isolation). This means that if, e.g., a Vault operator uses the same account id to run a DOT and USDC Vault, liquidating the DOT vault has no impact on the liquidation risk of the USDC Vault. [Learn how to maintain your collateralization here](vault/guide?id=managing-collateral).
+2. **Vault Client Offline**: If a Vault fails to process a redeem request from a user within the given time limit, then part or all of the Vaults collateral is slashed depending on the size of the redeem request. See [failed redeem requests for more details](vault/overview?id=failed-redeem). [The Vault uptime requirement is specified here](vault/installation?id=uptime).
+3. **Bitcoin Fee Fluctution**: Bitcoin fees fluctuate. The Interlay and Kintsugi chain use an oracle to submit the current Bitcoin fee estimates that Vault take into account when sending BTC. However, the actual fees that the Vault's Bitcoin wallet choose might differ from the estimate given by the Interlay or Kintsugi chain. Vault operators need to ensure that they have at least the same amount of BTC in their Bitcoin wallets as the amount that their Vault has locked on the Interlay or Kintsugi chain. [You can check this following the guide here](vault/guide?id=bitcoin-balance-check).
+4. **Software Bugs**: The Interlay teams seeks to eliminate software bugs as much as possible but it is impossible to exclude software risks completely. Using the Vault client is optional (but recommended). All actions the Vault client executes can also be done manually. Our [Interlay/Kintsugi chain](https://github.com/interlay/interbtc) and [Vault client](https://github.com/interlay/interbtc-clients/tree/master/vault) are open-source. The code has been [audited by NCC Group, Informal Systems, and Quarkslab](https://github.com/interlay/interbtc/tree/master/docs/audits). We collaborate with [Immunefi for our bug bounty program](https://immunefi.com/bounty/interlay/).
 
 ## Fee Model
 
@@ -124,7 +132,7 @@ where `CollateralCurrency` is the collateral asset used by this Vault, and `Wrap
 A vault operator can run multiple vaults with different `VaultId`s with different collateral currencies using the same `AccountId`.
 Each Vault identified by a unique `VaultId` is isolated from all other Vaults.
 
-?> At any given time there should only be one vault client running for any given `AccountId`. Having multiple vault clients running and using the same `AccountId` can lead to double payments (e.g. on redeem requests) which qualify as vault theft.
+?> At any given time there should only be one vault client running for any given `AccountId`. Having multiple vault clients running and using the same `AccountId` can lead to double payments (e.g. on redeem requests).
 
 This means:
 
@@ -281,26 +289,35 @@ While we endeavour to keep the docs up to date and clearly communicate and annou
 
 ## Liquidations
 
-If Vaults fail to behave according to protocol rules, they face punishment through liquidation of collateral.
-There are 2 types of failures: **safety failures** and **crash failures**.
+If Vaults fail to behave according to protocol rules, they face punishment through liquidation of collateral - specifically, if a Vault fails to execute a redeem on time or falls below the liquidation collateral threshold.
 
-If a Vault fails to execute a redeem on time, steals BTC or falls below the liquidation collateral threshold, a liquidation event is initiated.
+### Failed Redeem
 
-### Safety Failures
+If Vaults go offline and fail to execute redeem, there are two possible outcomes.
 
-A safety failure occurs in two cases:
+**Outcome 1: User retries with another Vault**
 
-- **Theft**: a Vault is considered to have committed theft if it moves/spends BTC from unauthorized by the interBTC bridge (unauthorized withdrawals, double payments or any similar unauthorized operation with the BTC in the wallet). Theft is detected and reported by [Vaults](/vault/overview) via an SPV proof.
+After the redeem request expires, the user can cancel it and decide to retry with another Vault. In this case:
 
-- **Severe Undercollateralization**: a Vaults drops below the liquidation collateral threshold (e.g., `110%` on testnet).
+- **A punishment fee** is slashed from the Vaults collateral and paid to the user, and
+- **A temporary ban** is incurred upon the Vault e.g. `24 hours` from accepting further requests.
 
-In both cases, the **the Vault's entire collateral is liquidated - up to the secure collateral threshold (e.g., `150%` on testnet) of the liquidated BTC value - and BTC holdings are considered lost**.
+**Outcome 2: User liquidates (part of) Vault**
 
+After the redeem request expires, the user can cancel it and decide to liquidate (part of) the Vault. In this case:
+
+- **A punishment fee** is slashed from the Vaults collateral and paid to the user,
+- **Vault collateral is slashed** at the current spot collateral-to-BTC exchange rate and paid to the user,
+- **A temporary ban** is incurred upon the Vault e.g. `24 hours` from accepting further requests (if it still has collateral left), and
+- **The Vault keeps the BTC**.
+
+### Severe Undercollateralization
+
+If a Vaults drops below the liquidation collateral threshold, the **the Vault's entire remaining collateral is liquidated** and BTC holdings are considered lost (i.e., the Vault gets to keep the BTC).
 Consequently, the interBTC bridge initiates a **[Burn Event](/vault/overview?id=burn-event-restoring-a-11-physical-peg)** to restore the 1:1 balance between BTC and interBTC.
 
-#### Severe Undercollateralization
-
-Sever undercollateralization might occur when either the collateral asset (e.g. KSM) and the wrapped asset (e.g. BTC) exchange rates as reported by the oracle are changing. A Vault is liquidated when either (1) the the collateral (e.g., KSM) exchange rate drops significantly in relation to the wrapped asset (e.g., BTC) or (2) the wrapped asset (e.g., BTC) exchange rate rises significantly in relation to the collateral (e.g., KSM).
+**What causes undercollateralization?**
+Severe undercollateralization might occur when either the collateral asset (e.g. KSM) and the wrapped asset (e.g. BTC) exchange rates as reported by the oracle are changing. A Vault is liquidated when either (1) the the collateral (e.g., KSM) exchange rate drops significantly in relation to the wrapped asset (e.g., BTC) or (2) the wrapped asset (e.g., BTC) exchange rate rises significantly in relation to the collateral (e.g., KSM).
 
 (1) and (2) are ultimately the same thing, but possibly it helps to think about it in KSM/USD and BTC/USD rates, which means that if either (1) or (2) or both (1) and (2) happen at the same time, a Vault is liquidated.
 
@@ -315,20 +332,11 @@ The liquidation price is reached when:
 - Case (1) from above: 1000 KSM = $75,000 -> $75k of collateral are backing $50k of BTC -> 150% collateralization -> liquidation price for KSM is at $75/KSM assuming only the KSM price moves
 - Case (2) from above: 1 BTC = $66,666 -> $100k of collateral are backing $66k of BTC -> 150% collateralization -> liquidation price for BTC is at $66,666/BTC assuming only the BTC price moves.
 
-Note that if (1) and (2) happen at the same time, i.e., BTC price rises and KSM price drops, liquidations might happen earlier so the liquidation price updates everytimee the price in the exchange rate oracle changes.
+Note that if (1) and (2) happen at the same time, i.e., BTC price rises and KSM price drops, liquidations might happen earlier so the liquidation price updates every time the price in the exchange rate oracle changes.
 
 *Value at risk*
 
 The value at risk is the current collateral in the Vault, i.e., the value of KSM in the vault. So if the KSM price drops in case (1), value at risk would go from $100k to $75k whereas in case (2) value at risk stays at $100k since only BTC price moves.
-
-### Crash Failures (Failed Redeem)
-
-If Vaults go offline and fail to execute redeem, they are:
-
-- **Penalized** (**punishment fee** slashed) and
-- **Temporarily banned** for e.g. `24 hours` from accepting further redeem requests.
-
-The **punishment fee** is calculated as a percentage (e.g. `10%`) of the redeem amount at the current exchange rate.
 
 ## Burn Event: Restoring a 1:1 Physical Peg
 
