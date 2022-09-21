@@ -46,14 +46,15 @@ When operating a Vault client ensure the following:
 
 ## Prerequisites
 
-- Recent version of Linux or MacOS. Windows support is not tested.
+- A recent version of Linux or MacOS. Windows support is not tested.
 - At least 2 GB of RAM and a good CPU - exact requirements not yet benchmarked.
 - Free disk space (ideally SSD):
-  - at least **40 GB** for the Bitcoin testnet, *or*
-  - at least **500 GB** for the Bitcoin mainnet.
-- You should have a stable internet connection.
-- Have at least 1 KINT/INTR to pay for initial transaction fees.
-- Have a minimum amount of collateral assets, see [requirements](/vault/overview?id=minimum).
+ - at least **40 GB** for the Bitcoin testnet, *or*
+ - at least **500 GB** for the Bitcoin mainnet, *or*
+ - approximately **1GB** for either, if using a pruned Bitcoin node.
+- A stable internet connection.
+- At least 1 KINT/INTR to pay for initial transaction fees.
+- A minimum amount of collateral assets, see [requirements](/vault/overview?id=minimum).
 
 ### Uptime
 
@@ -105,7 +106,7 @@ Download and install version 22 of the [Bitcoin Core full-node](https://bitcoin.
 
 !> Remember to backup the wallet in the [data directory](https://en.bitcoin.it/wiki/Data_directory) to preserve keys held by your Vault. Please check [this guide](https://bitcoin.org/en/secure-your-wallet) for more security best-practices.
 
-!> The newest supported Bitcoin Core version is 22. Version 23 uses descriptor wallets by default, which we not currently support.
+!> The newest supported Bitcoin Core version is 22. Version 23 uses descriptor wallets by default, which we don't currently support.
 
 Please note the following default ports for incoming TCP and JSON-RPC connections:
 
@@ -117,7 +118,7 @@ Please note the following default ports for incoming TCP and JSON-RPC connection
 
 ### 2. Start the Bitcoin node
 
-?> Synchronizing the BTC testnet requires 40GB of storage and the BTC mainnet requires 400GB. Depending on your internet connection, the download time may take anything from hours to days.
+?> Synchronizing the BTC testnet requires downloading 40GB of data and the BTC mainnet requires 400GB. Depending on your internet connection, the download time may take anything from hours to days.
 
 Use the tested commands below to start the Bitcoin node. Please refer to the [Bitcoin full node guide](https://bitcoin.org/en/full-node#what-is-a-full-node) for more details on how to operate a Bitcoin node.
 
@@ -146,6 +147,38 @@ bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PAS
 #### Verifying Installation
 
 Once your bitcoin node is running, you can use `nmap -p 8332 127.0.0.1` to verify that the RPC port is open.
+
+#### [Optional] Running a pruned node
+
+We support pruned node operation, which _significantly_ reduces disk space requirements. The parameter to the `-prune` argument is denoted in MiB, with 550 being the minimum value, meaning that the bitcoin node will use about 0.6GiB rather than 400+GiB (on mainnet). (Note that the full blockchain still needs to be downloaded the first time the node is synced.)
+
+To support this, an external electrs server is used to query for transactions; if you do not wish to rely on this, skip this section and run a full node.
+
+To use a pruned node, simply add the `-prune=550` argument to the bitcoin command shown above; the full command then looks like this:
+
+<!-- tabs:start -->
+
+#### **Testnet**
+
+```shell
+bitcoind -testnet -server -rpcuser=rpcuser -rpcpassword=rpcpassword -walletrbf=1 -prune=550
+```
+
+#### **Kintsugi**
+
+```shell
+bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PASSWORD> -walletrbf=1 -prune=550
+```
+
+#### **Interlay**
+
+```shell
+bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PASSWORD> -walletrbf=1 -prune=550
+```
+
+<!-- tabs:end -->
+
+Restart the bitcoin node if it was already running.
 
 #### Important Notes
 
