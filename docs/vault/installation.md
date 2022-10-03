@@ -49,9 +49,9 @@ When operating a Vault client ensure the following:
 - A recent version of Linux or MacOS. Windows support is not tested.
 - At least 2 GB of RAM and a good CPU - exact requirements not yet benchmarked.
 - Free disk space (ideally SSD):
- - at least **40 GB** for the Bitcoin testnet, *or*
- - at least **500 GB** for the Bitcoin mainnet, *or*
- - approximately **1GB** for either, if using a pruned Bitcoin node.
+  - at least **40 GB** for the Bitcoin testnet, *or*
+  - at least **500 GB** for the Bitcoin mainnet, *or*
+  - approximately **1GB** for either, if using a pruned Bitcoin node.
 - A stable internet connection.
 - At least 1 KINT/INTR to pay for initial transaction fees.
 - A minimum amount of collateral assets, see [requirements](/vault/overview?id=minimum).
@@ -148,9 +148,11 @@ bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PAS
 
 Once your bitcoin node is running, you can use `nmap -p 8332 127.0.0.1` to verify that the RPC port is open.
 
-#### [Optional] Running a pruned node
+#### [Optional] Reducing Storage Usage: Running a Pruned Node
 
-We support pruned node operation, which _significantly_ reduces disk space requirements. The parameter to the `-prune` argument is denoted in MiB, with 550 being the minimum value, meaning that the bitcoin node will use about 0.6GiB rather than 400+GiB (on mainnet). (Note that the full blockchain still needs to be downloaded the first time the node is synced.)
+We support pruned node operation, which _significantly_ reduces disk space requirements. The parameter to the `-prune` argument is denoted in MiB, with 550 being the minimum value, meaning that the bitcoin node will use about 0.6GiB rather than 400+GiB (on mainnet).
+
+The Bitcoin node will still need download the 400+GiB of data the first time the node is synced, but will delete any data above 550MiB. This reduces the required disk space to just 500MiB for the Bitcoin node at all times.
 
 To support this, an external electrs server is used to query for transactions; if you do not wish to rely on this, skip this section and run a full node.
 
