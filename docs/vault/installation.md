@@ -204,7 +204,7 @@ wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.1
 #### **Testnet (Interlay)**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.2/vault-parachain-metadata-interlay-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-interlay-testnet
 ```
 
 #### **Kintsugi**
@@ -216,7 +216,7 @@ wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.1
 #### **Interlay**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.2/vault-parachain-metadata-interlay
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.16.0-hotfix/vault-parachain-metadata-interlay
 ```
 
 <!-- tabs:end -->
@@ -263,7 +263,7 @@ cargo build --bin vault --features parachain-metadata-kintsugi-testnet
 #### **Testnet (Interlay)**
 
 ```shell
-git checkout 1.17.2
+git checkout 1.16.0-hotfix
 cargo build --bin vault --features parachain-metadata-interlay-testnet
 ```
 
@@ -277,7 +277,7 @@ cargo build --bin vault --features parachain-metadata-kintsugi
 #### **Interlay**
 
 ```shell
-git checkout 1.17.2
+git checkout 1.16.0-hotfix
 cargo build --bin vault --features parachain-metadata-interlay
 ```
 
