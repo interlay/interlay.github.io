@@ -336,7 +336,9 @@ Note that if (1) and (2) happen at the same time, i.e., BTC price rises and KSM 
 
 *Value at risk*
 
-The value at risk is the current collateral in the Vault, i.e., the value of KSM in the vault. So if the KSM price drops in case (1), value at risk would go from $100k to $75k whereas in case (2) value at risk stays at $100k since only BTC price moves.
+The value at risk is the current collateral in the Vault minus the BTC it has locked. The BTC locked is subtracted as the Vault gets to keep the BTC when it is liquidated.
+
+The value at risk in the example above is the value of KSM in the Vault minus the value of BTC the Vault holds. If the KSM price drops in case (1), value at risk would go from $50k ($100k KSM minus $50k BTC) to $75k ($75k KSM minus $50k BTC) whereas in case (2) value at risk goes from $50k ($100k KSM minus $50k BTC) to $33,333 ($100k KSM minus $66,666 BTC).
 
 ## Burn Event: Restoring a 1:1 Physical Peg
 
