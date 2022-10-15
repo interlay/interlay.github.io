@@ -182,6 +182,18 @@ bitcoind -server -rpcuser=<INSERT_CUSTOM_USERNAME> -rpcpassword=<INSERT_YOUR_PAS
 
 Restart the bitcoin node if it was already running.
 
+
+#### [Optional] Servicing multiple vault clients from the same Bitcoin node
+
+When vault clients start, they parse the bitcoin blockchain via the Bitcoin RPC API. If you are running multiple Kintsugi and/or Interlay vault clients on your computer and the computer is restarted, all of those vault clients might simultaneously start querying the bitcoin node to parse the entire blockchain state for interactions with their vault wallet accounts. This can trigger Bitcoind's `request rejected because http work queue depth exceeded` warning. Vault clients might restart since they're unable to successfully query the Bitcoin RPC endpoint and never be able to complete syncing up to the Bitcoin blockchain. A solution is to increase the depth of the `rpcworkqueue` which by default is set to 16. From anecdotal testing, if you add the following parameter values to your `bitcoin.conf` file (or provide them in your CLI call) then at least seven parallel vault clients can be serviced.
+```
+rpcworkqueue=128
+rpcthreads=128
+rpctimeout=220
+```
+
+If you modify these values and your bitcoin node was already running, restart the bitcoind service.
+
 #### Important Notes
 
 !> Make sure that your Bitcoin RPC port is not available from the internet. You can check this by running e.g., `nmap -p 8332 your.server.ip.address` from another computer. If you expose your Bitcoin RPC port to the internet, you stand at risk of losing all funds including all collateral and BTC locked with the Vault.
