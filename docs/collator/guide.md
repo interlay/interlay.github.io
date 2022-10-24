@@ -7,8 +7,9 @@ At the end of this document you will have:
 
 - [x] Connected to a network
 - [x] Synced a local full-node
+- [x] Registered as a collator
 
-?> Please note that we have not yet opened running collators to the community. Currently, it is only possible to run a full-node. We will communicate updates to this on our discord.
+?> Please note that there are limited slots for registering as a collator.
 
 The following instructions have been tested on Linux.
 
@@ -89,16 +90,79 @@ docker run \
 
 ## Standard Installation
 
-Download the pre-built binary and map the directory to the local `base-path`.
+### 1. Install a pre-built binary
+
+Download the pre-built binary:
 
 <!-- tabs:start -->
 
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.17.0/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.19.0/interbtc-parachain
 chmod +x interbtc-parachain
-./interbtc-parachain \
+```
+
+#### **Interlay**
+
+```shell
+wget https://github.com/interlay/interbtc/releases/download/1.18.0/interbtc-parachain
+chmod +x interbtc-parachain
+```
+
+<!-- tabs:end -->
+
+### 2. [Optional] Install from source
+
+Build the parachain from source, this is necessary if we do not host builds compatible with your architecture.
+
+#### 2.1 Install Rust
+
+We typically aim to support the latest version of nightly, check the [README](https://github.com/interlay/interbtc/blob/master/README.md) for the most up-to-date build instructions.
+
+```shell
+curl https://sh.rustup.rs -sSf | sh
+```
+
+#### 2.2 Build the node
+
+?> This step will take some time depending on your hardware.
+
+Clone the parachain code, checkout the appropriate release and build the node:
+
+```shell
+git clone git@github.com:interlay/interbtc.git
+cd interbtc
+```
+
+<!-- tabs:start -->
+
+#### **Kintsugi**
+
+```shell
+git checkout 1.19.0
+cargo build --release
+```
+
+#### **Interlay**
+
+```shell
+git checkout 1.18.0
+cargo build --release
+```
+
+<!-- tabs:end -->
+
+### 3. Run the node
+
+Move the binary into your `$PATH` and run the parachain full-node:
+
+<!-- tabs:start -->
+
+#### **Kintsugi**
+
+```shell
+interbtc-parachain \
   --base-path=${PWD}/data \
   --chain=kintsugi \
   --execution=wasm \
@@ -121,9 +185,7 @@ chmod +x interbtc-parachain
 #### **Interlay**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.18.0/interbtc-parachain
-chmod +x interbtc-parachain
-./interbtc-parachain \
+interbtc-parachain \
   --base-path=${PWD}/data \
   --chain=interlay \
   --execution=wasm \
@@ -145,87 +207,46 @@ chmod +x interbtc-parachain
 
 <!-- tabs:end -->
 
-## Install from Source
+## Registering
 
-?> Building from source requires `clang 11`. Make sure to check this via `clang -v`.
-
-### 1. Install Rust
-
-We typically aim to support the latest version of nightly, check the README for the most up-to-date build instructions.
-
-```shell
-curl https://sh.rustup.rs -sSf | sh
-rustup toolchain install nightly
-rustup default nightly
-rustup target add wasm32-unknown-unknown --toolchain nightly
-```
-
-### 2. Compile the node
-
-?> This step will take some time depending on your hardware.
-
-Clone the parachain code, checkout the appropriate release and build the node:
-
-```shell
-git clone git@github.com:interlay/interbtc.git
-cd interbtc
-```
-
-### 3. Run the node
+To contribute to the decentralization of the network, users may register their full-node as a collator candidate.
 
 <!-- tabs:start -->
 
 #### **Kintsugi**
 
-```shell
-git checkout 1.17.0
-cargo build --release
+**1. Stake more than 1000 KINT**
 
-./target/release/interbtc-parachain \
-  --base-path=${PWD}/data \
-  --chain=kintsugi \
-  --execution=wasm \
-  --wasm-execution=compiled \
-  --unsafe-ws-external \
-  --rpc-methods=unsafe \
-  --pruning=archive \
-  --state-cache-size=0 \
-  -- \
-  --rpc-cors=all \
-  --no-telemetry \
-  --execution=wasm \
-  --wasm-execution=compiled \
-  --database=RocksDb \
-  --unsafe-pruning \
-  --pruning=1000 \
-  --state-cache-size=0
-```
+Go to: https://kintsugi.interlay.io/staking
+
+Collators are required to have a balance of more than 1000 vKINT. Since the value of vote-escrowed tokens decreases after each block you will need to ensure this balance doesn't drop below the required minimum by locking more than the minimum or increasing the lock time.
+
+Note the account that you used to stake.
+
+**2. Generate a session key**
+
+Connect to your [local node](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/rpc) and use the `author_rotateKeys` RPC request to create new keys in your node's keystore:
+
+![Kintsugi Rotate Keys](../_assets/img/collator/kintsugi-rotate-keys.png)
+
+**3. Submit the session key**
+
+Use the `setKeys` extrinsic ([example](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/extrinsics/decode/0x520044d46c1f308c4d0bb487bc548e210188859ac934a9863f64b47d0cbea08d2e6300)) to associate your collator node with the controller account (that you used to stake KINT):
+
+![Kintsugi Set Keys](../_assets/img/collator/kintsugi-set-keys.png)
+
+In this example we used the URI `//Alice` which is a well-known testing account ONLY - do not use this in production. Generate a secure (sr25519) secret seed using a tool such as `subkey` or `polkadot-js` instead.
+
+**4. Register the collator**
+
+Submit the `registerAsCandidate` extrinsic ([example](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/extrinsics/decode/0x5103)) with the staked account to start collating:  
+
+![Kintsugi Register](../_assets/img/collator/kintsugi-register.png)
+
 
 #### **Interlay**
 
-```shell
-git checkout 1.18.0
-cargo build --release
-
-./target/release/interbtc-parachain \
-  --base-path=${PWD}/data \
-  --chain=interlay \
-  --execution=wasm \
-  --wasm-execution=compiled \
-  --unsafe-ws-external \
-  --rpc-methods=unsafe \
-  --pruning=archive \
-  --state-cache-size=0 \
-  -- \
-  --rpc-cors=all \
-  --no-telemetry \
-  --execution=wasm \
-  --wasm-execution=compiled \
-  --database=RocksDb \
-  --unsafe-pruning \
-  --pruning=1000 \
-  --state-cache-size=0
-```
+!> Public registration is not yet available.
 
 <!-- tabs:end -->
 

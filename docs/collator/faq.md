@@ -17,3 +17,11 @@ The genesis chain spec is invalid, please download the file specified in the ins
 ### Storage root must match that calculated
 
 The state cache in Substrate has several bugs, nodes [are recommended](https://github.com/paritytech/substrate/issues/9697#issuecomment-982501753) to run with `--state-cache-size=0` set. This will no longer be required after [this change](https://github.com/paritytech/substrate/pull/11407) has been released.
+
+### CollatorSelection: InsufficientFunds
+
+The collator account has insufficient stake to register, see [collator registration](/collator/guide?id=registering).
+
+### CollatorSelection: TooManyCandidates
+
+All collator slots are occupied, please wait until another candidate leaves.
