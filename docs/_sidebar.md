@@ -9,19 +9,19 @@
   * [Governance](getting-started/governance.md)
   * [FAQ :notebook_with_decorative_cover:](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
 
-* **Interlay Mainnet (Polkadot)**
+* **Interlay Mainnet**
 
   * [Overview](interlay/overview.md)
   * [Tokenomics](interlay/tokenomics.md)
   * [Governance](interlay/governance.md)
   * [Use iBTC](interlay/earn-with-ibtc.md)
 
-* **Kintsugi Canarynet (Kusama)**
+* **Kintsugi Canarynet**
 
   * [Overview](kintsugi/overview.md)
   * [Tokenomics](kintsugi/tokenomics.md)
   * [Governance](kintsugi/governance.md)
-  * [Use KBTC](kintsugi/Earn-With-kBTC.md)
+  * [Use kBTC](kintsugi/Earn-With-kBTC.md)
 
 * **Guides**
 
@@ -51,6 +51,7 @@
 
   * [Overview](developers/overview.md)
   * [API](developers/api.md)
+  * [Bridge](developers/bridge.md)
   * [TypeScript Integration](developers/integration.md)
   * [Documentation](developers/documentation.md)
 
