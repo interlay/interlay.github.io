@@ -211,44 +211,31 @@ interbtc-parachain \
 
 To contribute to the decentralization of the network, users may register their full-node as a collator candidate.
 
-<!-- tabs:start -->
+### 1. Stake vote-escrowed tokens
 
-#### **Kintsugi**
-
-**1. Stake more than 1000 KINT**
-
-Go to: https://kintsugi.interlay.io/staking
-
-Collators are required to have a balance of more than 1000 vKINT. Since the value of vote-escrowed tokens decreases after each block you will need to ensure this balance doesn't drop below the required minimum by locking more than the minimum or increasing the lock time.
+See: [Staking](/collator/overview?id=staking)
 
 Note the account that you used to stake.
 
-**2. Generate a session key**
+### 2. Generate a session key
 
 Connect to your [local node](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/rpc) and use the `author_rotateKeys` RPC request to create new keys in your node's keystore:
 
-![Kintsugi Rotate Keys](../_assets/img/collator/kintsugi-rotate-keys.png)
+![Rotate Keys](../_assets/img/collator/rotate-keys.png)
 
-**3. Submit the session key**
+### 3. Submit the session key
 
-Use the `setKeys` extrinsic ([example](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/extrinsics/decode/0x520044d46c1f308c4d0bb487bc548e210188859ac934a9863f64b47d0cbea08d2e6300)) to associate your collator node with the controller account (that you used to stake KINT):
+Use the `setKeys` extrinsic ([example](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/extrinsics/decode/0x520044d46c1f308c4d0bb487bc548e210188859ac934a9863f64b47d0cbea08d2e6300)) to associate your collator node with the controller account (that you used to stake):
 
-![Kintsugi Set Keys](../_assets/img/collator/kintsugi-set-keys.png)
+![Set Keys](../_assets/img/collator/set-keys.png)
 
 In this example we used the URI `//Alice` which is a well-known testing account ONLY - do not use this in production. Generate a secure (sr25519) secret seed using a tool such as `subkey` or `polkadot-js` instead.
 
-**4. Register the collator**
+### 4. Register the collator
 
 Submit the `registerAsCandidate` extrinsic ([example](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/extrinsics/decode/0x5103)) with the staked account to start collating:  
 
-![Kintsugi Register](../_assets/img/collator/kintsugi-register.png)
-
-
-#### **Interlay**
-
-!> Public registration is not yet available.
-
-<!-- tabs:end -->
+![Register](../_assets/img/collator/register.png)
 
 ## Upgrading
 
