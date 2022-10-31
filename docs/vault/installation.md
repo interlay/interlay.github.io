@@ -311,7 +311,7 @@ vim testnet-kintsugi-runner.service
 Install the service and start it.
 
 ```shell
-chmod +x ./setup && sudo ./setup testnet-kintsugi
+chmod +x ./setup && sudo ./setup testnet-kintsugi runner
 sudo systemctl daemon-reload
 sudo systemctl start testnet-kintsugi-runner.service
 ```
@@ -356,7 +356,7 @@ vim testnet-interlay-runner.service
 Install the service and start it.
 
 ```shell
-chmod +x ./setup && sudo ./setup testnet-interlay
+chmod +x ./setup && sudo ./setup testnet-interlay runner
 sudo systemctl daemon-reload
 sudo systemctl start testnet-interlay-runner.service
 ```
@@ -401,7 +401,7 @@ vim kintsugi-runner.service
 Install the service and start it.
 
 ```shell
-chmod +x ./setup && sudo ./setup kintsugi
+chmod +x ./setup && sudo ./setup kintsugi runner
 sudo systemctl daemon-reload
 sudo systemctl start kintsugi-runner.service
 ```
@@ -671,7 +671,7 @@ vim testnet-kintsugi-vault.service
 Install the service and start it.
 
 ```shell
-chmod +x ./setup && sudo ./setup testnet
+chmod +x ./setup && sudo ./setup testnet vault
 sudo systemctl daemon-reload
 sudo systemctl start testnet-vault.service
 ```
@@ -718,7 +718,7 @@ vim testnet-interlay-vault.service
 Install the service and start it.
 
 ```shell
-chmod +x ./setup && sudo ./setup testnet-interlay
+chmod +x ./setup && sudo ./setup testnet-interlay vault
 sudo systemctl daemon-reload
 sudo systemctl start testnet-interlay-vault.service
 ```
@@ -765,7 +765,7 @@ vim kintsugi-vault.service
 Install the service and start it.
 
 ```shell
-chmod +x ./setup && sudo ./setup kintsugi
+chmod +x ./setup && sudo ./setup kintsugi vault
 sudo systemctl daemon-reload
 sudo systemctl start kintsugi-vault.service
 ```
@@ -812,7 +812,7 @@ vim interlay-vault.service
 Install the service and start it.
 
 ```shell
-chmod +x ./setup && sudo ./setup interlay
+chmod +x ./setup && sudo ./setup interlay vault
 sudo systemctl daemon-reload
 sudo systemctl start interlay-vault.service
 ```

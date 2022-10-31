@@ -124,7 +124,7 @@ OR terminate the process with `Ctrl+C`.
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.4/vault-parachain-metadata-kintsugi-testnet
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
-chmod +x ./setup && sudo ./setup testnet-kintsugi
+chmod +x ./setup && sudo ./setup testnet-kintsugi vault
 ```
 
 #### **Testnet-Interlay**
@@ -133,7 +133,7 @@ chmod +x ./setup && sudo ./setup testnet-kintsugi
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.4/vault-parachain-metadata-interlay-testnet
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
-chmod +x ./setup && sudo ./setup testnet-interlay
+chmod +x ./setup && sudo ./setup testnet-interlay vault
 ```
 
 #### **Kintsugi**
@@ -142,7 +142,7 @@ chmod +x ./setup && sudo ./setup testnet-interlay
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.4/vault-parachain-metadata-kintsugi
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
-chmod +x ./setup && sudo ./setup kintsugi
+chmod +x ./setup && sudo ./setup kintsugi vault
 ```
 
 #### **Interlay**
@@ -151,7 +151,7 @@ chmod +x ./setup && sudo ./setup kintsugi
 wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.4/vault-parachain-metadata-interlay
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
-chmod +x ./setup && sudo ./setup interlay
+chmod +x ./setup && sudo ./setup interlay vault
 ```
 
 <!-- tabs:end -->
