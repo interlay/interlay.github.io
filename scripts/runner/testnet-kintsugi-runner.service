@@ -1,0 +1,25 @@
+[Unit]
+Description=Auto-updater software for interbtc clients (Vault, Oracle, Faucet)
+After=network.target
+
+[Service]
+Environment="RUST_LOG=info"
+Type=simple
+ExecStart=/opt/interlay/runner/runner \
+    --client-type vault \
+    --parachain-ws 'wss://api-dev-kintsugi.interlay.io:443/parachain' \
+    --download-path /opt/testnet/vault/ \
+    -- \
+    # CLI arguments passed to the Vault binary:
+    --bitcoin-rpc-url http://localhost:8332 \
+    --bitcoin-rpc-user <INSERT_CUSTOM_USERNAME> \
+    --bitcoin-rpc-pass <INSERT_YOUR_PASSWORD> \
+    --keyfile keyfile_testnet_kintsugi.json \
+    --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+    --auto-register=KSM=3000000000000 \
+    --btc-parachain-url 'wss://api-dev-kintsugi.interlay.io:443/parachain'
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

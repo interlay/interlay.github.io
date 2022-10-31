@@ -94,9 +94,9 @@ Please follow [this guide](guides/transfers?id=cross-chain-transfers) for transf
 
 Please also check the [minimum collateral requirements](/vault/overview?id=minimum) for Vaults.
 
-## Standard Installation
+## Auto-Upgrading Installation
 
-Run Bitcoin and the Vault binary as a service on your computer or server. Follow this guide if you are interested in operating a Vault for earning and participating in the protocol.
+Run Bitcoin and the Vault auto-upgrading binary as a service on your computer or server. Follow this guide if you are interested in operating a Vault for earning and participating in the protocol.
 
 ?> This method is currently only supported for Linux.
 
@@ -200,6 +200,251 @@ If you modify these values and your bitcoin node was already running, restart th
 You should also use a custom RPC username and password instead of the default `rpcuser` and `rpcpassword`. Just make sure to use the same username and password combination when you start your Vault and your Bitcoin node. That bitcoin username and password combination should be different than your OS login credentials.
 
 ?> Please also note that the Vault may require additional funds to cover Bitcoin transaction fees as specified [here](/vault/guide?id=bitcoin-fees).
+
+### 3. Install a pre-built binary
+
+Download the asset from GitHub:
+```shell
+wget -O runner https://github.com/interlay/interbtc-clients/releases/download/1.17.4/runner 
+```
+
+Make the binary executable:
+
+```shell
+chmod +x runner
+```
+
+### 4. [Optional] Install from source
+
+Build the Runner from source, this is necessary if we do not host builds compatible with your architecture.
+Please also check the [README](https://github.com/interlay/interbtc-clients/tree/master/runner) for instructions.
+
+### 5. Start the Runner
+
+!> The runner starts up a vault client, so the client must not be started separately. At any given time there should only be one vault client running for any given `AccountId`. Having multiple vault clients running and using the same `AccountId` can lead to double payments (e.g. on redeem requests).
+
+
+Move the runner binary into your `$PATH`.
+
+Pass Vault CLI arguments as positional arguments (preceeded by double dashes: `--`), after passing the command options of the runner executable. 
+
+<!-- tabs:start -->
+#### **Testnet (Kintsugi)**
+
+```shell
+runner \
+    # Runner CLI arguments
+    --client-type vault \
+    --parachain-ws 'wss://api-dev-kintsugi.interlay.io:443/parachain' \
+    --download-path <CUSTOM_BINARY_DOWNLOAD_PATH, example: /opt/testnet/runner/> \
+    -- \
+    # Vault CLI arguments:
+    --bitcoin-rpc-url http://localhost:18332 \
+    --bitcoin-rpc-user rpcuser \
+    --bitcoin-rpc-pass rpcpassword \
+    --keyfile keyfile_kintsugi_testnet.json \
+    --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+    --faucet-url 'https://api-dev-kintsugi.interlay.io/faucet' \
+    --auto-register=KSM=faucet \
+    --btc-parachain-url 'wss://api-dev-kintsugi.interlay.io:443/parachain'
+```
+
+#### **Testnet (Interlay)**
+
+```shell
+runner \
+    # Runner CLI arguments
+    --client-type vault \
+    --parachain-ws 'wss://staging.interlay-dev.interlay.io:443/parachain' \
+    --download-path <CUSTOM_BINARY_DOWNLOAD_PATH, example: /opt/testnet/runner/> \
+    -- \
+    # Vault CLI arguments:
+    --bitcoin-rpc-url http://localhost:18332 \
+    --bitcoin-rpc-user rpcuser \
+    --bitcoin-rpc-pass rpcpassword \
+    --keyfile keyfile_interlay_testnet.json \
+    --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+    --faucet-url 'https://staging.interlay-dev.interlay.io/faucet' \
+    --auto-register=DOT=faucet \
+    --auto-register=INTR=faucet \
+    --btc-parachain-url 'wss://staging.interlay-dev.interlay.io:443/parachain'
+```
+
+#### **Kintsugi**
+
+```shell
+runner \
+    # Runner CLI arguments
+    --client-type vault \
+    --parachain-ws 'wss://api-kusama.interlay.io:443/parachain' \
+    --download-path <CUSTOM_BINARY_DOWNLOAD_PATH, example: /opt/testnet/runner/> \
+    -- \
+    # Vault CLI arguments:
+    --bitcoin-rpc-url http://localhost:18332 \
+    --bitcoin-rpc-user rpcuser \
+    --bitcoin-rpc-pass rpcpassword \
+    --keyfile keyfile_kintsugi.json \
+    --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+    --auto-register=KSM=3000000000000 \
+    --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain'
+```
+<!-- tabs:end -->
+
+### 6. [Optional] Start the Runner as a systemd service
+
+Download the systemd service file and a small helper script to install the service.
+
+<!-- tabs:start -->
+#### **Testnet (Kintsugi)**
+
+```shell
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/runner/testnet-kintsugi-runner.service
+```
+
+?> Please adjust the systemd service file to insert your substrate key into the arguments. Vim is only used as an example here.
+
+```shell
+vim testnet-kintsugi-runner.service
+```
+
+Install the service and start it.
+
+```shell
+chmod +x ./setup && sudo ./setup testnet-kintsugi
+sudo systemctl daemon-reload
+sudo systemctl start testnet-kintsugi-runner.service
+```
+
+You can also automatically start the Runner on system reboot with:
+
+```shell
+sudo systemctl enable testnet-kintsugi-runner.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=testnet-kintsugi-runner.service
+```
+
+Or by streaming the logs to the `runner.log` file in the current directory:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=testnet-kintsugi-runner.service &> runner.log
+```
+
+To stop the service, run:
+
+```shell
+sudo systemctl stop testnet-kintsugi-runner.service
+```
+
+#### **Testnet (Interlay)**
+
+```shell
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/runner/testnet-interlay-runner.service
+```
+
+?> Please adjust the systemd service file to insert your substrate key into the arguments. Vim is only used as an example here.
+
+```shell
+vim testnet-interlay-runner.service
+```
+
+Install the service and start it.
+
+```shell
+chmod +x ./setup && sudo ./setup testnet-interlay
+sudo systemctl daemon-reload
+sudo systemctl start testnet-interlay-runner.service
+```
+
+You can also automatically start the Runner on system reboot with:
+
+```shell
+sudo systemctl enable testnet-interlay-runner.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=testnet-interlay-runner.service
+```
+
+Or by streaming the logs to the `runner.log` file in the current directory:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=testnet-interlay-runner.service &> runner.log
+```
+
+To stop the service, run:
+
+```shell
+sudo systemctl stop testnet-interlay-runner.service
+```
+
+#### **Kintsugi**
+
+```shell
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/runner/kintsugi-runner.service
+```
+
+?> Please adjust the systemd service file to insert your substrate key into the arguments. Vim is only used as an example here.
+
+```shell
+vim kintsugi-runner.service
+```
+
+Install the service and start it.
+
+```shell
+chmod +x ./setup && sudo ./setup kintsugi
+sudo systemctl daemon-reload
+sudo systemctl start kintsugi-runner.service
+```
+
+You can also automatically start the Runner on system reboot with:
+
+```shell
+sudo systemctl enable kintsugi-runner.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=kintsugi-runner.service
+```
+
+Or by streaming the logs to the `runner.log` file in the current directory:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=kintsugi-runner.service &> runner.log
+```
+
+To stop the service, run:
+
+```shell
+sudo systemctl stop kintsugi-runner.service
+```
+
+<!-- tabs:end -->
+
+## Standard Installation
+
+Run Bitcoin and the Vault binary as a service on your computer or server. Follow this guide if you are interested in operating a Vault for earning and participating in the protocol.
+
+?> This method is currently only supported for Linux.
+
+### 1. Install a Bitcoin Node
+
+See the [section on installing a Bitcoin Node](/vault/installation?id=_1-install-a-bitcoin-node).
+
+### 2. Start the Bitcoin Node
+
+See the [section on starting the Bitcoin Node](/vault/installation?id=_2-start-the-bitcoin-node).
 
 ### 3. Install a pre-built binary
 

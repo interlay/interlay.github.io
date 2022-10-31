@@ -9,30 +9,56 @@ create_vault_service() {
   cp $network-vault.service /usr/lib/systemd/system/
 }
 
+create_runner_service() {
+  echo "Creating $network Runner"
+  [ -d /opt/$network ] || mkdir /opt/$network
+  [ -d /opt/$network/runner ] || mkdir /opt/$network/runner
+  cp ./runner /opt/$network/runner/
+  cp ./keyfile.json /opt/$network/runner/
+  [ -d /usr/lib/systemd/system/ ] || mkdir /usr/lib/systemd/system/
+  cp $network-runner.service /usr/lib/systemd/system/
+}
+
+case $2 in
+
+  vault)
+    service_generator="create_vault_service"
+    ;;
+
+  runner)
+    service_generator="create_runner_service"
+    ;;
+
+  *)
+    echo "Please specify a client as the second argument. Valid options are: vault, runner"
+    ;;
+
+esac
+
 case $1 in
 
   testnet-kintsugi)
     network="testnet-kintsugi"
-    create_vault_service
+    $service_generator
     ;;
 
   testnet-interlay)
     network="testnet-interlay"
-    create_vault_service
+    $service_generator
     ;;
 
   kintsugi)
     network="kintsugi"
-    create_vault_service
+    $service_generator
     ;;
 
   interlay)
     network="interlay"
-    create_vault_service
+    $service_generator
     ;;
 
   *)
-    echo "Please specify a network. Valid options are: testnet-kintsugi, testnet-interlay, kintsugi, and interlay."
+    echo "Please specify a network as the first argument. Valid options are: testnet-kintsugi, testnet-interlay, kintsugi, and interlay."
     ;;
 
 esac
