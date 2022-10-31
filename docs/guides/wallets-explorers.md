@@ -15,20 +15,20 @@ At the end of this guide you will have:
 
 To interact with the Interlay/Kintsugi Dapp you will need a Substrate-compatible browser extension.
 
+#### [Talisman](https://talisman.xyz/)
+
+1. **Install** the Talisman extension in your browser: [https://talisman.xyz/download](https://talisman.xyz/download)
+2. Follow the instructions to create a new account or import an existing one.
+
 #### [polkadot.js](https://polkadot.js.org/extension/)
 
-1. **install** the polkadot-js extension in your browser: [https://polkadot.js.org/extension/](https://polkadot.js.org/extension/).
+1. **Install** the polkadot-js extension in your browser: [https://polkadot.js.org/extension/](https://polkadot.js.org/extension/).
 
-2. **create account**. go to the plus sign at the top of the extension and click on "create new account" and follow the instructions.
+2. **Create account**. Go to the plus sign at the top of the extension and click on "create new account" and follow the instructions.
 
 #### [subwallet](https://subwallet.app/)
 
-*early stage - untested!*
-guide: https://docs.subwallet.app/user-guide/how-to-install-subwallet
-
-#### Coming soon
-
-- [Talisman](https://app.talisman.xyz/)
+Guide: https://docs.subwallet.app/user-guide/how-to-install-subwallet
 
 ### Web Wallets
 
@@ -39,11 +39,19 @@ guide: https://docs.subwallet.app/user-guide/how-to-install-subwallet
 
 Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/explorer)
 
+#### Talisman
+
+Go to [Talisman](https://app.talisman.xyz/)
+
 #### **Kintsugi**
 
 #### Polkadot.js Apps
 
 Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
+
+#### Talisman
+
+Go to [Talisman](https://app.talisman.xyz/)
 
 #### **Testnet-Kintsugi**
 
@@ -66,23 +74,27 @@ Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interl
 
 #### **Interlay**
 
-Coming soon
+#### [Nova wallet](https://novawallet.io/)
+
+Supports Android and iOS.
+
+#### [Math wallet](https://mathwallet.org/kintsugibtc-wallet/en/)
+
+Supports Android and iOS. Web-wallet currently not working.
 
 #### **Kintsugi**
 
 #### [Nova wallet](https://novawallet.io/)
-Supports Android and IOS.
 
-Also supports interacting with the Kintsugi Dapp via their Web3 browser (untested!)
+Supports Android and iOS.
 
 #### [Math wallet](https://mathwallet.org/kintsugibtc-wallet/en/)
 
-Supports Android and IOS. Web-wallet currently not working.
+Supports Android and iOS. Web-wallet currently not working.
 
-#### Coming soon:
+#### Coming soon
 
 - [Fearless Wallet](https://fearlesswallet.io/)
-
 
 <!-- tabs:end -->
 
@@ -104,7 +116,7 @@ For example, the `Alice` account can take the following formats:
 - **Kintsugi**: a3f1Q33MZ6B82T7rwQ1Ke1Qekzuxe8yRbfvRxkPh11jdsrTLR
 - **Interlay**: wdCJ8CsZchTEfUP8Xz1eZKNRjW5cuYjJ9fh6pcZNXezsysBrJ
 
-You can easily use the same account across different chains in the Polkadot ecosystem.
+You can use the same account across different chains in the Polkadot ecosystem.
 
 ## Substrate Explorers
 
@@ -153,6 +165,7 @@ Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interl
 <!-- tabs:end -->
 
 ### Check Account Balance in Polkadot.js Developer Tab (Advanced)
+
 <details>
 <summary>
 Click to expand
@@ -242,12 +255,9 @@ There are many Bitcoin Mainnet explorers. We find the following have the best us
 **[Blockstream](https://blockstream.info/)**
 **[Blockchain.com](https://www.blockchain.com/explorer)**
 
-!> Attention: do **not** use mainnet Bitcoin wallets for Kintsugi / Interlay **testnet**
-
 #### **Bitcoin Testnet**
 
 **[Blockstream Testnet Explorer](https://blockstream.info/testnet/)**
-
 
 <!-- tabs:end -->
 
@@ -260,11 +270,11 @@ Attention:
 - Testnet tokens have no economic value.
 - Do not use real BTC or other mainnet assets on testnet!
 
-### 1. Getting testnet KSM/DOT
+### 1. Getting testnet KINT/INTR
 
-You can get testnet KSM/DOT by clicking on the faucet link in the top bar of https://testnet.interlay.io.
+You can get testnet KINT/INTR for transaction fees by clicking on the faucet link in the top bar.
 
-?> These testnet KSM/DOT are only usable on testnet. They are **not real KSM/DOT and have no economic value**.
+?> These testnet KINT/INTR are only usable on testnet. They are **not real KINT/INTR and have no economic value**.
 
 ### 2. Getting testnet BTC
 
@@ -276,3 +286,9 @@ You can get testnet BTC by clicking on the faucet link in the top bar of testnet
 - [https://coinfaucet.eu/en/btc-testnet/](https://coinfaucet.eu/en/btc-testnet/)
 - [https://kuttler.eu/en/bitcoin/btc/faucet/](https://kuttler.eu/en/bitcoin/btc/faucet/)
 - [https://tbtc.bitaps.com/](https://tbtc.bitaps.com/)
+
+### 3. Getting testnet tokens for Vaults
+
+If you are going to run a [Vault on testnet](/vault/installation?id=installing-the-vault-client), the Vault client will automatically request transaction fee tokens (KINT/INTR) and collateral tokens (KSM/DOT) on registration.
+
+?> These testnet KINT/INTR/KSM/DOT are only usable on testnet. They are **not real KINT/INTR/KSM/DOT and have no economic value**.
