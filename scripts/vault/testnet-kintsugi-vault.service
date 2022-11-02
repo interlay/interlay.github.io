@@ -1,10 +1,14 @@
 [Unit]
 Description=Vault servicing issue and redeem requests for interBTC
+Requires=bitcoind.service
+After=bitcoind.service
 After=network.target
 
 [Service]
 Environment="RUST_LOG=info"
 Type=simple
+TimeoutStartSec=30m
+ExecStartPre=/bin/sleep 5s
 ExecStart=/opt/testnet-kintsugi/vault/vault \
   --bitcoin-rpc-url http://localhost:18332 \
   --bitcoin-rpc-user rpcuser \
