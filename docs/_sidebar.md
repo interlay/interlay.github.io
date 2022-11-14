@@ -39,6 +39,7 @@
   * [Installation](vault/installation.md)
   * [Operating Guide](vault/guide.md)
   * [KINT Vault Guide](vault/kint.md)
+  * [LKSM Vault Guide](vault/lksm.md)
   * [FAQ](vault/faq.md)
 
 * **Collators**
