@@ -2,23 +2,31 @@
 
 Since one of the main reasons for issuing kBTC is to use it with DeFi dApps or protocols, we have collected below some of the use cases and opportunities that you can consider.
 
-Please note that while we are happy to surface such use cases and might provide incentives for one or more, this is by no means financial advice. Please do your own research and inform yourself about impermanent loss and about each dApp's or protocol's policies and fees.
+?> Please note that while we are happy to surface such use cases, this **not financial advice**. Please do your own research and inform yourself about impermanent loss and about each dApp's or protocol's policies and fees. Interlay holds no liability for 3rd party networks / services. 
 
-### All Use cases At A Glance:
 
-[![Solarbeam Pool](../_assets/img/kintsugi/Solarbeam%20kBTC%20Pool.png)](https://app.solarbeam.io/farm?filter=stable)
-[![Karura Pool](../_assets/img/kintsugi/Karura%20kBTC%20Pool.png)](https://apps.karura.network/earn)
+## Karura
 
-### 1. KBTC / wBTC pool on Solarbeam (Moonriver)
+**Sending assets to Karura**:  Use the [bridge app on Karura](https://apps.karura.network/bridge)
 
-* **Type Of Opportunity**. Incentivised Stable Pool between Kintsugi BTC and Wrapped BTC.
-* **Duration**. The pool was launched on Apr 7, 2022
-* **Transferring KBTC to Moonriver**:  Please follow this guide to transfer your KBTC to Moonriver: [KBTC to Moonriver Guide](https://moonbeam.network/tutorial/cross-chain-assets-on-moonriver/)
-* **Link To The Pool**: [Solarbeam KBTC/wBTC](https://app.solarbeam.io/farm?filter=stable)
+### Karura DEX
 
-### 2. KBTC / aUSD pool on Karura (Karura)
+**Link**: [apps.karura.network/swap](https://apps.karura.network/swap)
 
-* **Type Of Opportunity**. Incentivised Pool between Kintsugi BTC and Acala USD.
-* **Duration**. The pool was launched on Apr 20, 2022
-* **Transferring KBTC to Karura**:  To transfer KBTC from Kintsugi to Karura, you can use the dedicated bridge on Karura: [Transfer KBTC to Karura](https://apps.karura.network/bridge)
-* **Link To The Pool**: [Karura KBTC/aUSD](https://apps.karura.network/earn)
+**Pairs**:
+
+* **kBTC / aUSD**, standard xyk pool.
+* **KINT / aUSD**, standard xyk pool.
+
+## Moonriver
+
+**Sending assets to Moonriver**:  Use the [bridge app on Moonriver](https://apps.moonbeam.network/moonriver)
+
+### Solarbeam
+
+**Link**: [app.solarbeam.io](https://app.solarbeam.io/farm?filter=stable)
+
+**Pairs**:
+
+* **kBTC / wBTC.multichain**, stableswap. 
+
