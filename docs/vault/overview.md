@@ -98,6 +98,7 @@ Each currency & network has different minimum deposits, noted here:
 
 * Testnet KSM: 0
 * Testnet KINT: 0
+* Testnet LKSM: 0
 
 #### **Testnet-Interlay**
 
@@ -108,6 +109,7 @@ Each currency & network has different minimum deposits, noted here:
 
 * KSM: 3
 * KINT: 55
+* LKSM: 20
 
 #### **Interlay (Mainnet)**
 
@@ -191,6 +193,7 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 
 * Testnet KSM: `150%`
 * Testnet KINT: `400%`
+* Testnet LKSM: `150%`
 
 #### **Testnet-Interlay**
 
@@ -201,6 +204,7 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 
 * KSM: `260%`
 * KINT: `900%`
+* LKSM: `260%`
 
 #### **Interlay (Mainnet)**
 
@@ -222,6 +226,7 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 
 * Testnet KSM: `135%`
 * Testnet KINT: `300%`
+* Testnet LKSM: `135%`
 
 
 #### **Testnet-Interlay**
@@ -233,6 +238,7 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 
 * KSM: `200%`
 * KINT: `650%`
+* LKSM: `200%`
 
 #### **Interlay (Mainnet)**
 
@@ -257,6 +263,7 @@ The undercollateralized Vault is liquidated.
 
 * Testnet KSM: `110%`
 * Testnet KINT: `200%`
+* Testnet LKSM: `110%`
 
 #### **Testnet-Interlay**
 
@@ -267,6 +274,7 @@ The undercollateralized Vault is liquidated.
 
 * KSM: `150%`
 * KINT: `500%`
+* LKSM: `150%`
 
 #### **Interlay (Mainnet)**
 
