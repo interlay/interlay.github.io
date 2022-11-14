@@ -20,7 +20,7 @@ Since one of the main reasons for issuing IBTC is to use it with DeFi dApps or p
 
 ## Moonbeam
 
-**Sending assets to Acala**:  Use the [bridge app on Moonbeam](https://apps.moonbeam.network/moonbeam)
+**Sending assets to Moonbeam**:  Use the [bridge app on Moonbeam](https://apps.moonbeam.network/moonbeam)
 
 ### Stellaswap
 
