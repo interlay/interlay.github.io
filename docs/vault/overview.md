@@ -108,6 +108,7 @@ Each currency & network has different minimum deposits, noted here:
 
 * KSM: 3
 * KINT: 55
+* LKSM: 20
 
 #### **Interlay (Mainnet)**
 
@@ -201,6 +202,7 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 
 * KSM: `260%`
 * KINT: `900%`
+* LKSM: `260%`
 
 #### **Interlay (Mainnet)**
 
@@ -233,6 +235,7 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 
 * KSM: `200%`
 * KINT: `650%`
+* LKSM: `200%`
 
 #### **Interlay (Mainnet)**
 
@@ -267,6 +270,7 @@ The undercollateralized Vault is liquidated.
 
 * KSM: `150%`
 * KINT: `500%`
+* LKSM: `150%`
 
 #### **Interlay (Mainnet)**
 
