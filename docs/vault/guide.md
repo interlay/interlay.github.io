@@ -209,7 +209,7 @@ Go to the Vault navigation item in the sidebar and click on the `Deposit Collate
 1. Go to polkadot.js.org/apps and ensure you have the correct nextwork selected
 2. Click on Developer -> Extrinsics
 3. Select your existing Vault account, the `vaultRegistry` pallet and the `depositCollateral` extrinsic
-4. Enter the collateral asset, e.g., `ForeignAssets.2` as the collateral and the wrapped asset, e.g., `KBTC` as the wrapped currency, and the amount of additional collateral to provide. Example, deposit 1 LKSM = 10^12 Planck (1000000000000).
+4. Enter the collateral asset, e.g., LKSM is `ForeignAssets.2` or KSM is `Tokens.KSM`,  as the collateral and the wrapped asset, e.g., `KBTC` as the wrapped currency, and the amount of additional collateral to provide. Example, deposit 1 LKSM = 10^12 Planck (1000000000000).
 5. Sign and submit the transaction
 
 ![Depositing 1 LKSM of extra collateral](../_assets/img/vault/polkadotjs-deposit-lksm-collateral.png)
@@ -539,7 +539,7 @@ Enter the following query to view the Issue requests against your vault:
 
 ```graphql
 {
-  issues(where: {vault: {accountId_eq: "enter your account ID between these quotes, e.g. a3addPTx9ngWGKq3dguw7vs7NA2PimcDUHWJ32HsuoFL74zdo", collateralToken_eq: KINT}}) {
+  issues(where: {vault: {accountId_eq: "enter your account ID between these quotes, e.g. a3addPTx9ngWGKq3dguw7vs7NA2PimcDUHWJ32HsuoFL74zdo", collateralToken_eq: DOT}}) {
     id
     status
     userParachainAddress
@@ -593,7 +593,7 @@ The process for Redeem requests is near-identical. Use the following query:
 
 ```graphql
 {
-  redeems(where: {vault: {accountId_eq: "your account ID here", collateralToken_eq: KINT}}) {
+  redeems(where: {vault: {accountId_eq: "your account ID here", collateralToken_eq: DOT}}) {
     id
     status
     bridgeFee
