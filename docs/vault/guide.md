@@ -204,6 +204,16 @@ Adding new collateral will increase the collateralization rate.
 
 Go to the Vault navigation item in the sidebar and click on the `Deposit Collateral` button. Then follow the instructions.
 
+**polkadot.js**
+
+1. Go to polkadot.js.org/apps and ensure you have the correct nextwork selected
+2. Click on Developer -> Extrinsics
+3. Select your existing Vault account, the `vaultRegistry` pallet and the `depositCollateral` extrinsic
+4. Enter the collateral asset, e.g., LKSM is `ForeignAssets.2` or KSM is `Tokens.KSM`,  as the collateral and the wrapped asset, e.g., `KBTC` as the wrapped currency, and the amount of additional collateral to provide. Example, deposit 1 LKSM = 10^12 Planck (1000000000000).
+5. Sign and submit the transaction
+
+![Depositing 1 LKSM of extra collateral](../_assets/img/vault/polkadotjs-deposit-lksm-collateral.png)
+
 ### Withdrawing Collateral
 
 Removing collateral will decrease the collateralization rate.
@@ -211,6 +221,14 @@ Removing collateral will decrease the collateralization rate.
 **Web UI**
 
 Go to the Vault navigation item in the sidebar and click on the `Withdraw Collateral` button. Then follow the instructions.
+
+**polkadot.js**
+
+1. Go to polkadot.js.org/apps and ensure you have the correct nextwork selected
+2. Click on Developer -> Extrinsics
+3. Select your existing Vault account, the `vaultRegistry` pallet and the `withdrawCollateral` extrinsic
+4. Enter the collateral asset, e.g., `ForeignAssets.2` as the collateral and the wrapped asset, e.g., `KBTC` as the wrapped currency, and the amount of additional collateral to withdraw. Example, withdraw 1 LKSM = 10^12 Planck (1000000000000).
+5. Sign and submit the transaction
 
 ### Setting a custom secure threshold
 
@@ -357,7 +375,7 @@ If you have already registered a vault, you can atomically add additional collat
 
 ![Screenshot: atomic deposit and self-issue](../_assets/img/guide/atomic-deposit-issue.png)
 
-## Monitoring
+## Monitoring with Prometheus and Grafana
 
 Vault operators can monitor their clients using both the [Vault dashboard and logs](vault/guide?id=vault-dashboard-and-logs) and [Prometheus / Grafana](vault/guide?id=prometheus-and-grafana).
 
@@ -496,6 +514,161 @@ as in the screenshot below (yellow line). This behaviour can be observed for all
 The *Remaining Time to Redeem* tile displays the time, in hours, left to execute the oldest redeem request with the vault. After this period elapses, the vault will get slashed. If there is no open redeem request, the default value of this metric is 24. The default AlertManager rules configuration in this documentation sends an alert when there is one hour left to execute (see [here](https://github.com/interlay/interbtc-clients/blob/d585af332d33ae763c1941eed5d63e73fe61ab52/.deploy/monitoring/rules.yml#L14)).
 
 ![Remaining Time to Redeem](../_assets/img/vault/remaining_time_to_redeem.png)
+
+## Monitoring via Squid and polkadot.js
+
+### Checking issue and redeem requests through Squid
+
+Checking Issues and Redeems against your Vault will require issuing a manual GraphQL query against our indexing service.
+
+<!-- tabs:start -->
+
+#### **Kintsugi**
+
+https://api-kusama.interlay.io/graphql/graphql
+
+#### **Interlay**
+
+https://api.interlay.io/graphql/graphql
+
+<!-- tabs:end -->
+
+#### Issue requests
+
+Enter the following query to view the Issue requests against your vault:
+
+```graphql
+{
+  issues(where: {vault: {accountId_eq: "enter your account ID between these quotes, e.g. a3addPTx9ngWGKq3dguw7vs7NA2PimcDUHWJ32HsuoFL74zdo", collateralToken_eq: DOT}}) {
+    id
+    status
+    userParachainAddress
+    griefingCollateral
+    vaultBackingAddress
+    request {
+      amountWrapped
+      height {
+        active
+      }
+      backingHeight
+      timestamp
+    }
+    execution {
+      timestamp
+      amountWrapped
+      bridgeFeeWrapped
+      height {
+        active
+      }
+    }
+    cancellation {
+      timestamp
+      height {
+        active
+      }
+    }
+  }
+}
+```
+
+Edit the string after `accountId_eq` to match the account ID of your vault. Press the Play button above the query editing field to run the query.
+
+- The `request` field contains the data about the request the user has submitted.
+- The `execution` field will be `null` until the Issue request has been executed. After execution, it will contain the details of the execution - including potentially a different KBTC amount (`amountWrapped`), in case the user underpaid or overpaid.
+- The `cancellation` field will similarly be `null` unless the request has expired and has been cancelled.
+
+The information otherwise matches what you see in the tables in the UI dashboards.
+
+To view any BTC transactions associated with a request, enter the value for the `vaultBackingAddress` into a BTC blockchain explorer - this is the address (unique for every Issue request) that the user is required to send their BTC to.
+
+You can additionally filter requests by status (or any number of other fields, if you are comfortable with  GraphQL). For example, to view only pending requests, change the first line of the query to be:
+
+```graphql
+  issues(where: {vault: {accountId_eq: "<address here>", collateralToken_eq: KINT}, status_eq: Pending}) {
+```
+
+#### Redeem requests
+
+The process for Redeem requests is near-identical. Use the following query:
+
+```graphql
+{
+  redeems(where: {vault: {accountId_eq: "your account ID here", collateralToken_eq: DOT}}) {
+    id
+    status
+    bridgeFee
+    btcTransferFee
+    collateralPremium
+    userBackingAddress
+    userParachainAddress
+    request {
+      timestamp
+      requestedAmountBacking
+      height {
+        active
+      }
+    }
+    execution {
+      timestamp
+      height {
+        active
+      }
+    }
+    cancellation {
+      timestamp
+      slashedCollateral
+      reimbursed
+      height {
+        active
+      }
+    }
+  }
+}
+```
+
+Here, the `userBackingAddress` is the BTC address that the Redeem request will be paid out to. `collateralPremium` contains the owed premium in case this was a premium redeem - it will be 0 otherwise. The `cancellation` field contains some extra data - `reimbursed` will be `true` if the user chose to burn their KBTC for collateral, or `false` if the user chose to retry instead.
+
+### Viewing stats through polkadot.js
+
+In polkadot.js, you can view some information about the current state of your vault.
+
+#### Viewing locked KBTC/IBTC (and other information)
+
+1. Go to polkadot.js.org/apps and ensure you have the right network selected
+2. Click on Developer -> Chain State
+3. Select your existing Vault account, the `vaultRegistry` pallet and the `vaults` query
+4. Enter the collateral and the wrapped currency, e.g., `KSM` and `KBTC`
+5. Click the `+` icon in the top-right of the screen.
+
+This will show you the on-chain data about the vault, including:
+
+- The status
+- Whether it has been banned, and if so, for how long
+- The amount of issued IBTC/KBTC held (in Satoshi)
+- The amount of IBTC/KBTC in currently pending Issue and Redeem requests
+- Information about Replaces and liquidation, if any has happened
+
+#### Viewing locked collateral
+
+1. Go to polkadot.js.org/apps and ensure you have the right network selected
+2. Click on Developer -> Chain State
+3. Select your existing Vault account, the `vaultStaking` pallet and the `nonce` query
+4. Enter the collateral and the wrapped currency, e.g., `KSM` and `KBTC`
+5. Click the `+` icon in the to-right to run the query, and note down the number returned
+6. Switch to the `totalCurrentStake` query
+7. Enter the nonce you found in step 5 as the first argument ("u32"); enter, e.g, `KSM` as the collateral and `KBTC` as the wrapped currency
+8. Click the `+` icon in the top-right of the screen.
+
+This will return your current locked collateral amount, in KSM multiplied by 10^30 (1000000000000000000000000000000) (or equivalently, in Planck multiplied by 10^18).
+
+#### Calculating collateralization manually through polkadot.js
+
+If you are not running Prometheus and don't want to rely on the UI, you can calculate the collateralization rate manually using on-chain data directly.
+
+1. Perform the steps, detailed above, to [obtain the locked KBTC amount and locked collateral of your vault](#viewing-stats-through-polkadotjs). Ensure you convert the values from Plank to KINT (divide by 10^12) and from Satoshi to KBTC (divide by 10^8).
+2. Similarly, query the `oracle` pallet for the `aggregate` value, and enter "ExchangeRate", "Token" and "KINT" as the parameters.
+3. Divide the returned value by 10^22 to obtain the exchange rate. For example, for a return of `80,250,381,189,311,293,237,950,000`, the exchange rate is approximately 8025.038.
+4. Use the following formula: `collateralization = collateral / exchangeRate / KBTC`. For example, for a vault with 16050 KINT of collateral locked, 0.5 KBTC issued, and an exchange rate of 8025, the collateralization rate will be 16050 / 8025 / 0.5 = 4, or 400%.
 
 ## Security
 

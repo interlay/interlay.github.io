@@ -38,7 +38,7 @@
   * [Overview](vault/overview.md)
   * [Installation](vault/installation.md)
   * [Operating Guide](vault/guide.md)
-  * [KINT Vault Guide](vault/kint.md)
+  * [Multi-Collateral Guide](vault/multi-collateral.md)
   * [FAQ](vault/faq.md)
 
 * **Collators**
