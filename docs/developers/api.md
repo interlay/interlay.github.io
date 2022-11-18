@@ -4,11 +4,26 @@
 
 Connecting to parachain nodes:
 
-* **Interlay (by Kintsugi Labs)**: `wss://api.interlay.io:443/parachain`
-* **Kintsugi (by Kintsugi Labs)**: `wss://api-kusama.interlay.io:443/parachain`
-* **Kintsugi (by OnFinality)**: `wss://kintsugi.api.onfinality.io/public-ws`
-* **Testnet-Kintsugi**: `wss://api-dev-kintsugi.interlay.io:443/parachain`
-* **Testnet-Interlay**: `wss://staging.interlay-dev.interlay.io:443/parachain`
+<!-- tabs:start -->
+#### **Interlay**
+
+- `wss://api.interlay.io:443/parachain`
+- `wss://interlay.api.onfinality.io/public-ws`
+
+#### **Kintsugi**
+
+- `wss://api-kusama.interlay.io:443/parachain`
+- `wss://kintsugi.api.onfinality.io/public-ws`
+
+#### **Testnet (Interlay)**
+
+- `wss://api-testnet.interlay.io:443/parachain`
+
+#### **Testnet (Kintsugi)**
+
+- `wss://api-dev-kintsugi.interlay.io:443/parachain`
+
+<!-- tabs:end -->
 
 ## Asset API
 
@@ -72,3 +87,28 @@ All assets in Kintsugi and Interlay networks are implemented using [orml](https:
 * Foreign assets: [orml-asset-registry](https://github.com/open-web3-stack/open-runtime-module-library/tree/master/asset-registry)
 
 ?> Querying the `system` account is not supported on Kintsugi or Interlay. Please use the API methods described above to achieve transfers.
+
+## GraphQL APIs
+
+Interlay provides a range of [subsquid](https://github.com/subsquid/squid)-based API endpoints for building front-ends and analytic tools.
+
+<!-- tabs:start -->
+#### **Interlay**
+
+- Squid: https://api.interlay.io/graphql/graphql
+- Archive: https://api.interlay.io/gateway-graphql/console
+
+#### **Kintsugi**
+
+- Squid: https://api-kusama.interlay.io/graphql/graphql
+- Archive: https://api-kusama.interlay.io/gateway-graphql/console
+
+#### **Testnet (Interlay)**
+
+- Squid: https://api-testnet.interlay.io/graphql/graphql
+
+#### **Testnet (Kintsugi)**
+
+- Squid: https://api-dev-kintsugi.interlay.io/graphql/graphql
+
+<!-- tabs:end -->
