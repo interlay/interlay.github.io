@@ -51,8 +51,7 @@
 
   * [Overview](developers/overview.md)
   * [API](developers/api.md)
-  * [Bridge](developers/bridge.md)
-  * [TypeScript Integration](developers/integration.md)
+  * [TypeScript SDK](developers/integration.md)
   * [Documentation](developers/documentation.md)
 
 * **Security**
