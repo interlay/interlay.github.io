@@ -6,7 +6,7 @@ We have partnered with [Immunefi](https://immunefi.com) for our bug bounty progr
 
 Overview:
 
-- Maximum reward: $1,000,000
+- Maximum reward: $500,000
 - KYC required: Yes
 - Program details: https://immunefi.com/bounty/interlay/
 
