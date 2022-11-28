@@ -28,6 +28,7 @@
   * [Wallets / Explorers](guides/wallets-explorers.md)
   * [Transfers](guides/transfers.md)
   * [Bridge](guides/bridge.md)
+  * [Lending](guides/lending.md)
   * [Staking](guides/stake.md)
   * [Governance](guides/governance.md)
   * [Crowdloans](guides/crowdloans.md)
