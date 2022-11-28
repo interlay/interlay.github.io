@@ -95,20 +95,22 @@ Interlay provides a range of [subsquid](https://github.com/subsquid/squid)-based
 <!-- tabs:start -->
 #### **Interlay**
 
-- Squid: https://api.interlay.io/graphql/graphql
-- Archive: https://api.interlay.io/gateway-graphql/console
+- Squid: [https://api.interlay.io/graphql/graphql](https://api.interlay.io/graphql/graphql)
+- Archive: [https://api.interlay.io/gateway-graphql/console](https://api.interlay.io/subsquid-explorer/graphql)
 
 #### **Kintsugi**
 
-- Squid: https://api-kusama.interlay.io/graphql/graphql
-- Archive: https://api-kusama.interlay.io/gateway-graphql/console
+- Squid: [https://api-kusama.interlay.io/graphql/graphql](https://api-kusama.interlay.io/graphql/graphql)
+- Archive: [https://api-kusama.interlay.io/gateway-graphql/console](https://api-kusama.interlay.io/subsquid-explorer/graphql)
 
 #### **Testnet (Interlay)**
 
-- Squid: https://api-testnet.interlay.io/graphql/graphql
+- Squid: [https://api-testnet.interlay.io/graphql/graphql](https://api-testnet.interlay.io/graphql/graphql)
+- Archive: [https://api-testnet.interlay.io/subsquid-explorer/graphql](https://api-testnet.interlay.io/subsquid-explorer/graphql)
 
 #### **Testnet (Kintsugi)**
 
-- Squid: https://api-dev-kintsugi.interlay.io/graphql/graphql
+- Squid: [https://api-dev-kintsugi.interlay.io/graphql/graphql](https://api-dev-kintsugi.interlay.io/graphql/graphql)
+-  Archive: [https://api-dev-kintsugi.interlay.io/subsquid-explorer/graphql](https://api-dev-kintsugi.interlay.io/subsquid-explorer/graphql)
 
 <!-- tabs:end -->
