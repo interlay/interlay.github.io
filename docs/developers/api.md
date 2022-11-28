@@ -96,12 +96,14 @@ Interlay provides a range of [subsquid](https://github.com/subsquid/squid)-based
 #### **Interlay**
 
 - Squid: [https://api.interlay.io/graphql/graphql](https://api.interlay.io/graphql/graphql)
-- Archive: [https://api.interlay.io/gateway-graphql/console](https://api.interlay.io/subsquid-explorer/graphql)
+- Archive (hosted by subsquid): [https://interlay.explorer.subsquid.io/graphql](https://interlay.explorer.subsquid.io/graphql)
+- Archive (hosted by Interlay Labs): [https://api.interlay.io/subsquid-explorer/graphql](https://api.interlay.io/subsquid-explorer/graphql)
 
 #### **Kintsugi**
 
 - Squid: [https://api-kusama.interlay.io/graphql/graphql](https://api-kusama.interlay.io/graphql/graphql)
-- Archive: [https://api-kusama.interlay.io/gateway-graphql/console](https://api-kusama.interlay.io/subsquid-explorer/graphql)
+- Archive (hosted by subsquid): [https://kintsugi.explorer.subsquid.io/graphql](https://kintsugi.explorer.subsquid.io/graphql)
+- Archive (hosted by Kintsugi Labs): [https://api-kusama.interlay.io/subsquid-explorer/graphql](https://api-kusama.interlay.io/subsquid-explorer/graphql)
 
 #### **Testnet (Interlay)**
 
