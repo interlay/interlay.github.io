@@ -487,13 +487,13 @@ Download the asset from GitHub:
 #### **Testnet (Kintsugi)**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.5/vault-parachain-metadata-kintsugi-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.0/vault-parachain-metadata-kintsugi-testnet
 ```
 
 #### **Testnet (Interlay)**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.5/vault-parachain-metadata-interlay-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.0/vault-parachain-metadata-interlay-testnet
 ```
 
 #### **Kintsugi**
@@ -545,14 +545,14 @@ cd interbtc-clients
 #### **Testnet (Kintsugi)**
 
 ```shell
-git checkout 1.17.5
+git checkout 1.18.0
 cargo build --bin vault --features parachain-metadata-kintsugi-testnet
 ```
 
 #### **Testnet (Interlay)**
 
 ```shell
-git checkout 1.17.5
+git checkout 1.18.0
 cargo build --bin vault --features parachain-metadata-interlay-testnet
 ```
 
