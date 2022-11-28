@@ -121,7 +121,7 @@ OR terminate the process with `Ctrl+C`.
 #### **Testnet-Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.5/vault-parachain-metadata-kintsugi-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.0/vault-parachain-metadata-kintsugi-testnet
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup testnet-kintsugi vault
@@ -130,7 +130,7 @@ chmod +x ./setup && sudo ./setup testnet-kintsugi vault
 #### **Testnet-Interlay**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.5/vault-parachain-metadata-interlay-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.0/vault-parachain-metadata-interlay-testnet
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup testnet-interlay vault
