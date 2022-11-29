@@ -1,4 +1,3 @@
-
 # Lend and Borrow
 
 The lending protocol allows users to trustlessly lend and borrow. Assets that are supplied to the lending pool start earning interest immediately, and can be used as a security deposit for over-collateralized borrowing. Borrowers can repay their loan at any time, along with the interest they owe, while lenders can only withdraw their deposit if there is more liquidity left in the pool (i.e. not borrowed) than the amount to be withdrawn. Interest rates are variable and depend on the supply and demand of each asset.
@@ -41,25 +40,24 @@ There are three markets available in the screenshot attached. You can take a loo
 
 ![The Lending page](../_assets/img/guide/lending-page-initial.png)
 
-### 2. Obtain funds to pay the transaction fees and lend
+### 2. Bring tokens for lending and transaction fees
 
-You will need some of the native on-chain currency (KINT on Kintsugi, INTR on Interlay) to pay the transaction fee. Additionally, to prevent spam, you will need to place a small deposit which will be returned to you once the request has been completed.
+You will need some tokens to pay for transaction fees (KINT on Kintsugi, INTR on Interlay). Additionally, you also need tokens to deposit into the lending pool.
 
 <!-- tabs:start -->
 #### **Interlay**
 
-A list of exchanges with INTR listings can be found on [Coingecko](https://www.coingecko.com/en/coins/interlay).
+A list of exchanges with INTR listings can be found on [Coingecko](https://www.coingecko.com/en/coins/interlay). Those exchanges should also have the assets in the Interlay lending markets listed.
 
 #### **Kintsugi**
 
-A list of exchanges with KINT listings can be found on [Coingecko](https://www.coingecko.com/en/coins/kintsugi).
+A list of exchanges with KINT listings can be found on [Coingecko](https://www.coingecko.com/en/coins/kintsugi). Those exchanges should also have the assets in the Kintsugi lending markets listed.
+
 
 #### **Testnet**
 
-On testnet, you can obtain some test KINT/INTR by clicking on the "KINT/INTR Faucet" button on the right-hand side of the top bar.
+On testnet, you can obtain some tokens (KINT/INTR, KBTC/IBTC, KSM/DOT, USDT) by clicking on the "Tokens Faucet" button on the right-hand side of the top bar.
 <!-- tabs:end -->
-
-You may also want to [issue](guides/bridge.md#issue-ibtckbtc) some testnet IBTC/KBTC first, so you can then lend it.
 
 ### 3. Deposit to a lending market
 
