@@ -97,7 +97,7 @@ Please also check the [minimum collateral requirements](/vault/overview?id=minim
 ## Auto-Upgrading Installation
 
 Run Bitcoin and the Vault auto-upgrading binary (the Runner) as a service on your computer or server. Follow this guide if you are interested in operating a Vault for earning and participating in the protocol.
- 
+
 The Runner runs and auto-updates Vault clients by reading on-chain release data.
 
 ?> This method is currently only supported for Linux.
@@ -207,7 +207,7 @@ You should also use a custom RPC username and password instead of the default `r
 
 Download the asset from GitHub:
 ```shell
-wget -O runner https://github.com/interlay/interbtc-clients/releases/download/1.17.4/runner 
+wget -O runner https://github.com/interlay/interbtc-clients/releases/download/1.18.0/runner
 ```
 
 Make the binary executable:
@@ -228,7 +228,7 @@ Please check the [README](https://github.com/interlay/interbtc-clients/tree/mast
 
 Move the Runner binary into your `$PATH`.
 
-Pass Vault CLI arguments as positional arguments (preceeded by double dashes: `--`), after passing the command options of the runner executable. 
+Pass Vault CLI arguments as positional arguments (preceeded by double dashes: `--`), after passing the command options of the runner executable.
 
 <!-- tabs:start -->
 #### **Testnet (Kintsugi)**
@@ -307,19 +307,19 @@ Nov 01 11:55:24.895  INFO Server::run{addr=127.0.0.1:9615}: warp::server: listen
 Nov 01 11:55:25.173  INFO vault::process: Creating PID file at: /tmp/testnet-kintsugi_5FQuttDpfJPaNhA6BCU4e7gxfF5E1EJXUXDkxpxmZH2pTqJJ.pid
 Nov 01 11:55:25.175  INFO service: Version: 1.17.3
 Nov 01 11:55:25.175  INFO service: AccountId: a3dZN1MM8fUz1oim3RMBHqJqHb3pyunSJmnxCWq3PmjQNQSJG
-Nov 01 11:55:25.175  INFO bitcoin: Connecting to bitcoin-core...    
-Nov 01 11:55:25.410  INFO bitcoin: Connected to test    
-Nov 01 11:55:25.410  INFO bitcoin: Bitcoin version 220000    
-Nov 01 11:55:25.419  INFO bitcoin: Waiting for bitcoin-core to sync...    
-Nov 01 11:55:25.577  INFO bitcoin: Synced!    
-Nov 01 11:55:25.739  INFO bitcoin: Creating wallet 0x941e21f31b24ee85f6b34c985a34e0e494b143e5a34986c82a55e73f844ceb4f-master...    
-Nov 01 11:55:26.709  INFO runtime::conn: Connecting to the btc-parachain...    
+Nov 01 11:55:25.175  INFO bitcoin: Connecting to bitcoin-core...
+Nov 01 11:55:25.410  INFO bitcoin: Connected to test
+Nov 01 11:55:25.410  INFO bitcoin: Bitcoin version 220000
+Nov 01 11:55:25.419  INFO bitcoin: Waiting for bitcoin-core to sync...
+Nov 01 11:55:25.577  INFO bitcoin: Synced!
+Nov 01 11:55:25.739  INFO bitcoin: Creating wallet 0x941e21f31b24ee85f6b34c985a34e0e494b143e5a34986c82a55e73f844ceb4f-master...
+Nov 01 11:55:26.709  INFO runtime::conn: Connecting to the btc-parachain...
 Nov 01 11:55:26.783  INFO jsonrpsee_client_transport::ws: Connection established to target: Target { sockaddrs: [], host: "api-dev-kintsugi.interlay.io", host_header: "api-dev-kintsugi.interlay.io:443", _mode: Tls, path_and_query: "/parachain" }
-Nov 01 11:55:26.783  INFO runtime::conn: Connected!    
-Nov 01 11:55:27.242  INFO runtime::rpc: spec_name=testnet-kintsugi    
-Nov 01 11:55:27.242  INFO runtime::rpc: spec_version=1019000    
-Nov 01 11:55:27.242  INFO runtime::rpc: transaction_version=1    
-Nov 01 11:55:27.263  INFO runtime::rpc: Refreshing nonce: 0    
+Nov 01 11:55:26.783  INFO runtime::conn: Connected!
+Nov 01 11:55:27.242  INFO runtime::rpc: spec_name=testnet-kintsugi
+Nov 01 11:55:27.242  INFO runtime::rpc: spec_version=1019000
+Nov 01 11:55:27.242  INFO runtime::rpc: transaction_version=1
+Nov 01 11:55:27.263  INFO runtime::rpc: Refreshing nonce: 0
 ```
 
 ### 6. [Optional] Start the Runner as a systemd service
@@ -499,7 +499,7 @@ wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.1
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.5/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.0/vault-parachain-metadata-kintsugi
 ```
 
 #### **Interlay**
@@ -559,7 +559,7 @@ cargo build --bin vault --features parachain-metadata-interlay-testnet
 #### **Kintsugi**
 
 ```shell
-git checkout 1.17.5
+git checkout 1.18.0
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
