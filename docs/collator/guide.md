@@ -39,7 +39,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:1.18.0 \
+  interlayhq/interbtc:1.20.0 \
   --base-path=/data \
   --chain=kintsugi \
   --execution=wasm \
@@ -54,7 +54,6 @@ docker run \
   --execution=wasm \
   --wasm-execution=compiled \
   --database=RocksDb \
-  --unsafe-pruning \
   --pruning=1000 \
   --state-cache-size=0
 ```
@@ -65,7 +64,7 @@ docker run \
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:1.18.0 \
+  interlayhq/interbtc:1.20.0 \
   interbtc-parachain \
   --base-path=/data \
   --chain=interlay \
@@ -81,7 +80,6 @@ docker run \
   --execution=wasm \
   --wasm-execution=compiled \
   --database=RocksDb \
-  --unsafe-pruning \
   --pruning=1000 \
   --state-cache-size=0
 ```
@@ -99,14 +97,14 @@ Download the pre-built binary:
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.19.0/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.20.0/interbtc-parachain
 chmod +x interbtc-parachain
 ```
 
 #### **Interlay**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.18.0/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.20.0/interbtc-parachain
 chmod +x interbtc-parachain
 ```
 
@@ -140,14 +138,14 @@ cd interbtc
 #### **Kintsugi**
 
 ```shell
-git checkout 1.19.0
+git checkout 1.20.0
 cargo build --release
 ```
 
 #### **Interlay**
 
 ```shell
-git checkout 1.18.0
+git checkout 1.20.0
 cargo build --release
 ```
 
@@ -177,7 +175,6 @@ interbtc-parachain \
   --execution=wasm \
   --wasm-execution=compiled \
   --database=RocksDb \
-  --unsafe-pruning \
   --pruning=1000 \
   --state-cache-size=0
 ```
@@ -200,7 +197,6 @@ interbtc-parachain \
   --execution=wasm \
   --wasm-execution=compiled \
   --database=RocksDb \
-  --unsafe-pruning \
   --pruning=1000 \
   --state-cache-size=0
 ```
@@ -233,7 +229,7 @@ In this example we used the URI `//Alice` which is a well-known testing account 
 
 ### 4. Register the collator
 
-Submit the `registerAsCandidate` extrinsic ([example](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/extrinsics/decode/0x5103)) with the staked account to start collating:  
+Submit the `registerAsCandidate` extrinsic ([example](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/extrinsics/decode/0x5103)) with the staked account to start collating:
 
 ![Register](../_assets/img/collator/register.png)
 
