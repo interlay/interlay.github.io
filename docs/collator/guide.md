@@ -53,7 +53,7 @@ docker run \
   --no-telemetry \
   --execution=wasm \
   --wasm-execution=compiled \
-  --database=RocksDb \
+  --database=rocksdb \
   --pruning=1000 \
   --state-cache-size=0
 ```
@@ -64,7 +64,7 @@ docker run \
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:1.20.0 \
+  interlayhq/interbtc:1.19.1 \
   interbtc-parachain \
   --base-path=/data \
   --chain=interlay \
@@ -145,7 +145,7 @@ cargo build --release
 #### **Interlay**
 
 ```shell
-git checkout 1.20.0
+git checkout 1.19.1
 cargo build --release
 ```
 
@@ -174,7 +174,7 @@ interbtc-parachain \
   --no-telemetry \
   --execution=wasm \
   --wasm-execution=compiled \
-  --database=RocksDb \
+  --database=rocksdb \
   --pruning=1000 \
   --state-cache-size=0
 ```
