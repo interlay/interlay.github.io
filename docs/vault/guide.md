@@ -10,6 +10,7 @@ At the end of this document you will have:
 - [x] [Upgraded the Vault client](#upgrading-the-vault-client)
 - [x] [Maintain your collateralization rate](#managing-collateral)
 - [x] [Ensure that there are enough BTC in the Vault's wallet](#bitcoin-balance-check)
+- [x] [Set an on-chain identity](#setting-an-identity)
 - [x] [Self-Minted KBTC/IBTC](#self-minting)
 - [x] [Set up Prometheus and Grafana for monitoring your Vault](#prometheus-and-grafana)
 - [x] [Improved the security of your Vault](#security)
@@ -309,6 +310,10 @@ bitcoin-cli -rpcwallet=<INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912
 ```
 
 This will return a new address for your Vault. You can then use any Bitcoin wallet of your choice to send BTC to that address to refund the Vault's wallet.
+
+## Setting an Identity
+
+All networks inlcude the `identity` pallet. This allows anyone to set an identity. Follow the guide here: https://support.polkadot.network/support/solutions/articles/65000181981-how-to-set-and-clear-an-identity.
 
 ## Self-Minting
 

@@ -5,7 +5,7 @@ A single Vault account can support more than one collateral asset.
 Follow this guide to add more collateral assets:
 
 - [x] [Learn about how multi-collateral Vaults work](#multi-collateral-operation)
-- [x] [Transfer foreign assets]
+- [x] [Transfer foreign assets](#transfer-foreign-assets)
 - [x] [Register a new collateral asset](#registration)
 - [x] [Manage a multi-collateral Vault](#managing-a-multi-collateral-vault)
 
