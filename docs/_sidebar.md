@@ -15,6 +15,7 @@
   * [Tokenomics](interlay/tokenomics.md)
   * [Governance](interlay/governance.md)
   * [Use iBTC](interlay/earn-with-ibtc.md)
+  * [Ledger](interlay/ledger.md)
 
 * **Kintsugi Canarynet**
 
