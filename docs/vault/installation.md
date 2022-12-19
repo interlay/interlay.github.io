@@ -207,7 +207,7 @@ You should also use a custom RPC username and password instead of the default `r
 
 Download the asset from GitHub:
 ```shell
-wget -O runner https://github.com/interlay/interbtc-clients/releases/download/1.18.0/runner
+wget -O runner https://github.com/interlay/interbtc-clients/releases/download/1.18.1/runner
 ```
 
 Make the binary executable:
@@ -487,25 +487,25 @@ Download the asset from GitHub:
 #### **Testnet (Kintsugi)**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.0/vault-parachain-metadata-kintsugi-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.1/vault-parachain-metadata-kintsugi-testnet
 ```
 
 #### **Testnet (Interlay)**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.0/vault-parachain-metadata-interlay-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.1/vault-parachain-metadata-interlay-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.0/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.1/vault-parachain-metadata-kintsugi
 ```
 
 #### **Interlay**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.5/vault-parachain-metadata-interlay
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.6/vault-parachain-metadata-interlay
 ```
 
 <!-- tabs:end -->
@@ -545,28 +545,28 @@ cd interbtc-clients
 #### **Testnet (Kintsugi)**
 
 ```shell
-git checkout 1.18.0
+git checkout 1.18.1
 cargo build --bin vault --features parachain-metadata-kintsugi-testnet
 ```
 
 #### **Testnet (Interlay)**
 
 ```shell
-git checkout 1.18.0
+git checkout 1.18.1
 cargo build --bin vault --features parachain-metadata-interlay-testnet
 ```
 
 #### **Kintsugi**
 
 ```shell
-git checkout 1.18.0
+git checkout 1.18.1
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
 #### **Interlay**
 
 ```shell
-git checkout 1.17.5
+git checkout 1.17.6
 cargo build --bin vault --features parachain-metadata-interlay
 ```
 
