@@ -191,7 +191,7 @@ When vault clients start, they parse the bitcoin blockchain via the Bitcoin RPC 
 ```
 rpcworkqueue=128
 rpcthreads=128
-rpctimeout=220
+rpcservertimeout=220
 ```
 
 If you modify these values and your bitcoin node was already running, restart the bitcoind service.
