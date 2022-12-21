@@ -31,6 +31,7 @@
   * [Lending](guides/lending.md)
   * [Staking](guides/stake.md)
   * [Governance](guides/governance.md)
+  * [Proposals](guides/proposals.md)
   * [Crowdloans](guides/crowdloans.md)
   * [Token Vesting](guides/vesting.md)
 
