@@ -281,7 +281,6 @@ You can get testnet KINT/INTR for transaction fees by clicking on the faucet lin
 Make sure you have at least some testnet BTC in your wallet.
 You can get testnet BTC by clicking on the faucet link in the top bar of testnet.interlay.io, or from one of the following faucets:
 
-- [https://testnet-faucet.mempool.co/](https://testnet-faucet.mempool.co/)
 - [https://bitcoinfaucet.uo1.net/](https://bitcoinfaucet.uo1.net/)
 - [https://coinfaucet.eu/en/btc-testnet/](https://coinfaucet.eu/en/btc-testnet/)
 - [https://kuttler.eu/en/bitcoin/btc/faucet/](https://kuttler.eu/en/bitcoin/btc/faucet/)
