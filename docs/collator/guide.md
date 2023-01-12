@@ -39,7 +39,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:1.20.0 \
+  interlayhq/interbtc:1.20.1 \
   --base-path=/data \
   --chain=kintsugi \
   --execution=wasm \
@@ -47,15 +47,13 @@ docker run \
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
-  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
   --execution=wasm \
   --wasm-execution=compiled \
   --database=rocksdb \
-  --pruning=1000 \
-  --state-cache-size=0
+  --pruning=1000
 ```
 
 #### **Interlay**
@@ -64,8 +62,7 @@ docker run \
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:1.19.1 \
-  interbtc-parachain \
+  interlayhq/interbtc:1.20.1 \
   --base-path=/data \
   --chain=interlay \
   --execution=wasm \
@@ -73,15 +70,13 @@ docker run \
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
-  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
   --execution=wasm \
   --wasm-execution=compiled \
-  --database=RocksDb \
-  --pruning=1000 \
-  --state-cache-size=0
+  --database=rocksdb \
+  --pruning=1000
 ```
 
 <!-- tabs:end -->
@@ -97,14 +92,14 @@ Download the pre-built binary:
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.20.0/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.20.1/interbtc-parachain
 chmod +x interbtc-parachain
 ```
 
 #### **Interlay**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.20.0/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.20.1/interbtc-parachain
 chmod +x interbtc-parachain
 ```
 
@@ -138,14 +133,14 @@ cd interbtc
 #### **Kintsugi**
 
 ```shell
-git checkout 1.20.0
+git checkout 1.20.1
 cargo build --release
 ```
 
 #### **Interlay**
 
 ```shell
-git checkout 1.19.1
+git checkout 1.20.1
 cargo build --release
 ```
 
@@ -168,15 +163,13 @@ interbtc-parachain \
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
-  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
   --execution=wasm \
   --wasm-execution=compiled \
   --database=rocksdb \
-  --pruning=1000 \
-  --state-cache-size=0
+  --pruning=1000
 ```
 
 #### **Interlay**
@@ -190,15 +183,13 @@ interbtc-parachain \
   --unsafe-ws-external \
   --rpc-methods=unsafe \
   --pruning=archive \
-  --state-cache-size=0 \
   -- \
   --rpc-cors=all \
   --no-telemetry \
   --execution=wasm \
   --wasm-execution=compiled \
-  --database=RocksDb \
-  --pruning=1000 \
-  --state-cache-size=0
+  --database=rocksdb \
+  --pruning=1000
 ```
 
 <!-- tabs:end -->

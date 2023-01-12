@@ -505,7 +505,7 @@ wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.1
 #### **Interlay**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.6/vault-parachain-metadata-interlay
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.1/vault-parachain-metadata-interlay
 ```
 
 <!-- tabs:end -->
@@ -566,7 +566,7 @@ cargo build --bin vault --features parachain-metadata-kintsugi
 #### **Interlay**
 
 ```shell
-git checkout 1.17.6
+git checkout 1.18.1
 cargo build --bin vault --features parachain-metadata-interlay
 ```
 
