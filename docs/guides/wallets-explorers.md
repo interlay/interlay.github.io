@@ -26,9 +26,9 @@ To interact with the Interlay/Kintsugi Dapp you will need a Substrate-compatible
 
 2. **Create account**. Go to the plus sign at the top of the extension and click on "create new account" and follow the instructions.
 
-#### [subwallet](https://subwallet.app/)
+#### [SubWallet](https://subwallet.app/)
 
-Guide: https://docs.subwallet.app/user-guide/how-to-install-subwallet
+Guide: https://docs.subwallet.app/dapps-user-guide/interlay
 
 ### Web Wallets
 

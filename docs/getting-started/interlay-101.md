@@ -41,7 +41,7 @@ Substrate chain, secured by Polkadot's PoS as a parachain. 12-second block times
   - [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/explorer)
 - Wallets:
   - [Polkadot.js (Signer, browser)](https://polkadot.js.org/extension/)
-  - [Subwallet (browser)](https://subwallet.app/)
+  - [SubWallet (browser)](https://subwallet.app/)
   - [Talisman (browser)](https://talisman.xyz/)
   - [Nova (mobile)](https://novawallet.io/)
   - [Fearless (mobile)](https://fearlesswallet.io/)
@@ -63,7 +63,7 @@ Canary network (experimental network with real economic value). Substrate chain,
   - [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/explorer)
 - Wallets:
   - [Polkadot.js (Signer, browser)](https://polkadot.js.org/extension/)
-  - [Subwallet (browser)](https://subwallet.app/)
+  - [SubWallet (browser)](https://subwallet.app/)
   - [Talisman (browser)](https://talisman.xyz/)
   - [Nova (mobile)](https://novawallet.io/)
   - [Fearless (mobile)](https://fearlesswallet.io/)
