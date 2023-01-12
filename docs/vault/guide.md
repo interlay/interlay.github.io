@@ -149,7 +149,7 @@ chmod +x ./setup && sudo ./setup kintsugi vault
 #### **Interlay**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.17.6/vault-parachain-metadata-interlay
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.1/vault-parachain-metadata-interlay
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup interlay vault
