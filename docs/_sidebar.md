@@ -59,7 +59,7 @@
 * **Security**
 
   * [Bug Bounty](about/bug-bounty.md)
-  * [Audits](https://github.com/interlay/interbtc/tree/master/docs/audits)
+  * [Audits](about/audits.md)
   * [Formal Specification](https://spec.interlay.io/)
 
 * **Further Reading**
