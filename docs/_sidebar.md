@@ -57,15 +57,12 @@
   * [Documentation](developers/documentation.md)
 
 * **Security**
+
   * [Bug Bounty](about/bug-bounty.md)
-  * [Formal Specification :bookmark_tabs:](https://spec.interlay.io/)
+  * [Audits](https://github.com/interlay/interbtc/tree/master/docs/audits)
+  * [Formal Specification](https://spec.interlay.io/)
 
 * **Further Reading**
 
-  * [Roadmap](about/roadmap.md)
   * [Research](about/research.md)
   * [Glossary](about/glossary.md)
-
-* **Adding Translations**
-  * [Step-by-Step Guide](translation/guide.md)
-  * [Best Practices](translation/best-practices.md)
