@@ -139,6 +139,11 @@ If you want to make governance pre-approving some future course of action (i.e, 
  * Under `remark: Bytes` enter the message you want to write to the chain. Simply copy & paste the IPFS URL of the PDF file, e.g. [https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs](https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs) 
  * Submit the preimage
 
+Sidenote: please add the following message at the top of your proposal text on Subsquare (see below):
+
+"*This referendum, if passed, will create the following on-chain remark: <copy+pase the IPFS URL here>*"
+
+
 ![Preimage Hash](../_assets/img/guide/system-remark.png)
 
 
