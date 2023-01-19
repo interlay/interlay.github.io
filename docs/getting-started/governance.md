@@ -5,16 +5,18 @@ Governance token holders have the ultimate decision power over:
 
 - **Runtime upgrades**: Fixes, substrate/library updates, improvements, new features, …
 - **Parameter upgrades**:
-  - Stable BTC Confirmations
+  - Adding and removing AMM pools
+  - Adding and removing money markets
   - Whitelist collateral currencies and set thresholds
-  - Parachain Status (On/Off)
-  - Accepted oracles
+  - Configure BTC bridge parameters
+  - Adding and removing XCM connections
+  - Adding and removing oracles
 
-- **Treasury management**: decision on how to spend the assets locks in the network treasury.
+- **Treasury management**: decision on how to spend the assets locked in the network treasury.
 
-### Governance Implementations
+## Governance Implementations
 
 For the specifics of each network's governance, see:
 
-- **Kintsugi**: [Kintsugi Governance documentation](../kintsugi/governance)
-- **Interlay**: Coming soon
+- **Kintsugi**: [Kintsugi Governance documentation](kintsugi/governance)
+- **Interlay**: [Interlay Governance documentation](interlay/governance)
