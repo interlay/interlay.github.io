@@ -127,6 +127,21 @@ Go to Developer -> Extrinsics -> democracy -> notePreimage and insert the `hex-e
 
 ![Preimage Hash](../_assets/img/guide/note-preimage-encoded-call-hash.png)
 
+**Special case: Pre-approve a future course of action**
+
+If you want to make governance pre-approving some future course of action (i.e, **no on-chain effects take place right now!**), the best way is to summarize the proposal in a PDF and have the community vote on "timestamping" the document on the blockchain:
+
+1. Upload PDF to IPFS, e.g. using [https://www.pinata.cloud/](https://www.pinata.cloud/) 
+2. Fetch the file URL (e.g. [https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs](https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs))
+3. Create a proposal that creates an on-chain remark (writes some data to the chain).
+ * Go to [https://polkadot.js.org/apps/#/democracy](https://polkadot.js.org/apps/#/democracy) (“Governance” tab). Make sure you are connected to the correct network
+ * Click `Submit preimage`, under propose select `system` and then select `remark(remark)` from the second dropdown
+ * Under `remark: Bytes` enter the message you want to write to the chain. Simply copy & paste the IPFS URL of the PDF file, e.g. [https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs](https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs) 
+ * Submit the preimage
+
+![Preimage Hash](../_assets/img/guide/system-remark.png)
+
+
 #### 2. Submit a Proposal
 
 Now that the preimage has been uploaded, it is time to create the actual governance proposal. 
