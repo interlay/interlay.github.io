@@ -33,6 +33,9 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="_assets/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+  <!-- Import mermaid -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <!-- Fathom - beautiful, simple website analytics -->
   <script src="https://cdn.usefathom.com/script.js" data-site="PJJWNNWC" defer></script>
   <!-- / Fathom -->
@@ -41,6 +44,12 @@
 <body>
   <div id="app"></div>
   <script>
+    var num = 0;
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: 'loose',
+      theme: 'neutral'
+    });
     window.$docsify = {
       loadSidebar: true,
       subMaxLevel: 2,
@@ -51,14 +60,26 @@
       notFoundPage: '_404.md',
       name: 'Interlay and Kintsugi Documentation',
       logo: './_assets/img/Interlay_Horizontal_RGB.svg',
-      repo: 'https://github.com/interlay/interbtc-docs',
+      repo: 'https://github.com/interlay/interlay.github.io',
       search: 'auto',
       tabs: {
         persist: true,
         sync: true,
-        theme: 'classic',
+        theme: 'material',
         tabComments: true,
         tabHeadings: true
+      },
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+            if (lang === "mermaid") {
+              return (
+                '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
+              );
+            }
+            return this.origin.code.apply(this, arguments);
+          }
+        }
       }
     }
   </script>
