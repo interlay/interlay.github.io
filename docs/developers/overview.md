@@ -1,10 +1,61 @@
-# Overview
+# Getting started
 
-The Interlay and Kintsugi networks consist of a range of different components.
+Decentralization first. The basis for the Interlay and Kintsugi networks is a decentralized Bitcoin bridge - the only of its kind. The desire to build decentralized technology is one of the key values that bind the Interlay and Kintsugi community together.
 
-![Components Overview](../_assets/img/developers/components.svg)
+In the spirit of decentralization, we invite everyone to contribute to the projects: no matter what programming language or technical skills you might have, we love to have your contribution to the project.
 
-*Overview of interBTC bridge components.*
+## Technology we use
+
+The Interlay project is built on many technologies including:
+
+- [Rust](https://www.rust-lang.org/)
+- [Substrate](https://substrate.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Polkadot.js](https://polkadot.js.org/docs/)
+- [Subsquid](https://docs.subsquid.io/)
+- [React](https://reactjs.org/)
+- [Jupyter](https://jupyter.org/)
+
+## Diving in Head First
+
+If you want to dive right in, here are a list of all "good first issues" across our main repositories.
+
+https://github.com/orgs/interlay/projects/3/views/12
+
+## Understanding the Big Picture
+
+```mermaid
+flowchart TB
+  user(User)<-->dapp
+  vault(Vaults)<-->bitcoin(Bitcoin)
+  vault<-->chain
+  user<-->bitcoin
+  oracle(Oracles)-->chain
+  subgraph Frontend
+  dapp(DeFi Hub Dapp)-->lib(TypeScript SDK)
+  end
+  subgraph Caching
+  dapp-->squid(GraphQL subsquid and archive)
+  end
+  subgraph "Interlay/Kintsugi parachains"
+  squid-->chain("Interlay/Kintsugi parachain")
+  lib-->chain
+  end
+  subgraph "Polkadot/Kusama"
+  chain--XCM-->relaychain(Relaychain)
+  chain--XCM-->parachains(Parachains)
+  relaychain<-->parachains
+  end
+  subgraph Bitcoin
+  bitcoin
+  end
+  click dapp "https://github.com/interlay/interbtc-ui/" "Go to https://github.com/interlay/interbtc-ui/"
+  click lib "https://github.com/interlay/interbtc-api/" "Go to https://github.com/interlay/interbtc-api/"
+  click squid "https://github.com/interlay/interbtc-squid/" "Go to https://github.com/interlay/interbtc-squid/"
+  click chain "https://github.com/interlay/interbtc/" "Go to https://github.com/interlay/interbtc/"
+  click vault "https://github.com/interlay/interbtc-clients/" "Go to https://github.com/interlay/interbtc-clients/"
+  click vault "https://github.com/interlay/interbtc-ui/" "Go to https://github.com/interlay/interbtc-ui/"
+```
 
 ## Bridge Development
 
