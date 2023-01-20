@@ -51,35 +51,67 @@ Running a Vault and providing liquidity to Interlay or Kintsugi comes with risks
 
 ## Fee Model
 
-### Pool-based Fee Distribution
+Vaults receive income from two sources:
 
-Vaults earn fees based on the issued and redeemed BTC volume. To reduce variance of payouts, the bridge implements a **pooled fee model**.
+1. **Bridge Fees** in IBTC/KBTC
+2. **Block Rewards** in INTR/KINT
 
-Each time a user issues or redeems interBTC, they pay the following fees to a **global fee pool**:
+To reduce variance of payouts, **pooled fee model** distributes income across all Vaults.
 
-- **Issue Fee**: `0.5%` of the Issue volume, paid in *IBTC/KBTC*
-- **Redeem**: `0.5%` of the redeem volume, paid in *IBTC/KBTC*
+### Bridge Fees
 
-From this fee pool, `100%` is distributed among all active Vaults based on the Vault's **BTC in custody** ( = issued IBTC/KBTC) in proportion to the total locked BTC (= issued IBTC/KBTC) across all Vaults
+Vaults earn fees based on the issued and redeemed BTC volume from all Vaults.
 
-Specifically, each Vault's fee is calculated according to the following formula:
+Each time a user issues or redeems IBTC/KBTC, they pay the following fees to a global fee pool:
 
-    vault_fee =
-    pool * (vault_locked_btc / total_locked_btc)
+- **Issue Fee**: `0.15%` of the Issue volume, paid in *IBTC/KBTC*
+- **Redeem Fee**: `0.5%` of the redeem volume, paid in *IBTC/KBTC*
 
-The Vault fee is paid each time an Issue or Redeem request is executed.
+The total **Bridge Fees** are the sum of all issue and redeem fees.
 
-### Vault Block Rewards
+### Block Rewards
 
 Vaults receive governance tokens as fees for keeping BTC locked and providing the required insurance collateral in whitelisted assets. Early Vaults receive more rewards as they take up higher risk in terms of protocol maturity.
 
-#### Kintsugi
+The **Block Reward** is set by governance as a ratio of INTR or KINT per block.
+
+<!-- tabs:start -->
+
+#### **Interlay (Mainnet)**
+
+INTR/block: `35.6621004566`
+
+The current value can be check on-chain from [polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi.interlay.io%2Fparachain#/chainstate).
+
+- Select state query: `vaultAnnuity`.`rewardPerBlock`
+- Click `+` to see the INTR/block (denominated in planck)
+
+For the full details of the Vault rewards on the Interlay network, see the [Interlay token economy paper](https://raw.githubusercontent.com/interlay/whitepapers/master/Interlay_Token_Economy.pdf) published by Kintsugi Labs.
+
+#### **Kintsugi (Canarynet)**
+
+KINT/block: `0.102803978514`
+
+The current value can be check on-chain from [polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fparachain#/chainstate).
+
+- Select state query: `vaultAnnuity`.`rewardPerBlock`
+- Click `+` to see the KINT/block (denominated in planck)
 
 For the full details of the Vault rewards on the Kintsugi canary network, see the [Kintsugi token economy paper](https://raw.githubusercontent.com/interlay/whitepapers/master/Kintsugi_Token_Economy.pdf) published by Kintsugi Labs.
 
-#### Interlay
+<!-- tabs:end -->
 
-For the full details of the Vault rewards on the Interlay network, see the [Interlay token economy paper](https://raw.githubusercontent.com/interlay/whitepapers/master/Interlay_Token_Economy.pdf) published by Kintsugi Labs.
+### Fee Distribution based on BTC Locked
+
+The **Total Fee Pool** is the sum of the **Bridge Fees** and the **Block Rewards** for every block.
+
+From this fee pool, `100%` is distributed among all active Vaults based on the Vault's **BTC in custody** ( = issued IBTC/KBTC) in proportion to the total locked BTC (= issued IBTC/KBTC) across all Vaults
+
+Specifically, each Vault's share of the received IBTC/KBTC and INTR/KINT is calculated according to the following formula:
+
+`Vault Revenue = Total Fee Pool * (Vault Locked BTC / Total Locked BTC)`
+
+?> Example: Assume that there are 200 BTC locked in total at the moment. Vault Alice has 20 BTC locked. The brige fees (issue and redeem) for the current block are 1 iBTC and the block rewards are 20 INTR. Vault Alice receives 20/200 = 0.1 of the total fees distributed which accounts to 0.1 iBTC and 2 INTR in that block.
 
 ## Collateral
 
@@ -91,15 +123,9 @@ Each currency & network has different minimum deposits, noted here:
 
 <!-- tabs:start -->
 
-#### **Testnet-Kintsugi**
+#### **Interlay (Mainnet)**
 
-* Testnet KSM: 0
-* Testnet KINT: 0
-
-#### **Testnet-Interlay**
-
-* Testnet DOT: 0
-* Testnet INTR: 0
+* DOT: 30
 
 #### **Kintsugi (Canarynet)**
 
@@ -107,9 +133,15 @@ Each currency & network has different minimum deposits, noted here:
 * KINT: 55
 * LKSM: 20
 
-#### **Interlay (Mainnet)**
+#### **Testnet-Interlay**
 
-* DOT: 30
+* Testnet DOT: 0
+* Testnet INTR: 0
+
+#### **Testnet-Kintsugi**
+
+* Testnet KSM: 0
+* Testnet KINT: 0
 
 <!-- tabs:end -->
 
@@ -158,17 +190,17 @@ Vaults must over-collateralize their BTC holdings. The exact threshold is thereb
 
 This means, the amount of BTC a Vault can accept for safekeeping is calculated by:
 
-    max_vault_btc = vault_dot_collateral / (dot_collateral_threshold * btc_dot_exchange_rate)
+`Maxium BTC per Vault = Vault Collateral / Secure Collateral Threshold * Collateral to BTC Exchange Rate`
 
-Where `dot_collateral_threshold = 1.5` (`150%`) according to our example.
+Where `Secure Collateral Threshold = 1.5` (`150%`) according to our example.
 
 ### Vault-Level Collateral Re-balancing
 
-To protect against short and long term exchange rate fluctuations, Vaults are **instructed to keep their collateralization rate up to date**.
+To protect against short and long term exchange rate fluctuations, Vaults are *adviced to keep their collateralization rate up to date*.
 This is achieved in three ways:
 
 - **Increase Collateral** - *instant collateral increase*: the Vault can add more collateral to the system. This increases the collateralization immediatly.
-- **Redeem** - *collateral increase after 3 to 36 hours* (up to the redeem period - up to 24 hours): if users redeem with the Vault, the collateralization ratio increases. However, the collateral only increases when the redeem request is executed. The lower bound for this are the required Bitcoin and parachain confirmation. In practice, it will take at least 3 hours until such a request is processed. The Vault can also maintain an IBTC/KBTC reserve and execute self-redeems for quick rebalancing.
+- **Redeem** - *collateral increase after 1 to 48 hours* (up to the redeem period): if users redeem with the Vault, the collateralization ratio increases. However, the collateral only increases when the redeem request is executed. The lower bound for this are the required Bitcoin and parachain confirmation. In practice, it will take at least 1 hour until such a request is processed. The Vault can also maintain an IBTC/KBTC reserve and execute self-redeems for quick rebalancing.
 - **Replace** - *possible collateral increase*: A Vault can request to be replaced by another Vault. By sending such a request to the parachain, the Vault offers other Vaults to take over the locked BTC. This strategy should work well when there is free capacity to issue new BTC in the system as Vaults will try to maximize their locked BTC to increase their share of fees and block rewards. However, there is no guarantee that a Vault will accept the replace request. Especially, when the bridge has little to no capacity to issue new BTC all Vaults are saturated and it is unlikely that other Vaults will accept the replace request.
 
 ## Collateral Thresholds
@@ -185,15 +217,9 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 
 <!-- tabs:start -->
 
-#### **Testnet-Kintsugi**
+#### **Interlay (Mainnet)**
 
-* Testnet KSM: `150%`
-* Testnet KINT: `400%`
-
-#### **Testnet-Interlay**
-
-* Testnet DOT: `150%`
-* Testnet INTR: `400%`
+* DOT: `260%`
 
 #### **Kintsugi (Canarynet)**
 
@@ -201,9 +227,15 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 * KINT: `900%`
 * LKSM: `260%`
 
-#### **Interlay (Mainnet)**
+#### **Testnet-Interlay**
 
-* DOT: `260%`
+* Testnet DOT: `150%`
+* Testnet INTR: `400%`
+
+#### **Testnet-Kintsugi**
+
+* Testnet KSM: `150%`
+* Testnet KINT: `400%`
 
 <!-- tabs:end -->
 
@@ -217,16 +249,9 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 
 <!-- tabs:start -->
 
-#### **Testnet-Kintsugi**
+#### **Interlay (Mainnet)**
 
-* Testnet KSM: `135%`
-* Testnet KINT: `300%`
-
-
-#### **Testnet-Interlay**
-
-* Testnet DOT: `135%`
-* Testnet INTR: `300%`
+* DOT: `200%`
 
 #### **Kintsugi (Canarynet)**
 
@@ -234,9 +259,15 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 * KINT: `650%`
 * LKSM: `200%`
 
-#### **Interlay (Mainnet)**
+#### **Testnet-Interlay**
 
-* DOT: `200%`
+* Testnet DOT: `135%`
+* Testnet INTR: `300%`
+
+#### **Testnet-Kintsugi**
+
+* Testnet KSM: `135%`
+* Testnet KINT: `300%`
 
 <!-- tabs:end -->
 
@@ -253,15 +284,9 @@ The undercollateralized Vault is liquidated.
 
 <!-- tabs:start -->
 
-#### **Testnet-Kintsugi**
+#### **Interlay (Mainnet)**
 
-* Testnet KSM: `110%`
-* Testnet KINT: `200%`
-
-#### **Testnet-Interlay**
-
-* Testnet DOT: `110%`
-* Testnet INTR: `200%`
+* DOT: `150%`
 
 #### **Kintsugi (Canarynet)**
 
@@ -269,9 +294,15 @@ The undercollateralized Vault is liquidated.
 * KINT: `500%`
 * LKSM: `150%`
 
-#### **Interlay (Mainnet)**
+#### **Testnet-Interlay**
 
-* DOT: `150%`
+* Testnet DOT: `110%`
+* Testnet INTR: `200%`
+
+#### **Testnet-Kintsugi**
+
+* Testnet KSM: `110%`
+* Testnet KINT: `200%`
 
 <!-- tabs:end -->
 
