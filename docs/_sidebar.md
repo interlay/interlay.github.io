@@ -37,7 +37,7 @@
 
 * **Vaults**
 
-  * [Overview](vault/overview.md)
+  * [Getting started](vault/overview.md)
   * [Installation](vault/installation.md)
   * [Operating Guide](vault/guide.md)
   * [Multi-Collateral Guide](vault/multi-collateral.md)
@@ -45,7 +45,7 @@
 
 * **Collators**
 
-  * [Overview](collator/overview.md)
+  * [Getting started](collator/overview.md)
   * [Installation](collator/guide.md)
   * [FAQ](collator/faq.md)
 

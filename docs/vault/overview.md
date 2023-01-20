@@ -15,30 +15,30 @@ The secondary responsibility of a Vault is to monitor both Bitcoin and the bridg
 1. **Provide Collateral** and upload their Bitcoin public key to the bridge. The amount of collateral provided determines how much BTC the Vault can accept for safekeeping. Collateral is provided in assets white-listed by Governance.
 2. **Issue**: Vaults receive BTC from users for safekeeping. This locks the Vault's collateral until BTC is redeemed again.
 3. **Redeem**: Vaults monitor the Interlay/Kintsugi bridge for redeem requests. When a user requests to redeem IBTC, Vaults release BTC to the user and prove that they behaved correctly via the BTC-Relay. Only if this proof is correct, the Vault's collateral is unlocked.
+4. **Replace**: When Vaults want to exit the bridge, they can send a replace request to move their stored BTC to another Vault. The other Vault accepts this BTC for safekeeping under the condition that it has enough free collateral.
+5. **Maintain BTC-Relay**: Vaults optionally submit Bitcoin block headers to BTC-Relay and make sure the bridge stays up to date with the Bitcoin network.
 
-To support the integrity of the bridge, Vaults are also able to assume the role of a Relayer:
-
-1. **Maintain BTC-Relay**: submit Bitcoin block headers to BTC-Relay and make sure the bridge stays up to date with the Bitcoin mainchain.
-
-### Why operating a Vault?
+### Why operate a Vault?
 
 1. **Earning potential:**
 
     - *IBTC/KBTC fees*: All Vaults are part of a fee pool and earn fees in IBTC/KBTC when any user issues or redeems IBTC/KBTC.
-    - *KINT/INTR*: Vaults receive a KINT/INTR block reward.
-    - *Interest-generating Collateral* (planned feature): Subject to governance, Vaults are able to provide collateral in interested genrating assets such as staking derivatives (e.g., LKSM, LDOT) and LP tokens.
+    - *KINT/INTR*: Vaults receive KINT/INTR block rewards.
+    - *Interest-generating Collateral*: Vaults are able to provide collateral in interested generating assets such as staking derivatives (e.g., LKSM, LDOT) and LP tokens.
 
-2. **Self-custody:** Vaults hold BTC of users in custody. If you are a large liquidity provider, you can be your own vault and retain custody over your BTC holdings until you exchange IBTC/KBTC.
+2. **Self-custody:** Vaults hold BTC of users in custody. Large liquidity provider can retain custody over their BTC holdings until they exchange IBTC/KBTC.
 
 ### What do I need to become a Vault?
 
-1. Vault client ([source](https://github.com/interlay/interbtc-clients))
-2. Bitcoin node ([instructions](https://bitcoin.org/en/full-node))
-3. Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys))
-4. Collateral like KSM or DOT as well as other collateral assets.
-5. Native chain tokens like KINT and INTR to pay for transaction fees.
+1. Run the Vault client.
+2. Run or connect to a Bitcoin node.
+3. Have a Polkadot account ([public/private keypair](https://wiki.polkadot.network/docs/en/learn-keys)).
+4. Own collateral like KSM or DOT or other assets.
+5. Own the native chain tokens like KINT and INTR to pay for transaction fees.
 
-Head over to ["Installation"](/vault/installation) for a detailed setup guide.
+<a class="docs-button util-w100" href="https://docs.interlay.io/#/vault/installation">
+  Setup a Vault
+</a>
 
 ### Risks
 
@@ -50,8 +50,6 @@ Running a Vault and providing liquidity to Interlay or Kintsugi comes with risks
 4. **Software Bugs**: The Interlay teams seeks to eliminate software bugs as much as possible but it is impossible to exclude software risks completely. Using the Vault client is optional (but recommended). All actions the Vault client executes can also be done manually. Our [Interlay/Kintsugi chain](https://github.com/interlay/interbtc) and [Vault client](https://github.com/interlay/interbtc-clients/tree/master/vault) are open-source. The code has been [audited by NCC Group, Informal Systems, and Quarkslab](https://github.com/interlay/interbtc/tree/master/docs/audits). We collaborate with [Immunefi for our bug bounty program](https://immunefi.com/bounty/interlay/).
 
 ## Fee Model
-
-Vaults earn fees on issue and redeem, based on the BTC volume.
 
 ### Pool-based Fee Distribution
 
