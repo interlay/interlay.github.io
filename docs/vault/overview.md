@@ -101,17 +101,25 @@ For the full details of the Vault rewards on the Kintsugi canary network, see th
 
 <!-- tabs:end -->
 
-### Fee Distribution based on BTC Locked
+### Fee Distribution based on BTC Capacity
 
 The **Total Fee Pool** is the sum of the **Bridge Fees** and the **Block Rewards** for every block.
 
-From this fee pool, `100%` is distributed among all active Vaults based on the Vault's **BTC in custody** ( = issued IBTC/KBTC) in proportion to the total locked BTC (= issued IBTC/KBTC) across all Vaults
+From this fee pool, `100%` is distributed among all active Vaults based on the Vault's **BTC Capacity** ( = maximum BTC a Vault can safekeep under the secure collateral thresholds) in proportion to the total BTC Capacity (= maximum BTC all Vaults can safekeep under the secure collateral thresholds) across all Vaults.
 
-Specifically, each Vault's share of the received IBTC/KBTC and INTR/KINT is calculated according to the following formula:
+Each Vault's capacity is calculated as the collateral provided by that Vault (converted to BTC) and divided either by the individual secure collateral threshold (Vaults can set higher thresholds than the global threshold) or the global secure threshold:
 
-`Vault Revenue = Total Fee Pool * (Vault Locked BTC / Total Locked BTC)`
+`Vault Capacity = Collateral / max(Individual Vault Threshold, Secure Collateral Threshold)`
 
-?> Example: Assume that there are 200 BTC locked in total at the moment. Vault Alice has 20 BTC locked. The brige fees (issue and redeem) for the current block are 1 iBTC and the block rewards are 20 INTR. Vault Alice receives 20/200 = 0.1 of the total fees distributed which accounts to 0.1 iBTC and 2 INTR in that block.
+The total capacity is then the sum of the capacity of all Vaults `n`.
+
+`Total Vault Capacity = Vault Capacity_0 + Vault Capacity_1 + ... Vault Capacity_n`
+
+Each Vault's share of the received IBTC/KBTC and INTR/KINT is calculated according to the following formula:
+
+`Vault Revenue = Total Fee Pool * (Vault Capacity / Total Vault Capacity)`
+
+?> Example: Assume that it would be possible to lock 400 BTC in total at the moment. It does not matter how many BTC are already locked in the capacity based calculation. If 20 or 300 BTC of the 400 BTC are currently locked does not play a role. Next, say Vault Alice has overall capacity to safeguard 40 BTC (does not matter how many BTC are already locked with her). The bridge fees (issue and redeem) for the current block are 1 iBTC and the block rewards are 20 INTR. Vault Alice receives 40/400 = 0.1 of the total fees distributed which accounts to 0.1 iBTC and 2 INTR in that block.
 
 ## Collateral
 
@@ -207,7 +215,17 @@ This is achieved in three ways:
 
 The Interlay and Kintsugi bridges introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
 
-### Secure collateral
+### Indidivdual Secure Collateral Threshold
+
+#### Actions
+
+Vaults can set an individual secure threshold that is higher than the below global secure threshold. This is useful when Vaults prefer higher levels of over-collaterlization to manage risks.
+
+The individual threshold can be increased, decreased, or removed anytime. Setting the individual threshold lower than the global threshold does not have any impact as the bridge always enforces the higher of the two thresholds.
+
+?> Example: If the global secure collateral threshold for DOT collateral is 150%, Vaults can set a higher threshold, e.g., 200%. This individual threshold prevents users from issuing with the Vault when the Vaults is at 200%. Without the individual threshold, users would be able to issue with the Vault until the Vault is at 150%.
+
+### Global Secure Collateral Threshold
 
 #### Actions
 
