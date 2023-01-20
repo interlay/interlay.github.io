@@ -1,13 +1,12 @@
 # Vaults
 
-Vaults are the heart of the Interlay and Kintsugi bridge. They are responsible for maintaining the physical 1:1 peg between BTC and IBTC/KBTC.
-Vaults receive BTC for safekeeping from users and ensure BTC remains locked while IBTC/KBTC exists
+Vaults are the heart of the Interlay and Kintsugi bridge. By safeguarding BTC in their wallets, they maintain the physical 1:1 relationship between BTC and IBTC/KBTC. In addition, vaults provide financial collateral to ensure users have insurance to receive their BTC back.
 
 ## Introduction
 
-Vaults are **non-trusted** and **collateralized**.**Any user can become a Vault** by providing collateral. This means: as a user, you can freely choose any Vault you like or be your own Vault. You don’t have to trust anyone else if you want to be extra cautious.
+Vaults are **non-trusted** and **collateralized**. **Any user can become a Vault** by providing collateral. Users can freely choose any Vault or be their own Vault. Running their Vault means users don’t have to trust anyone else if they want to be extra cautious.
 
-The correct behavior of Vaults is enforced by the bridge. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of the bridge. If a Vault fails to fulfill a redeem request the Vault may lose its collateral which can be reimbursed to the user (at a beneficial rate).
+The bridge enforces the correct behavior of Vaults. Specifically, Vaults must prove correct behavior to the BTC-Relay component - a Bitcoin SPV client implemented directly on top of the bridge. If a Vault fails to fulfill a redeem request the Vault may lose its collateral which can be reimbursed to the user (at a beneficial rate).
 
 The secondary responsibility of a Vault is to monitor both Bitcoin and the bridge to ensure that the BTC-Relay stays up to date with the Bitcoin blockchain by relaying Bitcoin block headers. BTC-Relay is self-healing and automatically detects and recovers from Bitcoin forks.
 
@@ -43,7 +42,7 @@ Head over to ["Installation"](/vault/installation) for a detailed setup guide.
 
 ### Risks
 
-Running a Vault and providing liquidity to Interlay or Kintsugi does not come without risks. Please research and understand the risks.
+Running a Vault and providing liquidity to Interlay or Kintsugi comes with risks. Please research and understand the risks.
 
 1. **Exchange Rate and Collateralization**: Vaults provide collateral to back locked BTC. If the collateralization falls below the liquidation collateral threshold, the Vault is liquidated. In case of a liquidation, the [Vault's collateral is seized](vault/overview?id=severe-undercollateralization). Vaults with different collateral assets are [isolated](vault/overview?id=vault-isolation). This means that if, e.g., a Vault operator uses the same account id to run a DOT and USDC Vault, liquidating the DOT vault has no impact on the liquidation risk of the USDC Vault. [Learn how to maintain your collateralization here](vault/guide?id=managing-collateral).
 2. **Vault Client Offline**: If a Vault fails to process a redeem request from a user within the given time limit, then part or all of the Vaults collateral is slashed depending on the size of the redeem request. See [failed redeem requests for more details](vault/overview?id=failed-redeem). [The Vault uptime requirement is specified here](vault/installation?id=uptime).
@@ -88,7 +87,7 @@ For the full details of the Vault rewards on the Interlay network, see the [Inte
 
 To ensure Vaults have no incentive to steal user's BTC, Vaults provide collateral in whitelisted assets - following a similar process as [MakerDAO](https://docs.makerdao.com/smart-contract-modules/collateral-module). To mitigate exchange rate fluctuations, Interlay and Kintsugi employ *over-collateralization* and a *multi-level collateral balancing* scheme.
 
-### Minimum Collateral
+### Minimum collateral
 
 Each currency & network has different minimum deposits, noted here:
 
@@ -178,7 +177,7 @@ This is achieved in three ways:
 
 The Interlay and Kintsugi bridges introduces multiple thresholds with different actions to ensure Vaults never drop below 100% collateralization:
 
-### Secure Collateral
+### Secure collateral
 
 #### Actions
 
