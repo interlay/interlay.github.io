@@ -153,17 +153,18 @@ Supports Android and iOS.
 !> Always make sure you are scanning a QR code signed by a trusted verifier.
 
 - When you sign a transaction with the **account you imported via the QR code**, you will be prompted to `Scan signature via camera`
-- Scan the QR code using Parity Signer and click on `Unlock key and sign`.
 
 <div style={{textAlign: 'center'}}>
   <img alt="metadata" src='../_assets/img/guide/scan-signature-via-qr.png' width="300" />
 </div>
 
-- Your Parity Signer will now display a QR code. To complete signing the transaction, siwthc back to your Desktop andclick on `Scan signature via camera`. Scan the QR code displayed on your mobile device.
+- Scan the QR code using the Parity Signer app and click on `Unlock key and sign`.
 
 <div style={{textAlign: 'center'}}>
   <img alt="metadata" src='../_assets/img/guide/sign-via-parity-signer.jpg' width="300" />
 </div>
+
+- Your Parity Signer will now display a QR code. To complete signing the transaction, siwthc back to your Desktop andclick on `Scan signature via camera`. Scan the QR code displayed on your mobile device.
 
 </details>
 
