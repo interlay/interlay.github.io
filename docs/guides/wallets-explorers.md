@@ -4,10 +4,11 @@ Interacting with any blockchain requires to have a wallet.
 
 At the end of this guide you will have:
 
-- [x] [Installed the polkadot.js browser extension and created a Polkadot wallet](#polkadot-wallet)
-- [x] [Installed and created a Bitcoin wallet](#bitcoin-wallet)
-- [x] [Checked your account balances on Kintsugi / Interlay](#kintintr-balances)
-- [x] [Testnet only: you will also have requested testnet KSM and testnet BTC](#testnet-faucets)
+- [x] [Installed a browser extension and created a Substrate wallet (for Kintsugi / Interlay)](#substrate-wallets)
+- [x] [Learned how to check you Kintsugi / Interlay balances in explorers](#substrate-explorers)
+- [x] [Installed and created a Bitcoin wallet](#bitcoin-wallets)
+- [x] [Checked your BItcoin balances on Bitcoin explorers](#bitcoin-explorers)
+- [x] [Testnet only: requested testnet KSM and testnet BTC](#testnet-faucets)
 
 ## Substrate Wallets
 
@@ -88,15 +89,119 @@ Supports Android and iOS. Web-wallet currently not working.
 
 Supports Android and iOS.
 
+#### Coming soon
+
+- [Fearless Wallet](https://fearlesswallet.io/)
+
+<!-- tabs:end -->
+
+### Hardware Wallets
+
+<!-- tabs:start -->
+#### Parity Signer
+
+[Parity Signer](https://www.parity.io/technologies/signer/) is a mobile app which turns your iOS or Android device into a dedicated hardware wallet for Polkadot, Kusama, and any other Substrate-based chain. It allows you to keep your private keys offline while still being able to conveniently sign transactions in an air-gapped way using QR codes.
+
+1._[Guide: Install and setup Parity Signer](https://paritytech.github.io/parity-signer/tutorials/Start.html)
+
+<details>
+<summary>
+2. Add Kintsugi / Interlay networks.
+</summary> 
+
+- On your Desktop, navigate to https://nova-wallet.github.io/metadata-portal/ 
+- Select Kintsugi / Interlay as the desired chain. 
+- Click on `Chain Specs`
+- On your Parity Signer, click `Scan`, scan the QR code and click `Add new chain`.
+- (Optional) Update Metadata: `Scan` the moving QR code in the `Metadata` tab
+
+![Link Address](../_assets/img/guide/kintsugi-chain-spec-novasama.png)
+
+</details>
+
+<details>
+<summary>
+3. Add accounts to Polkadot.js via QR code
+</summary> 
+
+- **If using  Polkadot.js browser extension**: 
+  * `Settings` > `open extension in new window`. 
+  * In the new window: `Settings` > `Allow QR Camera Access`. 
+  * Allow camera access in the browser pop-up. 
+  * Click `+` > `Attach external QR-signer account` > Scan Parity Signer QR code (see below) using the device camera
+
+- **If using Polkadot.js apps**: 
+  * On [Polkadot.js apps](https://polkadot.js.org/apps/#/accounts), click on `+` > `Attach external QR-signer account`. 
+  * Scan Parity Signer QR code (see below) using the device camera
+
+- **Show Key QR code on Parity Signer app**
+  * Open the `Keys` tab in the bottom menu;
+  * Select the network you will be using from the dropdown menu next to chain;
+  * Select your desired account or sub-account;
+  * You will see a QR code which you need to scan with your device camera.
+
+</details>
+
+
+
+
+<details>
+<summary>
+4. Sign transactions using Parity Signer
+</summary> 
+
+!> Always make sure you are scanning a QR code signed by a trusted verifier.
+
+- When you sign a transaction with the **account you imported via the QR code**, you will be prompted to `Scan signature via camera`
+- Scan the QR code using Parity Signer and click on `Unlock key and sign`.
+
+<div style={{textAlign: 'center'}}>
+  <img alt="metadata" src='../_assets/img/guide/scan-signature-via-qr.png' width="300" />
+</div>
+
+- Your Parity Signer will now display a QR code. To complete signing the transaction, siwthc back to your Desktop andclick on `Scan signature via camera`. Scan the QR code displayed on your mobile device.
+
+<div style={{textAlign: 'center'}}>
+  <img alt="metadata" src='../_assets/img/guide/sign-via-parity-signer.jpg' width="300" />
+</div>
+
+</details>
+
+
+
+#### Ledger (soon)
+
+The Interlay Ledger app is currenty under review and will appear in the Ledger Live store soon. 
+
+The Kintsugi Ledger app is being developed. 
+
+<!-- tabs:end -->
+
+
+<!-- tabs:start -->
+
+#### **Interlay**
+
+#### [Nova wallet](https://novawallet.io/)
+
+Supports Android and iOS.
+
 #### [Math wallet](https://mathwallet.org/kintsugibtc-wallet/en/)
 
 Supports Android and iOS. Web-wallet currently not working.
+
+#### **Kintsugi**
+
+#### [Nova wallet](https://novawallet.io/)
+
+Supports Android and iOS.
 
 #### Coming soon
 
 - [Fearless Wallet](https://fearlesswallet.io/)
 
 <!-- tabs:end -->
+
 
 ### Create and Understand Accounts
 
@@ -261,7 +366,7 @@ There are many Bitcoin Mainnet explorers. We find the following have the best us
 
 <!-- tabs:end -->
 
-## Faucets (Testnet Only!)
+## Testnet Faucets
 
 To test, you will need testnet tokens. Please follow the steps below.
 
