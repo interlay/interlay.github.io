@@ -1,6 +1,6 @@
-# interbtc-docs
+# Interlay Documentation
 
-IBTC documentation for users, vaults, developers and anyone else.
+Interlay documentation for users, vaults, developers and anyone else.
 
 ## About
 
