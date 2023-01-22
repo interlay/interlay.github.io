@@ -102,7 +102,7 @@ Supports Android and iOS.
 
 [Parity Signer](https://www.parity.io/technologies/signer/) is a mobile app which turns your iOS or Android device into a dedicated hardware wallet for Polkadot, Kusama, and any other Substrate-based chain. It allows you to keep your private keys offline while still being able to conveniently sign transactions in an air-gapped way using QR codes.
 
-1._[Guide: Install and setup Parity Signer](https://paritytech.github.io/parity-signer/tutorials/Start.html)
+1 [Follow this guide to install and setup Parity Signer on your mobile device](https://paritytech.github.io/parity-signer/tutorials/Start.html)
 
 <details>
 <summary>
@@ -177,32 +177,6 @@ The Interlay Ledger app is currenty under review and will appear in the Ledger L
 The Kintsugi Ledger app is being developed. 
 
 <!-- tabs:end -->
-
-
-<!-- tabs:start -->
-
-#### **Interlay**
-
-#### [Nova wallet](https://novawallet.io/)
-
-Supports Android and iOS.
-
-#### [Math wallet](https://mathwallet.org/kintsugibtc-wallet/en/)
-
-Supports Android and iOS. Web-wallet currently not working.
-
-#### **Kintsugi**
-
-#### [Nova wallet](https://novawallet.io/)
-
-Supports Android and iOS.
-
-#### Coming soon
-
-- [Fearless Wallet](https://fearlesswallet.io/)
-
-<!-- tabs:end -->
-
 
 ### Create and Understand Accounts
 
