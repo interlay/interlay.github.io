@@ -11,6 +11,7 @@ Following this guide, you will learn the most important aspects of being active 
 - [x] [Creating a Treasury proposal](#create-a-treasury-proposal)
 - [x] [Voting on referenda](#vote-on-referenda)
 - [x] [Technical Committee: Fast-track a proposal](#fast-track-a-proposal)
+- [x] [Templates for common proposals](#templates-common-governance-proposals)
 
 ### Required Tokens
 
