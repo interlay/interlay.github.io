@@ -56,6 +56,10 @@ The `assetRegistry` pallet is used for assets from other parachains.
 
 !> Before using foreign assets in your application or interacting with them via polkadot.js directly, please verify the correctness of the data above for the network you are trying to use via [https://polkadot.js.org/apps/#/chainstate](https://polkadot.js.org/apps/#/chainstate) -> `assetRegistry` -> `metadata()`.
 
+### Overview of assets in the `loans` pallet
+
+Tokens that can be used in the lending protocol can be queried using polkadot.js by iterating over the `loans.markets` map. Of the returned items, only those that have `state: Active` are usable by the lending protocol. The key of the map is the underlying currency, and the lend token is stored in the `lendTokenId` field.
+
 ### Querying account balances
 
 Returns the `amount` of tokens in the smallest denomination.
