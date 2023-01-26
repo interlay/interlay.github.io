@@ -60,6 +60,10 @@ The `assetRegistry` pallet is used for assets from other parachains.
 
 Tokens that can be used in the lending protocol can be queried using polkadot.js by iterating over the `loans.markets` map. Of the returned items, only those that have `state: Active` are usable by the lending protocol. The key of the map is the underlying currency, and the lend token is stored in the `lendTokenId` field.
 
+### Overview of AMM tokens
+
+LP tokens in the "standard" (Uniswap v2) AMM can be queried using the `tokens` pallet and `CurrencyId::LpToken(LpToken, LpToken)`. LP tokens in the "stable" (Curve v1) AMM can be queried using the `tokens` pallet and `CurrencyId::StableLpToken(u32)` where the `u32` is the pool ID which can be queried using `zenlinkStableAmm.pools(u32)`.
+
 ### Querying account balances
 
 Returns the `amount` of tokens in the smallest denomination.
