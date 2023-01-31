@@ -219,13 +219,13 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 
 #### **Interlay (Mainnet)**
 
-* DOT: `260%`
+* DOT: `155%`
 
 #### **Kintsugi (Canarynet)**
 
-* KSM: `260%`
+* KSM: `160%`
 * KINT: `900%`
-* LKSM: `260%`
+* LKSM: `180%`
 
 #### **Testnet-Interlay**
 
@@ -251,13 +251,13 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 
 #### **Interlay (Mainnet)**
 
-* DOT: `200%`
+* DOT: `140%`
 
 #### **Kintsugi (Canarynet)**
 
-* KSM: `200%`
+* KSM: `145%`
 * KINT: `650%`
-* LKSM: `200%`
+* LKSM: `165%`
 
 #### **Testnet-Interlay**
 
@@ -286,13 +286,13 @@ The undercollateralized Vault is liquidated.
 
 #### **Interlay (Mainnet)**
 
-* DOT: `150%`
+* DOT: `125%`
 
 #### **Kintsugi (Canarynet)**
 
-* KSM: `150%`
+* KSM: `130%`
 * KINT: `500%`
-* LKSM: `150%`
+* LKSM: `145%`
 
 #### **Testnet-Interlay**
 
