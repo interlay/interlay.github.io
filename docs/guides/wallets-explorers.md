@@ -10,9 +10,27 @@ At the end of this guide you will have:
 - [x] [Checked your BItcoin balances on Bitcoin explorers](#bitcoin-explorers)
 - [x] [Testnet only: requested testnet KSM and testnet BTC](#testnet-faucets)
 
-## Substrate Wallets
 
-### Browser Extensions to Interact With Dapps
+
+## Creating an Account
+
+Follow the instructions in this [official Polkadot guide](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account).
+
+### Understanding Accounts and Addresses
+
+Polkadot uses [address formats](https://wiki.polkadot.network/docs/build-ss58-registryhttps://wiki.polkadot.network/docs/learn-accounts#address-format) for different chains. That way, you can use the same account and have unique addresses on each chain. By default, all addresses can be automatically converted between different chains.
+
+For example, the `Alice` account can take the following formats:
+
+- **Generic Substrate**: 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
+- **Polkadot**: 15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5
+- **Kusama**: HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F
+- **Kintsugi**: a3f1Q33MZ6B82T7rwQ1Ke1Qekzuxe8yRbfvRxkPh11jdsrTLR
+- **Interlay**: wdCJ8CsZchTEfUP8Xz1eZKNRjW5cuYjJ9fh6pcZNXezsysBrJ
+
+You can use the same account across different chains in the Polkadot ecosystem.
+
+## Browser Wallets
 
 To interact with the Interlay/Kintsugi Dapp you will need a Substrate-compatible browser extension.
 
@@ -69,7 +87,7 @@ Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interl
 <!-- tabs:end -->
 
 
-### Mobile Wallets
+## Mobile Wallets
 
 <!-- tabs:start -->
 
@@ -95,7 +113,7 @@ Supports Android and iOS.
 
 <!-- tabs:end -->
 
-### Hardware Wallets
+## Hardware Wallets
 
 <!-- tabs:start -->
 #### Parity Signer
@@ -178,25 +196,7 @@ The Kintsugi Ledger app is being developed.
 
 <!-- tabs:end -->
 
-### Create and Understand Accounts
 
-#### Creating an Account
-
-Follow the instructions in this [official Polkadot guide](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account).
-
-#### Understanding Accounts and Addresses
-
-Polkadot uses [address formats](https://wiki.polkadot.network/docs/build-ss58-registryhttps://wiki.polkadot.network/docs/learn-accounts#address-format) for different chains. That way, you can use the same account and have unique addresses on each chain. By default, all addresses can be automatically converted between different chains.
-
-For example, the `Alice` account can take the following formats:
-
-- **Generic Substrate**: 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
-- **Polkadot**: 15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5
-- **Kusama**: HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F
-- **Kintsugi**: a3f1Q33MZ6B82T7rwQ1Ke1Qekzuxe8yRbfvRxkPh11jdsrTLR
-- **Interlay**: wdCJ8CsZchTEfUP8Xz1eZKNRjW5cuYjJ9fh6pcZNXezsysBrJ
-
-You can use the same account across different chains in the Polkadot ecosystem.
 
 ## Substrate Explorers
 
