@@ -52,6 +52,7 @@
 * **Developers**
 
   * [Getting started](developers/overview.md)
+  * [Guide: Bridge](developers/bridge.md)
   * [API](developers/api.md)
   * [TypeScript SDK](developers/integration.md)
   * [Documentation](developers/documentation.md)
