@@ -10,11 +10,11 @@ Make sure you have a compatible [wallet plugin](guides/wallets-explorers.md#subs
 
 At the end of this guide you will have:
 
-- [x] [Supplied an asset and started earning interest](#_3-deposit-to-a-lending-market)
-- [x] [Enabled the deposit as borrow collateral](#_4-enable-the-collateral-toggle)
-- [x] [Borrowed using the collateral](#_5-borrow)
-- [x] [Repaid a loan](#_6-repay-a-loan)
-- [x] [Withdrawn part of the supplied amount](#_7-withdraw-a-deposit)
+- [x] [Supplied an asset and started earning interest](#3-deposit-to-a-lending-market)
+- [x] [Enabled the deposit as borrow collateral](#4-enable-the-collateral-toggle)
+- [x] [Borrowed using the collateral](#5-borrow)
+- [x] [Repaid a loan](#6-repay-a-loan)
+- [x] [Withdrawn part of the supplied amount](#7-withdraw-a-deposit)
 
 ### 1. Go to the lending page
 
