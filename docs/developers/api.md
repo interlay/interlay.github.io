@@ -62,7 +62,8 @@ Tokens that can be used in the lending protocol can be queried using polkadot.js
 
 ### Overview of AMM tokens
 
-LP tokens in the "standard" (Uniswap v2) AMM can be queried using the `tokens` pallet and `CurrencyId::LpToken(LpToken, LpToken)`. LP tokens in the "stable" (Curve v1) AMM can be queried using the `tokens` pallet and `CurrencyId::StableLpToken(u32)` where the `u32` is the pool ID which can be queried using `zenlinkStableAmm.pools(u32)`.
+- LP tokens in the "standard" (Uniswap v2) AMM can be queried using the `tokens` pallet and `CurrencyId::LpToken(LpToken, LpToken)`. 
+- LP tokens in the "stable" (Curve v1) AMM can be queried using the `tokens` pallet and `CurrencyId::StableLpToken(u32)` where the `u32` is the pool ID which can be queried using `dexStableAmm.pools(u32)`.
 
 ### Querying account balances
 
