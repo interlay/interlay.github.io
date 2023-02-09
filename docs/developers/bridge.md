@@ -1,4 +1,4 @@
-# Bridge Development
+# Bridge Development Notes
 
 ?> All guides here are also applicable to Kintsugi and any Interlay or Kintsugi testnet.
 
