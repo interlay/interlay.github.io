@@ -52,6 +52,7 @@
 
   * [Getting started](developers/overview.md)
   * [Guide: Bridge](developers/bridge.md)
+  * [Guide: Lending](developers/lending.md)
   * [API](developers/api.md)
   * [TypeScript SDK](developers/integration.md)
   * [Documentation](developers/documentation.md)
