@@ -29,7 +29,7 @@ All tokens that can be used in the money market can also be traded on Kintsugi D
         1. Select `Token` for KINT, kBTC, KSM
         2. Select `ForeignAsset` for other tokens
             1. see [here](#asset-registry) for `id:token` mapping
-    5. **repayAmount:** `amount_to_be_repaid` , note that the amount depends on the number of decimals the token uses. [See](#asset-registry) here for details.
+    5. **repayAmount:** `amount_to_be_repaid` , note that the amount depends on the number of decimals the token uses. See [here](#asset-api) for details.
     6. **collateralAssetId:** The underlying of the currency to be received. E.g: For kBTC the liquidator will receive the lend token of kBTC which can be redeemed for kBTC (see [withdraw collateral](#withdraw-collateral-optional))
         1. Select `Token` for KINT, kBTC, KSM
         2. Select `ForeignAsset` for other tokens
