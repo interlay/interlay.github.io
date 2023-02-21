@@ -14,7 +14,7 @@ At the end of this guide you will know how to:
 ### **Fund wallet**
 
 1. The wallet needs as small amount of KINT tokens to pay for the gas fees.
-2. The wallet needs to be funded with the amount of `debt tokens` which shall be repaid. E.g. if the liquidator aims to liquidate a debt position of 1,000 USDT, the wallet needs to have at least this amount in the respective debt currency, in that case, USDT.
+2. The wallet needs to be funded with the amount of borrowed tokens which shall be repaid. E.g. if the liquidator aims to liquidate a debt position of 1,000 USDT, the wallet needs to have at least this amount in the respective borrowed currency, in this example, USDT.
 
 All tokens that can be used in the money market can also be traded on Kintsugi DEX. For alternative options see [Other DEXs](#other-dexs)
 
