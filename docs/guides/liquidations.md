@@ -25,7 +25,7 @@ All tokens that can be used in the money market can also be traded on Kintsugi D
     1. **using the selected account**: `your_accound_address` (Kintsugi address, starting with ‘a3…’)
     2. **submit the following extrinsic**: `loans.liquidateBorrow()`
     3. **borrower:** `target_account_address` (Kintsugi address, starting with ‘a3…’)
-    4. **liquidationAssetId:** Currency which needs to be repaid
+    4. **liquidationAssetId:** Borrowed currency to repay
         1. Select `Token` for KINT, kBTC, KSM
         2. Select `ForeignAsset` for other tokens
             1. see [here](#asset-registry) for `id:token` mapping
