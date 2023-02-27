@@ -299,7 +299,7 @@ You have two options:
 1. *Wait and observe*: On redeem requests, users tend to pay more for BTC transaction fees to the Vault than the actual BTC transaction fee that the Vault has to pay. If the difference between the Bitcoin wallet balance and the Interlay/Kintsugi chain balance is quite small, it might be OK to wait for a couple of redeem request. Ideally, the Vault will have enough BTC in its wallet.
 2. *Insufficient BTC to fulfill a redeem request*: If a user request to redeem more BTC from your Vault than the Vault has in its wallet, the Vault client will show a `BitcoinError ... Insufficient funds...` in the logs. Typically, you would need to send BTC from another source to your Vault wallet.
 
-If you encounter errors with the Vault client, we recommend to reach out to the Interlay team in the #vault-lounge in the [Interlay Discord](https://discord.com/invite/KgCYK3MKSf). We can help investigate the issue.
+If you encounter errors with the Vault client, we recommend to reach out to the Interlay team in the #vault-lounge in the [Interlay Discord](https://discord.gg/interlay). We can help investigate the issue.
 
 **Adding BTC to a Vault's wallet**
 
