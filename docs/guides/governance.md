@@ -108,13 +108,13 @@ This involves 2 steps:
 
 ### Step 1: Submit Proposal via Polkadot.js
 
-?> We recommend you reach out the community on [Discord](https://discord.com/invite/KgCYK3MKSf) in the #governance channel before creating a proposal.
+?> We recommend you reach out the community on [Discord](https://discord.gg/interlay) in the #governance channel before creating a proposal.
 
 #### 1. Create and Submit a Preimage
 
-Governance can change the runtime code as well as all sorts of parameters. In the first step, decide what the proposal you are about to create should change. The exact changes you want to make are encoded in a so called "Preimage". 
+Governance can change the runtime code as well as all sorts of parameters. In the first step, decide what the proposal you are about to create should change. The exact changes you want to make are encoded in a so called "Preimage".
 
-See [common proposals]() for detailed guides on frequently used proposal forms. 
+See [common proposals]() for detailed guides on frequently used proposal forms.
 
 **Option A: Creating a new preimage**
 
@@ -124,16 +124,16 @@ Go to Governance -> Democracy -> Submit preimage and propose the change you desi
 
 **Option B: Submitting a prepared preimage**
 
-If you have a pre-image already prepared (e.g. prepared using another tool, recommended for complex preimages with many parameters/calls), then you can simply submit the `hex-encoded call` to save time (instead of manually recreating the preimage in polkadot.js). 
+If you have a pre-image already prepared (e.g. prepared using another tool, recommended for complex preimages with many parameters/calls), then you can simply submit the `hex-encoded call` to save time (instead of manually recreating the preimage in polkadot.js).
 
-Go to Developer -> Extrinsics -> democracy -> notePreimage and insert the `hex-encoded call` of your preimage in the "encodedProposal" field.  Submit and sign the transaction. 
+Go to Developer -> Extrinsics -> democracy -> notePreimage and insert the `hex-encoded call` of your preimage in the "encodedProposal" field.  Submit and sign the transaction.
 
 ![Preimage Hash](../_assets/img/guide/note-preimage-encoded-call-hash.png)
 
 
 #### 2. Submit a Proposal
 
-Now that the preimage has been uploaded, it is time to create the actual governance proposal. 
+Now that the preimage has been uploaded, it is time to create the actual governance proposal.
 
 Go to Developer -> Chain State -> democracy -> preimages and unselect "include option". This will show all current preimages. Check the preimage with your account id (the `provider`) and note down the hash of the preimage.
 
@@ -295,12 +295,12 @@ Show instructions
 
 If you want to make governance pre-approving some future course of action (i.e, **no on-chain effects take place right now!**), the best way is to summarize the proposal in a PDF and have the community vote on "timestamping" the document on the blockchain:
 
-1. Upload PDF to IPFS, e.g. using [https://www.pinata.cloud/](https://www.pinata.cloud/) 
+1. Upload PDF to IPFS, e.g. using [https://www.pinata.cloud/](https://www.pinata.cloud/)
 2. Fetch the file URL (e.g. [https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs](https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs))
 3. Create a proposal that creates an on-chain remark (writes some data to the chain).
  * Go to [https://polkadot.js.org/apps/#/democracy](https://polkadot.js.org/apps/#/democracy) (“Governance” tab). Make sure you are connected to the correct network
  * Click `Submit preimage`, under propose select `system` and then select `remark(remark)` from the second dropdown
- * Under `remark: Bytes` enter the message you want to write to the chain. Simply copy & paste the IPFS URL of the PDF file, e.g. [https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs](https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs) 
+ * Under `remark: Bytes` enter the message you want to write to the chain. Simply copy & paste the IPFS URL of the PDF file, e.g. [https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs](https://gateway.pinata.cloud/ipfs/QmPxBAPaweBtMDiGXAmf2eQPdnx75xsP7XsZQ1TqhxHGCs)
  * Submit the preimage
 
 Sidenote: please add the following message at the top of your proposal text on Subsquare (see below):
