@@ -51,6 +51,7 @@
 * **Developers**
 
   * [Getting started](developers/overview.md)
+  * [Guide: Tokens](developers/tokens.md)
   * [Guide: Bridge](developers/bridge.md)
   * [Guide: Lending](developers/lending.md)
   * [API](developers/api.md)
