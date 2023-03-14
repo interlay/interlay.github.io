@@ -84,7 +84,7 @@ If there are deposits in multiple asset types, it is easy to see which one is en
 
 ![KBTC enabled as collateral](../_assets/img/guide/lending-lend-position-overview.png)
 
-Whenever there is collateral, a section dedicated to your LTV (loan-to-value) appears, which will provide your with in-depth insights on the status of your positions
+Whenever there is collateral, a section dedicated to your LTV (loan-to-value) appears, which will provide you with in-depth insights into the status of your positions
 
 ![LTV Section](../_assets/img/guide/lending-ltv-section.png)
 
