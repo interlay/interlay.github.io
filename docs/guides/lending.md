@@ -132,15 +132,15 @@ All tokens that can be used in the money market can also be traded on Kintsugi D
 
 1. Go to [https://polkadot.js.org/apps/#/extrinsics](https://polkadot.js.org/apps/#/extrinsics) and select Kitnsugi network
 2. Set up the parameters for the call
-   1. _using the selected account_: `your_accound_address` (Kintsugi address, starting with ‘a3…’)
-   2. _submit the following extrinsic_: `loans.liquidateBorrow()`
-   3. _borrower:_ `target_account_address` (Kintsugi address of the borrower to liquidate, starting with ‘a3…’)
-   4. _liquidationAssetId:_ Borrowed currency to repay
+   1. **using the selected account**: `your_accound_address` (Kintsugi address, starting with ‘a3…’)
+   2. **submit the following extrinsic**: `loans.liquidateBorrow()`
+   3. **borrower:** `target_account_address` (Kintsugi address of the borrower to liquidate, starting with ‘a3…’)
+   4. **liquidationAssetId:** Borrowed currency to repay
       1. Select `Token` for KINT, kBTC, KSM
       2. Select `ForeignAsset` for other tokens
          1. see [here](#asset-registry) for `id:token` mapping
-   5. _repayAmount:_ `amount_to_be_repaid` , note that the amount depends on the number of decimals the token uses. See [here](#asset-registry) for details.
-   6. _collateralAssetId:_ The currency to receive in exchange for liquidating the borrower's loan. The liquidation premium is also paid in this currency. Note that this currency has to be one of the collateral currencies used by the liquidated borrower. Also note that while `collateralAssetId` represents the underlying currency of a lending market (e.g. KBTC), the liquidator receives its qToken version instead (e.g. QKBTC), which can be redeemed for KBTC from the lending market (see [withdraw collateral](#_3-withdraw-collateral-optional)).
+   5. **repayAmount:** `amount_to_be_repaid` , note that the amount depends on the number of decimals the token uses. See [here](#asset-registry) for details.
+   6. **collateralAssetId:** The currency to receive in exchange for liquidating the borrower's loan. The liquidation premium is also paid in this currency. Note that this currency has to be one of the collateral currencies used by the liquidated borrower. Also note that while `collateralAssetId` represents the underlying currency of a lending market (e.g. KBTC), the liquidator receives its qToken version instead (e.g. QKBTC), which can be redeemed for KBTC from the lending market (see [withdraw collateral](#_3-withdraw-collateral-optional)).
       1. Select `Token` for KINT, kBTC, KSM
       2. Select `ForeignAsset` for other tokens
          1. see [here](#asset-registry) for `id:token` mapping
@@ -157,9 +157,9 @@ This example would liquidate a $1,000 USDT position in order to receive kBTC as 
 The liquidator will receive `LendTokens` as a result of the liquidation call in step 2. These tokens still remain in the liquidity pool of the lending market and keep accruing interest. To receive the underlying token, the user can either withdraw the qTokens manually via the UI as described [here](#_7-withdraw-a-deposit) or construct an extrinsic by using polkadot.js as follows:
 
 1. Set up the parameter for the call
-   1. _using the selected account_: `your_accound_address` (Kintsugi address, starting with ‘a3…’)
-   2. _submit the following extrinsic_: `loans.redeemAll` to redeem all supplied token of a given currency or `loans.redeem` to only redeem a specified amount. This could be required if the received currency is already used as collateral by the liquidator to secure a loan. In this case, not all of the tokens could be redeemed and the user needs to specify the amount via `loans.redeem`
-   3. _assetId_:
+   1. **using the selected account**: `your_accound_address` (Kintsugi address, starting with ‘a3…’)
+   2. **submit the following extrinsic**: `loans.redeemAll` to redeem all supplied token of a given currency or `loans.redeem` to only redeem a specified amount. This could be required if the received currency is already used as collateral by the liquidator to secure a loan. In this case, not all of the tokens could be redeemed and the user needs to specify the amount via `loans.redeem`
+   3. **assetId:**
       1. Select `Token` for KINT, kBTC, KSM
       2. Select `ForeignAsset` for other tokens
          1. see [here](#asset-registry) for `id:token` mapping
