@@ -105,7 +105,7 @@ For the full details of the Vault rewards on the Kintsugi canary network, see th
 
 The **Total Fee Pool** is the sum of the **Bridge Fees** and the **Block Rewards** for every block.
 
-From this fee pool, `100%` is distributed among all active Vaults based on the Vault's **BTC Capacity** ( = maximum BTC a Vault can safekeep under the secure collateral thresholds) in proportion to the total BTC Capacity (= maximum BTC all Vaults can safekeep under the secure collateral thresholds) across all Vaults.
+From this fee pool, `100%` is distributed among all _active_ Vaults based on the Vault's **BTC Capacity** ( = maximum BTC a Vault can safekeep under the secure collateral thresholds) in proportion to the total BTC Capacity (= maximum BTC all Vaults can safekeep under the secure collateral thresholds) across all Vaults.
 
 Each Vault's capacity is calculated as the collateral provided by that Vault (converted to BTC) and divided either by the individual secure collateral threshold (Vaults can set higher thresholds than the global threshold) or the global secure threshold:
 
@@ -120,6 +120,8 @@ Each Vault's share of the received IBTC/KBTC and INTR/KINT is calculated accordi
 `Vault Revenue = Total Fee Pool * (Vault Capacity / Total Vault Capacity)`
 
 ?> Example: Assume that it would be possible to lock 400 BTC in total at the moment. It does not matter how many BTC are already locked in the capacity based calculation. If 20 or 300 BTC of the 400 BTC are currently locked does not play a role. Next, say Vault Alice has overall capacity to safeguard 40 BTC (does not matter how many BTC are already locked with her). The bridge fees (issue and redeem) for the current block are 1 iBTC and the block rewards are 20 INTR. Vault Alice receives 40/400 = 0.1 of the total fees distributed which accounts to 0.1 iBTC and 2 INTR in that block.
+
+?> Note: vaults that have their status set to "issuing disabled" do not receive any rewards. 
 
 ## Collateral
 
