@@ -207,7 +207,7 @@ You should also use a custom RPC username and password instead of the default `r
 
 Download the asset from GitHub:
 ```shell
-wget -O runner https://github.com/interlay/interbtc-clients/releases/download/1.18.1/runner
+wget -O runner https://github.com/interlay/interbtc-clients/releases/download/1.20.0/runner
 ```
 
 Make the binary executable:
@@ -487,7 +487,7 @@ Download the asset from GitHub:
 #### **Testnet (Kintsugi)**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.1/vault-parachain-metadata-kintsugi-testnet
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.20.0/vault-parachain-metadata-kintsugi-testnet
 ```
 
 #### **Testnet (Interlay)**
@@ -499,7 +499,7 @@ wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.1
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.18.1/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.20.0/vault-parachain-metadata-kintsugi
 ```
 
 #### **Interlay**
@@ -545,7 +545,7 @@ cd interbtc-clients
 #### **Testnet (Kintsugi)**
 
 ```shell
-git checkout 1.18.1
+git checkout 1.20.0
 cargo build --bin vault --features parachain-metadata-kintsugi-testnet
 ```
 
@@ -559,7 +559,7 @@ cargo build --bin vault --features parachain-metadata-interlay-testnet
 #### **Kintsugi**
 
 ```shell
-git checkout 1.18.1
+git checkout 1.20.0
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
