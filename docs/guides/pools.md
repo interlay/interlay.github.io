@@ -77,7 +77,7 @@ You can access the current slippage and chang it by pressing the top right cog e
 
 ![Swap slippage](../_assets/img/guide/swap-page-slippage.png)
 
-[needs docs link with explanation]
+You can visit this [documentation](https://support.uniswap.org/hc/en-us/articles/8643879653261-What-is-Price-Slippage-) for a more in-depth explanation about this topic.
 
 ![Pools Page with Account Liquidity](../_assets/img/guide/pools-page-overview-liquidity.png)
 

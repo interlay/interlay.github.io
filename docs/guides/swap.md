@@ -80,7 +80,7 @@ You can access the price impact of your current swap setup by expanding the elem
 
 ![Swap price impact](../_assets/img/guide/swap-page-price-impact.png)
 
-[needs docs link with explanation]
+You can visit this [documentation](https://support.uniswap.org/hc/en-us/articles/8671539602317-What-is-Price-Impact-) for a more in-depth explanation about this topic.
 
 #### Slippage
 
@@ -88,4 +88,4 @@ You can access the current slippage and chang it by pressing the top right cog e
 
 ![Swap slippage](../_assets/img/guide/swap-page-slippage.png)
 
-[needs docs link with explanation]
+You can visit this [documentation](https://support.uniswap.org/hc/en-us/articles/8643879653261-What-is-Price-Slippage-) for a more in-depth explanation about this topic.
