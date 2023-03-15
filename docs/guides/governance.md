@@ -384,6 +384,46 @@ KSM: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-kusama.interlay.io%2Fpara
 
 </details>
 
+
+### Update the system collateral ceiling
+
+<details>
+<summary>
+Show instructions
+</summary>
+
+#### 1. Create the batch call to adjust the thresholds
+
+- Go to https://polkadot.js.org/apps/#/extrinsics
+- Select `vaultRegistry` -> `setSystemCollateralCeiling`
+- Set the collateral currency
+
+  - For native assets, use `Token.Ticker`, e.g., `Token.DOT`
+  - For foregin assets, use `ForeignAssets.Id`, e.g., `ForeignAsset.2` for LKSM on Kintsugi. You can find the correct foreign assets by going to https://polkadot.js.org/apps/#/chainstate -> assetRegistry -> metadata (unselect include option)
+
+- Set the wrapped currency to `Token.KBTC` on Kintsugi, or to `Token.IBTC` on Interlay.
+- Set the desired ceiling. Keep in mind the number of decimals of the currency. For foreign assets, the number of decimals is included in the metadata queried above. `DOT` and `INTR` have 10 decimals, while `KSM` and `KINT` have 12 decimals. For example, to set the ceiling to 5 `KINT`, enter  5 * 10^12 = 5,000,000,000,000.
+
+#### 2. Create the proposal
+
+Open a new browser tab.
+
+- Go to https://polkadot.js.org/apps/#/extrinsics
+- Select `utlity` -> `batchAll`
+- Add two call items:
+
+  - `democracy.notePreimage`
+
+    - `encodedProposal`: the encoded call data from the call in Step 1 above.
+
+  - `democracy.propose`
+
+    - `proposalHash`: the encoded call hash from the call in Step 1 above.
+    - `value`: the [minimum vKINT/vINTR amount](guides/governance?id=required-tokens) required for making a proposal denominated in planck.
+
+</details>
+
+
 ### Update Vault Block Rewards
 
 <details>
