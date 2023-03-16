@@ -29,6 +29,8 @@
   * [Transfers](guides/transfers.md)
   * [Bridge](guides/bridge.md)
   * [Lending](guides/lending.md)
+  * [Swap](guides/swap.md)
+  * [Pools](guides/pools.md)
   * [Staking](guides/stake.md)
   * [Governance](guides/governance.md)
   * [Crowdloans](guides/crowdloans.md)
