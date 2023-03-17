@@ -15,8 +15,9 @@ ExecStart=/opt/testnet-interlay/vault/vault \
   --faucet-url 'https://staging.interlay-dev.interlay.io/faucet' \
   --auto-register=DOT=faucet \
   --auto-register=INTR=faucet
-Restart=on-failure
+Restart=always
 RestartSec=5
+StartLimitIntervalSec=0
 
 [Install]
 WantedBy=multi-user.target
