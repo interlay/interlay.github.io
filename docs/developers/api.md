@@ -65,6 +65,8 @@ Tokens that can be used in the lending protocol can be queried using polkadot.js
 - LP tokens in the "standard" (Uniswap v2) AMM can be queried using the `tokens` pallet and `CurrencyId::LpToken(LpToken, LpToken)`. 
 - LP tokens in the "stable" (Curve v1) AMM can be queried using the `tokens` pallet and `CurrencyId::StableLpToken(u32)` where the `u32` is the pool ID which can be queried using `dexStableAmm.pools(u32)`.
 
+?> All LP tokens can be assumed to have 18 decimals.
+
 ### Querying account balances
 
 Returns the `amount` of tokens in the smallest denomination.
