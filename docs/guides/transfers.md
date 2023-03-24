@@ -58,6 +58,7 @@ Click to view cross chain transfer
 ![Cross-chain-transfer](../_assets/img/guide/to-kintsugi-cross-chain-transfer.png)
 </details>
 
+0. To transfer any token to Interlay/Kintsugi, please make sure that you do have a sufficient balance on the origin chain to pay for transaction fees.
 1. Make sure you select the correct account from the account selector at the top of the page. This is the account from which the transfer will be made.
 2. Your available balance on the relay chain (Polkadot or Kusama) or other parachain is shown above the amount field. This will be different from the parachain balance shown at the top of the page.
 3. Set the "from" chain value to the chain you want to send the funds from and the "to" chain value to Interlay or Kintsugi.
@@ -75,6 +76,7 @@ Click to view cross chain transfer
 ![Cross-chain-transfer](../_assets/img/guide/from-kintsugi-cross-chain-transfer.png)
 </details>
 
+0. To transfer any token from Interlay/Kintsugi, please make sure that you do have a sufficient balance of INTR/KINT to pay for transaction fees.
 1. Make sure you select the correct account from the account selector at the top of the page. This is the account from which the transfer will be made.
 2. Your available balance on Interlay/Kintsugi is shown above the amount field. This will be the same as the token balance shown at the top of the page.
 3. Set the "from" chain value to Interlay or Kintsugi and the "to" chain value to the chain you want to send the tokens to.
