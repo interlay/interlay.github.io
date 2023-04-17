@@ -45,17 +45,15 @@ Off-chain proposals are a way to coordinate and gauge the communities opinion on
 
 This process is recommended for new proposals and where members of governance are not sure if the community would agree with their proposal.
 
-### OpenSquare
-
-Go to https://opensquare.io/space/kintsugi/ to create and vote on off-chain proposals.
+Go to https://opensquare.io/space/kintsugi/ or https://opensquare.io/space/interlay/ to create and vote on off-chain proposals.
 
 ![OffChain](../_assets/img/guide/governance-off-chain-proposal-1.png)
 
-#### Creating a New Proposal
+### Creating a New Proposal
 
 Connect the wallet in the top right and then click on "New Proposal" to create a new off-chain proposal.
 
-#### Vote on a New Proposal
+### Vote on a New Proposal
 
 Connect the wallet in the top right and then select the proposal to vote on.
 
@@ -76,70 +74,46 @@ Both Kintsugi and Interlay use the SubSquare governance platform to discuss and 
 
 [kintsugi.subsquare.io](https://kintsugi.subsquare.io/)
 
-#### **Testnet-Kintsugi**
-
-[test-kint.subsquare.io](https://test-kint.subsquare.io/)
-
 <!-- tabs:end -->
 
-#### 1. (Optional) Create an account
+### 1. Login with your wallet
 
-Subsquare requires an account or use your polkadot.js wallet.
+- Select the wallet you use, e.g., polkadot.js, Talisman, SubWallet, and connect it to the governance platform.
+- Select the account you want to use.
 
-If you want to use an account instead of your wallet, make sure to register or log-in:
-
-![Login](../_assets/img/guide/governance-referenda-login.png)
-
-#### 2. (Optional) Connect Polkadot/Kusama/Substrate account
-
-If you used a traditional account instead of your web3 wallet, you need to link the account to a polkadot.js wallet.
-
-Next, make sure you have a polkadot.js address linked when you go to your in the topbar -> Settings.
-
-![Link Address](../_assets/img/guide/governance-referenda-link-address.png)
+![Login](../_assets/img/guide/governance-login.png)
 
 ## On-Chain Proposal
 
 Anyone can make a proposal if they have locked enough governance tokens.
-This involves 2 steps:
+This involves two steps:
 
 1. Creating the on-chain proposal via Polkadot.js
 2. Adding text/arguments/explanation to your proposal via the [governance platform](#governance-platform)
 
 ### Step 1: Submit Proposal via Polkadot.js
 
-?> We recommend you reach out the community on [Discord](https://discord.gg/interlay) in the #governance channel before creating a proposal.
+?> We recommend you reach out the community on [Discord](https://discord.gg/interlay) in the #product-feedback channel before creating a proposal.
 
-#### 1. Create and Submit a Preimage
+#### Option A for simple proposals: Submiting a Preimage and a Proposal in two transactions
+
+##### 1. Create and submit a Preimage
 
 Governance can change the runtime code as well as all sorts of parameters. In the first step, decide what the proposal you are about to create should change. The exact changes you want to make are encoded in a so called "Preimage".
 
-See [common proposals]() for detailed guides on frequently used proposal forms.
+See [common proposals](#templates-common-governance-proposals) for detailed guides on frequently used proposal forms.
 
-**Option A: Creating a new preimage**
+Go to Governance -> Preimages -> Submit preimage and propose the change you desire. In the example below, we are setting the minimum required amount of KSM for Vaults to register to 1 KSM. Hit "Sign and Submit" to submit the preimage.
 
-Go to Governance -> Democracy -> Submit preimage and propose the change you desire. In the example below, we are setting the minimum required amount of KSM for Vaults to register to 1 KSM. Hit "Sign and Submit" to submit the preimage.
+?> Note down the preimage hash as you will need it in the next step.
 
 ![Preimage](../_assets/img/guide/governance-proposal-1.png)
 
-**Option B: Submitting a prepared preimage**
-
-If you have a pre-image already prepared (e.g. prepared using another tool, recommended for complex preimages with many parameters/calls), then you can simply submit the `hex-encoded call` to save time (instead of manually recreating the preimage in polkadot.js).
-
-Go to Developer -> Extrinsics -> democracy -> notePreimage and insert the `hex-encoded call` of your preimage in the "encodedProposal" field.  Submit and sign the transaction.
-
-![Preimage Hash](../_assets/img/guide/note-preimage-encoded-call-hash.png)
-
-
-#### 2. Submit a Proposal
+##### 2. Submit a Proposal
 
 Now that the preimage has been uploaded, it is time to create the actual governance proposal.
 
-Go to Developer -> Chain State -> democracy -> preimages and unselect "include option". This will show all current preimages. Check the preimage with your account id (the `provider`) and note down the hash of the preimage.
-
-![Preimage Hash](../_assets/img/guide/governance-proposal-2.png)
-
-Go to Governance -> Democracy -> Submit proposal and insert the preimage hash as well as the amount of vKINT/vINTR to lock for the proposal. The minimum required is automatically selected. Hit "Sign and Submit" to submit the proposal.
+Go to Governance -> Democracy -> submit proposal and insert the preimage hash as well as the amount of vKINT/vINTR to lock for the proposal. Hit "Sign and Submit" to submit the proposal.
 
 ![Propose](../_assets/img/guide/governance-proposal-3.png)
 
@@ -147,6 +121,13 @@ It takes some time and might require a hard-refresh (Ctrl + Shift + r) of the br
 
 ![Proposals](../_assets/img/guide/governance-proposal-4.png)
 
+#### Option B for complex proposals and technical users: Submit the preimage and proposal in one transaction
+
+If you have a pre-image already prepared (e.g. prepared using another tool, recommended for complex preimages with many parameters/calls), then you can simply submit the `hex-encoded call` to save time (instead of manually recreating the preimage in polkadot.js).
+
+Go to Developer -> Extrinsics -> democracy -> propose, select `Inline` as option and insert the hex encoded call of your preimage in the "inline" field. Submit and sign the transaction.
+
+![Inline submission](../_assets/img/guide/governance-inline-preimage.png)
 
 ### Step 2: Add Proposal Text
 
@@ -157,7 +138,6 @@ Now it is time to add the text, explaining and arguing in favor of your proposal
 #### 1. Log into SubSquare
 
 See [above](#governance-platform).
-Make sure you have connected your Substrate account!
 
 #### 2. Find and edit your proposal
 
@@ -165,41 +145,36 @@ Go to "Proposals" and select your proposal from the list.
 
 ?> If you connected the same account as the one you used to create the proposal, you will be able to add title and text.
 
-
 ## Show Support for a Proposal
 
 Once a proposal is created, governance participants are asked to support proposals. One proposal per week is promoted to a referendum.
 
-### Polkadot.js
+You can see all proposals for Interlay at https://interlay.subsquare.io/democracy/proposals.
 
-Make sure you connect to the correct parachain in [polkadot.js.org/apps](https://polkadot.js.org/apps).
-#### 1. Select a Porposal to Support
+You can see all proposals for Kintsugi at https://kintsugi.subsquare.io/democracy/proposals.
 
-Go to Governance -> Democracy. If there are any ongoing proposal, you should see them listed on this page.
+### 1. Make sure you are logged-in
 
-![Proposals](../_assets/img/guide/governance-second-1.png)
+Make sure to log-in as described [above](#_1-login-with-your-wallet).
 
-#### 2. Second a Proposal
+### 2. Select a Proposal
 
-From the list of the porposal, click "Second" and in the opened modal, click "Second" again to show support for the proposal.
+First, click on the proposal you would like to vote on from the list.
+You will see a description for the proposal, for example the one below:
 
-![Proposals](../_assets/img/guide/governance-second-2.png)
+![Referendum Example](../_assets/img/guide/governance-proposal-example.png)
 
-#### 3. Confirm
+### 3. Second a Proposal
 
-Once you signed the extrinsic in step 2, you should see your account being listed in a "Seconds" dropdown in the list of proposal.
-
-![Proposals](../_assets/img/guide/governance-second-3.png)
+On the side of the proposal, you see a modal that will allow you to second the proposal with your staked governance tokens, i.e., vINTR or vKINT.
 
 ## Create a Treasury Proposal
 
 Anyone can make a treasury proposal if they have locked enough KINT or INTR.
 
-### Polkadot.js
-
 Make sure you connect to the correct parachain in [polkadot.js.org/apps](https://polkadot.js.org/apps).
 
-#### 1. Submit a Proposal
+### 1. Submit a Proposal
 
 Go to Governance -> Treasury -> Submit proposal and propose who should receive funds from the Interlay or Kintsugi treasuries.
 
@@ -207,7 +182,7 @@ Go to Governance -> Treasury -> Submit proposal and propose who should receive f
 
 ?> You will have to bond a fraction of the requested value in either KINT or INTR.
 
-#### 2. Bring the Treasury Proposal to a Vote via a Public Proposal
+### 2. Bring the Treasury Proposal to a Vote via a Public Proposal
 
 As Kintsugi and Interlay do not have a council, the entire community has to agree on treasury spendings. This requires a public proposal. To achieve this, follow the steps of creating a public propsal.
 
@@ -240,15 +215,9 @@ You can see all referenda for Interlay at https://interlay.subsquare.io/democrac
 
 You can see all referenda for Kintsugi at https://kintsugi.subsquare.io/democracy/referendums.
 
-#### 1. Make Sure you are Logged-In and Linked your Account
+#### 1. Make sure you are logged-in
 
-Make sure to log-in:
-
-![Login](../_assets/img/guide/governance-referenda-login.png)
-
-Next, make sure you have a web3 address linked when you go to your in the topbar -> Settings.
-
-![Link Address](../_assets/img/guide/governance-referenda-link-address.png)
+Make sure to log-in as described [above](#_1-login-with-your-wallet).
 
 #### 2. Select a Referendum
 
@@ -276,11 +245,13 @@ Once the voting period is over, you will see the result of the referendum in the
 
 ## Fast-track a Proposal
 
-If you are a member of the [Kintsugi Technical Committee](kintsugi/governance#technical-committee), you can propose to fast-track proposals.
+If you are a member of the Interlay or Kintsugi Technical Committee, you can propose to fast-track proposals.
 
 - Go to Governance -> Tech. comm. -> Proposals -> Submit proposal
 - Enter the id of the proposal which you propose to fast-track to a referendum
 - Enter the delay for the enactment of the referendum. For almost instant enactment us a small block number like 3, for a large delay, use a larger number of blocks.
+
+?> Make sure to set at least 1 block delay to allow for the enactment of the referendum.
 
 ![TC](../_assets/img/guide/governance-technical-committee-1.png)
 
