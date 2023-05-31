@@ -34,6 +34,21 @@ Use the following third party applications to bring in collateral assets from ot
 - Kintsugi <> Moonriver: https://apps.moonbeam.network/moonriver
 - Kintsugi <> Karura: https://apps.karura.network/bridge
 
+## Locking Lending Tokens like qDOT or qUSDT as Collateral
+
+qTokens can be listed as collateral as well. qTokens are interest bearing tokens as they earn interest from the lending operation.
+
+To use a qToken as vault collateral follow three steps:
+
+1. Deposit the [qToken into the lending market](guides/lending?id=_3-deposit-to-a-lending-market). You can do this via the UI as in the linked guide or use `loans.mint(token, amount)` in polkadot.js.
+2. When depositing a token to the lending market, it is not autmatically locked as collateral. 
+  
+  a. If you just deposited the tokens into the lending market, there's nothing to do.
+
+  b. However, if you are borrowing tokens from the lending protocol, chances are that the token is used as collateral. Ensure that the qToken is not locked as collateral in the lending protocol. On the UI, navigate to the /lending page and [untoggle the "Collateral" toggle](guides/lending?id=_4-enable-the-collateral-toggle).
+
+3. Register the qToken as collateral as described in the [registration section](#registration). 
+
 ## Registration
 
 There are three ways to register a Vault:
@@ -100,8 +115,10 @@ Note that the `auto-register` argument can be specified multiple times. After th
 3. Select your existing Vault account, the `vaultRegistry` pallet and the `registerVault` extrinsic
 4. Enter the collateral currency and the wrapped currency pair plus the minimum amount of collateral
 
-  a. **Collateral currency**: select the collateral currency. For Kintsugi/Interlay native assets, select e.g., `Token.KSM` or `Token.KINT`. For foregin assets from other parachains, select `ForeignAsset` and the number of the foreign asset. See [this overview for all foreign assets](developers/api?id=overview-of-assets-in-the-assetregistry-pallet). *Example:* `LKSM` is `ForeignAsset.2`.
+  a. **Collateral currency**: select the collateral currency. For Kintsugi/Interlay native assets, select e.g., `Token.KSM` or `Token.KINT`. For foreign assets from other parachains, select `ForeignAsset` and the number of the foreign asset. See [this overview for all foreign assets](developers/api?id=overview-of-assets-in-the-assetregistry-pallet). *Example:* `LKSM` is `ForeignAsset.2`. For lending tokens, select `LendToken`. *Example:* `qKSM` is `LendToken.2`.
+
   b. **Wrapped currency**: select `Token.KBTC` on Kintsugi or `Token.IBTC` on Interlay
+
   c. **Minimum collateral**: select the [minimum collateral amount](vault/overview?id=minimum-collateral) and convert this to the smallest denomination. *Example:* 1 LKSM = 10^12 Planck (1000000000000). The minimum collateral amount is 20 LKSM, or 20000000000000 Planck.
 
 5. Sign and submit the transaction
