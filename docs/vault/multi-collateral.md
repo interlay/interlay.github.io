@@ -41,7 +41,7 @@ qTokens can be listed as collateral as well. qTokens are interest bearing tokens
 To use a qToken as vault collateral follow three steps:
 
 1. Deposit the [qToken into the lending market](guides/lending?id=_3-deposit-to-a-lending-market). You can do this via the UI as in the linked guide or use `loans.mint(token, amount)` in polkadot.js.
-2. When depositing a token to the lending market, it is not autmatically locked as collateral. 
+2. When depositing a token to the lending market, it is not automatically locked as collateral. 
   
   a. If you just deposited the tokens into the lending market, there's nothing to do.
 
