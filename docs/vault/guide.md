@@ -325,11 +325,11 @@ If your Vault clients holds at least _some BTC in custody_, you have two options
 
 When the Bitcoin mempool is significantly congested it may take some time for redeem payments to be included on mainnet. In the worst case this could lead to a theft report on the parachain if the request period has elapsed. For this reason, all transactions made by the Vault should be "bip125-replaceable" to allow Vault operators to set a higher fee.
 
-!> "Here be dragons" - please only use this guide as a last resort. You might consider third-party transaction acceleration first.
+!> The following instructions are for advanced users only, in most cases the Vault client should automatically bump the fee if required. Manually bumping the fees may cause the wallet to not contain sufficient Bitcoin to fulfil future redeem requests. It may also be a possibility to consider third-party transaction acceleration services.
 
 Note the `$TXID` which is the transaction identifier of that which will be replaced.
 
-### Simple (Not Recommended)
+### Simple
 
 The easiest way to bump the transaction fees is by using the `bumpfee` command.
 
@@ -339,13 +339,13 @@ bitcoin-cli bumpfee $TXID
 
 This is not recommended however since it may insert an additional (unregistered) change address.
 
-### Advanced (Recommended)
+### Advanced
 
 This approach is slightly more involved but the following commands will reduce some overhead.
 
 You will need to set `-rpcwallet` when using `bitcoin-cli`. For example if the transaction was made by your `KSM-KBTC` wallet this should be `$KEYNAME-KSM-KBTC` where `$KEYNAME` is the `AccountId` your Vault would point to.
 
-Before continuing you will need to set the `$CHANGE_ADDRESS` to an address already registered by your Vault.
+Before continuing you will need to set the `$CHANGE_ADDRESS` to an address already registered by your Vault. List those addresses and set the `CHANGE_ADDRESS` variable.
 
 ```shell
 bitcoin-cli listunspent
