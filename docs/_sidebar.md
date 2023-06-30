@@ -24,7 +24,7 @@
   * [Use kBTC](kintsugi/Earn-With-kBTC.md)
 
 * **Guides**
-
+  * [Asset Onramp](guides/assets.md)
   * [Wallets / Explorers](guides/wallets-explorers.md)
   * [Transfers](guides/transfers.md)
   * [Bridge](guides/bridge.md)
