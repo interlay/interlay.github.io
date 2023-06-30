@@ -170,7 +170,7 @@ On the side of the proposal, you see a modal that will allow you to second the p
 
 ## Create a Treasury Proposal
 
-Anyone can make a treasury proposal if they have locked enough KINT or INTR. Follow the steps outlined [here](#On-Chain-Proposal) to create a new proposal. The preimage / proposal should be a call to `democracy.spendFromTreasury`. The function takes only two arguments: the amount to transfer, and the account of the beneficiary. An example is shown below:
+Anyone can make a treasury proposal if they have locked enough KINT or INTR. Follow the steps outlined [here](#On-Chain-Proposal) to create a new proposal. The preimage / proposal should be a call to `democracy.spendFromTreasury`. The function takes only two arguments: the amount to transfer, and the account of the beneficiary. The amount is the amount of the native token (i.e. INTR or KINT) to be transferred, and it's entered in planck. INTR uses 10 decimals while KINT uses 12 decimals, So on Interlay to transfer 1 INTR, you enter 10^10, while on Kintsugi to transfer 1 KINT, you enter 10^12.  An example is shown below:
 
 ![Treasury Proposal Example](../_assets/img/guide/treasury-proposal.png)
 
