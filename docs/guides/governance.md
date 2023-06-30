@@ -170,39 +170,9 @@ On the side of the proposal, you see a modal that will allow you to second the p
 
 ## Create a Treasury Proposal
 
-Anyone can make a treasury proposal if they have locked enough KINT or INTR.
+Anyone can make a treasury proposal if they have locked enough KINT or INTR. Follow the steps outlined [here](#On-Chain-Proposal) to create a new proposal. The preimage / proposal should be a call to `democracy.spendFromTreasury`. The function takes only two arguments: the amount to transfer, and the account of the beneficiary. An example is shown below:
 
-Make sure you connect to the correct parachain in [polkadot.js.org/apps](https://polkadot.js.org/apps).
-
-### 1. Submit a Proposal
-
-Go to Governance -> Treasury -> Submit proposal and propose who should receive funds from the Interlay or Kintsugi treasuries.
-
-![Treasury](../_assets/img/guide/governance-treasury-1.png)
-
-?> You will have to bond a fraction of the requested value in either KINT or INTR.
-
-### 2. Bring the Treasury Proposal to a Vote via a Public Proposal
-
-As Kintsugi and Interlay do not have a council, the entire community has to agree on treasury spendings. This requires a public proposal. To achieve this, follow the steps of creating a public propsal.
-
-A quick overview:
-
-**Approve Proposal Preimage**
-
-Select the treasury proposal id that should be approved.
-
-![Treasury](../_assets/img/guide/governance-treasury-2.png)
-
-**Submit Proposal**
-
-Select the hash of the preimage and submit the proposal.
-
-![Propose](../_assets/img/guide/governance-proposal-3.png)
-
-**Second the Proposal**
-
-Last, second the proposal to give it a chance to become a referenda.
+![Treasury Proposal Example](../_assets/img/guide/treasury-proposal.png)
 
 ## Vote on Referenda
 
