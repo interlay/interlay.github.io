@@ -250,7 +250,7 @@ If the Vault does not fulfil the request within 24 hours, you have the option to
 
 You can check the status of your redeem request below the redeem form.
 
-![Bitcoin transaction details](../_assets/img/guide/bridge-redeem-table9.png)
+![Bitcoin transaction details](../_assets/img/guide/bridge-redeem-table.png)
 
 Vaults have 24 hours to complete your request. If it is not completed in time, you have the option to either Reimubse or Retry.
 
