@@ -279,7 +279,7 @@ runner \
     # Runner CLI arguments
     --client-type vault \
     --parachain-ws 'wss://api-kusama.interlay.io:443/parachain' \
-    --download-path <CUSTOM_BINARY_DOWNLOAD_PATH, example: /opt/testnet/runner/> \
+    --download-path <CUSTOM_BINARY_DOWNLOAD_PATH, example: /opt/mainnet/runner/> \
     -- \
     # Vault CLI arguments:
     --bitcoin-rpc-url http://localhost:18332 \
@@ -289,6 +289,25 @@ runner \
     --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
     --auto-register=KSM=3000000000000 \
     --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain'
+```
+
+#### **Interlay**
+
+```shell
+runner \
+    # Runner CLI arguments
+    --client-type vault \
+    --parachain-ws 'wss://api.interlay.io:443/parachain' \
+    --download-path <CUSTOM_BINARY_DOWNLOAD_PATH, example: /opt/mainnet/runner/> \
+    -- \
+    # Vault CLI arguments:
+    --bitcoin-rpc-url http://localhost:18332 \
+    --bitcoin-rpc-user rpcuser \
+    --bitcoin-rpc-pass rpcpassword \
+    --keyfile keyfile_interlay.json \
+    --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+    --auto-register=DOT=300000000000 \
+    --btc-parachain-url 'wss://api.interlay.io:443/parachain'
 ```
 <!-- tabs:end -->
 
