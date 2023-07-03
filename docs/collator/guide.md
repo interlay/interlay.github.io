@@ -39,7 +39,7 @@ Map the directory into a local volume used by the docker container.
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:1.20.1 \
+  interlayhq/interbtc:1.24.0 \
   --base-path=/data \
   --chain=kintsugi \
   --execution=wasm \
@@ -62,7 +62,7 @@ docker run \
 docker run \
   --network host \
   --volume ${PWD}/data:/data \
-  interlayhq/interbtc:1.20.1 \
+  interlayhq/interbtc:1.24.0-hotfix \
   --base-path=/data \
   --chain=interlay \
   --execution=wasm \
@@ -92,14 +92,14 @@ Download the pre-built binary:
 #### **Kintsugi**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.20.1/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.24.0/interbtc-parachain
 chmod +x interbtc-parachain
 ```
 
 #### **Interlay**
 
 ```shell
-wget https://github.com/interlay/interbtc/releases/download/1.20.1/interbtc-parachain
+wget https://github.com/interlay/interbtc/releases/download/1.24.0-hotfix/interbtc-parachain
 chmod +x interbtc-parachain
 ```
 
@@ -133,14 +133,14 @@ cd interbtc
 #### **Kintsugi**
 
 ```shell
-git checkout 1.20.1
+git checkout 1.24.0
 cargo build --release
 ```
 
 #### **Interlay**
 
 ```shell
-git checkout 1.20.1
+git checkout 1.24.0-hotfix
 cargo build --release
 ```
 
