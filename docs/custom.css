@@ -1,13 +1,14 @@
 :root {
 
   /* Base config */
-  --base-font-size      : 18px;
+  --base-font-size      : 16px;
   --sidebar-padding     : 0 px;
   --navbar-menu-padding : 0.5em 2em 0.5em 0.5em;
   --base-line-height    : 1.7;
   --content-max-width   : 55em;
-
-
+  --base-background-color: #1f1f1f;
+  --sidebar-background: #1f1f1f;
+  
   /* Theme and Colors */
   --primary-interlay    : #1A0A2D;
   --primary-blue        : #075ABC;
@@ -22,13 +23,13 @@
   --hover-color         : #D3D3D3;
 
   /* Links */
-  --link-color                        : var(--primary-blue);
+  --link-color                        : var(--secondary-blue);
   --link-text-decoration              : none;
   --link-text-decoration--hover       : underline;
 
 
   /* Sidebar */
-  --sidebar-nav-link-color--active              : var(--primary-blue);
+  --sidebar-nav-link-color--active              : var(--secondary-blue);
   --sidebar-nav-link-background-color--hover     : var(--hover-color);
   --sidebar-nav-link-text-decoration--hover     : none;
   --sidebar-padding                             : 0 25px;
@@ -41,7 +42,7 @@
   --sidebar-nav-link-before-margin              : 0 0.35em 0 0;
 
     /* Nav Headings */
-  --sidebar-nav-strong-color                    : var(--primary-interlay);
+  --sidebar-nav-strong-color                    : var(--primary-blue);
   --sidebar-nav-strong-font-size                : 12px;
   --sidebar-nav-strong-font-weight              : var(--strong-font-weight);
   --sidebar-nav-strong-margin                   : 1.5em 0em;
