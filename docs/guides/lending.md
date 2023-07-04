@@ -22,11 +22,11 @@ At the end of this guide you will have:
 
 #### **Interlay**
 
-Coming soon!
+[app.interlay.io/lending](https://app.interlay.io/lending)
 
 #### **Kintsugi**
 
-Coming soon!
+[kintsugi.interlay.io/lending](https://kintsugi.interlay.io/lending)
 
 #### **Testnet-Kintsugi**
 

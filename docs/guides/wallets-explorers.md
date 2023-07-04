@@ -93,23 +93,27 @@ Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interl
 
 #### **Interlay**
 
+#### [Fearless Wallet](https://fearlesswallet.io/)
+
+Supports Android, iOS and Chrome.
+
 #### [Nova wallet](https://novawallet.io/)
 
 Supports Android and iOS.
-
-#### [Math wallet](https://mathwallet.org/kintsugibtc-wallet/en/)
-
-Supports Android and iOS. Web-wallet currently not working.
 
 #### **Kintsugi**
 
+#### [Fearless Wallet](https://fearlesswallet.io/)
+
+Supports Android, iOS and Chrome.
+
+#### [Math wallet](https://mathwallet.org/kintsugibtc-wallet/en/)
+
+Supports Android, iOS and Chrome.
+
 #### [Nova wallet](https://novawallet.io/)
 
 Supports Android and iOS.
-
-#### Coming soon
-
-- [Fearless Wallet](https://fearlesswallet.io/)
 
 <!-- tabs:end -->
 

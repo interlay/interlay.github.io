@@ -19,11 +19,11 @@ At the end of this guide you will have:
 
 #### **Interlay**
 
-Coming soon!
+[app.interlay.io/swap](https://app.interlay.io/swap)
 
 #### **Kintsugi**
 
-Coming soon!
+[kintsugi.interlay.io/swap](https://kintsugi.interlay.io/swap)
 
 #### **Testnet-Kintsugi**
 
