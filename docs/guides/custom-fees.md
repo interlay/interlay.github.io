@@ -1,6 +1,8 @@
 # Custom Fees Guide
 
-Our dapp no longer limits the user on using solely the parachain governance token (INTR/KINT) to pay transaction fees. There is now available a set of assets to cover for transaction fees and possibly many more in the near future.
+Our dapp no longer limits the user to using solely the Interlay (and Kintsugi) native token (INTR/KINT) to pay transaction fees. Any asset listed in the AMM pools can now be used to pay for transaction fees.
+
+Under the hood, the selected fee token (e.g., DOT) is swapped into the native token (e.g., INTR) to cover fees.
 
 You can now find a select option on every transaction form across the dapp.
 
