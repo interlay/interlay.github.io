@@ -8,7 +8,7 @@ You can now find a select option on every transaction form across the dapp.
 
 ![Custom Fees Select](../_assets/img/guide/custom-fees-select.png)
 
-When you click the select, a modal with the available options for pays fees is shown.
+When you click inside the "Fee token" selector, a modal with the available options for pays fees is shown. This modal shows your balance of each token (not the fees you would pay in the token).
 
 ![Custom Fees Modal](../_assets/img/guide/custom-fees-select-modal.png)
 
