@@ -4,7 +4,7 @@ Our dapp no longer limits the user to using solely the Interlay (and Kintsugi) n
 
 Under the hood, the selected fee token (e.g., DOT) is swapped into the native token (e.g., INTR) to cover fees.
 
-You can now find a select option on every transaction form across the dapp.
+You can select the fee token on every transaction via a "Fee token" selector on each part of the app where you can make a transaction.
 
 ![Custom Fees Select](../_assets/img/guide/custom-fees-select.png)
 
