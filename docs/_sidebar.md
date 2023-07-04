@@ -19,6 +19,7 @@
 * **Kintsugi Canarynet**
 
   * [Overview](kintsugi/overview.md)
+  * [Basics](kintsugi/basics.md)
   * [Tokenomics](kintsugi/tokenomics.md)
   * [Governance](kintsugi/governance.md)
   * [Use kBTC](kintsugi/Earn-With-kBTC.md)
