@@ -20,6 +20,7 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](gui
 #### 1. Go to the bridge page.
 
 <!-- tabs:start -->
+
 ##### **Interlay**
 
 [app.interlay.io/bridge](https://app.interlay.io/bridge)
@@ -35,17 +36,19 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](gui
 ##### **Testnet-Interlay**
 
 [testnet.interlay.io/bridge](https://testnet.interlay.io/bridge)
+
 <!-- tabs:end -->
 
 The bridge has 2 tabs: Issue and Redeem. Ensure you are on the Issue tab.
 
-![The Issue page](../_assets/img/guide/interlay-bridge-issue-page.png)
+![The Issue page](../_assets/img/guide/bridge-issue-overview.png)
 
 #### 2. Obtain KINT/INTR to pay the transaction fees.
 
 You will need some of the native on-chain currency (KINT on Kintsugi, INTR on Interlay) to pay the transaction fee. Additionally, to prevent spam, you will need to place a small deposit which will be returned to you once the request has been completed.
 
 <!-- tabs:start -->
+
 ##### **Interlay**
 
 A list of exchanges with INTR listings can be found on [Coingecko](https://www.coingecko.com/en/coins/interlay).
@@ -57,6 +60,7 @@ A list of exchanges with KINT listings can be found on [Coingecko](https://www.c
 ##### **Testnet**
 
 On testnet, you can obtain some test KINT/INTR by clicking on the "KINT/INTR Faucet" button on the right-hand side of the top bar.
+
 <!-- tabs:end -->
 
 #### 3. Enter the amount of BTC you want to bridge to Interlay/Kintsugi
@@ -71,31 +75,15 @@ Check the details of your issue request and click **"Confirm"**. Sign the transa
 
 Use your Bitcoin wallet to transfer the specified `amount` to the given `address`.
 
-![Bitcoin transaction details](../_assets/img/guide/interlay-bridge-issue-tx-details.png)
+![Bitcoin transaction details](../_assets/img/guide/bridge-issue-tx-details.png)
 
-If you navigate away from the page, you can always find these details again under the **Transactions** page.
+You can find your issue request in the table below the issue form.
 
-<!-- tabs:start -->
-##### **Interlay**
-
-[app.interlay.io/transactions](https://app.interlay.io/transactions)
-
-##### **Kintsugi**
-[kintsugi.interlay.io/transactions](https://kintsugi.interlay.io/transactions)
-
-##### **Testnet-Kintsugi**
-
-[testnet.interlay.io/transactions](https://kintnet.interlay.io/transactions)
-##### **Testnet-Interlay**
-
-[testnet.interlay.io/transactions](https://testnet.interlay.io/transactions)
-<!-- tabs:end -->
-
-![Tansactions page](../_assets/img/guide/interlay-bridge-transactions-page.png)
+![Tansactions page](../_assets/img/guide/bridge-issue-table.png)
 
 Find your pending issue request in the **"Issue Requests"** table and click on it. There you will find the details of the Bitcoin transaction you need to make.
 
-![Tansactions page](../_assets/img/guide/interlay-bridge-transaction-page-tx-details.png)
+![Tansactions page](../_assets/img/guide/bridge-issue-tx-request.png)
 
 ?> Optional: you can use a hardware wallet
 
@@ -109,6 +97,7 @@ Find your pending issue request in the **"Issue Requests"** table and click on i
 On mainnet, no setup for [Ledger Live](https://www.ledger.com/ledger-live) is needed.
 
 ##### **Testnet**
+
 On testnet, you will need to configure [Ledger Live](https://www.ledger.com/ledger-live) to work with Bitcoin testnet. Go to `Setting` > `Experimental features` and enable `Developer mode`. Using the `Manager`, install the `Bitcoin testnet` app onto your device.
 
 <!-- tabs:end -->
@@ -141,13 +130,17 @@ The receipt will show the transaction ID, click **"View in explorer"** to check 
 </summary>
 
 <!-- tabs:start -->
+
 ##### **Interlay/Kintsugi**
+
 On mainnet, no setup for the [Trezor Wallet](https://wallet.trezor.io/#/) is needed.
 
 ##### **Testnet**
+
 On testnet, you will need to configure the [Trezor Wallet](https://wallet.trezor.io/#/) to work with Bitcoin testnet. go to the `Wallet Settings` and set `Backend Server URL` to `https://tbtc2.trezor.io`.
 
 For up-to-date details please checkout the [Trezor Wiki](https://wiki.trezor.io/Bitcoin_testnet).
+
 <!-- tabs:end -->
 
 ![Configuration](../_assets/img/trezor/1-configuration.png)
@@ -192,7 +185,7 @@ You can check the status of your issue request in the Transactions view in the *
 
 If your Bitcoin transaction has enough confirmations but has not been executed by a Vault yet, click on the issue request that is "Pending". This will open a modal, where you will see a **"Claim KBTC"** (or **"Claim IBTC"**) button. To finalize the Issue process and claim your IBTC/KBTC, either wait for a Vault to auto-execute your request, or click **"Claim"** yourself.
 
-![Tansactions page](../_assets/img/guide/interlay-bridge-issue-claim.png)
+![Tansactions page](../_assets/img/guide/bridge-issue-complete-tx.png)
 
 ## Redeem
 
@@ -216,6 +209,7 @@ At the end of this guide you will have:
 #### 1. Go to the bridge page.
 
 <!-- tabs:start -->
+
 ##### **Interlay**
 
 [app.interlay.io/bridge](https://app.interlay.io/bridge)
@@ -231,11 +225,12 @@ At the end of this guide you will have:
 ##### **Testnet-Interlay**
 
 [testnet.interlay.io/bridge](https://testnet.interlay.io/bridge)
+
 <!-- tabs:end -->
 
 The bridge has 2 tabs: Issue and Redeem. Ensure you are on the Redeem tab.
 
-![Redeem page](../_assets/img/guide/interlay-bridge-redeem-page.png)
+![Redeem page](../_assets/img/guide/bridge-redeem-overview.png)
 
 #### 2. Enter the amount of IBTC/KBTC you want to redeem and the BTC address you want to receive your BTC to
 
@@ -243,7 +238,7 @@ Enter the amount of IBTC/KBTC you want to redeem, and the Bitcoin address where 
 
 Check the bridge fee that is subtracted from your redeemed amount and click **"Confirm"**. Sign the transaction via the `polkadot-js` extension when asked and wait a few moments.
 
-![Redeem confirmation modal](../_assets/img/guide/interlay-bridge-redeem-popup.png)
+![Redeem confirmation modal](../_assets/img/guide/bridge-redeem-tx-details.png)
 
 #### 3. Wait for confirmation of your request and receive BTC automatically
 
@@ -252,25 +247,10 @@ The Redeem request is now being processed by the Vault. On testnet, the request 
 If the Vault does not fulfil the request within 24 hours, you have the option to either reimburse your BTC or retry your request; see below.
 
 #### 4. Optional: Retry or Reimburse your request
-You can check the status of your redeem request in the Transactions view in the **"Redeem Requests"** table.
 
-<!-- tabs:start -->
-##### **Interlay**
+You can check the status of your redeem request below the redeem form.
 
-[app.interlay.io/transactions](https://app.interlay.io/transactions)
-
-##### **Kintsugi**
-
-[kintsugi.interlay.io/transactions](https://kintsugi.interlay.io/transactions)
-
-##### **Testnet-Kintsugi**
-
-[kintnet.interlay.io/transactions](https://kintnet.interlay.io/transactions)
-
-##### **Testnet-Interlay**
-
-[testnet.interlay.io/transactions](https://testnet.interlay.io/transactions)
-<!-- tabs:end -->
+![Bitcoin transaction details](../_assets/img/guide/bridge-redeem-table.png)
 
 Vaults have 24 hours to complete your request. If it is not completed in time, you have the option to either Reimubse or Retry.
 

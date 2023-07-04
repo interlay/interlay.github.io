@@ -33,6 +33,7 @@
   * [Pools](guides/pools.md)
   * [Staking](guides/stake.md)
   * [Governance](guides/governance.md)
+  * [Custom Fees](guides/custom-fees.md)
   * [Crowdloans](guides/crowdloans.md)
   * [Token Vesting](guides/vesting.md)
 
