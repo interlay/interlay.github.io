@@ -16,6 +16,6 @@ After inserting all information for the transaction and selecting the fee token,
 
 ![Custom Fees Estimate](../_assets/img/guide/custom-fees-estimate.png)
 
-After the form is fulfilled, a fee estimaste will run. For you to execute the transaction, the necessary funds to cover tge transaction fee needs to be available. If not, make sure you make more funds available or choose another token from the available set.
+When completing the inputs, an estimation of the fees is provided. Please ensure that you have enough tokens to cover for fees in at least one of the available fee tokens. If you need to add more tokens, please check the [asset onramp guide](/guides/assets).
 
 ![Custom Fees Error](../_assets/img/guide/custom-fees-error.png)
