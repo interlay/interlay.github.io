@@ -12,7 +12,7 @@ When you click inside the "Fee token" selector, a modal with the available optio
 
 ![Custom Fees Modal](../_assets/img/guide/custom-fees-select-modal.png)
 
-When you select the desired token to cover for fees, an estimation is ran only when you fulfil the form.
+After inserting all information for the transaction and selecting the fee token, the app will give an estimate on how much fees you will have to pay in the selected fee token.
 
 ![Custom Fees Estimate](../_assets/img/guide/custom-fees-estimate.png)
 
