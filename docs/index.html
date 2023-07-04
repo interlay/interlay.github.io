@@ -11,6 +11,7 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <!-- theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" />
+
   <!-- PrismJS theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs/themes/prism-funky.min.css">
   <!-- custom styles -->
@@ -38,8 +39,7 @@
   <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <!-- Fathom - beautiful, simple website analytics -->
   <script src="https://cdn.usefathom.com/script.js" data-site="PJJWNNWC" defer></script>
-  <!-- / Fathom -->
-</head>
+ </head>
 
 <body>
   <div id="app"></div>
@@ -80,7 +80,17 @@
             return this.origin.code.apply(this, arguments);
           }
         }
-      }
+      },
+      pagination: {
+        previousText: 'Previous',
+        nextText: 'Next',
+        crossChapter: true,
+        crossChapterText: true,
+      }, 
+      latex: {
+        inlineMath   : [['$', '$'], ['\\(', '\\)']], // default
+        displayMath  : [['$$', '$$']],               // default
+      },
     }
   </script>
   <!-- docsify -->
@@ -99,6 +109,12 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
   <!-- docsify-tabs (latest v1.x.x) -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+ <!-- docsify-pagination --> 
+ <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- LaTeX display engine -->
+  <script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!--  docsify-latex plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script> 
 </body>
 
 </html>

@@ -1,46 +1,44 @@
-# Interlay & Kintsugi Documentation
+# What is the Interlay Network?
 
-### Invest, earn and pay with BTC on any blockchain. Radically open and secured by insurance.
 
-### Introduction
+### Interlay is a modular, programmable layer between Bitcoin and the multi-chain ecosystem.
 
-Interlay is a decentralized network dedicated to connecting *crypto-currencies* like Bitcoin with DeFi *platforms* like Polkadot and Ethereum. The Interlay network is hosted as a Polkadot parachain and will be connected to Cosmos, Ethereum and other major DeFi networks.
-[Read more about Interlay's vision of blockchain interoperability](https://medium.com/interlay/the-future-of-bridging-assets-837998115f6b).
+Interlay’s vision is to help Bitcoin achieve mass adoption by unlocking decentralized (financial) use cases for BTC and removing the need for centralized services. Interlay's achieves this by creating the necessary infrastructure and financial tooling for both users and builders:
 
-**interBTC**, Interlay's flagship product, is Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant.
+**DeFi for Bitcoin**: Interlay's DeFi hub a one-stop shop for all things decentralized Bitcoin finance featuring BTC swaps, lending, and staking. High throughput, low fees payable in any asset, and native stablecoin integrations aim to provide an experience competing even with centralized providers.
+
+**Bitcoin for DeFi**: Interlay's BTC bridge is the secure way to use Bitcoin in the multi-chain ecosystem. iBTC, a 1:1 BTC-backed asset, is secured by a decentralized network of vaults. BTC deposits are insured by a multi-collateral system and secured by cross-chain light clients.
+
+
+
+### Jump right in
+
+<a class="docs-button util-w100" href="https://bugs.immunefi.com/" target="_blank">
+   How to Mint iBTC
+</a>
+
+- **[Run a Vault](/getting-started/interbtc.md)**
+
+- **[Integrate with Interlay](developers/integration.md)**
+
+### Fundemantals
+
+<a class="docs-button util-w100" href="https://gateway.pinata.cloud/ipfs/QmWp62gdLssFpAoG2JqK8sy3m3rTRUa8LyzoSY8ZFisYNB" target="_blank">
+   Read the Interlay whitepaper
+</a>
+
+
+- **[iBTC Bitcoin Bridge](/getting-started/interbtc.md)**
+
+- **[Decentralized Exchange](/getting-started/interbtc.md)**
+
+- **[Lending Protocol](/getting-started/interbtc.md)**
+
 
 **Kintsugi** is Interlay's canary network, an experiment with real economic value deployed on Kusama. Kintsugi and Interlay share the same code base - with the difference that Kintsugi focusses strictly on innovation and will always be ahead in terms of features. [Read more about Interlay's dual network model](https://medium.com/interlay/the-interlay-parachain-is-coming-to-polkadot-552a57ff8d1b).
 
-### Quicklinks
-
-**1.  [Learn how interBTC works](/getting-started/interbtc.md)**
-
-**2.  [Why is interBTC better than other, centralized wrapped BTC versions?](/getting-started/interbtc?id=interbtc-vs-competitors.md)**
-
-**3.  [Learn about Kintsugi, Interlay's canary network](/kintsugi/overview.md)**
-
-**4.  [Learn how to issue and redeem KBTC and IBTC](/guides/bridge.md)**
-
-**5.  [What are Vaults and how to run them](vault/overview.md)**
-
-**6.  [How to setup Kintsugi/Interlay Collators](/collator/overview.md)**
-
-**7.  [Build your own Dapps with interBTC](developers/integration.md)**
-
-
-### How to use this document
-
-**The documentation (this document)** is aimed at anyone who is interested to learn about Interlay and Kintsugi. The in-depth guides on [Vaults](../vault/overview) and [Collators](../collator/overview) are aimed at operators of Vaults and Collators.
-
-Other useful resources:
-
- - **Specification**. We also maintain a **[200+ page specification](https://spec.interlay.io/index.html)** for internal use, audits, and formal verification. If you are a developer, researcher, hacker or simply want to learn how exactly Interlay (specifically, interBTC) - the specification is the next best resource apart from reading the [open source code](https://github.com/interlay).
-
-- **Peer-reviewed, academic paper**. The Interlay network - specifically interBTC - is based on the XCLAIM framework, published at the renown, peer-reviewed IT security conference [IEEE S&P](https://www.ieee-security.org/TC/SP2019/program.html). You can [read the paper here](https://eprint.iacr.org/2018/643.pdf) - but keep in mind that we have developed numerous improvements since the paper was first published in 2018.
-
- - **Open source code**. Finally, you can read the [code](https://github.com/interlay) which is the ultimate source of truth.
 
 ### Contributing
 
-Interlay and Kintsugi are an open-source projects. We welcome contributions to the code and documentation.
+Interlay is an open-source project, governed by its community. We welcome contributions to the code and documentation.
 If you want to add, improve, or fix errors, please open a PR on [GitHub](https://github.com/interlay) or ping us on [Discord](https://discord.gg/invite/interlay).

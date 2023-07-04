@@ -1,12 +1,11 @@
 :root {
 
   /* Base config */
-  --base-font-size      : 16px;
+  --base-font-size      : 18px;
   --sidebar-padding     : 0 px;
   --navbar-menu-padding : 0.5em 2em 0.5em 0.5em;
-  --base-line-height     : 1.7;
-
-  --content-max-width                 : 55em;
+  --base-line-height    : 1.7;
+  --content-max-width   : 55em;
 
 
   /* Theme and Colors */
@@ -89,6 +88,15 @@
   padding: 1em 2rem;
   border-radius: var(--border-radius-m);
 }
+ 
+.card {
+  background-color: transparent;
+  border: 1px solid var(--primary-blue);
+  border-radius: var(--border-radius-m);
+  padding: 1em;
+  margin: 1em 0;
+}
+
 
 .util-w100 {
   width: 100%

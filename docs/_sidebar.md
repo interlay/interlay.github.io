@@ -1,13 +1,14 @@
 <!-- docs/_sidebar.md -->
 
-[Interlay Documentation](/)
+[What is the Interlay Network?](/)
 
-* **Getting Started**
 
-  * [Interlay 101](getting-started/interlay-101.md)
-  * [Learn interBTC](getting-started/interbtc.md)
-  * [Governance](getting-started/governance.md)
-  * [FAQ :notebook_with_decorative_cover:](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
+* **Fundamentals**
+
+  * [iBTC Bridge](learn/ibtc-bridge.md)
+  * [DeFi Hub](learn/defi-hub.md)
+  * [Interlay DAO](learn/interlay-dao.md)
+  * [Tokenomics](learn/tokenomics.md)
 
 * **Interlay Mainnet**
 

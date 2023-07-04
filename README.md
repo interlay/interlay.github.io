@@ -60,4 +60,4 @@ We are using [semantic versioning](https://semver.org/) and [conventional commit
 If you are searching for a place to start or would like to discuss features, reach out to us:
 
 -   [Telegram](https://t.me/interlay)
--   [Discord](https://discord.gg/KgCYK3MKSf)
+-   [Discord](https://discord.gg/interlay)
