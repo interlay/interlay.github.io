@@ -28,7 +28,7 @@ Interlay’s vision is to help Bitcoin achieve mass adoption by unlocking decent
 ### Fundemantals
 
 <br/>
-<a class="info-button util-w100" href="[#/developers/integration](https://gateway.pinata.cloud/ipfs/QmWp62gdLssFpAoG2JqK8sy3m3rTRUa8LyzoSY8ZFisYNB)">
+<a class="info-button util-w100" href="https://gateway.pinata.cloud/ipfs/QmWp62gdLssFpAoG2JqK8sy3m3rTRUa8LyzoSY8ZFisYNB">
    Read the Interlay v2 Whitepaper
 </a>
 
