@@ -330,7 +330,7 @@ To mint with your own (or another specific) Vault, you can use the Polkadot.js i
 
    -  The BTC amount must be entered with 8 decimals (1 BTC = 100000000)
    -  On Kintsugi, select "KSM" as the collateral token and KBTC as the wrapped token (DOT and interBTC on Interlay)
-   -  Enter 1000000000000 (= 1 KINT) as griefing collatral, you will get this back once you complete the issue operation. You can also check see how griefing collateral is needed via the "Issue" UI but 1 KINT will suffice in most cases.
+   -  Enter 1000000000000 (= 1 KINT) as griefing collateral, you will get this back once you complete the issue operation. You can also check see how griefing collateral is needed via the "Issue" UI but 1 KINT will suffice in most cases.
 
 ![Screenshot: self-minting via Polkadot.js Developer tab](../_assets/img/guide/self-mint.png)
 

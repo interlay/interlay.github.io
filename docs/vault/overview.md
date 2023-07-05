@@ -64,8 +64,19 @@ Vaults earn fees based on the issued and redeemed BTC volume from all Vaults.
 
 Each time a user issues or redeems IBTC/KBTC, they pay the following fees to a global fee pool:
 
-- **Issue Fee**: `0.15%` of the Issue volume, paid in *IBTC/KBTC*
-- **Redeem Fee**: `0.5%` of the redeem volume, paid in *IBTC/KBTC*
+<!-- tabs:start -->
+
+#### **Interlay**
+
+- **Issue Fee**: `0%` of the Issue volume, paid in *IBTC*
+- **Redeem Fee**: `0%` of the redeem volume, paid in *IBTC*
+
+#### **Kintsugi**
+
+- **Issue Fee**: `0.15%` of the Issue volume, paid in *KBTC*
+- **Redeem Fee**: `0.5%` of the redeem volume, paid in *KBTC*
+
+<!-- tabs:end -->
 
 The total **Bridge Fees** are the sum of all issue and redeem fees.
 
@@ -136,12 +147,14 @@ Each currency & network has different minimum deposits, noted here:
 #### **Interlay (Mainnet)**
 
 * DOT: 30
+* USDT: 150
 
 #### **Kintsugi (Canarynet)**
 
 * KSM: 3
 * KINT: 55
 * LKSM: 20
+* USDT: 150
 
 #### **Testnet-Interlay**
 
@@ -240,12 +253,14 @@ None necessary. The Vault can freely withdraw any "unused" collateral above the 
 #### **Interlay (Mainnet)**
 
 * DOT: `155%`
+* USDT: `155%`
 
 #### **Kintsugi (Canarynet)**
 
 * KSM: `160%`
 * KINT: `900%`
 * LKSM: `180%`
+* USDT: `165%`
 
 #### **Testnet-Interlay**
 
@@ -272,12 +287,14 @@ Users can execute redeem with this Vault and receive a premium of `5%` in the co
 #### **Interlay (Mainnet)**
 
 * DOT: `140%`
+* USDT: `145%`
 
 #### **Kintsugi (Canarynet)**
 
 * KSM: `145%`
 * KINT: `650%`
 * LKSM: `165%`
+* USDT: `155%`
 
 #### **Testnet-Interlay**
 
@@ -307,12 +324,14 @@ The undercollateralized Vault is liquidated.
 #### **Interlay (Mainnet)**
 
 * DOT: `125%`
+* USDT: `135%`
 
 #### **Kintsugi (Canarynet)**
 
 * KSM: `130%`
 * KINT: `500%`
 * LKSM: `145%`
+* USDT: `140%`
 
 #### **Testnet-Interlay**
 
