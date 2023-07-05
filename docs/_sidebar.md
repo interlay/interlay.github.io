@@ -4,25 +4,12 @@
 
 
 * **Fundamentals**
-
+* 
+  * [Architecture](learn/architecture.md)
   * [iBTC Bridge](learn/ibtc-bridge.md)
   * [DeFi Hub](learn/defi-hub.md)
   * [Interlay DAO](learn/interlay-dao.md)
   * [Tokenomics](learn/tokenomics.md)
-
-* **Interlay Mainnet**
-
-  * [Overview](interlay/overview.md)
-  * [Tokenomics](interlay/tokenomics.md)
-  * [Governance](interlay/governance.md)
-  * [Use iBTC](interlay/earn-with-ibtc.md)
-
-* **Kintsugi Canarynet**
-
-  * [Overview](kintsugi/overview.md)
-  * [Tokenomics](kintsugi/tokenomics.md)
-  * [Governance](kintsugi/governance.md)
-  * [Use kBTC](kintsugi/Earn-With-kBTC.md)
 
 * **Guides**
   * [Asset Onramp](guides/assets.md)
@@ -70,5 +57,6 @@
 
 * **Further Reading**
 
+  * [Kintsugi canarynet](about/kintsugi.md)
   * [Research](about/research.md)
   * [Glossary](about/glossary.md)

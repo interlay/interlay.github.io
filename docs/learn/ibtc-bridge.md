@@ -50,6 +50,8 @@ rate. Vaults receive the deposited BTC as a loan, in return for locking
 collateral. iBTC represents a claim on the deposited BTC at a 1:1 rate
 or the vault's collateral at a premium rate.
 
+![iBTC mint and redeem process](../_assets/img/ibtc-process.png)
+
 ## Collateral
 
 Following the [MakerDAO model](https://docs.makerdao.com/), each Vault has

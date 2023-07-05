@@ -68,6 +68,25 @@
   font-size: 14px;
 }
 
+.info-button {
+  background: rgb(26,10,45);
+  background: -moz-linear-gradient(38deg, rgba(26,10,45,1) 26%, rgba(255,153,0,0.5566265060240965) 100%);
+  background: -webkit-linear-gradient(38deg, rgba(26,10,45,1) 26%, rgba(255,153,0,0.5566265060240965) 100%);
+  background: linear-gradient(38deg, rgba(26,10,45,1) 26%, rgba(255,153,0,0.5566265060240965) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a0a2d",endColorstr="#ff9900",GradientType=1);border-color: white !important;
+  color: white !important;
+  text-align: center;
+  text-align: left;
+  text-decoration: none !important;
+  display: block;
+  padding: 1em 2rem;
+  border: solid 0.5px !important;
+  border-radius: var(--border-radius-m);
+  border-color: white !important;
+  max-width: 30em;
+}
+
+
 .docs-button {
   background-color: var(--primary-blue);
   border: none;
