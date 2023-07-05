@@ -1,27 +1,15 @@
 <!-- docs/_sidebar.md -->
 
-[Interlay Documentation](/)
+[What is the Interlay Network?](/)
 
-* **Getting Started**
 
-  * [Interlay 101](getting-started/interlay-101.md)
-  * [Learn interBTC](getting-started/interbtc.md)
-  * [Governance](getting-started/governance.md)
-  * [FAQ :notebook_with_decorative_cover:](https://interlay.notion.site/FAQ-Page-5e3019b1cfd94f6693dc186e9640e607)
-
-* **Interlay Mainnet**
-
-  * [Overview](interlay/overview.md)
-  * [Tokenomics](interlay/tokenomics.md)
-  * [Governance](interlay/governance.md)
-  * [Use iBTC](interlay/earn-with-ibtc.md)
-
-* **Kintsugi Canarynet**
-
-  * [Overview](kintsugi/overview.md)
-  * [Tokenomics](kintsugi/tokenomics.md)
-  * [Governance](kintsugi/governance.md)
-  * [Use kBTC](kintsugi/Earn-With-kBTC.md)
+* **Fundamentals**
+* 
+  * [Architecture](learn/architecture.md)
+  * [iBTC Bridge](learn/ibtc-bridge.md)
+  * [DeFi Hub](learn/defi-hub.md)
+  * [Interlay DAO](learn/interlay-dao.md)
+  * [Tokenomics](learn/tokenomics.md)
 
 * **Guides**
   * [Asset Onramp](guides/assets.md)
@@ -69,5 +57,6 @@
 
 * **Further Reading**
 
+  * [Kintsugi canarynet](about/kintsugi.md)
   * [Research](about/research.md)
   * [Glossary](about/glossary.md)

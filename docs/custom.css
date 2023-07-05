@@ -4,11 +4,11 @@
   --base-font-size      : 16px;
   --sidebar-padding     : 0 px;
   --navbar-menu-padding : 0.5em 2em 0.5em 0.5em;
-  --base-line-height     : 1.7;
-
-  --content-max-width                 : 55em;
-
-
+  --base-line-height    : 1.7;
+  --content-max-width   : 55em;
+  --base-background-color: #1f1f1f;
+  --sidebar-background: #1f1f1f;
+  
   /* Theme and Colors */
   --primary-interlay    : #1A0A2D;
   --primary-blue        : #075ABC;
@@ -23,13 +23,13 @@
   --hover-color         : #D3D3D3;
 
   /* Links */
-  --link-color                        : var(--primary-blue);
+  --link-color                        : var(--secondary-blue);
   --link-text-decoration              : none;
   --link-text-decoration--hover       : underline;
 
 
   /* Sidebar */
-  --sidebar-nav-link-color--active              : var(--primary-blue);
+  --sidebar-nav-link-color--active              : var(--secondary-blue);
   --sidebar-nav-link-background-color--hover     : var(--hover-color);
   --sidebar-nav-link-text-decoration--hover     : none;
   --sidebar-padding                             : 0 25px;
@@ -42,7 +42,7 @@
   --sidebar-nav-link-before-margin              : 0 0.35em 0 0;
 
     /* Nav Headings */
-  --sidebar-nav-strong-color                    : var(--primary-interlay);
+  --sidebar-nav-strong-color                    : var(--primary-blue);
   --sidebar-nav-strong-font-size                : 12px;
   --sidebar-nav-strong-font-weight              : var(--strong-font-weight);
   --sidebar-nav-strong-margin                   : 1.5em 0em;
@@ -68,6 +68,25 @@
   font-size: 14px;
 }
 
+.info-button {
+  background: rgb(26,10,45);
+  background: -moz-linear-gradient(38deg, rgba(26,10,45,1) 26%, rgba(255,153,0,0.5566265060240965) 100%);
+  background: -webkit-linear-gradient(38deg, rgba(26,10,45,1) 26%, rgba(255,153,0,0.5566265060240965) 100%);
+  background: linear-gradient(38deg, rgba(26,10,45,1) 26%, rgba(255,153,0,0.5566265060240965) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a0a2d",endColorstr="#ff9900",GradientType=1);border-color: white !important;
+  color: white !important;
+  text-align: center;
+  text-align: left;
+  text-decoration: none !important;
+  display: block;
+  padding: 1em 2rem;
+  border: solid 0.5px !important;
+  border-radius: var(--border-radius-m);
+  border-color: white !important;
+  max-width: 30em;
+}
+
+
 .docs-button {
   background-color: var(--primary-blue);
   border: none;
@@ -89,6 +108,15 @@
   padding: 1em 2rem;
   border-radius: var(--border-radius-m);
 }
+ 
+.card {
+  background-color: transparent;
+  border: 1px solid var(--primary-blue);
+  border-radius: var(--border-radius-m);
+  padding: 1em;
+  margin: 1em 0;
+}
+
 
 .util-w100 {
   width: 100%

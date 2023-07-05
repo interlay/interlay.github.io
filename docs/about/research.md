@@ -1,20 +1,11 @@
-# Research at Interlay
+# Research at Interlay Labs
 
 Technological advantage stems from persistent and rigorous research.
 Founded by ex-Imperial College London PhDs, we are dedicated to contribute to cutting-edge research in the areas of  blockchain interoperability, security, and crypto-economics.
 
 Our team members have co-authored over 30 scientific publications counting 1000+ citations amd counting, while at / in collaboration with leading universities and research centres around the globe.
 
-[Follow our latest research here](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F6WjBL8nsP3rgxl_twdlD0xzedcGAKBHfyE71Dh_xV1kYk8LYi6KqevACUSSmT9Il8rFnIu1CO9i50SMmwxWz0VjZ5XbIDj6JhmBoR_LjWdGfhkOpk&user=SKbWmj8AAAAJ).
-
-Our key researchers include:
-- [Alexei Zamyatin](https://scholar.google.com/citations?user=BJDPyu0AAAAJ&hl=en&oi=ao) (Co-Founder & CEO). Focus: Cross-chain protocols & blockchain security.
-- [Dominik Harz](https://scholar.google.com/citations?user=s6Km5yQAAAAJ&hl=en&oi=ao) (Co-Founder & CTO). Focus: Stablecoins & DeFi protocols
-- [Daniel Perez](https://scholar.google.com/citations?user=W2XsCqwAAAAJ&hl=en&oi=ao) (Advisor). Focus: Smart contract and DeFi protocol security
-- [Theodore Bugnet](https://github.com/theodorebugnet) (Software Engineer). Focus: Cross-chain protocols & blockchain security.
-- [Daniel Savu](https://github.com/savudani8) (Software Engineer). Focus: DeFi protocol analysis.
-
-## Interlay Research Papers
+## Latest Research Papers
 
 
 ### [XCC: Theft-Resilient and Collateral-Optimized Cryptocurrency-Backed Assets](../_assets/papers/XCC_paper.pdf ':ignore')
@@ -73,7 +64,7 @@ In this work, we introduce XCC, an extension to the XCLAIM framework which allow
 - International Conference on Mathematical Research for Blockchain Economy 2020
 - In collaboration with Imperial College London
 
-## Related & Previous Research
+## Previous Research Work
 
 Our team has been actively contributing to cutting-edge research in the blockchain space over the past 6 years.
 
