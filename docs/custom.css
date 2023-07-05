@@ -82,7 +82,7 @@
   padding: 1em 2rem;
   border: solid 0.5px !important;
   border-radius: var(--border-radius-m);
-  border-color: white !important;
+  border-color: rgb(106, 106, 106) !important;
   max-width: 30em;
 }
 

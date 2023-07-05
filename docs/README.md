@@ -14,7 +14,7 @@ Interlay’s vision is to help Bitcoin achieve mass adoption by unlocking decent
 ### Jump right in
 
 <a class="info-button util-w100" href="#/guides/bridge">
-   Minting iBTC
+   Mint iBTC
 </a>
 <br/>
 <a class="info-button util-w100" href="#/vault/overview">
