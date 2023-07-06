@@ -80,6 +80,7 @@
   text-decoration: none !important;
   display: block;
   padding: 1em 2rem;
+  margin: 1em 0;
   border: solid 0.5px !important;
   border-radius: var(--border-radius-m);
   border-color: white !important;

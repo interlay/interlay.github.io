@@ -14,37 +14,57 @@ Interlay’s vision is to help Bitcoin achieve mass adoption by unlocking decent
 ### Jump right in
 
 <a class="info-button util-w100" href="#/guides/bridge">
-   Minting iBTC
+   Mint iBTC
 </a>
-<br/>
+<a class="info-button util-w100" href="#/guides/swap">
+   Swap
+</a>
+<a class="info-button util-w100" href="#/guides/pools">
+   LP
+</a>
+<a class="info-button util-w100" href="#/guides/lending">
+   Lend and borrow
+</a>
+
+### Run a node
+
 <a class="info-button util-w100" href="#/vault/overview">
    Run a Vault
 </a>
-<br/>
-<a class="info-button util-w100" href="#/developers/integration">
-   Integrate with Interlay
+<a class="info-button util-w100" href="#/collator/overview">
+   Run a Collator (sequencer)
 </a>
 
-### Fundemantals
+## Fundamentals
 
-<br/>
 <a class="info-button util-w100" href="https://gateway.pinata.cloud/ipfs/QmWp62gdLssFpAoG2JqK8sy3m3rTRUa8LyzoSY8ZFisYNB">
    Read the Interlay v2 Whitepaper
 </a>
 
-<br/>
 <a class="info-button util-w100" href="#/learn/ibtc-bridge">
    iBTC Bitcoin Bridge
 </a>
 
-<br/>
 <a class="info-button util-w100" href="#/learn/defi-hub">
    DeFi Hub
 </a>
 
-<br/>
 <a class="info-button util-w100" href="#/about/research">
    Interlay Labs Research
+</a>
+
+## Developers
+
+<a class="info-button util-w100" href="#/developers/overview">
+   Build on Interlay
+</a>
+
+<a class="info-button util-w100" href="#/developers/api">
+   APIs
+</a>
+
+<a class="info-button util-w100" href="#/developers/assets">
+   Integrate Interlay Assets
 </a>
 
 ### Contributing
