@@ -35,7 +35,7 @@ Interlay’s vision is to help Bitcoin achieve mass adoption by unlocking decent
    Run a Collator (sequencer)
 </a>
 
-## Fundamentals
+### Fundamentals
 
 <a class="info-button util-w100" href="https://gateway.pinata.cloud/ipfs/QmWp62gdLssFpAoG2JqK8sy3m3rTRUa8LyzoSY8ZFisYNB">
    Read the Interlay v2 Whitepaper
@@ -53,7 +53,7 @@ Interlay’s vision is to help Bitcoin achieve mass adoption by unlocking decent
    Interlay Labs Research
 </a>
 
-## Developers
+### Developers
 
 <a class="info-button util-w100" href="#/developers/overview">
    Build on Interlay
