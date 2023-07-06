@@ -79,24 +79,42 @@ In a simplified view, the Interlay and Kintsugi networks have four core roles:
 
 ## Interlay Software Components
 
-These roles interact with the different software components of the Interlay and Kintsugi networks:
+- **Interlay substrate chain**: The Interlay and Kintsugi chains are built on Substrate.
+  - [Repository](https://github.com/interlay/interbtc)
+  - [Rustdocs](https://docs.interlay.io/interbtc/)
 
-- **Interlay/Kintsugi chain**: The Interlay and Kintsugi chains are built on Substrate. [Link to the repository](https://github.com/interlay/interbtc).
-- **Vault client**: Vaults are implemented as an off-chain client. [Link to the repository](https://github.com/interlay/interbtc-clients)
-- **Oracle client**: Oracles are implemented as an off-chain client submitting data via a governance-whitelisted account. [Link to the repository](https://github.com/interlay/interbtc-clients).
-- **App**: The app is a web application that allows users to interact with the Interlay and Kintsugi networks. The Dapp is built on React and uses the Interlay Typescript SDK to interact with the Interlay and Kintsugi chains. [Link to the repository](https://github.com/interlay/interbtc-ui).
-- **Typescript SDK**: The Interlay Typescript SDK is a library that allows developers to interact with the Interlay and Kintsugi chains. The Interlay Typescript SDK is built on Polkadot.js. [Link to the repository](https://github.com/interlay/interbtc-api).
-- **Bridge SDK**: The Bridge SDK is a library that wraps around bridging assets from and to chains via XCM. The XCM Bridge SDK is built on Polkadot.js. [Link to the repository](https://github.com/interlay/bridge).
-- **Squid caching**: Squid caching is a caching layer storing all extrinsics, events, and blocks of the networks and exposing transformed views view of the chain state via GraphQL. The Squid caching is built on Subsquid. [Link to the repository](https://github.com/interlay/interbtc-squid).
+- **Vault client**: Vaults are implemented as an off-chain client.
+  - [Repository](https://github.com/interlay/interbtc-clients)
+  - [Rustdocs](https://docs.interlay.io/interbtc-clients/vault/index.html)
+
+- **Oracle client**: Oracles are implemented as an off-chain client submitting data via a governance-whitelisted account.
+  - [Repository](https://github.com/interlay/interbtc-clients)
+  - [Rustdocs](https://docs.interlay.io/interbtc-clients/oracle/index.html)
+
+- **App**: The app is a web application that allows users to interact with the Interlay and Kintsugi networks. The Dapp is built on React and uses the Interlay Typescript SDK to interact with the Interlay and Kintsugi chains.
+  - [Repository](https://github.com/interlay/interbtc-ui)
+
+- **Typescript SDK**: The Interlay Typescript SDK is a library that allows developers to interact with the Interlay and Kintsugi chains. The Interlay Typescript SDK is built on Polkadot.js.
+  - [Repository](https://github.com/interlay/interbtc-api)
+  - [TypeScript Docs](https://docs.interlay.io/interbtc-api/)
+
+- **Bridge SDK**: The Bridge SDK is a library that wraps around bridging assets from and to chains via XCM. The XCM Bridge SDK is built on Polkadot.js.
+  - [Repository](https://github.com/interlay/bridge)
+
+- **Squid**: Squid caching is a caching layer storing all extrinsics, events, and blocks of the networks and exposing transformed views view of the chain state via GraphQL. The Squid caching is built on Subsquid.
+  - [Repository](https://github.com/interlay/interbtc-squid)
 
 ```mermaid
 flowchart TB
-  dapp(Dapp)<-->bridge[Bridge SDK]
-  bridge<-->dotsama(["Polkadot/Kusama and parachains"])
+  dapp(App)<-->bridge[Bridge SDK]
+  bridge<-->dotsama(["Polkadot and parachains"])
+  chain<--XCM-->dotsama
+  chain<--Wormhole/Snowbridge-->ethereum([Ethereum])
+  chain<--IBC-->cosmos([Cosmos])
   bridge<-->chain
-  dapp<-->squid[Squid caching]
+  dapp<-->squid[Squid]
   dapp<-->lib[Typescript SDK]
-  squid<-->chain(["Interlay/Kintsugi"])
+  squid<-->chain(["Interlay"])
   lib<-->chain
   oracle((Oracle client))-->chain
   vault<-->chain
