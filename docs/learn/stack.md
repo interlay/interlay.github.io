@@ -1,4 +1,4 @@
-# Interlay Architecture
+# Interlay Stack
 
 Interlay is a modular network optimized to host decentralized Bitcoin
 finance protocols. The network consists of four layers as shown below.

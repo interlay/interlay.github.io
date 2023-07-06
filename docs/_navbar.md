@@ -6,5 +6,5 @@
   * [Interlay Testnet](https://testnet.interlay.io)
   * [Kintsugi Testnet](https://kintnet.interlay.io)
 * Lang
-  * [:uk: English](/)
-  * [:cn: 中国](https://info.interlay.io/interlay-wiki/)
+  * [English](/)
+  * [中国](https://info.interlay.io/interlay-wiki/)

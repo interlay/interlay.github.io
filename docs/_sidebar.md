@@ -5,7 +5,7 @@
 
 * **Fundamentals**
 * 
-  * [Architecture](learn/architecture.md)
+  * [Stack](learn/stack.md)
   * [iBTC Bridge](learn/ibtc-bridge.md)
   * [DeFi Hub](learn/defi-hub.md)
   * [Interlay DAO](learn/interlay-dao.md)
