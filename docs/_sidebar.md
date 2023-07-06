@@ -45,7 +45,6 @@
   * [API](developers/api.md)
   * [Assets](developers/assets.md)
   * [TypeScript SDK](developers/integration.md)
-  * [Guide: Tokens](developers/tokens.md)
   * [Guide: Bridge](developers/bridge.md)
   * [Guide: Lending](developers/lending.md)
   * [Documentation](developers/documentation.md)

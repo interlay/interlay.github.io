@@ -57,7 +57,6 @@ api.query.tokens.accounts('address', InterbtcPrimitivesCurrencyId);
 api.tx.tokens.transfer('address', InterbtcPrimitivesCurrencyId, amount);
 ```
 
-
 ## `Token` Assets
 
 The same `Token` assets are registered on all networks.
@@ -426,7 +425,7 @@ Example response
 ```
 </details>
 
-#### Calculating the underlying token balance
+#### Lend tokens: Calculating the underlying token balance
 
 <details>
 <summary>
@@ -485,11 +484,7 @@ Example response
 ```
 </details>
 
-The `principal` amount is the amount of tokens that have been borrowed by the account. The `borrowIndex` is the index of the borrow amount, which is used to calculate the interest rate.
-
-```python
-debt_amount = principal * borrow_index / 10^18
-```
+The `principal` amount is the amount of tokens that have been borrowed by the account without interest. The `borrowIndex` is the index of the borrow amount, which is used to calculate the interest rate together with the `globalBorrowIndex`.
 
 ## `LpToken` Assets
 
@@ -621,7 +616,7 @@ Example response
 ```
 </details>
 
-#### Calculating the underlying token balance
+#### LpTokens: Calculating the underlying token balance
 
 <details>
 <summary>
@@ -734,6 +729,98 @@ api.query.tokens.accounts('address', StableLpToken: 0);
 
 ```ts
 api.tx.tokens.transfer('address', {StableLpToken: 0}, amount)
+```
+
+## User Portfolio
+
+The user's portfolio consists of assets and liabilities. Assets are tokens that the user owns, and liabilities are tokens that the user has borrowed.
+
+Both assets and liabilities are tracked separately on-chain. The user's net worth can be computed by:
+
+```python
+net_worth = assets - liabilities
+```
+
+### User Assets
+
+All tokens are stored in the `tokens` pallet. A user's balance can be retrieved with:
+
+```ts
+api.query.tokens.accounts(<account_id>).entries();
+```
+
+This returns an array of tuples, where each tuple contains the token and the balance:
+
+```ts
+[
+  [
+    [
+      <account_id>
+      {
+        Token: KBTC
+      }
+    ]
+    {
+      free: 499,250
+      reserved: 333,333
+      frozen: 0
+    }
+  ]
+  [
+    [
+      <account_id>
+      {
+        Token: KSM
+      }
+    ]
+    {
+      free: 2,000,000
+      reserved: 0
+      frozen: 23,000
+    }
+  ]
+  ...
+]
+```
+
+Calculating the user's net worth in another currency like USD, requires multiplying the balance of each token by the exchange rate of that token to the USD.
+
+- `Token`: Tokens should have a direct USD exchange rate, e.g., `Token.DOT` should have a USD exchange rate.
+- `ForeignAsset`: Foreign assets should have a USD exchange rate, e.g., `ForeignAsset.2` (USDT) should have a USD exchange rate.
+- `LendToken`: Lending tokens should be converted to their underlying token as described in [calculating the underlying token balance](#lend-tokens-calculating-the-underlying-token-balance).
+- `LpToken`: LP tokens should be converted to their underlying tokens as described in [calculating the underlying token balance](#lp-tokens-calculating-the-underlying-token-balance).
+- `StableLpToken`: Stable LP tokens should be converted to their underlying tokens.
+
+### User Liabilities
+
+Borrowed tokens are stored in the `loans` pallet and can be retrieved:
+
+```ts
+api.query.loans.accountBorrows(<currency>, <account_id>)
+```
+
+This returns an object:
+
+```ts
+// For example, Token.KSM for a single account
+{
+  principal: 100,000,000,000,000
+  borrowIndex: 1,000,000,000,000,000,000
+}
+```
+
+The `principal` is the number of tokens that the user has borrowed *without interest*. The `borrowIndex` is the `usersBorrowIndex` and is specific to that user.
+
+To calculate the liability, the *global* `globalBorrowIndex` must be retrieved:
+
+```ts
+api.query.loans.borrowIndex(<currency>)`
+```
+
+The liability is then:
+
+```python
+principal * globalBorrowIndex / userBorrowIndex
 ```
 
 ## Bring your own fees
