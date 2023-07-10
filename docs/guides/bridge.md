@@ -17,7 +17,7 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](gui
 
 ### Issue IBTC/KBTC
 
-#### 1. Go to the bridge page.
+#### 1. Go to the btc page.
 
 <!-- tabs:start -->
 
@@ -206,7 +206,7 @@ At the end of this guide you will have:
 
 ### Redeem IBTC/KBTC
 
-#### 1. Go to the bridge page.
+#### 1. Go to the btc page.
 
 <!-- tabs:start -->
 
