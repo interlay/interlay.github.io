@@ -23,11 +23,11 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](gui
 
 ##### **Interlay**
 
-[app.interlay.io/bridge](https://app.interlay.io/bridge)
+[app.interlay.io/btc](https://app.interlay.io/btc)
 
 ##### **Kintsugi**
 
-[kintsugi.interlay.io/bridge](https://kintsugi.interlay.io/bridge)
+[kintsugi.interlay.io/btc](https://kintsugi.interlay.io/btc)
 
 ##### **Testnet-Kintsugi**
 
@@ -212,11 +212,11 @@ At the end of this guide you will have:
 
 ##### **Interlay**
 
-[app.interlay.io/bridge](https://app.interlay.io/bridge)
+[app.interlay.io/btc](https://app.interlay.io/btc)
 
 ##### **Kintsugi**
 
-[kintsugi.interlay.io/bridge](https://kintsugi.interlay.io/bridge)
+[kintsugi.interlay.io/btc](https://kintsugi.interlay.io/btc)
 
 ##### **Testnet-Kintsugi**
 
