@@ -31,11 +31,11 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](gui
 
 ##### **Testnet-Kintsugi**
 
-[testnet.interlay.io/bridge](https://kintnet.interlay.io/bridge)
+[kintnet.interlay.io/bridge](https://kintnet.interlay.io/btc)
 
 ##### **Testnet-Interlay**
 
-[testnet.interlay.io/bridge](https://testnet.interlay.io/bridge)
+[testnet.interlay.io/btc](https://testnet.interlay.io/btc)
 
 <!-- tabs:end -->
 
