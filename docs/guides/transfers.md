@@ -42,11 +42,11 @@
 
 #### **Interlay**
 
-[https://app.interlay.io/send-and-receive?tab=crossChainTransfer](https://app.interlay.io/send-and-receive?tab=crossChainTransfer)
+[https://app.interlay.io/send-and-receive?tab=bridge](https://app.interlay.io/send-and-receive?tab=bridge)
 
 #### **Kintsugi**
 
-[https://kintsugi.interlay.io/send-and-receive?tab=crossChainTransfer](https://kintsugi.interlay.io/send-and-receive?tab=crossChainTransfer)
+[https://kintsugi.interlay.io/send-and-receive?tab=bridge](https://kintsugi.interlay.io/send-and-receive?tab=bridge)
 
 <!-- tabs:end -->
 
