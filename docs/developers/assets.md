@@ -109,7 +109,7 @@ Example response
 This query will return the smallest unit of the token. To get the balance in the token's decimals, divide by `10^decimals`.
 
 ```ts
-api.query.tokens.accounts('address', {Token: IBTC});
+api.query.tokens.accounts('address', {Token: 'IBTC'});
 ```
 <details>
 <summary>
@@ -129,7 +129,7 @@ Example response
 ### Transfer
 
 ```ts
-api.tx.tokens.transfer('address', {Token: IBTC}, amount)
+api.tx.tokens.transfer('address', {Token: 'IBTC'}, amount)
 ```
 
 ### `ForeignAsset` Assets
@@ -438,7 +438,7 @@ Expand
 
 ```ts
 // DOT to qDOT on Interlay
-api.query.loans.exchangeRate({Token: DOT});
+api.query.loans.exchangeRate({Token: 'DOT'});
 ```
 
 This will return, e.g., `20,002,062,210,874,674`. The return value is a `FixedU128` type.
@@ -599,7 +599,7 @@ Example response
 
 ```ts
 // LP-DOT-IBTC on Interlay
-api.query.tokens.accounts('address', LpToken: [{Token: DOT}, {Token: IBTC}]);
+api.query.tokens.accounts('address', LpToken: [{Token: 'DOT'}, {Token: 'IBTC'}]);
 ```
 
 <details>
@@ -633,7 +633,7 @@ To get the exchange rate of the `LpToken` to the underlying token:
 
 ```ts
 // LP-DOT-IBTC on Interlay
-api.query.dexGeneralAmm.pairStatus({Token: DOT, Token: IBTC});
+api.query.dexGeneralAmm.pairStatus({Token: 'DOT', Token: 'IBTC'});
 // response
 {
   Trading: {
@@ -683,7 +683,7 @@ api.query.tokens.accounts(pairAccount).entries();
 3. Get the balance of the account
 
 ```ts
-api.query.tokens.accounts(address, LpToken: [{Token: DOT}, {Token: IBTC}])`
+api.query.tokens.accounts(address, LpToken: [{Token: 'DOT'}, {Token: 'IBTC'}])`
 ```
 
 4. Calculate the two token balances of the pool:
@@ -700,7 +700,7 @@ ibtc_balance = pool.ibtc_balance * account.lp_token_balance / pool.total_supply
 
 ```ts
 // LP-DOT-IBTC on Interlay
-api.tx.tokens.transfer('address', {LpToken: [{Token: DOT}, {Token: IBTC}]}, amount)
+api.tx.tokens.transfer('address', {LpToken: [{Token: 'DOT'}, {Token: 'IBTC'}]}, amount)
 ```
 
 ## `StableLpToken` Assets
@@ -825,7 +825,7 @@ principal * globalBorrowIndex / userBorrowIndex
 
 ## Bring your own fees
 
-Users can pay for transaction fees with the native currency (INTR on Interlay and KINT on Kintsugi) or they can pay with assets listed in the AMM pools.
+Users can pay for transaction fees with the native currency (INTR on Interlay and KINT on Kintsugi), or they can pay with assets listed in the AMM pools.
 
 All extrinsics send via `api.tx` use INTR or KINT as the fee currency by default.
 
@@ -835,11 +835,11 @@ Paying with an asset listed in the AMM pools is achieved by wrapping the transac
 api.tx.multiTransactionPayment.withFeeSwapPath(
   path: [
     {ForeignAsset: 2}, // paying with USDT
-    {Token: INTR} // swapping to INTR
+    {Token: 'INTR'} // swapping to INTR
   ],
   amountInMax: 412, // amount of USDT to swap
   call: { // transferring DOT on Interlay and paying tx fees in USDT
-    api.tx.tokens.transfer('address', {Token: DOT}, amount)
+    api.tx.tokens.transfer('address', {Token: 'DOT'}, amount)
   }
 )
 ```
