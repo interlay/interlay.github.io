@@ -7,13 +7,14 @@
 ## Using the App
 
 <!-- tabs:start -->
+
 #### **Interlay**
 
-[https://app.interlay.io/transfer](https://app.interlay.io/transfer)
+[https://app.interlay.io/send-and-receive](https://app.interlay.io/send-and-receive)
 
 #### **Kintsugi**
 
-[kintsugi.interlay.io/transfer](https://kintsugi.interlay.io/transfer)
+[kintsugi.interlay.io/send-and-receive](https://kintsugi.interlay.io/send-and-receive)
 
 #### **Testnet-Kintsugi**
 
@@ -27,7 +28,7 @@
 
 ### Transfer to another address
 
-1. Go to the Transfer page on the app. Make sure you allow polkadot.js to connect to the website.
+1. Go to the Send and Receive page on the app. Make sure you allow polkadot.js to connect to the website.
 2. Select the token you would like to transfer, e.g., DOT, IBTC, INTR, KSM, KBTC, or KINT.
 3. Your available balance is shown on top of the amount input field.
 4. Enter the address of the recipient. This can be in any supported Polkadot address format and will automatically be converted to the Interlay/Kintsugi address format for the transfer.
@@ -38,13 +39,14 @@
 ?> At present we support transferring KSM between Kusama and Kintsugi, DOT between Polkadot and Interlay and USDT between Statemine/Statemint and Kintsugi/Interlay.
 
 <!-- tabs:start -->
+
 #### **Interlay**
 
-[https://app.interlay.io/transfer?tab=crossChainTransfer](https://app.interlay.io/transfer?tab=crossChainTransfer)
+[https://app.interlay.io/send-and-receive?tab=bridge](https://app.interlay.io/send-and-receive?tab=bridge)
 
 #### **Kintsugi**
 
-[https://kintsugi.interlay.io/transfer?tab=crossChainTransfer](https://kintsugi.interlay.io/transfer?tab=crossChainTransfer)
+[https://kintsugi.interlay.io/send-and-receive?tab=bridge](https://kintsugi.interlay.io/send-and-receive?tab=bridge)
 
 <!-- tabs:end -->
 
@@ -56,6 +58,7 @@ Click to view cross chain transfer
 </summary>
 
 ![Cross-chain-transfer](../_assets/img/guide/to-kintsugi-cross-chain-transfer.png)
+
 </details>
 
 0. To transfer any token to Interlay/Kintsugi, please make sure that you do have a sufficient balance on the origin chain to pay for transaction fees.
@@ -74,6 +77,7 @@ Click to view cross chain transfer
 </summary>
 
 ![Cross-chain-transfer](../_assets/img/guide/from-kintsugi-cross-chain-transfer.png)
+
 </details>
 
 0. To transfer any token from Interlay/Kintsugi, please make sure that you do have a sufficient balance of INTR/KINT to pay for transaction fees.
@@ -86,12 +90,13 @@ Click to view cross chain transfer
 7. After the transfer has been made, your available token balance at the top of the page should decrease by the amount that has been transferred. If you want to check your balance on the target chain, you can do this on [Subscan](https://www.subscan.io/), but you can also set the "from" chain value to Polkadot/Kusama (as if you were making a transfer in the other direction) to see the updated balance above the amount field. This may not update immediately, and you may need to refresh the page to see the current balance.
 
 #### How to send USDT to Interlay/Kintsugi
+
 1. Ensure you have USDT in Statemint (Polkadot) or Statemine (Kusama) - see the Polkadot official guide on [how to get USDT from Bitfinex](https://support.polkadot.network/support/solutions/articles/65000181634-how-to-withdraw-usdt-from-bitfinex-on-statemine)
 2. Follow the guide on how to transfer funds [To Interlay/Kintsugi](#to-interlaykintsugi)
 3. (Optional) To check your USDT balance on Statemint or Statemine you can follow the first steps of the Polkadot official guide on [How to Transfer Tether (USDT) on Statemine](https://support.polkadot.network/support/solutions/articles/65000181118)
 
-
 ## Polkadot.js Developer Tab (Advanced)
+
 <details>
 <summary>
 Click to expand
@@ -118,7 +123,6 @@ Click to expand
 7. Enter the amount **in pico KINT (1 KINT = 1,000,000,000,000 pico KINT)**.
 
 8. Press "Sign Transaction". In the opened modal, enter your account password, and then click "Sign and Submit".
-
 
 You will see a green success message after 10-20 seconds in the top right if the transfer was successful.
 

@@ -17,25 +17,25 @@ Make sure you have the required [polkadot-js extension and a Bitcoin wallet](gui
 
 ### Issue IBTC/KBTC
 
-#### 1. Go to the bridge page.
+#### 1. Go to the btc page.
 
 <!-- tabs:start -->
 
 ##### **Interlay**
 
-[app.interlay.io/bridge](https://app.interlay.io/bridge)
+[app.interlay.io/btc](https://app.interlay.io/btc)
 
 ##### **Kintsugi**
 
-[kintsugi.interlay.io/bridge](https://kintsugi.interlay.io/bridge)
+[kintsugi.interlay.io/btc](https://kintsugi.interlay.io/btc)
 
 ##### **Testnet-Kintsugi**
 
-[testnet.interlay.io/bridge](https://kintnet.interlay.io/bridge)
+[kintnet.interlay.io/bridge](https://kintnet.interlay.io/btc)
 
 ##### **Testnet-Interlay**
 
-[testnet.interlay.io/bridge](https://testnet.interlay.io/bridge)
+[testnet.interlay.io/btc](https://testnet.interlay.io/btc)
 
 <!-- tabs:end -->
 
@@ -206,17 +206,17 @@ At the end of this guide you will have:
 
 ### Redeem IBTC/KBTC
 
-#### 1. Go to the bridge page.
+#### 1. Go to the btc page.
 
 <!-- tabs:start -->
 
 ##### **Interlay**
 
-[app.interlay.io/bridge](https://app.interlay.io/bridge)
+[app.interlay.io/btc](https://app.interlay.io/btc)
 
 ##### **Kintsugi**
 
-[kintsugi.interlay.io/bridge](https://kintsugi.interlay.io/bridge)
+[kintsugi.interlay.io/btc](https://kintsugi.interlay.io/btc)
 
 ##### **Testnet-Kintsugi**
 
