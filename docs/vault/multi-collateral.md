@@ -41,13 +41,13 @@ qTokens can be listed as collateral as well. qTokens are interest bearing tokens
 To use a qToken as vault collateral follow three steps:
 
 1. Deposit the [qToken into the lending market](guides/lending?id=_3-deposit-to-a-lending-market). You can do this via the UI as in the linked guide or use `loans.mint(token, amount)` in polkadot.js.
-2. When depositing a token to the lending market, it is not automatically locked as collateral. 
-  
-  a. If you just deposited the tokens into the lending market, there's nothing to do.
+2. When depositing a token to the lending market, it is not automatically locked as collateral.
 
-  b. However, if you are borrowing tokens from the lending protocol, chances are that the token is used as collateral. Ensure that the qToken is not locked as collateral in the lending protocol. On the UI, navigate to the /lending page and [untoggle the "Collateral" toggle](guides/lending?id=_4-enable-the-collateral-toggle).
+a. If you just deposited the tokens into the lending market, there's nothing to do.
 
-3. Register the qToken as collateral as described in the [registration section](#registration). 
+b. However, if you are borrowing tokens from the lending protocol, chances are that the token is used as collateral. Ensure that the qToken is not locked as collateral in the lending protocol. On the UI, navigate to the /lending page and [untoggle the "Collateral" toggle](guides/lending?id=_4-enable-the-collateral-toggle).
+
+3. Register the qToken as collateral as described in the [registration section](#registration).
 
 ## Registration
 
@@ -71,17 +71,17 @@ Each approach is explained below.
 
 Click on the "Add" button next to the collateral asset you wish to register.
 
-![Create vaults](../_assets/img/vault/register-multi-collateral-create.png)
+![Create vaults](../_assets/img/guide/vault-multi-collateral-create-overview.png)
 
 #### Make sure to understand the riks
 
-![Vault risk](../_assets/img/vault/register-multi-collateral-risks.png)
+![Vault risk](../_assets/img/guide/vault-multi-collateral-disclaimer.png)
 
 #### Deposit collateral
 
 Deposit collateral in the new collateral assets. Once this is done, the new collateral Vault will appear in the cards in the Vault dashboard.
 
-![Deposit collateral](../_assets/img/vault/register-multi-collateral-deposit.png)
+![Deposit collateral](../_assets/img/guide/vault-multi-collateral-deposit.png)
 
 ### 2. Registering through the CLI
 
@@ -115,11 +115,11 @@ Note that the `auto-register` argument can be specified multiple times. After th
 3. Select your existing Vault account, the `vaultRegistry` pallet and the `registerVault` extrinsic
 4. Enter the collateral currency and the wrapped currency pair plus the minimum amount of collateral
 
-  a. **Collateral currency**: select the collateral currency. For Kintsugi/Interlay native assets, select e.g., `Token.KSM` or `Token.KINT`. For foreign assets from other parachains, select `ForeignAsset` and the number of the foreign asset. See [this overview for all foreign assets](developers/api?id=overview-of-assets-in-the-assetregistry-pallet). *Example:* `LKSM` is `ForeignAsset.2`. For lending tokens, select `LendToken`. *Example:* `qKSM` is `LendToken.2`.
+a. **Collateral currency**: select the collateral currency. For Kintsugi/Interlay native assets, select e.g., `Token.KSM` or `Token.KINT`. For foreign assets from other parachains, select `ForeignAsset` and the number of the foreign asset. See [this overview for all foreign assets](developers/api?id=overview-of-assets-in-the-assetregistry-pallet). _Example:_ `LKSM` is `ForeignAsset.2`. For lending tokens, select `LendToken`. _Example:_ `qKSM` is `LendToken.2`.
 
-  b. **Wrapped currency**: select `Token.KBTC` on Kintsugi or `Token.IBTC` on Interlay
+b. **Wrapped currency**: select `Token.KBTC` on Kintsugi or `Token.IBTC` on Interlay
 
-  c. **Minimum collateral**: select the [minimum collateral amount](vault/overview?id=minimum-collateral) and convert this to the smallest denomination. *Example:* 1 LKSM = 10^12 Planck (1000000000000). The minimum collateral amount is 20 LKSM, or 20000000000000 Planck.
+c. **Minimum collateral**: select the [minimum collateral amount](vault/overview?id=minimum-collateral) and convert this to the smallest denomination. _Example:_ 1 LKSM = 10^12 Planck (1000000000000). The minimum collateral amount is 20 LKSM, or 20000000000000 Planck.
 
 5. Sign and submit the transaction
 
@@ -133,5 +133,4 @@ Each registered collateral asset for your Vault has its own card in the Vault da
 
 To view each collateral asset Vault, click on the "View" button on each card.
 
-![Vaults](../_assets/img/vault/vault-dashboard.png)
-
+![Vaults](../_assets/img/guide/vault-multi-collateral-overview.png)

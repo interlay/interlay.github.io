@@ -26,7 +26,7 @@ Congratulations on successfully installing the Vault client!
 
 Once your Vault is registered, the app on [Kintsugi](https://kintsugi.interlay.io) and [Interlay](https://app.interlay.io) as well as the [Interlay Testnet](https://testnet.interlay.io/) and [Kintsugi Testnet](https://kintnet.interlay.io/) will show you an overview of all your registered Vaults.
 
-![Vaults](../_assets/img/vault/vault-dashboard.png)
+![Vaults](../_assets/img/guide/vault-guide-overview.png)
 
 ### Vault Logs
 
@@ -210,7 +210,7 @@ Go to the Vault navigation item in the sidebar and click on the `Deposit Collate
 1. Go to polkadot.js.org/apps and ensure you have the correct nextwork selected
 2. Click on Developer -> Extrinsics
 3. Select your existing Vault account, the `vaultRegistry` pallet and the `depositCollateral` extrinsic
-4. Enter the collateral asset, e.g., LKSM is `ForeignAssets.2` or KSM is `Tokens.KSM`,  as the collateral and the wrapped asset, e.g., `KBTC` as the wrapped currency, and the amount of additional collateral to provide. Example, deposit 1 LKSM = 10^12 Planck (1000000000000).
+4. Enter the collateral asset, e.g., LKSM is `ForeignAssets.2` or KSM is `Tokens.KSM`, as the collateral and the wrapped asset, e.g., `KBTC` as the wrapped currency, and the amount of additional collateral to provide. Example, deposit 1 LKSM = 10^12 Planck (1000000000000).
 5. Sign and submit the transaction
 
 ![Depositing 1 LKSM of extra collateral](../_assets/img/vault/polkadotjs-deposit-lksm-collateral.png)
@@ -261,8 +261,9 @@ You can decide if your Vault should accept new issue requests by users.
 
 If you don't use the full [monitoring](#monitoring) described below, you should still check once in a while if your Vault client has equal or more BTC in its Bitcoin wallet than the amount of BTC locked on the Interlay or Kintsugi chains. You can compare the two as follows:
 
-1. Navigate to your Vault dashboard and check the "Locked BTC". This gives you the locked BTC that the Interlay or Kintsugi chain assume the Vault holds. In the example below, the `DOT/IBTC` Vault has `7.85948385` BTC locked.
-![BTC_locked](../_assets/img/vault/btc-locked.png)
+1. Navigate to your Vault dashboard and check the "Remaining `IBTC/KBTC` capacity". This gives you the amount of `IBTC/KBTC` that can minted, as well how much % of the overall vault amount that it represents. In the example bellow, the vault can still mint approx. `0.4 IBTC`.
+
+![BTC_locked](../_assets/img/guide/vault-guide-capacity.png)\
 2. Connect to the system running the Bitcoin node for your Vault client. You can list the BTC balance of the `DOT/IBTC` Vault by running the following command on the CLI with the keyname you specified when running the Vault client (from the [installation instructions](vault/installation?id=_5-start-the-vault-client)):
 
 ```sh
@@ -296,8 +297,8 @@ The BTC balance in your Vault's Bitcoin wallet is too low to fulfill a redeem re
 
 You have two options:
 
-1. *Wait and observe*: On redeem requests, users tend to pay more for BTC transaction fees to the Vault than the actual BTC transaction fee that the Vault has to pay. If the difference between the Bitcoin wallet balance and the Interlay/Kintsugi chain balance is quite small, it might be OK to wait for a couple of redeem request. Ideally, the Vault will have enough BTC in its wallet.
-2. *Insufficient BTC to fulfill a redeem request*: If a user request to redeem more BTC from your Vault than the Vault has in its wallet, the Vault client will show a `BitcoinError ... Insufficient funds...` in the logs. Typically, you would need to send BTC from another source to your Vault wallet.
+1. _Wait and observe_: On redeem requests, users tend to pay more for BTC transaction fees to the Vault than the actual BTC transaction fee that the Vault has to pay. If the difference between the Bitcoin wallet balance and the Interlay/Kintsugi chain balance is quite small, it might be OK to wait for a couple of redeem request. Ideally, the Vault will have enough BTC in its wallet.
+2. _Insufficient BTC to fulfill a redeem request_: If a user request to redeem more BTC from your Vault than the Vault has in its wallet, the Vault client will show a `BitcoinError ... Insufficient funds...` in the logs. Typically, you would need to send BTC from another source to your Vault wallet.
 
 If you encounter errors with the Vault client, we recommend to reach out to the Interlay team in the #vault-lounge in the [Interlay Discord](https://discord.gg/interlay). We can help investigate the issue.
 
@@ -328,11 +329,11 @@ To mint with your own (or another specific) Vault, you can use the Polkadot.js i
 3. Select "requestIssue" as the function to be executed
 4. Enter your Vault account and the issue amounts.
 
-   -  The BTC amount must be entered with 8 decimals (1 BTC = 100000000)
-   -  On Kintsugi, select "KSM" as the collateral token and KBTC as the wrapped token (DOT and interBTC on Interlay)
-   -  Enter 1000000000000 (= 1 KINT) as griefing collateral, you will get this back once you complete the issue operation. You can also check see how griefing collateral is needed via the "Issue" UI but 1 KINT will suffice in most cases.
+   - The BTC amount must be entered with 8 decimals (1 BTC = 100000000)
+   - On Kintsugi, select "KSM" as the collateral token and KBTC as the wrapped token (DOT and interBTC on Interlay)
+   - Choose the griefing currency that you would like to use.
 
-![Screenshot: self-minting via Polkadot.js Developer tab](../_assets/img/guide/self-mint.png)
+![Screenshot: self-minting via Polkadot.js Developer tab](../_assets/img/guide/vault-guide-self-mint.png)
 
 ### Step 2. Get BTC Deposit Address and Send BTC
 
@@ -340,15 +341,15 @@ Now you must send the BTC to the Bitcoin address **generated by the parachain**.
 
 !> **Attention**: you **MUST** send the BTC to the **address generated by the system** (derived from your Vault's main BTC account). Otherwise, the issue request will not count! Do not send to the main Bitcoin address!
 
-1.  **To get the BTC deposit address, go to the "Transaction" page on the UI** and find the pending issue request there.
+1.  **To get the BTC deposit address, go to your vault page on the UI** and find the pending issue request under "Issue Request" table.
 
-![Screenshot: getting the BTC deposit address](../_assets/img/guide/transaction-tab.png)
+![Screenshot: getting the BTC deposit address](../_assets/img/guide/vault-guide-self-mint-issue-table.png)
 
-2. Click on it to see the BTC deposit address.
+2. Find your transaction in the "Issue Request" table (which should be latest) and click the "View Details" link. It should take you to the details of the self-mint issue request.
 
-![Screenshot: getting the BTC deposit address](../_assets/img/guide/issue-btc-address.png)
+![Screenshot: getting the BTC deposit address](../_assets/img/guide/vault-guide-self-mint-details.png)
 
-3. Make the BTC transfer. Your Vault will then automatically handle everything else (proof submission,..)
+3. Grab the BTC address and make the transfer. Your Vault will then automatically handle everything else (proof submission,..)
 
 ### Why Self-Mint?
 
@@ -366,7 +367,7 @@ If you have not registered the vault yet, you can atomically register with colla
 
 2. Next, you use the polkadot.js app to do a batch of `registerVault` and `requestIssue`. Go to "Extrinsics", select `utility` > `batchAll` in the dropdowns. You can then add multiple calls that will be executed all at once (see screenshot below).
 
-?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page of the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly.
+?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page of the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly.
 
 ![Screenshot: atomic registration and self-issue](../_assets/img/guide/atomic-register-issue.png)
 
@@ -374,9 +375,9 @@ If you have not registered the vault yet, you can atomically register with colla
 
 If you have already registered a vault, you can atomically add additional collateral and do the self-issue.
 
-1. Use the polkadot.js app to do a batch of `depositCollateral` and `requestIssue`.  Go to "Extrinsics", select `utility` > `batchAll` in the dropdowns. You can then add multiple calls that will be executed all at once (see screenshot below).
+1. Use the polkadot.js app to do a batch of `depositCollateral` and `requestIssue`. Go to "Extrinsics", select `utility` > `batchAll` in the dropdowns. You can then add multiple calls that will be executed all at once (see screenshot below).
 
-?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page on the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT  = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly.
+?> The amount of collateral required to request a given number of IBTC/KBTC can be calculated as `BTC * secure_collateral_threshold * exchange_rate`. The secure collateral threshold for DOT/KSM at the time of writing is 2.6. The exchange rate can be found on the dashboard page on the Interlay/Kintsugi app. The collateral uses 10 digits for DOT (1 DOT = 10000000000) and 12 digits for KSM (1 KSM = 1000000000000). If using other currencies, adapt accordingly.
 
 ![Screenshot: atomic deposit and self-issue](../_assets/img/guide/atomic-deposit-issue.png)
 
@@ -497,7 +498,7 @@ chmod +x download_latest
 
 If the default Prometheus port is used (`9615`), the default instructions from the Grafana docs will work by default: https://grafana.com/docs/grafana/latest/installation/debian
 
-Once Grafana is up and running, [import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) the [Vault client configuration](../_assets/config/grafana.json  ':ignore') file to see the metrics.
+Once Grafana is up and running, [import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) the [Vault client configuration](../_assets/config/grafana.json ":ignore") file to see the metrics.
 
 #### Running Node Exporter
 
@@ -516,7 +517,7 @@ as in the screenshot below (yellow line). This behaviour can be observed for all
 
 #### How can I know if a redeem request is about to expire?
 
-The *Remaining Time to Redeem* tile displays the time, in hours, left to execute the oldest redeem request with the vault. After this period elapses, the vault will get slashed. If there is no open redeem request, the default value of this metric is 24. The default AlertManager rules configuration in this documentation sends an alert when there is one hour left to execute (see [here](https://github.com/interlay/interbtc-clients/blob/d585af332d33ae763c1941eed5d63e73fe61ab52/.deploy/monitoring/rules.yml#L14)).
+The _Remaining Time to Redeem_ tile displays the time, in hours, left to execute the oldest redeem request with the vault. After this period elapses, the vault will get slashed. If there is no open redeem request, the default value of this metric is 24. The default AlertManager rules configuration in this documentation sends an alert when there is one hour left to execute (see [here](https://github.com/interlay/interbtc-clients/blob/d585af332d33ae763c1941eed5d63e73fe61ab52/.deploy/monitoring/rules.yml#L14)).
 
 ![Remaining Time to Redeem](../_assets/img/vault/remaining_time_to_redeem.png)
 
@@ -544,7 +545,14 @@ Enter the following query to view the Issue requests against your vault:
 
 ```graphql
 {
-  issues(where: {vault: {accountId_eq: "enter your account ID between these quotes, e.g. a3addPTx9ngWGKq3dguw7vs7NA2PimcDUHWJ32HsuoFL74zdo", collateralToken_eq: DOT}}) {
+  issues(
+    where: {
+      vault: {
+        accountId_eq: "enter your account ID between these quotes, e.g. a3addPTx9ngWGKq3dguw7vs7NA2PimcDUHWJ32HsuoFL74zdo"
+        collateralToken_eq: DOT
+      }
+    }
+  ) {
     id
     status
     userParachainAddress
@@ -586,7 +594,7 @@ The information otherwise matches what you see in the tables in the UI dashboard
 
 To view any BTC transactions associated with a request, enter the value for the `vaultBackingAddress` into a BTC blockchain explorer - this is the address (unique for every Issue request) that the user is required to send their BTC to.
 
-You can additionally filter requests by status (or any number of other fields, if you are comfortable with  GraphQL). For example, to view only pending requests, change the first line of the query to be:
+You can additionally filter requests by status (or any number of other fields, if you are comfortable with GraphQL). For example, to view only pending requests, change the first line of the query to be:
 
 ```graphql
   issues(where: {vault: {accountId_eq: "<address here>", collateralToken_eq: KINT}, status_eq: Pending}) {
@@ -598,7 +606,11 @@ The process for Redeem requests is near-identical. Use the following query:
 
 ```graphql
 {
-  redeems(where: {vault: {accountId_eq: "your account ID here", collateralToken_eq: DOT}}) {
+  redeems(
+    where: {
+      vault: { accountId_eq: "your account ID here", collateralToken_eq: DOT }
+    }
+  ) {
     id
     status
     bridgeFee
