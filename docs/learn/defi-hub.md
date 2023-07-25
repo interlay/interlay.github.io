@@ -81,3 +81,74 @@ Liquidity positions in the DEX are represented through "LP-tokens\",
 which can be transferred and potentially traded themselves. Subject to
 proper risk assessment by community governance, LP-tokens may also be
 used as Vault collateral in the BTC bridge.
+
+## DeFi Hub Math
+
+### Liquidity Protocol Interest Rate Model
+At launch, the Interlay liquidity protocol will feature an interest
+model inspired by Compound v2 - a model that is well tested in practice.
+Improvements and optimizations are expected in future versions of the
+protocol.
+
+#### Utilization Rate
+The utilization rate displays which percentage of the total supply is
+currently borrowed and is a central parameter in determining the supply
+rate.
+
+$$UtilizationRate = \frac{TotalAmountBorrowed}{TotalCash + TotalAmountBorrowed-TotalReserves}$$
+where $\mathit{TotalCash}$ is the amount of supply that is currently not
+lend out, $\mathit{TotalAmountBorrowed}$ is the total outstanding debt,
+$\mathit{TotalReserves}$ is the amount of unharvested reserves which
+accrued in the pool.
+
+#### Internal Exchange Rate
+When a supplier adds tokens to the lending pool, they get credited
+qToken based on the initial exchange rate. Since the qTokens accrue
+interest as the TotalAmountBorrowed continually increases, the amount of
+tokens they will receive at redemption will change based on the internal
+exchange rate. This can be represented as:
+$$InternalExchangeRate= \frac{TotalCash+TotalAmountBorrowed-TotalReserves}{TotalSupply}$$
+where $\mathit{TotalCash}$ is the unborrowed supply and
+$\mathit{TotalSupply}$ is the total available supply in the pool.
+
+#### Borrowing Rate
+The function below describes the borrowing rate depending on the demand
+and supply for that token, represented as the utilization rate U.
+$$r_{borrow} = \frac{BaseRate + U*(JumpRate - BaseRate)}{U_{target}} \vert U \leq target$$
+$$r_{borrow} = \frac{JumpRate + (U - U_{target})*(FullRate-JumpRate)}{1-U_{target}} \vert U >target$$
+where $\mathit{BaseRate}$ is the intercept (when utilization is zero),
+$\mathit{JumpRate}$ is the borrow rate when $U = U_{\mathit{target}}$
+and $\mathit{FullRate}$ corresponds to the rate when $U = 100\%$.
+
+#### Supply Rate
+The relationship between the supply rate and the borrow rate can then be
+described as below. Note that the supply rate supply rate is reduced by
+the fees that are attributable to the protocol.
+$$SupplyRate = \frac{\mathit{BorrowRate} * \mathit{TotalAmountBorrowed}}{\mathit{TotalSupply}}*(1-\mathit{DAOFee})$$
+where $\mathit{DAOFee}$ is the percentage fee that is collected by the
+protocol.
+
+### AMM Curves
+
+#### Non-stable Pools
+Exchange prices on the DEX are determined by the constant function
+market maker. For non-stable pools, prices are determined via a constant
+product function in the form of
+$$K = x * y$$
+where K is a constant, x and y are the supplies of tokens X and Y,
+respectively.
+
+#### Stable Pools
+For stable pools, the DEX determines the exchange price of an asset
+using the stable swap invariant first proposed by Curve
+$$An^n \sum{x_i} + D = ADn^n + \frac{D^{n+1}}{n^n \prod{x_i}}$$
+where $\mathit{A}$ is the amplification coefficient that determines the
+liquidity concentration towards the middle of the curve, $\mathit{D}$ is
+the constant (determined as the product of the amount of tokens and is
+comparable to the constant K in the constant product function),
+$\mathit{n}$ is the number of coins in the pool and $\mathit{x_i}$ is
+the respective token.
+When a trade is being executed on such a pool, the above equation must
+hold. This requires to find a solution for either $\mathit{D}$ or
+$\mathit{x}$, when all other variables are known, via iterative
+convergence.
