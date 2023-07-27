@@ -114,6 +114,8 @@ Click on an item in the "My Lend Positions" and select the "Withdraw" tab. You c
 
 To ensure that loans are always over-collateralized, such that borrowers maintain an economical interest to repay their loans, under-collateralized loans need to be liquidated. This can be done by repaying the borrowed tokens on behalfs of the borrower to receive the borrowers collateral, including a premium. This guide instructs users how to process a liquidation of an under-collateralized loan using polkadot.js.
 
+For an automated liquidation bot, see [here](https://github.com/interlay/bots/tree/master/bots/lending-liquidator). Overall, we recommend the automated bot or a script for liquidations.
+
 At the end of this guide you will know how to:
 
 - [x] [Funded your wallet with the debt token and gas token](#_1-fund-wallet)
@@ -121,29 +123,39 @@ At the end of this guide you will know how to:
 - [x] [Withdraw the received collateral tokens](#_3-withdraw-collateral-optional)
 - [x] [Batch liquidations](#batch-liquidations)
 
-### 1. Fund wallet
+### 1. Discover under-collateralized loans
 
-1. The wallet needs as small amount of KINT tokens to pay for the gas fees.
-2. The wallet needs to be funded with the amount of borrowed tokens which shall be repaid. E.g. if the liquidator aims to liquidate a debt position of 1,000 USDT, the wallet needs to have at least this amount in the respective borrowed currency, in this example, USDT.
+1. Go to [polkadot.js](https://polkadot.js.org/apps/#/chainstate) and select the network where you want to make the liquidation
+2. Get all accounts that have borrowed via `loans.accountBorrows(CurrencyId)`. For example, to get all accounts that borrowed DOT, use `loans.accountBorrows({Token: DOT})`. The result is a list of accounts that have borrowed DOT.
+3. Get the liquidation threshold for the asset via the `rpc`: `loans.getLiquidationThresholdLiquidity()` for the accounts above. In the response, the `shortfall` is the amount that can be liquidated denominted in BTC. It's decoded as a `FixedU128` and needs to be divided by `10^18` to get the actual amount. Accounts that have a shortfall > 0 can be liquidated. To get the shortfall in other currencies, the `shortfall` BTC amount needs to be converted to other currencies via the on-chain oracle.
+4. Get the collateral currencies via `loans.accountDeposits({LendToken: ID})`.
+5. Determine the underlying currency amount as described in the [asset developer notes](developers/assets?id=lend-tokens-calculating-the-underlying-token-balance).
+6. From there, iterate through the accounts from step 3 with a `shortfall` > 0, check the qToken asset as in step 4, and then calculate the underlying asset as described in step 5.
 
-All tokens that can be used in the money market can also be traded on Kintsugi DEX. For alternative options see [Other DEXs](#other-dexs)
+The above is implemented in `getUndercollateralizedBorrowers` in the [interbtc-api](https://docs.interlay.io/interbtc-api/interfaces/LoansAPI.html#getundercollateralizedborrowers).
 
-### 2. Liquidate borrow position
 
-1. Go to [https://polkadot.js.org/apps/#/extrinsics](https://polkadot.js.org/apps/#/extrinsics) and select Kitnsugi network
+### 2. Fund wallet
+
+1. The wallet needs a token to pay for [transaction fees](guides/assets.md).
+2. The wallet needs to be funded with the amount of borrowed tokens which shall be repaid. For example, if the liquidator aims to liquidate a debt position of 1,000 USDT, the wallet needs to have at least 1000 USDT.
+
+### 3. Liquidate borrow position
+
+1. Go to [https://polkadot.js.org/apps/#/extrinsics](https://polkadot.js.org/apps/#/extrinsics) and select the network where you want to make the liquidation
 2. Set up the parameters for the call
-   1. **using the selected account**: `your_accound_address` (Kintsugi address, starting with ‘a3…’)
+   1. **using the selected account**: `your_accound_address
    2. **submit the following extrinsic**: `loans.liquidateBorrow()`
-   3. **borrower:** `target_account_address` (Kintsugi address of the borrower to liquidate, starting with ‘a3…’)
+   3. **borrower:** `target_account_address` (address of the borrower to liquidate) 
    4. **liquidationAssetId:** Borrowed currency to repay
-      1. Select `Token` for KINT, kBTC, KSM
+      1. Select `Token` for INTR, DOT, IBTC, KINT, KBTC, KSM
       2. Select `ForeignAsset` for other tokens
-         1. see [here](#asset-registry) for `id:token` mapping
-   5. **repayAmount:** `amount_to_be_repaid` , note that the amount depends on the number of decimals the token uses. See [here](#asset-registry) for details.
-   6. **collateralAssetId:** The currency to receive in exchange for liquidating the borrower's loan. The liquidation premium is also paid in this currency. Note that this currency has to be one of the collateral currencies used by the liquidated borrower. Also note that while `collateralAssetId` represents the underlying currency of a lending market (e.g. KBTC), the liquidator receives its qToken version instead (e.g. QKBTC), which can be redeemed for KBTC from the lending market (see [withdraw collateral](#_3-withdraw-collateral-optional)).
-      1. Select `Token` for KINT, kBTC, KSM
+         1. see [here](developers/assets?id=foreignasset-assets) for `id:token` mapping
+   5. **repayAmount:** `amount_to_be_repaid`. The maxium that can be repaid is the `shortfall` equivalent of one of the collateral currencies as described in [discover undercollateralized loans](#_1-discover-under-collateralized-loans). Note that the amount depends on the number of decimals the token uses.
+   6. **collateralAssetId:** The currency to receive in exchange for liquidating the borrower's loan. The liquidation premium is also paid in this currency. Note that this currency has to be one of the collateral currencies used by the liquidated borrower (as described [above](#_1-discover-under-collateralized-loans)). Also note that while `collateralAssetId` represents the underlying currency of a lending market (e.g. KBTC), the liquidator receives its qToken version instead (e.g., qKBTC), which can be redeemed for KBTC from the lending market (see [withdraw collateral](#_7-withdraw-a-deposit)).
+      1. Select `Token` for INTR, DOT, IBTC, KINT, KBTC, KSM
       2. Select `ForeignAsset` for other tokens
-         1. see [here](#asset-registry) for `id:token` mapping
+         1. see [here](developers/assets?id=foreignasset-assets) for `id:token` mapping
 3. Submit the transaction
 
 ### Example
@@ -151,18 +163,6 @@ All tokens that can be used in the money market can also be traded on Kintsugi D
 This example would liquidate a $1,000 USDT position in order to receive kBTC as collateral.
 
 ![Liquidate Borrow Extrinsic](../_assets/img/guide/liquidate-borrow-extrinsic.png)
-
-### 3. Withdraw collateral (optional)
-
-The liquidator will receive `LendTokens` as a result of the liquidation call in step 2. These tokens still remain in the liquidity pool of the lending market and keep accruing interest. To receive the underlying token, the user can either withdraw the qTokens manually via the UI as described [here](#_7-withdraw-a-deposit) or construct an extrinsic by using polkadot.js as follows:
-
-1. Set up the parameter for the call
-   1. **using the selected account**: `your_accound_address` (Kintsugi address, starting with ‘a3…’)
-   2. **submit the following extrinsic**: `loans.redeemAll` to redeem all supplied token of a given currency or `loans.redeem` to only redeem a specified amount. This could be required if the received currency is already used as collateral by the liquidator to secure a loan. In this case, not all of the tokens could be redeemed and the user needs to specify the amount via `loans.redeem`
-   3. **assetId:**
-      1. Select `Token` for KINT, kBTC, KSM
-      2. Select `ForeignAsset` for other tokens
-         1. see [here](#asset-registry) for `id:token` mapping
 
 ### Batch Liquidations
 
@@ -172,23 +172,24 @@ Hence, the batched call would look something like this:
 
 [(`liquidate_borrow`, `redeem_all`, `swap_exact_input`), (`liquidate_borrow`, `redeem_all`, `swap_exact_input`), …]
 
-### Asset Registry
+### Scripting
 
-Can be queried via [https://polkadot.js.org/apps/#/chainstate](https://polkadot.js.org/apps/#/chainstate) by selecting `assetRegistry.metadata`
+As the manual steps to discover and liquidate positions are quite involved, an easier option would be to script the steps above. Using the [interbtc-api](https://github.com/interlay/interbtc-api), one could achieve the following:
 
-![Asset Registry](../_assets/img/guide/asset-registry.png)
-
-### Underlying Tokens
-
-Can be queried via [https://polkadot.js.org/apps/#/chainstate](https://polkadot.js.org/apps/#/chainstate) by selecting `loans.underlyingAssetId`
-
-![Underlying Asset](../_assets/img/guide/underlying-asset-id.png)
-
-### Other DEXs
-
-This list contains some alternative options to swap the tokens listed on Kintsugis lending market:
-
-- [Solarbeam (Moonriver)](https://app.solarbeam.io/exchange/swap)
-- [Bifrost (Bifrost)](https://bifrost.app/swap)
-- [Parallel Heiko (Heiko)](https://app-heiko.parallel.fi/swap)
-- [Karura (Karura)](https://apps.karura.network/swap)
+```typescript
+// see https://github.com/interlay/interbtc-api/blob/master/test/integration/parachain/staging/sequential/loans.test.ts#L512
+const undercollateralizedBorrowers = await api.loans.getUndercollateralizedBorrowers();
+// Assuming a borrower took out a loan of IBTC against a DOT collateral position
+const liquidate_tx = api.loans.liquidateBorrowPosition(
+   // borrower to liquidate
+   undercollateralizedBorrowers[0].accountId,
+   // repayment currency for the tokens that were borrowed from the market (e.g., IBTC)
+   undercollateralizedBorrowers[0].borrowPositions[0].currencyId,
+   // amount to repay. If using IBTC/KBTC to repay, then oracle conversions are not needed
+   undercollateralizedBorrowers[0].shortfall,
+   // currency to receive as collateral. For example, receiving the DOT that the borrower used as collateral
+   undercollateralizedBorrowers[0].collateralPositions[0].currencyId
+)
+// sign and send the tx
+await liquidate_tx.sign_and_send();
+```
