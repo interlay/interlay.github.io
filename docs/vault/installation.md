@@ -86,6 +86,40 @@ Please use a separate keyname and mnemonic for each client. This name determines
 
 ?> You may also generate the keyfile manually using the [Polkadot extension](https://support.polkadot.network/support/solutions/articles/65000098878).
 
+If you already have the Vault client installed (see the [steps below](/vault/installation?id=_3-install-a-pre-built-binary)), use the following subcommand to generate the keyfile:
+
+```shell
+vault generate-parachain-key --output keyfile.json
+```
+
+### Private Key (Bitcoin)
+
+This is only required if you are using the experimental *Vault Light Client* (see [this section](/vault/installation?id=_7-optional-start-the-vault-light-client)). The master private key is used to derive child keys generated from [issue](/guides/bridge?id=issue) payments.
+
+<!-- tabs:start -->
+
+#### **Testnet**
+
+```shell
+vault generate-bitcoin-key --network testnet --output private-key.wif
+```
+
+#### **Kintsugi**
+
+```shell
+vault generate-bitcoin-key --network bitcoin --output private-key.wif
+```
+
+#### **Interlay**
+
+```shell
+vault generate-bitcoin-key --network bitcoin --output private-key.wif
+```
+
+<!-- tabs:end -->
+
+The file consists of a single WIF encoded Bitcoin private key, there are many other popular tools which can be used to generate this. To learn more about the Wallet Import Format (WIF), check the documentation [here](https://en.bitcoin.it/wiki/Wallet_import_format).
+
 ### Funding
 
 The account used to register must be endowed with collateral (at launch this is KSM for Kintsugi and DOT for Interlay) and the parachain's native token for transaction fees - KINT for Kintsugi and INTR for Interlay.
@@ -890,6 +924,41 @@ To stop the service, run:
 
 ```shell
 sudo systemctl stop interlay-vault.service
+```
+
+<!-- tabs:end -->
+
+### 7. [Optional] Start the Vault light client
+
+This is an *experimental* alternative which doesn't require a local Bitcoin Core node to operate. Instead it uses a remote [electrs](https://github.com/Blockstream/electrs) API to read the chain state and handles transaction signing internally. This significantly reduces the operational overhead but using the runner is still recommended.
+
+<!-- tabs:start -->
+
+#### **Testnet (Kintsugi)**
+
+To request funds from the faucet:
+
+```shell
+vault --light \
+  --bitcoin-wif private-key.wif \
+  --keyfile keyfile.json \
+  --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+  --faucet-url 'https://api-dev-kintsugi.interlay.io/faucet' \
+  --auto-register=KSM=faucet \
+  --btc-parachain-url 'wss://api-dev-kintsugi.interlay.io:443/parachain'
+```
+
+#### **Kintsugi**
+
+To register with 3 KSM (3000000000000 Planck):
+
+```shell
+vault --light \
+  --bitcoin-wif private-key.wif \
+  --keyfile keyfile.json \
+  --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
+  --auto-register=KSM=3000000000000 \
+  --btc-parachain-url 'wss://api-kusama.interlay.io:443/parachain'
 ```
 
 <!-- tabs:end -->
