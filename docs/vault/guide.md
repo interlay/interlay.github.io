@@ -731,3 +731,55 @@ If your Vault clients holds at least _some BTC in custody_, you have two options
 
 - **Replace**: leaving through _replace_, requires you to request being replaced by another Vault. You can request to be replaced through the Vault dashboard by replace 100% of the BTC that is locked with the Vault and waiting for other Vaults to accept the request. Once the replace request is accepted, your Vault client will execute the replace request by sending BTC to the accepting Vault and executing the request on the parachain.
 - **Redeem**, leaving through _redeem_ requires you to wait for a user or yourself to redeem the entire amount of BTC that the Vault has in custody. Only after you have 0 BTC, can the Vault client withdraw its entire collateral. If you redeem with your own Vault, the Vault will not receive fees for this such that 0 BTC remains in your Vault client.
+
+## Replace-By-Fee
+
+When the Bitcoin mempool is significantly congested it may take some time for redeem payments to be included on mainnet. In the worst case this could lead to a theft report on the parachain if the request period has elapsed. For this reason, all transactions made by the Vault should be "bip125-replaceable" to allow Vault operators to set a higher fee.
+
+!> The following instructions are for advanced users only, in most cases the Vault client should automatically bump the fee if required. Manually bumping the fees may cause the wallet to not contain sufficient Bitcoin to fulfil future redeem requests. It may also be a possibility to consider third-party transaction acceleration services.
+
+Note the `$TXID` which is the transaction identifier of that which will be replaced.
+
+### Simple
+
+The easiest way to bump the transaction fees is by using the `bumpfee` command.
+
+```shell
+bitcoin-cli bumpfee $TXID
+```
+
+This is not recommended however since it may insert an additional (unregistered) change address.
+
+### Advanced
+
+This approach is slightly more involved but the following commands will reduce some overhead.
+
+You will need to set `-rpcwallet` when using `bitcoin-cli`. For example if the transaction was made by your `KSM-KBTC` wallet this should be `$KEYNAME-KSM-KBTC` where `$KEYNAME` is the `AccountId` your Vault would point to.
+
+Before continuing you will need to set the `$CHANGE_ADDRESS` to an address already registered by your Vault. List those addresses and set the `CHANGE_ADDRESS` variable.
+
+```shell
+bitcoin-cli listunspent
+...
+
+CHANGE_ADDRESS="<INSERT_HERE>"
+```
+
+Review the optimal `feeRate` in BTC/kvB and set `$FEE_RATE` (for example `0.0001`).
+
+?> This was only tested on `regtest` so caution is to be advised for `mainnet` usage.
+
+```shell
+# get the previous inputs
+rawinputs=$(bitcoin-cli decoderawtransaction $(bitcoin-cli getrawtransaction $TXID) | jq '.vin[] | {txid, vout, sequence}' | jq -cs)
+# get the previous outputs
+rawoutputs=$(bitcoin-cli decoderawtransaction $(bitcoin-cli getrawtransaction $TXID) | jq '.vout[] | {value, address: .scriptPubKey.address} | ({(.address): .value})' | jq -cs)
+# use those to create a new transaction
+rawtx=$(bitcoin-cli createrawtransaction $rawinputs $rawoutputs)
+# fund that tx with a better fee rate
+fundedtx=$(bitcoin-cli fundrawtransaction $rawtx "{\"changeAddress\": \"$CHANGE_ADDRESS\", \"feeRate\": $FEE_RATE}" | jq -r .hex)
+# sign that with your wallet
+signedtx=$(bitcoin-cli signrawtransactionwithwallet $fundedtx | jq -r .hex)
+# finally broadcast the replaced tx
+bitcoin-cli sendrawtransaction $signedtx
+```
