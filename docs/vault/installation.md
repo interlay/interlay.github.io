@@ -515,6 +515,51 @@ To stop the service, run:
 sudo systemctl stop kintsugi-runner.service
 ```
 
+#### **Interlay**
+
+```shell
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup
+wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/runner/interlay-runner.service
+```
+
+?> Please adjust the systemd service file to insert your substrate key into the arguments. Vim is only used as an example here.
+
+```shell
+vim interlay-runner.service
+```
+
+Install the service and start it.
+
+```shell
+chmod +x ./setup && sudo ./setup interlay runner
+sudo systemctl daemon-reload
+sudo systemctl start interlay-runner.service
+```
+
+You can also automatically start the Runner on system reboot with:
+
+```shell
+sudo systemctl enable interlay-runner.service
+```
+
+You can then check the status of your service by running:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=interlay-runner.service
+```
+
+Or by streaming the logs to the `runner.log` file in the current directory:
+
+```shell
+journalctl --follow _SYSTEMD_UNIT=interlay-runner.service &> runner.log
+```
+
+To stop the service, run:
+
+```shell
+sudo systemctl stop interlay-runner.service
+```
+
 <!-- tabs:end -->
 
 ## Standard Installation
@@ -552,13 +597,13 @@ wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.2
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.22.1/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.23.2/vault-parachain-metadata-kintsugi
 ```
 
 #### **Interlay**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.22.1/vault-parachain-metadata-interlay
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/interlay-1.23.0/vault-parachain-metadata-interlay
 ```
 
 <!-- tabs:end -->
@@ -612,14 +657,14 @@ cargo build --bin vault --features parachain-metadata-interlay-testnet
 #### **Kintsugi**
 
 ```shell
-git checkout 1.22.1
+git checkout 1.23.2
 cargo build --bin vault --features parachain-metadata-kintsugi
 ```
 
 #### **Interlay**
 
 ```shell
-git checkout 1.22.1
+git checkout interlay-1.23.0
 cargo build --bin vault --features parachain-metadata-interlay
 ```
 

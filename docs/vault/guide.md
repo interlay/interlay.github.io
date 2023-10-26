@@ -140,7 +140,7 @@ chmod +x ./setup && sudo ./setup testnet-interlay vault
 #### **Kintsugi**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.22.1/vault-parachain-metadata-kintsugi
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.23.2/vault-parachain-metadata-kintsugi
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup kintsugi vault
@@ -149,7 +149,7 @@ chmod +x ./setup && sudo ./setup kintsugi vault
 #### **Interlay**
 
 ```shell
-wget -O vault https://github.com/interlay/interbtc-clients/releases/download/1.22.1/vault-parachain-metadata-interlay
+wget -O vault https://github.com/interlay/interbtc-clients/releases/download/interlay-1.23.0/vault-parachain-metadata-interlay
 
 wget https://raw.githubusercontent.com/interlay/interbtc-docs/master/scripts/vault/setup -O setup
 chmod +x ./setup && sudo ./setup interlay vault
