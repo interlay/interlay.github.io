@@ -79,11 +79,11 @@ Use your Bitcoin wallet to transfer the specified `amount` to the given `address
 
 You can find your issue request in the table below the issue form.
 
-![Tansactions page](../_assets/img/guide/bridge-issue-table.png)
+![Transactions page](../_assets/img/guide/bridge-issue-table.png)
 
 Find your pending issue request in the **"Issue Requests"** table and click on it. There you will find the details of the Bitcoin transaction you need to make.
 
-![Tansactions page](../_assets/img/guide/bridge-issue-tx-request.png)
+![Transactions page](../_assets/img/guide/bridge-issue-tx-request.png)
 
 ?> Optional: you can use a hardware wallet
 
@@ -168,7 +168,7 @@ Once you've made the payment, the app will automatically locate your transaction
 
 If you sent more BTC than was necessary, one of two things will happen.
 
-1. If the vault had sufficient capacity to accomodate your larger request, it will be executed automatically, and no further action on your part is required.
+1. If the vault had sufficient capacity to accommodate your larger request, it will be executed automatically, and no further action on your part is required.
 2. If the vault does not have sufficient capacity, then a **Refund request** will be automatically created, giving the vault the option to return the excess BTC to you. However, since IBTC is a decentralized system, there is no way to ensure that the vault fulfils this.
 
 **I've accidentally sent less BTC than required**
@@ -185,7 +185,7 @@ You can check the status of your issue request in the Transactions view in the *
 
 If your Bitcoin transaction has enough confirmations but has not been executed by a Vault yet, click on the issue request that is "Pending". This will open a modal, where you will see a **"Claim KBTC"** (or **"Claim IBTC"**) button. To finalize the Issue process and claim your IBTC/KBTC, either wait for a Vault to auto-execute your request, or click **"Claim"** yourself.
 
-![Tansactions page](../_assets/img/guide/bridge-issue-complete-tx.png)
+![Transactions page](../_assets/img/guide/bridge-issue-complete-tx.png)
 
 ## Redeem
 

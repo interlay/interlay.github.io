@@ -45,7 +45,7 @@ Substrate chain, secured by Polkadot's PoS as a parachain. 12-second block times
   - [Talisman (browser)](https://talisman.xyz/)
   - [Nova (mobile)](https://novawallet.io/)
   - [Fearless (mobile)](https://fearlesswallet.io/)
-  - [Subscan multisig (multisig tool, needs another brower wallet)](https://multisig.subscan.io/)
+  - [Subscan multisig (multisig tool, needs another browser wallet)](https://multisig.subscan.io/)
   - Ledger (hardware, coming soon)
 - [Testnet](https://testnet.interlay.io/)
 
@@ -67,6 +67,6 @@ Canary network (experimental network with real economic value). Substrate chain,
   - [Talisman (browser)](https://talisman.xyz/)
   - [Nova (mobile)](https://novawallet.io/)
   - [Fearless (mobile)](https://fearlesswallet.io/)
-  - [Subscan multisig (multisig tool, needs another brower wallet)](https://multisig.subscan.io/)
+  - [Subscan multisig (multisig tool, needs another browser wallet)](https://multisig.subscan.io/)
   - Ledger (hardware, coming soon)
 - [Testnet](https://kintnet.interlay.io/)

@@ -219,10 +219,10 @@ Where `Secure Collateral Threshold = 1.5` (`150%`) according to our example.
 
 ### Vault-Level Collateral Re-balancing
 
-To protect against short and long term exchange rate fluctuations, Vaults are *adviced to keep their collateralization rate up to date*.
+To protect against short and long term exchange rate fluctuations, Vaults are *advised to keep their collateralization rate up to date*.
 This is achieved in three ways:
 
-- **Increase Collateral** - *instant collateral increase*: the Vault can add more collateral to the system. This increases the collateralization immediatly.
+- **Increase Collateral** - *instant collateral increase*: the Vault can add more collateral to the system. This increases the collateralization immediately.
 - **Redeem** - *collateral increase after 1 to 48 hours* (up to the redeem period): if users redeem with the Vault, the collateralization ratio increases. However, the collateral only increases when the redeem request is executed. The lower bound for this are the required Bitcoin and parachain confirmation. In practice, it will take at least 1 hour until such a request is processed. The Vault can also maintain an IBTC/KBTC reserve and execute self-redeems for quick rebalancing.
 - **Replace** - *possible collateral increase*: A Vault can request to be replaced by another Vault. By sending such a request to the parachain, the Vault offers other Vaults to take over the locked BTC. This strategy should work well when there is free capacity to issue new BTC in the system as Vaults will try to maximize their locked BTC to increase their share of fees and block rewards. However, there is no guarantee that a Vault will accept the replace request. Especially, when the bridge has little to no capacity to issue new BTC all Vaults are saturated and it is unlikely that other Vaults will accept the replace request.
 

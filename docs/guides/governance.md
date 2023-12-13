@@ -95,7 +95,7 @@ This involves two steps:
 
 ?> We recommend you reach out the community on [Discord](https://discord.gg/interlay) in the #product-feedback channel before creating a proposal.
 
-#### Option A for simple proposals: Submiting a Preimage and a Proposal in two transactions
+#### Option A for simple proposals: Submitting a Preimage and a Proposal in two transactions
 
 ##### 1. Create and submit a Preimage
 

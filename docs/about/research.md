@@ -90,7 +90,7 @@ Decentralized Finance (DeFi), a blockchain powered peer-to-peer financial system
 </details>
 
 - Werner S, Perez D, Gudgeon L, Klages-Mundt A, **Harz D**, Knottenbelt WJ
-- In colaboration with Imperial College London, Cornell University
+- In collaboration with Imperial College London, Cornell University
 
 ### [Stablecoins 2.0: Economic Foundations and Risk-based Models](https://arxiv.org/pdf/2006.12388.pdf)
 <details>

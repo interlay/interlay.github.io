@@ -151,7 +151,7 @@ The above is implemented in `getUndercollateralizedBorrowers` in the [interbtc-a
       1. Select `Token` for INTR, DOT, IBTC, KINT, KBTC, KSM
       2. Select `ForeignAsset` for other tokens
          1. see [here](developers/assets?id=foreignasset-assets) for `id:token` mapping
-   5. **repayAmount:** `amount_to_be_repaid`. The maxium that can be repaid is the `shortfall` equivalent of one of the collateral currencies as described in [discover undercollateralized loans](#_1-discover-under-collateralized-loans). Note that the amount depends on the number of decimals the token uses.
+   5. **repayAmount:** `amount_to_be_repaid`. The maximum that can be repaid is the `shortfall` equivalent of one of the collateral currencies as described in [discover undercollateralized loans](#_1-discover-under-collateralized-loans). Note that the amount depends on the number of decimals the token uses.
    6. **collateralAssetId:** The currency to receive in exchange for liquidating the borrower's loan. The liquidation premium is also paid in this currency. Note that this currency has to be one of the collateral currencies used by the liquidated borrower (as described [above](#_1-discover-under-collateralized-loans)). Also note that while `collateralAssetId` represents the underlying currency of a lending market (e.g. KBTC), the liquidator receives its qToken version instead (e.g., qKBTC), which can be redeemed for KBTC from the lending market (see [withdraw collateral](#_7-withdraw-a-deposit)).
       1. Select `Token` for INTR, DOT, IBTC, KINT, KBTC, KSM
       2. Select `ForeignAsset` for other tokens
