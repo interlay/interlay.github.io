@@ -48,6 +48,7 @@
   * [Guide: Bridge](developers/bridge.md)
   * [Guide: Lending](developers/lending.md)
   * [Documentation](developers/documentation.md)
+  * [Indexers](developers/indexers.md)
 
 * **Security**
 
