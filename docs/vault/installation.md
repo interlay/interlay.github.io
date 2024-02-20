@@ -262,7 +262,7 @@ Please check the [README](https://github.com/interlay/interbtc-clients/tree/mast
 
 Move the Runner binary into your `$PATH`.
 
-Pass Vault CLI arguments as positional arguments (preceeded by double dashes: `--`), after passing the command options of the runner executable.
+Pass Vault CLI arguments as positional arguments (preceded by double dashes: `--`), after passing the command options of the runner executable.
 
 <!-- tabs:start -->
 #### **Testnet (Kintsugi)**

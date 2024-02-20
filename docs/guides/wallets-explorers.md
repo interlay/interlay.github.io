@@ -177,7 +177,7 @@ Supports Android and iOS.
 
 #### Ledger (soon)
 
-The Interlay Ledger app is currenty under review and will appear in the Ledger Live store soon. 
+The Interlay Ledger app is currently under review and will appear in the Ledger Live store soon. 
 
 The Kintsugi Ledger app is being developed. 
 

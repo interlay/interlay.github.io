@@ -114,7 +114,7 @@ Read more about the collateral system and re-balancing in the [Collateral sectio
 Vaults may be liquidated, i.e., have their collateral slashed and used to re-balance the system or to reimburse users, if:
 
 - they fail to execute redeem requests,
-- or are severly under-collateralized
+- or are severely under-collateralized
 
 Read more about liquidations in the [Liquidations section of the Vault page](/vault/overview?id=liquidations).
 

@@ -248,7 +248,7 @@ The threshold is an optional parameter - submitting with an empty threshold will
 
 Including this parameter will instead set a custom threshold, provided it is higher than the default global one. Enter a number equal to the percentage (e.g., 300%) multiplied by 10^16 (e.g, 3000000000000000000).
 
-### Activate/Deactive the Vault for new Issue Requests
+### Activate/Deactivate the Vault for new Issue Requests
 
 You can decide if your Vault should accept new issue requests by users.
 
@@ -261,7 +261,7 @@ You can decide if your Vault should accept new issue requests by users.
 
 If you don't use the full [monitoring](#monitoring) described below, you should still check once in a while if your Vault client has equal or more BTC in its Bitcoin wallet than the amount of BTC locked on the Interlay or Kintsugi chains. You can compare the two as follows:
 
-1. Navigate to your Vault dashboard and check the "Remaining `IBTC/KBTC` capacity". This gives you the amount of `IBTC/KBTC` that can minted, as well how much % of the overall vault amount that it represents. In the example bellow, the vault can still mint approx. `0.4 IBTC`.
+1. Navigate to your Vault dashboard and check the "Remaining `IBTC/KBTC` capacity". This gives you the amount of `IBTC/KBTC` that can minted, as well how much % of the overall vault amount that it represents. In the example below, the vault can still mint approx. `0.4 IBTC`.
 
 ![BTC_locked](../_assets/img/guide/vault-guide-capacity.png)\
 2. Connect to the system running the Bitcoin node for your Vault client. You can list the BTC balance of the `DOT/IBTC` Vault by running the following command on the CLI with the keyname you specified when running the Vault client (from the [installation instructions](vault/installation?id=_5-start-the-vault-client)):
@@ -279,7 +279,7 @@ $ bitcoin-cli -rpcwallet=0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c
 
 In the example given here, the Vault client is healthy: the Vault client has `7.8678` BTC in its Bitcoin wallet and the Interlay chain assumes that it has `7.85948385` BTC locked. That means, even if the Vault is requested to return all BTC, it will have enough BTC to fulfill those requests.
 
-?> If you are unsure about the Bitcoin wallets or you used an alternative for specifiying the Vault keyfile, you can run `bitcoin-cli listwalletdir` to see all your Vault wallets. You can then insert each item of the returned rpc wallets to check their balance.
+?> If you are unsure about the Bitcoin wallets or you used an alternative for specifying the Vault keyfile, you can run `bitcoin-cli listwalletdir` to see all your Vault wallets. You can then insert each item of the returned rpc wallets to check their balance.
 
 ### What if my BTC balance in the Bitcoin wallet is higher than the BTC Locked on the App Dashboard?
 
@@ -314,7 +314,7 @@ This will return a new address for your Vault. You can then use any Bitcoin wall
 
 ## Setting an Identity
 
-All networks inlcude the `identity` pallet. This allows anyone to set an identity. Follow the guide here: https://support.polkadot.network/support/solutions/articles/65000181981-how-to-set-and-clear-an-identity.
+All networks include the `identity` pallet. This allows anyone to set an identity. Follow the guide here: https://support.polkadot.network/support/solutions/articles/65000181981-how-to-set-and-clear-an-identity.
 
 ## Self-Minting
 

@@ -116,7 +116,7 @@ Make sure you connect to the correct parachain in [polkadot.js.org/apps](https:/
 
 #### 2. Check locked KINT/INTR
 
-- Go to Developer -> Chain Sate -> escrow -> locked
+- Go to Developer -> Chain State -> escrow -> locked
 - The `amount` is the KINT locked in planck KINT
 - The `end` is the block number at which all KINT can be withdrawn
 
