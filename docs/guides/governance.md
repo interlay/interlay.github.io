@@ -147,7 +147,7 @@ Go to "Proposals" and select your proposal from the list.
 
 ## Show Support for a Proposal
 
-Once a proposal is created, governance participants are asked to support proposals. One proposal per week is promoted to a referendum.
+Once a proposal is created, governance participants are asked to support proposals. Two proposals per week are promoted to referenda.
 
 You can see all proposals for Interlay at https://interlay.subsquare.io/democracy/proposals.
 
