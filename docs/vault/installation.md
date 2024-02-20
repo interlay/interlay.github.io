@@ -291,7 +291,7 @@ runner \
 runner \
     # Runner CLI arguments
     --client-type vault \
-    --parachain-ws 'wss://staging.interlay-dev.interlay.io:443/parachain' \
+    --parachain-ws 'wss://api-testnet.interlay.io:443/parachain' \
     --download-path <CUSTOM_BINARY_DOWNLOAD_PATH, example: /opt/testnet/runner/> \
     -- \
     # Vault CLI arguments:
@@ -300,10 +300,10 @@ runner \
     --bitcoin-rpc-pass rpcpassword \
     --keyfile keyfile_interlay_testnet.json \
     --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
-    --faucet-url 'https://staging.interlay-dev.interlay.io/faucet' \
+    --faucet-url 'https://api-testnet.interlay.io/faucet' \
     --auto-register=DOT=faucet \
     --auto-register=INTR=faucet \
-    --btc-parachain-url 'wss://staging.interlay-dev.interlay.io:443/parachain'
+    --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain'
 ```
 
 #### **Kintsugi**
@@ -705,10 +705,10 @@ vault \
   --bitcoin-rpc-pass rpcpassword \
   --keyfile keyfile.json \
   --keyname <INSERT_YOUR_KEYNAME, example: 0x0e5aabe5ff862d66bcba0912bf1b3d4364df0eeec0a8137704e2c16259486a71> \
-  --faucet-url 'https://staging.interlay-dev.interlay.io/faucet' \
+  --faucet-url 'https://api-testnet.interlay.io/faucet' \
   --auto-register=DOT=faucet \
   --auto-register=INTR=faucet \
-  --btc-parachain-url 'wss://staging.interlay-dev.interlay.io:443/parachain'
+  --btc-parachain-url 'wss://api-testnet.interlay.io:443/parachain'
 ```
 
 #### **Kintsugi**

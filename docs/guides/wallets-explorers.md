@@ -66,7 +66,7 @@ Go to [https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Fapi-dev-kintsugi.inte
 
 #### Polkadot.js Apps
 
-Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interlay.io%2Fparachain#/explorer)
+Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-testnet.interlay.io%2Fparachain#/explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-testnet.interlay.io%2Fparachain#/explorer)
 
 <!-- tabs:end -->
 
@@ -275,7 +275,7 @@ Go to [https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Fapi-dev-kintsugi.inte
 
 #### Polkadot.js Apps
 
-Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interlay.io%2Fparachain#/accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fstaging.interlay-dev.interlay.io%2Fparachain#/accounts)
+Go to [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-testnet.interlay.io%2Fparachain#/accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fapi-testnet.interlay.io%2Fparachain#/accounts)
 
 <!-- tabs:end -->
 
