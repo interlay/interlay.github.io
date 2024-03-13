@@ -343,7 +343,7 @@ Show instructions
   - For foreign assets, use `ForeignAssets.Id`, e.g., `ForeignAsset.2` for LKSM on Kintsugi. You can find the correct foreign assets by going to https://polkadot.js.org/apps/#/chainstate -> assetRegistry -> metadata (unselect include option)
 
 - Set the wrapped currency to `Token.KBTC` on Kintsugi, or to `Token.IBTC` on Interlay.
-- Set the desired ceiling. Keep in mind the number of decimals of the currency. For foreign assets, the number of decimals is included in the metadata queried above. `DOT` and `INTR` have 10 decimals, while `KSM` and `KINT` have 12 decimals. For example, to set the ceiling to 5 `KINT`, enter  5 * 10^12 = 5,000,000,000,000.
+- Set the desired ceiling. Keep in mind the number of decimals of the currency. For foreign assets, the number of decimals is included in the metadata queried above. `DOT` and `INTR` have 10 decimals, while `KSM` and `KINT` have 12 decimals. For example, to set the ceiling to 5 `KINT`, enter  5 * 10^12 = 5,000,000,000,000. Furthermore, the ceiling must be less than `2^128 / 1e18 / 10^(tokenDecimals)` to prevent overflows in the code.
 
 #### 2. Create the proposal
 
